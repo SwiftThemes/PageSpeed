@@ -1,0 +1,32 @@
+.widget-title {
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: $padding*.25 0;
+}
+
+.widget {
+  margin-bottom: $vr;
+}
+.sb >.widget:first-child .widget-title{padding-top: 0}
+.widget{
+  ul,ol{
+    margin: $vr*.5 0;
+    padding-left: 20px;
+    list-style: disc;
+  }
+}
+.rtl .widget{
+  ul,ol{
+    padding-left: 0;
+    padding-right: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+

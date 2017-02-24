@@ -1,0 +1,20 @@
+.parent:before{
+  position:absolute;
+  left:-42px;
+  border-left:solid 4px #EEE;top:0;
+  bottom:100px;
+  margin-top:0;
+  margin-bottom:0;
+  content:' '}
+
+.children .comment:before{
+  position:absolute;
+  left:-72px;
+  width:50px;
+  top:22px;
+  height:4px;
+  background:#EEE;
+  margin-left:0;
+  margin-right:0;
+  content:' '
+}

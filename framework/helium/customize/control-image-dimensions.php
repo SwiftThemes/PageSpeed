@@ -1,0 +1,71 @@
+<?php
+/**
+ * The image size customize control extends the WP_Customize_Control class.  This class allows
+ * developers to store image dimensions in an array rather than two sperate fields.
+ *
+ *
+ * @package    Helium
+ * @subpackage Customize
+ * @author     Satish Gandham <hello@SatishGandham.Com>
+ * @copyright  Copyright (c) 2017 - 2017, Satish Gandham
+ */
+
+
+add_action( 'customize_register', 'image_size_control_register', 1 );
+
+function image_size_control_register( $wp_customize ) {
+
+	// Register the control type.
+	// $wp_customize->register_control_type( 'Helium_Customize_Control_Image_Size' );
+
+	class Helium_Customize_Control_Image_Size extends WP_Customize_Control {
+
+		public function build_field_html( $key, $setting ) {
+			$value = '';
+			if ( isset( $this->settings[ $key ] ) ) {
+				$value = $this->settings[ $key ]->value();
+			}
+			$this->html[] = '<div><input type="text" value="' . $value . '" ' . $this->get_link( $key ) . ' /></div>';
+		}
+
+		public function render_content() {
+			$output = '<label>' . $this->label . '</label><div class="clear"></div><br>';
+
+			if ( isset( $this->settings[0] ) ) {
+				$value = $this->settings[0]->value();
+			} else {
+				$value = '';
+			}
+			$output .= '<div class="thumb-dimensions"><input type="number" value="' . $value . '" ' . $this->get_link( 0 ) . ' /><span class="x">x</span>';
+
+			if ( isset( $this->settings[1] ) ) {
+				$value = $this->settings[1]->value();
+			} else {
+				$value = '';
+			}
+			$output .= '<input type="number" value="' . $value . '" ' . $this->get_link( 1 ) . ' /></div>';
+
+			if ( isset( $this->settings[2] ) ) {
+				$value = $this->settings[2]->value();
+			} else {
+				$value = '';
+			}
+//			$output .= '<div><input type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' /></div>';
+			$output .= '<div class="thumb-align">
+<select type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' >
+			<option value="alignleft" ' . selected( $value, 'alignleft', false ) . '>' . __( 'Align left', 'he' ) . '</option>
+			<option value="aligncenter" ' . selected( $value, 'aligncneter', false ) . '>' . __( 'Centered', 'he' ) . '</option>
+			<option value="alignright" ' . selected( $value, 'alignright', false ) . '>' . __( 'Align right', 'he' ) . '</option>
+			<option value="alternate" ' . selected( $value, 'alternate', false ) . '>' . __( 'Alternate', 'he' ) . '</option>
+			</select></div>';
+
+
+			echo $output;
+
+		}
+
+	}
+
+}
+
+

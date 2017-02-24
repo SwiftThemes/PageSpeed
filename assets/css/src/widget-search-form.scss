@@ -1,0 +1,56 @@
+.widget-search-wrapper {
+  position: relative;
+  overflow: hidden
+}
+
+.widget .widget-search-form {
+  label {
+    display: none
+  }
+  button {
+    float: right;
+    background: $primary;
+    color: $shade-1;
+    display: block;
+    position: relative;
+    left: -6px;
+    padding:5px 8px 4px;
+
+  }
+
+  .input {
+    overflow: hidden;
+    display: block;
+    float: none
+  }
+}
+
+.ltr{
+  .widget .widget-search-form{
+    button{
+      -webkit-border-top-right-radius: 3px;
+      -webkit-border-bottom-right-radius: 3px;
+      -moz-border-radius-topright: 3px;
+      -moz-border-radius-bottomright: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+}
+
+.rtl {
+  .widget .widget-search-form {
+
+    button {
+      float: left;
+      left: auto;
+      left: 6px;
+      -webkit-border-top-left-radius: 3px;
+      -webkit-border-bottom-left-radius: 3px;
+      -moz-border-radius-topleft: 3px;
+      -moz-border-radius-bottomleft: 3px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+}

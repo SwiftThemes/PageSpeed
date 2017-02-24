@@ -1,0 +1,10 @@
+.pagination{
+  text-align: center;
+  margin-bottom: $vr;
+  .nav-links{border:solid 1px $shade-4;display: inline-block;border-radius: 5px;overflow: hidden}
+  .nav-links .current{background: $primary;color:$shade-1}
+  .page-numbers span{display: none}
+  .page-numbers,
+  .page-numbers a{display: inline-block}
+  .page-numbers{border-right: solid 1px $shade-4;padding:.1em .5em;float: left}
+}

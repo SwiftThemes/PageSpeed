@@ -1,0 +1,13 @@
+#copyright-container {
+  font-family: $headings-font-stack;
+  font-size: .8em;
+  font-weight: 300;
+  color: $shade-2;
+  a {
+    color: $shade-1
+  }
+  .inner {
+    padding: .5*$padding $padding;
+    text-align: center
+  }
+}

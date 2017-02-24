@@ -1,0 +1,90 @@
+@media only screen and (min-width: 768px) {
+  .nav-container {
+    border-bottom: solid 1px $shade-4;
+  }
+
+  .nav {
+    ul {
+      margin: 0;
+      padding: 0
+    }
+    ul li {
+      display: inline;
+    }
+    ul li {
+      float: left
+    }
+    a {
+      color: $dark-1;
+      padding: .25em .5em;
+      display: block;
+    }
+    li:hover,
+    a:hover {
+      background: $shade-3;
+      color: $primary;
+    }
+
+    ul li li {
+      display: block;
+      width: 100%
+    }
+    ul ul {
+      display: none;
+      width: 180px
+    }
+    /* first level */
+    ul li {
+      position: relative
+    }
+    ul li:hover > ul {
+      display: inline;
+      position: absolute;
+      top: 2.125em; //2.15em
+      left: 0;
+      background: $shade-3
+    }
+    ul li:hover ul ul {
+      display: none
+    }
+
+    /* second level */
+    ul ul li:hover > ul {
+      display: block;
+      position: absolute;
+      left: 180px;
+      top: 0;
+    }
+    ul li:hover ul li:hover ul li a {
+      display: block
+    }
+    ul ul ul ul {
+      display: none
+    }
+
+    /* third level */
+  }
+}
+#secondary-nav-container.nav-container {
+
+  border-bottom: none;
+  .nav{
+    a{color:$shade-3}
+    a:hover{color: $shade-4;background: $dark-2}
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #side-pane .menu li{
+    list-style: none;
+    display: block;
+    border-bottom: solid 1px $shade-3;
+  }
+  #side-pane .menu li a{
+    display: block;
+    padding: 7px 14px;
+
+  }
+  #side-pane nav ul ul{margin-left: 10px}
+  #side-pane ul li:last-child{border: none}
+}

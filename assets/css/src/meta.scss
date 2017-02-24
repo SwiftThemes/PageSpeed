@@ -1,0 +1,22 @@
+hr.separator
+.entry-meta hr{
+  border: 0!important;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, $shade-2, $shade-4, $shade-2);
+  background-image: -moz-linear-gradient(left, $shade-2, $shade-4, $shade-2);
+  background-image: -ms-linear-gradient(left, $shade-2, $shade-4, $shade-2);
+  background-image: -o-linear-gradient(left, $shade-2, $shade-4, $shade-2);
+}
+.entry-meta{
+  font-size:.85em;
+  opacity: .6;
+}
+.entry-meta.above-title{margin-bottom: $vr/2;}
+.entry-meta.below-title{margin-top:-$vr/2;margin-bottom: $vr;}
+.entry-footer {
+  background: $shade-1;
+  padding: .125*$padding 0;
+  border: solid 1px $shade-2;
+  border-width: 1px 0;
+  margin: $vr  (-$padding);
+}

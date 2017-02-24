@@ -1,0 +1,50 @@
+#menu {
+  background: $primary;
+  color: $shade-1;
+  border-radius: 3px;
+  float: right;
+  border: none;
+  display: none;
+
+  position: absolute;
+  top:0;
+  bottom:0;
+  right: -20px;
+  height: 32px;
+  margin: auto;
+  padding:5px 8px;
+  line-height: 16px;
+
+  //@include vertical-align();
+
+}
+#side-pane{display: none}
+.menu-open {
+  position: relative;
+  left: -75vw;
+
+  #side-pane {
+    display: block;
+    width: 75vw;
+    position: fixed;
+    right: 0;
+    background: $shade-4;
+    top: 0;
+    min-height: 100vh;
+    overflow: scroll;
+
+  }
+
+  #side-pane-inner{
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    top:0;
+    overflow: auto;
+  }
+}
+
+#site-header{
+  position: relative;
+}

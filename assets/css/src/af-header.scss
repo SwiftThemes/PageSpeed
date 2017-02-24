@@ -1,0 +1,42 @@
+#site-header-container {
+  padding: $padding/2 0
+}
+
+.site-title {
+  font-size: 2em;
+  margin: 0 ;
+}
+
+.site-description {
+  margin: 0;
+  color:$dark-4;
+  font-style: italic;
+}
+
+.logo-left {
+  #site-branding {
+    float: left;
+  }
+}
+
+.logo-center {
+  #site-branding {
+    text-align: center;
+  }
+  #logo {
+    display: block;
+    margin: auto
+  }
+}
+
+.logo-right {
+  #site-branding {
+    float: right;
+  }
+}
+
+/* delete */
+#site-branding img{
+  height: 72px;
+  width: auto;
+}

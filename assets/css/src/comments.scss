@@ -1,0 +1,126 @@
+$comment-borders-color: $shade-4;
+.comment-list {
+  padding: 0
+}
+
+.comment-list {
+  li.comment {
+    list-style: none;
+    position: relative;
+    margin-left: 64px;
+    margin-bottom: $vr;
+    //border: solid 1px $comment-borders-color;
+  }
+
+  li.comment .comment {
+    margin-left: 32px;
+    //margin-right: $padding;
+  }
+
+  .reply {
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    border: solid 1px $shade-4;
+    padding: 0 .25*$padding;
+    @include border-radius(3px)
+  }
+  .reply:hover {
+    background: $shade-4;
+  }
+}
+
+.comment-meta {
+  font-family: $headings-font-stack;
+  border: solid 1px $comment-borders-color;
+  border-radius: 3px;
+  background: $shade-2;
+  padding: .125*$padding .5*$padding;
+  .avatar {
+    float: left;
+    position: absolute;
+    left: -64px;
+    top: -2px;
+    border-radius: 50%
+  }
+  .says {
+    display: none
+  }
+}
+
+.comment-meta:before {
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 10px solid transparent;
+  border-right: 10px solid $comment-borders-color;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  left: -9px;
+  top: 10px
+}
+
+.bypostauthor {
+  .reply{
+    color: #FFF;
+  }
+  .comment-meta {
+    background: $primary;
+    color: $shade-3
+  }
+  .comment-meta a {
+    color: $shade-1
+  }
+  .comment-meta:before {
+    border-right-color: $primary;
+  }
+}
+
+.comment-metadata a {
+  color: $dark-3;
+  font-size: .8em;
+}
+
+.comment-content {
+  padding: .25*$padding .5*$padding;
+}
+
+/* Comment form */
+#respond {
+  border-top: double 5px $shade-4
+}
+
+#commentform label {
+  display: none
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment {
+  width: 100%;
+  display: block;
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input,
+.comment-form-comment textarea {
+  width: 100%;
+  border: solid 1px $shade-4;
+  border-radius: 2px
+}
+
+#commentform #submit {
+  float: right;
+  background: $primary;
+  color: $shade-1;
+  border: 0;
+  border-radius: 3px;
+}
+
+#commentform #submit:hover {
+  text-shadow: 1px 1px 1px $dark-2;
+
+}

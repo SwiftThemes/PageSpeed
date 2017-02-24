@@ -1,0 +1,31 @@
+/** Forms **/
+input,
+textarea{
+  width: 100%;
+  border:solid 1px $shade-4;
+  background: $shade-2;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  color: $dark-3;
+  font-weight: lighter;
+  font-family: monospace, serif;
+  @include border-radius(3px)
+}
+input{height: 36px}
+input:active,
+textarea:active,
+input:focus,
+textarea:focus{
+  background: $shade-1;
+}
+input[type=submit],
+button{
+  width:auto;
+  padding: 5px 20px;
+  background: $primary;
+  border: none;
+  color: $shade-1;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+}

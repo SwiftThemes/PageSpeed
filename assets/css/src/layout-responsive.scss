@@ -1,0 +1,40 @@
+/* Smaller desktops */
+@media only screen and (max-width: 1200px) {
+  #wrapper,
+  #ns1,
+  #ns2 {
+    width: 100%
+  }
+}
+
+//Tablets
+@media only screen and (max-width: 768px) {
+  #wrapper {
+    #sb1,
+    #sb2,
+    #left,
+    #main,
+    .hybrid{
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #sb1 {
+      background: $shade-2
+    }
+    #sb2 {
+      background: $shade-3
+    }
+    .widget {
+      width: 300px;
+      margin: auto
+    }
+  }
+
+  #copyright-container{
+    .hybrid{
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+

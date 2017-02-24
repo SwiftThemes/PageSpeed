@@ -1,0 +1,41 @@
+//Functions
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+///* Layout */
+$site_width: 1160px;
+$main_width: 60%;
+$left_sidebar_width:20%;
+$padding: 40px;
+
+$vr: 26px; //vertical rhythm
+$footer-columns: 4;
+///* Typography */
+$body-font-stack: serif, Garamond;
+$body-font-stack: 'Open Sans', sans-serif;
+$base-font-size: 17px;
+$base-line-height: em(26);
+$headings-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headings-font-stack: 'Open Sans', sans-serif;
+
+
+
+
+//
+//$inverse: '';
+//@if $inverse {
+//  $dark-4: #FFF;
+//  $dark-3: #FDFDFD;
+//  $dark-2: #f7f7f7;
+//  $dark-1: #D6DADD;
+//
+//  // These are the shades (whites) we use
+//  // White decreases as the number increases
+//  $shade-1: #000;
+//  $shade-2: #434343;
+//  $shade-3: #787878;
+//  $shade-4: #A4A4A4;
+//}
