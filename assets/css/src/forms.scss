@@ -2,8 +2,8 @@
 input,
 textarea{
   width: 100%;
-  border:solid 1px $shade-4;
-  background: $shade-2;
+  border:solid 1px $light-4;
+  background: $light-2;
   box-sizing: border-box;
   font-size: 1.2em;
   color: $dark-3;
@@ -16,7 +16,7 @@ input:active,
 textarea:active,
 input:focus,
 textarea:focus{
-  background: $shade-1;
+  background: $light-1;
 }
 input[type=submit],
 button{
@@ -24,7 +24,7 @@ button{
   padding: 5px 20px;
   background: $primary;
   border: none;
-  color: $shade-1;
+  color: $light-1;
   float: right;
   margin-left: 0;
   margin-right: 0;

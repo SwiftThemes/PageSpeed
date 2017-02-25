@@ -124,11 +124,11 @@ body {
 .layout-centered {
   #sb1 {
     //background: rgba(0, 255, 255, .5);
-    background: $shade-2 !important;
+    background: $light-2 !important;
   }
   #sb2 {
     //background: rgba(255, 255, 0, .5);
-    background: $shade-3 !important;
+    background: $light-3 !important;
 
   }
 }
@@ -152,52 +152,52 @@ body {
 }
 
 #wrapper {
-  background: $shade-1
+  background: $light-1
 }
 
 #content {
-  background: $shade-1
+  background: $light-1
 }
 
 #main {
-  background: $shade-1
+  background: $light-1
 }
 
 #site-header-container {
-  border-bottom: solid 1px $shade-4
+  border-bottom: solid 1px $light-4
 }
 
 .layout-r-sb {
 
   #sb1 > .inner {
-    border-left: solid 1px $shade-4
+    border-left: solid 1px $light-4
   }
 }
 
 .layout-l-sb {
   #sb1 > .inner {
-    border-right: solid 1px $shade-4
+    border-right: solid 1px $light-4
   }
 }
 
 .layout-centered {
   #sb1 > .inner {
-    border-right: solid 1px $shade-4
+    border-right: solid 1px $light-4
   }
   #sb2 > .inner {
-    border-left: solid 1px $shade-4
+    border-left: solid 1px $light-4
   }
 }
 
 #site-footer-container {
 
   background: $dark-2;
-  color: $shade-3
+  color: $light-3
 }
 
 #site-footer-container {
   a {
-    color: $shade-2
+    color: $light-2
   }
   a:hover {
     color: $primary

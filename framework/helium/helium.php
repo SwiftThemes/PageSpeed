@@ -76,7 +76,6 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_DIR . 'customize/remove-default-panels.php' );
 
 			require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
-
 		}
 
 

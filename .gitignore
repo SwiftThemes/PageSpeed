@@ -3,7 +3,7 @@ node_modules
 .DS_Store
 .git
 *.zip
-
+.sass-cache
 .idea
 
 # Created by https://www.gitignore.io/api/phpstorm

@@ -2,10 +2,10 @@ hr.separator
 .entry-meta hr{
   border: 0!important;
   height: 1px;
-  background-image: -webkit-linear-gradient(left, $shade-2, $shade-4, $shade-2);
-  background-image: -moz-linear-gradient(left, $shade-2, $shade-4, $shade-2);
-  background-image: -ms-linear-gradient(left, $shade-2, $shade-4, $shade-2);
-  background-image: -o-linear-gradient(left, $shade-2, $shade-4, $shade-2);
+  background-image: -webkit-linear-gradient(left, $light-2, $light-4, $light-2);
+  background-image: -moz-linear-gradient(left, $light-2, $light-4, $light-2);
+  background-image: -ms-linear-gradient(left, $light-2, $light-4, $light-2);
+  background-image: -o-linear-gradient(left, $light-2, $light-4, $light-2);
 }
 .entry-meta{
   font-size:.85em;
@@ -14,9 +14,9 @@ hr.separator
 .entry-meta.above-title{margin-bottom: $vr/2;}
 .entry-meta.below-title{margin-top:-$vr/2;margin-bottom: $vr;}
 .entry-footer {
-  background: $shade-1;
+  background: $light-1;
   padding: .125*$padding 0;
-  border: solid 1px $shade-2;
+  border: solid 1px $light-2;
   border-width: 1px 0;
   margin: $vr  (-$padding);
 }

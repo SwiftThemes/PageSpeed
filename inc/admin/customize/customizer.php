@@ -91,10 +91,10 @@ function nybr_customize( $wp_customize ) {
 		'default' => '1160px',
 	) );
 	$wp_customize->add_setting( 'main_width', array(
-		'default' => '70%',
+		'default' => '70',
 	) );
 	$wp_customize->add_setting( 'left_sidebar_width', array(
-		'default' => '70%',
+		'default' => '18.75',
 	) );
 
 

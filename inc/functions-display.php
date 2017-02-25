@@ -68,7 +68,7 @@ if ( ! function_exists( 'ngbr_below_header' ) ) {
 		);
 
 
-		if ( has_nav_menu( 'secondary' ) ) :
+		if ( has_nav_menu( 'primary' ) ) :
 			?>
 			<div id="primary-nav-container" class="nav-container cf">
 				<div id="primary" class="">

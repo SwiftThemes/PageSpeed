@@ -18,7 +18,7 @@ function helium_register_styles() {
 	wp_register_style( 'page-speed', THEME_CSS_URI . 'style.prod.css' );
 
 	$upload_dir = wp_upload_dir();
-	wp_register_style( 'page-speed-2', trailingslashit($upload_dir['baseurl']) . 'helium.css' );
+	wp_register_style( 'page-speed-2', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
 }
 
 function helium_enqueue_styles() {

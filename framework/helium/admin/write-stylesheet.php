@@ -16,6 +16,7 @@ add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet'
 add_action( 'switch_theme', 'helium_write_stylesheet' );
 
 function helium_write_stylesheet() {
+
 	$style_generator = new Helium_Styles( THEME_ASSETS . 'css/src/' );
 	$style_generator->write_css();
 }
@@ -59,6 +60,14 @@ class Helium_Styles {
 	 */
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
+
+//      You can pass args liek this to WP_Filesystem
+//		$args = array(
+//			'hostname' => 'localhost',
+//			'username' => 'satish',
+//			'password' => '',
+//		);
+
 		WP_Filesystem();
 		$this->main   = trailingslashit( $src ) . $main;
 		$this->source = trailingslashit( $src );
@@ -66,6 +75,7 @@ class Helium_Styles {
 	}
 
 	private function set_file_list() {
+
 		global $wp_filesystem;
 		$files = $wp_filesystem->get_contents_array( $this->main );
 
@@ -119,10 +129,15 @@ class Helium_Styles {
 	}
 
 	public function write_css() {
-		global $wp_filesystem;
-		$content    = $this->generate_css();
-		$upload_dir = wp_upload_dir();
-		$file       = trailingslashit( $upload_dir['basedir'] ) . $theme_name = wp_get_theme()->stylesheet . '.css';
-		$wp_filesystem->put_contents( $file, $content, FS_CHMOD_FILE );
+		try {
+			global $wp_filesystem;
+			$content    = $this->generate_css();
+			$upload_dir = wp_upload_dir();
+			$file       = trailingslashit( $upload_dir['basedir'] ) . $theme_name = wp_get_theme()->stylesheet . '.css';
+			$temp       = $wp_filesystem->put_contents( $file, $content );
+		} catch ( Exception $e ) {
+			echo 'Message: ' . $e->getMessage();
+		}
+
 	}
 }

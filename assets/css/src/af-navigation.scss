@@ -1,6 +1,6 @@
 @media only screen and (min-width: 768px) {
   .nav-container {
-    border-bottom: solid 1px $shade-4;
+    border-bottom: solid 1px $light-4;
   }
 
   .nav {
@@ -21,7 +21,7 @@
     }
     li:hover,
     a:hover {
-      background: $shade-3;
+      background: $light-3;
       color: $primary;
     }
 
@@ -42,7 +42,7 @@
       position: absolute;
       top: 2.125em; //2.15em
       left: 0;
-      background: $shade-3
+      background: $light-3
     }
     ul li:hover ul ul {
       display: none
@@ -69,8 +69,8 @@
 
   border-bottom: none;
   .nav{
-    a{color:$shade-3}
-    a:hover{color: $shade-4;background: $dark-2}
+    a{color:$light-3}
+    a:hover{color: $light-4;background: $dark-2}
   }
 }
 
@@ -78,7 +78,7 @@
   #side-pane .menu li{
     list-style: none;
     display: block;
-    border-bottom: solid 1px $shade-3;
+    border-bottom: solid 1px $light-3;
   }
   #side-pane .menu li a{
     display: block;
