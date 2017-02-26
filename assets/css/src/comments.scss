@@ -124,3 +124,36 @@ $comment-borders-color: $light-4;
   text-shadow: 1px 1px 1px $dark-2;
 
 }
+
+.rtl {
+
+  li.comment{
+    margin-left: 0;
+    margin-right: 64px;
+  }
+  .reply {
+    right:auto;
+    left: 10px;
+  }
+    .comment-list {
+
+    .comment-meta {
+
+      .avatar {
+        float: right;
+        position: absolute;
+        right: -64px;
+        top: -2px;
+      }
+
+    }
+  }
+
+
+  .comment-meta:before {
+    border-right: 10px solid transparent;;
+    border-left: 10px solid $comment-borders-color;
+    left:auto;
+    right: -18px;
+  }
+}

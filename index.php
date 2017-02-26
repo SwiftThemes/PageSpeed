@@ -57,7 +57,7 @@ endif;
 ?>
 </div><!-- main inner-->
 </main>
-<?php get_sidebar(); ?>
+<?php get_sidebar('home'); ?>
 
 </div><!-- #content -->
 <?php get_footer(); ?>

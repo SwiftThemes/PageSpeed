@@ -12,3 +12,9 @@
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
+
+@mixin rotate($angle) {
+  -ms-transform: rotate($angle);
+  -webkit-transform: rotate($angle);
+  transform: rotate($angle);
+}

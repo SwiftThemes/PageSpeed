@@ -23,6 +23,6 @@ function helium_register_styles() {
 
 function helium_enqueue_styles() {
 //	wp_enqueue_style( 'page-speed' );
-	wp_enqueue_style( 'page-speed' );
+	wp_enqueue_style( 'page-speed-2' );
 }
 

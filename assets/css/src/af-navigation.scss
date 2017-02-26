@@ -63,28 +63,50 @@
     }
 
     /* third level */
+
+    /* Icons */
+    .menu-item-has-children > a:after {
+      content: '\BB';
+      opacity: .5;
+      margin-left: 5px;
+      display: inline-block;
+    }
+
+    .menu > .menu-item-has-children >a:after{
+      @include rotate(90deg)
+    }
   }
 }
+
 #secondary-nav-container.nav-container {
 
   border-bottom: none;
-  .nav{
-    a{color:$light-3}
-    a:hover{color: $light-4;background: $dark-2}
+  .nav {
+    a {
+      color: $light-3
+    }
+    a:hover {
+      color: $light-4;
+      background: $dark-2
+    }
   }
 }
 
 @media only screen and (max-width: 768px) {
-  #side-pane .menu li{
+  #side-pane .menu li {
     list-style: none;
     display: block;
     border-bottom: solid 1px $light-3;
   }
-  #side-pane .menu li a{
+  #side-pane .menu li a {
     display: block;
     padding: 7px 14px;
 
   }
-  #side-pane nav ul ul{margin-left: 10px}
-  #side-pane ul li:last-child{border: none}
+  #side-pane nav ul ul {
+    margin-left: 10px
+  }
+  #side-pane ul li:last-child {
+    border: none
+  }
 }

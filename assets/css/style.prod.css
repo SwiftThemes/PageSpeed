@@ -276,6 +276,7 @@ button {
   float: right;
   margin-left: 0;
   margin-right: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 #wrapper,
@@ -580,6 +581,29 @@ h1 {
   margin: auto;
 }
 
+.circle,
+.round {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.button,
+.btn {
+  text-align: center;
+  color: #FFF;
+  background: #007AFF;
+  padding: 5px 7px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.button:hover,
+.btn:hover {
+  color: #ECECF1;
+}
+
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
@@ -651,6 +675,7 @@ h1 {
     /* first level */
     /* second level */
     /* third level */
+    /* Icons */
   }
 
   .nav ul {
@@ -717,6 +742,19 @@ h1 {
 
   .nav ul ul ul ul {
     display: none;
+  }
+
+  .nav .menu-item-has-children > a:after {
+    content: '\BB';
+    opacity: .5;
+    margin-left: 5px;
+    display: inline-block;
+  }
+
+  .nav .menu > .menu-item-has-children > a:after {
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -948,6 +986,30 @@ article {
 
 #commentform #submit:hover {
   text-shadow: 1px 1px 1px #14141A;
+}
+
+.rtl li.comment {
+  margin-left: 0;
+  margin-right: 64px;
+}
+
+.rtl .reply {
+  right: auto;
+  left: 10px;
+}
+
+.rtl .comment-list .comment-meta .avatar {
+  float: right;
+  position: absolute;
+  right: -64px;
+  top: -2px;
+}
+
+.rtl .comment-meta:before {
+  border-right: 10px solid transparent;
+  border-left: 10px solid #e4e4eb;
+  left: auto;
+  right: -18px;
 }
 
 .widget-search-wrapper {
