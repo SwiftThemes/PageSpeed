@@ -1,18 +1,11 @@
 <?php
 /**
- * The main template file
+ * Template Name: Full Width Page
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @package PageSpeed
+ * @since 1.0
  */
+
 
 get_header();
 ?>
@@ -33,7 +26,7 @@ get_header();
 		 * If you want to override this in a child theme, then include a file
 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 		 */
-		get_template_part( 'template-parts/content-post', get_post_format() );
+		get_template_part( 'template-parts/content-page', get_post_format() );
 
 		// End the loop.
 	endwhile;
@@ -57,8 +50,6 @@ endif;
 ?>
 </div><!-- main inner-->
 </main>
-<?php get_sidebar(); ?>
-
 </div><!-- #content -->
 <?php get_footer(); ?>
 

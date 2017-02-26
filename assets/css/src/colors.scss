@@ -6,17 +6,6 @@ $teritiary: blue;
 // These are the dark gray colors we use
 // darkness decreases as the number increases
 
-
-
-
-
-
-
-
-
-
-
-
 $dark-1: #000 !default;
 $dark-2: #182026 !default;
 $dark-3: #202b33 !default;
@@ -40,15 +29,24 @@ $light-3: #ebf1f5 !default;
 $light-2: #f5f8fa !default;
 $light-1: #ffffff !default;
 
+$black: #000;
+$dark-1: $black;
+$dark-2: #14141A;
+$dark-3: #3D3D45;
+$dark-4: #404048;
+$dark-5: #63636A;
+$dark-6: #84848C;
 
-
-$dark-1: #14141A;
-$dark-2: #3D3D45;
-$dark-3: #63636A;
-$dark-4: #84848C;
-
-$light-1: #FFF;
+$white: #FFF;
+$light-1: $white;
 $light-2: #F2F1F6;
 $light-3: #ECECF1;
 $light-4: #e4e4eb;
 $light-5: #CFCFD8;
+$light-6: #c1c1cb;
+
+
+// Don't remove the below line.
+// It's used for overriding the variables.
+
+/**colors**/

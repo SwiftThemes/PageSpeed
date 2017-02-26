@@ -12,7 +12,7 @@ $theme_name = wp_get_theme()->stylesheet;
 
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
-//add_action( 'admin_head', 'helium_write_stylesheet', 20 );
+add_action( 'admin_head', 'helium_write_stylesheet', 20 );
 add_action( 'switch_theme', 'helium_write_stylesheet' );
 
 function helium_write_stylesheet() {
@@ -50,6 +50,7 @@ class Helium_Styles {
 	private $af_files = [ ];    // List above fold css files
 	private $bf_files = [ ];  // Below fold css files
 	private $scss_variable_files = [ 'variables', 'colors' ];
+	private $prefix;
 
 	/**
 	 * Helium_Styles constructor.
@@ -62,13 +63,14 @@ class Helium_Styles {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
 //      You can pass args liek this to WP_Filesystem
-//		$args = array(
-//			'hostname' => 'localhost',
-//			'username' => 'satish',
-//			'password' => '',
-//		);
+		$args = array(
+			'hostname' => 'localhost',
+			'username' => 'satish',
+			'password' => '',
+		);
 
-		WP_Filesystem();
+		WP_Filesystem(  );
+		$this->prefix = wp_get_theme()->stylesheet . '_';
 		$this->main   = trailingslashit( $src ) . $main;
 		$this->source = trailingslashit( $src );
 		$this->set_file_list();
@@ -76,26 +78,39 @@ class Helium_Styles {
 
 	private function set_file_list() {
 
-		global $wp_filesystem;
-		$files = $wp_filesystem->get_contents_array( $this->main );
+		$files = get_transient( $this->prefix . 'sass_file_list' );
+		if ( $files && $files['below_fold'] && ! WP_DEBUG ) {
+			$this->af_files = $files['above_fold'];
+			$this->bf_files = $files['below_fold'];
+		} else {
+			global $wp_filesystem;
+			$files = $wp_filesystem->get_contents_array( $this->main );
+			// Save the read files to transient.
+			foreach ( $files as $file ) {
+				if ( preg_match( '/".+"/', $file, $matches ) ) {
 
-		// Save the read files to transient.
-
-		foreach ( $files as $file ) {
-			if ( preg_match( '/".+"/', $file, $matches ) ) {
-				$file = str_replace( '"', '', $matches[0] );
-
-				if ( 0 && $this->is_above_fold( $file ) ) {
-					array_push( $this->af_files, $file . '.scss' );
-				} elseif ( $file !== 'main' ) {
-					array_push( $this->bf_files, $file . '.scss' );
-				}
-
-				if ( in_array( $file, $this->scss_variable_files ) ) {
-					array_push( $this->af_files, $file . '.scss' );
+					$file = str_replace( '"', '', $matches[0] );
+					if ( 0 && $this->is_above_fold( $file ) ) {
+						array_push( $this->af_files, $file . '.scss' );
+					} elseif ( 'main' !== $file ) {
+						array_push( $this->bf_files, $file . '.scss' );
+					}
+					if ( in_array( $file, $this->scss_variable_files ) ) {
+						array_push( $this->af_files, $file . '.scss' );
+					}
 				}
 			}
+			delete_transient( $this->prefix . 'sass_file_list' );
+
+			set_transient( $this->prefix . 'sass_file_list', array(
+				'above_fold' => $this->af_files,
+				'below_fold' => $this->bf_files,
+			), 1800 );
+
+
 		}
+
+
 	}
 
 	private function is_above_fold( $file ) {
@@ -108,18 +123,27 @@ class Helium_Styles {
 
 	public function generate_css() {
 		global $wp_filesystem;
-		$content = '';
-		foreach ( $this->bf_files as $file_name ) {
-			$content .= $wp_filesystem->get_contents( $this->source . $file_name );
 
-			// If file is variables
-			if ( 'variables.scss' === $file_name ) {
-				$content .= "/** Overridden by settings from customizer */\n\n";
-				$content .= '$site_width:' . get_theme_mod( 'site_width', '1160px' ) . ";\n";
-				$content .= '$main_width:' . get_theme_mod( 'main_width', '70' ) . ";\n";
-				$content .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '20' ) . ";\n";
+		$content = get_transient( $this->prefix . 'sass_combined' );
+
+		if ( ! $content && ! WP_DEBUG ) {
+			$content = '';
+			foreach ( $this->bf_files as $file_name ) {
+				$content .= $wp_filesystem->get_contents( $this->source . $file_name );
 			}
+			delete_transient( $this->prefix . 'sass_combined' );
+			set_transient( $this->prefix . 'sass_combined', $content, 1800 );
 		}
+
+
+		$override = '';
+		$override .= "/** Overridden by settings from customizer */\n\n";
+		$override .= '$site_width:' . get_theme_mod( 'site_width', '1160px' ) . ";\n";
+		$override .= '$main_width:' . get_theme_mod( 'main_width', '70' ) . ";\n";
+		$override .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '20' ) . ";\n";
+
+		$content = str_replace( '/**variables**/', $override, $content );
+
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );
 		$scss = new scssc();
@@ -134,7 +158,7 @@ class Helium_Styles {
 			$content    = $this->generate_css();
 			$upload_dir = wp_upload_dir();
 			$file       = trailingslashit( $upload_dir['basedir'] ) . $theme_name = wp_get_theme()->stylesheet . '.css';
-			$temp       = $wp_filesystem->put_contents( $file, $content );
+			$wp_filesystem->put_contents( $file, $content );
 		} catch ( Exception $e ) {
 			echo 'Message: ' . $e->getMessage();
 		}
