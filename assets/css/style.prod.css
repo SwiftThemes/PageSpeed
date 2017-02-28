@@ -243,11 +243,11 @@ pre {
 input,
 textarea {
   width: 100%;
-  border: solid 1px rgba(228, 228, 235, 0.9);
-  background: rgba(242, 241, 246, 0.9);
+  border: solid 1px #e4e4eb;
+  background: #f2f1f6;
   box-sizing: border-box;
   font-size: 1.2em;
-  color: #137cbd;
+  color: #3d3d45;
   font-weight: lighter;
   font-family: monospace, serif;
   -webkit-border-radius: 3px;
@@ -263,7 +263,7 @@ input:active,
 textarea:active,
 input:focus,
 textarea:focus {
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
 }
 
 input[type=submit],
@@ -272,7 +272,7 @@ button {
   padding: 5px 20px;
   background: #007AFF;
   border: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   float: right;
   margin-left: 0;
   margin-right: 0;
@@ -410,11 +410,11 @@ body {
 }
 
 .layout-centered #sb1 {
-  background: rgba(242, 241, 246, 0.9) !important;
+  background: #f2f1f6 !important;
 }
 
 .layout-centered #sb2 {
-  background: rgba(236, 236, 241, 0.9) !important;
+  background: #ececf1 !important;
 }
 
 #site-footer-container {
@@ -429,7 +429,7 @@ body {
 /* delete later */
 
 body {
-  background: #0e5a8a;
+  background: #000;
 }
 
 #wrapper {
@@ -437,40 +437,40 @@ body {
 }
 
 #content {
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
 }
 
 #main {
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
 }
 
 #site-header-container {
-  border-bottom: solid 1px rgba(228, 228, 235, 0.9);
+  border-bottom: solid 1px #e4e4eb;
 }
 
 .layout-r-sb #sb1 > .inner {
-  border-left: solid 1px rgba(228, 228, 235, 0.9);
+  border-left: solid 1px #e4e4eb;
 }
 
 .layout-l-sb #sb1 > .inner {
-  border-right: solid 1px rgba(228, 228, 235, 0.9);
+  border-right: solid 1px #e4e4eb;
 }
 
 .layout-centered #sb1 > .inner {
-  border-right: solid 1px rgba(228, 228, 235, 0.9);
+  border-right: solid 1px #e4e4eb;
 }
 
 .layout-centered #sb2 > .inner {
-  border-left: solid 1px rgba(228, 228, 235, 0.9);
+  border-left: solid 1px #e4e4eb;
 }
 
 #site-footer-container {
-  background: #106ba3;
-  color: rgba(236, 236, 241, 0.9);
+  background: #14141a;
+  color: #ececf1;
 }
 
 #site-footer-container a {
-  color: rgba(242, 241, 246, 0.9);
+  color: #f2f1f6;
 }
 
 #site-footer-container a:hover {
@@ -479,12 +479,12 @@ body {
 
 body {
   font: 17px/1.625em "Open Sans", sans-serif;
-  color: #137cbd;
+  color: #3d3d45;
 }
 
 a {
   text-decoration: none;
-  color: #0e5a8a;
+  color: #000;
 }
 
 a:hover {
@@ -522,7 +522,7 @@ h1 {
 
 .site-description {
   margin: 0;
-  color: #2b95d6;
+  color: #404048;
   font-style: italic;
 }
 
@@ -552,7 +552,7 @@ h1 {
 
 .meta {
   font-size: .9em;
-  color: #137cbd;
+  color: #3d3d45;
 }
 
 .inner {
@@ -596,7 +596,7 @@ h1 {
 .button,
 .btn {
   text-align: center;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   background: #007AFF;
   padding: 5px 7px;
   -webkit-border-radius: 3px;
@@ -606,7 +606,7 @@ h1 {
 
 .button:hover,
 .btn:hover {
-  color: rgba(236, 236, 241, 0.9);
+  color: #ececf1;
 }
 
 /**
@@ -673,7 +673,7 @@ h1 {
 
 @media only screen and (min-width: 768px) {
   .nav-container {
-    border-bottom: solid 1px rgba(228, 228, 235, 0.9);
+    border-bottom: solid 1px #e4e4eb;
   }
 
   .nav {
@@ -697,14 +697,14 @@ h1 {
   }
 
   .nav a {
-    color: #0e5a8a;
+    color: #000;
     padding: .25em .5em;
     display: block;
   }
 
   .nav li:hover,
   .nav a:hover {
-    background: rgba(236, 236, 241, 0.9);
+    background: #ececf1;
     color: #007AFF;
   }
 
@@ -727,7 +727,7 @@ h1 {
     position: absolute;
     top: 2.125em;
     left: 0;
-    background: rgba(236, 236, 241, 0.9);
+    background: #ececf1;
   }
 
   .nav ul li:hover ul ul {
@@ -768,19 +768,19 @@ h1 {
 }
 
 #secondary-nav-container.nav-container .nav a {
-  color: rgba(236, 236, 241, 0.9);
+  color: #ececf1;
 }
 
 #secondary-nav-container.nav-container .nav a:hover {
-  color: rgba(228, 228, 235, 0.9);
-  background: #106ba3;
+  color: #e4e4eb;
+  background: #14141a;
 }
 
 @media only screen and (max-width: 768px) {
   #side-pane .menu li {
     list-style: none;
     display: block;
-    border-bottom: solid 1px rgba(236, 236, 241, 0.9);
+    border-bottom: solid 1px #ececf1;
   }
 
   #side-pane .menu li a {
@@ -816,11 +816,11 @@ article {
   font-family: "Open Sans", sans-serif;
   font-size: .8em;
   font-weight: 300;
-  color: rgba(242, 241, 246, 0.9);
+  color: #f2f1f6;
 }
 
 #copyright-container a {
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
 }
 
 #copyright-container .inner {
@@ -837,10 +837,10 @@ article {
 .entry-meta hr {
   border: 0 !important;
   height: 1px;
-  background-image: -webkit-linear-gradient(left, rgba(236, 236, 241, 0.9), rgba(207, 207, 216, 0.9), rgba(236, 236, 241, 0.9));
-  background-image: -moz-linear-gradient(left, rgba(236, 236, 241, 0.9), rgba(207, 207, 216, 0.9), rgba(236, 236, 241, 0.9));
-  background-image: -ms-linear-gradient(left, rgba(236, 236, 241, 0.9), rgba(207, 207, 216, 0.9), rgba(236, 236, 241, 0.9));
-  background-image: -o-linear-gradient(left, rgba(236, 236, 241, 0.9), rgba(207, 207, 216, 0.9), rgba(236, 236, 241, 0.9));
+  background-image: -webkit-linear-gradient(left, #ececf1, #cfcfd8, #ececf1);
+  background-image: -moz-linear-gradient(left, #ececf1, #cfcfd8, #ececf1);
+  background-image: -ms-linear-gradient(left, #ececf1, #cfcfd8, #ececf1);
+  background-image: -o-linear-gradient(left, #ececf1, #cfcfd8, #ececf1);
 }
 
 .entry-meta {
@@ -858,9 +858,9 @@ article {
 }
 
 .entry-footer {
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
   padding: 5px 0;
-  border: solid 1px rgba(242, 241, 246, 0.9);
+  border: solid 1px #f2f1f6;
   border-width: 1px 0;
   margin: 26px -40px;
 }
@@ -884,7 +884,7 @@ article {
   position: absolute;
   top: 16px;
   right: 10px;
-  border: solid 1px rgba(228, 228, 235, 0.9);
+  border: solid 1px #e4e4eb;
   padding: 0 10px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -892,14 +892,14 @@ article {
 }
 
 .comment-list .reply:hover {
-  background: rgba(228, 228, 235, 0.9);
+  background: #e4e4eb;
 }
 
 .comment-meta {
   font-family: "Open Sans", sans-serif;
-  border: solid 1px rgba(228, 228, 235, 0.9);
+  border: solid 1px #e4e4eb;
   border-radius: 3px;
-  background: rgba(242, 241, 246, 0.9);
+  background: #f2f1f6;
   padding: 5px 20px;
 }
 
@@ -921,7 +921,7 @@ article {
   height: 0;
   display: block;
   border-top: 10px solid transparent;
-  border-right: 10px solid rgba(228, 228, 235, 0.9);
+  border-right: 10px solid #e4e4eb;
   border-bottom: 10px solid transparent;
   position: absolute;
   left: -9px;
@@ -934,11 +934,11 @@ article {
 
 .bypostauthor .comment-meta {
   background: #007AFF;
-  color: rgba(236, 236, 241, 0.9);
+  color: #ececf1;
 }
 
 .bypostauthor .comment-meta a {
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
 }
 
 .bypostauthor .comment-meta:before {
@@ -946,7 +946,7 @@ article {
 }
 
 .comment-metadata a {
-  color: #137cbd;
+  color: #3d3d45;
   font-size: .8em;
 }
 
@@ -957,7 +957,7 @@ article {
 /* Comment form */
 
 #respond {
-  border-top: double 5px rgba(228, 228, 235, 0.9);
+  border-top: double 5px #e4e4eb;
 }
 
 #commentform label {
@@ -977,20 +977,20 @@ article {
 .comment-form-url input,
 .comment-form-comment textarea {
   width: 100%;
-  border: solid 1px rgba(228, 228, 235, 0.9);
+  border: solid 1px #e4e4eb;
   border-radius: 2px;
 }
 
 #commentform #submit {
   float: right;
   background: #007AFF;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   border: 0;
   border-radius: 3px;
 }
 
 #commentform #submit:hover {
-  text-shadow: 1px 1px 1px #106ba3;
+  text-shadow: 1px 1px 1px #14141a;
 }
 
 .rtl li.comment {
@@ -1012,7 +1012,7 @@ article {
 
 .rtl .comment-meta:before {
   border-right: 10px solid transparent;
-  border-left: 10px solid rgba(228, 228, 235, 0.9);
+  border-left: 10px solid #e4e4eb;
   left: auto;
   right: -18px;
 }
@@ -1029,7 +1029,7 @@ article {
 .widget .widget-search-form button {
   float: right;
   background: #007AFF;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   display: block;
   position: relative;
   left: -6px;
@@ -1069,7 +1069,7 @@ article {
 }
 
 .pagination .nav-links {
-  border: solid 1px rgba(228, 228, 235, 0.9);
+  border: solid 1px #e4e4eb;
   display: inline-block;
   border-radius: 5px;
   overflow: hidden;
@@ -1077,7 +1077,7 @@ article {
 
 .pagination .nav-links .current {
   background: #007AFF;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
 }
 
 .pagination .page-numbers span {
@@ -1090,7 +1090,7 @@ article {
 }
 
 .pagination .page-numbers {
-  border-right: solid 1px rgba(228, 228, 235, 0.9);
+  border-right: solid 1px #e4e4eb;
   padding: .1em .5em;
   float: left;
 }
@@ -1152,11 +1152,11 @@ article:nth-child(odd) .alternate {
   }
 
   #wrapper #sb1 {
-    background: rgba(242, 241, 246, 0.9);
+    background: #f2f1f6;
   }
 
   #wrapper #sb2 {
-    background: rgba(236, 236, 241, 0.9);
+    background: #ececf1;
   }
 
   #wrapper .widget {
@@ -1172,7 +1172,7 @@ article:nth-child(odd) .alternate {
 
 #menu {
   background: #007AFF;
-  color: rgba(255, 255, 255, 0.9);
+  color: white;
   border-radius: 3px;
   float: right;
   border: none;
@@ -1201,7 +1201,7 @@ article:nth-child(odd) .alternate {
   width: 75vw;
   position: fixed;
   right: 0;
-  background: rgba(228, 228, 235, 0.9);
+  background: #e4e4eb;
   top: 0;
   min-height: 100vh;
   overflow: scroll;
