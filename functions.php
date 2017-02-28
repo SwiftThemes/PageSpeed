@@ -13,7 +13,7 @@ define( 'FRAMEWORK', trailingslashit( get_template_directory() ) . 'framework/' 
 define( 'HYBRID_DIR', trailingslashit( FRAMEWORK ) . 'hybrid/' );
 define( 'HYBRID_URI', trailingslashit( THEME_URI . 'framework/hybrid' ) );
 
-define( 'HELIUM_DIR', trailingslashit( FRAMEWORK ) . 'helium/' );
+define( 'HELIUM_DIR', trailingslashit( FRAMEWORK . 'helium' ) );
 define( 'HELIUM_ADMIN', trailingslashit( HELIUM_DIR ) . 'admin/' );
 
 // Launch the Hybrid Core framework.
@@ -22,8 +22,8 @@ new Hybrid();
 
 // Launch the Helium framework.
 require_once( trailingslashit( HELIUM_DIR ) . 'helium.php' );
-new Helium();
-
+$he = new Helium();
+global $he;
 // Launch PageSpeed
 require_once( trailingslashit( get_template_directory() ) . 'inc/page-speed-class.php' );
 new PageSpeed();

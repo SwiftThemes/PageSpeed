@@ -117,7 +117,9 @@
             return
         }
         var bottomSpacing = $('#site-footer-container').outerHeight() + $('#copyright-container').outerHeight()
-        $("#sticky-sb1,#sticky-sb2").sticky({topSpacing: 10, bottomSpacing: bottomSpacing});
+        $("#sticky-sb1,#sticky-sb2").sticky({topSpacing: 10, bottomSpacing: bottomSpacing, responsiveWidth: true});
+
+
     }
 
 

@@ -17,6 +17,10 @@ if ( ! class_exists( 'Helium' ) ) {
 	 */
 	class Helium {
 
+		public $mobile_detect;
+
+		private $post_meta;
+
 		/**
 		 * Constructor method for the Helum class.  This method adds other methods of the
 		 * class to specific hooks within WordPress.  It controls the load order of the
@@ -29,13 +33,15 @@ if ( ! class_exists( 'Helium' ) ) {
 
 		public function __construct() {
 
-			add_action( 'after_setup_theme', array( $this, 'constants' ), - 90 );
+			add_action( 'after_setup_theme', array( $this, 'constants' ), - 95 );
 			add_action( 'after_setup_theme', array( $this, 'core' ), - 90 );
-
 			add_action( 'after_setup_theme', array( $this, 'add_theme_support' ), 11 );
 			add_action( 'after_setup_theme', array( $this, 'admin' ), 95 );
+			add_action( 'after_setup_theme', array( $this, 'load_mobile_detect' ), 95 );
+
 
 		}
+
 
 		/**
 		 * Defines the constant paths for use within the core framework, parent theme, and
@@ -52,6 +58,9 @@ if ( ! class_exists( 'Helium' ) ) {
 			define( 'THEME_INC', trailingslashit( THEME_DIR . 'inc' ) );
 			define( 'CUSTOMIZE', trailingslashit( THEME_INC . 'customize' ) );
 
+
+			define( 'HELIUM_VENDOR', trailingslashit( HELIUM_DIR . 'vendor' ) );
+			define( 'HELIUM_CUSTOMIZE', trailingslashit( HELIUM_DIR . 'customize' ) );
 			// Admin paths
 			define( 'ADMIN_IMAGES_URI', trailingslashit( THEME_URI . '/assets/images/customize' ) );
 
@@ -72,10 +81,13 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
 
-			require_once( HELIUM_DIR . 'customize/control-image-dimensions.php' );
-			require_once( HELIUM_DIR . 'customize/remove-default-panels.php' );
+			require_once( HELIUM_CUSTOMIZE . 'control-image-dimensions.php' );
+			require_once( HELIUM_CUSTOMIZE . 'control-responsive-content.php' );
+			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
 
 			require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
+
+
 		}
 
 
@@ -111,11 +123,22 @@ if ( ! class_exists( 'Helium' ) ) {
 		 * @return void
 		 */
 		public function admin() {
-
 			if ( is_admin() ) {
 				require_once( HELIUM_ADMIN . 'admin.php' );
 			}
 		}
+
+		public function load_mobile_detect() {
+			if ( ! class_exists( 'Mobile_Detect' ) ) {
+				require_once( HELIUM_VENDOR . 'Mobile_Detect.php' );
+			}
+			$this->mobile_detect = new Mobile_Detect();
+		}
+
+		public function is_mobile() {
+			return $this->mobile_detect->isMobile() && ! $this->mobile_detect->isTablet();
+		}
+
 	}
 
 }

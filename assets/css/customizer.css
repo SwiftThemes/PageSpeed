@@ -38,15 +38,54 @@
   left: 0;
   bottom: 0;
   margin: auto;
-  width:12px;
+  width: 12px;
   height: 12px;
   line-height: 10px;
   border: solid 1px #DDD;
   background: #FFF;
-  color:#CCC;
+  color: #CCC;
   text-align: center;
   border-radius: 50%;
 }
-.thumb-align{float: left;width:55%;margin-left: 5%}
 
-.thumb-align select{width:100%}
+.thumb-align {
+  float: left;
+  width: 55%;
+  margin-left: 5%
+}
+
+.thumb-align select {
+  width: 100%
+}
+
+/* Responsive control */
+.responsive-content .textarea {
+  position: relative;
+  margin: 10px 0 0;
+}
+
+.responsive-content .textarea:before {
+  font-family: dashicons;
+  color:#AAA;
+  padding:1px;
+  opacity: .8;
+  position: absolute;
+  border: solid 1px #CCC;
+  right: 0;
+  top: 0;
+
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.responsive-content .desktop:before{
+  content:'\f472 \f471'
+}
+.responsive-content .mobile:before{
+  content:'\f470'
+}
+.responsive-content textarea {
+  width: 100% !important;
+  height: 100px
+}

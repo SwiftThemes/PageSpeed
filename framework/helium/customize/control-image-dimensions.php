@@ -1,8 +1,8 @@
 <?php
 /**
- * The image size customize control extends the WP_Customize_Control class.  This class allows
- * developers to store image dimensions in an array rather than two sperate fields.
+ * The image size customize control extends the WP_Customize_Control class.
  *
+ * This class allows you to show all thumbnail related settings in a single line.
  *
  * @package    Helium
  * @subpackage Customize

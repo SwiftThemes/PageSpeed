@@ -6,28 +6,28 @@ $teritiary: blue;
 // These are the dark gray colors we use
 // darkness decreases as the number increases
 
-$dark-1: #000 !default;
-$dark-2: #182026 !default;
-$dark-3: #202b33 !default;
-$dark-4: #293742 !default;
-$dark-5: #30404d !default;
-$dark-6: #394b59 !default;
-$dark-7: #5c7080 !default;
-$dark-8: #738694 !default;
-$dark-9: #8a9ba8 !default;
+$dark-1: #000;
+$dark-2: #182026;
+$dark-3: #202b33;
+$dark-4: #293742;
+$dark-5: #30404d;
+$dark-6: #394b59;
+$dark-7: #5c7080;
+$dark-8: #738694;
+$dark-9: #8a9ba8;
 
 // These are the light grays we use
 // Whiteness decreases as the number increases
 
-$light-9: #8a9ba8 !default;
-$light-8: #a7b6c2 !default;
-$light-7: #bfccd6 !default;
-$light-6: #ced9e0 !default;
-$light-5: #d8e1e8 !default;
-$light-4: #e1e8ed !default;
-$light-3: #ebf1f5 !default;
-$light-2: #f5f8fa !default;
-$light-1: #ffffff !default;
+$light-9: #8a9ba8;
+$light-8: #a7b6c2;
+$light-7: #bfccd6;
+$light-6: #ced9e0;
+$light-5: #d8e1e8;
+$light-4: #e1e8ed;
+$light-3: #ebf1f5;
+$light-2: #f5f8fa;
+$light-1: #ffffff;
 
 $black: #000;
 $dark-1: $black;
@@ -43,7 +43,35 @@ $light-2: #F2F1F6;
 $light-3: #ECECF1;
 $light-4: #e4e4eb;
 $light-5: #CFCFD8;
-$light-6: #c1c1cb;
+$light-6: #d1d1de;
+
+
+$alpha :.9;
+
+
+$black: #000;
+$dark-1: $black;
+$dark-2: rgba(#14141A,$alpha);
+$dark-3: rgba(#3D3D45,$alpha);
+$dark-4: rgba(#404048,$alpha);
+$dark-5: rgba(#63636A,$alpha);
+$dark-6: rgba(#84848C,$alpha);
+
+$light-1: rgba($white,$alpha);
+$light-2: rgba(#F2F1F6, $alpha);
+$light-3: rgba(#ECECF1, $alpha);
+$light-4: rgba(#e4e4eb, $alpha);
+$light-5: rgba(#CFCFD8, $alpha);
+$light-6: rgba(#c1c1cb, $alpha);
+
+
+
+
+$dark-1: #0e5a8a;
+$dark-2: #106ba3;
+$dark-3: #137cbd;
+$dark-4: #2b95d6;
+$dark-5: #48aff0;
 
 
 // Don't remove the below line.

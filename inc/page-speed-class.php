@@ -50,6 +50,7 @@ class PageSpeed {
 		require_once( THEME_CUSTOMIZE . 'archives.php' );
 		require_once( THEME_CUSTOMIZE . 'footer.php' );
 		require_once( THEME_CUSTOMIZE . 'post.php' );
+//		require_once( THEME_CUSTOMIZE . 'custom-content.php' );
 	}
 
 
