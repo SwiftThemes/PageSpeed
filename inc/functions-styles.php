@@ -22,7 +22,11 @@ function helium_register_styles() {
 }
 
 function helium_enqueue_styles() {
-//	wp_enqueue_style( 'page-speed' );
-	wp_enqueue_style( 'page-speed' );
+	if ( DEV_ENV ) {
+		wp_enqueue_style( 'page-speed' );
+	} else {
+		wp_enqueue_style( 'page-speed-2' );
+
+	}
 }
 

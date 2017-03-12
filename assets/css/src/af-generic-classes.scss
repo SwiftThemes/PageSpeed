@@ -45,7 +45,11 @@
 .btn:hover{
   color: $light-3;
 }
-
+.btn.small,
+.button.small{
+  padding: 3px 4px;
+  font-size:.75em
+}
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the

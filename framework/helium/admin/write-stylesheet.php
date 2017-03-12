@@ -12,7 +12,9 @@ $theme_name = wp_get_theme()->stylesheet;
 
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
-add_action( 'admin_head', 'helium_write_stylesheet', 20 );
+if ( DEV_ENV ) {
+	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
+}
 add_action( 'switch_theme', 'helium_write_stylesheet' );
 
 function helium_write_stylesheet() {
@@ -66,10 +68,10 @@ class Helium_Styles {
 		$args = array(
 			'hostname' => 'localhost',
 			'username' => 'satish',
-			'password' => '',
+			'password' => 'avasarama',
 		);
 
-		WP_Filesystem(  );
+		WP_Filesystem( $args );
 		$this->prefix = wp_get_theme()->stylesheet . '_';
 		$this->main   = trailingslashit( $src ) . $main;
 		$this->source = trailingslashit( $src );
@@ -78,7 +80,10 @@ class Helium_Styles {
 
 	private function set_file_list() {
 
-		$files = get_transient( $this->prefix . 'sass_file_list' );
+		if ( ! DEV_ENV ) {
+			$files = get_transient( $this->prefix . 'sass_file_list' );
+		}
+
 		if ( $files && $files['below_fold'] && ! WP_DEBUG ) {
 			$this->af_files = $files['above_fold'];
 			$this->bf_files = $files['below_fold'];
@@ -124,9 +129,11 @@ class Helium_Styles {
 	public function generate_css() {
 		global $wp_filesystem;
 
-		$content = get_transient( $this->prefix . 'sass_combined' );
+		if ( ! DEV_ENV ) {
 
-		if ( ! $content && ! WP_DEBUG ) {
+			$content = get_transient( $this->prefix . 'sass_combined' );
+		}
+		if ( ! $content  ) {
 			$content = '';
 			foreach ( $this->bf_files as $file_name ) {
 				$content .= $wp_filesystem->get_contents( $this->source . $file_name );
@@ -144,11 +151,13 @@ class Helium_Styles {
 
 		$content = str_replace( '/**variables**/', $override, $content );
 
+		//echo($content);
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
 
+//		echo $scss->compile( $content );
 		return $scss->compile( $content );
 	}
 

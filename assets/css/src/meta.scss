@@ -1,5 +1,6 @@
 .separator,
-.entry-meta hr {
+.entry-meta hr,
+hr{
   border: 0 !important;
   height: 1px;
   background-image: -webkit-linear-gradient(left, $light-3, $light-5, $light-3);

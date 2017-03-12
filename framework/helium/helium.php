@@ -68,6 +68,12 @@ if ( ! class_exists( 'Helium' ) ) {
 			define( 'THEME_ASSETS_URI', trailingslashit( THEME_URI . 'assets' ) );
 			define( 'THEME_CSS_URI', trailingslashit( THEME_ASSETS_URI . 'css' ) );
 			define( 'THEME_JS_URI', trailingslashit( THEME_ASSETS_URI . 'js' ) );
+
+			define( 'CHILD_THEME_DIR', trailingslashit( get_stylesheet_directory() ) );
+			define( 'CHILD_THEME_ADMIN', trailingslashit( CHILD_THEME_DIR . 'admin' ) );
+			define( 'CHILD_THEME_INC', trailingslashit( CHILD_THEME_DIR . 'inc' ) );
+			define( 'CHILD_THEME_ASSETS', trailingslashit( CHILD_THEME_DIR . 'assets' ) );
+
 			define( 'CHILD_THEME_URI', trailingslashit( get_stylesheet_directory_uri() ) );
 		}
 
