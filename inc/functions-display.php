@@ -9,6 +9,7 @@
 
 add_action( 'ngbr_after_body', 'ngbr_above_header', 8 );
 add_action( 'ngbr_after_header', 'ngbr_below_header', 12 );
+add_action( 'ngbr_primary_nav_start', 'ngbr_sticky_logo', 12 );
 
 if ( ! function_exists( 'ngbr_above_header' ) ) {
 	function ngbr_above_header() {
@@ -68,11 +69,18 @@ if ( ! function_exists( 'ngbr_below_header' ) ) {
 		);
 
 
+		if ( 1 || get_theme_mod( 'is_sticky_nav' ) ) {
+			$container_class = ' stick-it';
+		} else {
+			$container_class = '';
+		}
+
 		if ( has_nav_menu( 'primary' ) ) :
 			?>
-			<div id="primary-nav-container" class="nav-container cf">
+			<div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
 				<div id="primary" class="">
 					<div class="hybrid inner">
+						<?php do_action( 'ngbr_primary_nav_start' ); ?>
 						<?php wp_nav_menu( $args ); ?>
 					</div>
 				</div>
@@ -80,4 +88,21 @@ if ( ! function_exists( 'ngbr_below_header' ) ) {
 			<?php
 		endif;
 	}
+}
+
+function ngbr_sticky_logo() {
+	if ( ! get_option( 'site_icon' ) ) {
+		return;
+	}
+	?>
+	<?php echo sprintf( '<a href="%1$s" class="sticky-show sticky-logo" rel="home" itemprop="url">%2$s</a>',
+		esc_url( home_url( '/' ) ),
+		wp_get_attachment_image( get_option( 'site_icon' ), array( 32, 32 ), false, array(
+			'class'    => 'sticky-icon',
+			'itemprop' => 'logo',
+		) )
+	);
+	?>
+
+	<?php
 }

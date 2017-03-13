@@ -9,12 +9,14 @@
 
 //Tablets
 @media only screen and (max-width: 768px) {
+  .hybrid{width:100%}
   #wrapper {
     #sb1,
     #sb2,
     #left,
     #main,
-    .hybrid{
+    .hybrid,
+    #site-footer-container .fc{
       width: 100%;
       box-sizing: border-box;
     }

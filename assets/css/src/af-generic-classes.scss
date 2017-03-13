@@ -27,8 +27,24 @@
   display: block;
   margin: auto;
 }
+/* Show only when sticky
+Breaks when we have nested stickies, but we don't have them
+*/
+.sticky-show{
+  display: none;
+}
+.is-sticky .sticky-show{
+  display: inline-block;
+}
 
+.is-sticky #site-header-container,
 
+.is-sticky #primary-nav-container{
+  -webkit-box-shadow: 0px 1px 22px -10px rgba($dark-1,0.75);
+  -moz-box-shadow:0px 1px 22px -10px rgba($dark-1,0.75);
+  box-shadow: 0px 1px 22px -10px rgba($dark-1,0.75);
+}
+/* end */
 .circle,.round{
   @include border-radius(50%)
 }

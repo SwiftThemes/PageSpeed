@@ -40,7 +40,7 @@ function nybr_customize_archives( $wp_customize ) {
 
 	// Show excerpts or full post
 	$wp_customize->add_setting( 'archives_show_excerpts', array(
-		'default' => true,
+		'default' => 0,
 	) );
 
 	$wp_customize->add_control( 'archives_show_excerpts', array(
@@ -52,7 +52,7 @@ function nybr_customize_archives( $wp_customize ) {
 
 	// Show thumbnail
 	$wp_customize->add_setting( 'archives_show_thumbnails', array(
-		'default' => true,
+		'default' => 0,
 	) );
 
 	$wp_customize->add_control( 'archives_show_thumbnails', array(

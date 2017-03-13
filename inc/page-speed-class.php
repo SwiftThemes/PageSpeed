@@ -43,6 +43,7 @@ class PageSpeed {
 		require_once( THEME_INC . 'functions-register-nav-menus.php' );
 		require_once( THEME_INC . 'functions-hooking-to-wp-hooks.php' );
 		require_once( THEME_INC . 'functions-display.php' );
+		require_once( THEME_INC . 'functions-header.php' );
 
 
 		require_once( THEME_CUSTOMIZE . 'customizer.php' );

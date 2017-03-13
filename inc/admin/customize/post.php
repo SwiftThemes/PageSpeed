@@ -40,7 +40,7 @@ function nybr_customize_post( $wp_customize ) {
 
 	// Show thumbnail
 	$wp_customize->add_setting( 'single_post_show_thumbnails', array(
-		'default' => true,
+		'default' => 1,
 	) );
 
 	$wp_customize->add_control( 'single_post_show_thumbnails', array(

@@ -40,14 +40,16 @@ function nybr_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'mobile_logo', array(
 		'default' => '',
 	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control(
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
 		$wp_customize,
 		'mobile_logo',
 		array(
-			'label'    => __( 'Logo for mobiles', 'nybr' ),
-			'section'  => 'title_tagline',
-			'settings' => 'mobile_logo',
-			'priority' => 32,
+			'label'       => __( 'Logo for mobiles', 'nybr' ),
+			'section'     => 'title_tagline',
+			'settings'    => 'mobile_logo',
+			'priority'    => 32,
+			'height'      => 32,
+			'flex_width'  => true,
 		)
 	) );
 

@@ -1,5 +1,6 @@
 #site-header-container {
-  padding: $padding/2 0
+  padding: $padding/2 0;
+  background: rgba($light-1, .95);
 }
 
 .site-title {
@@ -35,9 +36,38 @@
     float: right;
   }
 }
+.custom-logo-mobile,
+.custom-logo{float: left}
+.sticky-logo {float: left;}
+.sticky-logo img{max-height: 32px;
+
+  position: absolute;
+  top:0;
+  bottom:0;
+  margin: auto;
+  left: $padding;
+}
+.rtl{
+  .sticky-logo{float: right}
+}
 
 /* delete */
 #site-branding img{
-  height: 72px;
+  max-height: 72px;
   width: auto;
+}
+
+
+
+
+.is-sticky {
+  #site-header-container{
+    padding: $padding/4 0;
+  }
+  .site-title{
+    font-size: 1.8em;
+  }
+  .site-description{
+    display: none;
+  }
 }

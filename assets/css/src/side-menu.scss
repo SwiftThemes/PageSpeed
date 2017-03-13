@@ -1,4 +1,4 @@
-#menu {
+#menu_ {
   background: $primary;
   color: $light-1;
   border-radius: 3px;
@@ -18,10 +18,42 @@
   //@include vertical-align();
 
 }
-#side-pane{display: none}
+#menu {
+  color: $light-1;
+  float: right;
+  border: none;
+  display: none;
+
+  position: absolute;
+  top:0;
+  bottom:0;
+  right: -30px;
+  height: 32px;
+  margin: auto;
+
+  //@include vertical-align();
+
+}
+
+#menu svg{
+  fill:$primary;
+}
+
+body,
+#side-pane{
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+body{left: 0}
+#side-pane{width: 0;}
 .menu-open {
   position: relative;
   left: -75vw;
+
 
   #side-pane {
     display: block;
