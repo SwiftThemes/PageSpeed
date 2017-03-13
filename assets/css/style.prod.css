@@ -1222,6 +1222,7 @@ article:nth-child(odd) .alternate {
   #wrapper #site-footer-container .fc {
     width: 100%;
     box-sizing: border-box;
+    float: none;
   }
 
   #wrapper #sb1 {

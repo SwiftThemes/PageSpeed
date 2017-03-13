@@ -4,7 +4,7 @@
 			<?php
 			for ( $i = 1; $i <= 4; $i ++ ):
 				?>
-			<div class="fc-<?php echo $i ?> fc alignleft">
+			<div class="fc-<?php echo $i ?> fc">
 				<div class="inner">
 				<?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( "footer-$i" ) ) ?>
 				</div>
