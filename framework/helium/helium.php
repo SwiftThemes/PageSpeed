@@ -75,6 +75,8 @@ if ( ! class_exists( 'Helium' ) ) {
 			define( 'CHILD_THEME_ASSETS', trailingslashit( CHILD_THEME_DIR . 'assets' ) );
 
 			define( 'CHILD_THEME_URI', trailingslashit( get_stylesheet_directory_uri() ) );
+
+			define('HELIUM_ADMIN_ASSETS_URI',trailingslashit(THEME_URI.'framework/helium/admin/assets/') );
 		}
 
 		/**
@@ -86,6 +88,7 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
 			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
+			require_once( HELIUM_DIR . 'body-css-classes.php' );
 
 			require_once( HELIUM_CUSTOMIZE . 'control-image-dimensions.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-responsive-content.php' );

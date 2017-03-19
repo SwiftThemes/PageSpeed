@@ -48,6 +48,8 @@ else :
 
 endif;
 ?>
+<?php do_action( 'ngbr_main_end' ); ?>
+
 </div><!-- main inner-->
 </main>
 </div><!-- #content -->

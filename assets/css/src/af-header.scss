@@ -5,69 +5,90 @@
 
 .site-title {
   font-size: 2.75em;
-  margin: 0 ;
+  margin: 0;
   line-height: 1.2em;
 }
 
 .site-description {
   margin: 0;
-  color:$dark-4;
+  color: $dark-4;
   font-style: italic;
 }
 
 .logo-left {
-  #site-branding {
+  #site-header {
     float: left;
+  }
+  .ps-header-ad {
+    float: right;
   }
 }
 
 .logo-center {
-  #site-branding {
+  #site-header {
     text-align: center;
   }
   #logo {
     display: block;
     margin: auto
   }
-}
 
-.logo-right {
-  #site-branding {
+  .ps-header-ad {
     float: right;
   }
 }
+
+.logo-right {
+  #site-header {
+    float: right;
+  }
+
+  .ps-header-ad {
+    float: left;
+  }
+}
+
 .custom-logo-mobile,
-.custom-logo{float: left}
-.sticky-logo {float: left;}
-.sticky-logo img{max-height: 32px;
+.custom-logo {
+  float: left
+}
+
+.sticky-logo {
+  float: left;
+}
+
+.sticky-logo img {
+  max-height: 32px;
 
   position: absolute;
-  top:0;
-  bottom:0;
+  top: 0;
+  bottom: 0;
   margin: auto;
   left: $padding;
 }
-.rtl{
-  .sticky-logo{float: right}
+
+.rtl {
+  .sticky-logo {
+    float: right
+  }
 }
 
-/* delete */
-#site-branding img{
-  max-height: 72px;
-  width: auto;
-}
-
-
-
-
+// Remove description when sticky
 .is-sticky {
-  #site-header-container{
+  #site-header-container {
     padding: $padding/4 0;
   }
-  .site-title{
+  .site-title {
     font-size: 1.8em;
   }
-  .site-description{
+  .site-description {
     display: none;
   }
+}
+
+#below-header-ad-container,
+#above-footer-ad-container {
+  background: $light-1;
+  border-bottom: solid 1px $light-4;
+  padding: .1*$padding 0;
 }

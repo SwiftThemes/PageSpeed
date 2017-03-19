@@ -41,5 +41,17 @@
 			endif;
 		endif;
 		?>
+
+		<div class="clear"></div>
+
+		<?php
+		if ( is_active_sidebar( 'left-bottom-home' ) ) :
+			?>
+			<div id="normal-sb" class="sb">
+				<?php dynamic_sidebar( 'left-bottom-home' ); ?>
+			</div>
+			<?php
+		endif;
+		?>
 	</div>
 </aside>

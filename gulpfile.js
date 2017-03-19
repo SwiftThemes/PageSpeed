@@ -48,6 +48,7 @@ build = './buildtheme/', // Files that you want to package into a zip go here
         '**/*.php',
         '**/*.html',
         '**/*.css',
+        '**/*.scss',
         '**/*.js',
         '**/*.svg',
         '**/*.ttf',
@@ -283,10 +284,11 @@ gulp.task('buildZip', function () {
     return gulp.src(build + '/**/')
         .pipe(zip(project + '.zip'))
         .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('/Users/satish/Dropbox/Public/'))
         .pipe(notify({message: 'Zip task complete', onLast: true}));
 });
 
-
+//require('./gulp-bump.js')
 // ==== TASKS ==== //
 /**
  * Gulp Default Task

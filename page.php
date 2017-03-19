@@ -55,8 +55,6 @@ else :
 
 endif;
 ?>
-</div><!-- main inner-->
-</main>
 <?php get_sidebar('single'); ?>
 
 </div><!-- #content -->

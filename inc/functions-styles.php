@@ -22,8 +22,9 @@ function helium_register_styles() {
 }
 
 function helium_enqueue_styles() {
-	if ( DEV_ENV ) {
-		wp_enqueue_style( 'page-speed-2' );
+
+	if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
+		wp_enqueue_style( 'page-speed' );
 	} else {
 		wp_enqueue_style( 'page-speed-2' );
 

@@ -229,6 +229,21 @@ p {
 ul,
 ol {
   padding: 0;
+  list-style: none;
+}
+
+ul li {
+  list-style: disc;
+  margin-left: 1.25em;
+}
+
+ul li li {
+  list-style: circle;
+}
+
+ol li {
+  list-style: decimal;
+  margin-left: 1.25em;
 }
 
 code,
@@ -270,7 +285,7 @@ input[type=submit],
 button {
   width: auto;
   padding: 5px 20px;
-  background: #e30707;
+  background: #007AFF;
   border: none;
   color: white;
   float: right;
@@ -400,12 +415,10 @@ body {
 }
 
 #ns1 {
-  background: rgba(0, 255, 255, 0.5);
   margin: -20px 0 -20px -20px;
 }
 
 #ns2 {
-  background: rgba(255, 255, 0, 0.5);
   margin: -20px -20px -20px 0;
 }
 
@@ -474,7 +487,7 @@ body {
 }
 
 #site-footer-container a:hover {
-  color: #e30707;
+  color: #007AFF;
 }
 
 body {
@@ -489,7 +502,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #e30707;
+  color: #007AFF;
 }
 
 h1,
@@ -527,11 +540,15 @@ h1 {
   font-style: italic;
 }
 
-.logo-left #site-branding {
+.logo-left #site-header {
   float: left;
 }
 
-.logo-center #site-branding {
+.logo-left .ps-header-ad {
+  float: right;
+}
+
+.logo-center #site-header {
   text-align: center;
 }
 
@@ -540,8 +557,16 @@ h1 {
   margin: auto;
 }
 
-.logo-right #site-branding {
+.logo-center .ps-header-ad {
   float: right;
+}
+
+.logo-right #site-header {
+  float: right;
+}
+
+.logo-right .ps-header-ad {
+  float: left;
 }
 
 .custom-logo-mobile,
@@ -566,13 +591,6 @@ h1 {
   float: right;
 }
 
-/* delete */
-
-#site-branding img {
-  max-height: 72px;
-  width: auto;
-}
-
 .is-sticky #site-header-container {
   padding: 10px 0;
 }
@@ -583,6 +601,13 @@ h1 {
 
 .is-sticky .site-description {
   display: none;
+}
+
+#below-header-ad-container,
+#above-footer-ad-container {
+  background: white;
+  border-bottom: solid 1px #e4e4eb;
+  padding: 4px 0;
 }
 
 .meta {
@@ -653,7 +678,7 @@ Breaks when we have nested stickies, but we don't have them
 .btn {
   text-align: center;
   color: white;
-  background: #e30707;
+  background: #007AFF;
   padding: 5px 7px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -767,7 +792,7 @@ Breaks when we have nested stickies, but we don't have them
   .nav li:hover,
   .nav a:hover {
     background: #ececf1;
-    color: #e30707;
+    color: #007AFF;
   }
 
   .nav ul li li {
@@ -1000,7 +1025,7 @@ hr {
 }
 
 .bypostauthor .comment-meta {
-  background: #e30707;
+  background: #007AFF;
   color: #ececf1;
 }
 
@@ -1009,7 +1034,7 @@ hr {
 }
 
 .bypostauthor .comment-meta:before {
-  border-right-color: #e30707;
+  border-right-color: #007AFF;
 }
 
 .comment-metadata a {
@@ -1050,7 +1075,7 @@ hr {
 
 #commentform #submit {
   float: right;
-  background: #e30707;
+  background: #007AFF;
   color: white;
   border: 0;
   border-radius: 3px;
@@ -1096,7 +1121,7 @@ hr {
 
 .widget .widget-search-form button {
   float: right;
-  background: #e30707;
+  background: #007AFF;
   color: white;
   display: block;
   position: relative;
@@ -1144,7 +1169,7 @@ hr {
 }
 
 .pagination .nav-links .current {
-  background: #e30707;
+  background: #007AFF;
   color: white;
 }
 
@@ -1209,7 +1234,7 @@ article:nth-child(odd) .alternate {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .hybrid {
     width: 100%;
   }
@@ -1238,27 +1263,14 @@ article:nth-child(odd) .alternate {
     margin: auto;
   }
 
+  #wrapper #site-header {
+    float: none;
+  }
+
   #copyright-container .hybrid {
     width: 100%;
     box-sizing: border-box;
   }
-}
-
-#menu_ {
-  background: #e30707;
-  color: white;
-  border-radius: 3px;
-  float: right;
-  border: none;
-  display: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -20px;
-  height: 32px;
-  margin: auto;
-  padding: 5px 8px;
-  line-height: 16px;
 }
 
 #menu {
@@ -1269,13 +1281,13 @@ article:nth-child(odd) .alternate {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -30px;
+  right: 10px;
   height: 32px;
   margin: auto;
 }
 
 #menu svg {
-  fill: #e30707;
+  fill: #007AFF;
 }
 
 body,
@@ -1293,6 +1305,7 @@ body {
 
 #side-pane {
   width: 0;
+  display: none;
 }
 
 .menu-open {
@@ -1320,6 +1333,6 @@ body {
   overflow: auto;
 }
 
-#site-header {
+#site-header-container {
   position: relative;
 }

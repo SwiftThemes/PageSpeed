@@ -43,8 +43,6 @@ else :
 	get_template_part( 'template-parts/content', 'none' );
 endif;
 ?>
-</div><!-- main inner-->
-</main>
 <?php get_sidebar( 'home' ); ?>
 
 </div><!-- #content -->

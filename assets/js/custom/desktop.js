@@ -17,6 +17,12 @@
         setSidebarHeights()
     })
 
+    $( window ).resize(function() {
+        menuHandler();
+        removeStickiesOnMobile();
+        unsetSidebarHeights();
+    });
+
 
     /**
      * Check if the current device is desktop or mobile.
@@ -31,7 +37,7 @@
     }
 
     function isMobile() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 800) {
             return true
         } else {
             return false
@@ -49,6 +55,17 @@
 
             if (!document.getElementById('sticky-sb') && !document.getElementById('normal-sb')) {
                 $('#ns1 >.inner,#ns2 >.inner').height(height)
+            }
+        }
+    }
+
+    function unsetSidebarHeights() {
+        if (isMobile()) {
+            var height = document.getElementById('content').offsetHeight
+            $('#sb1 >.inner,#sb2 >.inner').height('')
+
+            if (!document.getElementById('sticky-sb') && !document.getElementById('normal-sb')) {
+                $('#ns1 >.inner,#ns2 >.inner').height('')
             }
         }
     }
@@ -135,6 +152,12 @@
         if (isMobile()) {
             $("#site-header-container").unstick();
             $("#site-header-container").sticky({responsiveWidth: true,zIndex:9});
+        }
+    }
+
+    function removeStickiesOnMobile(){
+        if (isMobile()) {
+            $("#sticky-sb1,#sticky-sb2,#primary-nav-container.stick-it").unstick();
         }
     }
 

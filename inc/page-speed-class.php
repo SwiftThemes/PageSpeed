@@ -44,6 +44,7 @@ class PageSpeed {
 		require_once( THEME_INC . 'functions-hooking-to-wp-hooks.php' );
 		require_once( THEME_INC . 'functions-display.php' );
 		require_once( THEME_INC . 'functions-header.php' );
+		require_once( THEME_INC . 'functions-eaa-filters.php' );
 
 
 		require_once( THEME_CUSTOMIZE . 'customizer.php' );
@@ -52,6 +53,10 @@ class PageSpeed {
 		require_once( THEME_CUSTOMIZE . 'footer.php' );
 		require_once( THEME_CUSTOMIZE . 'post.php' );
 //		require_once( THEME_CUSTOMIZE . 'custom-content.php' );
+
+
+		add_theme_support( 'breadcrumb-trail' );
+
 	}
 
 

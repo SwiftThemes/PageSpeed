@@ -12,9 +12,9 @@ $theme_name = wp_get_theme()->stylesheet;
 
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
-if ( DEV_ENV ) {
-	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
-}
+//if ( defined( DEV_ENV ) && DEV_ENV ) {
+//	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
+//}
 add_action( 'switch_theme', 'helium_write_stylesheet' );
 
 function helium_write_stylesheet() {
@@ -80,7 +80,7 @@ class Helium_Styles {
 
 	private function set_file_list() {
 
-		if ( ! DEV_ENV ) {
+		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
 			$files = get_transient( $this->prefix . 'sass_file_list' );
 		}
 
@@ -129,11 +129,11 @@ class Helium_Styles {
 	public function generate_css() {
 		global $wp_filesystem;
 
-		if ( ! DEV_ENV ) {
+		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
 
 			$content = get_transient( $this->prefix . 'sass_combined' );
 		}
-		if ( ! $content  ) {
+		if ( ! $content ) {
 			$content = '';
 			foreach ( $this->bf_files as $file_name ) {
 				$content .= $wp_filesystem->get_contents( $this->source . $file_name );

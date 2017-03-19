@@ -1,3 +1,8 @@
+
+<?php do_action( 'ngbr_main_end' ); ?>
+
+</div><!-- main inner-->
+</main>
 <?php get_sidebar( 'one-single' ); ?>
 </div><!--#left -->
 

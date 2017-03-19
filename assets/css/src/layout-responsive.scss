@@ -8,7 +8,7 @@
 }
 
 //Tablets
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .hybrid{width:100%}
   #wrapper {
     #sb1,
@@ -31,6 +31,8 @@
       width: 300px;
       margin: auto
     }
+
+    #site-header{float: none}
   }
 
   #copyright-container{

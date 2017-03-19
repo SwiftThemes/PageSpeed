@@ -1,9 +1,6 @@
 <?php
 
 function nybr_sidebar_defaults( $args ) {
-
-	print_r( $args );
-	boooooooo();
 	$args['before_title'] = '<div class="widget-title heading">';
 	$args['after_title']  = '</div>';
 
@@ -144,7 +141,7 @@ function nybr_register_sidebars() {
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'left-bottom-home',
-				'name'         => esc_html_x( 'Sidebar #Home', 'sidebar', 'nybr' ),
+				'name'         => esc_html_x( 'Below Narrow Sidebars #Home', 'sidebar', 'nybr' ),
 				'description'  => esc_html__( 'Add sidebar description.', 'nybr' ),
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
@@ -191,7 +188,7 @@ function nybr_register_sidebars() {
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'left-bottom-single',
-				'name'         => esc_html_x( 'Sidebar  #Single', 'sidebar', 'nybr' ),
+				'name'         => esc_html_x( 'Below Narrow Sidebars  #Single', 'sidebar', 'nybr' ),
 				'description'  => esc_html__( 'Add sidebar description.', 'nybr' ),
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
