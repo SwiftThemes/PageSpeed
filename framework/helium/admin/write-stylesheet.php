@@ -12,9 +12,9 @@ $theme_name = wp_get_theme()->stylesheet;
 
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
-//if ( defined( DEV_ENV ) && DEV_ENV ) {
-//	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
-//}
+if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
+	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
+}
 add_action( 'switch_theme', 'helium_write_stylesheet' );
 
 function helium_write_stylesheet() {
@@ -63,15 +63,7 @@ class Helium_Styles {
 	 */
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
-
-//      You can pass args liek this to WP_Filesystem
-		$args = array(
-			'hostname' => 'localhost',
-			'username' => 'satish',
-			'password' => 'avasarama',
-		);
-
-		WP_Filesystem( $args );
+		WP_Filesystem();
 		$this->prefix = wp_get_theme()->stylesheet . '_';
 		$this->main   = trailingslashit( $src ) . $main;
 		$this->source = trailingslashit( $src );
@@ -79,12 +71,12 @@ class Helium_Styles {
 	}
 
 	private function set_file_list() {
-
+		$files = [ ];
 		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
 			$files = get_transient( $this->prefix . 'sass_file_list' );
 		}
 
-		if ( $files && $files['below_fold'] && ! WP_DEBUG ) {
+		if ( $files && $files['below_fold'] ) {
 			$this->af_files = $files['above_fold'];
 			$this->bf_files = $files['below_fold'];
 		} else {
@@ -94,14 +86,33 @@ class Helium_Styles {
 			foreach ( $files as $file ) {
 				if ( preg_match( '/".+"/', $file, $matches ) ) {
 
-					$file = str_replace( '"', '', $matches[0] );
-					if ( 0 && $this->is_above_fold( $file ) ) {
-						array_push( $this->af_files, $file . '.scss' );
-					} elseif ( 'main' !== $file ) {
-						array_push( $this->bf_files, $file . '.scss' );
+					$file_name = $file = str_replace( '"', '', $matches[0] );
+
+
+					$file = THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
+
+					if ( in_array( $file_name, $this->scss_variable_files ) ) {
+						if ( $wp_filesystem->is_file( CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss' ) ) {
+							$file = CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
+						}
 					}
-					if ( in_array( $file, $this->scss_variable_files ) ) {
-						array_push( $this->af_files, $file . '.scss' );
+
+					if ( 0 && $this->is_above_fold( $file ) ) {
+						array_push( $this->af_files, $file );
+					} elseif ( 'main' !== $file ) {
+						array_push( $this->bf_files, $file );
+					}
+					if ( in_array( $file_name, $this->scss_variable_files ) ) {
+						array_push( $this->af_files, $file );
+
+						// Check if there is a file to override the variables.
+						// If yes, add them after our regular varible files.
+						$override_file = CHILD_THEME_DIR . 'assets/css/src/override-' . $file_name . '.scss';
+
+						if ( $wp_filesystem->is_file( $override_file ) ) {
+							array_push( $this->af_files, $override_file );
+							array_push( $this->bf_files, $override_file );
+						}
 					}
 				}
 			}
@@ -114,8 +125,6 @@ class Helium_Styles {
 
 
 		}
-
-
 	}
 
 	private function is_above_fold( $file ) {
@@ -129,6 +138,7 @@ class Helium_Styles {
 	public function generate_css() {
 		global $wp_filesystem;
 
+		$content = '';
 		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
 
 			$content = get_transient( $this->prefix . 'sass_combined' );
@@ -136,7 +146,7 @@ class Helium_Styles {
 		if ( ! $content ) {
 			$content = '';
 			foreach ( $this->bf_files as $file_name ) {
-				$content .= $wp_filesystem->get_contents( $this->source . $file_name );
+				$content .= $wp_filesystem->get_contents( $file_name );
 			}
 			delete_transient( $this->prefix . 'sass_combined' );
 			set_transient( $this->prefix . 'sass_combined', $content, 1800 );
@@ -151,7 +161,7 @@ class Helium_Styles {
 
 		$content = str_replace( '/**variables**/', $override, $content );
 
-		//echo($content);
+//		echo($content);
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );
 		$scss = new scssc();
