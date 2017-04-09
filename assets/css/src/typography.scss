@@ -1,6 +1,6 @@
 body{font:$base-font-size / $base-line-height $body-font-stack;color: $dark-3}
 a{text-decoration: none;color:$dark-1}
-a:hover{text-decoration: none;color:$primary}
+a:hover{text-decoration: underline;}
 h1,h2,h3,h4,h5,h6,.heading{
   font-family: $headings-font-stack;
   font-weight: 900;

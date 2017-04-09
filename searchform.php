@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="widget-search-wrapper">
+<div class="he-search-wrapper">
 	<form role="search" method="get" class="cf widget-search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<label>
 				<span class="screen-reader-text">

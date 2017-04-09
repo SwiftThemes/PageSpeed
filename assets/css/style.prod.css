@@ -261,10 +261,9 @@ textarea {
   border: solid 1px #e4e4eb;
   background: #f2f1f6;
   box-sizing: border-box;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #3d3d45;
   font-weight: lighter;
-  font-family: monospace, serif;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -501,8 +500,7 @@ a {
 }
 
 a:hover {
-  text-decoration: none;
-  color: #007AFF;
+  text-decoration: underline;
 }
 
 h1,
@@ -748,14 +746,12 @@ Breaks when we have nested stickies, but we don't have them
 .widget ul,
 .widget ol {
   margin: 13px 0;
-  padding-left: 20px;
   list-style: disc;
 }
 
 .rtl .widget ul,
 .rtl .widget ol {
   padding-left: 0;
-  padding-right: 20px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -777,9 +773,7 @@ Breaks when we have nested stickies, but we don't have them
 
   .nav ul li {
     display: inline;
-  }
-
-  .nav ul li {
+    margin: 0;
     float: left;
   }
 
@@ -922,6 +916,21 @@ article {
 .page-template-full-width #left,
 .page-template-full-width #main {
   width: 100%;
+}
+
+.entry-content ul,
+.entry-content ol {
+  margin-left: 1em;
+}
+
+.entry-content a {
+  color: #007AFF;
+}
+
+.rtl .entry-content ul,
+.rtl .entry-content ol {
+  margin-left: 0;
+  margin-right: 1em;
 }
 
 .separator,
@@ -1109,17 +1118,17 @@ hr {
   right: -18px;
 }
 
-.widget-search-wrapper {
+.he-search-wrapper {
   position: relative;
   overflow: hidden;
   z-index: 0;
 }
 
-.widget .widget-search-form label {
+.he-search-wrapper label {
   display: none;
 }
 
-.widget .widget-search-form button {
+.he-search-wrapper button {
   float: right;
   background: #007AFF;
   color: white;
@@ -1129,13 +1138,13 @@ hr {
   padding: 5px 8px 4px;
 }
 
-.widget .widget-search-form .input {
+.he-search-wrapper .input {
   overflow: hidden;
   display: block;
   float: none;
 }
 
-.ltr .widget .widget-search-form button {
+.ltr .he-search-wrapper button {
   -webkit-border-top-right-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   -moz-border-radius-topright: 3px;
@@ -1144,7 +1153,7 @@ hr {
   border-bottom-right-radius: 3px;
 }
 
-.rtl .widget .widget-search-form button {
+.rtl .he-search-wrapper button {
   float: left;
   left: auto;
   left: 6px;

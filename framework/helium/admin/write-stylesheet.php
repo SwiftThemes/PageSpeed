@@ -63,7 +63,15 @@ class Helium_Styles {
 	 */
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
-		WP_Filesystem();
+
+
+		$args = array(
+			'hostname' => 'localhost',
+			'username' => 'satish',
+			'password' => 'avasarama',
+		);
+
+		WP_Filesystem(  $args);
 		$this->prefix = wp_get_theme()->stylesheet . '_';
 		$this->main   = trailingslashit( $src ) . $main;
 		$this->source = trailingslashit( $src );
@@ -158,6 +166,8 @@ class Helium_Styles {
 		$override .= '$site_width:' . get_theme_mod( 'site_width', '1160px' ) . ";\n";
 		$override .= '$main_width:' . get_theme_mod( 'main_width', '70' ) . ";\n";
 		$override .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '20' ) . ";\n";
+
+		$override .= "\n".get_theme_mod('scss_override','/* No __SCSS__ Override */')."\n";
 
 		$content = str_replace( '/**variables**/', $override, $content );
 

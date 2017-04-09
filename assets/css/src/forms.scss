@@ -5,10 +5,9 @@ textarea{
   border:solid 1px $light-4;
   background: $light-2;
   box-sizing: border-box;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: $dark-3;
   font-weight: lighter;
-  font-family: monospace, serif;
   @include border-radius(3px)
 }
 input{height: 36px}

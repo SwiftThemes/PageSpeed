@@ -89,3 +89,16 @@
   width: 100% !important;
   height: 100px
 }
+
+/* SCSS */
+#customize-control-scss_override textarea {
+  display: block;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 12px;
+  padding: 6px 8px;
+  height: 500px;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  line-height:1.4
+}

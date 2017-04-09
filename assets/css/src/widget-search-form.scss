@@ -1,10 +1,10 @@
-.widget-search-wrapper {
+.he-search-wrapper {
   position: relative;
   overflow: hidden;
   z-index: 0;
 }
 
-.widget .widget-search-form {
+.he-search-wrapper  {
   label {
     display: none
   }
@@ -27,7 +27,7 @@
 }
 
 .ltr{
-  .widget .widget-search-form{
+  .he-search-wrapper {
     button{
       -webkit-border-top-right-radius: 3px;
       -webkit-border-bottom-right-radius: 3px;
@@ -40,7 +40,7 @@
 }
 
 .rtl {
-  .widget .widget-search-form {
+  .he-search-wrapper  {
 
     button {
       float: left;
