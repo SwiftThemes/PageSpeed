@@ -1,71 +1,91 @@
-.meta{
-  font-size:.9em;
-  color:$dark-3;
+.meta {
+  font-size: .9em;
+  color: $dark-3;
 }
+
 .inner {
   padding: 0 $padding
 }
 
-.inner.alpha{
+.inner.alpha {
   padding-left: 0;
 }
-.inner.omega{
+
+.inner.omega {
   padding-right: 0;
 }
 
-.clear{clear: both}
+.clear {
+  clear: both
+}
+
+/* WordPress classes */
 .pull-left,
-.alignleft{
+.alignleft {
   float: left;
 }
+
 .pull-right,
-.alignright{
+.alignright {
   float: right;
 }
 
-.aligncenter{
+.aligncenter {
   display: block;
   margin: auto;
 }
+
+.wp-caption {
+}
+
+.wp-caption-text {
+  font-style: italic;
+  color: $dark-4;
+}
+
 /* Show only when sticky
 Breaks when we have nested stickies, but we don't have them
 */
-.sticky-show{
+.sticky-show {
   display: none;
 }
-.is-sticky .sticky-show{
+
+.is-sticky .sticky-show {
   display: inline-block;
 }
 
 .is-sticky #site-header-container,
-
-.is-sticky #primary-nav-container{
-  -webkit-box-shadow: 0px 1px 22px -10px rgba($dark-1,0.75);
-  -moz-box-shadow:0px 1px 22px -10px rgba($dark-1,0.75);
-  box-shadow: 0px 1px 22px -10px rgba($dark-1,0.75);
+.is-sticky #primary-nav-container {
+  -webkit-box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
+  -moz-box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
+  box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
 }
+
 /* end */
-.circle,.round{
+.circle, .round {
   @include border-radius(50%)
 }
+
 .button,
-.btn{
+.btn {
   text-align: center;
-  color:$light-1;
+  color: $light-1;
   background: $primary;
   padding: 5px 7px;
   @include border-radius(3px);
 }
 
 .button:hover,
-.btn:hover{
+.btn:hover {
   color: $light-3;
 }
+
 .btn.small,
-.button.small{
+.button.small {
   padding: 3px 4px;
-  font-size:.75em
+  font-size: .75em
 }
+
 /**
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
@@ -93,4 +113,6 @@ Breaks when we have nested stickies, but we don't have them
   *zoom: 1;
 }
 
-.screen-reader-text {display: none}
+.screen-reader-text {
+  display: none
+}

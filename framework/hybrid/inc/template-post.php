@@ -216,7 +216,7 @@ function hybrid_get_post_terms( $args = array() ) {
 		'after'      => '',
 		'wrap'       => '<span %s>%s</span>',
 		// Translators: Separates tags, categories, etc. when displaying a post.
-		'sep'        => _x( ', ', 'taxonomy terms separator', 'hybrid-core' )
+		'sep'        => _x( ', ', 'taxonomy terms separator', 'page-speed' )
 	);
 
 	$args = wp_parse_args( $args, $defaults );

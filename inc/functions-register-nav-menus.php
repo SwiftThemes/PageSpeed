@@ -7,7 +7,7 @@
  */
 
 register_nav_menus( array(
-	'secondary'    => __( 'Navigation above header', 'nybr' ),
-	'primary'      => __( 'Navigation below header', 'nybr' ),
-	'footer_links' => __( 'Footer links', 'nybr' ),
+	'secondary'    => __( 'Navigation above header', 'page-speed' ),
+	'primary'      => __( 'Navigation below header', 'page-speed' ),
+	'footer_links' => __( 'Footer links', 'page-speed' ),
 ) );

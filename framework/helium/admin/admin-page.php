@@ -10,11 +10,11 @@
 add_action( 'admin_menu', 'helium_theme_menu' );
 
 function helium_theme_menu() {
-	add_theme_page( __( 'Helium Help', 'ngbr' ), __( 'Helium Help', 'ngbr' ), 'edit_theme_options', 'helium-help', 'ngbr_help' );
+	add_theme_page( __( 'Helium Help', 'page-speed' ), __( 'Helium Help', 'page-speed' ), 'edit_theme_options', 'helium-help', 'pagespeed_help' );
 }
 
 
-function ngbr_help() {
+function pagespeed_help() {
 	?>
 	<div class="wrap">
 	<p>Helium caches the SASS files to database for faster response on the customizer.<br />

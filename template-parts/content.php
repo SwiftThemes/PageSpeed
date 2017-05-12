@@ -48,7 +48,7 @@
 			the_content();
 		}
 		wp_link_pages( array(
-			'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+			'before'      => '<div class="page-links">' . __( 'Pages:', 'page-speed' ),
 			'after'       => '</div>',
 			'link_before' => '<span class="page-number">',
 			'link_after'  => '</span>',

@@ -42,7 +42,7 @@ gulp.task('watch', function () {
 var project = 'page-speed', // Project name, used for build zip.
     url = 'neat.dev', // Local Development URL for BrowserSync. Change as-needed.
     bower = './assets/bower_components/'; // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
-build = './buildtheme/', // Files that you want to package into a zip go here
+build = '../buildtheme/', // Files that you want to package into a zip go here
     buildInclude = [
         // include common file types
         '**/*.php',

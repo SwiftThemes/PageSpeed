@@ -64,14 +64,15 @@ class Helium_Styles {
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
+//		$args = array(
+//			'hostname' => 'localhost',
+//			'username' => 'satish',
+//			'password' => '',
+//		);
+//
+//		WP_Filesystem($args);
+		WP_Filesystem();
 
-		$args = array(
-			'hostname' => 'localhost',
-			'username' => 'satish',
-			'password' => 'avasarama',
-		);
-
-		WP_Filesystem(  $args);
 		$this->prefix = wp_get_theme()->stylesheet . '_';
 		$this->main   = trailingslashit( $src ) . $main;
 		$this->source = trailingslashit( $src );
@@ -124,6 +125,7 @@ class Helium_Styles {
 					}
 				}
 			}
+
 			delete_transient( $this->prefix . 'sass_file_list' );
 
 			set_transient( $this->prefix . 'sass_file_list', array(

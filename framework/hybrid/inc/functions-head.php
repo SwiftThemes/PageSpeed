@@ -137,7 +137,7 @@ function hybrid_wp_title( $doctitle ) {
 	// If the current page is a paged page.
 	if ( ( ( $page = get_query_var( 'paged' ) ) || ( $page = get_query_var( 'page' ) ) ) && $page > 1 )
 		// Translators: 1 is the page title. 2 is the page number.
-		$doctitle = sprintf( __( '%1$s Page %2$s', 'hybrid-core' ), $doctitle . $separator, number_format_i18n( absint( $page ) ) );
+		$doctitle = sprintf( __( '%1$s Page %2$s', 'page-speed' ), $doctitle . $separator, number_format_i18n( absint( $page ) ) );
 
 	// Trim separator + space from beginning and end.
 	return trim( strip_tags( $doctitle ), "{$separator} " );

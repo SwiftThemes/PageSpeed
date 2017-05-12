@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', 'hybrid_load_locale_functions', 0 );
 # Load translations for theme, child theme, and framework.
 add_action( 'after_setup_theme', 'hybrid_load_textdomains', 5 );
 
-# Overrides the load textdomain function for the 'hybrid-core' domain.
+# Overrides the load textdomain function for the 'page-speed' domain.
 add_filter( 'override_load_textdomain', 'hybrid_override_load_textdomain', 5, 3 );
 
 # Filter the textdomain mofile to allow child themes to load the parent theme translation.
@@ -77,9 +77,9 @@ function hybrid_load_textdomains() {
 }
 
 /**
- * Overrides the load textdomain functionality when 'hybrid-core' is the domain in use.  The purpose of
+ * Overrides the load textdomain functionality when 'page-speed' is the domain in use.  The purpose of
  * this is to allow theme translations to handle the framework's strings.  What this function does is
- * sets the 'hybrid-core' domain's translations to the theme's.  That way, we're not loading multiple
+ * sets the 'page-speed' domain's translations to the theme's.  That way, we're not loading multiple
  * of the same MO files.
  *
  * @since  2.0.0
@@ -93,7 +93,7 @@ function hybrid_load_textdomains() {
 function hybrid_override_load_textdomain( $override, $domain, $mofile ) {
 
 	// Check if the domain is one of our framework domains.
-	if ( 'hybrid-core' === $domain ) {
+	if ( 'page-speed' === $domain ) {
 		global $l10n;
 
 		// Get the theme's textdomain.
@@ -119,7 +119,7 @@ function hybrid_override_load_textdomain( $override, $domain, $mofile ) {
  * @param  string $domain The name of the framework's textdomain.
  * @return bool           Whether the MO file was loaded.
  */
-function hybrid_load_framework_textdomain( $domain = 'hybrid-core' ) {
+function hybrid_load_framework_textdomain( $domain = 'page-speed' ) {
 	return load_textdomain( $domain, '' );
 }
 

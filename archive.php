@@ -42,10 +42,10 @@ get_header();
 
 	// Previous/next page navigation.
 	the_posts_pagination( array(
-		'prev_text'          => __( 'Previous page', 'nybr' ),
+		'prev_text'          => __( 'Previous page', 'page-speed' ),
 		'mid_size' => 2,
-		'next_text'          => __( 'Next page', 'nybr' ),
-		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'nybr' ) . ' </span>',
+		'next_text'          => __( 'Next page', 'page-speed' ),
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
 	) );
 	echo '<div class="clear"></div>';
 

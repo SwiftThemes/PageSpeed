@@ -53,10 +53,10 @@ function image_size_control_register( $wp_customize ) {
 //			$output .= '<div><input type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' /></div>';
 			$output .= '<div class="thumb-align">
 <select type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' >
-			<option value="alignleft" ' . selected( $value, 'alignleft', false ) . '>' . __( 'Align left', 'he' ) . '</option>
-			<option value="aligncenter" ' . selected( $value, 'aligncneter', false ) . '>' . __( 'Centered', 'he' ) . '</option>
-			<option value="alignright" ' . selected( $value, 'alignright', false ) . '>' . __( 'Align right', 'he' ) . '</option>
-			<option value="alternate" ' . selected( $value, 'alternate', false ) . '>' . __( 'Alternate', 'he' ) . '</option>
+			<option value="alignleft" ' . selected( $value, 'alignleft', false ) . '>' . __( 'Align left', 'helium' ) . '</option>
+			<option value="aligncenter" ' . selected( $value, 'aligncneter', false ) . '>' . __( 'Centered', 'helium' ) . '</option>
+			<option value="alignright" ' . selected( $value, 'alignright', false ) . '>' . __( 'Align right', 'helium' ) . '</option>
+			<option value="alternate" ' . selected( $value, 'alternate', false ) . '>' . __( 'Alternate', 'helium' ) . '</option>
 			</select></div>';
 
 

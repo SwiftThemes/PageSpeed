@@ -827,7 +827,7 @@ class scssc {
 			list(,$value, $pos) = $child;
 			$line = $this->parser->getLineNo($pos);
 			$value = $this->compileValue($this->reduce($value, true));
-			fwrite(STDERR, "Line $line DEBUG: $value\n");
+			//fwrite(STDERR, "Line $line DEBUG: $value\n");
 			break;
 		default:
 			$this->throwError("unknown child type: $child[0]");
@@ -1649,7 +1649,9 @@ class scssc {
 		if (isset($this->importCache[$realPath])) {
 			$tree = $this->importCache[$realPath];
 		} else {
-			$code = file_get_contents($path);
+//			$code = file_get_contents($path);
+			global $wp_filesystem;
+			$code = $wp_filesystem->get_contents($path);
 			$parser = new scss_parser($path, false);
 			$tree = $parser->parse($code);
 			$this->parsedFiles[] = $path;
@@ -2696,6 +2698,8 @@ class scss_parser {
 	public function __construct($sourceName = null, $rootParser = true) {
 		$this->sourceName = $sourceName;
 		$this->rootParser = $rootParser;
+
+		require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
 		if (empty(self::$operatorStr)) {
 			self::$operatorStr = $this->makeOperatorStr(self::$operators);
@@ -4419,6 +4423,7 @@ class scss_server {
 	 * @return boolean True if compile required.
 	 */
 	protected function needsCompile($in, $out) {
+		global $wp_filesystem;
 		if (!is_file($out)) return true;
 
 		$mtime = filemtime($out);
@@ -4427,7 +4432,8 @@ class scss_server {
 		// look for modified imports
 		$icache = $this->importsCacheName($out);
 		if (is_readable($icache)) {
-			$imports = unserialize(file_get_contents($icache));
+//			$imports = unserialize(file_get_contents($icache));
+			$imports = unserialize($wp_filesystem->get_contents($icache));
 			foreach ($imports as $import) {
 				if (filemtime($import) > $mtime) return true;
 			}
@@ -4464,17 +4470,25 @@ class scss_server {
 	 * @return string
 	 */
 	protected function compile($in, $out) {
+		global $wp_filesystem;
 		$start = microtime(true);
-		$css = $this->scss->compile(file_get_contents($in), $in);
+//		$css = $this->scss->compile(file_get_contents($in), $in);
+		$css = $this->scss->compile($wp_filesystem->get_contents($in), $in);
 		$elapsed = round((microtime(true) - $start), 4);
 
 		$v = scssc::$VERSION;
 		$t = @date('r');
 		$css = "/* compiled by scssphp $v on $t (${elapsed}s) */\n\n" . $css;
 
-		file_put_contents($out, $css);
-		file_put_contents($this->importsCacheName($out),
-			serialize($this->scss->getParsedFiles()));
+		global $wp_filesystem;
+//		file_put_contents($out, $css);
+		$wp_filesystem->put_contents( $out, $css, FS_CHMOD_FILE );
+
+//		file_put_contents($this->importsCacheName($out),
+//			serialize($this->scss->getParsedFiles()));
+		$wp_filesystem->put_contents( $this->importsCacheName($out),
+			serialize($this->scss->getParsedFiles()), FS_CHMOD_FILE );
+
 		return $css;
 	}
 
@@ -4526,7 +4540,9 @@ class scss_server {
 			$lastModified  = gmdate('D, d M Y H:i:s', $mtime) . ' GMT';
 			header('Last-Modified: ' . $lastModified);
 
-			echo file_get_contents($output);
+//			echo file_get_contents($output);
+			global $wp_filesystem;
+			echo $wp_filesystem->get_contents($output);
 
 			return;
 		}

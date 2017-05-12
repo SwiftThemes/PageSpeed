@@ -1,4 +1,4 @@
-<?php do_action( 'ngbr_before_footer' ); ?>
+<?php do_action( 'pagespeed_before_footer' ); ?>
 
 <?php if ( is_active_sidebar( "footer-1" ) || is_active_sidebar( "footer-2" ) || is_active_sidebar( "footer-3" ) || is_active_sidebar( "footer-4" ) || is_active_sidebar( "footer-5" ) ): ?>
 	<footer id="site-footer-container" class="cf">

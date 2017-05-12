@@ -35,12 +35,12 @@
 		<?php
 		/* translators: %s: Name of current post */
 		the_content( sprintf(
-			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'nybr' ),
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'page-speed' ),
 			get_the_title()
 		) );
 
 		wp_link_pages( array(
-			'before'      => '<div class="page-links">' . __( 'Pages:', 'nybr' ),
+			'before'      => '<div class="page-links">' . __( 'Pages:', 'page-speed' ),
 			'after'       => '</div>',
 			'link_before' => '<span class="page-number">',
 			'link_after'  => '</span>',

@@ -6,9 +6,9 @@
  * Time: 6:20 PM
  */
 
-add_action( 'admin_enqueue_scripts', 'ngbr_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'helium_admin_scripts' );
 
-function ngbr_admin_scripts($hook) {
+function helium_admin_scripts($hook) {
 //	var_dump($hook);
 //	if ( 'appearance_page_helium-help' != $hook ) {
 //		return;

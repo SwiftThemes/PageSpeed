@@ -10,7 +10,7 @@
             $('#clear-sass').click(function (e) {
                 $(this).text('Clearing SASS Cache')
                 var data = {
-                    'action': 'ngbr_clear_sass_cache',
+                    'action': 'helium_clear_sass_cache',
                 };
 
                 jQuery.post(ajaxurl, data, function (response) {

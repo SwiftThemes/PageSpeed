@@ -33,9 +33,9 @@ get_header();
 
 	// Previous/next page navigation.
 	the_posts_pagination( array(
-		'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-		'next_text'          => __( 'Next page', 'twentysixteen' ),
-		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
+		'prev_text'          => __( 'Previous page', 'page-speed' ),
+		'next_text'          => __( 'Next page', 'page-speed' ),
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
 	) );
 
 // If comments are open or we have at least one comment, load up the comment template.
@@ -48,7 +48,7 @@ else :
 
 endif;
 ?>
-<?php do_action( 'ngbr_main_end' ); ?>
+<?php do_action( 'pagespeed_main_end' ); ?>
 
 </div><!-- main inner-->
 </main>

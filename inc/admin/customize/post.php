@@ -6,26 +6,26 @@
  * Time: 9:44 PM
  */
 
-add_action( 'customize_register', 'nybr_customize_post', 700 );
-function nybr_customize_post( $wp_customize ) {
+add_action( 'customize_register', 'pagespeed_customize_post', 700 );
+function pagespeed_customize_post( $wp_customize ) {
 
 
 	$wp_customize->add_panel( 'single_post', array(
-		'title'       => __( 'Single post/page', 'nybr' ),
+		'title'       => __( 'Single post/page', 'page-speed' ),
 		'description' => '', // Include html tags such as <p>
 		'priority'    => 50, // Mixed with top-level-section hierarchy.
 	) );
 
 	$wp_customize->add_section( 'single_post_design', array(
-		'title'    => __( 'Design', 'nybr' ),
+		'title'    => __( 'Design', 'page-speed' ),
 		'panel'    => 'single_post',
 		'priority' => 30,
 	) );
 
 	$wp_customize->add_section( 'single_post_meta', array(
-		'title'       => __( 'Meta options', 'nybr' ),
+		'title'       => __( 'Meta options', 'page-speed' ),
 		'panel'       => 'single_post',
-		'description' => __( 'Here you can customize the meta information above and below the post title, and after post content. Here is the list of short codes you can use.', 'nybr' ) . '
+		'description' => __( 'Here you can customize the meta information above and below the post title, and after post content. Here is the list of short codes you can use.', 'page-speed' ) . '
 		<pre>
 [author],
 [cat]Filed under&amp;nbsp;[/cat],
@@ -40,11 +40,13 @@ function nybr_customize_post( $wp_customize ) {
 
 	// Show thumbnail
 	$wp_customize->add_setting( 'single_post_show_thumbnails', array(
-		'default' => 1,
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+
 	) );
 
 	$wp_customize->add_control( 'single_post_show_thumbnails', array(
-		'label'   => __( 'Show thumbnail on single post', 'nybr' ),
+		'label'   => __( 'Show thumbnail on single post', 'page-speed' ),
 		'section' => 'single_post_design',
 		'type'    => 'checkbox',
 
@@ -52,14 +54,20 @@ function nybr_customize_post( $wp_customize ) {
 
 	// Thumbnail size
 	$wp_customize->add_setting( 'single_post_thumb_width', array(
-		'default' => '120',
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
 	) );
 	$wp_customize->add_setting( 'single_post_thumb_height', array(
-		'default' => '120',
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
 	) );
 
 	$wp_customize->add_setting( 'single_post_thumb_position', array(
-		'default' => 'right',
+		'sanitize_callback' => 'esc_attr',
+		'default'           => 'right',
+
 	) );
 
 	$wp_customize->add_control(
@@ -67,7 +75,7 @@ function nybr_customize_post( $wp_customize ) {
 			$wp_customize,
 			'single_post_thumb',
 			array(
-				'label'    => esc_html__( 'Single post thumbnail size', 'nybr' ),
+				'label'    => esc_html__( 'Single post thumbnail size', 'page-speed' ),
 				'section'  => 'single_post_design',
 				'priority' => 10,
 				'type'     => 'text',
@@ -82,29 +90,32 @@ function nybr_customize_post( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'single_post_meta_above_title', array(
-		'default' => '[cat]'.__('Filed under','nybr').'&nbsp;[/cat]',
+		'sanitize_callback' => 'helium_meta',
+		'default'           => '[cat]' . __( 'Filed under', 'page-speed' ) . '&nbsp;[/cat]',
 	) );
 	$wp_customize->add_setting( 'single_post_meta_below_title', array(
-		'default' => __('Published by','nybr').'&nbsp;[author] on [date_published]<hr class="separator">',
+		'sanitize_callback' => 'helium_meta',
+		'default'           => __( 'Published by', 'page-speed' ) . '&nbsp;[author] on [date_published]<hr class="separator">',
 	) );
 	$wp_customize->add_setting( 'single_post_meta_after_body', array(
-		'default' => '[tag]Tagged with&nbsp;[/tag]',
+		'sanitize_callback' => 'helium_meta',
+		'default'           => '[tag]Tagged with&nbsp;[/tag]',
 	) );
 
 	$wp_customize->add_control( 'single_post_meta_above_title', array(
-		'label'   => __( 'Meta above the post title', 'nybr' ),
+		'label'   => __( 'Meta above the post title', 'page-speed' ),
 		'section' => 'single_post_meta',
 		'type'    => 'textarea',
 	) );
 
 	$wp_customize->add_control( 'single_post_meta_below_title', array(
-		'label'   => __( 'Meta below the post title', 'nybr' ),
+		'label'   => __( 'Meta below the post title', 'page-speed' ),
 		'section' => 'single_post_meta',
 		'type'    => 'textarea',
 	) );
 	$wp_customize->add_control( 'single_post_meta_after_body', array(
-		'label'       => __( 'Meta after the post content', 'nybr' ),
-		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'nybr' ),
+		'label'       => __( 'Meta after the post content', 'page-speed' ),
+		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
 		'section'     => 'single_post_meta',
 		'type'        => 'textarea',
 	) );

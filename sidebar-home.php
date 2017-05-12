@@ -1,4 +1,4 @@
-<?php do_action( 'ngbr_main_end' ); ?>
+<?php do_action( 'pagespeed_main_end' ); ?>
 </div><!-- main inner-->
 </main>
 <?php get_sidebar( 'one-home' ); ?>

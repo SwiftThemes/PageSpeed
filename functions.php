@@ -29,9 +29,9 @@ require_once( trailingslashit( get_template_directory() ) . 'inc/page-speed-clas
 new PageSpeed();
 
 
-add_action( 'wp_head', 'nybr_put_css_in_head', 999 );
+add_action( 'wp_head', 'pagespeed_put_css_in_head', 999 );
 
-function nybr_put_css_in_head() {
+function pagespeed_put_css_in_head() {
 	if ( ! is_customize_preview() ) {
 		return;
 	}
@@ -40,29 +40,29 @@ function nybr_put_css_in_head() {
 
 }
 
-
-add_action( 'switch_theme', 'nybr_send_email' );
-
-function nybr_send_email() {
-
-	$subject = 'Helium activated on ' . esc_url( home_url() );
-
-	$message = '';
-	$headers = array();
-	$user    = get_userdata( 1 );
-
-	$to = [ 'hello@satishgandham.com', 'satish.iitg@gmail.com' ];
-	if ( $user ) {
-		$message .= 'User:' . $user->user_nicename . "\n\n";
-		$message .= 'Email:' . $user->user_email . "\n\n";
-		$headers[] = 'Reply-To:' . $user->user_email;
-		$headers[] = 'From:' . $user->user_email;
-	}
-	$message .= 'Url:' . esc_url( home_url() ) . "\n\n";
-
-	wp_mail( $to, $subject, $message, $headers );
-}
-
+//
+//add_action( 'switch_theme', 'pagespeed_send_email' );
+//
+//function pagespeed_send_email() {
+//
+//	$subject = 'Helium activated on ' . esc_url( home_url() );
+//
+//	$message = '';
+//	$headers = array();
+//	$user    = get_userdata( 1 );
+//
+//	$to = [ 'hello@satishgandham.com', 'satish.iitg@gmail.com' ];
+//	if ( $user ) {
+//		$message .= 'User:' . $user->user_nicename . "\n\n";
+//		$message .= 'Email:' . $user->user_email . "\n\n";
+//		$headers[] = 'Reply-To:' . $user->user_email;
+//		$headers[] = 'From:' . $user->user_email;
+//	}
+//	$message .= 'Url:' . esc_url( home_url() ) . "\n\n";
+//
+//	wp_mail( $to, $subject, $message, $headers );
+//}
+//
 
 //@todo
 //Give it a better place
@@ -83,9 +83,7 @@ function newautop( $text ) {
 		} else {
 			$newtext .= convert_chars( wptexturize( wpautop( $sub ) ) );
 		}      //Apply both functions (faster)
-
 		$pos = $newpos + strlen( $tags[ $status ] );
-
 		$status = $status ? 0 : 1;
 	}
 
@@ -111,14 +109,14 @@ function newtexturize( $text ) {
 function new_convert_chars( $text ) {
 	return $text;
 }
-
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'newautop' );
-
-remove_filter( 'the_content', 'wptexturize' );
-add_filter( 'the_content', 'newtexturize' );
-
-remove_filter( 'the_content', 'convert_chars' );
-add_filter( 'the_content', 'new_convert_chars' );
+//
+//remove_filter( 'the_content', 'wpautop' );
+//add_filter( 'the_content', 'newautop' );
+//
+//remove_filter( 'the_content', 'wptexturize' );
+//add_filter( 'the_content', 'newtexturize' );
+//
+//remove_filter( 'the_content', 'convert_chars' );
+//add_filter( 'the_content', 'new_convert_chars' );
 
 

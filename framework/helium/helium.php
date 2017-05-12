@@ -89,6 +89,7 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
 			require_once( HELIUM_DIR . 'body-css-classes.php' );
+			require_once( HELIUM_DIR . 'sanitization-functions.php' );
 
 			require_once( HELIUM_CUSTOMIZE . 'control-image-dimensions.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-responsive-content.php' );

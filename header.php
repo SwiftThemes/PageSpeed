@@ -22,23 +22,23 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php do_action( 'ngbr_after_body' ); ?>
+<?php do_action( 'pagespeed_after_body' ); ?>
 
 <div id="wrapper" class="cf">
-	<?php do_action( 'ngbr_before_header' ); ?>
+	<?php do_action( 'pagespeed_before_header' ); ?>
 
 	<div id="site-header-container" class="cf logo-<?php echo get_theme_mod( 'logo_position', 'left' ) ?>">
 		<div class="inner hybrid cf">
-			<?php do_action( 'ngbr_header_start' ); ?>
+			<?php do_action( 'pagespeed_header_start' ); ?>
 
 
-			<?php do_action( 'ngbr_header_end' ); ?>
+			<?php do_action( 'pagespeed_header_end' ); ?>
 		</div>
 	</div><!--#site-header-container -->
-	<?php do_action( 'ngbr_after_header' ); ?>
+	<?php do_action( 'pagespeed_after_header' ); ?>
 
 	<div id="content" class="cf">
 		<div id="left">
 			<main id="main" role="main">
 				<div class="inner">
-					<?php do_action( 'ngbr_main_start' ); ?>
+					<?php do_action( 'pagespeed_main_start' ); ?>

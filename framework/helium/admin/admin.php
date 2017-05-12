@@ -8,6 +8,7 @@
 //require_once( HELIUM_ADMIN . 'customizer.php' );
 
 require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
+require_once( HELIUM_ADMIN . 'check-fs-status.php' );
 require_once( HELIUM_ADMIN . 'admin-page.php' );
 
 require_once( HELIUM_ADMIN . 'admin-ajax-functions.php' );

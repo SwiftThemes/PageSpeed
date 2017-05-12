@@ -69,7 +69,7 @@ function hybrid_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'layout',
 		array(
-			'title'    => esc_html__( 'Layout', 'hybrid-core' ),
+			'title'    => esc_html__( 'Layout', 'page-speed' ),
 			'priority' => 30,
 		)
 	);
@@ -81,8 +81,8 @@ function hybrid_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			'theme_layout',
 			array(
-				'default'           => hybrid_get_default_layout(),
 				'sanitize_callback' => 'sanitize_key',
+				'default'           => hybrid_get_default_layout(),
 				'transport'         => 'postMessage'
 			)
 		);
@@ -92,7 +92,7 @@ function hybrid_customize_register( $wp_customize ) {
 			new Hybrid_Customize_Control_Layout(
 				$wp_customize,
 				'theme_layout',
-				array( 'label' => esc_html__( 'Global Layout', 'hybrid-core' ) )
+				array( 'label' => esc_html__( 'Global Layout', 'page-speed' ) )
 			)
 		);
 	}

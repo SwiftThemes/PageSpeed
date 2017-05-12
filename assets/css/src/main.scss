@@ -1,22 +1,25 @@
 @import "variables";
 @import "colors";
-@import "normalize";
-@import "reset";
 @import "mixins";
-@import "forms";
 
-@import "layout";
-@import "typography";
+
+@import "af-normalize";
+@import "af-reset";
+@import "af-forms";
+@import "af-typography";
+
+
+@import "af-layout";
+@import "af-layout-responsive";
 @import "af-header";
 @import "af-generic-classes";
 @import "af-widgets";
 @import "af-navigation";
+
 @import "common";
+
 @import "copyright";
-
-
 @import "page-templates";
-
 @import "entry-content";
 
 @import "meta";
@@ -29,5 +32,4 @@
 @import "af-thumbnails";
 
 
-@import "layout-responsive";
 @import "side-menu";

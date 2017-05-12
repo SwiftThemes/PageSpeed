@@ -48,7 +48,7 @@ function hybrid_register_layouts() {
 		'default',
 		array(
 			// Translators: Default theme layout option.
-			'label'            => esc_html_x( 'Default', 'theme layout', 'hybrid-core' ),
+			'label'            => esc_html_x( 'Default', 'theme layout', 'page-speed' ),
 			'is_global_layout' => false,
 			'_builtin'         => true,
 			'_internal'        => true,

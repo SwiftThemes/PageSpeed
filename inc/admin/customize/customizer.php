@@ -6,11 +6,12 @@
  * Time: 9:44 PM
  */
 
-add_action( 'customize_register', 'nybr_customize', 888 );
-function nybr_customize( $wp_customize ) {
+add_action( 'customize_register', 'pagespeed_customize', 888 );
+function pagespeed_customize( $wp_customize ) {
 
 	// Logo position
 	$wp_customize->add_setting( 'logo_position', array(
+		'sanitize_callback' => 'esc_attr',
 		'default' => 'left',
 	) );
 	$wp_customize->add_control(
@@ -18,18 +19,21 @@ function nybr_customize( $wp_customize ) {
 			$wp_customize,
 			'logo_position',
 			array(
-				'label'    => esc_html__( 'Logo position', 'nybr' ),
+				'label'    => esc_html__( 'Logo position', 'page-speed' ),
 				'section'  => 'title_tagline',
 				'priority' => 30,
 				'choices'  => array(
-					'left'   => array( 'url' => ADMIN_IMAGES_URI . '/logo-left.png', 'label' => __( 'Left', 'nybr' ) ),
+					'left'   => array(
+						'url'   => ADMIN_IMAGES_URI . '/logo-left.png',
+						'label' => __( 'Left', 'page-speed' ),
+					),
 					'center' => array(
 						'url'   => ADMIN_IMAGES_URI . '/logo-center.png',
-						'label' => __( 'Center', 'nybr' ),
+						'label' => __( 'Center', 'page-speed' ),
 					),
 					'right'  => array(
 						'url'   => ADMIN_IMAGES_URI . '/logo-right.png',
-						'label' => __( 'Right', 'nybr' ),
+						'label' => __( 'Right', 'page-speed' ),
 					),
 				)
 			)
@@ -38,18 +42,20 @@ function nybr_customize( $wp_customize ) {
 
 	// Mobile logo
 	$wp_customize->add_setting( 'mobile_logo', array(
+		'sanitize_callback' => 'absint',
 		'default' => '',
+
 	) );
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
 		$wp_customize,
 		'mobile_logo',
 		array(
-			'label'       => __( 'Logo for mobiles', 'nybr' ),
-			'section'     => 'title_tagline',
-			'settings'    => 'mobile_logo',
-			'priority'    => 32,
-			'height'      => 32,
-			'flex_width'  => true,
+			'label'      => __( 'Logo for mobiles', 'page-speed' ),
+			'section'    => 'title_tagline',
+			'settings'   => 'mobile_logo',
+			'priority'   => 32,
+			'height'     => 32,
+			'flex_width' => true,
 		)
 	) );
 
@@ -61,28 +67,30 @@ function nybr_customize( $wp_customize ) {
 		'description' => '',
 	) );
 	$wp_customize->add_setting( 'theme_layout', array(
+		'sanitize_callback' => 'esc_attr',
 		'default' => 'centered',
+
 	) );
 	$wp_customize->add_control(
 		new Hybrid_Customize_Control_Radio_Image(
 			$wp_customize,
 			'theme_layout',
 			array(
-				'label'    => esc_html__( 'Site Layout', 'nybr' ),
+				'label'    => esc_html__( 'Site Layout', 'page-speed' ),
 				'section'  => 'layout_settings',
 				'priority' => 10,
 				'choices'  => array(
 					'l-sb'     => array(
 						'url'   => ADMIN_IMAGES_URI . '/layout-l-sb.png',
-						'label' => __( 'Content / Sidebar', 'nybr' )
+						'label' => __( 'Content / Sidebar', 'page-speed' )
 					),
 					'centered' => array(
 						'url'   => ADMIN_IMAGES_URI . '/layout-centered.png',
-						'label' => __( 'Sidebar / Content / Sidebar', 'nybr' ),
+						'label' => __( 'Sidebar / Content / Sidebar', 'page-speed' ),
 					),
 					'r-sb'     => array(
 						'url'   => ADMIN_IMAGES_URI . '/layout-r-sb.png',
-						'label' => __( 'Sidebar / Content', 'nybr' ),
+						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
 				)
 			)
@@ -90,19 +98,24 @@ function nybr_customize( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'site_width', array(
+		'sanitize_callback' => 'esc_attr',
 		'default' => '1160px',
+
 	) );
 	$wp_customize->add_setting( 'main_width', array(
+		'sanitize_callback' => 'helium_float',
 		'default' => '70',
+
 	) );
 	$wp_customize->add_setting( 'left_sidebar_width', array(
+		'sanitize_callback' => 'helium_float',
 		'default' => '18.75',
 	) );
 
 
 	$wp_customize->add_control( 'site_width', array(
-		'label'       => __( 'Main container width', 'nybr' ),
-		'description' => __( 'Along with units.' ) . ' ' . __( 'Default', 'nybr' ) . ': 1600 px',
+		'label'       => __( 'Main container width', 'page-speed' ),
+		'description' => __( 'Along with units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 1600 px',
 		'section'     => 'layout_settings',
 		'type'        => 'text',
 		'priority'    => 20,
@@ -110,16 +123,16 @@ function nybr_customize( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'main_width', array(
-		'label'       => __( 'Content width', 'nybr' ),
-		'description' => __( 'In percentage without the % sign.', 'nybr' ) . ' ' . __( 'Default', 'nybr' ) . ': 70',
+		'label'       => __( 'Content width', 'page-speed' ),
+		'description' => __( 'In percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 70',
 		'section'     => 'layout_settings',
 		'type'        => 'number',
 		'priority'    => 20,
 
 	) );
 	$wp_customize->add_control( 'left_sidebar_width', array(
-		'label'       => __( 'Left sidebar width', 'nybr' ),
-		'description' => __( 'If you are using centered layout. Left sidebar width in percentage without the % sign.', 'nybr' ) . ' ' . __( 'Default', 'nybr' ) . ': 18.75',
+		'label'       => __( 'Left sidebar width', 'page-speed' ),
+		'description' => __( 'If you are using centered layout. Left sidebar width in percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 18.75',
 		'section'     => 'layout_settings',
 		'type'        => 'number',
 		'priority'    => 20,

@@ -6,11 +6,11 @@
  * Time: 11:49 AM
  */
 
-add_action( 'ngbr_header_start', 'ngbr_site_branding', 12 );
-add_action( 'ngbr_header_start', 'ngbr_add_menu_icon', 16 );
+add_action( 'pagespeed_header_start', 'pagespeed_site_branding', 12 );
+add_action( 'pagespeed_header_start', 'pagespeed_add_menu_icon', 16 );
 
-if ( ! function_exists( 'ngbr_site_branding' ) ) {
-	function ngbr_site_branding() {
+if ( ! function_exists( 'pagespeed_site_branding' ) ) {
+	function pagespeed_site_branding() {
 		global $he;
 		?>
 		<header id="site-header" role="banner" class="cf">
@@ -52,7 +52,7 @@ if ( ! function_exists( 'ngbr_site_branding' ) ) {
 }
 
 
-function ngbr_add_menu_icon() {
+function pagespeed_add_menu_icon() {
 	?>
 	<div id="menu">
 		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
