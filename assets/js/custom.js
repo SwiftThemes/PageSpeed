@@ -12,17 +12,62 @@
         makeSideBarsSticky()
         makeNavSticky()
         makeHeaderSticky()
+
+
+        //Clear the timeout when user is interacting with the nav
+        $('#primary-nav-container,#sticky-search').on('click', function () {
+            console.log('lol')
+            clearTimeout(GLOBAL.hideStickyTimer)
+        })
+
+
+        /**
+         * Moved these event listeners from add side menu function.
+         * Find a suitable place.
+         */
+        $('.open-drawer').click(function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            $('body').toggleClass('menu-open');
+        })
+        $(document).on('click', '.menu-open #wrapper', function () {
+            $('body').removeClass('menu-open')
+        })
     })
     $(window).load(function () {
         setSidebarHeights()
     })
 
-    $( window ).resize(function() {
+    $(window).resize(function () {
         menuHandler();
         removeStickiesOnMobile();
         unsetSidebarHeights();
     });
 
+    window.addEventListener('scroll', function () {
+        autoHideStickyNav()
+    })
+
+
+    /**
+     * Show nav bar on scroll. Hide in 2 seconds
+     */
+    GLOBAL.hideStickyTimer = false
+    var autoHideStickyNav = throttle(function () {
+        /**
+         * @todo
+         * Overloading both stickies, seperate it out?
+         */
+
+        clearTimeout(GLOBAL.hideStickyTimer)
+        $('#primary-nav-container-sticky-wrapper,#sticky-search-sticky-wrapper').css({opacity: 1})
+        GLOBAL.hideStickyTimer = setTimeout(function () {
+            if ($('body').hasClass('menu-open')) {
+                return
+            }
+            $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky').css({'opacity': 0})
+        }, 2000)
+    }, 1000)
 
     /**
      * Check if the current device is desktop or mobile.
@@ -108,18 +153,8 @@
      */
     function addSideMenu() {
         $('#primary-nav-container,#secondary-nav-container').hide()
-        $('#menu').show()
+        $('.open-drawer').show()
         $('#side-pane-inner').append($('#primary-nav').html()).append($('#secondary-nav').html())
-
-
-        $('#menu').click(function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            $('body').toggleClass('menu-open');
-        })
-        $(document).on('click', '.menu-open #wrapper', function () {
-            $('body').removeClass('menu-open')
-        })
     }
 
     /**
@@ -127,7 +162,7 @@
      */
     function removeSideMenu() {
         $('#primary-nav-container,#secondary-nav-container').show()
-        $('#menu,#side-pane').hide()
+        $('.open-drawer,#side-pane').hide()
     }
 
     /**
@@ -145,21 +180,43 @@
         if (isMobile()) {
             return
         }
-        $("#primary-nav-container.stick-it").sticky({responsiveWidth: true,zIndex:9});
+        $("#primary-nav-container.stick-it").sticky({responsiveWidth: true, zIndex: 9});
     }
 
     function makeHeaderSticky() {
         if (isMobile()) {
-            $("#site-header-container").unstick();
-            $("#site-header-container").sticky({responsiveWidth: true,zIndex:9});
+            //$("#site-header-container").unstick();
+            //$("#site-header-container").sticky({responsiveWidth: true, zIndex: 9});
+            $("#sticky-search").unstick();
+            $("#sticky-search").sticky({responsiveWidth: true, zIndex: 9, widthFromWrapper: true});
         }
     }
 
-    function removeStickiesOnMobile(){
+    function removeStickiesOnMobile() {
         if (isMobile()) {
             $("#sticky-sb1,#sticky-sb2,#primary-nav-container.stick-it").unstick();
         }
     }
 
+
+    /**
+     *
+     * @param callback
+     * @param limit
+     * @returns {Function}
+     */
+    function throttle(callback, limit) {
+        var wait = false;                  // Initially, we're not waiting
+        return function () {               // We return a throttled function
+            if (!wait) {                   // If we're not waiting
+                callback.call();           // Execute users function
+                wait = true;               // Prevent future invocations
+                setTimeout(function () {   // After a period of time
+                    wait = false;          // And allow future invocations
+                    callback.call();
+                }, limit);
+            }
+        }
+    }
 
 })(jQuery);

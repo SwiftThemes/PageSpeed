@@ -1,3 +1,27 @@
+.is-sticky #sticky-search {
+  position: relative;
+  padding: 5px 0;
+  border-bottom: solid 1px rgba($light-4,.9);
+  border-width: 1px 0;
+  background: rgba($light-1, .9);
+
+  .mobile-nav-search-form {
+    margin: 0 8px
+  }
+  .sticky-logo img {
+    left: 10px
+  }
+}
+
+
+#sticky-search > .inner {
+  display: none;
+}
+
+.is-sticky #sticky-search > .inner {
+  display: block
+}
+
 #menu {
   color: $light-1;
   float: right;
@@ -5,8 +29,8 @@
   display: none;
 
   position: absolute;
-  top:0;
-  bottom:0;
+  top: 0;
+  bottom: 0;
   right: 10px;
   height: 32px;
   margin: auto;
@@ -15,12 +39,12 @@
 
 }
 
-#menu svg{
-  fill:$primary;
+#menu svg {
+  fill: $primary;
 }
 
 body,
-#side-pane{
+#side-pane {
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
@@ -28,12 +52,18 @@ body,
   transition: all 0.2s linear;
 }
 
-body{left: 0}
-#side-pane{width: 0;display: none}
+body {
+  left: 0
+}
+
+#side-pane {
+  width: 0;
+  display: none
+}
+
 .menu-open {
   position: relative;
   left: -75vw;
-
 
   #side-pane {
     display: block;
@@ -47,16 +77,16 @@ body{left: 0}
 
   }
 
-  #side-pane-inner{
+  #side-pane-inner {
     position: absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
     overflow: auto;
   }
 }
 
-#site-header-container{
+#site-header-container {
   position: relative;
 }

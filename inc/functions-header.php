@@ -54,7 +54,7 @@ if ( ! function_exists( 'pagespeed_site_branding' ) ) {
 
 function pagespeed_add_menu_icon() {
 	?>
-	<div id="menu">
+	<div id="menu" class="open-drawer">
 		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 		     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		     width="32px" height="32px" viewBox="0 0 437.311 435.856"

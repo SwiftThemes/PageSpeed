@@ -79,7 +79,7 @@ function pagespeed_customize_homepage( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'home_thumb_position', array(
-		'sanitize_callback' => 'eas_attr',
+		'sanitize_callback' => 'esc_attr',
 		'default' => 'alternate',
 
 	) );

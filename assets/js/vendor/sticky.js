@@ -40,8 +40,7 @@
         $document = $(document),
         sticked = [],
         windowHeight = $window.height(),
-        scroller = debounce(function() {
-            console.log('hi')
+        scroller = throttle(function() {
             var scrollTop = $window.scrollTop(),
                 documentHeight = $document.height(),
                 dwh = documentHeight - windowHeight,
@@ -132,8 +131,8 @@
                     }
                 }
             }
-        },20),
-        resizer = debounce(function() {
+        },200),
+        resizer = throttle(function() {
             windowHeight = $window.height();
 
             for (var i = 0, l = sticked.length; i < l; i++) {
@@ -150,7 +149,7 @@
                     s.stickyElement.css('width', newWidth);
                 }
             }
-        },20),
+        },200),
         methods = {
             init: function(options) {
                 return this.each(function() {
@@ -284,6 +283,7 @@
     };
 
 
+    //@todo Remove debounce in future release
     function debounce(func, wait, immediate) {
         var timeout;
         return function() {
@@ -298,6 +298,20 @@
             if (callNow) func.apply(context, args);
         };
     };
+
+    function throttle (callback, limit) {
+        var wait = false;                  // Initially, we're not waiting
+        return function () {               // We return a throttled function
+            if (!wait) {                   // If we're not waiting
+                callback.call();           // Execute users function
+                wait = true;               // Prevent future invocations
+                setTimeout(function () {   // After a period of time
+                    wait = false;          // And allow future invocations
+                    callback.call();
+                }, limit);
+            }
+        }
+    }
 
     $(function() {
         setTimeout(scroller, 0);

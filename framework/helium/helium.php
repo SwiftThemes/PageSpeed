@@ -114,6 +114,7 @@ if ( ! class_exists( 'Helium' ) ) {
 		public function add_theme_support() {
 
 			add_theme_support( 'hybrid-core-template-hierarchy' );
+			add_theme_support( 'breadcrumb-trail' );
 			//add_theme_support( 'theme-layouts', array( 'default' => '2c-l' ) );
 
 			add_theme_support( 'post-thumbnails' );

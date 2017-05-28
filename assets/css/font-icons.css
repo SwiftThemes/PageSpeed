@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "fontastic";
+  src:url("../fonts/fontastic.eot");
+
+  src:url("../fonts/fontastic.eot?#iefix") format("embedded-opentype"),
+
+  url("../fonts/fontastic.woff") format("woff"),
+  url("../fonts/fontastic.ttf") format("truetype"),
+  url("../fonts/fontastic.svg#fontastic") format("svg");
+  font-weight:normal;
+  font-style:normal;
+
+}
+
+[data-icon]:before {
+  font-family: "fontastic" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak:none;
+  line-height: 1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontastic" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak:none;
+  line-height: 1;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+
+}
+
+.icon-home-house-streamline:before {
+  content: "\68";
+
+}
+.icon-email-mail-streamline:before {
+  content: "\65";
+
+}
+.icon-link-streamline:before {
+  content: "\6c";
+
+}
+.icon-man-people-streamline-user:before {
+  content: "\75";
+
+}
+.icon-bars:before {
+  content: "\6d";
+
+}
