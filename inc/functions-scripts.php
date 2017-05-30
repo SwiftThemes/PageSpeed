@@ -11,7 +11,7 @@
  */
 
 add_action( 'wp_enqueue_scripts', 'pagespeed_register_scripts', 8 );
-add_action( 'wp_enqueue_scripts', 'pagespeed_enqueue_styles', 9 );
+add_action( 'wp_enqueue_scripts', 'pagespeed_enqueue_scripts', 9 );
 
 
 function pagespeed_register_scripts() {
@@ -21,7 +21,7 @@ function pagespeed_register_scripts() {
 	wp_register_script( 'pagespeed-custom-js-dev', THEME_JS_URI . 'custom/desktop.js', [ 'jquery' ] );
 }
 
-function pagespeed_enqueue_styles() {
+function pagespeed_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'pagespeed-vendors-js' );
 

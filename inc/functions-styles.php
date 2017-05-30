@@ -10,11 +10,12 @@
  * @license
  */
 
-add_action( 'wp_enqueue_scripts', 'helium_register_styles', 8 );
-add_action( 'wp_enqueue_scripts', 'helium_enqueue_styles', 9 );
+add_action( 'wp_enqueue_scripts', 'pagespeed_load_fonts', 7 );
+add_action( 'wp_enqueue_scripts', 'pagespeed_register_styles', 8 );
+add_action( 'wp_enqueue_scripts', 'pagespeed_enqueue_styles', 9 );
 
 
-function helium_register_styles() {
+function pagespeed_register_styles() {
 	wp_register_style( 'page-speed', THEME_CSS_URI . 'style.prod.css' );
 	wp_register_style( 'page-speed-icons', THEME_CSS_URI . 'font-icons.css' );
 
@@ -22,7 +23,7 @@ function helium_register_styles() {
 	wp_register_style( 'page-speed-2', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
 }
 
-function helium_enqueue_styles() {
+function pagespeed_enqueue_styles() {
 	wp_enqueue_style( 'page-speed-icons' );
 
 	if ( defined( 'DEV_ENV' ) && DEV_ENV || ! get_theme_mod( 'can_read_write' ) ) {
@@ -32,3 +33,10 @@ function helium_enqueue_styles() {
 	}
 }
 
+
+function pagespeed_load_fonts() {
+	?>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" media="none"
+	      onload="this.media='all';">
+	<?php
+}
