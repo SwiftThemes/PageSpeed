@@ -52,6 +52,6 @@ endif;
 
 </div><!-- main inner-->
 </main>
-</div><!-- #content -->
+</div></div><!-- #content -->
 <?php get_footer(); ?>
 

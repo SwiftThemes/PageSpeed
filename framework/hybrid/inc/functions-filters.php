@@ -13,7 +13,7 @@
  */
 
 # Don't strip tags on single post titles.
-remove_filter( 'single_post_title', 'strip_tags' );
+//remove_filter( 'single_post_title', 'strip_tags' );
 
 # Use same default filters as 'the_content' with a little more flexibility.
 add_filter( 'hybrid_archive_description', array( $GLOBALS['wp_embed'], 'run_shortcode' ),   5  );

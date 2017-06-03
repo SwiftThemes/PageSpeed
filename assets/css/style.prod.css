@@ -351,6 +351,10 @@ body {
   /* force the BODY element to match the height of the HTML element */
 }
 
+#content {
+  margin-bottom: 26px;
+}
+
 #main > .inner {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -993,7 +997,9 @@ article {
 }
 
 .page-template-full-width #left,
-.page-template-full-width #main {
+.page-template-full-width #main,
+.attachment-image #left,
+.attachment-image #main {
   width: 100%;
 }
 
@@ -1296,6 +1302,10 @@ hr {
 .nav-links .nav-next .nav-subtitle {
   margin: -3px -5px -3px 5px;
   padding: 0 5px;
+}
+
+.gallery-full {
+  margin-bottom: 26px;
 }
 
 .pagination {

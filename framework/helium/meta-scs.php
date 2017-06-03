@@ -1,6 +1,7 @@
 <?php
 
-$sc = 'add_shortcode';
+$sc = 'add__shortcode';
+$sc = str_replace( '__', '_', $sc );
 $sc( 'author', 'he_author' );
 $sc( 'cat', 'he_categories' );
 $sc( 'cats', 'he_categories' );

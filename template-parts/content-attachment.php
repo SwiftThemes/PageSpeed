@@ -14,12 +14,14 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image($post->ID, array(1200, 0), false, array('class' => 'gallery-full aligncenter')); ?>
+		</a>
 		<?php
 
 		the_content();
 
 		wp_link_pages( array(
-			'before'      => '<div class="page-links">' . __( 'Pages:', 'pagespeed' ),
+			'before'      => '<div class="page-links">' . __( 'Pages:', 'page-speed' ),
 			'after'       => '</div>',
 			'link_before' => '<span class="page-number">',
 			'link_after'  => '</span>',

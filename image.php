@@ -15,6 +15,7 @@
  */
 
 get_header();
+
 ?>
 <?php if ( have_posts() ) : ?>
 
@@ -55,8 +56,11 @@ else :
 
 endif;
 ?>
-<?php get_sidebar('single'); ?>
+<?php do_action( 'pagespeed_main_end' ); ?>
 
+</div><!-- main inner-->
+</main>
+</div>
 </div><!-- #content -->
 <?php get_footer(); ?>
 
