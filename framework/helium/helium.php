@@ -82,7 +82,7 @@ if ( ! class_exists( 'Helium' ) ) {
 		 * Load the helium framework core
 		 */
 		public function core() {
-			require_once( HELIUM_DIR . 'shortcodes.php' );
+			require_once( HELIUM_DIR . 'meta-scs.php' );
 //			require_once( HELIUM_DIR . 'customizer.php' );
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
 			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );

@@ -47,6 +47,9 @@
 		} else {
 			the_content();
 		}
+		?>
+		<div class="clear"></div>
+		<?php
 		wp_link_pages( array(
 			'before'      => '<div class="page-links">' . __( 'Pages:', 'page-speed' ),
 			'after'       => '</div>',

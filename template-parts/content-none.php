@@ -30,4 +30,5 @@
 
 		<?php endif; ?>
 	</div><!-- .page-content -->
+	<div class="clear"></div>
 </section><!-- .no-results -->

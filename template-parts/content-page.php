@@ -52,7 +52,9 @@
 			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'page-speed' ),
 			get_the_title()
 		) );
-
+		?>
+		<div class="clear"></div>
+		<?php
 		wp_link_pages( array(
 			'before'      => '<div class="page-links">' . __( 'Pages:', 'page-speed' ),
 			'after'       => '</div>',

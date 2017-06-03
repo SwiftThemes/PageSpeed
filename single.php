@@ -39,12 +39,13 @@ get_header();
 	endwhile;
 
 	// Previous/next page navigation.
-	the_posts_pagination( array(
-		'prev_text'          => __( 'Previous page', 'page-speed' ),
-		'next_text'          => __( 'Next page', 'page-speed' ),
-		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
-	) );
-
+	the_post_navigation( array(
+		'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'pagespeed' ) . '</span><span aria-hidden="true" class="nav-subtitle">&laquo; ' . __( 'Previous', 'pagespeed' ) . '</span> <span class="nav-title">%title</span>',
+		'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'pagespeed' ) . '</span></span> <span class="nav-title">%title</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'pagespeed' ).' &raquo;',
+		) );
+	?>
+	<div class="clear"></div>
+	<?php
 // If comments are open or we have at least one comment, load up the comment template.
 	if ( comments_open() || get_comments_number() ) :
 		comments_template();

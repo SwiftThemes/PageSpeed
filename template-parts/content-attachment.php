@@ -28,7 +28,7 @@
 		?>
 
 	</div><!-- .entry-content -->
-
+	<div class="clear"></div>
 
 	<?php if ( get_theme_mod( 'single_post_meta_after_body' ) ): ?>
 		<footer class="entry-footer">

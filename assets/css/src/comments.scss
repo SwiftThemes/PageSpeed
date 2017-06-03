@@ -16,6 +16,9 @@ $comment-borders-color: $light-4;
     margin-left: 32px;
     //margin-right: $padding;
   }
+  li.comment a{
+    color:$primary;
+  }
 
   .reply {
     position: absolute;

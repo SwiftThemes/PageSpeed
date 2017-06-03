@@ -21,6 +21,7 @@ function pagespeed_register_styles() {
 
 	$upload_dir = wp_upload_dir();
 	wp_register_style( 'page-speed-2', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
+	wp_register_style( 'page-speed-print-styles', THEME_CSS_URI . 'print-styles.css' );
 }
 
 function pagespeed_enqueue_styles() {
@@ -29,8 +30,12 @@ function pagespeed_enqueue_styles() {
 	if ( defined( 'DEV_ENV' ) && DEV_ENV || ! get_theme_mod( 'can_read_write' ) ) {
 		wp_enqueue_style( 'page-speed' );
 	} else {
-		wp_enqueue_style( 'page-speed-2' );
+		wp_enqueue_style( 'page-speed-2', '', null, 'screen' );
 	}
+
+
+	wp_enqueue_style( 'page-speed-print-styles', '', null, 'screen' );
+
 }
 
 

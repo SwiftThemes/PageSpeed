@@ -30,6 +30,15 @@
   float: right;
 }
 
+article {
+  .alignleft {
+    margin-right: 10px;
+  }
+  .alignright {
+    margin-left: 10px;
+  }
+}
+
 .aligncenter {
   display: block;
   margin: auto;
@@ -56,7 +65,7 @@ Breaks when we have nested stickies, but we don't have them
 
 .is-sticky #site-header-container,
 .is-sticky #primary-nav-container,
-.is-sticky #sticky-search{
+.is-sticky #sticky-search {
   -webkit-box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
   -moz-box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
   box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);

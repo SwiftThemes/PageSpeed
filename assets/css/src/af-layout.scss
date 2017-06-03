@@ -92,15 +92,19 @@ body {
 }
 
 #sb1, #sb2 {
+  background: inherit;
 }
 
 #sb1 > .inner,
 #sb2 > .inner {
   //height: 100%;
+  background: inherit;
+
   padding-top: $padding;
   padding-bottom: $padding;
 }
-
+//Fix for sticky sidebar background
+#left,#sticky-sb1-sticky-wrapper,#sticky-sb1{background: inherit}
 #ns1,
 #ns2 {
   width: 50%;

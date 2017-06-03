@@ -250,7 +250,7 @@ ol li {
 
 code,
 pre {
-  overflow: scroll;
+  overflow: auto;
 }
 
 /** Forms **/
@@ -426,10 +426,22 @@ body {
   display: none;
 }
 
+#sb1,
+#sb2 {
+  background: inherit;
+}
+
 #sb1 > .inner,
 #sb2 > .inner {
+  background: inherit;
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+#left,
+#sticky-sb1-sticky-wrapper,
+#sticky-sb1 {
+  background: inherit;
 }
 
 #ns1,
@@ -690,6 +702,14 @@ body {
   float: right;
 }
 
+article .alignleft {
+  margin-right: 10px;
+}
+
+article .alignright {
+  margin-left: 10px;
+}
+
 .aligncenter {
   display: block;
   margin: auto;
@@ -838,6 +858,7 @@ Breaks when we have nested stickies, but we don't have them
     color: #000;
     padding: .25em .5em;
     display: block;
+    text-decoration: none;
   }
 
   .nav li:hover,
@@ -858,6 +879,7 @@ Breaks when we have nested stickies, but we don't have them
 
   .nav ul li {
     position: relative;
+    z-index: 2;
   }
 
   .nav ul li:hover > ul {
@@ -1036,6 +1058,10 @@ hr {
 
 .comment-list li.comment .comment {
   margin-left: 32px;
+}
+
+.comment-list li.comment a {
+  color: #007AFF;
 }
 
 .comment-list .reply {
@@ -1220,6 +1246,56 @@ hr {
   -moz-border-radius-bottomleft: 3px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
+}
+
+.nav-links {
+  font-size: .75em;
+  margin-bottom: 26px;
+  height: 30px;
+}
+
+.nav-links .nav-previous,
+.nav-links .nav-next {
+  max-width: 45%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.nav-links .nav-previous > a,
+.nav-links .nav-next > a {
+  background: rgba(242, 241, 246, 0.8);
+  padding: 5px;
+}
+
+.nav-links .nav-previous > a .nav-subtitle,
+.nav-links .nav-next > a .nav-subtitle {
+  display: inline-block;
+  background: #ececf1;
+  position: relative;
+  top: -1px;
+  height: 28px;
+}
+
+.nav-links .nav-previous {
+  float: left;
+}
+
+.nav-links .nav-previous .nav-subtitle {
+  margin: -6px 0 -4px -5px;
+  padding: 0 5px;
+}
+
+.nav-links .nav-next {
+  float: right;
+}
+
+.nav-links .nav-next .nav-subtitle {
+  margin: -3px -5px -3px 5px;
+  padding: 0 5px;
 }
 
 .pagination {

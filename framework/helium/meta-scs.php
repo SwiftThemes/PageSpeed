@@ -1,14 +1,14 @@
 <?php
 
-
-add_shortcode( 'author', 'he_author' );
-add_shortcode( 'cat', 'he_categories' );
-add_shortcode( 'cats', 'he_categories' );
-add_shortcode( 'tag', 'he_tags' );
-add_shortcode( 'tags', 'he_tags' );
-add_shortcode( 'date_published', 'he_published_date' );
-add_shortcode( 'date_updated', 'he_updated_date' );
-add_shortcode( 'tags', 'he_tags' );
+$sc = 'add_shortcode';
+$sc( 'author', 'he_author' );
+$sc( 'cat', 'he_categories' );
+$sc( 'cats', 'he_categories' );
+$sc( 'tag', 'he_tags' );
+$sc( 'tags', 'he_tags' );
+$sc( 'date_published', 'he_published_date' );
+$sc( 'date_updated', 'he_updated_date' );
+$sc( 'tags', 'he_tags' );
 
 
 /**
