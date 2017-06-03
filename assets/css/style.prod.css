@@ -1395,6 +1395,10 @@ body {
   margin: 0;
 }
 
+.breadcrumbs .trail-items {
+  margin: 0;
+}
+
 .breadcrumbs .trail-items li::after {
   content: "/";
   padding: 0 0.35em;
@@ -1403,4 +1407,22 @@ body {
 
 .breadcrumbs .trail-items li:last-of-type::after {
   display: none;
+}
+
+.gallery .gallery-item {
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.gallery .gallery-caption {
+  font-size: .8em;
+}
+
+.gallery-columns-3 .gallery-item {
+  width: 33.33%;
+}
+
+.gallery-columns-3 .gallery-item:nth-child(3n+1) {
+  clear: both;
 }

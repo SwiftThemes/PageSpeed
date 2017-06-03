@@ -1,0 +1,11 @@
+.gallery{
+  .gallery-item{float: left;padding:10px;box-sizing: border-box}
+  .gallery-caption{font-size:.8em}
+}
+
+.gallery-columns-3{
+  .gallery-item{width:33.33%}
+  .gallery-item:nth-child(3n+1) {
+    clear: both;
+  }
+}

@@ -30,10 +30,10 @@
 		<?php endif ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'home_show_thumbnails' ) ) : ?>
+	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'home_show_thumbnails', true ) ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => get_theme_mod( 'home_thumb_position' ) ) ) ?>
+				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => get_theme_mod( 'home_thumb_position', 'alternate' ) ) ) ?>
 			</a>
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>

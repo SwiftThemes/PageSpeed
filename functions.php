@@ -8,12 +8,12 @@
 
 define( 'THEME_URI', trailingslashit( get_template_directory_uri() ) );
 
-define( 'FRAMEWORK', trailingslashit( get_template_directory() ) . 'framework/' );
+define( 'THEME_FRAMEWORK', trailingslashit( get_template_directory() ) . 'framework/' );
 
-define( 'HYBRID_DIR', trailingslashit( FRAMEWORK ) . 'hybrid/' );
+define( 'HYBRID_DIR', trailingslashit( THEME_FRAMEWORK ) . 'hybrid/' );
 define( 'HYBRID_URI', trailingslashit( THEME_URI . 'framework/hybrid' ) );
 
-define( 'HELIUM_DIR', trailingslashit( FRAMEWORK . 'helium' ) );
+define( 'HELIUM_DIR', trailingslashit( THEME_FRAMEWORK . 'helium' ) );
 define( 'HELIUM_ADMIN', trailingslashit( HELIUM_DIR ) . 'admin/' );
 
 // Launch the Hybrid Core framework.

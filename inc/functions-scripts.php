@@ -29,7 +29,6 @@ function pagespeed_enqueue_scripts() {
 		wp_enqueue_script( 'pagespeed-custom-js-dev' );
 	} else {
 		wp_enqueue_script( 'pagespeed-custom-js' );
-
 	}
 }
 

@@ -21,7 +21,7 @@
 			</div>
 		<?php endif ?>
 		<?php
-		the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		the_title( '<h1 class="entry-title">','</h1>' );
 		?>
 		<?php if ( get_theme_mod( 'single_post_meta_below_title' ) ): ?>
 			<div class="entry-meta meta below-title">

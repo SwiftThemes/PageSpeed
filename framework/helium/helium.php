@@ -56,7 +56,6 @@ if ( ! class_exists( 'Helium' ) ) {
 			define( 'THEME_DIR', trailingslashit( get_template_directory() ) );
 			define( 'THEME_CORE', trailingslashit( THEME_DIR . 'core' ) );
 			define( 'THEME_INC', trailingslashit( THEME_DIR . 'inc' ) );
-			define( 'CUSTOMIZE', trailingslashit( THEME_INC . 'customize' ) );
 
 
 			define( 'HELIUM_VENDOR', trailingslashit( HELIUM_DIR . 'vendor' ) );
@@ -84,7 +83,7 @@ if ( ! class_exists( 'Helium' ) ) {
 		 */
 		public function core() {
 			require_once( HELIUM_DIR . 'shortcodes.php' );
-			require_once( HELIUM_DIR . 'customizer.php' );
+//			require_once( HELIUM_DIR . 'customizer.php' );
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
 			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );

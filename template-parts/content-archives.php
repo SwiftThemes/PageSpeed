@@ -29,10 +29,10 @@
 		<?php endif ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'archives_show_thumbnails' ) ) : ?>
+	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'archives_show_thumbnails', true ) ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'archives_thumb' ), array( 'class' => get_theme_mod( 'archives_thumb_position' ) ) ) ?>
+				<?php the_post_thumbnail( helium_get_thumb_size( 'archives_thumb' ), array( 'class' => get_theme_mod( 'archives_thumb_position', 'alternate' ) ) ) ?>
 			</a>
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
@@ -41,7 +41,7 @@
 		<?php
 		/* translators: %s: Name of current post */
 
-		if ( get_theme_mod( 'archives_show_excerpts' ) ) {
+		if ( get_theme_mod( 'archives_show_excerpts', true ) ) {
 			the_excerpt();
 
 		} else {
