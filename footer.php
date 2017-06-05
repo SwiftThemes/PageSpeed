@@ -32,7 +32,8 @@
 			)
 		);
 		?>
-		<?php echo get_theme_mod( 'copyright_text' ) ?>
+		<?php echo get_theme_mod( 'copyright_text', 'Copyright &copy; ' . date( "Y" ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
+						                          rel="home">' . get_bloginfo( "name" ) . '</a>' ) ?>
 	</div>
 </div>
 <?php
