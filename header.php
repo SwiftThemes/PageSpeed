@@ -27,7 +27,7 @@
 	<?php do_action( 'pagespeed_before_header' ); ?>
 
 	<div id="site-header-container" class="cf logo-<?php echo get_theme_mod( 'logo_position', 'left' ) ?>">
-		<div class="inner hybrid cf">
+		<div class="hybrid cf">
 			<?php do_action( 'pagespeed_header_start' ); ?>
 
 

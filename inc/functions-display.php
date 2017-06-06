@@ -39,7 +39,7 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 			?>
 			<div id="secondary-nav-container" class="nav-container cf">
 				<div id="secondary" class="">
-					<div class="hybrid inner">
+					<div class="hybrid ">
 						<?php wp_nav_menu( $args ); ?>
 					</div>
 				</div>
@@ -81,7 +81,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			?>
 			<div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
 				<div id="primary" class="">
-					<div class="hybrid inner">
+					<div class="hybrid ">
 						<?php do_action( 'pagespeed_primary_nav_start' ); ?>
 						<?php wp_nav_menu( $args ); ?>
 					</div>
