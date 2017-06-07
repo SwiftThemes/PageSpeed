@@ -120,7 +120,7 @@ function pagespeed_breadcrumbs() {
 		'separator'   => '/',
 		'before'      => '<div data-icon="h" class="icon"></div>',
 		'after'       => false,
-		'front_page'  => false,
+		'show_on_front'  => false,
 		'show_home'   => __( 'Home', 'page-speed' ),
 		'show_browse' => false,
 //		"singular_{$post_type}_taxonomy" => false,
