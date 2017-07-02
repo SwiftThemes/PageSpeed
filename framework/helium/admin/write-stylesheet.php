@@ -10,6 +10,8 @@
 
 $theme_name = wp_get_theme()->stylesheet;
 
+
+
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
 if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
@@ -64,12 +66,11 @@ class Helium_Styles {
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
-//		$args = array(
-//			'hostname' => 'localhost',
-//			'username' => 'satish',
-//			'password' => '',
-//		);
-//
+		$args = array(
+			'hostname' => 'localhost',
+			'username' => 'satish',
+		);
+
 //		WP_Filesystem($args);
 		WP_Filesystem();
 
@@ -150,7 +151,6 @@ class Helium_Styles {
 
 		$content = '';
 		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
-
 			$content = get_transient( $this->prefix . 'sass_combined' );
 		}
 		if ( ! $content ) {
@@ -169,17 +169,29 @@ class Helium_Styles {
 		$override .= '$main_width:' . get_theme_mod( 'main_width', '70' ) . ";\n";
 		$override .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '20' ) . ";\n";
 
-		$override .= "\n".get_theme_mod('scss_override','/* No __SCSS__ Override */')."\n";
+		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
 
 		$content = str_replace( '/**variables**/', $override, $content );
 
-//		echo($content);
+
+		$colors_override = '';
+		$colors_override .= "/** Overridden by settings from customizer */\n\n";
+		$colors_override .= '$primary:' . get_theme_mod( 'primary_color', '#007AFF' ) . ';';
+		$colors_override .= '$hue:' . get_theme_mod( 'shades_from', '#007AFF' ) . ';';
+		$colors_override .= '$saturation:' . get_theme_mod( 'shade_saturation', 8 ) . ';';
+		if(get_theme_mod( 'invert_colors', false )){
+			$colors_override .= '$invert:' . 1 . ';';
+		}
+
+
+
+		$content = str_replace( '/**colors**/', $colors_override, $content );
+
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
 
-//		echo $scss->compile( $content );
 		return $scss->compile( $content );
 	}
 

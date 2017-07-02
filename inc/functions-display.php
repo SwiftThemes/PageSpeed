@@ -76,6 +76,9 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 		} else {
 			$container_class = '';
 		}
+		if(get_option( 'site_icon' )){
+			$container_class .=' has-sticky-logo';
+		}
 
 		if ( has_nav_menu( 'primary' ) ) :
 			?>

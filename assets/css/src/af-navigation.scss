@@ -1,8 +1,11 @@
 @media only screen and (min-width: 768px) {
   .nav-container {
-    border-bottom: solid 1px $light-4;
+    border-bottom: solid 1px rgba($light-4,.8);
   }
 
+  .is-sticky .has-sticky-logo.nav-container #primary-nav{
+    margin-left: 44px;
+  }
   .nav {
     ul {
       margin: 0;
@@ -80,7 +83,7 @@
 }
 
 #primary-nav-container{
-  background: $light-1;
+  background: $light-3;
 }
 #secondary-nav-container.nav-container {
 

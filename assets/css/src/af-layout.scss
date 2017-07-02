@@ -129,11 +129,11 @@ body {
 .layout-centered {
   #sb1 {
     //background: rgba(0, 255, 255, .5);
-    background: $light-2 !important;
+    background: rgba($light-2,.7) !important;
   }
   #sb2 {
     //background: rgba(255, 255, 0, .5);
-    background: $light-3 !important;
+    background: rgba($light-3,.7) !important;
 
   }
 }
@@ -169,28 +169,28 @@ body {
 }
 
 #site-header-container {
-  border-bottom: solid 1px $light-4
+  border-bottom: solid 1px rgba($light-4,.8)
 }
 
 .layout-r-sb {
 
   #sb1 > .inner {
-    border-left: solid 1px $light-4
+    border-left: solid 1px rgba($light-4,.8)
   }
 }
 
 .layout-l-sb {
   #sb1 > .inner {
-    border-right: solid 1px $light-4
+    border-right: solid 1px rgba($light-4,.8)
   }
 }
 
 .layout-centered {
   #sb1 > .inner {
-    border-right: solid 1px $light-4
+    border-right: solid 1px rgba($light-4,.8)
   }
   #sb2 > .inner {
-    border-left: solid 1px $light-4
+    border-left: solid 1px rgba($light-4,.8)
   }
 }
 

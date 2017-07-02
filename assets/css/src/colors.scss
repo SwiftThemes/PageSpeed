@@ -1,75 +1,54 @@
 //Colors
 $primary: #007AFF;
-$secondary: green;
-$teritiary: blue;
-
-//$primary:#e30707;
-// These are the dark gray colors we use
-// darkness decreases as the number increases
-
-$dark-1: #000;
-$dark-2: #182026;
-$dark-3: #202b33;
-$dark-4: #293742;
-$dark-5: #30404d;
-$dark-6: #394b59;
-$dark-7: #5c7080;
-$dark-8: #738694;
-$dark-9: #8a9ba8;
-
-// These are the light grays we use
-// Whiteness decreases as the number increases
-
-$light-9: #8a9ba8;
-$light-8: #a7b6c2;
-$light-7: #bfccd6;
-$light-6: #ced9e0;
-$light-5: #d8e1e8;
-$light-4: #e1e8ed;
-$light-3: #ebf1f5;
-$light-2: #f5f8fa;
-$light-1: #ffffff;
-
-$black: #000;
-$dark-1: $black;
-$dark-2: #14141A;
-$dark-3: #3D3D45;
-$dark-4: #404048;
-$dark-5: #63636A;
-$dark-6: #84848C;
-
 $white: #FFF;
-$light-1: $white;
-$light-2: #F2F1F6;
-$light-3: #ECECF1;
-$light-4: #e4e4eb;
-$light-5: #CFCFD8;
-$light-6: #d1d1de;
-
-
-$alpha :1;
-
-
 $black: #000;
-$dark-1: $black;
-$dark-2: rgba(#14141A,$alpha);
-$dark-3: rgba(#3D3D45,$alpha);
-$dark-4: rgba(#404048,$alpha);
-$dark-5: rgba(#63636A,$alpha);
-$dark-6: rgba(#84848C,$alpha);
 
-$light-1: rgba($white,$alpha);
-$light-2: rgba(#F2F1F6, $alpha);
-$light-3: rgba(#ECECF1, $alpha);
-$light-4: rgba(#e4e4eb, $alpha);
-$light-5: rgba(#CFCFD8, $alpha);
-$light-6: rgba(#c1c1cb, $alpha);
+$alpha: .8;
+$shades-from: $primary;
+$saturation: 8;
 
-
-
+$hue: hue($shades-from);
 
 
 // Don't remove the below line.
 // It's used for overriding the variables.
 
 /**colors**/
+
+
+/* Generated colors */
+
+$light-1: hsla($hue, $saturation, 97, $alpha);
+$light-2: hsla($hue, $saturation, 94, $alpha);
+$light-3: hsla($hue, $saturation, 91, $alpha);
+$light-4: hsla($hue, $saturation, 88, $alpha);
+$light-5: hsla($hue, $saturation, 85, $alpha);
+$light-6: hsla($hue, $saturation, 80, $alpha);
+
+$dark-1: hsla($hue, $saturation, 04, $alpha);
+$dark-2: hsla($hue, $saturation, 08, $alpha);
+$dark-3: hsla($hue, $saturation, 12, $alpha);
+$dark-4: hsla($hue, $saturation, 16, $alpha);
+$dark-5: hsla($hue, $saturation, 20, $alpha);
+$dark-6: hsla($hue, $saturation, 24, $alpha);
+
+
+
+@if ($invert == 1){
+
+
+  $dark-1: hsla($hue, $saturation, 97, $alpha);
+  $dark-2: hsla($hue, $saturation, 94, $alpha);
+  $dark-3: hsla($hue, $saturation, 91, $alpha);
+  $dark-4: hsla($hue, $saturation, 88, $alpha);
+  $dark-5: hsla($hue, $saturation, 85, $alpha);
+  $dark-6: hsla($hue, $saturation, 80, $alpha);
+
+  $light-6: hsla($hue, $saturation, 04, $alpha);
+  $light-5: hsla($hue, $saturation, 08, $alpha);
+  $light-4: hsla($hue, $saturation, 12, $alpha);
+  $light-3: hsla($hue, $saturation, 16, $alpha);
+  $light-2: hsla($hue, $saturation, 20, $alpha);
+  $light-1: hsla($hue, $saturation, 24, $alpha);
+
+}
