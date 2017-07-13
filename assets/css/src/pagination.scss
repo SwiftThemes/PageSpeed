@@ -7,10 +7,12 @@
   }.nav-links .page-numbers:nth-child(2n){
     background: $light-3;
   }
-  .nav-links .current{background: $primary!important;color:$light-1;margin: -1px 0 -1px -1px}
+  .nav-links .current,
+  .page-numbers:hover{background: $primary!important;color:$light-1;}
+  .page-numbers:hover{background: rgba($primary,.8)!important;}
   .page-numbers span{display: none}
   .page-numbers,
-  .page-numbers a{display: inline-block}
+  .page-numbers a{display: inline-block;text-decoration: none}
   .page-numbers{padding:2px 10px 4px;float: left}
   .page-numbers.next{border:none}
 

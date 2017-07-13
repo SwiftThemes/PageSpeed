@@ -51,8 +51,8 @@ class Helium_Styles {
 
 	private $main;
 	private $source;
-	private $af_files = [ ];    // List above fold css files
-	private $bf_files = [ ];  // Below fold css files
+	private $af_files = array();    // List above fold css files
+	private $bf_files = array();  // Below fold css files
 	private $scss_variable_files = [ 'variables', 'colors' ];
 	private $prefix;
 
@@ -81,7 +81,7 @@ class Helium_Styles {
 	}
 
 	private function set_file_list() {
-		$files = [ ];
+		$files = array();
 		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
 			$files = get_transient( $this->prefix . 'sass_file_list' );
 		}

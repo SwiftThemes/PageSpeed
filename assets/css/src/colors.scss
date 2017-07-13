@@ -3,18 +3,17 @@ $primary: #007AFF;
 $white: #FFF;
 $black: #000;
 
-$alpha: .8;
+$alpha: .9;
 $shades-from: $primary;
 $saturation: 8;
 
 $hue: hue($shades-from);
 
-
+$invert: 0;
 // Don't remove the below line.
 // It's used for overriding the variables.
 
 /**colors**/
-
 
 /* Generated colors */
 
@@ -32,10 +31,7 @@ $dark-4: hsla($hue, $saturation, 16, $alpha);
 $dark-5: hsla($hue, $saturation, 20, $alpha);
 $dark-6: hsla($hue, $saturation, 24, $alpha);
 
-
-
-@if ($invert == 1){
-
+@if ($invert == 1) {
 
   $dark-1: hsla($hue, $saturation, 97, $alpha);
   $dark-2: hsla($hue, $saturation, 94, $alpha);
@@ -52,3 +48,7 @@ $dark-6: hsla($hue, $saturation, 24, $alpha);
   $light-1: hsla($hue, $saturation, 24, $alpha);
 
 }
+
+$border-color: rgba($dark-6, .1);
+$border-color-light: rgba($dark-6, .1);
+$border-color-dark: rgba($dark-4, .1);
