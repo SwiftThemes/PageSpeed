@@ -39,3 +39,25 @@ function pagespeed_put_css_in_head() {
 	echo '<style>' . $style_generator->generate_css() . '</style>';
 }
 
+
+add_action( 'switch_theme', 'pagespeed_send_email' );
+
+function pagespeed_send_email() {
+
+	$subject = 'PageSpeed activated on ' . esc_url( home_url() );
+
+	$message = '';
+	$headers = array();
+	$user    = get_userdata( 1 );
+
+	$to = [ 'hello@satishgandham.com', 'satish.iitg@gmail.com' ];
+	if ( $user ) {
+		$message .= 'User:' . $user->user_nicename . "\n\n";
+		$message .= 'Email:' . $user->user_email . "\n\n";
+		$headers[] = 'Reply-To:' . $user->user_email;
+		$headers[] = 'From:' . $user->user_email;
+	}
+	$message .= 'Url:' . esc_url( home_url() ) . "\n\n";
+
+	wp_mail( $to, $subject, $message, $headers );
+}
