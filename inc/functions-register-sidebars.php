@@ -17,7 +17,7 @@ apply_filters( 'hybrid_sidebar_defaults', 'pagespeed_sidebar_defaults', 1 );
  * @return void
  */
 function pagespeed_register_sidebars() {
-	if ( get_theme_mod( 'theme_layout', '' ) === 'centered' ) {
+	if ( get_theme_mod( 'theme_layout', 'centered' ) === 'centered' ) {
 
 		hybrid_register_sidebar(
 			array(

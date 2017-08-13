@@ -9,11 +9,12 @@
  * @since 1.0
  * @version 1.0
  */
-
+global $he;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php if(!$he->get_meta( 'hide_title' )):?>
 	<header class="entry-header">
 		<?php if ( get_theme_mod( 'single_page_meta_above_title' ) ): ?>
 			<div class="entry-meta meta above-title">
@@ -29,7 +30,7 @@
 			</div>
 		<?php endif ?>
 	</header><!-- .entry-header -->
-
+	<?php endif;?>
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">

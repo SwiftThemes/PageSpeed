@@ -57,7 +57,11 @@ function pagespeed_send_email() {
 		$headers[] = 'Reply-To:' . $user->user_email;
 		$headers[] = 'From:' . $user->user_email;
 	}
-	$message .= 'Url:' . esc_url( home_url() ) . "\n\n";
+	$message .= 'Url: ' . esc_url( home_url() ) . "\n\n";
 
 	wp_mail( $to, $subject, $message, $headers );
 }
+//
+//if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
+//	add_action( 'wp_head', 'helium_write_stylesheet', 20 );
+//}

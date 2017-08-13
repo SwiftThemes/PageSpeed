@@ -28,7 +28,7 @@ function pagespeed_enqueue_styles() {
 	wp_enqueue_style( 'page-speed-icons' );
 
 	if ( defined( 'DEV_ENV' ) && DEV_ENV || ! get_theme_mod( 'can_read_write' ) ) {
-		wp_enqueue_style( 'page-speed-2' );
+		wp_enqueue_style( 'page-speed' );
 	} else {
 		wp_enqueue_style( 'page-speed-2', '', null, 'screen' );
 	}

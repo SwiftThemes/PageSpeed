@@ -76,8 +76,8 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 		} else {
 			$container_class = '';
 		}
-		if(get_option( 'site_icon' )){
-			$container_class .=' has-sticky-logo';
+		if ( get_option( 'site_icon' ) ) {
+			$container_class .= ' has-sticky-logo';
 		}
 
 		if ( has_nav_menu( 'primary' ) ) :
@@ -119,15 +119,20 @@ function pagespeed_mobile_search() {
 
 
 function pagespeed_breadcrumbs() {
+	global $he;
+	if ( $he->get_meta( 'hide_breadcrumbs' ) ) {
+		return;
+	}
+
 	$defaults = array(
-		'separator'   => '/',
-		'before'      => '<div data-icon="h" class="icon"></div>',
-		'after'       => false,
-		'show_on_front'  => false,
-		'show_home'   => __( 'Home', 'page-speed' ),
-		'show_browse' => false,
+		'separator'     => '/',
+		'before'        => '<div data-icon="h" class="icon"></div>',
+		'after'         => false,
+		'show_on_front' => false,
+		'show_home'     => __( 'Home', 'page-speed' ),
+		'show_browse'   => false,
 //		"singular_{$post_type}_taxonomy" => false,
-		'echo'        => true
+		'echo'          => true
 	);
 	if ( current_theme_supports( 'breadcrumb-trail' ) ) {
 		breadcrumb_trail( $defaults );

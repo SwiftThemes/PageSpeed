@@ -1,0 +1,90 @@
+.he-btn {
+  padding: 4px 10px;
+  color: #FFF!important;
+  background: $primary;
+@include border-radius(3px);
+  text-decoration: none!important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.he-btn:hover {
+@include subtle-shadow();
+}
+
+/* Sizes */
+.he-btn.small {
+  padding: 0 6px;
+  font-size: .8em;
+}
+
+.he-btn.lg,
+.he-btn.large {
+  padding: 8px 12px;
+  font-size: 1.25em;
+}
+
+.he-btn.xlg,
+.he-btn.x-large,
+.he-btn.extra-large {
+  padding: 16px 20px;
+  font-size: 2em;
+}
+
+/* Colors */
+.he-btn.red{
+  background: $btn-red;
+}
+.he-btn.orange{
+  background: $btn-orange;
+}
+.he-btn.yellow{
+  background: $btn-yellow;
+}
+.he-btn.green{
+  background: $btn-green;
+}
+.he-btn.teal{
+  background: $btn-teal;
+}
+.he-btn.blue{
+  background: $btn-blue;
+}
+.he-btn.purple{
+  background: $btn-purple;
+}
+.he-btn.pink{
+  background: $btn-pink;
+}
+
+
+
+.dummy{
+  background-color: rgba(0,102,204,1);
+  background: -moz-linear-gradient(45deg,  rgba(0,82,164,1) 0%, rgba(0,102,204,1) 25%, rgba(102,199,214,1) 100%);
+  background: -webkit-linear-gradient(45deg,  rgba(0,82,164,1) 0%,rgba(0,102,204,1) 25%,rgba(102,199,214,1) 100%);
+  background: linear-gradient(45deg,  rgba(0,82,164,1) 0%,rgba(0,102,204,1) 25%,rgba(102,199,214,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0052a4', endColorstr='#52b5d5',GradientType=1 );
+}
+
+#ballon{
+  stroke:rgb(225, 226, 227);
+  fill:rgb(225, 226, 227);
+  animation: float 20s ease-in-out infinite;
+
+
+}
+
+
+@keyframes float {
+  0% {
+    transform: translatey(100px);
+  }
+  50% {
+    transform: translatey(-700px);
+  }
+  100% {
+    transform: translatey(-1000px);
+  }
+}
+

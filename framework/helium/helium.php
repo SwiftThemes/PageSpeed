@@ -150,6 +150,33 @@ if ( ! class_exists( 'Helium' ) ) {
 			return $this->mobile_detect->isMobile() && ! $this->mobile_detect->isTablet();
 		}
 
+		/**
+		 * Returns the post/page meta value of the given key.
+		 *
+		 * @param string $key key of the meta.
+		 *
+		 * @return mixed
+		 */
+		public function get_meta( $key = null ) {
+
+			if ( is_admin() && isset( $_GET['post'] ) && $_GET['post'] ) {
+				$post_id = $_GET['post'];
+			} else if ( is_singular() ) {
+				global $post;
+				$post_id = $post->ID;
+			} else {
+				return null;
+			}
+
+			$meta = get_post_meta( $post_id, '_he', true );
+
+			if ( $key ) {
+				return isset( $meta[ $key ] ) ? $meta[ $key ] : null;
+			} else {
+				return $meta;
+			}
+		}
+
 	}
 
 }
