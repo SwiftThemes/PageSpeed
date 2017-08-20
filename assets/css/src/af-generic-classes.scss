@@ -133,8 +133,12 @@ Breaks when we have nested stickies, but we don't have them
   margin-left: -40px;
 }
 
+.no-padding{padding: 0}
 
 
+.emoji{
+  width: 1em;
+}
 /**/
 /**
  * For modern browsers

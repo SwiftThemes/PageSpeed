@@ -20,16 +20,28 @@ $comment-borders-color: $light-4;
     color:$primary;
   }
 
-  .reply {
+
+
+  li.comment .comment-metadata a{
+    color:$dark-5;
+    text-decoration: none;
+  }
+  li.comment .comment-metadata a:hover{
+    color:$primary;
+  }
+  .reply a{
+    background: $light-3;
     position: absolute;
     top: 16px;
     right: 10px;
     border: solid 1px $light-4;
     padding: 0 .25*$padding;
-    @include border-radius(3px)
+    text-decoration: none;
+    @include border-radius(3px);
   }
-  .reply:hover {
-    background: $light-4;
+  .reply a:hover {
+    background: $primary;
+    color: $light-1;
   }
 }
 

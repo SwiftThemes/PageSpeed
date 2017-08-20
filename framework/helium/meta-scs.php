@@ -46,7 +46,7 @@ function he_categories( $attr, $content = null ) {
  */
 function he_tags( $attr, $content = null ) {
 	if ( has_tag() ) {
-		return $content . get_the_tag_list( '', ', ', '' );
+		return $content . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
 	}
 }
 

@@ -26,6 +26,7 @@ if ( ! function_exists( 'he_move_comment_field_to_bottom' ) ) {
 		$fields['url'] = '<p class="comment-form-url"><label for="url">' . __( 'Website','helium' ) . '</label> ' .
 		                 '<input id="url"  placeholder="'.__('Your website url','helium').'" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>';
 
+		$fields['class_form'] = 'cf';
 		return $fields;
 	}
 }

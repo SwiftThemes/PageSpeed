@@ -30,3 +30,18 @@ hr{
   border-width: 1px 0;
   margin: $vr (-$padding);
 }
+
+.meta .tags{display: inline}
+.meta .tags a{
+  font-size: .8em;
+  background: $primary;
+  color: $light-1;
+  padding: 1px 4px;
+  font-weight: bold;
+  text-decoration: none;
+  @include border-radius(2px)
+}
+.meta .tags a:hover{
+  text-shadow: 0 1px 0 rgba($dark-1, 0.4);
+
+}

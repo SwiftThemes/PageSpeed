@@ -76,7 +76,9 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	$args=array();
+	$args['class_form']='comment-form cf';
+	comment_form($args);
 	?>
 
 </div><!-- #comments -->
