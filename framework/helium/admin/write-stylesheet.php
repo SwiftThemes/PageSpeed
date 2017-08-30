@@ -20,7 +20,7 @@ if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
 add_action( 'switch_theme', 'helium_write_stylesheet' );
 
 function helium_write_stylesheet() {
-
+	helium_set_fs_status();
 	$style_generator = new Helium_Styles( THEME_ASSETS . 'css/src/' );
 	$style_generator->write_css();
 }
