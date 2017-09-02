@@ -366,10 +366,6 @@ body {
   /* force the BODY element to match the height of the HTML element */
 }
 
-#content {
-  margin-bottom: 26px;
-}
-
 #main > .inner {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -610,6 +606,10 @@ body {
   font-size: 2.75em;
   margin: 0;
   line-height: 1.2em;
+}
+
+.site-title a {
+  text-decoration: none;
 }
 
 .site-description {
@@ -926,6 +926,14 @@ Breaks when we have nested stickies, but we don't have them
   margin-left: -40px;
 }
 
+.no-padding {
+  padding: 0;
+}
+
+.emoji {
+  width: 1em;
+}
+
 /**/
 
 /**
@@ -1208,6 +1216,26 @@ hr {
   margin: 26px -40px;
 }
 
+.meta .tags {
+  display: inline;
+}
+
+.meta .tags a {
+  font-size: .8em;
+  background: #007AFF;
+  color: rgba(247, 247, 248, 0.9);
+  padding: 1px 4px;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.meta .tags a:hover {
+  text-shadow: 0 1px 0 rgba(9, 10, 11, 0.4);
+}
+
 .comment-list {
   padding: 0;
 }
@@ -1227,19 +1255,31 @@ hr {
   color: #007AFF;
 }
 
-.comment-list .reply {
+.comment-list li.comment .comment-metadata a {
+  color: rgba(47, 51, 55, 0.9);
+  text-decoration: none;
+}
+
+.comment-list li.comment .comment-metadata a:hover {
+  color: #007AFF;
+}
+
+.comment-list .reply a {
+  background: rgba(230, 232, 234, 0.9);
   position: absolute;
   top: 16px;
   right: 10px;
   border: solid 1px rgba(222, 224, 227, 0.9);
   padding: 0 10px;
+  text-decoration: none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
-.comment-list .reply:hover {
-  background: rgba(222, 224, 227, 0.9);
+.comment-list .reply a:hover {
+  background: #007AFF;
+  color: rgba(247, 247, 248, 0.9);
 }
 
 .comment-meta {

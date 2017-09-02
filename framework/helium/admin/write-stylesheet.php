@@ -11,7 +11,6 @@
 $theme_name = wp_get_theme()->stylesheet;
 
 
-
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
 if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
@@ -53,7 +52,7 @@ class Helium_Styles {
 	private $source;
 	private $af_files = array();    // List above fold css files
 	private $bf_files = array();  // Below fold css files
-	private $scss_variable_files = [ 'variables', 'colors' ];
+	private $scss_variable_files = [ 'variables', 'colors','mixins' ];
 	private $prefix;
 
 	/**
@@ -81,12 +80,9 @@ class Helium_Styles {
 	}
 
 	private function set_file_list() {
-		$files = array();
-		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
-			$files = get_transient( $this->prefix . 'sass_file_list' );
-		}
+		$files = get_transient( $this->prefix . 'sass_file_list' );
 
-		if ( $files && $files['below_fold'] ) {
+		if ( $files && is_array( $files ) && $files['below_fold'] ) {
 			$this->af_files = $files['above_fold'];
 			$this->bf_files = $files['below_fold'];
 		} else {
@@ -95,28 +91,25 @@ class Helium_Styles {
 			// Save the read files to transient.
 			foreach ( $files as $file ) {
 				if ( preg_match( '/".+"/', $file, $matches ) ) {
-
 					$file_name = $file = str_replace( '"', '', $matches[0] );
-
-
-					$file = THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
-
+					$file      = THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
 					if ( in_array( $file_name, $this->scss_variable_files ) ) {
 						if ( $wp_filesystem->is_file( CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss' ) ) {
 							$file = CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
 						}
 					}
 
-					if ( 0 && $this->is_above_fold( $file ) ) {
+					if ( $this->is_above_fold( $file_name ) ) {
 						array_push( $this->af_files, $file );
 					} elseif ( 'main' !== $file ) {
 						array_push( $this->bf_files, $file );
 					}
+
 					if ( in_array( $file_name, $this->scss_variable_files ) ) {
 						array_push( $this->af_files, $file );
 
 						// Check if there is a file to override the variables.
-						// If yes, add them after our regular varible files.
+						// If yes, add them after our regular variable files.
 						$override_file = CHILD_THEME_DIR . 'assets/css/src/override-' . $file_name . '.scss';
 
 						if ( $wp_filesystem->is_file( $override_file ) ) {
@@ -146,20 +139,26 @@ class Helium_Styles {
 		}
 	}
 
-	public function generate_css() {
+	public function generate_css( $af_bf ) {
 		global $wp_filesystem;
 
-		$content = '';
-		if ( defined( 'DEV_ENV' ) && ! DEV_ENV ) {
-			$content = get_transient( $this->prefix . 'sass_combined' );
-		}
-		if ( ! $content ) {
+		$transient = $this->prefix . 'sass_combined_' . $af_bf;
+		$content   = get_transient( $transient );
+
+		if ( ! $content || ( defined( 'DEV_ENV' ) && DEV_ENV ) ) {
 			$content = '';
-			foreach ( $this->bf_files as $file_name ) {
-				$content .= $wp_filesystem->get_contents( $file_name );
+
+			if ( $af_bf === 'af' ) {
+				foreach ( $this->af_files as $file_name ) {
+					$content .= $wp_filesystem->get_contents( $file_name );
+				}
+			} else {
+				foreach ( $this->bf_files as $file_name ) {
+					$content .= $wp_filesystem->get_contents( $file_name );
+				}
 			}
-			delete_transient( $this->prefix . 'sass_combined' );
-			set_transient( $this->prefix . 'sass_combined', $content, 1800 );
+			delete_transient( $transient );
+			set_transient( $transient, $content, 1800 );
 		}
 
 
@@ -179,10 +178,9 @@ class Helium_Styles {
 		$colors_override .= '$primary:' . get_theme_mod( 'primary_color', '#007AFF' ) . ';';
 		$colors_override .= '$hue:' . get_theme_mod( 'shades_from', '#007AFF' ) . ';';
 		$colors_override .= '$saturation:' . get_theme_mod( 'shade_saturation', 8 ) . ';';
-		if(get_theme_mod( 'invert_colors', false )){
+		if ( get_theme_mod( 'invert_colors', false ) ) {
 			$colors_override .= '$invert:' . 1 . ';';
 		}
-
 
 
 		$content = str_replace( '/**colors**/', $colors_override, $content );
@@ -196,9 +194,15 @@ class Helium_Styles {
 	}
 
 	public function write_css() {
+
+		$theme_name = wp_get_theme()->stylesheet;
+		$content    = $this->minify_css($this->generate_css( 'af' ));
+
+		update_option( $theme_name . '_above_fold_css', $content );
+
 		try {
 			global $wp_filesystem;
-			$content    = $this->generate_css();
+			$content    = $this->generate_css( 'bf' );
 			$upload_dir = wp_upload_dir();
 			$file       = trailingslashit( $upload_dir['basedir'] ) . $theme_name = wp_get_theme()->stylesheet . '.css';
 			$wp_filesystem->put_contents( $file, $content );
@@ -206,5 +210,21 @@ class Helium_Styles {
 			echo 'Message: ' . $e->getMessage();
 		}
 
+	}
+
+
+	private function minify_css($buffer)
+	{
+//		if (WP_DEBUG)
+//			return $buffer;
+
+		$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
+
+		// Remove space after colons
+		$buffer = str_replace(': ', ':', $buffer);
+
+		// Remove whitespace
+		$buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
+		return $buffer;
 	}
 }
