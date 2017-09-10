@@ -3,6 +3,10 @@ var gulp = require('gulp'),
     scss = require('gulp-ruby-sass'),
     concatCss = require('gulp-concat-css');
 
+
+var requireDir = require('require-dir');
+requireDir('./gulp');
+
 //CSS
 gulp.task('sass', function () {
     scss([
