@@ -29,36 +29,37 @@ function helium_theme_menu() {
 
 function pagespeed_help() {
 	?>
-	<div class="wrap">
-	<p>Helium caches the SASS files to database for faster response on the customizer.<br />
-	If you switched or upgraded your theme, it's advised to clear the SASS cache.</p>
-		<button id="clear-sass" class="button button-primary">Clear SASS Cache</button>
-<br />
-		<span id="clear_cache_results"></span>
-	</div>
+    <div class="wrap">
+        <p style="font-size:20px;font-weight: 300">
+            Helium caches the SASS/CSS files to the database for a smoother experience on the theme customizer.<br/>
+            If you switched or upgraded your theme, and the customizer is not working as expected, try clearing the SASS
+            cache.
+        </p>
+        <button id="clear-sass" class="button button-primary" style="padding:20px 30px;font-size:32px;border-radius: 40px;height: auto">Clear SASS Cache</button>
+        <br/>
+        <span id="clear_cache_results"></span>
+    </div>
 	<?php
 }
 
 
-
-function helium_admin_scripts($hook) {
+function helium_admin_scripts( $hook ) {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'jquery-ui-core' );
 	wp_enqueue_script( 'jquery-ui-tabs' );
-	wp_enqueue_script('admin-scripts', HELIUM_ADMIN_ASSETS_URI . 'js/tabs.js', array(
+	wp_enqueue_script( 'admin-scripts', HELIUM_ADMIN_ASSETS_URI . 'js/tabs.js', array(
 		'jquery',
 //		'cookie-plugin',
 		'jquery-ui-core',
 		'jquery-ui-tabs',
 //		'masonry'
-	));
+	) );
 
 	wp_enqueue_script( 'helium-admin-scripts', HELIUM_ADMIN_ASSETS_URI . 'js/scripts.js' );
 }
 
 
-function helium_admin_stylesheet()
-{
-	wp_enqueue_style('helium-adminstyles', HELIUM_ADMIN_ASSETS_URI . '/css/style.css');
+function helium_admin_stylesheet() {
+	wp_enqueue_style( 'helium-adminstyles', HELIUM_ADMIN_ASSETS_URI . '/css/style.css' );
 
 }

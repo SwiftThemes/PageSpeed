@@ -45,7 +45,7 @@ function helium_theme_options_display() {
                 </div>
                 <div id="tabs-3">
                     <h2>Coming soon..</h2>
-                    <p>You are free to use the theme till then</p>
+                    <p>You are free to use this version as long as you please.</p>
                 </div>
             </form>
         </div>

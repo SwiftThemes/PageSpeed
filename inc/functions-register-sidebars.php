@@ -96,7 +96,7 @@ function pagespeed_register_sidebars() {
 				hybrid_register_sidebar(
 					array(
 						'id'           => 'left-sticky-page',
-						'name'         => esc_html_x( 'Left Sidebar Sticky #Page', 'sidebar', 'page-speed' ),
+						'name'         => esc_html_x( 'Sticky Left Sidebar #Page', 'sidebar', 'page-speed' ),
 						'description'  => esc_html__( 'Appears on the left of main content on pages using default page template. Widgets added to this sidebar stick to the top of the page when you scroll', 'page-speed' ),
 						'before_title' => '<div class="widget-title heading">',
 						'after_title'  => '</div>',
@@ -117,7 +117,7 @@ function pagespeed_register_sidebars() {
 				hybrid_register_sidebar(
 					array(
 						'id'           => 'right-sticky-page',
-						'name'         => esc_html_x( 'Right Sidebar Sticky #Page', 'sidebar', 'page-speed' ),
+						'name'         => esc_html_x( 'Sticky Right Sidebar #Page', 'sidebar', 'page-speed' ),
 						'description'  => esc_html__( 'Appears on the right of main content on pages using default page template. Widgets added to this sidebar stick to the top of the page when you scroll', 'page-speed' ),
 						'before_title' => '<div class="widget-title heading">',
 						'after_title'  => '</div>',
@@ -189,7 +189,7 @@ function pagespeed_register_sidebars() {
 				hybrid_register_sidebar(
 					array(
 						'id'           => 'left-sticky-home',
-						'name'         => esc_html_x( 'Sidebar sticky #HomePage', 'sidebar', 'page-speed' ),
+						'name'         => esc_html_x( 'Sticky Sidebar #HomePage', 'sidebar', 'page-speed' ),
 						'description'  => esc_html__( 'Widgets added here stick to the page', 'page-speed' ),
 						'before_title' => '<div class="widget-title heading">',
 						'after_title'  => '</div>',
@@ -199,7 +199,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'ns-1-home',
-					'name'         => esc_html_x( 'Narrow sidebar left #HomePage', 'sidebar', 'page-speed' ),
+					'name'         => esc_html_x( 'Narrow Sidebar Left #HomePage', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -208,7 +208,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'ns-2-home',
-					'name'         => esc_html_x( 'Narrow sidebar right #HomePage', 'sidebar', 'page-speed' ),
+					'name'         => esc_html_x( 'Narrow Sidebar Right #HomePage', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -240,7 +240,7 @@ function pagespeed_register_sidebars() {
 				hybrid_register_sidebar(
 					array(
 						'id'           => 'left-sticky-page',
-						'name'         => esc_html_x( 'Sidebar sticky #Page', 'sidebar', 'page-speed' ),
+						'name'         => esc_html_x( 'Sticky Sidebar #Page', 'sidebar', 'page-speed' ),
 						'description'  => esc_html__( 'Widgets added here stick to the page', 'page-speed' ),
 						'before_title' => '<div class="widget-title heading">',
 						'after_title'  => '</div>',
@@ -250,7 +250,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'ns-1-page',
-					'name'         => esc_html_x( 'Narrow sidebar left #Page', 'sidebar', 'page-speed' ),
+					'name'         => esc_html_x( 'Narrow Sidebar Left #Page', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -259,7 +259,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'ns-2-page',
-					'name'         => esc_html_x( 'Narrow sidebar right #Page', 'sidebar', 'page-speed' ),
+					'name'         => esc_html_x( 'Narrow Sidebar Right #Page', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -292,7 +292,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'left-sticky',
-					'name'         => esc_html_x( 'Sidebar sticky', 'sidebar', 'page-speed' ),
+					'name'         => esc_html_x( 'Sticky Sidebar', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Widgets added here stick to the page' . $append, 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -302,7 +302,7 @@ function pagespeed_register_sidebars() {
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'ns-1',
-				'name'         => esc_html_x( 'Narrow sidebar left', 'sidebar', 'page-speed' ),
+				'name'         => esc_html_x( 'Narrow Sidebar Left', 'sidebar', 'page-speed' ),
 				'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives' . $append, 'page-speed' ),
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
@@ -311,7 +311,7 @@ function pagespeed_register_sidebars() {
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'ns-2',
-				'name'         => esc_html_x( 'Narrow sidebar right', 'sidebar', 'page-speed' ),
+				'name'         => esc_html_x( 'Narrow Sidebar Right', 'sidebar', 'page-speed' ),
 				'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives' . $append, 'page-speed' ),
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
@@ -332,7 +332,7 @@ function pagespeed_register_sidebars() {
 	hybrid_register_sidebar(
 		array(
 			'id'           => 'page-template-right',
-			'name'         => esc_html_x( 'Right sidebar page template', 'sidebar', 'page-speed' ),
+			'name'         => esc_html_x( 'Right Sidebar Page Template', 'sidebar', 'page-speed' ),
 			'description'  => esc_html__( 'Add widgets to right sidebar page template here', 'page-speed' ),
 			'before_title' => '<div class="widget-title heading">',
 			'after_title'  => '</div>',
@@ -342,8 +342,8 @@ function pagespeed_register_sidebars() {
 	hybrid_register_sidebar(
 		array(
 			'id'           => 'page-template-left',
-			'name'         => esc_html_x( 'Right sidebar page template', 'sidebar', 'page-speed' ),
-			'description'  => esc_html__( 'Add widgets to right sidebar page template here', 'page-speed' ),
+			'name'         => esc_html_x( 'Left Sidebar Page Template', 'sidebar', 'page-speed' ),
+			'description'  => esc_html__( 'Add widgets to left sidebar page template here', 'page-speed' ),
 			'before_title' => '<div class="widget-title heading">',
 			'after_title'  => '</div>',
 		)

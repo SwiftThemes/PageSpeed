@@ -11,13 +11,14 @@
                 e.preventDefault();
                 e.stopPropagation();
 
-                $(this).text('Clearing SASS Cache')
+                var button = $(this)
+                button.text('Clearing SASS Cache').prop('disabled', true);
                 var data = {
                     'action': 'helium_clear_sass_cache',
                 };
 
                 jQuery.post(ajaxurl, data, function (response) {
-                    $('#clear-sass').text('Clear SASS Cache')
+                    $('#clear-sass').text('Clear SASS Cache').prop('disabled',false)
                     if (response) {
                         $('#clear_cache_results').text('Cleared Cache')
                     } else {
