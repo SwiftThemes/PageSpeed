@@ -99,7 +99,7 @@ class Helium_Styles {
 						}
 					}
 
-					if ( $this->is_above_fold( $file_name ) ) {
+					if ( 0 &&  $this->is_above_fold( $file_name ) ) {
 						array_push( $this->af_files, $file );
 					} elseif ( 'main' !== $file ) {
 						array_push( $this->bf_files, $file );

@@ -11,7 +11,7 @@
  */
 
 add_action( 'wp_enqueue_scripts', 'pagespeed_load_fonts', 7 );
-add_action( 'wp_enqueue_scripts', 'pagespeed_load_above_fold_css', 7 );
+//add_action( 'wp_enqueue_scripts', 'pagespeed_load_above_fold_css', 7 );
 add_action( 'wp_enqueue_scripts', 'pagespeed_register_styles', 8 );
 add_action( 'wp_footer', 'pagespeed_enqueue_styles', 9 );
 
@@ -28,7 +28,7 @@ function pagespeed_register_styles() {
 function pagespeed_enqueue_styles() {
 	wp_enqueue_style( 'page-speed-icons' );
 
-	if ( 0 && defined( 'DEV_ENV' ) && DEV_ENV || ! get_theme_mod( 'can_read_write' ) ) {
+	if ( defined( 'DEV_ENV' ) && DEV_ENV || ! get_theme_mod( 'can_read_write' ) ) {
 		wp_enqueue_style( 'page-speed' );
 	} else {
 		wp_enqueue_style( 'page-speed-2', '', null, 'screen' );

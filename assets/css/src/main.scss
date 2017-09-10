@@ -3,19 +3,19 @@
 @import "mixins";
 
 
-@import "af-normalize";
+@import "normalize";
 @import "af-reset";
-@import "af-forms";
+@import "forms";
 @import "af-typography";
 
 @import "business-site";
 
-@import "af-layout";
+@import "layout";
 @import "af-header";
 @import "buttons";
 @import "af-generic-classes";
-@import "af-widgets";
-@import "af-navigation";
+@import "widgets";
+@import "navigation";
 
 @import "common";
 
@@ -30,7 +30,7 @@
 
 @import "footer";
 
-@import "af-thumbnails";
+@import "thumbnails";
 
 
 @import "side-menu";

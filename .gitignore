@@ -6,6 +6,14 @@ node_modules
 .sass-cache
 .idea
 
+
+## Build files
+assets/js/custom.js
+assets/js/custom.min.js
+assets/css/style.prod.css
+assets/css/src/*.css
+assets/css/src/*.map
+
 # Created by https://www.gitignore.io/api/phpstorm
 
 ### PhpStorm ###
