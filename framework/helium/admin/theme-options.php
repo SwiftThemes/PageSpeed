@@ -34,3 +34,20 @@ $theme_options[] = array(
 	'default'  => true,
 	'sanitize' => 'boolean'
 );
+
+$theme_options[] = array(
+	'display_id' => 'header',
+	'name'       => 'Header',
+	'desc'       => 'Choose how many different sidebars you want.',
+	'type'       => 'title'
+);
+
+
+$theme_options[] = array(
+	'id'       => 'enable_sleek_header',
+	'name'     => 'Enable sleek header',
+	'desc'     => __( 'Includes the navigation menu in the header for a sleek look. Use a logo with height 32 to 64px for the best look.', 'helium' ),
+	'type'     => 'checkbox',
+	'default'  => false,
+	'sanitize' => 'boolean'
+);

@@ -17,6 +17,7 @@ function display_theme_options( $options ) {
 					<span><em>{$option['desc']}</em></span>
                     
                 </label>
+                <div class='clear'></div>
                 </div>";
 				break;
 			case 'title':

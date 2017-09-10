@@ -16,7 +16,6 @@
 
         //Clear the timeout when user is interacting with the nav
         $('#primary-nav-container,#sticky-search').on('click', function () {
-            console.log('lol')
             clearTimeout(GLOBAL.hideStickyTimer)
         })
 
@@ -154,16 +153,16 @@
      * Add side menu when on mobile.
      */
     function addSideMenu() {
-        $('#primary-nav-container,#secondary-nav-container').hide()
+        $('#primary-nav-container,#secondary-nav-container,#header-nav-container').hide()
         $('.open-drawer').show()
-        $('#side-pane-inner').append($('#primary-nav').html()).append($('#secondary-nav').html())
+        $('#side-pane-inner').append($('#header-nav').html()).append($('#primary-nav').html()).append($('#secondary-nav').html())
     }
 
     /**
      * Remove side menu added by addSideMenu
      */
     function removeSideMenu() {
-        $('#primary-nav-container,#secondary-nav-container').show()
+        $('#primary-nav-container,#secondary-nav-container,header-nav-container').show()
         $('.open-drawer,#side-pane').hide()
     }
 

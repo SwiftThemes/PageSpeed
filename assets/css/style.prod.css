@@ -571,6 +571,10 @@ body {
   font-style: italic;
 }
 
+.custom-logo {
+  display: block;
+}
+
 .logo-left #site-header {
   float: left;
 }
@@ -1060,6 +1064,20 @@ Breaks when we have nested stickies, but we don't have them
 #secondary-nav-container.nav-container .nav a:hover {
   color: rgba(222, 224, 227, 0.9);
   background: rgba(19, 20, 22, 0.9);
+}
+
+#site-header-container {
+  padding: 0;
+}
+
+.nav .menu > li > a {
+  line-height: 64px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav .menu > li:hover > ul {
+  top: 64px;
 }
 
 @media only screen and (max-width: 768px) {

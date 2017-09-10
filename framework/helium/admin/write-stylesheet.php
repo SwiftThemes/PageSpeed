@@ -52,7 +52,7 @@ class Helium_Styles {
 	private $source;
 	private $af_files = array();    // List above fold css files
 	private $bf_files = array();  // Below fold css files
-	private $scss_variable_files = [ 'variables', 'colors','mixins' ];
+	private $scss_variable_files = [ 'variables', 'colors', 'mixins' ];
 	private $prefix;
 
 	/**
@@ -99,7 +99,7 @@ class Helium_Styles {
 						}
 					}
 
-					if ( 0 &&  $this->is_above_fold( $file_name ) ) {
+					if ( 0 && $this->is_above_fold( $file_name ) ) {
 						array_push( $this->af_files, $file );
 					} elseif ( 'main' !== $file ) {
 						array_push( $this->bf_files, $file );
@@ -139,6 +139,18 @@ class Helium_Styles {
 		}
 	}
 
+	private function get_header_height() {
+		$logo_id = get_theme_mod('custom_logo',false);
+		if($logo_id){
+			$image = wp_get_attachment_image_src($logo_id,'full');
+			$image_url = $image[0];
+			$size = getimagesize($image_url);
+			return $size[1].'px';
+		}else{
+			return '64px';
+		}
+	}
+
 	public function generate_css( $af_bf ) {
 		global $wp_filesystem;
 
@@ -168,7 +180,13 @@ class Helium_Styles {
 		$override .= '$main_width:' . get_theme_mod( 'main_width', '70' ) . ";\n";
 		$override .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '20' ) . ";\n";
 
+		if(get_theme_mod('enable_sleek_header',false)){
+			$override .= '$is_sleek_header:1' . ";\n";
+			$override .= '$header_height:' . $this->get_header_height(). ";\n";
+		}
+
 		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
+
 
 		$content = str_replace( '/**variables**/', $override, $content );
 
@@ -196,7 +214,7 @@ class Helium_Styles {
 	public function write_css() {
 
 		$theme_name = wp_get_theme()->stylesheet;
-		$content    = $this->minify_css($this->generate_css( 'af' ));
+		$content    = $this->minify_css( $this->generate_css( 'af' ) );
 
 		update_option( $theme_name . '_above_fold_css', $content );
 
@@ -213,18 +231,18 @@ class Helium_Styles {
 	}
 
 
-	private function minify_css($buffer)
-	{
+	private function minify_css( $buffer ) {
 //		if (WP_DEBUG)
 //			return $buffer;
 
-		$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
+		$buffer = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer );
 
 		// Remove space after colons
-		$buffer = str_replace(': ', ':', $buffer);
+		$buffer = str_replace( ': ', ':', $buffer );
 
 		// Remove whitespace
-		$buffer = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $buffer);
+		$buffer = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $buffer );
+
 		return $buffer;
 	}
 }

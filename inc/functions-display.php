@@ -9,6 +9,7 @@
 
 add_action( 'pagespeed_after_body', 'pagespeed_above_header', 8 );
 add_action( 'pagespeed_after_header', 'pagespeed_below_header', 12 );
+add_action( 'pagespeed_header_end', 'pagespeed_header_navigation', 12 );
 add_action( 'pagespeed_after_header', 'pagespeed_mobile_search', 14 );
 add_action( 'pagespeed_primary_nav_start', 'pagespeed_sticky_logo', 12 );
 add_action( 'pagespeed_main_start', 'pagespeed_breadcrumbs', 12 );
@@ -88,6 +89,49 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 						<?php do_action( 'pagespeed_primary_nav_start' ); ?>
 						<?php wp_nav_menu( $args ); ?>
 					</div>
+				</div>
+			</div>
+			<?php
+		endif;
+	}
+}
+if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
+	function pagespeed_header_navigation() {
+		$args = array(
+			'menu'            => 'primary',
+			'container'       => 'nav',
+			'container_class' => 'nav',
+			'container_id'    => 'header-nav',
+			'menu_class'      => 'menu',
+			'menu_id'         => '',
+			'echo'            => true,
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s cf">%3$s</ul>',
+			'item_spacing'    => 'preserve',
+			'depth'           => 0,
+			'walker'          => '',
+			'theme_location'  => 'header',
+		);
+
+
+		if ( get_theme_mod( 'is_sticky_nav' ) ) {
+			$container_class = ' stick-it';
+		} else {
+			$container_class = '';
+		}
+		if ( get_option( 'site_icon' ) ) {
+			$container_class .= ' has-sticky-logo';
+		}
+
+		if ( has_nav_menu( 'header' ) ) :
+			?>
+			<div id="header-nav-container" class="cf alignright <?php echo $container_class ?>">
+				<div id="primary" class="">
+						<?php do_action( 'pagespeed_header_nav_start' ); ?>
+						<?php wp_nav_menu( $args ); ?>
 				</div>
 			</div>
 			<?php
