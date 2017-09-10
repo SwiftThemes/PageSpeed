@@ -2,39 +2,39 @@
 	<div class="inner cf">
 
 		<?php
-		if ( is_active_sidebar( 'left-single' ) ) :
+		if ( is_active_sidebar( 'left' ) ) :
 			?>
 			<div id="normal-sb" class="sb">
-				<?php dynamic_sidebar( 'left-single' ); ?>
+				<?php dynamic_sidebar( 'left' ); ?>
 			</div>
 			<?php
 		endif;
 		?>
 		<?php
-		if ( is_active_sidebar( 'left-sticky-single' ) ) :
+		if ( is_active_sidebar( 'left-sticky' ) ) :
 			?>
 			<div id="sticky-sb1" class="sb">
-				<?php dynamic_sidebar( 'left-sticky-single' ); ?>
+				<?php dynamic_sidebar( 'left-sticky' ); ?>
 			</div>
 			<?php
 		endif;
 		?>
 		<?php
 		if ( get_theme_mod( 'theme_layout', '' ) !== 'centered' ):
-			if ( is_active_sidebar( 'ns-1-single' ) ) :
+			if ( is_active_sidebar( 'ns-1' ) ) :
 				?>
 				<div id="ns1">
 					<div class="inner alpha cf sb">
-						<?php dynamic_sidebar( 'ns-1-single' ); ?>
+						<?php dynamic_sidebar( 'ns-1' ); ?>
 					</div>
 				</div>
 				<?php
 			endif;
-			if ( is_active_sidebar( 'ns-2-single' ) ) :
+			if ( is_active_sidebar( 'ns-2' ) ) :
 				?>
 				<div id="ns2">
 					<div class="inner omega cf sb">
-						<?php dynamic_sidebar( 'ns-2-single' ); ?>
+						<?php dynamic_sidebar( 'ns-2' ); ?>
 					</div>
 				</div>
 				<?php
@@ -44,10 +44,10 @@
 		<div class="clear"></div>
 
 		<?php
-		if ( is_active_sidebar( 'left-bottom-single' ) ) :
+		if ( is_active_sidebar( 'left-bottom' ) ) :
 			?>
 			<div id="normal-sb" class="sb">
-				<?php dynamic_sidebar( 'left-bottom-single' ); ?>
+				<?php dynamic_sidebar( 'left-bottom' ); ?>
 			</div>
 			<?php
 		endif;

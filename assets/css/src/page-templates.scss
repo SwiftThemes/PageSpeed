@@ -3,3 +3,16 @@
   #left,
   #main{width:100%}
 }
+
+/* Right sidebar */
+.page-template-rsb #left {
+  width: 100%;
+}
+.page-template-rsb #main {
+  width: 75%;
+  float: left;
+}
+#sb-page-rsb {
+  width: 25%;
+  float: right;
+}

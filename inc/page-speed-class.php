@@ -48,6 +48,7 @@ class PageSpeed {
 
 
 		require_once( THEME_CUSTOMIZE . 'customizer.php' );
+		require_once( THEME_CUSTOMIZE . 'header.php' );
 		require_once( THEME_CUSTOMIZE . 'home-page.php' );
 		require_once( THEME_CUSTOMIZE . 'archives.php' );
 		require_once( THEME_CUSTOMIZE . 'footer.php' );

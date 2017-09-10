@@ -43,7 +43,14 @@ else :
 	get_template_part( 'template-parts/content', 'none' );
 endif;
 ?>
-<?php get_sidebar( 'home' ); ?>
+<?php
+
+if ( is_home() && get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
+	get_sidebar( 'home' );
+} else {
+	get_sidebar( );
+}
+?>
 
 </div><!-- #content -->
 <?php get_footer(); ?>

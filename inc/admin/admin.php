@@ -7,6 +7,7 @@
  */
 
 require_once( THEME_CUSTOMIZE . 'load-customizer-styles.php' );
+require_once( THEME_ADMIN . 'theme-options.php' );
 //require_once( THEME_CUSTOMIZE . 'home-page.php' );
 //require_once( THEME_CUSTOMIZE . 'customizer.php' );
 

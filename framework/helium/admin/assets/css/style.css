@@ -1,0 +1,105 @@
+
+.ui-tabs-nav {
+    border-bottom: solid 1px #CCC;
+    margin-bottom: 0;
+}
+
+.ui-tabs-nav li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.ui-tabs-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #444;
+    padding: 6px;
+    border: solid 1px #CCC;
+    border-width: 1px 1px 0;
+    display: inline-block;
+}
+
+.ui-tabs-active a {
+    padding-bottom: 7px;
+    margin-bottom: -1px;
+    z-index: 3;
+    background: #FFF;
+}
+
+.ui-tabs-panel {
+    padding: 10px;
+    background: #fff;
+    border: solid 1px #CCC;
+    border-width: 0 1px 1px;
+}
+
+.clear {
+    clear: both
+}
+
+.option {
+    padding: 10px;
+    margin: 0 -10px;
+}
+
+.separator {
+    line-height: 0;
+    font-size: 24px;
+    font-weight: 100;
+    color: #CCC;
+    letter-spacing: -3px;
+}
+
+#helium_theme_options .option:nth-child(2n) {
+    background: #f1f2f5;
+}
+
+#options-changed,
+#options-saved,
+#options-save-error{line-height: 28px}
+
+#options-changed {
+    display: none;
+    color: orange;
+    font-weight: bold
+}
+
+#options-saved {
+    display: none;
+    color: green;
+    font-weight: bold
+}
+
+#options-save-error {
+    display: none;
+    color: red;
+    font-weight: bold
+}
+
+/**/
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}

@@ -98,6 +98,8 @@
             var height = document.getElementById('content').offsetHeight
             $('#sb1 >.inner,#sb2 >.inner').height(height)
 
+            $('#sb-page-rsb >.inner,#sb-page-lsb >.inner').height(height)
+
             if (!document.getElementById('sticky-sb') && !document.getElementById('normal-sb')) {
                 $('#ns1 >.inner,#ns2 >.inner').height(height)
             }

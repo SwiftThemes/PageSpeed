@@ -8,6 +8,9 @@
 
         function clearSassCache() {
             $('#clear-sass').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
                 $(this).text('Clearing SASS Cache')
                 var data = {
                     'action': 'helium_clear_sass_cache',
@@ -15,15 +18,56 @@
 
                 jQuery.post(ajaxurl, data, function (response) {
                     $('#clear-sass').text('Clear SASS Cache')
-                    if(response){
+                    if (response) {
                         $('#clear_cache_results').text('Cleared Cache')
-                    }else{
+                    } else {
                         $('#clear_cache_results').text('Error clearing cache :-(')
                     }
                 });
 
             })
         }
+
+        saveThemeOptions()
+
+        function saveThemeOptions() {
+            $('#save_theme_options').click(function (e) {
+                var data = {
+                    'action': 'helium_save_theme_options',
+                    'security': $('#helium_ajax_nonce').val(),
+                    'data': $("#helium_theme_options").serialize()
+                };
+
+                jQuery.post(ajaxurl, data, function (response) {
+
+                    $('#options-changed').hide()
+
+
+                    if (response) {
+                        $('#options-saved').show()
+                        originalThemeOptions = $("#helium_theme_options").serialize()
+                    } else {
+                        $('#options-save-error').show()
+                        $('#clear_cache_results').text('Error clearing cache :-(')
+                    }
+                });
+            })
+        }
+
+
+        var $form = $('#helium_theme_options'),
+            originalThemeOptions = $form.serialize()
+
+        $('#helium_theme_options :input').on('change input', function () {
+            if ($form.serialize() !== originalThemeOptions) {
+                $('#options-saved').hide()
+                $('#options-save-error').hide()
+                $('#options-changed').show()
+            }else{
+                $('#options-changed').hide()
+            }
+        });
+
 
     })
 })(jQuery)

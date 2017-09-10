@@ -3,7 +3,7 @@
 
 </div><!-- main inner-->
 </main>
-<?php get_sidebar( 'one-single' ); ?>
+<?php get_sidebar( 'c1-single' ); ?>
 </div><!--#left -->
 
 <?php
@@ -11,6 +11,6 @@
  * We only need the sidebar #2 in centered layout
  */
 if ( get_theme_mod( 'theme_layout', '' ) === 'centered' ) {
-	get_sidebar( 'two-single' );
+	get_sidebar( 'c2-single' );
 }
 ?>

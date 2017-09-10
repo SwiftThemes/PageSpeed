@@ -366,10 +366,6 @@ body {
   /* force the BODY element to match the height of the HTML element */
 }
 
-#content {
-  margin-bottom: 26px;
-}
-
 #main > .inner {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -451,7 +447,9 @@ body {
 }
 
 #sb1 > .inner,
-#sb2 > .inner {
+#sb2 > .inner,
+#sb-page-rsb > .inner,
+#sb-page-lsb > .inner {
   background: inherit;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -552,55 +550,6 @@ body {
   color: #007AFF;
 }
 
-/* Smaller desktops */
-
-@media only screen and (max-width: 1200px) {
-  #wrapper,
-  #ns1,
-  #ns2 {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .hybrid {
-    width: 100%;
-  }
-
-  #wrapper #sb1,
-  #wrapper #sb2,
-  #wrapper #left,
-  #wrapper #main,
-  #wrapper .hybrid,
-  #wrapper #site-footer-container .fc {
-    width: 100%;
-    box-sizing: border-box;
-    float: none;
-  }
-
-  #wrapper #sb1 {
-    background: rgba(238, 240, 241, 0.9);
-  }
-
-  #wrapper #sb2 {
-    background: rgba(230, 232, 234, 0.9);
-  }
-
-  #wrapper .widget {
-    width: 300px;
-    margin: auto;
-  }
-
-  #wrapper #site-header {
-    float: none;
-  }
-
-  #copyright-container .hybrid {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-
 #site-header-container {
   padding: 20px 0;
   background: #f7f7f8;
@@ -610,6 +559,10 @@ body {
   font-size: 2.75em;
   margin: 0;
   line-height: 1.2em;
+}
+
+.site-title a {
+  text-decoration: none;
 }
 
 .site-description {
@@ -926,6 +879,14 @@ Breaks when we have nested stickies, but we don't have them
   margin-left: -40px;
 }
 
+.no-padding {
+  padding: 0;
+}
+
+.emoji {
+  width: 1em;
+}
+
 /**/
 
 /**
@@ -1160,6 +1121,22 @@ article {
   width: 100%;
 }
 
+/* Right sidebar */
+
+.page-template-rsb #left {
+  width: 100%;
+}
+
+.page-template-rsb #main {
+  width: 75%;
+  float: left;
+}
+
+#sb-page-rsb {
+  width: 25%;
+  float: right;
+}
+
 .entry-content ul,
 .entry-content ol {
   margin-left: 1em;
@@ -1208,6 +1185,26 @@ hr {
   margin: 26px -40px;
 }
 
+.meta .tags {
+  display: inline;
+}
+
+.meta .tags a {
+  font-size: .8em;
+  background: #007AFF;
+  color: rgba(247, 247, 248, 0.9);
+  padding: 1px 4px;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.meta .tags a:hover {
+  text-shadow: 0 1px 0 rgba(9, 10, 11, 0.4);
+}
+
 .comment-list {
   padding: 0;
 }
@@ -1227,19 +1224,31 @@ hr {
   color: #007AFF;
 }
 
-.comment-list .reply {
+.comment-list li.comment .comment-metadata a {
+  color: rgba(47, 51, 55, 0.9);
+  text-decoration: none;
+}
+
+.comment-list li.comment .comment-metadata a:hover {
+  color: #007AFF;
+}
+
+.comment-list .reply a {
+  background: rgba(230, 232, 234, 0.9);
   position: absolute;
   top: 16px;
   right: 10px;
   border: solid 1px rgba(222, 224, 227, 0.9);
   padding: 0 10px;
+  text-decoration: none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
-.comment-list .reply:hover {
-  background: rgba(222, 224, 227, 0.9);
+.comment-list .reply a:hover {
+  background: #007AFF;
+  color: rgba(247, 247, 248, 0.9);
 }
 
 .comment-meta {
@@ -1690,4 +1699,58 @@ body {
 
 .gallery-columns-3 .gallery-item:nth-child(3n+1) {
   clear: both;
+}
+
+/* Smaller desktops */
+
+@media only screen and (max-width: 1200px) {
+  #wrapper,
+  #ns1,
+  #ns2 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .hybrid {
+    width: 100%;
+  }
+
+  .site-title {
+    font-size: 8vw;
+    line-height: 1.2em;
+  }
+
+  #wrapper #sb1,
+  #wrapper #sb2,
+  #wrapper #left,
+  #wrapper #main,
+  #wrapper .hybrid,
+  #wrapper #site-footer-container .fc {
+    width: 100%;
+    box-sizing: border-box;
+    float: none;
+  }
+
+  #wrapper #sb1 {
+    background: rgba(238, 240, 241, 0.9);
+  }
+
+  #wrapper #sb2 {
+    background: rgba(230, 232, 234, 0.9);
+  }
+
+  #wrapper .widget {
+    width: 300px;
+    margin: auto;
+  }
+
+  #wrapper #site-header {
+    float: none;
+  }
+
+  #copyright-container .hybrid {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

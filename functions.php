@@ -15,6 +15,7 @@ define( 'HYBRID_URI', trailingslashit( THEME_URI . 'framework/hybrid' ) );
 
 define( 'HELIUM_DIR', trailingslashit( THEME_FRAMEWORK . 'helium' ) );
 define( 'HELIUM_ADMIN', trailingslashit( HELIUM_DIR ) . 'admin/' );
+define( 'HELIUM_URI', trailingslashit( THEME_URI . 'framework/helium' ) );
 
 // Launch the Hybrid Core framework.
 require_once( trailingslashit( HYBRID_DIR ) . 'hybrid.php' );

@@ -1,18 +1,8 @@
 <?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+/*
+ Template Name: Right Sidebar
  */
+
 
 get_header();
 
@@ -37,13 +27,8 @@ endwhile;
 // If comments are open or we have at least one comment, load up the comment template.
 
 
-if ( get_theme_mod( 'dedicated_sidebars_on_default_page_template', false ) ):
-	get_sidebar( 'page' );
-else:
-	get_sidebar();
-endif;
+get_sidebar('page-right');
 ?>
 
 </div><!-- #content -->
 <?php get_footer(); ?>
-

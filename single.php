@@ -54,7 +54,7 @@ else :
 	get_template_part( 'template-parts/content', 'none' );
 endif;
 ?>
-<?php get_sidebar('single'); ?>
+<?php get_sidebar(); ?>
 
 </div><!-- #content -->
 <?php get_footer(); ?>

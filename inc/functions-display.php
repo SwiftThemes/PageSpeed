@@ -71,7 +71,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 		);
 
 
-		if ( 1 || get_theme_mod( 'is_sticky_nav' ) ) {
+		if ( get_theme_mod( 'is_sticky_nav' ) ) {
 			$container_class = ' stick-it';
 		} else {
 			$container_class = '';
