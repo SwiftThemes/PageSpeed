@@ -145,7 +145,11 @@ class Helium_Styles {
 			$image = wp_get_attachment_image_src($logo_id,'full');
 			$image_url = $image[0];
 			$size = getimagesize($image_url);
-			return $size[1].'px';
+			if($size[1]){
+				return $size[1].'px';
+			}else{
+				return '64px';
+			}
 		}else{
 			return '64px';
 		}
@@ -202,6 +206,7 @@ class Helium_Styles {
 
 
 		$content = str_replace( '/**colors**/', $colors_override, $content );
+
 
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );

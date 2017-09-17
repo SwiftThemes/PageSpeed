@@ -1,8 +1,8 @@
 /** Forms **/
 input,
-textarea{
+textarea {
   width: 100%;
-  border:solid 1px $border-color;
+  border: solid 1px $border-color;
   background: $light-2;
   box-sizing: border-box;
   font-size: 1.1em;
@@ -10,16 +10,21 @@ textarea{
   font-weight: lighter;
   @include border-radius(3px)
 }
-input{height: 36px}
+
+input {
+  height: 36px
+}
+
 input:active,
 textarea:active,
 input:focus,
-textarea:focus{
+textarea:focus {
   background: $light-1;
 }
+
 input[type=submit],
-button{
-  width:auto;
+button {
+  width: auto;
   padding: 5px 20px;
   background: $primary;
   border: none;
@@ -28,4 +33,34 @@ button{
   margin-left: 0;
   margin-right: 0;
   font-family: $body-font-stack;
+}
+
+.stacked-form {
+  input:not([type='submit']),textarea {
+    top: -1px;
+    position: relative;
+  }
+  .first {
+    top: 0!important;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .last {
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-topright: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  input[type='submit']{
+    display: block;
+    width: 100%;
+  }
 }

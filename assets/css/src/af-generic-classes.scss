@@ -110,7 +110,12 @@ Breaks when we have nested stickies, but we don't have them
 
   }
 }
-   
+.block{
+  display: block;
+}
+.full{
+  width: 100%;
+}
 .pull-all {
   margin: -40px;
   padding: 40px

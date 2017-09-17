@@ -11,9 +11,8 @@
  */
 
 add_action( 'wp_enqueue_scripts', 'pagespeed_load_fonts', 7 );
-//add_action( 'wp_enqueue_scripts', 'pagespeed_load_above_fold_css', 7 );
 add_action( 'wp_enqueue_scripts', 'pagespeed_register_styles', 8 );
-add_action( 'wp_footer', 'pagespeed_enqueue_styles', 9 );
+add_action( 'wp_enqueue_scripts', 'pagespeed_enqueue_styles', 9 );
 
 
 function pagespeed_register_styles() {
@@ -45,11 +44,4 @@ function pagespeed_load_fonts() {
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" media="none"
           onload="this.media='all';">
 	<?php
-}
-
-function pagespeed_load_above_fold_css() {
-	$theme_name = wp_get_theme()->stylesheet;
-	$css        = get_option( $theme_name . '_above_fold_css' );
-
-	echo "<style>{$css}</style>";
 }

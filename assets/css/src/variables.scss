@@ -1,11 +1,10 @@
-//Functions
 $browser-context: 16; // Default
 
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
 
-///* Layout */
+// Layout
 $site_width: 1360px;
 $main_width: 60;
 $left_sidebar_width:20;
@@ -15,9 +14,9 @@ $vr: 26px; //vertical rhythm
 $footer-columns: 4;
 
 $is_sleek_header: 1;
-$header_height:64px;
+$header_height:48px;
 
-///* Typography */
+// Typography
 $body-font-stack: serif, Garamond;
 $body-font-stack: 'Open Sans', sans-serif;
 $base-font-size: 17px;
@@ -29,4 +28,5 @@ $headings-font-stack: 'Open Sans', sans-serif;
 // Don't remove the below line.
 // It's used for overriding the variables.
 /** Moment of truth **/
+
 /**variables**/
