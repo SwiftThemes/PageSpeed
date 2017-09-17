@@ -33,6 +33,13 @@ function helium_build_meta_box() {
 		       name="hide_title"
 		       value=1 <?php checked( $he->get_meta( 'hide_title' ) ) ?>><?php _e( 'Hide page title', 'helium' ) ?>
 	</label>
+    <br>
+
+    <label>
+		<input type="checkbox"
+		       name="hide_footer_widgets"
+		       value=1 <?php checked( $he->get_meta( 'hide_footer_widgets' ) ) ?>><?php _e( 'Hide footer widgets', 'helium' ) ?>
+	</label>
 	<?php
 }
 
@@ -56,6 +63,7 @@ function helium_save_meta_box( $post_id ) {
 
 	$sanitized['hide_breadcrumbs'] = isset( $_POST['hide_breadcrumbs'] ) ? true : false;
 	$sanitized['hide_title']     = isset( $_POST['hide_title'] ) ? true : false;
+	$sanitized['hide_footer_widgets']     = isset( $_POST['hide_footer_widgets'] ) ? true : false;
 
 	update_post_meta( $post_id, '_he', $sanitized );
 
