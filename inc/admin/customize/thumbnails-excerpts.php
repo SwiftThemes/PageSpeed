@@ -83,6 +83,8 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	) );
 
+	//@todo use named array for settings
+
 	$wp_customize->add_control(
 		new Helium_Customize_Control_Image_Size(
 			$wp_customize,

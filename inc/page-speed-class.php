@@ -56,6 +56,7 @@ class PageSpeed {
 		require_once( THEME_CUSTOMIZE . 'post-metas.php' );
 		require_once( THEME_CUSTOMIZE . 'thumbnails-excerpts.php' );
 		require_once( THEME_CUSTOMIZE . 'colors.php' );
+		require_once( THEME_CUSTOMIZE . 'fonts.php' );
 //		require_once( THEME_CUSTOMIZE . 'custom-content.php' );
 
 

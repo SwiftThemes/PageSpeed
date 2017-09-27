@@ -20,6 +20,8 @@ function image_size_control_register( $wp_customize ) {
 
 	class Helium_Customize_Control_Image_Size extends WP_Customize_Control {
 
+		//@todo use named array for settings
+
 		public function build_field_html( $key, $setting ) {
 			$value = '';
 			if ( isset( $this->settings[ $key ] ) ) {

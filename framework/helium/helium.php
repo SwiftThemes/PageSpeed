@@ -92,8 +92,10 @@ if ( ! class_exists( 'Helium' ) ) {
 
 			require_once( HELIUM_CUSTOMIZE . 'control-image-dimensions.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-responsive-content.php' );
+			require_once( HELIUM_CUSTOMIZE . 'control-font-selection.php' );
 			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
 			require_once( HELIUM_CUSTOMIZE . 'sass-override.php' );
+			require_once( HELIUM_CUSTOMIZE . 'load-scripts.php' );
 
 			require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
 
