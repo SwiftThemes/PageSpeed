@@ -16,24 +16,101 @@ add_action( 'customize_register', 'helium_font_selection_control_register', 1 );
 
 function helium_font_selection_control_register( $wp_customize ) {
 
+	$wp_customize->register_control_type( 'Helium_Customize_Control_Font_Selection' );
+
+
 	class Helium_Customize_Control_Font_Selection extends WP_Customize_Control {
 
+		public $type = 'he_font';
+
+		public function to_json() {
+			parent::to_json();
+
+			if ( $this->value() ) {
+				$this->json['value'] = $this->value();
+			}
+
+			$defaults            = array(
+				'weights'    => array(),
+				'subsets'    => array(),
+				'fontObject' => array( 'family' => '' )
+			);
+			$this->json['value'] = wp_parse_args( $this->value(), $defaults );
+
+
+		}
+
+		public function content_template() {
+
+			?>
+
+            <# var defaultValue = '';
+
+                    if ( data.defaultValue ) {
+
+                    if ( '#' !== data.defaultValue.substring( 0, 1 ) ) {
+
+                    defaultValue = '#' + data.defaultValue;
+
+                    } else {
+
+                    defaultValue = data.defaultValue;
+
+                    }
+
+                    defaultValue = ' data-default-color=' + defaultValue;
+
+                    }
+                    #>
+
+            <label>
+
+                <# if ( data.label ) { #>
+                    <span class="customize-control-title">{{{ data.label }}}</span>
+                    <# } #>
+                        <# if ( data.description ) { #>
+                            <span class="description customize-control-description">{{{ data.description }}}</span>
+                            <# } #>
+                                <div class="font-selection">
+
+                                    <input class="family he_font_selection" type="text" maxlength="7"
+                                           value="{{data.value.fontObject.family}}"
+                                           placeholder="<?php esc_attr_e( 'Search a font' ); ?>" {{ defaultValue }}/>
+
+                                    <label class="select"><strong>Weights</strong>
+                                        <select type="text" class="weights" multiple>
+                                            <# for ( key in data.value.fontObject.variants ) { #>
+                                                <option value="{{ key }}"
+                                                <# if ( data.value.weights.indexOf(data.value.fontObject.variants[key]) !== -1 ) { #>
+                                                    selected="selected"
+                                                    <# } #>
+                                                        >{{ data.value.fontObject.variants[key] }}
+                                                        </option>
+                                                        <# } #>
+                                        </select>
+                                    </label>
+
+                                    <label class="select"><strong>Subsets</strong>
+                                        <select type="text" class="subsets" multiple>
+                                            <# for ( key in data.value.fontObject.subsets ) { #>
+                                                <option value="{{ key }}"
+                                                <# if ( data.value.subsets.indexOf(data.value.fontObject.subsets[key]) !== -1 ) { #>
+                                                    selected="selected"
+                                                    <# } #>
+                                                        >{{ data.value.fontObject.subsets[key] }}
+                                                        </option>
+                                                        <# } #>
+                                        </select>
+                                    </label>
+
+                                </div>
+
+            </label>
+			<?php
+		}
+
 		public function render_content() {
-			$output = '<span class="customize-control-title">' . $this->label . '</span><div class="clear"></div><br><div class="font-selection" style="position: relative">';
-
-			$output .='<input type="text" class="he_font_selection" '. $this->get_link( 'font' ) .' />';
-			$output .='<select type="text" class="weights" multiple  '. $this->get_link( 'weights' ) .'></select>';
-			//Show this only to non english
-			$output .='<select type="text" class="subsets" multiple  '. $this->get_link( 'subsets' ) .'></select>';
-
-
-			$output .='<select type="text" class="all_weights" style="display:none" multiple  '. $this->get_link( 'all_weights' ) .'></select>';
-			$output .='<select type="text" class="all_subsets" style="display:none" multiple  '. $this->get_link( 'all_subsets' ) .'></select>';
-
-			$output .='<input type="text" class="category"  style="display:none" '. $this->get_link( 'category' ) .' />';
-
-			$output .= '</div>';
-			echo $output;
+			return false;
 		}
 
 	}

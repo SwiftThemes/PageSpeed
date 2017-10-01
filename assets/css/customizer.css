@@ -1,119 +1,145 @@
-body{position: relative}
+body {
+    position: relative
+}
+
 .customize-control-radio-image input {
-  display: none
+    display: none
 }
 
 .customize-control-radio-image label {
-  float: left
+    float: left
 }
 
 .customize-control-radio-image img {
-  width: 80px;
-  margin-right: 6px
+    width: 80px;
+    margin-right: 6px
 }
 
 #sub-accordion-section-pagespeed_post_page_settings textarea {
-  height: 4em
+    height: 4em
 }
 
 /* Image dimensions control */
 .thumb-dimensions {
-  float: left;
-  position: relative;
-  width: 40%
+    float: left;
+    position: relative;
+    width: 40%
 }
 
 .thumb-dimensions input[type='number'] {
-  width: 50% !important;
+    width: 50% !important;
 }
 
 .thumb-dimensions input[type='number'] {
-  border-right: none
+    border-right: none
 }
 
 .thumb-dimensions span {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  margin: auto;
-  width: 12px;
-  height: 12px;
-  line-height: 10px;
-  border: solid 1px #DDD;
-  background: #FFF;
-  color: #CCC;
-  text-align: center;
-  border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 12px;
+    height: 12px;
+    line-height: 10px;
+    border: solid 1px #DDD;
+    background: #FFF;
+    color: #CCC;
+    text-align: center;
+    border-radius: 50%;
 }
 
 .thumb-align {
-  float: left;
-  width: 55%;
-  margin-left: 5%
+    float: left;
+    width: 55%;
+    margin-left: 5%
 }
 
 .thumb-align select {
-  width: 100%
+    width: 100%
 }
 
 /* Responsive control */
 .responsive-content .textarea {
-  position: relative;
-  margin: 10px 0 0;
+    position: relative;
+    margin: 10px 0 0;
 }
 
 .responsive-content .textarea:before {
-  font-family: dashicons;
-  color:#AAA;
-  padding:1px;
-  opacity: .8;
-  position: absolute;
-  border: solid 1px #CCC;
-  right: 0;
-  top: 0;
+    font-family: dashicons;
+    color: #AAA;
+    padding: 1px;
+    opacity: .8;
+    position: absolute;
+    border: solid 1px #CCC;
+    right: 0;
+    top: 0;
 
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-bottom-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-left-radius: 3px;
 }
 
-.responsive-content .desktop:before{
-  content:'\f472 \f471'
+.responsive-content .desktop:before {
+    content: '\f472 \f471'
 }
-.responsive-content .mobile:before{
-  content:'\f470'
+
+.responsive-content .mobile:before {
+    content: '\f470'
 }
+
 .responsive-content textarea {
-  width: 100% !important;
-  height: 100px
+    width: 100% !important;
+    height: 100px
 }
 
 /* SCSS */
 #customize-control-scss_override textarea {
-  display: block;
-  font-family: Consolas, Monaco, monospace;
-  font-size: 12px;
-  padding: 6px 8px;
-  height: 500px;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  line-height:1.4
+    display: block;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 12px;
+    padding: 6px 8px;
+    height: 500px;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    line-height: 1.4
 }
 
-
-.ui-autocomplete{z-index: 99999999}
-
-.selected-font{background:#FFF;
-  padding:10px;
-  border:solid 1px #CCC;
-  margin:10px 0;}
-.selected-font .header{
-  background: #CCC;margin:-10px -10px 10px;
-  padding:6px 10px;
-  font-weight:bold;
+.ui-autocomplete {
+    z-index: 99999999
 }
-.selected-font label.cb{width:33.33%;float:left}
+
+.selected-font {
+    background: #FFF;
+    padding: 10px;
+    border: solid 1px #CCC;
+    margin: 10px 0;
+}
+
+.selected-font .header {
+    background: #CCC;
+    margin: -10px -10px 10px;
+    padding: 6px 10px;
+    font-weight: bold;
+}
+
+.selected-font label.cb {
+    width: 33.33%;
+    float: left
+}
+
+.font-selection {
+    position: relative
+}
+
+.font-selection .select {
+    width: 50%;
+    font-size: .8em;
+    float: left;
+    box-sizing: border-box;
+    margin: 5px 0;
+}

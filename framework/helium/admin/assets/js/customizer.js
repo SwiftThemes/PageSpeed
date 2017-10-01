@@ -1,5 +1,47 @@
 (function ($) {
 
+
+    wp.customize.controlConstructor['he_font'] = wp.customize.Control.extend({
+        ready: function () {
+            var control = this;
+            control.container.on('change', 'input.family',
+                function (e) {
+                    var font = {}
+                    var fontObject = JSON.parse($(this).attr('data-fontOb'))
+                    var parent = $(e.target.parentNode)
+
+                    //@todo see if updating a variable does away with this.
+                    parent.find('.weights').html(options({options: fontObject.variants}))
+                    parent.find('.subsets').html(options({options: fontObject.subsets}))
+
+                    font['stack'] = '"' + fontObject['family'] + '", ' + fontObject['category']
+                    font['fontObject'] = fontObject
+
+                    control.setting.set(font)
+
+                }
+            );
+
+            control.container.on('change', 'select.weights',
+                function (e) {
+                    var font = control.setting()
+                    font['weights'] = $(this).val()
+                    control.setting.set(font)
+
+                }
+            );
+            control.container.on('change', 'select.subsets',
+                function (e) {
+                    var font = control.setting()
+                    font['subsets'] = $(this).val()
+                    control.setting.set(font)
+
+                }
+            );
+        }
+    });
+
+
     function log(message) {
         // $("<div/>").html(message).prependTo("#log");
 
@@ -23,7 +65,8 @@
         '<% }); %>');
 
     $.ajax({
-        url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyDVKxwBB7u0r7p1jNtveJ-GA2EHvbGB6h4",
+        // url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyDVKxwBB7u0r7p1jNtveJ-GA2EHvbGB6h4",
+        url: "http://localhost/gfonts.json",
         success: function (res) {
             // res = JSON(res)
             var fonts = res.items
@@ -40,19 +83,10 @@
                 source: data,
                 minLength: 0,
                 select: function (event, ui) {
+                    $(this).attr('data-fontOb', JSON.stringify(ui.item.font))
                     var parent = jQuery(event.target.parentNode)
-                    parent.find('.weights').append(options({options: ui.item.font.variants}))
-                    parent.find('.subsets').append(options({options: ui.item.font.subsets}))
-
-                    parent.find('.all_weights').append(options({options: ui.item.font.variants}))
-
-                    parent.find('.subsets option').each(function () {
-                        console.log(this)
-                        $(this).prop('selected', true);
-                    })
-
-                    //Set hidden field values
-                    parent.find('.subsets').attr("data-customize-setting-link", "weights").append(options({options: ui.item.font.subsets}))
+                    // parent.find('.weights').html(options({options: ui.item.font.variants}))
+                    // parent.find('.subsets').html(options({options: ui.item.font.subsets}))
                 }
             });
         }
