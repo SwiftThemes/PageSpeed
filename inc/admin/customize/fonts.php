@@ -71,12 +71,35 @@ function pagespeed_customize_fonts( $wp_customize ) {
 			) )
 	);
 
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Typography(
+			$wp_customize,
+			'primary_font',
+			array(
+				'label'       => __( 'Primary font', 'page-speed' ),
+				'description' => __( '', 'page-speed' ),
+				'section'     => 'fonts',
+				'priority'    => 10,
+				'setting'    => 'primary_font'
+			) )
+	);
 
-	$wp_customize->add_control( 'copyright_text', array(
-		'label'   => 'Copyright text',
-		'section' => 'footer',
-		'type'    => 'textarea',
-	) );
+
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Typography(
+			$wp_customize,
+			'secondary_font',
+			array(
+				'label'       => __( 'Secondary font', 'page-speed' ),
+				'description' => __( '', 'page-speed' ),
+				'section'     => 'fonts',
+				'priority'    => 10,
+				'setting'    => 'secondary_font'
+			) )
+	);
+
+
 
 
 }

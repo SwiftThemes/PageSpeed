@@ -40,8 +40,43 @@ function pagespeed_enqueue_styles() {
 
 
 function pagespeed_load_fonts() {
-	?>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" media="none"
-          onload="this.media='all';">
-	<?php
+	//https://fonts.googleapis.com/css?family=Metal+Mania|Open+Sans:300,300i,400&amp;subset=cyrillic,latin-ext
+	//https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,400i&amp;subset=cyrillic
+
+	$url = helium_generate_gfont_link();
+
+	if ( $url ):
+		?>
+        <link href="<?php echo $url ?>" rel="stylesheet" media="none"
+              onload="this.media='all';">
+		<?php
+	endif;
+}
+
+
+function helium_generate_gfont_link() {
+	$g1 = get_theme_mod( 'gfont_1' );
+	$g2 = get_theme_mod( 'gfont_2' );
+
+    if(!$g1 && !$g2){
+        return false;
+    }
+
+	$base = 'https://fonts.googleapis.com/css?family=';
+
+	if ( $g1 ) {
+		$base .= str_replace( ' ', '+', $g1['fontObject']['family'] );
+		if ( isset( $g1['weights'] ) && $g1['weights'] ) {
+			$base .= ':' . implode( ',', $g1['weights'] );
+		}
+	}
+
+	if ( $g2 ) {
+		$base .= '|' . str_replace( ' ', '+', $g2['fontObject']['family'] );
+		if ( isset( $g2['weights'] ) && $g2['weights'] ) {
+			$base .= ':' . implode( ',', $g2['weights'] );
+		}
+	}
+
+	return $base;
 }

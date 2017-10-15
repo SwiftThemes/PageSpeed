@@ -22,6 +22,9 @@
   .ps-header-ad {
     float: right;
   }
+  #header-nav-container{
+    float: right;
+  }
 }
 
 .logo-center {
@@ -32,7 +35,6 @@
     display: block;
     margin: auto
   }
-
   .ps-header-ad {
     float: right;
   }
@@ -44,6 +46,10 @@
   }
 
   .ps-header-ad {
+    float: left;
+  }
+
+  #header-nav-container{
     float: left;
   }
 }

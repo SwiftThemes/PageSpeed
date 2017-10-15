@@ -36,32 +36,13 @@ function helium_font_selection_control_register( $wp_customize ) {
 				'fontObject' => array( 'family' => '' )
 			);
 			$this->json['value'] = wp_parse_args( $this->value(), $defaults );
-
-
 		}
 
 		public function content_template() {
 
 			?>
 
-            <# var defaultValue = '';
 
-                    if ( data.defaultValue ) {
-
-                    if ( '#' !== data.defaultValue.substring( 0, 1 ) ) {
-
-                    defaultValue = '#' + data.defaultValue;
-
-                    } else {
-
-                    defaultValue = data.defaultValue;
-
-                    }
-
-                    defaultValue = ' data-default-color=' + defaultValue;
-
-                    }
-                    #>
 
             <label>
 
@@ -73,9 +54,9 @@ function helium_font_selection_control_register( $wp_customize ) {
                             <# } #>
                                 <div class="font-selection">
 
-                                    <input class="family he_font_selection" type="text" maxlength="7"
+                                    <input class="family he_font_selection" type="text"
                                            value="{{data.value.fontObject.family}}"
-                                           placeholder="<?php esc_attr_e( 'Search a font' ); ?>" {{ defaultValue }}/>
+                                           placeholder="<?php esc_attr_e( 'Search a font' ); ?>" />
 
                                     <label class="select"><strong>Weights</strong>
                                         <select type="text" class="weights" multiple>

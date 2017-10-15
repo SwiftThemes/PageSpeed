@@ -140,17 +140,17 @@ class Helium_Styles {
 	}
 
 	private function get_header_height() {
-		$logo_id = get_theme_mod('custom_logo',false);
-		if($logo_id){
-			$image = wp_get_attachment_image_src($logo_id,'full');
+		$logo_id = get_theme_mod( 'custom_logo', false );
+		if ( $logo_id ) {
+			$image     = wp_get_attachment_image_src( $logo_id, 'full' );
 			$image_url = $image[0];
-			$size = getimagesize($image_url);
-			if($size[1]){
-				return $size[1].'px';
-			}else{
+			$size      = getimagesize( $image_url );
+			if ( $size[1] ) {
+				return $size[1] . 'px';
+			} else {
 				return '64px';
 			}
-		}else{
+		} else {
 			return '64px';
 		}
 	}
@@ -184,12 +184,25 @@ class Helium_Styles {
 		$override .= '$main_width:' . get_theme_mod( 'main_width', '70' ) . ";\n";
 		$override .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '20' ) . ";\n";
 
-		if(get_theme_mod('enable_sleek_header',false)){
+		if ( get_theme_mod( 'enable_sleek_header', false ) ) {
 			$override .= '$is_sleek_header:1' . ";\n";
-			$override .= '$header_height:' . $this->get_header_height(). ";\n";
+			$override .= '$header_height:' . $this->get_header_height() . ";\n";
 		}
 
 		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
+
+
+		$font  = get_theme_mod( 'primary_font' );
+		$font2 = get_theme_mod( 'secondary_font' );
+
+		if ( $font && $font['stack'] ) {
+			$override .= '$body-font-stack:' . $font['stack'] . ";\n";
+			$override .= '$base-font-size:' . $font['size'] . "px;\n";
+			$override .= '$base-line-height:' . $font['line_height'] . "em;\n";
+			$override .= '$body-font-weight:' . $font['weight'] . ";\n";
+		}
+
+//		$override .= '$headings-font-stack:' . $font2 . ";\n";
 
 
 		$content = str_replace( '/**variables**/', $override, $content );
@@ -206,7 +219,6 @@ class Helium_Styles {
 
 
 		$content = str_replace( '/**colors**/', $colors_override, $content );
-
 
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );

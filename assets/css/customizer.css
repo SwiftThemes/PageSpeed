@@ -143,3 +143,13 @@ body {
     box-sizing: border-box;
     margin: 5px 0;
 }
+
+.c3 {
+    width: 33.333%;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    padding-right: 5px;
+    font-size: .75em;
+    color:#000
+}

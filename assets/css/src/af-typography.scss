@@ -1,14 +1,26 @@
-body{font:$base-font-size / $base-line-height $body-font-stack;color: $dark-3}
-a{text-decoration: none;color:$dark-1}
-a:hover{text-decoration: underline;}
-h1,h2,h3,h4,h5,h6,.heading{
+body {
+  font:$body-font-weight #{$base-font-size}/#{$base-line-height} $body-font-stack;
+  color: $dark-3
+}
+
+a {
+  text-decoration: none;
+  color: $dark-1
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
   font-family: $headings-font-stack;
   font-weight: 900;
   letter-spacing: -0.04em;
 }
-h1{
-  font-size:2.5em;
+
+h1 {
+  font-size: 2.5em;
   line-height: 1.182em;
-  margin-bottom:.591em ;
+  margin-bottom: .591em;
 }
 

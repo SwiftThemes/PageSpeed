@@ -7,23 +7,23 @@ $browser-context: 16; // Default
 // Layout
 $site_width: 1360px;
 $main_width: 60;
-$left_sidebar_width:20;
+$left_sidebar_width: 20;
 $padding: 40px;
 
 $vr: 26px; //vertical rhythm
 $footer-columns: 4;
 
 $is_sleek_header: 0;
-$header_height:48px;
+$header_height: 48px;
 
 // Typography
 $body-font-stack: serif, Garamond;
 $body-font-stack: 'Open Sans', sans-serif;
+$body-font-weight: normal;
 $base-font-size: 17px;
 $base-line-height: em(26);
 $headings-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headings-font-stack: 'Open Sans', sans-serif;
-
 
 // Don't remove the below line.
 // It's used for overriding the variables.
