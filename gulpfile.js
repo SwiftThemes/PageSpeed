@@ -46,33 +46,33 @@ gulp.task('watch', function () {
 var project = 'page-speed', // Project name, used for build zip.
     url = 'neat.dev', // Local Development URL for BrowserSync. Change as-needed.
     bower = './assets/bower_components/'; // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
-build = '../buildtheme/', // Files that you want to package into a zip go here
-    buildInclude = [
-        // include common file types
-        '**/*.php',
-        '**/*.html',
-        '**/*.css',
-        '**/*.scss',
-        '**/*.js',
-        '**/*.svg',
-        '**/*.ttf',
-        '**/*.otf',
-        '**/*.eot',
-        '**/*.woff',
-        '**/*.woff2',
+build = '../buildtheme/page-speed/' // Files that you want to package into a zip go here
+buildInclude = [
+    // include common file types
+    '**/*.php',
+    '**/*.html',
+    '**/*.css',
+    '**/*.scss',
+    '**/*.js',
+    '**/*.svg',
+    '**/*.ttf',
+    '**/*.otf',
+    '**/*.eot',
+    '**/*.woff',
+    '**/*.woff2',
 
-        // include specific files and folders
-        'screenshot.png',
+    // include specific files and folders
+    'screenshot.png',
 
-        // exclude files and folders
-        '!node_modules/**/*',
-        '!buildtheme/**/*',
-        '!assets/bower_components/**/*',
-        '!style.css.map',
-        '!assets/js/custom/*',
-        '!assets/css/patrials/*'
+    // exclude files and folders
+    '!node_modules/**/*',
+    '!buildtheme/**/*',
+    '!assets/bower_components/**/*',
+    '!style.css.map',
+    '!assets/js/custom/*',
+    '!assets/css/patrials/*'
 
-    ];
+];
 
 // Load plugins
 var gulp = require('gulp'),
@@ -285,9 +285,9 @@ gulp.task('buildImages', function () {
  */
 gulp.task('buildZip', function () {
     // return 	gulp.src([build+'/**/', './.jshintrc','./.bowerrc','./.gitignore' ])
-    return gulp.src(build + '/**/')
+    return gulp.src(build + '/**/',{base:'../buildtheme/'})
         .pipe(zip(project + '.zip'))
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('../'))
         .pipe(gulp.dest('/Users/satish/Dropbox/Public/'))
         .pipe(notify({message: 'Zip task complete', onLast: true}));
 });
@@ -301,7 +301,7 @@ gulp.task('buildZip', function () {
  *
  */
 
-    // Package Distributable Theme
+// Package Distributable Theme
 gulp.task('build', function (cb) {
     runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });

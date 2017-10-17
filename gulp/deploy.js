@@ -33,7 +33,7 @@ var gulpif = require('gulp-if');
 gulp.task('deploy', function () {
 
     // Dirs and Files to sync
-    rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/'];
+    rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/page-speed/'];
 
     // Default options for rsync
     rsyncConf = {
@@ -47,6 +47,7 @@ gulp.task('deploy', function () {
     };
     rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/';
     rsyncConf.hostname = '172.93.98.50'; // hostname
+
 
     // Staging
     if (argv.sg) {
@@ -69,6 +70,31 @@ gulp.task('deploy', function () {
 
 });
 
+
+gulp.task('share', function () {
+    rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/page-speed.zip'];
+
+    // Default options for rsync
+    rsyncConf = {
+        progress: true,
+        incremental: true,
+        relative: true,
+        emptyDirectories: true,
+        recursive: true,
+        clean: true,
+        exclude: [],
+    };
+    rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/';
+    rsyncConf.hostname = '172.93.98.50'; // hostname
+
+
+    rsyncConf.username = 'swiftswift'; // ssh username
+    rsyncConf.destination = '/home/swiftswift/public_html/page-speed_GBmZxE97uCJctcwXxI78.zip'; // path where uploaded files go
+// Use gulp-rsync to sync the files
+    return gulp.src(rsyncPaths)
+        .pipe(rsync(rsyncConf));
+
+});
 
 function throwError(taskName, msg) {
     throw new gutil.PluginError({

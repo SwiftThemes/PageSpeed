@@ -51,9 +51,9 @@ function helium_typography_control_register( $wp_customize ) {
 
 				'Verdana, Geneva, sans-serif',
 				'Tahoma, Arial, Helvetica, sans-serif',
-				'Georgia, Utopia, Palatino, "Palatino Linotype", serif',
-				'"Times New Roman", Times, serif',
-				'"Courier New", Courier, monospace'
+				'Georgia, Utopia, Palatino, \'Palatino Linotype\', serif',
+				'\'Times New Roman\', Times, serif',
+				'\'Courier New\', Courier, monospace'
 			);
 			$this->json['stacks'] = array_merge( $google_font_stack, $this->json['stacks'] );
 
