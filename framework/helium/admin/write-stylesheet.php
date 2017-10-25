@@ -202,8 +202,7 @@ class Helium_Styles {
 			$override .= '$body-font-weight:' . $font['weight'] . ";\n";
 		}
 
-		//$override .= '$headings-font-stack:' . $font2 . ";\n";
-
+		$override .= '$headings-font-stack:' . $font2 . ";\n";
 
 		$content = str_replace( '/**variables**/', $override, $content );
 

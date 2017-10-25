@@ -37,25 +37,8 @@ function helium_typography_control_register( $wp_customize ) {
 			);
 			$this->json['value'] = wp_parse_args( $this->value(), $defaults );
 
-			$google_font_stack = array();
 
-			if ( get_theme_mod( 'gfont_1' ) ) {
-				$temp                = get_theme_mod( 'gfont_1' );
-				$google_font_stack[] = $temp['stack'];
-			}
-			if ( get_theme_mod( 'gfont_2' ) ) {
-				$temp                = get_theme_mod( 'gfont_2' );
-				$google_font_stack[] = $temp['stack'];
-			}
-			$this->json['stacks'] = array(
-
-				'Verdana, Geneva, sans-serif',
-				'Tahoma, Arial, Helvetica, sans-serif',
-				'Georgia, Utopia, Palatino, \'Palatino Linotype\', serif',
-				'\'Times New Roman\', Times, serif',
-				'\'Courier New\', Courier, monospace'
-			);
-			$this->json['stacks'] = array_merge( $google_font_stack, $this->json['stacks'] );
+			$this->json['stacks'] = he_get_font_stacks();
 
 			$this->json['fontSizes'] = [
 				8,
@@ -106,17 +89,15 @@ function helium_typography_control_register( $wp_customize ) {
 		public function content_template() {
 
 			?>
-            <label>
+            <div class="typography cf">
 
                 <# if ( data.label ) { #>
                     <span class="customize-control-title">{{{ data.label }}}</span>
                     <# } #>
-                        <# if ( data.description ) { #>
-                            <span class="description customize-control-description">{{{ data.description }}}</span>
-                            <# } #>
+
                                 <div class="typography">
 
-                                    <label class="select"><strong>Font stack</strong>
+                                    <label class="select">Font stack
                                         <select type="text" class="stack">
                                             <option value=" ">Select font</option>
                                             <# for ( key in data.stacks) { #>
@@ -150,7 +131,7 @@ function helium_typography_control_register( $wp_customize ) {
 
                                     <label class="c3">
                                         Line height (em)
-                                        <input type="number" class="lineHeight" value="{{data.value.line_height}}">
+                                        <input type="number" class="lineHeight" value="{{data.value.line_height}}" min="0.80" max="2.00" step=".01">
                                     </label>
 
                                     <label class="c3">
@@ -169,7 +150,13 @@ function helium_typography_control_register( $wp_customize ) {
                                     </label>
                                 </div>
 
-            </label>
+                        <# if ( data.description ) { #>
+                            <span class="description customize-control-description">{{{ data.description }}}</span>
+                            <# } #>
+
+            </div>
+
+
 			<?php
 		}
 
