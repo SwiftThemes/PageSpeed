@@ -27,10 +27,6 @@ function helium_write_stylesheet() {
 
 function helium_write_to_uploads( $content, $destination ) {
 	global $wp_filesystem;
-
-	
-
-
 	$url = wp_nonce_url( 'customize.php', 'fs-nonce' );
 	if ( request_filesystem_credentials( $url, '', false, null, null ) ) {
 		$upload_dir = wp_upload_dir();
@@ -195,22 +191,15 @@ class Helium_Styles {
 		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
 
 
-		$font  = get_theme_mod( 'primary_font' );
-		$font2 = get_theme_mod( 'secondary_font' );
+		$override .= '$body-font-stack:' . get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) . ";\n";
+		$override .= '$base-font-size:' . get_theme_mod( 'primary_font_size', 16 ) . "px;\n";
+		$override .= '$base-line-height:' . get_theme_mod( 'primary_font_lh', 1.7 ) . "em;\n";
+		$override .= '$body-font-weight:' . get_theme_mod( 'primary_font_weight', 'normal' ) . ";\n";
 
-		if ( $font && $font['stack'] ) {
-			$override .= '$body-font-stack:' . $font['stack'] . ";\n";
-			$override .= '$base-font-size:' . $font['size'] . "px;\n";
-			$override .= '$base-line-height:' . $font['line_height'] . "em;\n";
-			$override .= '$body-font-weight:' . $font['weight'] . ";\n";
-		}
 
-		if(isset($font2['stack']) && $font2['stack']){
-			$override .= '$headings-font-stack:' . $font2['stack'] . ";\n";
-		}
-		if(isset($font2['weight']) && $font2['weight']){
-			$override .= '$headings-font-weight:' . $font2['weight'] . ";\n";
-		}
+		$override .= '$headings-font-stack:' . get_theme_mod( 'secondary_font_stack','-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) . ";\n";
+		$override .= '$headings-font-weight:' . get_theme_mod( 'secondary_font_weight', 'bold' ) . ";\n";
+
 
 		$content = str_replace( '/**variables**/', $override, $content );
 

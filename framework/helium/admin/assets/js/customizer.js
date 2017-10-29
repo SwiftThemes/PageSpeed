@@ -57,49 +57,41 @@
     });
 
 
-
-    wp.customize.controlConstructor['he_select'] = wp.customize.Control.extend( {
-        ready: function() {
+    wp.customize.controlConstructor['he_select'] = wp.customize.Control.extend({
+        ready: function () {
             var control = this;
 
-            this.container.on( 'change', 'select',
-                function() {
-                    control.setting.set( jQuery( this ).val() );
+            this.container.on('change', 'select',
+                function () {
+                    control.setting.set(jQuery(this).val());
                 }
             );
         }
-    } );
+    });
 
     wp.customize.controlConstructor['he_typography'] = wp.customize.Control.extend({
         ready: function () {
             var control = this;
             control.container.on('change', 'select.stack',
                 function (e) {
-                    var setting = _.extend({}, control.setting())
-                    setting['stack'] = $(this).val()
-                    control.setting.set(setting)
+                    control.settings['stack'].set($(this).val())
                 }
             );
 
             control.container.on('change', 'select.size',
                 function (e) {
-                    var setting = _.extend({}, control.setting())
-                    setting['size'] = $(this).val()
-                    control.setting.set(setting)
+                    control.settings['size'].set($(this).val())
                 }
             );
             control.container.on('change', 'input.lineHeight',
                 function (e) {
-                    var setting = _.extend({}, control.setting())
-                    setting['line_height'] = $(this).val()
-                    control.setting.set(setting)
+                    control.settings['lh'].set($(this).val())
+
                 }
             );
             control.container.on('change', 'select.weight',
                 function (e) {
-                    var setting = _.extend({}, control.setting())
-                    setting['weight'] = $(this).val()
-                    control.setting.set(setting)
+                    control.settings['weight'].set($(this).val())
                 }
             );
         }

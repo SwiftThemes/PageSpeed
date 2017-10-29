@@ -29,27 +29,13 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	) );
 
 
-	$wp_customize->add_setting( 'primary_font', array(
-//		'sanitize_callback' => 'helium_meta',
-		'default' => '',
-
-	) );
-
-	$wp_customize->add_setting( 'secondary_font', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => 'value2',
-		'capability'        => 'edit_theme_options',
-
-	) );
-
-
 	$wp_customize->add_setting( 'example-control', array() );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-control', array(
-		'section' => 'fonts',
+		'section'  => 'fonts',
 		'priority' => 5,
-		'label' => __( '', 'page-speed' ),
-		'content' => __( 'If you would like to use Google fonts, first add them in the two options below.', 'page-speed' ) . '</p>',
+		'label'    => __( '', 'page-speed' ),
+		'content'  => __( 'If you would like to use Google fonts, first add them in the two options below.', 'page-speed' ) . '</p>',
 //		'description' => __( 'Optional: Example Description.', 'page-speed' ),
 	) ) );
 
@@ -57,14 +43,13 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	$wp_customize->add_setting( 'example-2', array() );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-2', array(
-		'section' => 'fonts',
+		'section'  => 'fonts',
 		'priority' => 15,
-		'label' => __( '', 'page-speed' ),
-		'content' => __( '<hr /><ul><li>Please choose the weights and character subsets you need carefully as adding more weights and subsets will slow down your site.</li>
+		'label'    => __( '', 'page-speed' ),
+		'content'  => __( '<hr /><ul><li>Please choose the weights and character subsets you need carefully as adding more weights and subsets will slow down your site.</li>
 <li> If you are not using the font(s) below, clear it so that they are not unnecessarily loaded</li></ul>', 'page-speed' ) . '</p>',
 //		'description' => __( 'Optional: Example Description.', 'page-speed' ),
 	) ) );
-
 
 
 	$wp_customize->add_control(
@@ -92,6 +77,25 @@ function pagespeed_customize_fonts( $wp_customize ) {
 			) )
 	);
 
+
+	$wp_customize->add_setting( 'primary_font_stack', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+	$wp_customize->add_setting( 'primary_font_size', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+	$wp_customize->add_setting( 'primary_font_lh', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+	$wp_customize->add_setting( 'primary_font_weight', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+
+
 	$wp_customize->add_control(
 		new Helium_Customize_Control_Typography(
 			$wp_customize,
@@ -101,9 +105,34 @@ function pagespeed_customize_fonts( $wp_customize ) {
 				'description' => __( 'These font settings are used for the body of the page.', 'page-speed' ),
 				'section'     => 'fonts',
 				'priority'    => 10,
-				'setting'     => 'primary_font'
+				'setting'     => 'primary_font',
+				'settings'    => array(
+					'stack'  => 'primary_font_stack',
+					'size'   => 'primary_font_size',
+					'lh'     => 'primary_font_lh',
+					'weight' => 'primary_font_weight',
+				),
 			) )
 	);
+
+
+	$wp_customize->add_setting( 'secondary_font_stack', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+	$wp_customize->add_setting( 'secondary_font_size', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+	$wp_customize->add_setting( 'secondary_font_lh', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+	$wp_customize->add_setting( 'secondary_font_weight', array(
+//		'sanitize_callback' => 'helium_meta',
+		'default' => '',
+	) );
+
 
 	$wp_customize->add_control(
 		new Helium_Customize_Control_Typography(
@@ -114,7 +143,13 @@ function pagespeed_customize_fonts( $wp_customize ) {
 				'description' => __( 'This font stack is used for headings.', 'page-speed' ),
 				'section'     => 'fonts',
 				'priority'    => 10,
-				'setting'     => 'secondary_font',
+				'settings'    => array(
+					'stack'  => 'secondary_font_stack',
+					'size'   => 'secondary_font_size',
+					'lh'     => 'secondary_font_lh',
+					'weight' => 'secondary_font_weight',
+				),
+				'type'        => 'he_typography'
 			) )
 	);
 

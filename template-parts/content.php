@@ -61,14 +61,14 @@
 
 	<div class="clear"></div>
 	<?php if ( get_theme_mod( 'home_meta_after_body' ) ) {
-		if ( '<hr class="separator">' == get_theme_mod( 'home_meta_after_body' ) ) {
+		if ( '<hr class="separator">' == get_theme_mod( 'home_meta_after_body','[cat]Filed under [/cat]' ) ) {
 			echo '<hr class="separator">';
 		} else {
 			?>
 
 			<footer class="entry-footer">
 				<div class="inner footer meta">
-					<?php echo do_shortcode( get_theme_mod( 'home_meta_after_body' ) ) ?>
+					<?php echo do_shortcode( get_theme_mod( 'home_meta_after_body','[cat]Filed under [/cat]' ) ) ?>
 				</div>
 			</footer>
 		<?php }

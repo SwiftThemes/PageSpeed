@@ -26,16 +26,12 @@ function helium_typography_control_register( $wp_customize ) {
 		public function to_json() {
 			parent::to_json();
 
-			if ( $this->value() ) {
-				$this->json['value'] = $this->value();
-			}
 
-			$defaults            = array(
-				'size'        => '16px',
-				'line_height' => '1.5em',
-				'weight'      => 'normal',
-			);
-			$this->json['value'] = wp_parse_args( $this->value(), $defaults );
+			$this->json['value']['stack']  = $this->value( 'stack' );
+			$this->json['value']['size']   = $this->value( 'size' );
+			$this->json['value']['lh']     = $this->value( 'lh' );
+			$this->json['value']['weight'] = $this->value( 'weight' );
+
 
 
 			$this->json['stacks'] = he_get_font_stacks();
@@ -95,60 +91,61 @@ function helium_typography_control_register( $wp_customize ) {
                     <span class="customize-control-title">{{{ data.label }}}</span>
                     <# } #>
 
-                                <div class="typography">
+                        <div class="typography">
 
-                                    <label class="select">Font stack
-                                        <select type="text" class="stack">
-                                            <option value=" ">Select font</option>
-                                            <# for ( key in data.stacks) { #>
-                                                <option value="{{ data.stacks[key] }}"
+                            <label class="select">Font stack
+                                <select type="text" class="stack">
+                                    <option value=" ">Select font</option>
+                                    <# for ( key in data.stacks) { #>
+                                        <option value="{{ data.stacks[key] }}"
 
-                                                <# if ( data.value.stack == data.stacks[key] ) { #>
-                                                    selected="selected"
-                                                    <# } #>
-                                                        >{{ data.stacks[key] }}
-                                                        </option>
-                                                        <# } #>
-                                        </select>
-                                    </label>
+                                        <# if ( data.value.stack == data.stacks[key] ) { #>
+                                            selected="selected"
+                                            <# } #>
+                                                >{{ data.stacks[key] }}
+                                                </option>
+                                                <# } #>
+                                </select>
+                            </label>
 
-                                    <label class="c3">
-                                        Size
-                                        <select type="text" class="size">
-                                            <# for ( key in data.fontSizes) { #>
-                                                <option value="{{ data.fontSizes[key] }}"
+                            <label class="c3">
+                                Size
+                                <select type="text" class="size">
+                                    <# for ( key in data.fontSizes) { #>
+                                        <option value="{{ data.fontSizes[key] }}"
 
 
-                                                <# if ( data.value.size == data.fontSizes[key] ) { #>
-                                                    selected="selected"
-                                                    <# } #>
+                                        <# if ( data.value.size == data.fontSizes[key] ) { #>
+                                            selected="selected"
+                                            <# } #>
 
                                                 >{{ data.fontSizes[key] }} px
                                                 </option>
                                                 <# } #>
-                                        </select>
-                                    </label>
+                                </select>
+                            </label>
 
-                                    <label class="c3">
-                                        Line height (em)
-                                        <input type="number" class="lineHeight" value="{{data.value.line_height}}" min="0.80" max="2.00" step=".01">
-                                    </label>
+                            <label class="c3">
+                                Line height (em)
+                                <input type="number" class="lineHeight" value="{{data.value.lh}}" min="0.80"
+                                       max="2.00" step=".01">
+                            </label>
 
-                                    <label class="c3">
-                                        Weight
-                                        <select type="text" class="weight">
-                                            <# for ( key in data.fontWeights) { #>
-                                                <option value="{{ data.fontWeights[key] }}"
+                            <label class="c3">
+                                Weight
+                                <select type="text" class="weight">
+                                    <# for ( key in data.fontWeights) { #>
+                                        <option value="{{ data.fontWeights[key] }}"
 
-                                                <# if ( data.value.weight == data.fontWeights[key] ) { #>
-                                                    selected="selected"
-                                                    <# } #>
+                                        <# if ( data.value.weight == data.fontWeights[key] ) { #>
+                                            selected="selected"
+                                            <# } #>
                                                 >{{ data.fontWeights[key] }}
                                                 </option>
                                                 <# } #>
-                                        </select>
-                                    </label>
-                                </div>
+                                </select>
+                            </label>
+                        </div>
 
                         <# if ( data.description ) { #>
                             <span class="description customize-control-description">{{{ data.description }}}</span>
