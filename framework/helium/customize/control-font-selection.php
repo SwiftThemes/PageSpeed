@@ -61,7 +61,7 @@ function helium_font_selection_control_register( $wp_customize ) {
                                     <label class="select"><strong>Weights</strong>
                                         <select type="text" class="weights" multiple>
                                             <# for ( key in data.value.fontObject.variants ) { #>
-                                                <option value="{{ key }}"
+                                                <option value="{{ data.value.fontObject.variants[key] }}"
                                                 <# if ( data.value.weights.indexOf(data.value.fontObject.variants[key]) !== -1 ) { #>
                                                     selected="selected"
                                                     <# } #>
@@ -74,7 +74,7 @@ function helium_font_selection_control_register( $wp_customize ) {
                                     <label class="select"><strong>Subsets</strong>
                                         <select type="text" class="subsets" multiple>
                                             <# for ( key in data.value.fontObject.subsets ) { #>
-                                                <option value="{{ key }}"
+                                                <option value="{{ data.value.fontObject.subsets[key] }}"
                                                 <# if ( data.value.subsets.indexOf(data.value.fontObject.subsets[key]) !== -1 ) { #>
                                                     selected="selected"
                                                     <# } #>

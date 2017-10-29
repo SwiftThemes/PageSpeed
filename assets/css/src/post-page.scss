@@ -1,5 +1,8 @@
 
-
+.entry-title a:hover{
+  color:$primary;
+  text-decoration: none;
+}
 .entry-content {
   ul, ol {
     margin-left: 1em;

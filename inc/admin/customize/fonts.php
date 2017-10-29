@@ -106,7 +106,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
-		new Helium_Customize_Control_Select(
+		new Helium_Customize_Control_Typography(
 			$wp_customize,
 			'secondary_font',
 			array(
@@ -115,8 +115,6 @@ function pagespeed_customize_fonts( $wp_customize ) {
 				'section'     => 'fonts',
 				'priority'    => 10,
 				'setting'     => 'secondary_font',
-				'type'=>'he_select',
-				'choices' => he_get_font_stacks(),
 			) )
 	);
 

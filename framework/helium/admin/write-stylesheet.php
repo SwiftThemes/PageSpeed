@@ -28,6 +28,9 @@ function helium_write_stylesheet() {
 function helium_write_to_uploads( $content, $destination ) {
 	global $wp_filesystem;
 
+	
+
+
 	$url = wp_nonce_url( 'customize.php', 'fs-nonce' );
 	if ( request_filesystem_credentials( $url, '', false, null, null ) ) {
 		$upload_dir = wp_upload_dir();
@@ -202,7 +205,12 @@ class Helium_Styles {
 			$override .= '$body-font-weight:' . $font['weight'] . ";\n";
 		}
 
-		$override .= '$headings-font-stack:' . $font2 . ";\n";
+		if(isset($font2['stack']) && $font2['stack']){
+			$override .= '$headings-font-stack:' . $font2['stack'] . ";\n";
+		}
+		if(isset($font2['weight']) && $font2['weight']){
+			$override .= '$headings-font-weight:' . $font2['weight'] . ";\n";
+		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
 

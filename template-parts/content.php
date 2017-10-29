@@ -41,7 +41,7 @@
 	<div class="entry-content">
 		<?php
 		/* translators: %s: Name of current post */
-		if ( get_theme_mod( 'home_show_excerpts' ) ) {
+		if ( get_theme_mod( 'home_show_excerpts',true ) ) {
 			the_excerpt();
 
 		} else {

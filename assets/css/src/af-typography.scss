@@ -14,7 +14,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6, .heading {
   font-family: $headings-font-stack;
-  font-weight: 900;
+  font-weight: $headings-font-weight;
   letter-spacing: -0.04em;
 }
 
