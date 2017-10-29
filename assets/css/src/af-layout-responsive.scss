@@ -47,5 +47,8 @@
       box-sizing: border-box;
     }
   }
+
+  //Hide menus
+  #primary-nav-container,#secondary-nav-container,#header-nav-container{display: none}
 }
 

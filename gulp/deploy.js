@@ -45,7 +45,7 @@ gulp.task('deploy', function () {
         clean: true,
         exclude: [],
     };
-    rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/';
+    rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/page-speed/';
     rsyncConf.hostname = '172.93.98.50'; // hostname
 
 

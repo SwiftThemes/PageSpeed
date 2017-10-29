@@ -16,13 +16,13 @@ function pagespeed_customize_colors( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'primary_color', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_meta',
 		'default'           => '#007AFF',
 
 	) );
 
 	$wp_customize->add_setting( 'shades_from', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_meta',
 		'default'           => '#007AFF',
 
 	) );

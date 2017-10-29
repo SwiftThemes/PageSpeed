@@ -52,9 +52,9 @@ function pagespeed_help() {
         <p>
             <?php
             if(get_theme_mod('can_read_write')){
-                $status = __('Can read & write','he');
+                $status = __('Can read & write','helium');
             }else{
-	            $status = __('Can not read & write','he');
+	            $status = __('Can not read & write','helium');
             }
             ?>
             Current Status: <?php echo $status?>

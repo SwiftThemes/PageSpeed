@@ -30,3 +30,13 @@ if ( ! function_exists( 'he_move_comment_field_to_bottom' ) ) {
 		return $fields;
 	}
 }
+
+
+add_action( 'wp_enqueue_styles', 'he_remove_open_sans',1 );
+/**
+ * Disable the open sans font wordpress ads to the frontend
+ */
+function he_remove_open_sans() {
+	wp_deregister_style('open-sans');
+	wp_register_style('open-sans');
+}

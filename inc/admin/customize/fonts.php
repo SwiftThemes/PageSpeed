@@ -79,19 +79,19 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'primary_font_stack', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_meta',
 		'default' => '',
 	) );
 	$wp_customize->add_setting( 'primary_font_size', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_float',
 		'default' => '',
 	) );
 	$wp_customize->add_setting( 'primary_font_lh', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_float',
 		'default' => '',
 	) );
 	$wp_customize->add_setting( 'primary_font_weight', array(
-//		'sanitize_callback' => 'helium_meta',
+//		'sanitize_callback' => 'esc_attr',
 		'default' => '',
 	) );
 
@@ -117,19 +117,19 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'secondary_font_stack', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_meta',
 		'default' => '',
 	) );
 	$wp_customize->add_setting( 'secondary_font_size', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_float',
 		'default' => '',
 	) );
 	$wp_customize->add_setting( 'secondary_font_lh', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_float',
 		'default' => '',
 	) );
 	$wp_customize->add_setting( 'secondary_font_weight', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'esc_attr',
 		'default' => '',
 	) );
 
