@@ -32,7 +32,9 @@ function helium_set_fs_status() {
 
 	if ( $can_read && $can_write ) {
 		set_theme_mod( 'can_read_write', true );
+		return true;
 	} else {
 		set_theme_mod( 'can_read_write', false );
+		return false;
 	}
 }

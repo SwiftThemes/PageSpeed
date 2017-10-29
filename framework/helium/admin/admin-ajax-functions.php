@@ -19,6 +19,19 @@ function helium_clear_sass_cache() {
 }
 
 
+add_action( 'wp_ajax_helium_update_file_system_status', 'helium_update_file_system_status' );
+
+function helium_update_file_system_status() {
+	if(helium_set_fs_status()){
+		echo __('Update success, can write','helium').' :-)';
+	}else{
+		echo __('Update success, can\'t write','helium').' :-(';
+	}
+
+	wp_die(); // this is required to terminate immediately and return a proper response
+}
+
+
 add_action( 'wp_ajax_helium_save_theme_options', 'helium_save_theme_options' );
 
 function helium_save_theme_options() {

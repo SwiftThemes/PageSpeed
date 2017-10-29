@@ -18,11 +18,36 @@
                 };
 
                 jQuery.post(ajaxurl, data, function (response) {
-                    $('#clear-sass').text('Clear SASS Cache').prop('disabled',false)
+                    $('#clear-sass').text('Clear SASS Cache').prop('disabled', false)
                     if (response) {
                         $('#clear_cache_results').text('Cleared Cache')
                     } else {
                         $('#clear_cache_results').text('Error clearing cache :-(')
+                    }
+                });
+
+            })
+        }
+
+        updateFileSystemStatus()
+
+        function updateFileSystemStatus() {
+            $('#update-write-status').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var button = $(this)
+                button.text('Updating File System Status').prop('disabled', true);
+                var data = {
+                    'action': 'helium_update_file_system_status',
+                };
+
+                jQuery.post(ajaxurl, data, function (response) {
+                    $('#update-write-status').text('Update File System Status').prop('disabled', false)
+                    if (response) {
+                        $('#clear_write_status_results').text(response)
+                    } else {
+                        $('#clear_write_status_results').text('Error clearing cache :-(')
                     }
                 });
 
@@ -64,7 +89,7 @@
                 $('#options-saved').hide()
                 $('#options-save-error').hide()
                 $('#options-changed').show()
-            }else{
+            } else {
                 $('#options-changed').hide()
             }
         });
