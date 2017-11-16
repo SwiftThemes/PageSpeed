@@ -81,18 +81,21 @@ Breaks when we have nested stickies, but we don't have them
 }
 
 .button,
-.btn {
+.btn,
+a.btn {
   text-align: center;
-  color: $light-1;
+  color: $light-1!important;
   background: $primary;
   padding: 5px 7px;
   @include border-radius(3px);
+  text-decoration: none;
 }
 
 .button:hover,
 .btn:hover {
   color: $light-3;
 }
+.btn-outline{border:solid 2px #FFF;background: none!important;}
 
 .btn.small,
 .button.small {
@@ -104,7 +107,7 @@ Breaks when we have nested stickies, but we don't have them
 .center {
   margin: auto;
   text-align: center;
-  display: inline-block;
+  //display: inline-block;
   ul, ol {
     list-style-position: inside;
 
@@ -117,29 +120,39 @@ Breaks when we have nested stickies, but we don't have them
   width: 100%;
 }
 .pull-all {
-  margin: -40px;
-  padding: 40px
+  margin: -$padding;
+  padding: $padding
 }
 
 .pull-l {
-  margin-left: -40px;
-  padding-left: 40px;
+  margin-left: -$padding;
+  padding-left: $padding;
 }
 
 .pull-r {
-  margin-right: -40px;
-  padding-right: 40px;
+  margin-right: -$padding;
+  padding-right: $padding;
 }
 
 .pull-rl {
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-right: -40px;
-  margin-left: -40px;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-right: -$padding;
+  margin-left: -$padding;
+}
+.pull-trl {
+  padding-top: $padding;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-top:-$padding;
+  margin-right: -$padding;
+  margin-left: -$padding;
 }
 
 .no-padding{padding: 0}
-
+.pad,.padding{
+  padding: $padding;
+}
 
 .emoji{
   width: 1em;

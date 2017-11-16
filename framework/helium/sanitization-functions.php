@@ -19,3 +19,7 @@ function helium_meta($val){
 function helium_float( $val ){
 	return (float) $val;
 }
+
+function helium_pass( $val ){
+	return $val;
+}

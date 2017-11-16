@@ -10,7 +10,7 @@
  * @license
  */
 
-if ( ! class_exists( 'Helium' ) ) {
+if ( ! class_exists( 'Helium') ) {
 
 	/**
 	 * The Helium class launches the helium and hybrid frameworks.

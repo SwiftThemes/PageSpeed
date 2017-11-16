@@ -1,8 +1,15 @@
 @media only screen and (min-width: 1200px) {
   .hero {
     h1 {
-      font-size: 40px
+      font-size: 48px
     }
+  }
+
+  .title{
+    font-size: 48px
+  }
+  .sub-title{
+    font-size: 24px;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -11,4 +18,36 @@
       font-size: 6.4vw
     }
   }
+  .title{
+    font-size: 6.4vw
+  }
+  .sub-title{
+    font-size: 3.2vw
+  }
+}
+
+.center{
+  text-align: center;
+}
+.sub-title {
+font-weight: $body-font-weight}
+.section-title{
+  margin-bottom: 0;
+}
+.lead{
+  font-size:1.2em
+}
+
+.panel-row-style,
+.panel-grid-cell{
+  position: relative;}
+.v-center{
+  position: absolute;
+  top:45%;
+  width:100%;
+}
+
+.image-bg{
+  color:#FFF;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.8);
 }

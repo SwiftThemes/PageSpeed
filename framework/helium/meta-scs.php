@@ -60,7 +60,7 @@ function he_tags( $attr, $content = null ) {
  */
 function he_published_date() {
 	if ( ( current_time( 'timestamp', 1 ) - get_the_date( 'U' ) ) < 86400 ) {
-		$date = human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ' . __( 'ago', 'helium' );
+		$date = human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ' . __( 'ago', 'page-speed');
 	} else {
 		$date = get_the_date();
 	}
@@ -81,7 +81,7 @@ function he_published_date() {
  */
 function he_updated_date() {
 	if ( ( current_time( 'timestamp', 1 ) - get_the_modified_date( 'U' ) ) < 86400 ) {
-		$date = human_time_diff( get_post_modified_time( 'U' ), current_time( 'timestamp' ) ) . ' ' . __( 'ago', 'helium' );
+		$date = human_time_diff( get_post_modified_time( 'U' ), current_time( 'timestamp' ) ) . ' ' . __( 'ago', 'page-speed');
 	} else {
 		$date = get_the_modified_date();
 	}

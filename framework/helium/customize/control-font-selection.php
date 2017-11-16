@@ -56,7 +56,7 @@ function helium_font_selection_control_register( $wp_customize ) {
 
                                     <input class="family he_font_selection" type="text"
                                            value="{{data.value.fontObject.family}}"
-                                           placeholder="<?php esc_attr_e( 'Search a font','helium' ); ?>" />
+                                           placeholder="<?php esc_attr_e( 'Search a font','page-speed'); ?>" />
 
                                     <label class="select"><strong>Weights</strong>
                                         <select type="text" class="weights" multiple>

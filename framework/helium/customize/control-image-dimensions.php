@@ -55,10 +55,10 @@ function image_size_control_register( $wp_customize ) {
 //			$output .= '<div><input type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' /></div>';
 			$output .= '<div class="thumb-align">
 <select type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' >
-			<option value="alignleft" ' . selected( $value, 'alignleft', false ) . '>' . __( 'Align left', 'helium' ) . '</option>
-			<option value="aligncenter" ' . selected( $value, 'aligncneter', false ) . '>' . __( 'Centered', 'helium' ) . '</option>
-			<option value="alignright" ' . selected( $value, 'alignright', false ) . '>' . __( 'Align right', 'helium' ) . '</option>
-			<option value="alternate" ' . selected( $value, 'alternate', false ) . '>' . __( 'Alternate', 'helium' ) . '</option>
+			<option value="alignleft" ' . selected( $value, 'alignleft', false ) . '>' . __( 'Align left', 'page-speed') . '</option>
+			<option value="aligncenter" ' . selected( $value, 'aligncneter', false ) . '>' . __( 'Centered', 'page-speed') . '</option>
+			<option value="alignright" ' . selected( $value, 'alignright', false ) . '>' . __( 'Align right', 'page-speed') . '</option>
+			<option value="alternate" ' . selected( $value, 'alternate', false ) . '>' . __( 'Alternate', 'page-speed') . '</option>
 			</select></div>';
 
 

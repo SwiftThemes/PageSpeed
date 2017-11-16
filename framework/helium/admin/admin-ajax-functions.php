@@ -13,6 +13,7 @@ function helium_clear_sass_cache() {
 	delete_transient( $prefix . 'sass_file_list' );
 	delete_transient( $prefix . 'sass_combined_bf' );
 	delete_transient( $prefix . 'sass_combined_af' );
+	helium_write_stylesheet();
 	echo 'true';
 
 	wp_die(); // this is required to terminate immediately and return a proper response
@@ -23,9 +24,9 @@ add_action( 'wp_ajax_helium_update_file_system_status', 'helium_update_file_syst
 
 function helium_update_file_system_status() {
 	if(helium_set_fs_status()){
-		echo __('Update success, can write','helium').' :-)';
+		echo __('Update success, can write','page-speed').' :-)';
 	}else{
-		echo __('Update success, can\'t write','helium').' :-(';
+		echo __('Update success, can\'t write','page-speed').' :-(';
 	}
 
 	wp_die(); // this is required to terminate immediately and return a proper response

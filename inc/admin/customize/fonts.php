@@ -17,19 +17,19 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 	//@todo add proper sanitization callbacks
 	$wp_customize->add_setting( 'gfont_1', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_pass',
 		'default' => '',
 
 	) );
 
 	$wp_customize->add_setting( 'gfont_2', array(
-//		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'helium_pass',
 		'default' => '',
 
 	) );
 
 
-	$wp_customize->add_setting( 'example-control', array() );
+	$wp_customize->add_setting( 'example-control', array('sanitize_callback' => 'helium_pass',) );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-control', array(
 		'section'  => 'fonts',
@@ -40,7 +40,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	) ) );
 
 
-	$wp_customize->add_setting( 'example-2', array() );
+	$wp_customize->add_setting( 'example-2', array('sanitize_callback' => 'helium_pass',) );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-2', array(
 		'section'  => 'fonts',
@@ -91,7 +91,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'default' => '',
 	) );
 	$wp_customize->add_setting( 'primary_font_weight', array(
-//		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'esc_attr',
 		'default' => '',
 	) );
 
@@ -152,6 +152,20 @@ function pagespeed_customize_fonts( $wp_customize ) {
 				'type'        => 'he_typography'
 			) )
 	);
+
+
+
+	$wp_customize->add_setting( 'custom_font_stack', array(
+		'sanitize_callback' => 'esc_attr',
+		'default' => '',
+	) );
+
+	$wp_customize->add_control( 'custom_font_stack', array(
+		'label'   => 'Custom Font Stack',
+		'section' => 'fonts',
+		'type'    => 'text',
+
+	) );
 
 
 }

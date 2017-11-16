@@ -26,7 +26,7 @@ function helium_responsive_content_control_register( $wp_customize ) {
 				$value = '';
 			}
 			$id = helium_random_string();
-			$output .= '<label><input type="checkbox" ' . checked( $value ) . $this->get_link( 0 ) . ' id="' . $id . '"><span>' . __( 'Enable this content area/ad', 'helium' ) . '</span></label>';
+			$output .= '<label><input type="checkbox" ' . checked( $value ) . $this->get_link( 0 ) . ' id="' . $id . '"><span>' . __( 'Enable this content area/ad', 'page-speed') . '</span></label>';
 
 
 			if ( isset( $this->settings[1] ) ) {
