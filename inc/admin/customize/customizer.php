@@ -97,6 +97,21 @@ function pagespeed_customize( $wp_customize ) {
 		)
 	);
 
+
+	$wp_customize->add_setting( 'enable_wide_layout', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+
+	) );
+
+	$wp_customize->add_control( 'enable_wide_layout', array(
+		'label'   => 'Enable wide layout',
+		'section' => 'layout_settings',
+		'type'    => 'checkbox',
+
+	) );
+
+
 	$wp_customize->add_setting( 'site_width', array(
 		'sanitize_callback' => 'esc_attr',
 		'default'           => '1160px',
@@ -144,3 +159,4 @@ function pagespeed_customize( $wp_customize ) {
 	// Home Page
 
 }
+

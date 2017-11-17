@@ -6,7 +6,11 @@
   margin: auto;
   max-width: 100%;
 }
-.inner.hybrid{box-sizing: border-box}
+
+.inner.hybrid {
+  box-sizing: border-box
+}
+
 .hybrid {
   width: $site-width
 }
@@ -19,6 +23,7 @@ html {
 body {
   height: 100%; /* force the BODY element to match the height of the HTML element */
 }
+
 // #content{padding-bottom: $vr}
 #main > .inner {
   padding-top: $padding;
@@ -105,8 +110,12 @@ body {
   padding-top: $padding;
   padding-bottom: $padding;
 }
+
 //Fix for sticky sidebar background
-#left,#sticky-sb1-sticky-wrapper,#sticky-sb1{background: inherit}
+#left, #sticky-sb1-sticky-wrapper, #sticky-sb1 {
+  background: inherit
+}
+
 #ns1,
 #ns2 {
   width: 50%;
@@ -131,12 +140,18 @@ body {
 .layout-centered {
   #sb1 {
     //background: rgba(0, 255, 255, .5);
-    background: rgba($light-2,.7) !important;
+    background: rgba($light-2, .7) !important;
   }
   #sb2 {
     //background: rgba(255, 255, 0, .5);
-    background: rgba($light-3,.7) !important;
+    background: rgba($light-3, .7) !important;
 
+  }
+  @if ($wide_layout == 1) {
+    #sb1,#wrapper,#sb2 {
+      //background: rgba(0, 255, 255, .5);
+      background: rgba($light-2, 1) !important;
+    }
   }
 }
 
@@ -208,5 +223,11 @@ body {
   }
   a:hover {
     color: $primary
+  }
+}
+
+@if ($wide_layout == 1) {
+  #wrapper {
+    width: 100%
   }
 }
