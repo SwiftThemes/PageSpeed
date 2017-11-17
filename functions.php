@@ -30,7 +30,7 @@ require_once( trailingslashit( get_template_directory() ) . 'inc/page-speed-clas
 new PageSpeed();
 
 
-add_action( 'wp_head', 'pagespeed_put_css_in_head', 999 );
+add_action( 'wp_head', 'pagespeed_put_css_in_head', 9 );
 
 function pagespeed_put_css_in_head() {
 	if ( ! is_customize_preview() ) {

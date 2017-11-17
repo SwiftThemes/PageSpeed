@@ -12,7 +12,7 @@ function pagespeed_customize( $wp_customize ) {
 	// Logo position
 	$wp_customize->add_setting( 'logo_position', array(
 		'sanitize_callback' => 'esc_attr',
-		'default' => 'left',
+		'default'           => 'left',
 	) );
 	$wp_customize->add_control(
 		new Hybrid_Customize_Control_Radio_Image(
@@ -43,7 +43,7 @@ function pagespeed_customize( $wp_customize ) {
 	// Mobile logo
 	$wp_customize->add_setting( 'mobile_logo', array(
 		'sanitize_callback' => 'absint',
-		'default' => '',
+		'default'           => '',
 
 	) );
 	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
@@ -68,7 +68,7 @@ function pagespeed_customize( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'theme_layout', array(
 		'sanitize_callback' => 'esc_attr',
-		'default' => 'centered',
+		'default'           => 'centered',
 
 	) );
 	$wp_customize->add_control(
@@ -99,17 +99,17 @@ function pagespeed_customize( $wp_customize ) {
 
 	$wp_customize->add_setting( 'site_width', array(
 		'sanitize_callback' => 'esc_attr',
-		'default' => '1160px',
+		'default'           => '1160px',
 
 	) );
 	$wp_customize->add_setting( 'main_width', array(
 		'sanitize_callback' => 'helium_float',
-		'default' => '56',
+		'default'           => 56,
 
 	) );
 	$wp_customize->add_setting( 'left_sidebar_width', array(
 		'sanitize_callback' => 'helium_float',
-		'default' => '18.75',
+		'default'           => '18.75',
 	) );
 
 
@@ -128,6 +128,7 @@ function pagespeed_customize( $wp_customize ) {
 		'section'     => 'layout_settings',
 		'type'        => 'number',
 		'priority'    => 20,
+		'input_attrs' => array( 'min' => 40, 'max' => 100 )
 
 	) );
 	$wp_customize->add_control( 'left_sidebar_width', array(
@@ -136,7 +137,7 @@ function pagespeed_customize( $wp_customize ) {
 		'section'     => 'layout_settings',
 		'type'        => 'number',
 		'priority'    => 20,
-
+		'input_attrs' => array( 'min' => 0, 'max' => 60 )
 	) );
 
 
