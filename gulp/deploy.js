@@ -59,6 +59,10 @@ gulp.task('deploy', function () {
         rsyncConf.username = 'tgdgeeks'; // ssh username
         rsyncConf.destination = '/home/tgdgeeks/public_html/wp-content/themes/page-speed'; // path where uploaded files go
         // Missing/Invalid Target
+    }else if (argv.swift) {
+        rsyncConf.username = 'swiftswift'; // ssh username
+        rsyncConf.destination = '/home/swiftswift/public_html/blog/wp-content/themes/page-speed'; // path where uploaded files go
+        // Missing/Invalid Target
     } else {
         throwError('deploy', gutil.colors.red('Missing or invalid target'));
     }

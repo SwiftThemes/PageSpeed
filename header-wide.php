@@ -7,6 +7,8 @@
  * @package PageSpeed
  * @since 1.0
  */
+
+//@todo do we need this when we can override content?
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -36,7 +38,7 @@
     </div><!--#site-header-container -->
 	<?php do_action( 'pagespeed_after_header' ); ?>
 
-    <div id="content" class="cf hybrid">
+    <div id="content" class="cf">
         <div id="left">
             <main id="main" role="main">
                 <div class="inner">
