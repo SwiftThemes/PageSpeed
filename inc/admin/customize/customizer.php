@@ -104,7 +104,7 @@ function pagespeed_customize( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'main_width', array(
 		'sanitize_callback' => 'helium_float',
-		'default' => '70',
+		'default' => '56',
 
 	) );
 	$wp_customize->add_setting( 'left_sidebar_width', array(

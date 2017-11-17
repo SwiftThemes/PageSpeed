@@ -26,7 +26,7 @@ function helium_set_fs_status() {
 
 	if ( $can_read ) {
 		$upload_dir = wp_upload_dir();
-		$file       = trailingslashit( $upload_dir['basedir'] ) . 'page-speed.css';
+		$file       = trailingslashit( $upload_dir['basedir'] ) . wp_get_theme()->stylesheet . '.css';
 		$can_write  = $wp_filesystem->is_writable( $file );
 	}
 

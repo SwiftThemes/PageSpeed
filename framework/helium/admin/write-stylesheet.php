@@ -13,7 +13,7 @@ $theme_name = wp_get_theme()->stylesheet;
 
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
-if ( 1 || defined( 'DEV_ENV' ) && DEV_ENV ) {
+if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
 	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
 }
 add_action( 'switch_theme', 'helium_write_stylesheet' );
@@ -63,13 +63,6 @@ class Helium_Styles {
 	 */
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
-
-		$args = array(
-			'hostname' => 'localhost',
-			'username' => 'satish',
-		);
-
-//		WP_Filesystem($args);
 		WP_Filesystem();
 
 		$this->prefix = wp_get_theme()->stylesheet . '_';
@@ -197,7 +190,7 @@ class Helium_Styles {
 		$override .= '$body-font-weight:' . get_theme_mod( 'primary_font_weight', 'normal' ) . ";\n";
 
 
-		$override .= '$headings-font-stack:' . get_theme_mod( 'secondary_font_stack','-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) . ";\n";
+		$override .= '$headings-font-stack:' . get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) . ";\n";
 		$override .= '$headings-font-weight:' . get_theme_mod( 'secondary_font_weight', 'bold' ) . ";\n";
 
 
