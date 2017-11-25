@@ -103,56 +103,6 @@ a.btn {
   font-size: .75em
 }
 
-/* For page builder */
-.center {
-  margin: auto;
-  text-align: center;
-  //display: inline-block;
-  ul, ol {
-    list-style-position: inside;
-
-  }
-}
-.block{
-  display: block;
-}
-.full{
-  width: 100%;
-}
-.pull-all {
-  margin: -$padding;
-  padding: $padding
-}
-
-.pull-l {
-  margin-left: -$padding;
-  padding-left: $padding;
-}
-
-.pull-r {
-  margin-right: -$padding;
-  padding-right: $padding;
-}
-
-.pull-rl {
-  padding-left: $padding;
-  padding-right: $padding;
-  margin-right: -$padding;
-  margin-left: -$padding;
-}
-.pull-trl {
-  padding-top: $padding;
-  padding-left: $padding;
-  padding-right: $padding;
-  margin-top:-$padding;
-  margin-right: -$padding;
-  margin-left: -$padding;
-}
-
-.no-padding{padding: 0}
-.pad,.padding{
-  padding: $padding;
-}
 
 .emoji{
   width: 1em;
@@ -187,4 +137,9 @@ a.btn {
 
 .screen-reader-text {
   display: none
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .inner{padding:0 20px}
 }

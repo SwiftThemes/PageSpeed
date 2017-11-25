@@ -148,7 +148,7 @@ body {
 
   }
   @if ($wide_layout == 1) {
-    #sb1,#wrapper,#sb2 {
+    #sb1, #wrapper, #sb2 {
       //background: rgba(0, 255, 255, .5);
       background: rgba($light-2, 1) !important;
     }
@@ -229,5 +229,15 @@ body {
 @if ($wide_layout == 1) {
   #wrapper {
     width: 100%
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #site-footer-container {
+    padding: 20px 0
+  }
+  #main > .inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }

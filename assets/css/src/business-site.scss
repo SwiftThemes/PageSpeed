@@ -1,53 +1,174 @@
-@media only screen and (min-width: 1200px) {
-  .hero {
-    h1 {
-      font-size: 48px
-    }
-  }
+/* For page builder */
+.center {
+  margin: auto;
+  text-align: center;
+  //display: inline-block;
+  ul, ol {
+    list-style-position: inside;
 
-  .title{
-    font-size: 48px
-  }
-  .sub-title{
-    font-size: 24px;
   }
 }
+
+.block {
+  display: block;
+}
+
+.full {
+  width: 100%;
+}
+
+.pull-all {
+  margin: -$padding;
+  padding: $padding
+}
+
+.pull-l {
+  margin-left: -$padding;
+  padding-left: $padding;
+}
+
+.pull-r {
+  margin-right: -$padding;
+  padding-right: $padding;
+}
+
+.pull-t, .pull-top {
+  margin-top: -$padding;
+  padding-top: $padding;
+}
+
+.pull-b, .pull-bottom {
+  margin-bottom: -$padding;
+  padding-bottom: $padding;
+}
+
+.pull-rl {
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-right: -$padding;
+  margin-left: -$padding;
+}
+
+.pull-trl {
+  padding-top: $padding;
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-top: -$padding;
+  margin-right: -$padding;
+  margin-left: -$padding;
+}
+
+.no-padding {
+  padding: 0
+}
+
+.pad, .padding {
+  padding: $padding;
+}
+
+.hero {
+  h1 {
+    font-size: 48px
+  }
+}
+
+.title {
+  font-size: 48px
+}
+
+.sub-title {
+  font-size: 24px;
+}
+
 @media only screen and (max-width: 1200px) {
   .hero {
     h1 {
-      font-size: 6.4vw
+      font-size: 7vw
     }
   }
-  .title{
-    font-size: 6.4vw
+  .title {
+    font-size: 7vw
   }
-  .sub-title{
-    font-size: 3.2vw
+  .sub-title {
+    font-size: 3.5vw
+  }
+
+  .pull-all {
+    margin: -20px;
+    padding: 20px
+  }
+
+  .pull-l {
+    margin-left: -20px;
+    padding-left: 20px;
+  }
+
+  .pull-r {
+    margin-right: -20px;
+    padding-right: 20px;
+  }
+
+  .pull-t, .pull-top {
+    margin-top: -20px;
+    padding-top: 20px;
+  }
+
+  .pull-b, .pull-bottom {
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+  }
+
+  .pull-rl {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+  .pull-trl {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -20px;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .no-padding {
+    padding: 0
+  }
+  .pad, .padding {
+    padding: 20px;
   }
 }
 
-.center{
+.center {
   text-align: center;
 }
+
 .sub-title {
-font-weight: $body-font-weight}
-.section-title{
+  font-weight: $body-font-weight
+}
+
+.section-title {
   margin-bottom: 0;
 }
-.lead{
-  font-size:1.2em
+
+.lead {
+  font-size: 1.2em
 }
 
 .panel-row-style,
-.panel-grid-cell{
-  position: relative;}
-.v-center{
-  position: absolute;
-  top:45%;
-  width:100%;
+.panel-grid-cell {
+  position: relative;
 }
 
-.image-bg{
-  color:#FFF;
-  text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+.v-center {
+  //position: absolute;
+  top: 45%;
+  width: 100%;
+}
+
+.image-bg {
+  color: #FFF;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
 }
