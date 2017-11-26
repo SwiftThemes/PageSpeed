@@ -23,7 +23,7 @@ function helium_theme_menu() {
 
 
 	add_action( "admin_print_styles-$helium_theme_options", 'helium_admin_stylesheet' );
-	add_action( "admin_print_scripts-$helium_theme_options", 'helium_admin_scripts' );
+	add_action( "admin_print_footer_scripts-$helium_theme_options", 'helium_admin_scripts' );
 }
 
 
@@ -87,6 +87,5 @@ function helium_admin_scripts( $hook ) {
 
 
 function helium_admin_stylesheet() {
-	wp_enqueue_style( 'helium-adminstyles', HELIUM_ADMIN_ASSETS_URI . '/css/style.css' );
-
+	wp_enqueue_style( 'helium-adminstyles', HELIUM_ADMIN_ASSETS_URI . 'css/style.css' );
 }

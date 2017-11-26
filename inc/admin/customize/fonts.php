@@ -12,7 +12,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 	$wp_customize->add_section( 'fonts', array(
 		'title'    => __( 'Typography', 'page-speed' ),
-		'priority' => 21,
+		'priority' => 35,
 	) );
 
 	//@todo add proper sanitization callbacks

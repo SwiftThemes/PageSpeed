@@ -58,6 +58,7 @@
 
         function saveThemeOptions() {
             $('#save_theme_options').click(function (e) {
+                e.preventDefault()
                 var data = {
                     'action': 'helium_save_theme_options',
                     'security': $('#helium_ajax_nonce').val(),

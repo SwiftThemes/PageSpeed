@@ -10,8 +10,8 @@ add_action( 'customize_register', 'pagespeed_customize_colors', 600 );
 function pagespeed_customize_colors( $wp_customize ) {
 
 	$wp_customize->add_section( 'colors', array(
-		'title'    => __( 'Site Colors', 'page-speed' ),
-		'priority' => 21,
+		'title'    => __( 'Color Settings', 'page-speed' ),
+		'priority' => 30,
 	) );
 
 

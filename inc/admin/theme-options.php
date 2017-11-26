@@ -12,42 +12,41 @@ function helium_theme_options_display() {
     </style>
     <div class="wrap">
 
-        <div id="icon-themes" class="icon32"></div>
         <h2>PageSpeed Theme Options</h2>
 		<?php settings_errors(); ?>
 
         <div class="tabs-container" id="tabs">
             <ul>
-                <li><a href="#tabs-1">Sidebars</a></li>
+                <li><a href="#tabs-1">Settings</a></li>
                 <li><a href="#tabs-2">Tools</a></li>
                 <li><a href="#tabs-3">Activation</a></li>
 
-                <li class="alignright ">
-                    <button class="button button-primary" id="save_theme_options">Save settings</button>
-                </li>
-                <li class="alignright">
-                    <span id="options-changed">You have unsaved changes</span>
-                    <span id="options-saved">Settings saved</span>
-                    <span id="options-save-error">Error saving settings</span>
-                </li>
+
             </ul>
-            <form id="helium_theme_options">
-                <input type="hidden"
-                       name="helium_ajax_nonce" id="helium_ajax_nonce"
-                       value="<?php echo wp_create_nonce( 'helium_ajax_nonce' ) ?>"/>
-                <div id="tabs-1">
+
+            <div id="tabs-1">
+                <form id="helium_theme_options">
+                    <input type="hidden"
+                           name="helium_ajax_nonce" id="helium_ajax_nonce"
+                           value="<?php echo wp_create_nonce( 'helium_ajax_nonce' ) ?>"/>
 					<?php
 					display_theme_options( $theme_options );
 					?>
-                </div>
-                <div id="tabs-2">
-					<?php pagespeed_help() ?>
-                </div>
-                <div id="tabs-3">
-                    <h2>Coming soon..</h2>
-                    <p>You are free to use this version as long as you please.</p>
-                </div>
-            </form>
+                    <div id="helium-options-footer" class="cf">
+                        <button class="button button-primary button-hero alignright" id="save_theme_options">Save settings</button>
+                            <span id="options-changed" class="options-status">You have unsaved changes</span>
+                            <span id="options-saved" class="options-status">Settings saved</span>
+                            <span id="options-save-error" class="options-status">Error saving settings</span>
+                    </div>
+                </form>
+            </div>
+            <div id="tabs-2">
+				<?php pagespeed_help() ?>
+            </div>
+            <div id="tabs-3">
+                <h2>Coming soon..</h2>
+                <p>You are free to use this version as long as you please.</p>
+            </div>
         </div>
 
     </div><!-- /.wrap -->

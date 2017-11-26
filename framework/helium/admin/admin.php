@@ -16,4 +16,4 @@ require_once( HELIUM_ADMIN . 'admin-ajax-functions.php' );
 require_once( HELIUM_ADMIN . 'admin-metaboxes.php' );
 
 
-require_once( HELIUM_ADMIN . 'theme-options.php' );
+require_once( HELIUM_ADMIN . 'framework-options.php' );

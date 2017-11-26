@@ -38,13 +38,15 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 
 		if ( has_nav_menu( 'secondary' ) ) :
 			?>
-			<div id="secondary-nav-container" class="nav-container cf">
-				<div id="secondary" class="">
-					<div class="hybrid ">
-						<?php wp_nav_menu( $args ); ?>
-					</div>
-				</div>
-			</div>
+            <div id="secondary-nav-container" class="nav-container cf">
+                <div id="secondary" class="">
+                    <div class="hybrid"> <!-- adding inner -->
+                        <div class="inner">
+							<?php wp_nav_menu( $args ); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
 			<?php
 		endif;
 	}
@@ -83,14 +85,17 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 
 		if ( has_nav_menu( 'primary' ) ) :
 			?>
-			<div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
-				<div id="primary" class="">
-					<div class="hybrid ">
-						<?php do_action( 'pagespeed_primary_nav_start' ); ?>
-						<?php wp_nav_menu( $args ); ?>
-					</div>
-				</div>
-			</div>
+            <div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
+                <div id="primary" class="">
+                    <div class="hybrid"> <!-- adding inner -->
+                        <div class="inner">
+
+							<?php do_action( 'pagespeed_primary_nav_start' ); ?>
+							<?php wp_nav_menu( $args ); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
 			<?php
 		endif;
 	}
@@ -128,12 +133,12 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 
 		if ( has_nav_menu( 'header' ) ) :
 			?>
-			<div id="header-nav-container" class="cf <?php echo $container_class ?>">
-				<div id="primary" class="">
-						<?php do_action( 'pagespeed_header_nav_start' ); ?>
-						<?php wp_nav_menu( $args ); ?>
-				</div>
-			</div>
+            <div id="header-nav-container" class="cf <?php echo $container_class ?>">
+                <div id="primary" class="">
+					<?php do_action( 'pagespeed_header_nav_start' ); ?>
+					<?php wp_nav_menu( $args ); ?>
+                </div>
+            </div>
 			<?php
 		endif;
 	}

@@ -13,10 +13,12 @@ $theme_name = wp_get_theme()->stylesheet;
 
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
-if ( 1 || defined( 'DEV_ENV' ) && DEV_ENV ) {
+if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
 	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
 }
 add_action( 'switch_theme', 'helium_write_stylesheet' );
+
+
 
 function helium_write_stylesheet() {
 //	helium_set_fs_status();
@@ -193,9 +195,8 @@ class Helium_Styles {
 		$override .= '$headings-font-stack:' . get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) . ";\n";
 		$override .= '$headings-font-weight:' . get_theme_mod( 'secondary_font_weight', 'bold' ) . ";\n";
 
-		if ( get_theme_mod( 'enable_wide_layout', false ) ) {
-			$override .= '$wide_layout:1;';
-		}
+		$override .= '$container_type:' . get_theme_mod( 'container_type', 'regular' ) . ';';
+
 
 		$content = str_replace( '/**variables**/', $override, $content );
 

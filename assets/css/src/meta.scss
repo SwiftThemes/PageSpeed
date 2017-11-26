@@ -10,16 +10,19 @@ hr{
 }
 
 .entry-meta {
-  font-size: .85em;
+  font-size: .9em;
   opacity: .7;
 }
 
 .entry-meta.above-title {
-  margin-bottom: $vr/2;
+  margin-bottom: $vr/4;
 }
 
 .entry-meta.below-title {
-  margin-top: -$vr/2;
+  margin-top: -($vr/4);
+  margin-bottom: $vr/2;
+}
+.singular .entry-meta.below-title {
   margin-bottom: $vr;
 }
 

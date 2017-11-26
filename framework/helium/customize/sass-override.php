@@ -25,7 +25,7 @@ function helium_override_sass( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'scss_override', array(
-		'label'   => 'Copyright text',
+		'label'   => 'Override the SCSS variables',
 		'section' => 'scss',
 		'type'    => 'textarea',
 

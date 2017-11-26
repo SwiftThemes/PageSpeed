@@ -7,7 +7,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 		'title'       => __( 'Meta Information', 'page-speed' ),
 		'description' => __( 'Meta information that is displayed around the post title and at the end of post can be set here.', 'page-speed' ),
 		// Include html tags such as <p>
-		'priority'    => 30,
+		'priority'    => 45,
 		// Mixed with top-level-section hierarchy.
 	) );
 

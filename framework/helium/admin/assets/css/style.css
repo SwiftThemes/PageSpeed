@@ -1,3 +1,6 @@
+#tabs {
+    max-width: 960px
+}
 
 .ui-tabs-nav {
     border-bottom: solid 1px #CCC;
@@ -54,26 +57,51 @@
     background: #f1f2f5;
 }
 
-#options-changed,
-#options-saved,
-#options-save-error{line-height: 28px}
+#helium-options-footer {
+    padding: 10px;
+    background: red;
+    margin: 10px -10px -10px;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.options-status {
+    line-height: 46px !important;
+    display: none;
+    font-weight: lighter;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.options-status:before {
+    font-family: dashicons;
+    font-size: 46px;
+    line-height: 1em;
+    float: left;
+    margin-right: 5px
+}
 
 #options-changed {
-    display: none;
     color: orange;
-    font-weight: bold
+}
+
+#options-changed:before {
+    content: "\f534";
 }
 
 #options-saved {
-    display: none;
     color: green;
-    font-weight: bold
+}
+
+#options-saved:before {
+    content: "\f147";
 }
 
 #options-save-error {
-    display: none;
     color: red;
-    font-weight: bold
+}
+
+#options-save-error:before {
+    content: "\f158";
 }
 
 /**/

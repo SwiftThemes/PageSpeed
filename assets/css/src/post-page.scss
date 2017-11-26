@@ -1,15 +1,24 @@
 
-.entry-title a:hover{
-  color:$primary;
+  .entry-title {
+    margin-bottom: $vr/2;
+  }
+
+
+.entry-title a:hover {
+  color: $primary;
   text-decoration: none;
 }
+
 .entry-content {
   ul, ol {
     margin-left: 1em;
   }
-  a{color:$primary}
+  a {
+    color: $primary
+  }
 
 }
+
 .rtl .entry-content {
   ul, ol {
     margin-left: 0;

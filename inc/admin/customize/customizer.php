@@ -98,18 +98,37 @@ function pagespeed_customize( $wp_customize ) {
 	);
 
 
-	$wp_customize->add_setting( 'enable_wide_layout', array(
-		'sanitize_callback' => 'helium_boolean',
-		'default'           => false,
+	$wp_customize->add_setting( 'container_type', array(
+		'sanitize_callback' => 'esc_attr',
+		'default'           => 'regular',
 
 	) );
 
-	$wp_customize->add_control( 'enable_wide_layout', array(
-		'label'   => 'Enable wide layout',
-		'section' => 'layout_settings',
-		'type'    => 'checkbox',
-
-	) );
+	$wp_customize->add_control(
+		new Hybrid_Customize_Control_Radio_Image(
+			$wp_customize,
+			'container_type',
+			array(
+				'label'    => esc_html__( 'Layout Container', 'page-speed' ),
+				'section'  => 'layout_settings',
+				'priority' => 10,
+				'choices'  => array(
+					'regular'     => array(
+						'url'   => ADMIN_IMAGES_URI . '/layout-centered.png',
+						'label' => __( 'Regular', 'page-speed' )
+					),
+					'boxed' => array(
+						'url'   => ADMIN_IMAGES_URI . '/container-boxed.png',
+						'label' => __( 'Boxed', 'page-speed' ),
+					),
+					'wide'     => array(
+						'url'   => ADMIN_IMAGES_URI . '/container-wide.png',
+						'label' => __( 'Wide', 'page-speed' ),
+					),
+				)
+			)
+		)
+	);
 
 
 	$wp_customize->add_setting( 'site_width', array(

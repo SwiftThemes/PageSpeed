@@ -226,9 +226,19 @@ body {
   }
 }
 
-@if ($wide_layout == 1) {
+.container-wide {
   #wrapper {
     width: 100%
+  }
+}
+
+.container-boxed {
+  #wrapper {
+    margin: 20px auto 0;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: scroll;
   }
 }
 
