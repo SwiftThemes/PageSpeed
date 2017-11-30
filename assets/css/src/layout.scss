@@ -231,17 +231,18 @@ body {
     width: 100%
   }
 }
+@media only screen and (min-width: 1200px) {
 
-.container-boxed {
-  #wrapper {
-    margin: 20px auto 0;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    overflow: scroll;
+  .container-boxed {
+    #wrapper {
+      margin: 20px auto 0;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      overflow: scroll;
+    }
   }
 }
-
 @media only screen and (max-width: 1200px) {
   #site-footer-container {
     padding: 20px 0
