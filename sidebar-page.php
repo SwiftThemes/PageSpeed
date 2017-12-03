@@ -10,7 +10,7 @@
 /**
  * We only need the sidebar #2 in centered layout
  */
-if ( get_theme_mod( 'theme_layout', '' ) === 'centered' ) {
+if ( get_theme_mod( 'theme_layout', 'centered' ) === 'centered' ) {
 	get_sidebar( 'c2-page' );
 }
 ?>

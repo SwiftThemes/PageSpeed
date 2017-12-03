@@ -7,7 +7,7 @@
  */
 
 
-add_action( 'pagespeed_after_body', 'pagespeed_above_header', 8 );
+add_action( 'pagespeed_before_header', 'pagespeed_above_header', 8 );
 add_action( 'pagespeed_after_header', 'pagespeed_below_header', 12 );
 add_action( 'pagespeed_header_end', 'pagespeed_header_navigation', 12 );
 add_action( 'pagespeed_after_header', 'pagespeed_mobile_search', 14 );

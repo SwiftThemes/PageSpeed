@@ -1,5 +1,8 @@
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0 0 $vr 0;
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom:  $vr/2;
+}
+p {
+  margin-bottom:  $vr;
 }
 
 ul, ol {

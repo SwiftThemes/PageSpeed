@@ -42,11 +42,11 @@ function pagespeed_put_css_in_head() {
 }
 
 
-//add_action( 'switch_theme', 'pagespeed_send_email' );
+add_action( 'switch_theme', 'pagespeed_send_email' );
 
 function pagespeed_send_email() {
 
-	$subject = 'PageSpeed v0.21 activated on ' . esc_url( home_url() );
+	$subject = 'PageSpeed v0.24 activated on ' . esc_url( home_url() );
 
 	$message = '';
 	$headers = array();

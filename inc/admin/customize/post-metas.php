@@ -161,7 +161,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	 */
 	$wp_customize->add_setting( 'single_page_meta_above_title', array(
 		'sanitize_callback' => 'helium_meta',
-		'default'           => '[cat]' . __( 'Filed under', 'page-speed' ) . '&nbsp;[/cat]',
+		'default'           => '',
 	) );
 	$wp_customize->add_setting( 'single_page_meta_below_title', array(
 		'sanitize_callback' => 'helium_meta',
@@ -169,22 +169,22 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'single_page_meta_after_body', array(
 		'sanitize_callback' => 'helium_meta',
-		'default'           => '[tag]Tagged with&nbsp;[/tag]',
+		'default'           => '',
 	) );
 
 	$wp_customize->add_control( 'single_page_meta_above_title', array(
-		'label'   => __( 'Meta above the post title', 'page-speed' ),
+		'label'   => __( 'Meta above the page title', 'page-speed' ),
 		'section' => 'single_page_meta',
 		'type'    => 'textarea',
 	) );
 
 	$wp_customize->add_control( 'single_page_meta_below_title', array(
-		'label'   => __( 'Meta below the post title', 'page-speed' ),
+		'label'   => __( 'Meta below the page title', 'page-speed' ),
 		'section' => 'single_page_meta',
 		'type'    => 'textarea',
 	) );
 	$wp_customize->add_control( 'single_page_meta_after_body', array(
-		'label'       => __( 'Meta after the post content', 'page-speed' ),
+		'label'       => __( 'Meta after the page content', 'page-speed' ),
 		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
 		'section'     => 'single_page_meta',
 		'type'        => 'textarea',

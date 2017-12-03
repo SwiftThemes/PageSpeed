@@ -147,14 +147,16 @@ body {
     background: rgba($light-3, .7) !important;
 
   }
-  @if ($wide_layout == 1) {
-    #sb1, #wrapper, #sb2 {
-      //background: rgba(0, 255, 255, .5);
-      background: rgba($light-2, 1) !important;
-    }
-  }
+
 }
 
+.layout-centered.container-wide 
+{
+  #sb1, #wrapper, #sb2 {
+    //background: rgba(0, 255, 255, .5);
+    background: rgba($light-2, 1) !important;
+  }
+}
 //end
 
 #site-footer-container {

@@ -44,6 +44,7 @@ gulp.task('deploy', function () {
         recursive: true,
         clean: true,
         exclude: [],
+        port:1122
     };
     rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/page-speed/';
     rsyncConf.hostname = '172.93.98.50'; // hostname
@@ -86,6 +87,7 @@ gulp.task('share', function () {
         emptyDirectories: true,
         recursive: true,
         clean: true,
+        port:1122,
         exclude: [],
     };
     rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/';

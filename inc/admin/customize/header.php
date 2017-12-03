@@ -27,7 +27,7 @@ function pagespeed_customize_header( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'enable_sleek_header', array(
 		'sanitize_callback' => 'helium_boolean',
-		'default'           => true,
+		'default'           => false,
 	) );
 
 	$wp_customize->add_control( 'enable_sleek_header', array(

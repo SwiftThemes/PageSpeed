@@ -4,8 +4,8 @@
   background: $primary;
 @include border-radius(3px);
   text-decoration: none!important;
-  margin-left: 10px;
-  margin-right: 10px;
+  //margin-left: 10px;
+  //margin-right: 10px;
 }
 
 .he-btn:hover {
@@ -31,60 +31,48 @@
   font-size: 2em;
 }
 
+.he-btn.sharp{
+  @include border-radius(0);
+}
+.he-btn.round{
+  @include border-radius(.25em);
+}
+
+.he-btn.very-round{
+  @include border-radius(.5em);
+}
+.he-btn.fully-round{
+  @include border-radius(1em);
+}
 /* Colors */
 .he-btn.red{
-  background: $btn-red;
+  @include gradient(#ff5e3a, #ff2a68, linear)
 }
 .he-btn.orange{
-  background: $btn-orange;
+  @include gradient(#ff9500, #ff5e3a, linear)
 }
 .he-btn.yellow{
-  background: $btn-yellow;
+  @include gradient(#ffdb4c, #ffcd02, linear)
 }
 .he-btn.green{
-  background: $btn-green;
+  @include gradient(#87fc70, #0bd318, linear)
 }
 .he-btn.teal{
-  background: $btn-teal;
+  @include gradient(#52edc7, #5ac8fb, linear)
 }
 .he-btn.blue{
-  background: $btn-blue;
+  @include gradient(#0e74ff, #1d62f0, linear)
+}
+.he-btn.black{
+  @include gradient(#4a4a4a, #2b2b2b, linear)
+}
+.he-btn.silver{
+  @include gradient(#dbddde, #898c90, linear)
 }
 .he-btn.purple{
-  background: $btn-purple;
+  @include gradient(#d56efd, #842abf, linear)
 }
 .he-btn.pink{
-  background: $btn-pink;
-}
-
-
-
-.dummy{
-  background-color: rgba(0,102,204,1);
-  background: -moz-linear-gradient(45deg,  rgba(0,82,164,1) 0%, rgba(0,102,204,1) 25%, rgba(102,199,214,1) 100%);
-  background: -webkit-linear-gradient(45deg,  rgba(0,82,164,1) 0%,rgba(0,102,204,1) 25%,rgba(102,199,214,1) 100%);
-  background: linear-gradient(45deg,  rgba(0,82,164,1) 0%,rgba(0,102,204,1) 25%,rgba(102,199,214,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0052a4', endColorstr='#52b5d5',GradientType=1 );
-}
-
-#ballon{
-  stroke:rgb(225, 226, 227);
-  fill:rgb(225, 226, 227);
-  animation: float 20s ease-in-out infinite;
-
-
-}
-
-
-@keyframes float {
-  0% {
-    transform: translatey(100px);
-  }
-  50% {
-    transform: translatey(-700px);
-  }
-  100% {
-    transform: translatey(-1000px);
-  }
+  @include gradient(#fc5fa6, #fc2a19, linear)
 }
 

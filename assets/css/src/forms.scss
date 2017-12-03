@@ -25,7 +25,9 @@ input:focus,
 textarea:focus {
   background: $light-1;
 }
-
+input[type=hidden]{
+  display: none;
+}
 input[type=submit],
 button {
   width: auto;
