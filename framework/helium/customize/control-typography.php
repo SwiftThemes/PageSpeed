@@ -36,7 +36,7 @@ function helium_typography_control_register( $wp_customize ) {
 
 			$this->json['stacks'] = he_get_font_stacks();
 
-			$this->json['fontSizes'] = [
+			$this->json['fontSizes'] = array(
 				8,
 				9,
 				10,
@@ -62,9 +62,9 @@ function helium_typography_control_register( $wp_customize ) {
 				30,
 				31,
 				32
-			];
+			);
 
-			$this->json['fontWeights'] = [
+			$this->json['fontWeights'] = array(
 				100,
 				200,
 				300,
@@ -79,7 +79,7 @@ function helium_typography_control_register( $wp_customize ) {
 				'normal',
 				'bold',
 				'bolder'
-			];
+			);
 		}
 
 		public function content_template() {

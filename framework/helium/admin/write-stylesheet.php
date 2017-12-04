@@ -56,7 +56,7 @@ class Helium_Styles {
 	private $source;
 	private $af_files = array();    // List above fold css files
 	private $bf_files = array();  // Below fold css files
-	private $scss_variable_files = [ 'variables', 'colors', 'mixins' ];
+	private $scss_variable_files = array( 'variables', 'colors', 'mixins' );
 	private $prefix;
 
 	/**

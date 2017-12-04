@@ -105,7 +105,8 @@ function swift_image_downsize( $content, $id, $size ) {
 		$file_path = $uploads['basedir'] . '/' . $meta['file'];
 
 		if ( file_exists( $file_path ) ) {
-			$orig_size = @getimagesize( $file_path );
+//			$orig_size = @getimagesize( $file_path );
+			$orig_size = getimagesize( $file_path );
 			/*
 			 * $path_parts = pathinfo('/www/htdocs/inc/lib.inc.php');
 			 * echo $path_parts['dirname'], "\n";
@@ -175,7 +176,8 @@ function swift_image_downsize( $content, $id, $size ) {
 	}
 	if ( $size == 'thumbnail' ) {
 		// fall back to the old thumbnail
-		if ( ( $thumb_file = wp_get_attachment_thumb_file( $id ) ) && $info = @getimagesize( $thumb_file ) ) {
+//		if ( ( $thumb_file = wp_get_attachment_thumb_file( $id ) ) && $info = @getimagesize( $thumb_file ) ) {
+		if ( ( $thumb_file = wp_get_attachment_thumb_file( $id ) ) && $info = getimagesize( $thumb_file ) ) {
 			$img_url         = str_replace( $img_url_basename, wp_basename( $thumb_file ), $img_url );
 			$width           = $info[0];
 			$height          = $info[1];

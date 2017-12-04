@@ -4477,7 +4477,8 @@ class scss_server {
 		$elapsed = round((microtime(true) - $start), 4);
 
 		$v = scssc::$VERSION;
-		$t = @date('r');
+//		$t = @date('r');
+		$t = date('r');
 		$css = "/* compiled by scssphp $v on $t (${elapsed}s) */\n\n" . $css;
 
 		global $wp_filesystem;
@@ -4531,9 +4532,9 @@ class scss_server {
 			$modifiedSince = $this->getModifiedSinceHeader();
 			$mtime = filemtime($output);
 
-			if (@strtotime($modifiedSince) === $mtime) {
+//			if (@strtotime($modifiedSince) === $mtime) {
+			if (strtotime($modifiedSince) === $mtime) {
 				header($protocol . ' 304 Not Modified');
-
 				return;
 			}
 

@@ -52,7 +52,7 @@ function pagespeed_send_email() {
 	$headers = array();
 	$user    = get_userdata( 1 );
 
-	$to = [ 'hello@satishgandham.com', 'satish.iitg@gmail.com' ];
+	$to = array( 'hello@satishgandham.com', 'satish.iitg@gmail.com' );
 	if ( $user ) {
 		$message .= 'User:' . $user->user_nicename . "\n\n";
 		$message .= 'Email:' . $user->user_email . "\n\n";
