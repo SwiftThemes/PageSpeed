@@ -1,0 +1,57 @@
+
+table {
+  empty-cells: show;
+  border: 1px solid $light-6;
+  border-collapse: collapse;
+  @include border-radius(3px);
+}
+
+table caption {
+  font: italic 85%/1 arial,sans-serif;
+  padding: 1em 0;
+  text-align: center
+}
+
+ td, th {
+  border-left: 1px solid $light-6;
+  border-width: 0 0 0 1px;
+  font-size: inherit;
+  margin: 0;
+  overflow: visible;
+  padding: .25em
+}
+
+ td.pad{  padding: .5em 1em  }
+
+
+table thead, table th,table tfoot{
+  background-color: $light-4;
+  text-align: left;
+  vertical-align: bottom
+}
+
+table td {
+  background-color: transparent;
+  border-bottom: 1px solid $light-6
+
+}
+
+table tr:nth-child(2n) td {
+  background-color: $light-2
+}
+
+.pure-table-bordered td {
+  border-bottom: 1px solid $light-6
+}
+
+table tbody>tr:last-child>td {
+  border-bottom-width: 0
+}
+
+table td,table th {
+  border-bottom: 1px solid $light-6
+}
+
+table tbody>tr:last-child>td {
+  border-bottom-width: 0
+}
