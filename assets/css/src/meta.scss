@@ -11,15 +11,16 @@ hr{
 
 .entry-meta {
   font-size: .9em;
-  opacity: .7;
+  color:$dark-6;
 }
+.entry-meta a{color: $dark-3}
 
 .entry-meta.above-title {
-  margin-bottom: $vr/4;
+  margin-bottom: 0;
 }
 
 .entry-meta.below-title {
-  margin-top: -($vr/4);
+  margin-top: 0;
   margin-bottom: $vr/2;
 }
 .singular .entry-meta.below-title {

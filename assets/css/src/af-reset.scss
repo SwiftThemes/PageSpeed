@@ -1,7 +1,8 @@
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,p,address,pre,hr {
+  margin: 0;
   margin-bottom:  $vr/2;
 }
-p {
+p,address,pre,hr {
   margin-bottom:  $vr;
 }
 

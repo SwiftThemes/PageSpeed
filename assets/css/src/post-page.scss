@@ -1,6 +1,6 @@
 
   .entry-title {
-    margin-bottom: $vr/2;
+    margin: $vr/2 0;
   }
 
 
@@ -16,7 +16,13 @@
   a {
     color: $primary
   }
-
+.wp-caption{
+  margin-bottom: $vr;
+  background: $light-3;
+}
+  .wp-caption-text{
+    padding:0 10px 5px 10px;
+  }
 }
 
 .rtl .entry-content {

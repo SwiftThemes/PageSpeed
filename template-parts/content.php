@@ -12,7 +12,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 
     <header class="entry-header">
 		<?php if ( get_theme_mod( 'home_meta_above_title' ) ): ?>
