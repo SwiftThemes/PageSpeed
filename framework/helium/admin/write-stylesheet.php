@@ -178,8 +178,8 @@ class Helium_Styles {
 		$override = '';
 		$override .= "/** Overridden by settings from customizer */\n\n";
 		$override .= '$site_width:' . get_theme_mod( 'site_width', '1160px' ) . ";\n";
-		$override .= '$main_width:' . get_theme_mod( 'main_width', '70' ) . ";\n";
-		$override .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '20' ) . ";\n";
+		$override .= '$main_width:' . get_theme_mod( 'main_width', '56' ) . ";\n";
+		$override .= '$left_sidebar_width:' . get_theme_mod( 'left_sidebar_width', '18.75' ) . ";\n";
 
 		if ( get_theme_mod( 'enable_sleek_header', false ) ) {
 			$override .= '$is_sleek_header:1' . ";\n";

@@ -60,7 +60,7 @@
     </div><!-- .entry-content -->
 
     <div class="clear"></div>
-	<?php if ( get_theme_mod( 'home_meta_after_body' ) ) {
+	<?php if ( get_theme_mod( 'home_meta_after_body','[cat]Filed under [/cat]' ) ) {
 		if ( '<hr class="separator">' == trim( get_theme_mod( 'home_meta_after_body' ) ) ) {
 			echo '<hr class="separator">';
 		} else {
