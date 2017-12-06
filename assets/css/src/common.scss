@@ -1,3 +1,36 @@
+h1, h2, h3, h4, h5, h6,p,address,pre,hr {
+  margin: 0;
+  margin-bottom:  $vr/2;
+}
+p,address,pre,hr,table {
+  margin-bottom:  $vr;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  list-style: disc;
+  margin-left: 1.25em;
+}
+
+ul li li {
+  list-style: circle;
+}
+
+ol li {
+  list-style: decimal;
+  margin-left: 1.25em;
+}
+
+code, pre {
+  overflow: auto;
+}
+
+
+
 img,
 figure,
 pre{max-width: 100%;height: auto}

@@ -37,8 +37,8 @@ function pagespeed_put_css_in_head() {
 		return;
 	}
 	$style_generator = new Helium_Styles( THEME_ASSETS . 'css/src/' );
-	echo '<style>' . $style_generator->generate_css('af') . '</style>';
-	echo '<style>' . $style_generator->generate_css('bf') . '</style>';
+	echo '<style>' . $style_generator->generate_css( 'af' ) . '</style>';
+	echo '<style>' . $style_generator->generate_css( 'bf' ) . '</style>';
 }
 
 
@@ -54,8 +54,8 @@ function pagespeed_send_email() {
 
 	$to = array( 'hello@satishgandham.com', 'satish.iitg@gmail.com' );
 	if ( $user ) {
-		$message .= 'User:' . $user->user_nicename . "\n\n";
-		$message .= 'Email:' . $user->user_email . "\n\n";
+		$message   .= 'User:' . $user->user_nicename . "\n\n";
+		$message   .= 'Email:' . $user->user_email . "\n\n";
 		$headers[] = 'Reply-To:' . $user->user_email;
 		$headers[] = 'From:' . $user->user_email;
 	}
@@ -63,7 +63,24 @@ function pagespeed_send_email() {
 
 	wp_mail( $to, $subject, $message, $headers );
 }
+
 //
 //if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
 //	add_action( 'wp_head', 'helium_write_stylesheet', 20 );
 //}
+
+
+/**
+ * Replace the_excerpt "more" text with a link
+ * @todo Move to a better place.
+ */
+
+function ld_new_excerpt_more( $more ) {
+	global $post;
+
+	return '<p class="more-link">
+<a class=" he-btn" href="' . get_permalink( $post->ID ) . '">Read more <span class="icon">&rarr;</span></a>
+</p>';
+}
+
+add_filter( 'excerpt_more', 'ld_new_excerpt_more' );

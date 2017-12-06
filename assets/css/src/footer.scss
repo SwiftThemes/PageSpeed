@@ -10,3 +10,17 @@ list-style: none;
 #footer-links li a{
   padding: 5px 6px;
 }
+
+#copyright-container {
+  font-family: $headings-font-stack;
+  font-size: .8em;
+  font-weight: 300;
+  color: $light-2;
+  a {
+    color: $light-1
+  }
+  .inner {
+    padding: .5*$padding $padding;
+    text-align: center
+  }
+}
