@@ -80,28 +80,6 @@ Breaks when we have nested stickies, but we don't have them
   @include border-radius(50%)
 }
 
-.button,
-.btn,
-a.btn {
-  text-align: center;
-  color: $light-1!important;
-  background: $primary;
-  padding: 5px 7px;
-  @include border-radius(3px);
-  text-decoration: none;
-}
-
-.button:hover,
-.btn:hover {
-  color: $light-3;
-}
-.btn-outline{border:solid 2px #FFF;background: none!important;}
-
-.btn.small,
-.button.small {
-  padding: 3px 4px;
-  font-size: .75em
-}
 
 
 .emoji{

@@ -1,6 +1,6 @@
-.he-btn {
+.he-btn,.button,.btn,a.btn{
   padding: 6px 8px;
-  color: #FFF !important;
+  color: rgba($light-1,1)!important;
   background: $primary;
   @include gradient(lighten($primary, .1), darken($primary, .1), linear);
   @include border-radius(3px);
@@ -9,8 +9,10 @@
   //margin-right: 10px;
 }
 
-.he-btn:hover {
+.he-btn:hover,.button:hover,.btn:hover,a.btn:hover{
   @include sharp-shadow();
+  @include gradient(lighten($primary, .1), darken($primary, .2), linear);
+
 }
 
 /* Sizes */
@@ -103,21 +105,15 @@
   text-transform: uppercase;
   font-weight: bold;
   position: relative;
-  font-size: .8em;
-}
-
-.more-link a {
-  padding-right: 2.25em;
+  font-size: .9em;
 }
 
 .more-link .icon {
   background: rgba(0, 0, 0, .1);
-  position: absolute;
-  top: 0;
-  bottom: 0;
+
   text-align: center;
-  width: 2em;
-  margin-left: .25em;
+  margin-right: -8px;
+  padding: 6px;
 
 
   -webkit-border-top-right-radius: 3px;

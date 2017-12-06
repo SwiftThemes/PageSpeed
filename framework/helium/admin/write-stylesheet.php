@@ -207,7 +207,7 @@ class Helium_Styles {
 		$colors_override = '';
 		$colors_override .= "/** Overridden by settings from customizer */\n\n";
 		$colors_override .= '$primary:' . get_theme_mod( 'primary_color', '#007AFF' ) . ';';
-		$colors_override .= '$hue:' . get_theme_mod( 'shades_from', '#007AFF' ) . ';';
+		$colors_override .= '$hue:' . get_theme_mod( 'shades_from', '211' ) . ';';
 		$colors_override .= '$saturation:' . get_theme_mod( 'shade_saturation', 8 ) . ';';
 		if ( get_theme_mod( 'invert_colors', false ) ) {
 			$colors_override .= '$invert:' . 1 . ';';

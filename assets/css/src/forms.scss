@@ -33,8 +33,9 @@ button {
   width: auto;
   padding: 5px 20px;
   background: $primary;
+  @include gradient(lighten($primary, .1), darken($primary, .1), linear);
   border: none;
-  color: $light-1;
+  color: rgba($light-1,1);
   float: right;
   margin-left: 0;
   margin-right: 0;
