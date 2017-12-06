@@ -1,6 +1,6 @@
 .separator,
 .entry-meta hr,
-hr{
+hr {
   border: 0 !important;
   height: 1px;
   background-image: -webkit-linear-gradient(left, $light-3, $light-5, $light-3);
@@ -11,9 +11,12 @@ hr{
 
 .entry-meta {
   font-size: .9em;
-  color:$dark-6;
+  color: $dark-6;
 }
-.entry-meta a{color: $dark-3}
+
+.entry-meta a {
+  color: $dark-3
+}
 
 .entry-meta.above-title {
   margin-bottom: 0;
@@ -23,6 +26,7 @@ hr{
   margin-top: 0;
   margin-bottom: $vr/2;
 }
+
 .singular .entry-meta.below-title {
   margin-bottom: $vr;
 }
@@ -35,8 +39,11 @@ hr{
   margin: $vr (-$padding);
 }
 
-.meta .tags{display: inline}
-.meta .tags a{
+.meta .tags {
+  display: inline
+}
+
+.meta .tags a {
   font-size: .8em;
   background: $primary;
   color: $light-1;
@@ -45,7 +52,14 @@ hr{
   text-decoration: none;
   @include border-radius(2px)
 }
-.meta .tags a:hover{
+
+.meta .tags a:hover {
   text-shadow: 0 1px 0 rgba($dark-1, 0.4);
 
+}
+
+@media only screen and (max-width: 1200px) {
+  .entry-footer {
+    margin: $vr (-($padding)/2);
+  }
 }
