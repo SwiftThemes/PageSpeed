@@ -200,6 +200,9 @@ class Helium_Styles {
 
 		$override .= '$container_type:' . get_theme_mod( 'container_type', 'regular' ) . ';';
 
+		if(!get_theme_mod('enable_card_style_widgets_sb',true)){
+			$override .= '$sb_widget_cards:0;';
+		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
 

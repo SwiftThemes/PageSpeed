@@ -44,7 +44,7 @@
     @return darken($color, $delta * .4);
   }
   @else{
-    @return lighten($color, $delta)
+    @return lighten($color, $delta * 1.2)
   }
 }
 

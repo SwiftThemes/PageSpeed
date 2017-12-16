@@ -57,13 +57,13 @@ $dark-6: hsla($hue, $saturation, 24, $alpha);
 }
 
 $border-color: rgba($dark-6, .1);
-$border-color-light: rgba($dark-6, .1);
+$border-color-light: rgba($dark-6, .07);
 $border-color-dark: rgba($dark-4, .1);
 
 /* Generic Colors */
 $body-color: $dark-3;
 $link-color: $dark-1;
-$meta-color: $dark-3;
+$meta-color: rgba($dark-6,.8);
 $wp-caption-text-color: $dark-4;
 $sticky-header-bg: rgba($dark-1, 0.75);
 
@@ -89,6 +89,12 @@ $primary-nav-bg: $light-3;
 $primary-nav-color: $dark-1;
 $secondary-nav-bg: $dark-2;
 $secondary-nav-color: $light-3;
+
+/* Widgets */
+$sb-widget-title-color: $dark-3;
+$sb-widget-title-bg:$light-1;
+$sb-widget-border-color: $border-color-dark;
+$sb-widget-bg:$light-1;
 
 /* @todo
 comments.scss

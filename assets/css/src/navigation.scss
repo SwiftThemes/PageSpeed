@@ -1,6 +1,6 @@
 @media only screen and (min-width: 768px) {
   .nav-container {
-    border-bottom: solid 1px $border-color-dark;
+    border-bottom: solid 1px $border-color;
   }
 
   .is-sticky .has-sticky-logo.nav-container #primary-nav {
@@ -25,9 +25,13 @@
     li:hover,
     a:hover,
     li:hover ul{
-
       background: shift-color($primary-nav-bg);
-      color: $primary;
+      color: $primary-nav-color;
+    }
+
+    li ul li:hover,
+    li ul a:hover{
+      background: shift-color($primary-nav-bg,.05);
     }
 
     ul li li {

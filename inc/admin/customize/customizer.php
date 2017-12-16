@@ -145,6 +145,10 @@ function pagespeed_customize( $wp_customize ) {
 		'sanitize_callback' => 'helium_float',
 		'default'           => '18.75',
 	) );
+	$wp_customize->add_setting( 'enable_card_style_widgets_sb', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => true,
+	) );
 
 
 	$wp_customize->add_control( 'site_width', array(
@@ -174,6 +178,14 @@ function pagespeed_customize( $wp_customize ) {
 		'input_attrs' => array( 'min' => 0, 'max' => 60 )
 	) );
 
+
+	$wp_customize->add_control( 'enable_card_style_widgets_sb', array(
+		'label'       => __( 'Show sidebar widgets in card style', 'page-speed' ),
+		'description' => __( ' ', 'page-speed' ),
+		'section'     => 'layout_settings',
+		'type'        => 'checkbox',
+		'priority'    => 20,
+	) );
 
 	// Home Page
 
