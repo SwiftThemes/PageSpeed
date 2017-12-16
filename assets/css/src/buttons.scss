@@ -1,8 +1,8 @@
 .he-btn,.button,.btn,a.btn{
   padding: 6px 8px;
   color: rgba($light-1,1)!important;
-  background: $primary;
-  @include gradient(lighten($primary, .1), darken($primary, .1), linear);
+  background: $button-bg;
+  @include gradient(lighten($button-bg, .1), darken($button-bg, .1), linear);
   @include border-radius(.3em);
   text-decoration: none !important;
   //margin-left: 10px;

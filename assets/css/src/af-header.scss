@@ -1,6 +1,6 @@
 #site-header-container {
   padding: $padding/2 0;
-  background: rgba($light-1,1);
+  background: $header-bg;
 }
 
 .site-title {
@@ -11,7 +11,7 @@
 .site-title a{text-decoration: none}
 .site-description {
   margin: 0;
-  color: $dark-4;
+  color:$site-description-color;
   font-style: italic;
 }
 .custom-logo{display:block}
@@ -94,6 +94,13 @@
 #below-header-ad-container,
 #above-footer-ad-container {
   background: $light-1;
-  border-bottom: solid 1px $border-color;
   padding: .1*$padding 0;
 }
+
+#below-header-ad-container{
+  border-bottom: solid 1px $border-color;
+}
+#above-footer-ad-container {
+  border-top: solid 1px $border-color;
+}
+

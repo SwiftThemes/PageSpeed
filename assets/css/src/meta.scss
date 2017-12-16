@@ -32,7 +32,8 @@ hr {
 }
 
 .entry-footer {
-  background: $light-1;
+	// Changing from light-1 to rgba
+  background: rgba($dark-1,.1);
   padding: .125*$padding 0;
   border: solid 1px $border-color;
   border-width: 1px 0;

@@ -1,6 +1,6 @@
 .meta {
   font-size: .9em;
-  color: $dark-3;
+  color: $meta-color;
 }
 
 .inner {
@@ -53,7 +53,7 @@ article {
 
 .wp-caption-text {
   font-style: italic;
-  color: $dark-4;
+  color: $wp-caption-text-color;
 }
 
 /* Show only when sticky
@@ -70,9 +70,9 @@ Breaks when we have nested stickies, but we don't have them
 .is-sticky #site-header-container,
 .is-sticky #primary-nav-container,
 .is-sticky #sticky-search {
-  -webkit-box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
-  -moz-box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
-  box-shadow: 0px 1px 22px -10px rgba($dark-1, 0.75);
+  -webkit-box-shadow: 0px 1px 22px -10px $sticky-header-bg;
+  -moz-box-shadow: 0px 1px 22px -10px $sticky-header-bg;
+  box-shadow: 0px 1px 22px -10px $sticky-header-bg;
 }
 
 /* end */

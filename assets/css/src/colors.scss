@@ -41,7 +41,6 @@ $dark-5: hsla($hue, $saturation, 20, $alpha);
 $dark-6: hsla($hue, $saturation, 24, $alpha);
 
 @if ($invert == 1) {
-
   $dark-1: hsla($hue, $saturation, 97, $alpha);
   $dark-2: hsla($hue, $saturation, 94, $alpha);
   $dark-3: hsla($hue, $saturation, 91, $alpha);
@@ -55,9 +54,53 @@ $dark-6: hsla($hue, $saturation, 24, $alpha);
   $light-3: hsla($hue, $saturation, 16, $alpha);
   $light-2: hsla($hue, $saturation, 20, $alpha);
   $light-1: hsla($hue, $saturation, 24, $alpha);
-
 }
 
 $border-color: rgba($dark-6, .1);
 $border-color-light: rgba($dark-6, .1);
 $border-color-dark: rgba($dark-4, .1);
+
+/* Generic Colors */
+$body-color: $dark-3;
+$link-color: $dark-1;
+$meta-color: $dark-3;
+$wp-caption-text-color: $dark-4;
+$sticky-header-bg: rgba($dark-1, 0.75);
+
+$button-bg: $primary;
+$button-color: rgba($light-1, 1);
+
+/* Layout colors */
+$body-bg: $dark-1;
+$wrapper-bg: rgba($light-1, 1);
+$content-bg: $light-1;
+$main-bg: $light-1;
+$sb1-bg: rgba($light-2, .7);
+$sb2-bg: rgba($light-3, .7);
+$footer-bg: $dark-2;
+$footer-color: $light-3;
+
+/* Header Colors */
+$header-bg: rgba($light-1, 1);
+$site-description-color: $dark-4;
+
+/* Navigation colors */
+$primary-nav-bg: $light-3;
+$primary-nav-color: $dark-1;
+$secondary-nav-bg: $dark-2;
+$secondary-nav-color: $light-3;
+
+/* @todo
+comments.scss
+forms.scss
+page-templates.scss
+pagination.scss
+post-page.scss
+side-menu.scss
+table.scss
+thumbnails.scss
+variables.scss
+widget-search-form.scss
+widgets.scss
+
+ */

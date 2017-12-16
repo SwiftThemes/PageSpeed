@@ -140,11 +140,11 @@ body {
 .layout-centered {
   #sb1 {
     //background: rgba(0, 255, 255, .5);
-    background: rgba($light-2, .7) !important;
+    background: $sb1-bg !important;
   }
   #sb2 {
     //background: rgba(255, 255, 0, .5);
-    background: rgba($light-3, .7) !important;
+    background: $sb2-bg !important;
 
   }
 
@@ -154,7 +154,8 @@ body {
 {
   #sb1, #wrapper, #sb2 {
     //background: rgba(0, 255, 255, .5);
-    background: rgba($light-2, 1) !important;
+    //@todo not represented correctly
+    background: rgba($sb1-bg, 1) !important;
   }
 }
 //end
@@ -172,19 +173,19 @@ body {
 
 /* delete later */
 body {
-  background: $dark-1
+  background: $body-bg;
 }
 
 #wrapper {
-  background: rgba($light-1, 1)
+  background: $wrapper-bg;
 }
 
 #content {
-  background: $light-1
+  background: $content-bg;
 }
 
 #main {
-  background: $light-1
+  background: $main-bg;
 }
 
 #site-header-container {
@@ -215,13 +216,13 @@ body {
 
 #site-footer-container {
 
-  background: $dark-2;
-  color: $light-3
+  background: $footer-bg;
+  color: rgba($footer-color,.7)
 }
 
 #site-footer-container {
   a {
-    color: $light-2
+    color: rgba($footer-color,1)
   }
   a:hover {
     color: $primary

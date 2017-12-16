@@ -17,7 +17,7 @@
       float: left
     }
     a {
-      color: $dark-1;
+      color: $primary-nav-color;
       padding: .25em .5em;
       display: block;
       text-decoration: none;
@@ -83,11 +83,11 @@
 }
 
 #primary-nav-container {
-  background: $light-3;
+  background: $primary-nav-bg;
 }
 
 #secondary-nav-container {
-  background: $dark-2;
+  background: $secondary-nav-bg;
 }
 
 #secondary-nav-container.nav-container {
@@ -95,10 +95,10 @@
   border-bottom: none;
   .nav {
     a {
-      color: $light-3
+      color: $secondary-nav-color;
     }
     a:hover {
-      color: $light-4;
+      color: $primary;
       background: $dark-2
     }
   }
@@ -118,7 +118,7 @@
   #side-pane .menu li {
     list-style: none;
     display: block;
-    border-bottom: solid 1px rgba($dark-4, .1);
+    border-bottom: solid 1px rgba($dark-2, .9);
   }
   #side-pane .menu li a {
     display: block;
