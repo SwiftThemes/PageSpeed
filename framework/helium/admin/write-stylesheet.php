@@ -215,10 +215,11 @@ class Helium_Styles {
 		$content = str_replace( '/**colors**/', $colors_override, $content );
 
 
-		$content = str_replace( '/**SCSS_override**/', '/*__________________*/'.get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );
+		$content = str_replace( '/**SCSS_override**/', get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );
 
-
-//		echo $content;
+		if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
+			helium_write_to_uploads( $content, 'combined.scss' );
+		}
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );
 		$scss = new scssc();

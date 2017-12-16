@@ -39,6 +39,15 @@
   background-image: -o-linear-gradient($from, $to);
 }
 
+@function shift-color($color,$delta:.15){
+  @if(lightness($color) > 50){
+    @return darken($color, $delta * .4);
+  }
+  @else{
+    @return lighten($color, $delta)
+  }
+}
+
 @function set-color($color) {
   @if (lightness($color) > 40) {
     @return $dark-1;
@@ -47,6 +56,7 @@
     @return $light-1;
   }
 }
+
 
 
 @function color_luminance($color) {

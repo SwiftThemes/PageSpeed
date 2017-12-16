@@ -23,8 +23,10 @@
       text-decoration: none;
     }
     li:hover,
-    a:hover {
-      background: $light-5;
+    a:hover,
+    li:hover ul{
+
+      background: shift-color($primary-nav-bg);
       color: $primary;
     }
 
@@ -46,7 +48,7 @@
       position: absolute;
       top: 2.125em; //2.15em
       left: 0;
-      background: $light-3
+      background: shift-color($primary-nav-bg)
     }
     ul li:hover ul ul {
       display: none
@@ -99,8 +101,16 @@
     }
     a:hover {
       color: $primary;
-      background: $dark-2
+      background: shift-color($secondary-nav-bg)
     }
+
+    li:hover,
+    a:hover,
+    li:hover ul{
+      background: shift-color($secondary-nav-bg);
+    }
+
+
   }
 }
 
