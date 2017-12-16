@@ -30,6 +30,7 @@
 
 
 @if($sb_widget_cards == 1){
+.inner .sticky-wrapper > .sb .widget:first-child,
 .inner > .sb .widget:first-child {
   margin-top: -($padding/2) + 4px;
 }
