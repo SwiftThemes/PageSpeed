@@ -95,6 +95,8 @@ comments.scss
 forms.scss
 page-templates.scss
 pagination.scss
+
+
 post-page.scss
 side-menu.scss
 table.scss
@@ -104,3 +106,13 @@ widget-search-form.scss
 widgets.scss
 
  */
+
+// Don't remove the below line.
+// It's used for overriding the variables.
+/**SCSS_override**/
+//
+
+//@todo use contrast ratio.
+@if (abs(lightness($primary-nav-bg) - lightness($primary-nav-color)) < 35) {
+  $primary-nav-color: set-color($primary-nav-bg);
+}

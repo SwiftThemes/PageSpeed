@@ -186,7 +186,7 @@ class Helium_Styles {
 			$override .= '$header_height:' . $this->get_header_height() . ";\n";
 		}
 
-		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
+//		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
 
 
 		$override .= '$body-font-stack:' . get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) . ";\n";
@@ -212,10 +212,13 @@ class Helium_Styles {
 		if ( get_theme_mod( 'invert_colors', false ) ) {
 			$colors_override .= '$invert:' . 1 . ';';
 		}
-
-
 		$content = str_replace( '/**colors**/', $colors_override, $content );
 
+
+		$content = str_replace( '/**SCSS_override**/', '/*__________________*/'.get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );
+
+
+//		echo $content;
 
 		require_once( THEME_INC . 'libs/scss.inc.php' );
 		$scss = new scssc();
