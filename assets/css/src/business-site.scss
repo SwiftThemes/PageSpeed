@@ -22,12 +22,12 @@
   padding: $padding
 }
 
-.pull-l {
+.pull-l, .pull-left {
   margin-left: -$padding;
   padding-left: $padding;
 }
 
-.pull-r {
+.pull-r, .pull-right {
   margin-right: -$padding;
   padding-right: $padding;
 }
@@ -62,32 +62,125 @@
   padding: 0
 }
 
-.pad, .padding {
+.pad, .padding,
+.pad-all, .padding-all {
   padding: $padding;
+}
+
+.pad-l, .pad-left {
+  padding-left: $padding;
+}
+
+.pad-r, .pad-right {
+  padding-right: $padding;
+}
+
+.pad-t, .pad-top {
+  padding-top: $padding;
+}
+
+.pad-b, .pad-bottom {
+  padding-bottom: $padding;
+}
+
+.pad-rl {
+  padding-left: $padding;
+  padding-right: $padding;
+
+}
+
+.pad-trl {
+  padding-top: $padding;
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+.pad2x-all, .padding-all {
+  padding: $padding*2;
+}
+
+.pad2x-l, .pad2x-left {
+  padding-left: $padding*2;
+}
+
+.pad2x-r, .pad2x-right {
+  padding-right: $padding*2;
+}
+
+.pad2x-t, .pad2x-top {
+  padding-top: $padding*2;
+}
+
+.pad2x-b, .pad2x-bottom {
+  padding-bottom: $padding*2;
+}
+
+.pad2x-rl {
+  padding-left: $padding*2;
+  padding-right: $padding*2;
+
+}
+
+.pad2x-trl {
+  padding-top: $padding*2;
+  padding-left: $padding*2;
+  padding-right: $padding*2;
 }
 
 .hero {
   h1 {
-    font-size: 48px
+    font-size: 40px
   }
 }
 
 .title {
-  font-size: 48px
+  font-size: 40px
 }
 
 .sub-title {
   font-size: 24px;
 }
 
+.center {
+  text-align: center;
+}
+
+.sub-title {
+  font-weight: $body-font-weight
+}
+
+.section-title {
+  margin-bottom: 0;
+}
+
+.lead {
+  font-size: 1.2em
+}
+
+.panel-row-style,
+.panel-grid-cell {
+  position: relative;
+}
+
+.v-center {
+  //position: absolute;
+  top: 45%;
+  width: 100%;
+}
+
+.image-bg {
+  color: #FFF;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
+}
+
 @media only screen and (max-width: 1200px) {
   .hero {
     h1 {
-      font-size: 7vw
+      font-size: 6vw
     }
   }
   .title {
-    font-size: 7vw
+    font-size: 6vw
   }
   .sub-title {
     font-size: 3.5vw
@@ -136,39 +229,43 @@
   .no-padding {
     padding: 0
   }
-  .pad, .padding {
+
+  .pad, .padding,
+  .pad2x-all, .padding-all {
     padding: 20px;
   }
-}
 
-.center {
-  text-align: center;
-}
+  .pad-l, .pad-left,
+  .pad2x-l, .pad2x-left {
+    padding-left: 20px;
+  }
 
-.sub-title {
-  font-weight: $body-font-weight
-}
+  .pad-r, .pad-right,
+  .pad2x-r, .pad2x-right {
+    padding-right: 20px;
+  }
 
-.section-title {
-  margin-bottom: 0;
-}
+  .pad-t, .pad-top,
+  .pad2x-t, .pad2x-top {
+    padding-top: 20px;
+  }
 
-.lead {
-  font-size: 1.2em
-}
+  .pad-b, .pad-bottom,
+  .pad2x-b, .pad2x-bottom {
+    padding-bottom: 20px;
+  }
 
-.panel-row-style,
-.panel-grid-cell {
-  position: relative;
-}
+  .pad-rl,
+  .pad2x-rl {
+    padding-left: 20px;
+    padding-right: 20px;
 
-.v-center {
-  //position: absolute;
-  top: 45%;
-  width: 100%;
-}
+  }
 
-.image-bg {
-  color: #FFF;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
+  .pad-trl,
+  .pad2x-trl {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

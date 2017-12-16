@@ -3,7 +3,7 @@
   color: rgba($light-1,1)!important;
   background: $primary;
   @include gradient(lighten($primary, .1), darken($primary, .1), linear);
-  @include border-radius(3px);
+  @include border-radius(.3em);
   text-decoration: none !important;
   //margin-left: 10px;
   //margin-right: 10px;
@@ -36,6 +36,7 @@
   font-size: 1.25em;
 }
 
+.he-btn.xl,
 .he-btn.xlg,
 .he-btn.x-large,
 .he-btn.extra-large {
@@ -57,6 +58,10 @@
 
 .he-btn.fully-round {
   @include border-radius(1em);
+}
+
+.he-btn.outline{
+  background: none;
 }
 
 /* Colors */
@@ -88,6 +93,8 @@
   @include gradient(#4a4a4a, #2b2b2b, linear)
 }
 
+.he-btn.grey,
+.he-btn.gray,
 .he-btn.silver {
   @include gradient(#dbddde, #898c90, linear)
 }
@@ -114,8 +121,6 @@
   text-align: center;
   margin-right: -8px;
   padding: 6px;
-
-
   -webkit-border-top-right-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   -moz-border-radius-topright: 3px;

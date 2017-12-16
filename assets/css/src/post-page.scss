@@ -1,8 +1,6 @@
-
-  .entry-title {
-    margin: $vr/2 0;
-  }
-
+.entry-title {
+  margin: $vr/2 0;
+}
 
 .entry-title a:hover {
   color: $primary;
@@ -16,12 +14,12 @@
   a {
     color: $primary
   }
-.wp-caption{
-  margin-bottom: $vr;
-  background: $light-3;
-}
-  .wp-caption-text{
-    padding:0 10px 5px 10px;
+  .wp-caption {
+    margin-bottom: $vr;
+    background: $light-3;
+  }
+  .wp-caption-text {
+    padding: 0 10px 5px 10px;
   }
 }
 

@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6, .heading {
   font-family: $headings-font-stack;
   font-weight: $headings-font-weight;
   letter-spacing: -0.04em;
-  line-height: 1em;
+  line-height: 1.1em;
 }
 
 //http://typecast.com/blog/a-more-modern-scale-for-web-typography
@@ -103,5 +103,3 @@ blockquote {
 //}
 
 
-h1, h2, h3, h4, h5, h6, .heading {
-  line-height:1.1em;}
