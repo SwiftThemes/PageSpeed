@@ -15,6 +15,13 @@ function pagespeed_customize_colors( $wp_customize ) {
 	) );
 
 
+	$wp_customize->add_setting( 'color_scheme', array(
+		'sanitize_callback' => 'esc_attr',
+		'default'           => 'regular',
+
+	) );
+
+
 	$wp_customize->add_setting( 'primary_color', array(
 		'sanitize_callback' => 'helium_meta',
 		'default'           => '#007AFF',
@@ -39,6 +46,25 @@ function pagespeed_customize_colors( $wp_customize ) {
 		'default'           => 0,
 
 	) );
+
+
+
+
+	require_once( THEME_ADMIN . 'color-schemes.php' );
+
+	$wp_customize->add_control(
+		new Hybrid_Customize_Control_Radio_Image(
+			$wp_customize,
+			'color_scheme',
+			array(
+				'label'    => esc_html__( 'Layout Container', 'page-speed' ),
+				'section'  => 'colors',
+				'priority' => 10,
+				'choices'  => pagespeed_get_color_scheme_choices()
+			)
+		)
+	);
+
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(

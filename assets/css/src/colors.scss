@@ -83,6 +83,7 @@ $footer-color: $light-3;
 
 /* Header Colors */
 $header-bg: rgba($light-1, 1);
+$site-title-color: $dark-3;
 $site-description-color: $dark-4;
 
 /* Navigation colors */
@@ -116,10 +117,12 @@ widgets.scss
 
 // Don't remove the below line.
 // It's used for overriding the variables.
+/**color_scheme**/
+
 /**SCSS_override**/
 //
 
 //@todo use contrast ratio.
-@if (abs(lightness($primary-nav-bg) - lightness($primary-nav-color)) < 35) {
+@if (abs(lightness($primary-nav-bg) - lightness($primary-nav-color)) < 20) {
   $primary-nav-color: set-color($primary-nav-bg);
 }

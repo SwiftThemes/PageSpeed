@@ -207,6 +207,7 @@ class Helium_Styles {
 		$content = str_replace( '/**variables**/', $override, $content );
 
 
+
 		$colors_override = '';
 		$colors_override .= "/** Overridden by settings from customizer */\n\n";
 		$colors_override .= '$primary:' . get_theme_mod( 'primary_color', '#007AFF' ) . ';';
@@ -216,6 +217,15 @@ class Helium_Styles {
 			$colors_override .= '$invert:' . 1 . ';';
 		}
 		$content = str_replace( '/**colors**/', $colors_override, $content );
+
+
+
+
+		$color_scheme = get_theme_mod('color_scheme','default');
+		GLOBAL $page_speed_color_schemes;
+		$color_scheme = $page_speed_color_schemes[$color_scheme];
+
+		$content = str_replace( '/**color_scheme**/', $color_scheme, $content );
 
 
 		$content = str_replace( '/**SCSS_override**/', get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );
