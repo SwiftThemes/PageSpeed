@@ -175,6 +175,12 @@ class Helium_Styles {
 		}
 
 
+
+		$color_scheme = get_theme_mod('color_scheme','default');
+		GLOBAL $page_speed_color_schemes;
+		$color_scheme = $page_speed_color_schemes[$color_scheme];
+
+
 		$override = '';
 		$override .= "/** Overridden by settings from customizer */\n\n";
 		$override .= '$site_width:' . get_theme_mod( 'site_width', '1160px' ) . ";\n";
@@ -205,27 +211,30 @@ class Helium_Styles {
 		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
+		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color($color_scheme), $content );
 
 
 
-		$colors_override = '';
-		$colors_override .= "/** Overridden by settings from customizer */\n\n";
-		$colors_override .= '$primary:' . get_theme_mod( 'primary_color', '#007AFF' ) . ';';
-		$colors_override .= '$hue:' . get_theme_mod( 'shades_from', '211' ) . ';';
-		$colors_override .= '$saturation:' . get_theme_mod( 'shade_saturation', 8 ) . ';';
-		if ( get_theme_mod( 'invert_colors', false ) ) {
-			$colors_override .= '$invert:' . 1 . ';';
+
+
+		if(get_theme_mod('override_color_scheme',false)){
+			$colors_override = '';
+			$colors_override .= "/** Overridden by settings from customizer */\n\n";
+			$colors_override .= '$primary:' . get_theme_mod( 'primary_color', '#007AFF' ) . ';';
+			$colors_override .= '$hue:' . get_theme_mod( 'shades_from', '211' ) . ';';
+			$colors_override .= '$saturation:' . get_theme_mod( 'shade_saturation', 8 ) . ';';
+			if ( get_theme_mod( 'invert_colors', false ) ) {
+				$colors_override .= '$invert:' . 1 . ';';
+			}
+			$content = str_replace( '/**colors**/', $colors_override, $content );
 		}
-		$content = str_replace( '/**colors**/', $colors_override, $content );
 
 
 
 
-		$color_scheme = get_theme_mod('color_scheme','default');
-		GLOBAL $page_speed_color_schemes;
-		$color_scheme = $page_speed_color_schemes[$color_scheme];
 
-		$content = str_replace( '/**color_scheme**/', $color_scheme, $content );
+
+		$content = str_replace( '/**color_scheme**/', helium_generate_scss($color_scheme), $content );
 
 
 		$content = str_replace( '/**SCSS_override**/', get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );

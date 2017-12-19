@@ -22,6 +22,12 @@ function pagespeed_customize_colors( $wp_customize ) {
 	) );
 
 
+	$wp_customize->add_setting( 'override_color_scheme', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+	) );
+
+
 	$wp_customize->add_setting( 'primary_color', array(
 		'sanitize_callback' => 'helium_meta',
 		'default'           => '#007AFF',
@@ -57,7 +63,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'color_scheme',
 			array(
-				'label'    => esc_html__( 'Layout Container', 'page-speed' ),
+				'label'    => esc_html__( 'Color Schemes', 'page-speed' ),
 				'section'  => 'colors',
 				'priority' => 10,
 				'choices'  => pagespeed_get_color_scheme_choices()
@@ -65,6 +71,15 @@ function pagespeed_customize_colors( $wp_customize ) {
 		)
 	);
 
+
+
+	$wp_customize->add_control( 'override_color_scheme', array(
+		'label'   => __( 'Override shades generated from color scheme', 'page-speed' ),
+		'description'=>__('Check this if you want to use the below three options.','page-speed'),
+		'section' => 'colors',
+		'type'    => 'checkbox',
+
+	) );
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
@@ -91,6 +106,9 @@ function pagespeed_customize_colors( $wp_customize ) {
 				'settings'   => 'shades_from',
 			) )
 	);
+
+
+
 
 	$wp_customize->add_control( 'shade_saturation', array(
 		'label'   => 'Amount of base color in the shades',

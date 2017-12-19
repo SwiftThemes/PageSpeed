@@ -158,6 +158,12 @@ body {
 
 
 
+#customize-control-color_scheme
+label{width:33.33%;}
+#customize-control-color_scheme img{border-color:#fff;width:95%;}
+#customize-control-color_scheme input:checked+span+img {border-color:#00a0d2;}
+
+
 .cf:before,
 .cf:after {
     content: " ";
