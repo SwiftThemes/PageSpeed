@@ -26,7 +26,7 @@ function pagespeed_register_sidebars() {
 		$append = __( 'Appears on rest of the site like posts, archives etc...', 'page-speed' );
 	}
 
-	if ( get_theme_mod( 'theme_layout', 'centered' ) === 'centered' ) {
+	if (  in_array( get_theme_mod( 'theme_layout', 'centered' ), array( 'rr-sb', 'll-sb', 'centered' ) ) ){
 
 
 		if ( get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
@@ -130,8 +130,8 @@ function pagespeed_register_sidebars() {
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'left',
-				'name'         => esc_html_x( 'Left Sidebar', 'sidebar', 'page-speed' ) . $single_suffix,
-				'description'  => esc_html__( 'Appears on the left of main content, below the sticky widgets.', 'page-speed' ) . $append,
+				'name'         => esc_html_x( 'Left Sidebar', 'sidebar', 'page-speed' ).$single_suffix,
+				'description'  => esc_html__( 'Appears on the left of main content, below the sticky widgets.' , 'page-speed' ). $append,
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
 			)
@@ -152,8 +152,8 @@ function pagespeed_register_sidebars() {
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'right',
-				'name'         => esc_html_x( 'Right Sidebar', 'sidebar', 'page-speed' ) . $single_suffix,
-				'description'  => esc_html__( 'Appears on the right of main content, below the sticky widgets.', 'page-speed' ) . $append,
+				'name'         => esc_html_x( 'Right Sidebar' , 'sidebar', 'page-speed' ). $single_suffix,
+				'description'  => esc_html__( 'Appears on the right of main content, below the sticky widgets.', 'page-speed' ). $append,
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
 			)
@@ -164,8 +164,8 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'right-sticky',
-					'name'         => esc_html_x( 'Right Sidebar Sticky', 'sidebar', 'page-speed' ) . $single_suffix,
-					'description'  => esc_html__( 'Appears on the right of main content. Widgets added to this sidebar stick to the top of the page when you scroll', 'page-speed' ) . $append,
+					'name'         => esc_html_x( 'Right Sidebar Sticky' , 'sidebar', 'page-speed' ). $single_suffix,
+					'description'  => esc_html__( 'Appears on the right of main content. Widgets added to this sidebar stick to the top of the page when you scroll' , 'page-speed' ). $append,
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
 				)
@@ -174,63 +174,55 @@ function pagespeed_register_sidebars() {
 
 	} else {
 
-		if ( ! in_array( get_theme_mod( 'theme_layout', 'centered' ), array( 'rr-sb', 'll-sb' ) ) ) {
+		if ( get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
+			hybrid_register_sidebar(
+				array(
+					'id'           => 'left-home',
+					'name'         => esc_html_x( 'Sidebar #HomePage', 'sidebar', 'page-speed' ),
+					'description'  => esc_html__( 'Above the sticky sidebar.', 'page-speed' ),
+					'before_title' => '<div class="widget-title heading">',
+					'after_title'  => '</div>',
+				)
+			);
 
-			if ( get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
+			if ( get_theme_mod( 'enable_sticky_sidebars', true ) ) {
 				hybrid_register_sidebar(
 					array(
-						'id'           => 'left-home',
-						'name'         => esc_html_x( 'Sidebar #HomePage', 'sidebar', 'page-speed' ),
-						'description'  => esc_html__( 'Above the sticky sidebar.', 'page-speed' ),
-						'before_title' => '<div class="widget-title heading">',
-						'after_title'  => '</div>',
-					)
-				);
-
-				if ( get_theme_mod( 'enable_sticky_sidebars', true ) ) {
-					hybrid_register_sidebar(
-						array(
-							'id'           => 'left-sticky-home',
-							'name'         => esc_html_x( 'Sticky Sidebar #HomePage', 'sidebar', 'page-speed' ),
-							'description'  => esc_html__( 'Widgets added here stick to the page', 'page-speed' ),
-							'before_title' => '<div class="widget-title heading">',
-							'after_title'  => '</div>',
-						)
-					);
-				}
-
-				hybrid_register_sidebar(
-					array(
-						'id'           => 'left-bottom-home',
-						'name'         => esc_html_x( 'Below Narrow Sidebars #HomePage', 'sidebar', 'page-speed' ),
-						'description'  => esc_html__( 'Widgets added here appear below the narrow sidebars', 'page-speed' ),
-						'before_title' => '<div class="widget-title heading">',
-						'after_title'  => '</div>',
-					)
-				);
-			} else {
-
-				//@todo register sticky variants.
-				hybrid_register_sidebar(
-					array(
-						'id'           => 'ns-1-home',
-						'name'         => esc_html_x( 'Narrow Sidebar Left #HomePage', 'sidebar', 'page-speed' ),
-						'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
-						'before_title' => '<div class="widget-title heading">',
-						'after_title'  => '</div>',
-					)
-				);
-				hybrid_register_sidebar(
-					array(
-						'id'           => 'ns-2-home',
-						'name'         => esc_html_x( 'Narrow Sidebar Right #HomePage', 'sidebar', 'page-speed' ),
-						'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
+						'id'           => 'left-sticky-home',
+						'name'         => esc_html_x( 'Sticky Sidebar #HomePage', 'sidebar', 'page-speed' ),
+						'description'  => esc_html__( 'Widgets added here stick to the page', 'page-speed' ),
 						'before_title' => '<div class="widget-title heading">',
 						'after_title'  => '</div>',
 					)
 				);
 			}
-
+			hybrid_register_sidebar(
+				array(
+					'id'           => 'ns-1-home',
+					'name'         => esc_html_x( 'Narrow Sidebar Left #HomePage', 'sidebar', 'page-speed' ),
+					'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
+					'before_title' => '<div class="widget-title heading">',
+					'after_title'  => '</div>',
+				)
+			);
+			hybrid_register_sidebar(
+				array(
+					'id'           => 'ns-2-home',
+					'name'         => esc_html_x( 'Narrow Sidebar Right #HomePage', 'sidebar', 'page-speed' ),
+					'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ),
+					'before_title' => '<div class="widget-title heading">',
+					'after_title'  => '</div>',
+				)
+			);
+			hybrid_register_sidebar(
+				array(
+					'id'           => 'left-bottom-home',
+					'name'         => esc_html_x( 'Below Narrow Sidebars #HomePage', 'sidebar', 'page-speed' ),
+					'description'  => esc_html__( 'Widgets added here appear below the narrow sidebars', 'page-speed' ),
+					'before_title' => '<div class="widget-title heading">',
+					'after_title'  => '</div>',
+				)
+			);
 		}
 
 		if ( get_theme_mod( 'dedicated_sidebars_on_default_page_template', false ) ) {
@@ -286,46 +278,32 @@ function pagespeed_register_sidebars() {
 
 
 
-		if ( ! in_array( get_theme_mod( 'theme_layout', 'centered' ), array( 'rr-sb', 'll-sb' ) ) ) {
+		hybrid_register_sidebar(
+			array(
+				'id'           => 'left',
+				'name'         => esc_html_x( 'Sidebar', 'sidebar', 'page-speed' ),
+				'description'  => esc_html__( 'Above the sticky sidebar.' , 'page-speed' ). $append,
+				'before_title' => '<div class="widget-title heading">',
+				'after_title'  => '</div>',
+			)
+		);
 
+		if ( get_theme_mod( 'enable_sticky_sidebars', true ) ) {
 			hybrid_register_sidebar(
 				array(
-					'id'           => 'left',
-					'name'         => esc_html_x( 'Sidebar', 'sidebar', 'page-speed' ),
-					'description'  => esc_html__( 'Above the sticky sidebar.', 'page-speed' ) . $append,
+					'id'           => 'left-sticky',
+					'name'         => esc_html_x( 'Sticky Sidebar', 'sidebar', 'page-speed' ),
+					'description'  => esc_html__( 'Widgets added here stick to the page' , 'page-speed' ). $append,
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
 				)
 			);
-
-			if ( get_theme_mod( 'enable_sticky_sidebars', true ) ) {
-				hybrid_register_sidebar(
-					array(
-						'id'           => 'left-sticky',
-						'name'         => esc_html_x( 'Sticky Sidebar', 'sidebar', 'page-speed' ),
-						'description'  => esc_html__( 'Widgets added here stick to the page', 'page-speed' ) . $append,
-						'before_title' => '<div class="widget-title heading">',
-						'after_title'  => '</div>',
-					)
-				);
-			}
-
-			hybrid_register_sidebar(
-				array(
-					'id'           => 'left-bottom',
-					'name'         => esc_html_x( 'Below Narrow Sidebars', 'sidebar', 'page-speed' ) . $single_suffix,
-					'description'  => esc_html__( 'Widgets added here appear below the narrow sidebars', 'page-speed' ) . $append,
-					'before_title' => '<div class="widget-title heading">',
-					'after_title'  => '</div>',
-				)
-			);
-
 		}
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'ns-1',
 				'name'         => esc_html_x( 'Narrow Sidebar Left', 'sidebar', 'page-speed' ),
-				'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ) . $append,
+				'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives' , 'page-speed' ). $append,
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
 			)
@@ -334,12 +312,20 @@ function pagespeed_register_sidebars() {
 			array(
 				'id'           => 'ns-2',
 				'name'         => esc_html_x( 'Narrow Sidebar Right', 'sidebar', 'page-speed' ),
-				'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives', 'page-speed' ) . $append,
+				'description'  => esc_html__( 'Widgets added here appear below the sticky sidebar. Ideal for 120/160px wide ads, categories and archives' , 'page-speed' ). $append,
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
 			)
 		);
-
+		hybrid_register_sidebar(
+			array(
+				'id'           => 'left-bottom',
+				'name'         => esc_html_x( 'Below Narrow Sidebars', 'sidebar', 'page-speed' ) . $single_suffix,
+				'description'  => esc_html__( 'Widgets added here appear below the narrow sidebars' , 'page-speed' ). $append,
+				'before_title' => '<div class="widget-title heading">',
+				'after_title'  => '</div>',
+			)
+		);
 	}
 
 

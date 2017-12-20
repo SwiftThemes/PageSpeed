@@ -20,7 +20,7 @@
 		endif;
 		?>
 		<?php
-		if ( get_theme_mod( 'theme_layout', '' ) !== 'centered' ):
+		if ( ! in_array( get_theme_mod( 'theme_layout', 'centered' ), array( 'rr-sb', 'll-sb', 'centered' ) ) ):
 			if ( is_active_sidebar( 'ns-1-page' ) ) :
 				?>
                 <div id="ns1">

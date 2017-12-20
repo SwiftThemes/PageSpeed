@@ -81,23 +81,23 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 10,
 				'choices'  => array(
 					'l-sb'     => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-l-sb.png',
+						'url'   => ADMIN_IMAGES_URI . 'layout-l-sb.png',
 						'label' => __( 'Content / Sidebar', 'page-speed' )
 					),
 					'centered' => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-centered.png',
+						'url'   => ADMIN_IMAGES_URI . 'layout-centered.png',
 						'label' => __( 'Sidebar / Content / Sidebar', 'page-speed' ),
 					),
 					'r-sb'     => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-r-sb.png',
+						'url'   => ADMIN_IMAGES_URI . 'layout-r-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
 					'rr-sb'     => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-r-sb.png',
+						'url'   => ADMIN_IMAGES_URI . 'layout-rr-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
 					'll-sb'     => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-r-sb.png',
+						'url'   => ADMIN_IMAGES_URI . 'layout-ll-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
 

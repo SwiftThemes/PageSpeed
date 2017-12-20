@@ -31,7 +31,10 @@ body {
 }
 
 /* centered layout */
-.layout-centered {
+.layout-centered,
+.layout-ll-sb,
+.layout-rr-sb
+{
   #left {
     float: left;
     width: 75%;
@@ -56,9 +59,25 @@ body {
   }
 }
 
-/* Left sidebar */
-.layout-l-sb,
 .layout-ll-sb {
+  #sb2 {
+    float: left
+  }
+  #left {
+    float: right
+  }
+}
+.layout-rr-sb {
+  #sb1 {
+    float: right
+  }
+  #left,#main {
+    float: left
+  }
+  #sb2{float: right}
+}
+/* Left sidebar */
+.layout-l-sb{
   #sb2 {
     float: left;
     display: none;
@@ -78,8 +97,7 @@ body {
 }
 
 /* Right sidebar */
-.layout-r-sb,
-.layout-rr-sb {
+.layout-r-sb {
   #left {
     float: left;
     width: 100%
@@ -123,39 +141,25 @@ body {
   width: 50%;
   float: left;
 }
-//
-///* for multiple colors */
-//#ns1, #ns2 {
-//  padding: 20px 10px;
-//}
-//
-//#ns1 {
-//  //background: rgba(0, 255, 255, .5);
-//  margin: -20px 0 -20px -20px
-//}
-//
-//#ns2 {
-//  //background: rgba(255, 255, 0, .5);
-//  margin: -20px -20px -20px 0
-//}
-
-
+#ns1 >.inner,
+#ns2 >.inner{padding-top: 23px;padding-bottom: 20px}
 #ns1{
 
-  margin: -40px 0 -40px -40px;
-  background: $light-2;
-  padding: 20px 0 20px 40px;
+  margin: 0 0 0 -40px;
+  padding: 0 0 0 40px;
 
 }
 #ns2{
 
-  background:  $light-1;
-  margin: -40px -40px -40px 0;
-  padding: 20px 40px 20px 0;
+  margin: 0 -40px 0 0;
+  padding: 0 40px 0 0;
 
 }
 
-.layout-centered {
+.layout-centered,
+.layout-rr-sb,
+.layout-ll-sb
+{
   #sb1 {
     //background: rgba(0, 255, 255, .5);
     background: $sb1-bg !important;
@@ -167,6 +171,9 @@ body {
   }
 
 }
+//
+//.layout-ll-sb #sb1 > .inner,
+//.layout-rr-sb #sb1 >.inner{padding-top:0;padding-bottom: 0}
 
 #sb1{
   background: $sb1-bg;
