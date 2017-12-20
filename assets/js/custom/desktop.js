@@ -102,6 +102,13 @@
             if (!document.getElementById('sticky-sb') && !document.getElementById('normal-sb')) {
                 $('#ns1 >.inner,#ns2 >.inner').height(height)
             }
+
+            $('.layout-rr-sb #ns1 >.inner,.layout-rr-sb #ns2 >.inner,.layout-ll-sb #ns1 >.inner,.layout-ll-sb #ns2 >.inner').height(height)
+
+
+            $('.layout-r-sb #ns1 >.inner,.layout-r-sb #ns2 >.inner,.layout-ll-sb #ns1 >.inner,.layout-ll-sb #ns2 >.inner').height(height)
+
+
         }
     }
 
