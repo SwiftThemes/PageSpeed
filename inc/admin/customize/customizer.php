@@ -92,6 +92,15 @@ function pagespeed_customize( $wp_customize ) {
 						'url'   => ADMIN_IMAGES_URI . '/layout-r-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
+					'rr-sb'     => array(
+						'url'   => ADMIN_IMAGES_URI . '/layout-r-sb.png',
+						'label' => __( 'Sidebar / Content', 'page-speed' ),
+					),
+					'll-sb'     => array(
+						'url'   => ADMIN_IMAGES_URI . '/layout-r-sb.png',
+						'label' => __( 'Sidebar / Content', 'page-speed' ),
+					),
+
 				)
 			)
 		)
