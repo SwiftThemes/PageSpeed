@@ -139,6 +139,22 @@ body {
 //  margin: -20px -20px -20px 0
 //}
 
+
+#ns1{
+
+  margin: -40px 0 -40px -40px;
+  background: $light-2;
+  padding: 20px 0 20px 40px;
+
+}
+#ns2{
+
+  background:  $light-1;
+  margin: -40px -40px -40px 0;
+  padding: 20px 40px 20px 0;
+
+}
+
 .layout-centered {
   #sb1 {
     //background: rgba(0, 255, 255, .5);
