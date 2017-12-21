@@ -15,5 +15,9 @@ function he_body_classes( $classes ) {
 	if(is_single() && has_post_thumbnail()){
 		$classes[] = 'has-thumb';
 	}
+
+	if(get_theme_mod('enable_sleek_header')){
+		$classes[] = 'sleek-header';
+	}
 	return $classes;
 }
