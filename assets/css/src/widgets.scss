@@ -30,7 +30,7 @@
 }
 
 @if ($sb_widget_cards == 1) {
-  #content {
+  #content .sb{
 
     .widget {
       border: solid 1px $sb-widget-border-color;

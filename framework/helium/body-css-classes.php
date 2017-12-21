@@ -11,5 +11,9 @@ add_filter( 'body_class', 'he_body_classes' );
 function he_body_classes( $classes ) {
 	global $he;
 	$classes[] = $he->is_mobile()?'mobile':'desktop';
+
+	if(is_single() && has_post_thumbnail()){
+		$classes[] = 'has-thumb';
+	}
 	return $classes;
 }

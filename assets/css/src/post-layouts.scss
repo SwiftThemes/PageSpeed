@@ -1,0 +1,31 @@
+.singular-post.single-1c.has-thumb {
+  #main,
+  #left {
+    margin: auto !important;
+    display: block;
+    float: none !important;
+    width:100%;
+  }
+
+  #content {
+    background-repeat: no-repeat;
+    background-size: 100% 400px;
+  }
+  #left, #sticky-sb1-sticky-wrapper, #sticky-sb1 {
+    background: none
+  }
+  .breadcrumb-trail {
+    display: none
+  }
+
+  #main {
+    background: transparent !important;
+    width: 60%
+  }
+  .entry {
+    margin-top: 180px;
+    background: rgba($light-1, 1) !important;
+    @include border-radius(1em);
+    padding: $padding
+  }
+}

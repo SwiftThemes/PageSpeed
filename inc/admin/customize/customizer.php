@@ -198,5 +198,36 @@ function pagespeed_customize( $wp_customize ) {
 
 	// Home Page
 
+
+
+
+	$wp_customize->add_setting( 'single_post_layout', array(
+		'sanitize_callback' => 'esc_attr',
+		'default'           => 'regular',
+	) );
+
+
+	$wp_customize->add_control(
+		new Hybrid_Customize_Control_Radio_Image(
+			$wp_customize,
+			'single_post_layout',
+			array(
+				'label'    => esc_html__( 'Single Post Layout', 'page-speed' ),
+				'section'  => 'layout_settings',
+				'priority' => 10,
+				'choices'  => array(
+					'regular'     => array(
+						'url'   => ADMIN_IMAGES_URI . '/layout-'.get_theme_mod('theme_layout','centered').'.png',
+						'label' => __( 'Regular', 'page-speed' )
+					),
+					'1c' => array(
+						'url'   => ADMIN_IMAGES_URI . '/container-boxed.png',
+						'label' => __( 'Boxed', 'page-speed' ),
+					)
+				)
+			)
+		)
+	);
+
 }
 

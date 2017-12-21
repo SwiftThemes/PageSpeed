@@ -13,7 +13,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<header class="entry-header">
 		<?php if ( get_theme_mod( 'single_post_meta_above_title', '[cat]' . __( 'Filed under', 'page-speed' ) . '&nbsp;[/cat]' ) ): ?>
 			<div class="entry-meta meta above-title">
@@ -28,7 +27,8 @@
 				<?php echo do_shortcode( get_theme_mod( 'single_post_meta_below_title' ) ) ?>
 			</div>
 		<?php endif ?>
-	</header><!-- .entry-header -->
+	</header>
+    <!-- .entry-header -->
 
 
 	<div class="entry-content">

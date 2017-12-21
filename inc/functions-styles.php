@@ -13,6 +13,7 @@
 add_action( 'wp_enqueue_scripts', 'pagespeed_load_fonts', 7 );
 add_action( 'wp_enqueue_scripts', 'pagespeed_register_styles', 8 );
 add_action( 'wp_enqueue_scripts', 'pagespeed_enqueue_styles', 9 );
+add_action( 'wp_head', 'pagespeed_add_image_bg_for_single_post', 99 );
 
 
 function pagespeed_register_styles() {
@@ -53,6 +54,20 @@ function pagespeed_load_fonts() {
 	endif;
 }
 
+
+function pagespeed_add_image_bg_for_single_post(){
+
+    if(get_theme_mod('single_post_layout') !=='1c' || !has_post_thumbnail()){
+        return;
+    }
+    //@todo Add different sizes for mobile and desktop;
+    ?>
+    <style>
+
+        #content{background-image: url('<?php echo get_the_post_thumbnail_url(null, array(1920,600))?>')}
+    </style>
+<?php
+}
 
 function helium_generate_gfont_link() {
 	$g1 = get_theme_mod( 'gfont_1' );
