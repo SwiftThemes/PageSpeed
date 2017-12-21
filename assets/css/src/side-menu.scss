@@ -6,7 +6,7 @@
   background: rgba($light-1, .9);
 
   .mobile-nav-search-form {
-    margin: 0 8px
+    margin: 0 30px
   }
   .sticky-logo img {
     left: 10px
@@ -70,7 +70,7 @@ body {
     width: 75vw;
     position: fixed;
     right: 0;
-    background: $light-4;
+    background: $dark-4;
     top: 0;
     min-height: 100vh;
     overflow: scroll;

@@ -64,7 +64,7 @@ function pagespeed_add_image_bg_for_single_post(){
     ?>
     <style>
 
-        #content{background-image: url('<?php echo get_the_post_thumbnail_url(null, array(1920,600))?>')}
+        #content{background-image: url('<?php echo get_the_post_thumbnail_url(null, array(1400,600))?>')}
     </style>
 <?php
 }

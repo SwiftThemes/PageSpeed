@@ -4,12 +4,12 @@
     margin: auto !important;
     display: block;
     float: none !important;
-    width:100%;
+    width: 100%;
   }
 
   #content {
     background-repeat: no-repeat;
-    background-size: 100% 400px;
+    background-size: 100% auto;
   }
   #left, #sticky-sb1-sticky-wrapper, #sticky-sb1 {
     background: none
@@ -27,5 +27,13 @@
     background: rgba($light-1, 1) !important;
     @include border-radius(1em);
     padding: $padding
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .singular-post.single-1c.has-thumb {
+    #content {
+      background-size: auto 50vh;
+    }
   }
 }
