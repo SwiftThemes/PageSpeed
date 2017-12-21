@@ -57,7 +57,7 @@ function pagespeed_load_fonts() {
 
 function pagespeed_add_image_bg_for_single_post(){
 
-    if(get_theme_mod('single_post_layout') !=='1c' || !has_post_thumbnail()){
+    if(!is_single() || get_theme_mod('single_post_layout') !=='1c' || !has_post_thumbnail()){
         return;
     }
     //@todo Add different sizes for mobile and desktop;

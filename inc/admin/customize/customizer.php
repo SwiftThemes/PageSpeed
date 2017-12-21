@@ -221,7 +221,7 @@ function pagespeed_customize( $wp_customize ) {
 						'label' => __( 'Regular', 'page-speed' )
 					),
 					'1c' => array(
-						'url'   => ADMIN_IMAGES_URI . '/container-boxed.png',
+						'url'   => ADMIN_IMAGES_URI . '/single-post-1c.png',
 						'label' => __( 'Boxed', 'page-speed' ),
 					)
 				)
