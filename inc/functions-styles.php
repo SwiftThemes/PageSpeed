@@ -47,9 +47,10 @@ function pagespeed_load_fonts() {
 	$url = helium_generate_gfont_link();
 
 	if ( $url ):
+
+		wp_enqueue_style('helium_google_fonts',$url)
 		?>
-        <link href="<?php echo $url ?>" rel="stylesheet" media="none"
-              onload="this.media='all';">
+
 		<?php
 	endif;
 }
