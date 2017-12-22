@@ -17,7 +17,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 
 	$wp_customize->add_setting( 'color_scheme', array(
 		'sanitize_callback' => 'esc_attr',
-		'default'           => 'regular',
+		'default'           => 'default',
 
 	) );
 
