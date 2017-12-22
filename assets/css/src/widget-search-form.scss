@@ -62,39 +62,54 @@
 
   .nav-previous,
   .nav-next{
-    max-width: 45%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    @include border-radius(3px);
+    @include border-radius(5px);
+    margin-bottom: $vr;
 
 
   }
+  a:hover{text-decoration: none}
   .nav-previous > a,
   .nav-next > a {
-    background: rgba($light-2,.8);
+    position: relative;
+    background: rgba($light-4,.8);
+    display: block;
+    padding:0 5px;
 
-    padding: 5px;
     .nav-subtitle{
-      background: $light-3;
-      position: relative;
-      top:-1px;
-      height: $vr+4px;
+      background: rgba($primary,.5);
+      position: absolute;
+      top:0;
+      bottom: 0;
+      padding:0 5px
     }
   }
+
+
+  .nav-previous a{
+    padding-left: 6em;
+
+  }
+  .nav-next a{
+    padding-right: 6em;
+
+  }
+  .nav-previous > a:hover,
+  .nav-next > a:hover{background: rgba($primary,1);color:$light-1}
+  .nav-title{overflow: auto}
   .nav-previous {
 
     float: left;
     .nav-subtitle {
-      margin: -6px 0 -4px -5px;
-      padding:5px;
+      left: 0;
     }
   }
   .nav-next {
     float: right;
     .nav-subtitle {
-      margin: -3px -5px -3px 5px;
-      padding:5px;
+      right:0;
     }
   }
 }
