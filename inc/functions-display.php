@@ -71,6 +71,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			'depth'           => 0,
 			'walker'          => '',
 			'theme_location'  => 'primary',
+			'fallback_cb' => 'page_speed_dummy_menu'
 		);
 
 
@@ -83,7 +84,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			$container_class .= ' has-sticky-logo';
 		}
 
-		if ( has_nav_menu( 'primary' ) ) :
+		if ( 1||  has_nav_menu( 'primary' ) ) :
 			?>
             <div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
                 <div id="primary" class="">
@@ -189,4 +190,8 @@ function pagespeed_breadcrumbs() {
 	}
 }
 
+
+function page_speed_dummy_menu(){
+    echo '<div style="text-align: center"> <a href="#" >Howdy!! Thanks for choosing PageSpeed :-). Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away !!</a>';
+}
 
