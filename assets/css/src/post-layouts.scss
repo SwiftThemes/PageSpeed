@@ -10,6 +10,7 @@
   #content {
     background-repeat: no-repeat;
     background-size: 100% auto;
+    background-attachment: fixed;
   }
   #left, #sticky-sb1-sticky-wrapper, #sticky-sb1 {
     background: none
@@ -20,13 +21,21 @@
 
   #main {
     background: transparent !important;
-    width: 60%
   }
   .entry {
+    width: 60%;
+    margin: auto;
     margin-top: 180px;
     background: rgba($light-1, 1) !important;
     @include border-radius(1em);
-    padding: $padding
+    padding: $padding;
+  }
+
+  #comments{    background: rgba($light-1, 1) !important;
+    margin-top: -1em;
+    margin-left:-$padding;
+    margin-right:-$padding;
+    padding: $padding;
   }
 }
 
