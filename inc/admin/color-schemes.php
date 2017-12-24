@@ -64,16 +64,18 @@ $page_speed_color_schemes['facebook'] = array(
 	'footer-bg'              => '',
 	'footer-color'           => '',
 
-	// Header Colors
-	'header-bg'              => '$light-1',
-	'site-title-color'       => '$primary-nav-bg',
-	'site-description-color' => '',
 
 	// Navigation Colors
 	'primary-nav-bg'         => '#3b5998',
 	'primary-nav-color'      => '#fff',
 	'secondary-nav-bg'       => '',
 	'secondary-nav-color'    => '',
+
+
+	// Header Colors
+	'header-bg'              => '$light-1',
+	'site-title-color'       => '$primary-nav-bg',
+	'site-description-color' => '',
 
 	// Sidebar Widgets
 	'sb-widget-title-color'  => '',
@@ -111,11 +113,11 @@ $page_speed_color_schemes['pink']    = array(
 
 	// Header Colors
 	'header-bg'              => '$light-1',
-	'site-title-color'       => '',
+	'site-title-color'       => 'darken(#5a95ca,.1)',
 	'site-description-color' => '',
 
 	// Navigation Colors
-	'primary-nav-bg'         => '#c43e74',
+	'primary-nav-bg'         => 'rgba(#c43e74,.95)',
 	'primary-nav-color'      => '#FFF',
 	'secondary-nav-bg'       => '',
 	'secondary-nav-color'    => '',
@@ -159,7 +161,7 @@ function helium_generate_scss( $values ) {
 	//if a color scheme doesn't explicitly define header-bg
 	//use primary nav bg as header bg for sleek layout.
 	if ( 1 || ! $values['header-bg'] ) {
-		$out .= '@if($is_sleek_header == 1){$header-bg:$primary-nav-bg;}';
+		$out .= '@if($is_sleek_header == 1){$header-bg:$primary-nav-bg;$site-title-color:$primary-nav-color}';
 	}
 
 	return $out;

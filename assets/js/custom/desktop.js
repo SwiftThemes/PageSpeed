@@ -59,12 +59,12 @@
          */
 
         clearTimeout(GLOBAL.hideStickyTimer)
-        $('#primary-nav-container-sticky-wrapper,#sticky-search-sticky-wrapper').css({opacity: 1})
+        $('#primary-nav-container-sticky-wrapper,#sticky-search-sticky-wrapper,.sleek-header #site-header-container').css({opacity: 1})
         GLOBAL.hideStickyTimer = setTimeout(function () {
             if ($('body').hasClass('menu-open')) {
                 return
             }
-            $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky').css({'opacity': 0})
+            $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container').css({'opacity': 0})
         }, 2000)
     }, 1000)
 
@@ -185,7 +185,8 @@
         if (isMobile()) {
             return
         }
-        $("#primary-nav-container.stick-it").sticky({responsiveWidth: true, zIndex: 9});
+        //@todo add stick-it, it is stikcy always now.
+        $("#primary-nav-container.stick-it,.sleek-header #site-header-container").sticky({responsiveWidth: true, zIndex: 9});
     }
 
     function makeHeaderSticky() {
@@ -199,7 +200,7 @@
 
     function removeStickiesOnMobile() {
         if (isMobile()) {
-            $("#sticky-sb1,#sticky-sb2,#primary-nav-container.stick-it").unstick();
+            $("#sticky-sb1,#sticky-sb2,#primary-nav-container.stick-it,#site-header-container").unstick();
         }
     }
 
