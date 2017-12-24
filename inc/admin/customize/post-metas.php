@@ -12,7 +12,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	) );
 
 
-	$description = __( 'Here you can customize the mete information above and below the post title, and after post content. Here is the list of shortcodes you can use.', 'page-speed' ) . '
+	$description = __( 'Here you can customize the meta information above and below the post title, and after post content. Here is the list of shortcodes you can use.', 'page-speed' ) . '
 		<pre>
 [author],
 [cat]Filed under&amp;nbsp;[/cat],
