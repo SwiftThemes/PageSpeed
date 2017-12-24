@@ -40,7 +40,10 @@
 }
 
 #menu svg {
-  fill: $primary;
+  fill: $site-title-color;
+}
+.is-sticky #menu svg {
+  fill: $dark-4;
 }
 
 body,

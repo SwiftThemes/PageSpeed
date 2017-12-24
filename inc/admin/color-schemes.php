@@ -43,7 +43,7 @@ $page_speed_color_schemes['default'] = array(
 	'sb-widget-bg'           => '',
 
 );
-$page_speed_color_schemes['facebook'] = array(
+$page_speed_color_schemes['blue'] = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -90,7 +90,56 @@ $page_speed_color_schemes['facebook'] = array(
 	'saturation'             => 22
 
 );
-$page_speed_color_schemes['pink']    = array(
+$page_speed_color_schemes['yellow-black'] = array(
+	//Generic colors
+	'body-color'       => '',
+	'link-color'       => '',
+	'meta-color'       => '',
+	'sticky-header-bg' => '',
+
+	'button-bg'              => '',
+	'button-color'           => '',
+	'wp-caption-text-color'  => '',
+
+	// Layout colors
+	'body-bg'                => '',
+	'wrapper-bg'             => '',
+	'content-bg'             => '',
+	'main-bg'                => '',
+	'sb1-bg'                 => '#101820',
+	'sb2-bg'                 => '#101820',
+	'footer-bg'              => '',
+	'footer-color'           => '',
+
+
+	// Navigation Colors
+	'primary-nav-bg'         => '#fdc134',
+	'primary-nav-color'      => '#101820',
+	'secondary-nav-bg'       => '',
+	'secondary-nav-color'    => '',
+
+
+	// Header Colors
+	'header-bg'              => '#101820',
+	'site-title-color'       => '$primary-nav-bg',
+	'site-description-color' => '',
+
+	// Sidebar Widgets
+	'sb-widget-title-color'  => '#FFF',
+	'sb-widget-title-bg'     => 'lighten(#101820,.03)',
+	'sb-widget-border-color' => '',
+	'sb-widget-bg'           => 'lighten(#101820,.06)',
+	'sb-widget-color'           => '#DDD',
+	'sb-widget-link-color'           => '#FFF',
+
+
+	//Important vars
+	'primary'                => '#eeb304',
+	'hue'                    => 'hue(#101820)',
+	'saturation'             => 12
+
+);
+$page_speed_color_schemes['Fuchsia']    = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',

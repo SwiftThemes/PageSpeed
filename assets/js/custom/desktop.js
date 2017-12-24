@@ -59,12 +59,12 @@
          */
 
         clearTimeout(GLOBAL.hideStickyTimer)
-        $('#primary-nav-container-sticky-wrapper,#sticky-search-sticky-wrapper,.sleek-header #site-header-container').css({opacity: 1})
+        $('#primary-nav-container-sticky-wrapper,#sticky-search-sticky-wrapper,.sleek-header #site-header-container-sticky-wrapper').css({opacity: 1})
         GLOBAL.hideStickyTimer = setTimeout(function () {
             if ($('body').hasClass('menu-open')) {
                 return
             }
-            $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container').css({'opacity': 0})
+            $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container-sticky-wrapper.is-sticky').css({'opacity': 0})
         }, 2000)
     }, 1000)
 

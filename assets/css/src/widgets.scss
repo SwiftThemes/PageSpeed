@@ -10,7 +10,12 @@
 
 .widget {
   margin-bottom: $vr;
+  color: $sb-widget-color;
 }
+.widget a{
+  color: $sb-widget-link-color;
+}
+.widget a:hover{color:$primary}
 
 .sb > .widget:first-child .widget-title {
   padding-top: 0
