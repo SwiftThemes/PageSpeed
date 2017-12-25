@@ -145,17 +145,18 @@
   position: relative;
   font-size: .9em;
 }
-
+.more-link .he-btn{  padding: 0 8px;  }
 .more-link .icon {
   background: rgba(0, 0, 0, .1);
 
   text-align: center;
-  margin-right: -8px;
-  padding: 6px;
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  margin:auto -8px 0 6px;
+  padding:0 6px;
+  float: right;
+  -webkit-border-top-right-radius: .3em;
+  -webkit-border-bottom-right-radius: .3em;
+  -moz-border-radius-topright: .3em;
+  -moz-border-radius-bottomright: .3em;
+  border-top-right-radius: .3em;
+  border-bottom-right-radius: .3em;
 }
