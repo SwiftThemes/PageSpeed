@@ -71,7 +71,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			'depth'           => 0,
 			'walker'          => '',
 			'theme_location'  => 'primary',
-			'fallback_cb' => 'page_speed_dummy_menu'
+//			'fallback_cb' => 'page_speed_dummy_menu'
 		);
 
 
@@ -192,6 +192,6 @@ function pagespeed_breadcrumbs() {
 
 
 function page_speed_dummy_menu(){
-    echo '<div style="text-align: center"> <a href="#" >Howdy!! Thanks for choosing PageSpeed :-). Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away !!</a>';
+    echo '<div style="text-align: center"> <a href="#" >Howdy!! Thanks for choosing PageSpeed :-). Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away !!</a></div>';
 }
 
