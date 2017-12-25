@@ -6,10 +6,6 @@
  * Time: 11:15 PM
  */
 
-register_nav_menus( array(
-	'secondary'    => __( 'Navigation above header', 'page-speed' ),
-	'footer_links' => __( 'Footer links', 'page-speed' ),
-) );
 
 if ( get_theme_mod( 'enable_sleek_header', false ) ) {
 	register_nav_menus( array(
@@ -20,3 +16,9 @@ if ( get_theme_mod( 'enable_sleek_header', false ) ) {
 		'primary' => __( 'Navigation below header', 'page-speed' ),
 	) );
 }
+
+
+register_nav_menus( array(
+	'secondary'    => __( 'Navigation above header', 'page-speed' ),
+	'footer_links' => __( 'Footer links', 'page-speed' ),
+) );

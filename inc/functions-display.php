@@ -33,6 +33,7 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 			'depth'           => 0,
 			'walker'          => '',
 			'theme_location'  => 'secondary',
+
 		);
 
 
@@ -53,7 +54,12 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 }
 
 if ( ! function_exists( 'pagespeed_below_header' ) ) {
+
+
 	function pagespeed_below_header() {
+		if ( get_theme_mod( 'enable_sleek_header', false ) ) {
+			return;
+		}
 		$args = array(
 			'menu'            => 'primary',
 			'container'       => 'nav',
@@ -71,7 +77,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			'depth'           => 0,
 			'walker'          => '',
 			'theme_location'  => 'primary',
-//			'fallback_cb' => 'page_speed_dummy_menu'
+			'fallback_cb'     => 'page_speed_dummy_menu'
 		);
 
 
@@ -84,25 +90,30 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			$container_class .= ' has-sticky-logo';
 		}
 
-		if ( 1||  has_nav_menu( 'primary' ) ) :
-			?>
-            <div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
-                <div id="primary" class="">
-                    <div class="hybrid"> <!-- adding inner -->
-                        <div class="inner">
+//		if ( has_nav_menu( 'primary' ) ) :
+		?>
+        <div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
+            <div id="primary" class="">
+                <div class="hybrid"> <!-- adding inner -->
+                    <div class="inner">
 
-							<?php do_action( 'pagespeed_primary_nav_start' ); ?>
-							<?php wp_nav_menu( $args ); ?>
-                        </div>
+						<?php do_action( 'pagespeed_primary_nav_start' ); ?>
+						<?php wp_nav_menu( $args ); ?>
                     </div>
                 </div>
             </div>
-			<?php
-		endif;
+        </div>
+		<?php
+//		endif;
 	}
 }
 if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 	function pagespeed_header_navigation() {
+
+		if ( ! get_theme_mod( 'enable_sleek_header', false ) ) {
+			return;
+		}
+
 		$args = array(
 			'menu'            => 'primary',
 			'container'       => 'nav',
@@ -120,6 +131,8 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			'depth'           => 0,
 			'walker'          => '',
 			'theme_location'  => 'header',
+			'fallback_cb'     => 'page_speed_dummy_menu'
+
 		);
 
 
@@ -132,7 +145,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			$container_class .= ' has-sticky-logo';
 		}
 
-		if ( has_nav_menu( 'header' ) ) :
+//		if ( has_nav_menu( 'header' ) ) :
 			?>
             <div id="header-nav-container" class="cf <?php echo $container_class ?>">
                 <div id="primary" class="">
@@ -141,7 +154,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
                 </div>
             </div>
 			<?php
-		endif;
+//		endif;
 	}
 }
 
@@ -167,7 +180,6 @@ function pagespeed_mobile_search() {
 	get_template_part( 'searchform-nav' );
 }
 
-
 function pagespeed_breadcrumbs() {
 	global $he;
 	if ( $he->get_meta( 'hide_breadcrumbs' ) ) {
@@ -191,7 +203,12 @@ function pagespeed_breadcrumbs() {
 }
 
 
-function page_speed_dummy_menu(){
-    echo '<div style="text-align: center"> <a href="#" >Howdy!! Thanks for choosing PageSpeed :-). Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away !!</a></div>';
+function page_speed_dummy_menu() {
+
+	if ( current_user_can('customize') && !has_nav_menu( 'primary' ) && ! has_nav_menu( 'header' ) ) {
+		echo '<div style="text-align: center"> <a href="#" >Howdy!! Thanks for choosing PageSpeed :-). Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away !!</a></div>';
+	}
+
+	return null;
 }
 
