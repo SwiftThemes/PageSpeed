@@ -1,4 +1,7 @@
 <?php
+
+use Leafo\ScssPhp\Compiler;
+
 /**
  * Compile SCSS and write the stylesheet to uploads directory
  *
@@ -152,7 +155,7 @@ class Helium_Styles {
 		}
 	}
 
-	public function generate_css( $af_bf ) {
+	public function generate_css( $af_bf, $compiler_version='new' ) {
 		global $wp_filesystem;
 
 		$transient = $this->prefix . 'sass_combined_' . $af_bf;
@@ -175,10 +178,9 @@ class Helium_Styles {
 		}
 
 
-
-		$color_scheme = get_theme_mod('color_scheme','default');
+		$color_scheme = get_theme_mod( 'color_scheme', 'default' );
 		GLOBAL $page_speed_color_schemes;
-		$color_scheme = $page_speed_color_schemes[$color_scheme];
+		$color_scheme = $page_speed_color_schemes[ $color_scheme ];
 
 
 		$override = '';
@@ -206,18 +208,15 @@ class Helium_Styles {
 
 		$override .= '$container_type:' . get_theme_mod( 'container_type', 'regular' ) . ';';
 
-		if(!get_theme_mod('enable_card_style_widgets_sb',true)){
+		if ( ! get_theme_mod( 'enable_card_style_widgets_sb', true ) ) {
 			$override .= '$sb_widget_cards:0;';
 		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
-		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color($color_scheme), $content );
+		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ), $content );
 
 
-
-
-
-		if(get_theme_mod('override_color_scheme',false)){
+		if ( get_theme_mod( 'override_color_scheme', false ) ) {
 			$colors_override = '';
 			$colors_override .= "/** Overridden by settings from customizer */\n\n";
 			$colors_override .= '$primary:' . get_theme_mod( 'primary_color', '#007AFF' ) . ';';
@@ -230,11 +229,7 @@ class Helium_Styles {
 		}
 
 
-
-
-
-
-		$content = str_replace( '/**color_scheme**/', helium_generate_scss($color_scheme), $content );
+		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
 
 
 		$content = str_replace( '/**SCSS_override**/', get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );
@@ -243,11 +238,21 @@ class Helium_Styles {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 
-		require_once( THEME_INC . 'libs/scss.inc.php' );
-		$scss = new scssc();
-		$scss->setImportPaths( $this->source );
+		if ( $compiler_version === 'old' ) {
+			require_once( THEME_INC . 'libs/scss.inc.php' );
+			$scss = new scssc();
+			$scss->setImportPaths( $this->source );
+//			$scss->setFormatter( 'scss_formatter_compressed' );
+			return $scss->compile( $content );
+		} else {
+			require_once( HELIUM_DIR . 'vendor/scss.inc.php' );
+			$scss = new Compiler();
+			$scss->setImportPaths( $this->source );
+//			$scss->setFormatter( 'Leafo\ScssPhp\Formatter\Crunched' );
+			return $scss->compile( $content );
+		}
 
-		return $scss->compile( $content );
+
 	}
 
 	public function write_css() {
