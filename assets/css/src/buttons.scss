@@ -2,7 +2,7 @@
   padding: 6px 8px;
   color: rgba($light-1,1)!important;
   background: $button-bg;
-  @include gradient(lighten($button-bg, .1), darken($button-bg, .1), linear);
+  @include gradient(lighten($button-bg, 10%), darken($button-bg, 10%), linear);
   @include border-radius(.3em);
   text-decoration: none !important;
   //margin-left: 10px;
@@ -13,7 +13,7 @@
 
 .he-btn:hover,.button:hover,.btn:hover,a.btn:hover{
   @include sharp-shadow();
-  @include gradient(lighten($primary, .1), darken($primary, .2), linear);
+  @include gradient(lighten($primary, 10%), darken($primary, 20%), linear);
 
 }
 
