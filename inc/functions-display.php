@@ -17,7 +17,7 @@ add_action( 'pagespeed_main_start', 'pagespeed_breadcrumbs', 12 );
 if ( ! function_exists( 'pagespeed_above_header' ) ) {
 	function pagespeed_above_header() {
 		$args = array(
-			'menu'            => 'secondary',
+			'theme_location'  => 'secondary',
 			'container'       => 'nav',
 			'container_class' => 'nav',
 			'container_id'    => 'secondary-nav',
@@ -61,7 +61,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			return;
 		}
 		$args = array(
-			'menu'            => 'primary',
+			'theme_location'            => 'primary',
 			'container'       => 'nav',
 			'container_class' => 'nav',
 			'container_id'    => 'primary-nav',
@@ -115,7 +115,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 		}
 
 		$args = array(
-			'menu'            => 'primary',
+			'theme_location'            => 'primary',
 			'container'       => 'nav',
 			'container_class' => 'nav',
 			'container_id'    => 'header-nav',
@@ -146,14 +146,14 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 		}
 
 //		if ( has_nav_menu( 'header' ) ) :
-			?>
-            <div id="header-nav-container" class="cf <?php echo $container_class ?>">
-                <div id="primary" class="">
-					<?php do_action( 'pagespeed_header_nav_start' ); ?>
-					<?php wp_nav_menu( $args ); ?>
-                </div>
+		?>
+        <div id="header-nav-container" class="cf <?php echo $container_class ?>">
+            <div id="primary" class="">
+				<?php do_action( 'pagespeed_header_nav_start' ); ?>
+				<?php wp_nav_menu( $args ); ?>
             </div>
-			<?php
+        </div>
+		<?php
 //		endif;
 	}
 }
@@ -205,7 +205,7 @@ function pagespeed_breadcrumbs() {
 
 function page_speed_dummy_menu() {
 
-	if ( current_user_can('customize') && !has_nav_menu( 'primary' ) && ! has_nav_menu( 'header' ) ) {
+	if ( current_user_can( 'customize' ) && ! has_nav_menu( 'primary' ) && ! has_nav_menu( 'header' ) ) {
 		echo '<div style="text-align: center"> <a href="#" >Howdy!! Thanks for choosing PageSpeed :-). Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away !!</a></div>';
 	}
 

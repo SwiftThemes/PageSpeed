@@ -1,27 +1,27 @@
 <?php do_action( 'pagespeed_before_footer' ); ?>
-<?php global $he;?>
-<?php if ( !$he->get_meta( 'hide_footer_widgets' ) && (is_active_sidebar( "footer-1" ) || is_active_sidebar( "footer-2" ) || is_active_sidebar( "footer-3" ) || is_active_sidebar( "footer-4" ) || is_active_sidebar( "footer-5" ) )): ?>
-	<footer id="site-footer-container" class="cf">
-		<div id="site-footer" class="sb hybrid">
+<?php global $he; ?>
+<?php if ( ! $he->get_meta( 'hide_footer_widgets' ) && ( is_active_sidebar( "footer-1" ) || is_active_sidebar( "footer-2" ) || is_active_sidebar( "footer-3" ) || is_active_sidebar( "footer-4" ) || is_active_sidebar( "footer-5" ) ) ): ?>
+    <footer id="site-footer-container" class="cf">
+        <div id="site-footer" class="sb hybrid">
 			<?php
 			for ( $i = 1; $i <= 4; $i ++ ):
 				?>
-			<div class="fc-<?php echo $i ?> fc">
-				<div class="inner">
+            <div class="fc-<?php echo $i ?> fc">
+                <div class="inner">
 				<?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( "footer-$i" ) ) ?>
-				</div>
-				</div>
-				<!--End of footer-1 -->
+                </div>
+                </div>
+                <!--End of footer-1 -->
 				<?php
 			endfor;
 			?>
-		</div>
-	</footer>
+        </div>
+    </footer>
 <?php endif; ?>
 
 </div><!-- #wrapper -->
 <div id="copyright-container">
-	<div class="inner hybrid">
+    <div class="inner hybrid">
 		<?php
 		wp_nav_menu( array(
 				'container'      => '',
@@ -32,15 +32,15 @@
 			)
 		);
 		?>
-		<?php echo get_theme_mod( 'copyright_text', 'Copyright &copy; ' . date( "Y" ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
+		<?php echo get_theme_mod( 'copyright_text', 'Copyright &copy; ' . date_i18n(__('Y','page-speed')) . ' ' . '<a href="' . esc_url( home_url() ) . '"
 						                          rel="home">' . get_bloginfo( "name" ) . '</a>' ) ?>
-	</div>
+    </div>
 </div>
 <?php
 wp_footer();
 ?>
 </body>
 <div id="side-pane">
-	<div id="side-pane-inner"></div>
+    <div id="side-pane-inner"></div>
 </div>
 </html>

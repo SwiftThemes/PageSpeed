@@ -1,15 +1,15 @@
-.page-template-full-width,
-.page-template-wide,
+page-template-tpl-full-width,
+.page-template-tpl-wide,
 .attachment-image{
   #left,
   #main{width:100%}
 }
 
 /* Right sidebar */
-.page-template-rsb #left {
+.page-template-tpl-rsb #left {
   width: 100%;
 }
-.page-template-rsb #main {
+.page-template-tpl-rsb #main {
   width: 75%;
   float: left;
 }
@@ -20,4 +20,4 @@
 
 
 /* Wide */
-.page-template-wide #content{width:100%}
+.page-template-tpl-wide #content{width:100%}

@@ -243,7 +243,7 @@ class Helium_Styles {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 
-		require_once( THEME_INC . 'libs/scss.inc.php' );
+		require_once( HELIUM_DIR . 'libs/scss.inc.php' );
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
 
