@@ -61,7 +61,7 @@
     </div><!-- .entry-content -->
 
 	<?php
-    
+
 	$default = array(
 		array( 'categories' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
 	)
