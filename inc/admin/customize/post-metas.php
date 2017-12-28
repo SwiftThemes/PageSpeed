@@ -51,37 +51,37 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	) );
 
 
-	$wp_customize->add_setting( 'home_meta_above_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '',
-
-	) );
-	$wp_customize->add_setting( 'home_meta_below_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '',
-	) );
-	$wp_customize->add_setting( 'home_meta_after_body', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '[cat]Filed under&nbsp;[/cat]',
-	) );
-
-	$wp_customize->add_control( 'home_meta_above_title', array(
-		'label'   => __( 'Meta above the post title', 'page-speed' ),
-		'section' => 'home_page_meta',
-		'type'    => 'textarea',
-	) );
-
-	$wp_customize->add_control( 'home_meta_below_title', array(
-		'label'   => __( 'Meta below the post title', 'page-speed' ),
-		'section' => 'home_page_meta',
-		'type'    => 'textarea',
-	) );
-	$wp_customize->add_control( 'home_meta_after_body', array(
-		'label'       => __( 'Meta after the post content', 'page-speed' ),
-		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
-		'section'     => 'home_page_meta',
-		'type'        => 'textarea',
-	) );
+//	$wp_customize->add_setting( 'home_meta_above_title', array(
+//		'sanitize_callback' => 'helium_meta',
+//		'default'           => '',
+//
+//	) );
+//	$wp_customize->add_setting( 'home_meta_below_title', array(
+//		'sanitize_callback' => 'helium_meta',
+//		'default'           => '',
+//	) );
+//	$wp_customize->add_setting( 'home_meta_after_body', array(
+////		'sanitize_callback' => 'helium_meta',
+////		'default'           => '[cat]Filed under&nbsp;[/cat]',
+////	) );
+//
+//	$wp_customize->add_control( 'home_meta_above_title', array(
+//		'label'   => __( 'Meta above the post title', 'page-speed' ),
+//		'section' => 'home_page_meta',
+//		'type'    => 'textarea',
+//	) );
+//
+//	$wp_customize->add_control( 'home_meta_below_title', array(
+//		'label'   => __( 'Meta below the post title', 'page-speed' ),
+//		'section' => 'home_page_meta',
+//		'type'    => 'textarea',
+//	) );
+//	$wp_customize->add_control( 'home_meta_after_body', array(
+//		'label'       => __( 'Meta after the post content', 'page-speed' ),
+//		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
+//		'section'     => 'home_page_meta',
+//		'type'        => 'textarea',
+//	) );
 
 
 	/**
@@ -183,10 +183,90 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 		'section' => 'single_page_meta',
 		'type'    => 'textarea',
 	) );
+
 	$wp_customize->add_control( 'single_page_meta_after_body', array(
 		'label'       => __( 'Meta after the page content', 'page-speed' ),
 		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
 		'section'     => 'single_page_meta',
 		'type'        => 'textarea',
 	) );
+
+
+
+
+	//@todo delete when done
+
+	$wp_customize->add_setting( 'single_page_meta_after_body_', array(
+//		'sanitize_callback' => '',
+		'default'           => '',
+	) );
+	$wp_customize->add_setting( 'single_page_meta_after_body__', array(
+//		'sanitize_callback' => '',
+		'default'           => '',
+	) );
+	$wp_customize->add_setting( 'single_page_meta_after_body___', array(
+//		'sanitize_callback' => '',
+		'default'           => '',
+	) );
+
+
+
+
+
+	$wp_customize->add_setting( 'home_meta_above_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => '',
+
+	) );
+	$wp_customize->add_setting( 'home_meta_below_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => '',
+	) );
+	$wp_customize->add_setting( 'home_meta_after_body', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => '[cat]Filed under&nbsp;[/cat]',
+	) );
+
+
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'home_meta_above_title',
+			array(
+				'label'    => esc_html__( 'Meta above the post title', 'page-speed' ),
+				'section'  => 'home_page_design',
+				'priority' => 2,
+				'type'     => 'he_drag_drop',
+				'booom'=>'test variable'
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'home_meta_below_title',
+			array(
+				'label'    => esc_html__( 'Meta below the post title', 'page-speed' ),
+				'section'  => 'home_page_design',
+				'priority' => 2,
+				'type'     => 'he_drag_drop',
+				'booom'=>'test variable'
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'home_meta_after_body',
+			array(
+				'label'    => esc_html__( 'Meta after the post content', 'page-speed' ),
+				'section'  => 'home_page_design',
+				'priority' => 2,
+				'type'     => 'he_drag_drop',
+				'booom'=>'test variable'
+			)
+		)
+	);
+
 }

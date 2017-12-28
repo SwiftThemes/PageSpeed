@@ -140,6 +140,100 @@
         return text;
     }
 
+
+    /* Darg and drop */
+    wp.customize.controlConstructor['he_drag_drop'] = wp.customize.Control.extend({
+
+        ready: function () {
+
+            var control = this;
+            var timer, isOutside;
+
+            function getValue(dom_node) {
+                var out = []
+                dom_node.find('input').each(function () {
+                    var key = $(this).data('type')
+                    var value = $(this).val()
+                    var obj = {}
+                    obj[key] = value
+                    out.push(obj)
+                });
+                return out
+            }
+
+            function updateValue(delay) {
+                clearTimeout(timer)
+                timer = setTimeout(function () {
+                    control.setting.set(getValue($(selector)))
+                }, delay)
+            }
+
+
+            $(control.selector + " .draggable.clone").draggable({
+                cancel: null,
+                helper: "clone",
+                containment: control.selector + ' .sortable',
+                connectToSortable: control.selector + ' .connected'
+            });
+
+            $(control.selector + " .draggable").draggable({
+                cancel: null,
+                containment: control.selector + ' .sortable',
+                connectToSortable: control.selector + ' .connected'
+            });
+
+
+            var selector = control.selector + ' .sortable'
+
+
+            $(control.selector + " .sortable").sortable({
+                update: function () {
+                    updateValue(2000)
+                },
+                change: function () {
+                    updateValue(2000)
+                },
+                over: function (e, ui) {
+                    isOutside = false;
+                },
+
+                out: function (e, ui) {
+                    isOutside = true;
+                },
+                create: function () {
+                    return
+
+
+                },
+
+                receive: function (e, ui) {
+                    ui.helper.first().removeAttr('style'); // undo styling set by jqueryUI
+                },
+                beforeStop: function (e, ui) {
+                    if (isOutside) {
+
+                        //Delete only clones
+                        if (ui.item[0].className.indexOf('clone') === -1) {
+                            ui.item.prependTo(control.selector + ' .draggables');
+                        } else {
+                            ui.item.remove();
+                        }
+                    }
+                    updateValue(2000)
+
+                }
+            })
+
+
+            control.container.on('change', 'input',
+                function (e) {
+                    updateValue(200)
+                }
+            );
+        }
+    })
+
+
 })(jQuery);
 
 //data-customize-setting-link="home_show_excerpts"
