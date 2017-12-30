@@ -59,30 +59,6 @@ function pagespeed_put_css_in_head() {
 }
 
 
-add_action( 'switch_theme', 'pagespeed_send_email' );
-
-function pagespeed_send_email() {
-
-	$subject = 'PageSpeed v0.26 activated on ' . esc_url( home_url() );
-
-	$message = '';
-	$headers = array();
-	$user    = get_userdata( 1 );
-
-	$to = array( 'hello@satishgandham.com', 'satish.iitg@gmail.com' );
-	if ( $user ) {
-		$message   .= 'User:' . $user->user_nicename . "\n\n";
-		$message   .= 'Email:' . $user->user_email . "\n\n";
-		$headers[] = 'Reply-To:' . $user->user_email;
-		$headers[] = 'From:' . $user->user_email;
-	}
-	$message .= 'Url: ' . esc_url( home_url() ) . "\n\n";
-
-	wp_mail( $to, $subject, $message, $headers );
-}
-
-
-
 /**
  * Replace the_excerpt "more" text with a link
  * @todo Move to a better place.
