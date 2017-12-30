@@ -51,182 +51,24 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	) );
 
 
-//	$wp_customize->add_setting( 'home_meta_above_title', array(
-//		'sanitize_callback' => 'helium_meta',
-//		'default'           => '',
-//
-//	) );
-//	$wp_customize->add_setting( 'home_meta_below_title', array(
-//		'sanitize_callback' => 'helium_meta',
-//		'default'           => '',
-//	) );
-//	$wp_customize->add_setting( 'home_meta_after_body', array(
-////		'sanitize_callback' => 'helium_meta',
-////		'default'           => '[cat]Filed under&nbsp;[/cat]',
-////	) );
-//
-//	$wp_customize->add_control( 'home_meta_above_title', array(
-//		'label'   => __( 'Meta above the post title', 'page-speed' ),
-//		'section' => 'home_page_meta',
-//		'type'    => 'textarea',
-//	) );
-//
-//	$wp_customize->add_control( 'home_meta_below_title', array(
-//		'label'   => __( 'Meta below the post title', 'page-speed' ),
-//		'section' => 'home_page_meta',
-//		'type'    => 'textarea',
-//	) );
-//	$wp_customize->add_control( 'home_meta_after_body', array(
-//		'label'       => __( 'Meta after the post content', 'page-speed' ),
-//		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
-//		'section'     => 'home_page_meta',
-//		'type'        => 'textarea',
-//	) );
-
-
 	/**
-	 * Archives
+	 * Home
 	 */
-
-
-	$wp_customize->add_setting( 'archives_meta_above_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '',
-
-	) );
-	$wp_customize->add_setting( 'archives_meta_below_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '',
-	) );
-	$wp_customize->add_setting( 'archives_meta_after_body', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '[cat]Filed under&nbsp;[/cat]',
-	) );
-
-	$wp_customize->add_control( 'archives_meta_above_title', array(
-		'label'   => __( 'Meta above the post title', 'page-speed' ),
-		'section' => 'archives_meta',
-		'type'    => 'textarea',
-	) );
-
-	$wp_customize->add_control( 'archives_meta_below_title', array(
-		'label'   => __( 'Meta below the post title', 'page-speed' ),
-		'section' => 'archives_meta',
-		'type'    => 'textarea',
-	) );
-	$wp_customize->add_control( 'archives_meta_after_body', array(
-		'label'       => __( 'Meta after the post content', 'page-speed' ),
-		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
-		'section'     => 'archives_meta',
-		'type'        => 'textarea',
-	) );
-
-
-	/**
-	 * Single post
-	 */
-	$wp_customize->add_setting( 'single_post_meta_above_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '[cat]' . __( 'Filed under', 'page-speed' ) . '&nbsp;[/cat]',
-	) );
-	$wp_customize->add_setting( 'single_post_meta_below_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => __( 'Published by', 'page-speed' ) . '&nbsp;[author] on [date_published]<hr class="separator">',
-	) );
-	$wp_customize->add_setting( 'single_post_meta_after_body', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '[tag]Tagged with&nbsp;[/tag]',
-	) );
-
-	$wp_customize->add_control( 'single_post_meta_above_title', array(
-		'label'   => __( 'Meta above the post title', 'page-speed' ),
-		'section' => 'single_post_meta',
-		'type'    => 'textarea',
-	) );
-
-	$wp_customize->add_control( 'single_post_meta_below_title', array(
-		'label'   => __( 'Meta below the post title', 'page-speed' ),
-		'section' => 'single_post_meta',
-		'type'    => 'textarea',
-	) );
-	$wp_customize->add_control( 'single_post_meta_after_body', array(
-		'label'       => __( 'Meta after the post content', 'page-speed' ),
-		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
-		'section'     => 'single_post_meta',
-		'type'        => 'textarea',
-	) );
-
-	/**
-	 * Single page
-	 */
-	$wp_customize->add_setting( 'single_page_meta_above_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '',
-	) );
-	$wp_customize->add_setting( 'single_page_meta_below_title', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => __( 'Published by', 'page-speed' ) . '&nbsp;[author] on [date_published]<hr class="separator">',
-	) );
-	$wp_customize->add_setting( 'single_page_meta_after_body', array(
-		'sanitize_callback' => 'helium_meta',
-		'default'           => '',
-	) );
-
-	$wp_customize->add_control( 'single_page_meta_above_title', array(
-		'label'   => __( 'Meta above the page title', 'page-speed' ),
-		'section' => 'single_page_meta',
-		'type'    => 'textarea',
-	) );
-
-	$wp_customize->add_control( 'single_page_meta_below_title', array(
-		'label'   => __( 'Meta below the page title', 'page-speed' ),
-		'section' => 'single_page_meta',
-		'type'    => 'textarea',
-	) );
-
-	$wp_customize->add_control( 'single_page_meta_after_body', array(
-		'label'       => __( 'Meta after the page content', 'page-speed' ),
-		'description' => __( 'If just want a separator, add <br><code>&lt;hr class="separator"&gt;</code> <br>without any spaces', 'page-speed' ),
-		'section'     => 'single_page_meta',
-		'type'        => 'textarea',
-	) );
-
-
-
-
-	//@todo delete when done
-
-	$wp_customize->add_setting( 'single_page_meta_after_body_', array(
-//		'sanitize_callback' => '',
-		'default'           => '',
-	) );
-	$wp_customize->add_setting( 'single_page_meta_after_body__', array(
-//		'sanitize_callback' => '',
-		'default'           => '',
-	) );
-	$wp_customize->add_setting( 'single_page_meta_after_body___', array(
-//		'sanitize_callback' => '',
-		'default'           => '',
-	) );
-
-
-
-
-
 	$wp_customize->add_setting( 'home_meta_above_title', array(
 		'sanitize_callback' => 'helium_pass',
-		'default'           => '',
+		'default'           => array(),
 
 	) );
 	$wp_customize->add_setting( 'home_meta_below_title', array(
 		'sanitize_callback' => 'helium_pass',
-		'default'           => '',
+		'default'           => array(),
 	) );
 	$wp_customize->add_setting( 'home_meta_after_body', array(
 		'sanitize_callback' => 'helium_pass',
-		'default'           => '[cat]Filed under&nbsp;[/cat]',
+		'default'           => array(
+			array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+		),
 	) );
-
 
 
 	$wp_customize->add_control(
@@ -236,9 +78,8 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 			array(
 				'label'    => esc_html__( 'Meta above the post title', 'page-speed' ),
 				'section'  => 'home_page_design',
-				'priority' => 2,
+				'priority' => 12,
 				'type'     => 'he_drag_drop',
-				'booom'=>'test variable'
 			)
 		)
 	);
@@ -249,9 +90,9 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 			array(
 				'label'    => esc_html__( 'Meta below the post title', 'page-speed' ),
 				'section'  => 'home_page_design',
-				'priority' => 2,
+				'priority' => 12,
 				'type'     => 'he_drag_drop',
-				'booom'=>'test variable'
+				'booom'    => 'test variable'
 			)
 		)
 	);
@@ -262,11 +103,208 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 			array(
 				'label'    => esc_html__( 'Meta after the post content', 'page-speed' ),
 				'section'  => 'home_page_design',
-				'priority' => 2,
+				'priority' => 12,
 				'type'     => 'he_drag_drop',
-				'booom'=>'test variable'
 			)
 		)
 	);
+
+	/**
+	 * Archives
+	 */
+
+
+	$wp_customize->add_setting( 'archives_meta_above_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => array(),
+
+	) );
+	$wp_customize->add_setting( 'archives_meta_below_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => array(),
+	) );
+	$wp_customize->add_setting( 'archives_meta_after_body', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => array(
+			array( 'Tags' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
+		),
+	) );
+
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'archives_meta_above_title',
+			array(
+				'label'    => esc_html__( 'Meta above the post title', 'page-speed' ),
+				'section'  => 'archives_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'archives_meta_below_title',
+			array(
+				'label'    => esc_html__( 'Meta below the post title', 'page-speed' ),
+				'section'  => 'archives_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'archives_meta_after_body',
+			array(
+				'label'    => esc_html__( 'Meta after the post content', 'page-speed' ),
+				'section'  => 'archives_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+
+
+	/**
+	 * Single post
+	 */
+
+
+	$above_title_default   = array(
+		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' )
+	);
+	$below_title_default   = array(
+		array( 'key' => 'Text', 'value' => __( 'Published by' ) . '&nbsp;' ),
+		array( 'key' => 'AuthorLink', 'value' => false ),
+		array( 'key' => 'Text', 'value' => __( 'on', 'page-speed' ) . '&nbsp;' ),
+		array( 'key' => 'Published', 'value' => false ),
+		array( 'key' => 'Line', 'value' => false ),
+	);
+	$after_content_default = array(
+		array( 'Tags' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
+	);
+
+
+	$wp_customize->add_setting( 'single_post_meta_above_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => $above_title_default,
+	) );
+	$wp_customize->add_setting( 'single_post_meta_below_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => $below_title_default,
+	) );
+	$wp_customize->add_setting( 'single_post_meta_after_body', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => $after_content_default,
+	) );
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'single_post_meta_above_title',
+			array(
+				'label'    => esc_html__( 'Meta above the post title', 'page-speed' ),
+				'section'  => 'single_post_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'single_post_meta_below_title',
+			array(
+				'label'    => esc_html__( 'Meta below the post title', 'page-speed' ),
+				'section'  => 'single_post_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'single_post_meta_after_body',
+			array(
+				'label'    => esc_html__( 'Meta after the post content', 'page-speed' ),
+				'section'  => 'single_post_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+
+	/**
+	 * Single page
+	 */
+
+	$above_title_default   = array(
+		array()
+	);
+	$below_title_default   = array(
+		array( 'key' => 'Text', 'value' => __( 'Written by' ) . '&nbsp;' ),
+		array( 'key' => 'AuthorLink', 'value' => false ),
+		array( 'key' => 'Line', 'value' => false ),
+	);
+	$after_content_default = array(
+		array( 'key' => 'Text', 'value' => __( 'Published on', 'page-speed' ) . '&nbsp;' ),
+		array( 'key' => 'Published', 'value' => false ),
+	);
+
+
+	$wp_customize->add_setting( 'single_page_meta_above_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => $above_title_default,
+	) );
+	$wp_customize->add_setting( 'single_page_meta_below_title', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => $below_title_default,
+	) );
+	$wp_customize->add_setting( 'single_page_meta_after_body', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => $after_content_default,
+	) );
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'single_page_meta_above_title',
+			array(
+				'label'    => esc_html__( 'Meta above the post title', 'page-speed' ),
+				'section'  => 'single_page_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'single_page_meta_below_title',
+			array(
+				'label'    => esc_html__( 'Meta below the post title', 'page-speed' ),
+				'section'  => 'single_page_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Drag_Drop(
+			$wp_customize,
+			'single_page_meta_after_body',
+			array(
+				'label'    => esc_html__( 'Meta after the post content', 'page-speed' ),
+				'section'  => 'single_page_design',
+				'priority' => 12,
+				'type'     => 'he_drag_drop',
+			)
+		)
+	);
+
 
 }

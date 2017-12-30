@@ -176,7 +176,7 @@ label {
 /* Drag and drop */
 
 .drag-drop {
-    margin: 0 -13px 10px;
+    margin: 10px -12px;
 }
 
 .drag-drop .dashicons {
@@ -192,7 +192,7 @@ label {
 
 .draggables {
     /*border-bottom: dashed 1px #AAA;*/
-    padding: 10px 0;
+    padding: 10px 5px;
 }
 
 .draggables .draggable input {
@@ -237,7 +237,7 @@ label {
 }
 
 .sortable {
-    padding: 10px 0;
+    padding: 10px 5px;
     border-bottom: dashed 1px #AAA;
     float: left;
     width: 100%;

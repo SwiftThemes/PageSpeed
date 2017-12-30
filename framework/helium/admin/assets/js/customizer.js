@@ -154,8 +154,7 @@
                 dom_node.find('input').each(function () {
                     var key = $(this).data('type')
                     var value = $(this).val()
-                    var obj = {}
-                    obj[key] = value
+                    var obj = {key: key, value: value}
                     out.push(obj)
                 });
                 return out
@@ -212,11 +211,15 @@
                 beforeStop: function (e, ui) {
                     if (isOutside) {
 
+
+                        if(ui.item[0].className.indexOf('can-remove') !== -1){
+                            ui.item.remove();
+                            return
+                        }
                         //Delete only clones
                         if (ui.item[0].className.indexOf('clone') === -1) {
                             ui.item.prependTo(control.selector + ' .draggables');
                         } else {
-                            ui.item.remove();
                         }
                     }
                     updateValue(2000)

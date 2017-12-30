@@ -11,37 +11,34 @@ function helium_generate_post_meta( $metas = array() ) {
 	foreach ( $metas as $meta ) {
 
 
-		foreach ( $meta as $key => $value ) {
-			$key = $key;
-		}
 
-		switch ( $key ) {
-			case 'author_link':
+		switch ( $meta['key'] ) {
+			case 'AuthorLink':
 				echo get_the_author();
 				echo '&nbsp';
 				break;
-			case 'author_posts':
+			case 'AuthorPosts':
 				echo get_the_author_posts_link();
 				echo '&nbsp';
 				break;
-			case 'text':
-				echo $value;
+			case 'Text':
+				echo $meta['value'];
 				break;
-			case 'seperator':
+			case 'Line':
 				echo '<hr class="separator">';
 				break;
-			case 'categories':
+			case 'Cat':
 				if ( has_category() ) {
-					echo $value . get_the_category_list( ', ' );
+					echo $meta['value'] . get_the_category_list( ', ' );
 					echo '&nbsp';
 				}
 				break;
-			case 'tags':
+			case 'Tags':
 				if ( has_tag() ) {
-					return $value . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
+					echo $meta['value'] . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
 				}
 				break;
-			case 'published':
+			case 'Published':
 				if ( ( current_time( 'timestamp', 1 ) - get_the_date( 'U' ) ) < 86400 ) {
 					$date = human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ' . __( 'ago', 'page-speed' );
 				} else {
@@ -54,7 +51,7 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp';
 				break;
 
-			case 'updated':
+			case 'Updated':
 				if ( ( current_time( 'timestamp', 1 ) - get_the_modified_date( 'U' ) ) < 86400 ) {
 					$date = human_time_diff( get_post_modified_time( 'U' ), current_time( 'timestamp' ) ) . ' ' . __( 'ago', 'page-speed' );
 				} else {
@@ -68,7 +65,10 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp';
 				break;
 			default:
-				echo $key;
+				if(current_user_can('customize')){
+					echo _e('Something went wrong, please contact support','page-speed')+'!!! #'+$meta['key'];
+				}
+
 
 		}
 	}

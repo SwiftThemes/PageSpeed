@@ -27,7 +27,9 @@ function helium_drag_drop_control_register( $wp_customize ) {
 
 		public function to_json() {
 			parent::to_json();
-			$this->json['test'] = $this->booom;
+			$this->json['test']  = $this->booom;
+			$this->json['value'] = $this->value();
+
 		}
 
 		/**
@@ -54,17 +56,17 @@ function helium_drag_drop_control_register( $wp_customize ) {
 
                             <div class="draggable cf has-input clone">
                                 <label>Text</label>
-                                <input class="text" type="text" data-type="text" placeholder="Any text"/>
+                                <input class="text" type="text" data-type="Text" placeholder="Any text"/>
                             </div>
 
                             <div class="draggable cf has-input ">
                                 <label>Cat</label>
-                                <input class="cat" type="text" data-type="categories" placeholder="Filed under"
+                                <input class="cat" type="text" data-type="Cat" placeholder="Filed under"
                                        onclick="this.select()"/>
                             </div>
                             <div class="draggable cf has-input ">
                                 <label>Tags</label>
-                                <input class="tag" type="text" data-type="tags" placeholder="Tagged with"
+                                <input class="tag" type="text" data-type="Tags" placeholder="Tagged with"
                                        onclick="this.select()"/>
                             </div>
                             <div class="draggable cf">
@@ -73,20 +75,48 @@ function helium_drag_drop_control_register( $wp_customize ) {
                             </div>
                             <div class="draggable cf">
                                 <label>Author HomePage</label>
-                                <input class="tag" type="hidden" data-type="author_link"/>
+                                <input class="tag" type="hidden" data-type="AuthorLink"/>
                             </div>
                             <div class="draggable cf">
                                 <label>Published</label>
-                                <input class="tag" type="hidden" data-type="published"/>
+                                <input class="tag" type="hidden" data-type="Published"/>
                             </div>
                             <div class="draggable cf">
                                 <label>Updated</label>
-                                <input class="tag" type="hidden" data-type="updated"/>
+                                <input class="tag" type="hidden" data-type="Updated"/>
+                            </div>
+                            <div class="draggable cf">
+                                <label>Line</label>
+                                <input class="tag" type="hidden" data-type="Line"/>
                             </div>
                         </div>
                         <div class="clear"></div>
                         <span class="dashicons dashicons-arrow-down-alt">Drag them below</span>
+
+
                         <div class="sortable connected">
+                            <# for ( index in data.value) { #>
+                                <# var key = data.value[index]['key']; var value = data.value[index]['value']  #>
+
+                                    <# if ( key == 'text') { #>
+                                        <div class="draggable cf has-input can-remove">
+                                    <# }else {#>
+                                        <#if(value) { #>
+                                            <div class="draggable cf has-input can-remove">
+                                        <# }else {#>
+                                            <div class="draggable cf can-remove">
+                                         <# } #>
+                                    <# } #>
+                                    <label>{{key}}</label>
+                                        <#if(value) { #>
+                                            <input type="text" data-type="{{key}}" value="{{value}}"
+                                                   onclick="this.select()"/>
+                                        <# }else {#>
+                                            <input class="tag" type="hidden" data-type="{{key}}"/>
+                                        <# } #>
+                                    </div>
+                             <#}#>
+
                         </div>
 
                     </div>

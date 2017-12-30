@@ -67,13 +67,22 @@
 	)
 	?>
     <div class="clear"></div>
-	<?php if ( get_theme_mod( 'home_meta_after_body', $default ) ) {
+	<?php
+	$default = array(
+		array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+	);
+	$meta    = get_theme_mod( 'home_meta_after_body', $default );
 
-		?>
+	if ( 1 == count( $meta ) && $meta[0]['key'] == 'line' ) {
+		echo '<hr class="separator">';
+	} else {
+	    ?>
+
         <footer class="entry-footer">
             <div class="inner footer meta">
-				<?php helium_generate_post_meta( get_theme_mod( 'home_meta_after_body', $default ) ) ?>
+				<?php echo do_shortcode( $meta ) ?>
             </div>
         </footer>
-	<?php } ?>
+	<?php }
+	?>
 </article><!-- #post-## -->
