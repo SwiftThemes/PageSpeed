@@ -88,6 +88,7 @@ if ( ! class_exists( 'Helium') ) {
 			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
 			require_once( HELIUM_DIR . 'body-css-classes.php' );
+			require_once( HELIUM_DIR . 'post-meta.php' );
 			require_once( HELIUM_DIR . 'sanitization-functions.php' );
 
 			require_once( HELIUM_CUSTOMIZE . 'control-image-dimensions.php' );
@@ -96,6 +97,7 @@ if ( ! class_exists( 'Helium') ) {
 			require_once( HELIUM_CUSTOMIZE . 'control-typography.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-he-select.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-help-text.php' );
+			require_once( HELIUM_CUSTOMIZE . 'control-drag-drop.php' );
 			require_once( HELIUM_CUSTOMIZE . 'utils.php' );
 			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
 			require_once( HELIUM_CUSTOMIZE . 'sass-override.php' );

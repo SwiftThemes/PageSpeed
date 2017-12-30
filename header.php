@@ -41,4 +41,5 @@
     <main id="main" role="main">
     <div class="inner">
 <?php do_action( 'pagespeed_main_start' ); ?>
+<?php //var_dump(get_theme_mod('home_meta_above_title'))?>
 <?php //var_dump(get_theme_mods())?>

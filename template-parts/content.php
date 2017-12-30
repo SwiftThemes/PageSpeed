@@ -12,12 +12,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 
     <header class="entry-header">
+
 		<?php if ( get_theme_mod( 'home_meta_above_title' ) ): ?>
             <div class="entry-meta meta above-title">
-				<?php echo do_shortcode( get_theme_mod( 'home_meta_above_title' ) ) ?>
+				<?php helium_generate_post_meta( get_theme_mod( 'home_meta_above_title' ) ) ?>
             </div>
 		<?php endif ?>
 		<?php
@@ -25,7 +26,7 @@
 		?>
 		<?php if ( get_theme_mod( 'home_meta_below_title' ) ): ?>
             <div class="entry-meta meta below-title">
-				<?php echo do_shortcode( get_theme_mod( 'home_meta_below_title' ) ) ?>
+				<?php helium_generate_post_meta( get_theme_mod( 'home_meta_below_title' ) ) ?>
             </div>
 		<?php endif ?>
     </header><!-- .entry-header -->
@@ -59,18 +60,29 @@
 		?>
     </div><!-- .entry-content -->
 
-    <div class="clear"></div>
-	<?php if ( get_theme_mod( 'home_meta_after_body','[cat]Filed under [/cat]' ) ) {
-		if ( '<hr class="separator">' == trim( get_theme_mod( 'home_meta_after_body' ) ) ) {
-			echo '<hr class="separator">';
-		} else {
-			?>
+	<?php
 
-            <footer class="entry-footer">
-                <div class="inner footer meta">
-					<?php echo do_shortcode( get_theme_mod( 'home_meta_after_body', '[cat]Filed under [/cat]' ) ) ?>
-                </div>
-            </footer>
-		<?php }
-	} ?>
+	$default = array(
+		array( 'categories' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+	)
+	?>
+    <div class="clear"></div>
+	<?php
+	$default = array(
+		array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+	);
+	$meta    = get_theme_mod( 'home_meta_after_body', $default );
+
+	if ( 1 == count( $meta ) && $meta[0]['key'] == 'line' ) {
+		echo '<hr class="separator">';
+	} else {
+	    ?>
+
+        <footer class="entry-footer">
+            <div class="inner footer meta">
+				<?php echo do_shortcode( $meta ) ?>
+            </div>
+        </footer>
+	<?php }
+	?>
 </article><!-- #post-## -->
