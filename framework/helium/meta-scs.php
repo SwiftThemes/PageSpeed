@@ -1,15 +1,31 @@
 <?php
+/*
+    Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
-$sc = 'add__shortcode';
-$sc = str_replace( '__', '_', $sc );
-$sc( 'author', 'he_author' );
-$sc( 'cat', 'he_categories' );
-$sc( 'cats', 'he_categories' );
-$sc( 'tag', 'he_tags' );
-$sc( 'tags', 'he_tags' );
-$sc( 'date_published', 'he_published_date' );
-$sc( 'date_updated', 'he_updated_date' );
-$sc( 'tags', 'he_tags' );
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License version 2,
+    as published by the Free Software Foundation.
+
+    You may NOT assume that you can use any other version of the GPL.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    The license for this software can likely be found here:
+    http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+//$sc = 'add_shortcode';
+//$sc( 'author', 'he_author' );
+//$sc( 'cat', 'he_categories' );
+//$sc( 'cats', 'he_categories' );
+//$sc( 'tag', 'he_tags' );
+//$sc( 'tags', 'he_tags' );
+//$sc( 'date_published', 'he_published_date' );
+//$sc( 'date_updated', 'he_updated_date' );
+//$sc( 'tags', 'he_tags' );
 
 
 /**
