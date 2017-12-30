@@ -64,10 +64,6 @@ function pagespeed_send_email() {
 	wp_mail( $to, $subject, $message, $headers );
 }
 
-//
-//if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
-//	add_action( 'wp_head', 'helium_write_stylesheet', 20 );
-//}
 
 
 /**

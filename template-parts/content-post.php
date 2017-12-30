@@ -14,7 +14,7 @@ $above_title_default   = array(
 	array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' )
 );
 $below_title_default   = array(
-	array( 'key' => 'Text', 'value' => __( 'Published by' ) . '&nbsp;' ),
+	array( 'key' => 'Text', 'value' => __( 'Published by', 'page-speed' ) . '&nbsp;' ),
 	array( 'key' => 'AuthorLink', 'value' => false ),
 	array( 'key' => 'Text', 'value' => __( 'on', 'page-speed' ) . '&nbsp;' ),
 	array( 'key' => 'Published', 'value' => false ),

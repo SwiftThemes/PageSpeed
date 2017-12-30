@@ -25,7 +25,7 @@ function pagespeed_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'pagespeed-vendors-js' );
 
-	if ( defined( 'DEV_ENV' ) && DEV_ENV  ) {
+	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV  ) {
 		wp_enqueue_script( 'pagespeed-custom-js-dev' );
 	} else {
 		wp_enqueue_script( 'pagespeed-custom-js' );

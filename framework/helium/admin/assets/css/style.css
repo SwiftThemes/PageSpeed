@@ -88,19 +88,24 @@
     content: "\f534";
 }
 
-#options-saved {
+#options-saved,
+#can-write{
     color: green;
 }
 
-#options-saved:before {
+#options-saved:before,
+#can-write:before{
     content: "\f147";
 }
 
-#options-save-error {
+#options-save-error,
+#can-not-write{
     color: red;
 }
 
-#options-save-error:before {
+#options-save-error:before,
+#can-not-write:before{
+
     content: "\f158";
 }
 

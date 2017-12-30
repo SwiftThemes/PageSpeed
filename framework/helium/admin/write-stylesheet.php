@@ -13,7 +13,7 @@ $theme_name = wp_get_theme()->stylesheet;
 
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
-if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
+if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
 }
 add_action( 'after_switch_theme', 'helium_write_stylesheet_on_theme_switch' );
@@ -158,7 +158,7 @@ class Helium_Styles {
 		$transient = $this->prefix . 'sass_combined_' . $af_bf;
 		$content   = get_transient( $transient );
 
-		if ( ! $content || ( defined( 'DEV_ENV' ) && DEV_ENV ) ) {
+		if ( ! $content || ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) ) {
 			$content = '';
 
 			if ( $af_bf === 'af' ) {
@@ -239,11 +239,11 @@ class Helium_Styles {
 
 		$content = str_replace( '/**SCSS_override**/', get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );
 
-		if ( defined( 'DEV_ENV' ) && DEV_ENV ) {
+		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 
-		require_once( HELIUM_DIR . 'libs/scss.inc.php' );
+		require_once( HELIUM_DIR . 'libs/pre-process.php' );
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
 

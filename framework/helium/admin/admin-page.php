@@ -31,12 +31,11 @@ function pagespeed_help() {
 	?>
     <div class="wrap">
         <p style="font-size:20px;font-weight: 300">
-            Helium caches the SASS/CSS files to the database for a smoother experience on the theme customizer.<br/>
-            If you switched or upgraded your theme, and the customizer is not working as expected, try clearing the SASS
-            cache.
+            Helium stores the SASS/CSS content to the database in a transient for a smoother experience on the theme customizer.<br/>
+            If you switched or upgraded your theme, and the customizer is not working as expected, try clearing the transients.
         </p>
         <button id="clear-sass" class="button button-primary"
-                style="padding:20px 30px;font-size:32px;border-radius: 40px;height: auto">Clear SASS Cache
+                style="padding:10px 20px;font-size:24px;border-radius: 40px;height: auto">Clear Transients
         </button>
         <br/>
         <span id="clear_cache_results"></span>
@@ -50,17 +49,16 @@ function pagespeed_help() {
             You can force a recheck here.
         </p>
         <p>
-            <?php
-            if(get_theme_mod('can_read_write')){
-                $status = __('Can read & write','page-speed');
-            }else{
-	            $status = __('Can not read & write','page-speed');
-            }
-            ?>
-            Current Status: <?php echo $status?>
+			<?php
+			if ( get_theme_mod( 'can_read_write' ) ) {
+				echo '            <span id="can-write" class="options-status" style="display: inline;">'.__('Can read & write','page-speed').'</span>';
+			} else {
+				echo '            <span id="can-not-write" class="options-status" style="display: inline;">'.__('Can not read & write','page-speed').'</span>';
+			}
+			?>
         </p>
         <button id="update-write-status" class="button button-primary"
-                style="padding:20px 30px;font-size:32px;border-radius: 40px;height: auto">Update File System Status
+                style="padding:10px 20px;font-size:24px;border-radius: 40px;height: auto">Update File System Status
         </button>
         <br/>
         <span id="clear_write_status_results"></span>

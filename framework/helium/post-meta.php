@@ -22,20 +22,20 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp';
 				break;
 			case 'Text':
-				echo $meta['value'];
+				echo wp_kses($meta['value']);
 				break;
 			case 'Line':
 				echo '<hr class="separator">';
 				break;
 			case 'Cat':
 				if ( has_category() ) {
-					echo $meta['value'] . get_the_category_list( ', ' );
+					echo wp_kses($meta['value']) . get_the_category_list( ', ' );
 					echo '&nbsp';
 				}
 				break;
 			case 'Tags':
 				if ( has_tag() ) {
-					echo $meta['value'] . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
+					echo wp_kses($meta['value']) . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
 				}
 				break;
 			case 'Published':

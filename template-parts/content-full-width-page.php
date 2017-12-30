@@ -16,7 +16,7 @@ $above_title_default   = array(
 	array()
 );
 $below_title_default   = array(
-	array( 'key' => 'Text', 'value' => __( 'Written by' ) . '&nbsp;' ),
+	array( 'key' => 'Text', 'value' => __( 'Written by', 'page-speed' ) . '&nbsp;' ),
 	array( 'key' => 'AuthorLink', 'value' => false ),
 	array( 'key' => 'Line', 'value' => false ),
 );

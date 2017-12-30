@@ -19,7 +19,7 @@ function helium_theme_options_display() {
             <ul>
                 <li><a href="#tabs-1">Settings</a></li>
                 <li><a href="#tabs-2">Tools</a></li>
-                <li><a href="#tabs-3">Activation</a></li>
+<!--                <li><a href="#tabs-3">Activation</a></li>-->
 
 
             </ul>
@@ -43,10 +43,10 @@ function helium_theme_options_display() {
             <div id="tabs-2">
 				<?php pagespeed_help() ?>
             </div>
-            <div id="tabs-3">
-                <h2>Coming soon..</h2>
-                <p>You are free to use this version as long as you please.</p>
-            </div>
+<!--            <div id="tabs-3">-->
+<!--                <h2>Coming soon..</h2>-->
+<!--                <p>You are free to use this version as long as you please.</p>-->
+<!--            </div>-->
         </div>
 
     </div><!-- /.wrap -->

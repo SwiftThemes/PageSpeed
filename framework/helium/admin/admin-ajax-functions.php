@@ -24,7 +24,7 @@ add_action( 'wp_ajax_helium_update_file_system_status', 'helium_update_file_syst
 
 function helium_update_file_system_status() {
 	if(helium_set_fs_status()){
-		echo __('Update success, can write','page-speed').' :-)';
+		echo __('Update success, can read & write','page-speed').' :-)';
 	}else{
 		echo __('Update success, can\'t write','page-speed').' :-(';
 	}

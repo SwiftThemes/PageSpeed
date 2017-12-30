@@ -178,7 +178,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' )
 	);
 	$below_title_default   = array(
-		array( 'key' => 'Text', 'value' => __( 'Published by' ) . '&nbsp;' ),
+		array( 'key' => 'Text', 'value' => __( 'Published by', 'page-speed' ) . '&nbsp;' ),
 		array( 'key' => 'AuthorLink', 'value' => false ),
 		array( 'key' => 'Text', 'value' => __( 'on', 'page-speed' ) . '&nbsp;' ),
 		array( 'key' => 'Published', 'value' => false ),
@@ -247,7 +247,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 		array()
 	);
 	$below_title_default   = array(
-		array( 'key' => 'Text', 'value' => __( 'Written by' ) . '&nbsp;' ),
+		array( 'key' => 'Text', 'value' => __( 'Written by', 'page-speed' ) . '&nbsp;' ),
 		array( 'key' => 'AuthorLink', 'value' => false ),
 		array( 'key' => 'Line', 'value' => false ),
 	);
