@@ -17,12 +17,12 @@ add_action( 'wp_head', 'pagespeed_add_image_bg_for_single_post', 99 );
 
 
 function pagespeed_register_styles() {
-	wp_register_style( 'page-speed', THEME_CSS_URI . 'style.prod.css' );
-	wp_register_style( 'page-speed-icons', THEME_CSS_URI . 'font-icons.css' );
+	wp_register_style( 'page-speed', HELIUM_THEME_CSS_URI . 'style.prod.css' );
+	wp_register_style( 'page-speed-icons', HELIUM_THEME_CSS_URI . 'font-icons.css' );
 
 	$upload_dir = wp_upload_dir();
 	wp_register_style( 'page-speed-2', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
-	wp_register_style( 'page-speed-print-styles', THEME_CSS_URI . 'print-styles.css' );
+	wp_register_style( 'page-speed-print-styles', HELIUM_THEME_CSS_URI . 'print-styles.css' );
 }
 
 function pagespeed_enqueue_styles() {

@@ -23,16 +23,16 @@
  * Time: 5:53 PM
  */
 
-define( 'THEME_URI', trailingslashit( get_template_directory_uri() ) );
+define( 'HELIUM_THEME_URI', trailingslashit( get_template_directory_uri() ) );
 
-define( 'THEME_FRAMEWORK', trailingslashit( get_template_directory() ) . 'framework/' );
+define( 'HELIUM_THEME_FRAMEWORK', trailingslashit( get_template_directory() ) . 'framework/' );
 
-define( 'HYBRID_DIR', trailingslashit( THEME_FRAMEWORK ) . 'hybrid/' );
-define( 'HYBRID_URI', trailingslashit( THEME_URI . 'framework/hybrid' ) );
+define( 'HYBRID_DIR', trailingslashit( HELIUM_THEME_FRAMEWORK ) . 'hybrid/' );
+define( 'HYBRID_URI', trailingslashit( HELIUM_THEME_URI . 'framework/hybrid' ) );
 
-define( 'HELIUM_DIR', trailingslashit( THEME_FRAMEWORK . 'helium' ) );
+define( 'HELIUM_DIR', trailingslashit( HELIUM_THEME_FRAMEWORK . 'helium' ) );
 define( 'HELIUM_ADMIN', trailingslashit( HELIUM_DIR ) . 'admin/' );
-define( 'HELIUM_URI', trailingslashit( THEME_URI . 'framework/helium' ) );
+define( 'HELIUM_URI', trailingslashit( HELIUM_THEME_URI . 'framework/helium' ) );
 
 // Launch the Hybrid Core framework.
 require_once( trailingslashit( HYBRID_DIR ) . 'hybrid.php' );
@@ -53,7 +53,7 @@ function pagespeed_put_css_in_head() {
 	if ( ! is_customize_preview() ) {
 		return;
 	}
-	$style_generator = new Helium_Styles( THEME_ASSETS . 'css/src/' );
+	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
 	echo '<style>' . $style_generator->generate_css( 'af' ) . '</style>';
 	echo '<style>' . $style_generator->generate_css( 'bf' ) . '</style>';
 }

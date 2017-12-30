@@ -56,7 +56,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 
 
 
-	require_once( THEME_ADMIN . 'color-schemes.php' );
+	require_once( HELIUM_THEME_ADMIN . 'color-schemes.php' );
 
 	$wp_customize->add_control(
 		new Hybrid_Customize_Control_Radio_Image(
