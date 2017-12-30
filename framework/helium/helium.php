@@ -53,29 +53,29 @@ if ( ! class_exists( 'Helium') ) {
 		 */
 		public function constants() {
 			define( 'HELIUM_VERSION', '1.0.0' );
-			define( 'THEME_DIR', trailingslashit( get_template_directory() ) );
-			define( 'THEME_CORE', trailingslashit( THEME_DIR . 'core' ) );
-			define( 'THEME_INC', trailingslashit( THEME_DIR . 'inc' ) );
+			define( 'HELIUM_THEME_DIR', trailingslashit( get_template_directory() ) );
+			define( 'HELIUM_THEME_CORE', trailingslashit( HELIUM_THEME_DIR . 'core' ) );
+			define( 'HELIUM_THEME_INC', trailingslashit( HELIUM_THEME_DIR . 'inc' ) );
 
 
 			define( 'HELIUM_VENDOR', trailingslashit( HELIUM_DIR . 'vendor' ) );
 			define( 'HELIUM_CUSTOMIZE', trailingslashit( HELIUM_DIR . 'customize' ) );
 			// Admin paths
-			define( 'ADMIN_IMAGES_URI', trailingslashit( THEME_URI . '/assets/images/customize' ) );
+			define( 'ADMIN_IMAGES_URI', trailingslashit( HELIUM_THEME_URI . '/assets/images/customize' ) );
 
-			define( 'THEME_ASSETS', trailingslashit( THEME_DIR . 'assets' ) );
-			define( 'THEME_ASSETS_URI', trailingslashit( THEME_URI . 'assets' ) );
-			define( 'THEME_CSS_URI', trailingslashit( THEME_ASSETS_URI . 'css' ) );
-			define( 'THEME_JS_URI', trailingslashit( THEME_ASSETS_URI . 'js' ) );
+			define( 'HELIUM_THEME_ASSETS', trailingslashit( HELIUM_THEME_DIR . 'assets' ) );
+			define( 'HELIUM_THEME_ASSETS_URI', trailingslashit( HELIUM_THEME_URI . 'assets' ) );
+			define( 'HELIUM_THEME_CSS_URI', trailingslashit( HELIUM_THEME_ASSETS_URI . 'css' ) );
+			define( 'HELIUM_THEME_JS_URI', trailingslashit( HELIUM_THEME_ASSETS_URI . 'js' ) );
 
-			define( 'CHILD_THEME_DIR', trailingslashit( get_stylesheet_directory() ) );
-			define( 'CHILD_THEME_ADMIN', trailingslashit( CHILD_THEME_DIR . 'admin' ) );
-			define( 'CHILD_THEME_INC', trailingslashit( CHILD_THEME_DIR . 'inc' ) );
-			define( 'CHILD_THEME_ASSETS', trailingslashit( CHILD_THEME_DIR . 'assets' ) );
+			define( 'HELIUM_CHILD_THEME_DIR', trailingslashit( get_stylesheet_directory() ) );
+			define( 'HELIUM_CHILD_THEME_ADMIN', trailingslashit( HELIUM_CHILD_THEME_DIR . 'admin' ) );
+			define( 'HELIUM_CHILD_THEME_INC', trailingslashit( HELIUM_CHILD_THEME_DIR . 'inc' ) );
+			define( 'HELIUM_CHILD_THEME_ASSETS', trailingslashit( HELIUM_CHILD_THEME_DIR . 'assets' ) );
 
-			define( 'CHILD_THEME_URI', trailingslashit( get_stylesheet_directory_uri() ) );
+			define( 'HELIUM_CHILD_THEME_URI', trailingslashit( get_stylesheet_directory_uri() ) );
 
-			define('HELIUM_ADMIN_ASSETS_URI',trailingslashit(THEME_URI.'framework/helium/admin/assets/') );
+			define('HELIUM_ADMIN_ASSETS_URI',trailingslashit(HELIUM_THEME_URI.'framework/helium/admin/assets/') );
 		}
 
 		/**

@@ -11,7 +11,7 @@
  * Enqueue the stylesheet.
  */
 function pagespeed_enqueue_customizer_stylesheet() {
-    wp_register_style( 'my-customizer-css', THEME_URI . 'assets/css/customizer.css', NULL, NULL, 'all' );
+    wp_register_style( 'my-customizer-css', HELIUM_THEME_URI . 'assets/css/customizer.css', NULL, NULL, 'all' );
     wp_enqueue_style( 'my-customizer-css' );
 
 }

@@ -25,7 +25,7 @@ function helium_write_stylesheet_on_theme_switch() {
 
 function helium_write_stylesheet() {
 //	helium_set_fs_status();
-	$style_generator = new Helium_Styles( THEME_ASSETS . 'css/src/' );
+	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
 	$style_generator->write_css();
 }
 
@@ -89,10 +89,10 @@ class Helium_Styles {
 			foreach ( $files as $file ) {
 				if ( preg_match( '/".+"/', $file, $matches ) ) {
 					$file_name = $file = str_replace( '"', '', $matches[0] );
-					$file      = THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
+					$file      = HELIUM_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
 					if ( in_array( $file_name, $this->scss_variable_files ) ) {
-						if ( $wp_filesystem->is_file( CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss' ) ) {
-							$file = CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
+						if ( $wp_filesystem->is_file( HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss' ) ) {
+							$file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
 						}
 					}
 
@@ -107,7 +107,7 @@ class Helium_Styles {
 
 						// Check if there is a file to override the variables.
 						// If yes, add them after our regular variable files.
-						$override_file = CHILD_THEME_DIR . 'assets/css/src/override-' . $file_name . '.scss';
+						$override_file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/override-' . $file_name . '.scss';
 
 						if ( $wp_filesystem->is_file( $override_file ) ) {
 							array_push( $this->af_files, $override_file );

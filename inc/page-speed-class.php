@@ -28,36 +28,36 @@ class PageSpeed {
 	 *
 	 */
 	public function constants() {
-		define( 'THEME_ADMIN', trailingslashit( THEME_INC . 'admin' ) );
-		define( 'THEME_CUSTOMIZE', trailingslashit( THEME_ADMIN . 'customize' ) );
+		define( 'HELIUM_THEME_ADMIN', trailingslashit( HELIUM_THEME_INC . 'admin' ) );
+		define( 'HELIUM_THEME_CUSTOMIZE', trailingslashit( HELIUM_THEME_ADMIN . 'customize' ) );
 	}
 
 	/**
 	 * Load the theme core
 	 */
 	public function core() {
-		require_once( THEME_INC . 'functions-styles.php' );
-		require_once( THEME_INC . 'functions-scripts.php' );
-		require_once( THEME_INC . 'functions-register-sidebars.php' );
+		require_once( HELIUM_THEME_INC . 'functions-styles.php' );
+		require_once( HELIUM_THEME_INC . 'functions-scripts.php' );
+		require_once( HELIUM_THEME_INC . 'functions-register-sidebars.php' );
 
-		require_once( THEME_INC . 'functions-register-nav-menus.php' );
-		require_once( THEME_INC . 'functions-hooking-to-wp-hooks.php' );
-		require_once( THEME_INC . 'functions-display.php' );
-		require_once( THEME_INC . 'functions-header.php' );
-		require_once( THEME_INC . 'functions-eaa-filters.php' );
+		require_once( HELIUM_THEME_INC . 'functions-register-nav-menus.php' );
+		require_once( HELIUM_THEME_INC . 'functions-hooking-to-wp-hooks.php' );
+		require_once( HELIUM_THEME_INC . 'functions-display.php' );
+		require_once( HELIUM_THEME_INC . 'functions-header.php' );
+		require_once( HELIUM_THEME_INC . 'functions-eaa-filters.php' );
 
 
-		require_once( THEME_CUSTOMIZE . 'customizer.php' );
-		require_once( THEME_CUSTOMIZE . 'header.php' );
-		require_once( THEME_CUSTOMIZE . 'home-page.php' );
-		require_once( THEME_CUSTOMIZE . 'archives.php' );
-		require_once( THEME_CUSTOMIZE . 'footer.php' );
-		require_once( THEME_CUSTOMIZE . 'post.php' );
-		require_once( THEME_CUSTOMIZE . 'post-metas.php' );
-		require_once( THEME_CUSTOMIZE . 'thumbnails-excerpts.php' );
-		require_once( THEME_CUSTOMIZE . 'colors.php' );
-		require_once( THEME_CUSTOMIZE . 'fonts.php' );
-//		require_once( THEME_CUSTOMIZE . 'custom-content.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'customizer.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'header.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'home-page.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'archives.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'footer.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'post.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'post-metas.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'thumbnails-excerpts.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'colors.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'fonts.php' );
+//		require_once( HELIUM_THEME_CUSTOMIZE . 'custom-content.php' );
 
 
 		add_theme_support( 'breadcrumb-trail' );
@@ -75,7 +75,7 @@ class PageSpeed {
 	public function admin() {
 
 		if ( is_admin() ) {
-			require_once( THEME_INC . 'admin/admin.php' );
+			require_once( HELIUM_THEME_INC . 'admin/admin.php' );
 		}
 	}
 }

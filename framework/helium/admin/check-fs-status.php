@@ -22,7 +22,7 @@ function helium_set_fs_status() {
 	WP_Filesystem();
 	global $wp_filesystem;
 
-	$can_read = $wp_filesystem->is_readable( THEME_ASSETS . 'css/src/main.scss' );
+	$can_read = $wp_filesystem->is_readable( HELIUM_THEME_ASSETS . 'css/src/main.scss' );
 
 	if ( $can_read ) {
 		$upload_dir = wp_upload_dir();
