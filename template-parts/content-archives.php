@@ -73,7 +73,7 @@
 
         <footer class="entry-footer">
             <div class="inner footer meta">
-				<?php echo do_shortcode( $meta ) ?>
+				<?php echo helium_generate_post_meta( $meta ) ?>
             </div>
         </footer>
 	<?php }

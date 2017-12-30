@@ -67,6 +67,8 @@
 	)
 	?>
     <div class="clear"></div>
+
+
 	<?php
 	$default = array(
 		array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
@@ -76,11 +78,11 @@
 	if ( 1 == count( $meta ) && $meta[0]['key'] == 'line' ) {
 		echo '<hr class="separator">';
 	} else {
-	    ?>
+		?>
 
         <footer class="entry-footer">
             <div class="inner footer meta">
-				<?php echo do_shortcode( $meta ) ?>
+	            <?php echo helium_generate_post_meta( $meta ) ?>
             </div>
         </footer>
 	<?php }

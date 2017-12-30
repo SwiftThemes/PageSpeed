@@ -8,6 +8,7 @@
 
 function helium_generate_post_meta( $metas = array() ) {
 	ob_start();
+	$allowed_tags = wp_kses_allowed_html( 'post' );
 	foreach ( $metas as $meta ) {
 
 
@@ -22,20 +23,20 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp';
 				break;
 			case 'Text':
-				echo wp_kses($meta['value']);
+				echo wp_kses($meta['value'],$allowed_tags);
 				break;
 			case 'Line':
 				echo '<hr class="separator">';
 				break;
 			case 'Cat':
 				if ( has_category() ) {
-					echo wp_kses($meta['value']) . get_the_category_list( ', ' );
+					echo wp_kses($meta['value'],$allowed_tags) . get_the_category_list( ', ' );
 					echo '&nbsp';
 				}
 				break;
 			case 'Tags':
 				if ( has_tag() ) {
-					echo wp_kses($meta['value']) . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
+					echo wp_kses($meta['value'],$allowed_tags) . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
 				}
 				break;
 			case 'Published':
