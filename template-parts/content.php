@@ -59,19 +59,12 @@
 		) );
 		?>
     </div><!-- .entry-content -->
-
-	<?php
-
-	$default = array(
-		array( 'categories' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
-	)
-	?>
     <div class="clear"></div>
 
 
 	<?php
 	$default = array(
-		array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
 	);
 	$meta    = get_theme_mod( 'home_meta_after_body', $default );
 
@@ -82,7 +75,7 @@
 
         <footer class="entry-footer">
             <div class="inner footer meta">
-	            <?php echo helium_generate_post_meta( $meta ) ?>
+				<?php echo helium_generate_post_meta( $meta ) ?>
             </div>
         </footer>
 	<?php }

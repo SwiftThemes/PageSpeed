@@ -21,7 +21,7 @@ $below_title_default   = array(
 	array( 'key' => 'Line', 'value' => false ),
 );
 $after_content_default = array(
-	array( 'Tags' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
+	array( 'key'=>'Tags' ,'value'=> __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
 );
 ?>
 

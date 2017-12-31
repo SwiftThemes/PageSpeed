@@ -37,6 +37,8 @@ function helium_generate_post_meta( $metas = array() ) {
 			case 'Tags':
 				if ( has_tag() ) {
 					echo wp_kses($meta['value'],$allowed_tags) . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
+					echo '&nbsp';
+
 				}
 				break;
 			case 'Published':

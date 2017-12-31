@@ -62,7 +62,7 @@
     <div class="clear"></div>
 	<?php
 	$default = array(
-		array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+		array( 'key' => 'Tags', 'value' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
 	);
 	$meta    = get_theme_mod( 'archives_meta_after_body', $default );
 

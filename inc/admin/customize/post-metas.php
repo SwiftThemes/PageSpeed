@@ -54,6 +54,9 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	/**
 	 * Home
 	 */
+	$default = array(
+		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+	);
 	$wp_customize->add_setting( 'home_meta_above_title', array(
 		'sanitize_callback' => 'helium_pass',
 		'default'           => array(),
@@ -65,9 +68,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'home_meta_after_body', array(
 		'sanitize_callback' => 'helium_pass',
-		'default'           => array(
-			array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
-		),
+		'default'           => $default,
 	) );
 
 
@@ -113,7 +114,9 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	 * Archives
 	 */
 
-
+	$default = array(
+		array( 'key' => 'Tags', 'value' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
+	);
 	$wp_customize->add_setting( 'archives_meta_above_title', array(
 		'sanitize_callback' => 'helium_pass',
 		'default'           => array(),
@@ -125,9 +128,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'archives_meta_after_body', array(
 		'sanitize_callback' => 'helium_pass',
-		'default'           => array(
-			array( 'Tags' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
-		),
+		'default'           => $default,
 	) );
 
 
@@ -185,7 +186,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 		array( 'key' => 'Line', 'value' => false ),
 	);
 	$after_content_default = array(
-		array( 'Tags' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
+		array( 'key'=>'Tags' ,'value'=> __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
 	);
 
 
