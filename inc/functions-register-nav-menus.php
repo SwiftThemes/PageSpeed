@@ -11,6 +11,7 @@ add_action( 'after_setup_theme', 'pagespeed_register_menus' );
 
 function pagespeed_register_menus() {
 
+	//Not getting the modified theme_mod from the customizer without saving.
 	register_nav_menus( array(
 		'secondary' => __( 'Navigation above header', 'page-speed' ),
 	) );

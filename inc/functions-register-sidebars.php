@@ -18,7 +18,7 @@ apply_filters( 'hybrid_sidebar_defaults', 'pagespeed_sidebar_defaults', 1 );
  */
 function pagespeed_register_sidebars() {
 
-//	error_log(get_theme_mod('dedicated_sidebars_on_home'));
+//	error_log(var_dump(get_theme_mods()));
 
 	$single_suffix = '';
 	$append        = '';
