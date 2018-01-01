@@ -38,11 +38,7 @@ function helium_write_to_uploads( $content, $destination ) {
 		$file       = trailingslashit( $upload_dir['basedir'] ) . $destination;
 		$wp_filesystem->put_contents( $file, $content, FS_CHMOD_FILE );
 	} else {
-		//@todo
-		//Unable to write to file system, can't ask ftp details.
-		//Show the info, use a tansient variable.
-
-		// get the upload directory and make a test.txt file
+		set_theme_mod( 'can_read_write', false );
 		return;
 	}
 
