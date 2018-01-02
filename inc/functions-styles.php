@@ -48,7 +48,7 @@ function pagespeed_load_fonts() {
 
 	if ( $url ):
 
-		wp_enqueue_style('helium_google_fonts',$url)
+		wp_enqueue_style( 'helium_google_fonts', $url )
 		?>
 
 		<?php
@@ -56,27 +56,40 @@ function pagespeed_load_fonts() {
 }
 
 
-function pagespeed_add_image_bg_for_single_post(){
+function pagespeed_add_image_bg_for_single_post() {
 
-    if(!is_single() || get_theme_mod('single_post_layout') !=='1c' || !has_post_thumbnail()){
-        return;
-    }
-    //@todo Add different sizes for mobile and desktop;
-    ?>
+	if ( ! is_single() || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
+		return;
+	}
+	//@todo Add different sizes for mobile and desktop;
+	global $he;
+	if ( $he->is_mobile() ) {
+		$size = array(
+			560,
+			224
+		);
+	} else {
+		$size = array(
+			1400,
+			560
+		);
+	}
+	?>
     <style>
-
-        #content{background-image: url('<?php echo get_the_post_thumbnail_url(null, array(1400,560))?>')}
+        #content {
+            background-image: url('<?php echo get_the_post_thumbnail_url(null, $size)?>')
+        }
     </style>
-<?php
+	<?php
 }
 
 function helium_generate_gfont_link() {
 	$g1 = get_theme_mod( 'gfont_1' );
 	$g2 = get_theme_mod( 'gfont_2' );
 
-    if(!$g1 && !$g2){
-        return false;
-    }
+	if ( ! $g1 && ! $g2 ) {
+		return false;
+	}
 
 	$base = 'https://fonts.googleapis.com/css?family=';
 

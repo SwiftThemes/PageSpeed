@@ -64,12 +64,12 @@ function pagespeed_put_css_in_head() {
  * @todo Move to a better place.
  */
 
-function ld_new_excerpt_more( $more ) {
+function pagespeed_new_excerpt_more( $more ) {
 	global $post;
 
 	return '<p class="more-link">
-<a class=" he-btn" href="' . get_permalink( $post->ID ) . '">Read more <span class="icon">&rarr;</span></a>
+<a class=" he-btn" href="' . get_permalink( $post->ID ) . '">' . __( 'Read more', 'page-speed' ) . ' <span class="icon">&rarr;</span></a>
 </p>';
 }
 
-add_filter( 'excerpt_more', 'ld_new_excerpt_more' );
+add_filter( 'excerpt_more', 'pagespeed_new_excerpt_more' );

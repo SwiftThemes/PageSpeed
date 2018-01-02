@@ -92,11 +92,11 @@ function pagespeed_customize( $wp_customize ) {
 						'url'   => ADMIN_IMAGES_URI . 'layout-r-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
-					'rr-sb'     => array(
+					'rr-sb'    => array(
 						'url'   => ADMIN_IMAGES_URI . 'layout-rr-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
-					'll-sb'     => array(
+					'll-sb'    => array(
 						'url'   => ADMIN_IMAGES_URI . 'layout-ll-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
@@ -122,15 +122,15 @@ function pagespeed_customize( $wp_customize ) {
 				'section'  => 'layout_settings',
 				'priority' => 10,
 				'choices'  => array(
-					'regular'     => array(
+					'regular' => array(
 						'url'   => ADMIN_IMAGES_URI . '/layout-centered.png',
 						'label' => __( 'Regular', 'page-speed' )
 					),
-					'boxed' => array(
+					'boxed'   => array(
 						'url'   => ADMIN_IMAGES_URI . '/container-boxed.png',
 						'label' => __( 'Boxed', 'page-speed' ),
 					),
-					'wide'     => array(
+					'wide'    => array(
 						'url'   => ADMIN_IMAGES_URI . '/container-wide.png',
 						'label' => __( 'Wide', 'page-speed' ),
 					),
@@ -199,8 +199,6 @@ function pagespeed_customize( $wp_customize ) {
 	// Home Page
 
 
-
-
 	$wp_customize->add_setting( 'single_post_layout', array(
 		'sanitize_callback' => 'esc_attr',
 		'default'           => 'regular',
@@ -216,11 +214,11 @@ function pagespeed_customize( $wp_customize ) {
 				'section'  => 'layout_settings',
 				'priority' => 10,
 				'choices'  => array(
-					'regular'     => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-'.get_theme_mod('theme_layout','centered').'.png',
+					'regular' => array(
+						'url'   => ADMIN_IMAGES_URI . '/layout-' . get_theme_mod( 'theme_layout', 'centered' ) . '.png',
 						'label' => __( 'Regular', 'page-speed' )
 					),
-					'1c' => array(
+					'1c'      => array(
 						'url'   => ADMIN_IMAGES_URI . '/single-post-1c.png',
 						'label' => __( 'Boxed', 'page-speed' ),
 					)
@@ -228,6 +226,45 @@ function pagespeed_customize( $wp_customize ) {
 			)
 		)
 	);
+
+
+//	$wp_customize->add_setting( 'dedicated_sidebars_on_home', array(
+//		'sanitize_callback' => 'helium_boolean',
+//		'default'           => false,
+//	) );
+//
+//	$wp_customize->add_control( 'dedicated_sidebars_on_home', array(
+//		'label'       => __( 'Dedicated sidebars for home page', 'page-speed' ),
+//		'description' => __( 'Create separate sidebars for home page.', 'page-speed' ),
+//		'section'     => 'layout_settings',
+//		'type'        => 'checkbox',
+//		'priority'    => 30,
+//	) );
+//	$wp_customize->add_setting( 'dedicated_sidebars_on_default_page_template', array(
+//		'sanitize_callback' => 'helium_boolean',
+//		'default'           => false,
+//	) );
+//
+//	$wp_customize->add_control( 'dedicated_sidebars_on_default_page_template', array(
+//		'label'       => __( 'Dedicated sidebars for default page template', 'page-speed' ),
+//		'description' => __( ' Create separate sidebars for home page.', 'page-speed' ),
+//		'section'     => 'layout_settings',
+//		'type'        => 'checkbox',
+//		'priority'    => 30,
+//	) );
+//
+//	$wp_customize->add_setting( 'enable_sticky_sidebars', array(
+//		'sanitize_callback' => 'helium_boolean',
+//		'default'           => false,
+//	) );
+//
+//	$wp_customize->add_control( 'enable_sticky_sidebars', array(
+//		'label'       => __( 'Create sticky sidebars', 'page-speed' ),
+//		'description' => __( 'Sticky sidebars or floating sidebars are sidebars that stick/float on the screen when the user is scrolling the page.', 'page-speed' ),
+//		'section'     => 'layout_settings',
+//		'type'        => 'checkbox',
+//		'priority'    => 30,
+//	) );
 
 }
 
