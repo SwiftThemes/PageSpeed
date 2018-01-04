@@ -202,8 +202,11 @@ class Helium_Styles {
 
 		$override .= '$container_type:' . get_theme_mod( 'container_type', 'regular' ) . ';';
 
-		if(!get_theme_mod('enable_card_style_widgets_sb',true)){
+		if(get_theme_mod('enable_card_style_widgets_sb',true)){
+			$override .= '$sb_widget_cards:1;';
+		}else{
 			$override .= '$sb_widget_cards:0;';
+
 		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
@@ -235,7 +238,7 @@ class Helium_Styles {
 
 		$content = str_replace( '/**SCSS_override**/', get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ), $content );
 
-		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
+		if ( 1 || defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 

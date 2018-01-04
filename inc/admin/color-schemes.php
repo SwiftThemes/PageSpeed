@@ -3,8 +3,7 @@ $page_speed_color_schemes = array();
 GLOBAL $page_speed_color_schemes;
 
 
-
-$page_speed_color_schemes['default'] = array(
+$page_speed_color_schemes['default']      = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -43,7 +42,7 @@ $page_speed_color_schemes['default'] = array(
 	'sb-widget-bg'           => '',
 
 );
-$page_speed_color_schemes['blue'] = array(
+$page_speed_color_schemes['blue']         = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -129,8 +128,8 @@ $page_speed_color_schemes['yellow-black'] = array(
 	'sb-widget-title-bg'     => 'lighten(#101820,.03)',
 	'sb-widget-border-color' => '',
 	'sb-widget-bg'           => 'lighten(#101820,.06)',
-	'sb-widget-color'           => '#DDD',
-	'sb-widget-link-color'           => '#FFF',
+	'sb-widget-color'        => '#DDD',
+	'sb-widget-link-color'   => '#FFF',
 
 
 	//Important vars
@@ -139,7 +138,7 @@ $page_speed_color_schemes['yellow-black'] = array(
 	'saturation'             => 12
 
 );
-$page_speed_color_schemes['Fuchsia']    = array(
+$page_speed_color_schemes['Fuchsia']      = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -185,6 +184,114 @@ $page_speed_color_schemes['Fuchsia']    = array(
 
 
 );
+/**
+ * black: #333
+ * red: #eb5055
+ * white: #eef0f3
+ * grey: #b8c3e9
+ * primary: #353a4a
+ */
+$page_speed_color_schemes['Amaranth'] = array(
+	//Generic colors
+	'body-color' => '$dark-3',
+	'link-color' => '',
+	'meta-color' => '',
+
+	'button-bg'              => '#353a4a',
+	'button-color'           => '#FFF',
+	'wp-caption-text-color'  => '',
+
+	// Layout colors
+	'body-bg'                => '$dark-2',
+	'wrapper-bg'             => 'transparent',
+	'content-bg'             => '',
+	'main-bg'                => '',
+	'sb1-bg'                 => '',
+	'sb2-bg'                 => '',
+	'footer-bg'              => '',
+	'footer-color'           => '',
+
+	// Header Colors
+	'header-bg'              => '$dark-2',
+	'sticky-header-bg'       => '',
+	'site-title-color'       => '#b8c3e9',
+	'site-description-color' => '$light-3',
+
+	// Navigation Colors
+	'primary-nav-bg'         => 'rgba(#eb5055,.95)',
+	'primary-nav-color'      => '#FFF',
+	'secondary-nav-bg'       => '',
+	'secondary-nav-color'    => '',
+
+	// Sidebar Widgets
+	'sb-widget-title-color'  => '#eb5055',
+	'sb-widget-title-bg'     => '',
+	'sb-widget-border-color' => '',
+	'sb-widget-bg'           => '',
+
+	'footer-widget-title-color'=> '$light-3',
+
+
+
+	//Important vars
+	'primary'                => '#eb5055',
+	'hue'                    => 'hue(#353a4a)',
+	'saturation'             => 33
+
+
+);
+$page_speed_color_schemes['Vanilla'] = array(
+
+
+
+	//Generic colors
+	'body-color' => '$dark-2',
+	'link-color' => '',
+	'meta-color' => '',
+
+	'button-bg'              => '',
+	'button-color'           => '',
+	'wp-caption-text-color'  => '',
+
+	// Layout colors
+	'body-bg'                => '$light-2',
+	'wrapper-bg'             => '$light-1',
+	'content-bg'             => '$light-1',
+	'main-bg'                => '$light-1',
+	'sb1-bg'                 => '$light-1',
+	'sb2-bg'                 => '$light-1',
+	'footer-bg'              => '',
+	'footer-color'           => '',
+
+	// Header Colors
+	'header-bg'              => '$light-1',
+	'sticky-header-bg'       => '',
+	'site-title-color'       => '',
+	'site-description-color' => '',
+
+	// Navigation Colors
+	'primary-nav-bg'         => '$primary',
+	'primary-nav-color'      => '$light-1',
+	'secondary-nav-bg'       => '',
+	'secondary-nav-color'    => '',
+
+	// Sidebar Widgets
+	'sb-widget-title-color'  => '',
+	'sb-widget-title-bg'     => '',
+	'sb-widget-border-color' => '',
+	'sb-widget-bg'           => '$light-1',
+
+	'footer-widget-title-color'=> '',
+
+
+
+//Important vars
+	'primary'                => '#ED0E11',
+//	'primary'                => '#025FFF',
+	'hue'                    => '30',
+	'saturation'             => 66,
+
+);
 function pagespeed_get_color_scheme_choices() {
 	GLOBAL $page_speed_color_schemes;
 	$choices = array();
@@ -194,17 +301,20 @@ function pagespeed_get_color_scheme_choices() {
 			'label' => $key
 		);
 	}
-
 	return $choices;
 }
 
 
 function helium_generate_scss( $values ) {
+	$keys_to_skip = array( 'primary', 'hue', 'saturation', 'invert' );
+
 	$out = '';
 	foreach ( $values as $key => $value ) {
-		if ( $value ) {
+		if ( $value && array_search($key, $keys_to_skip) === false ) {
 			$out .= '$' . $key . ':' . $value . ';';
 		}
+
+
 	}
 
 	//if a color scheme doesn't explicitly define header-bg

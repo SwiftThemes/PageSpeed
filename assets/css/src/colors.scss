@@ -3,7 +3,7 @@ $primary: #007AFF;
 $white: #FFF;
 $black: #000;
 
-$alpha: .9;
+$alpha: 1;
 $shades-from: $primary;
 $saturation: 8;
 
@@ -19,8 +19,9 @@ $btn-teal: rgb(90, 200, 250);
 $btn-blue: rgb(0, 122, 255);
 $btn-purple: rgb(88, 86, 214);
 $btn-pink: rgb(255, 44, 85);
+
 // Don't remove the below line.
-// It's used for overriding the variables.
+// It's used for overriding the variables. COLORS_FROM_COLOR_SCJEMES
 
 /**colors_from_color_scheme**/
 
@@ -78,8 +79,8 @@ $body-bg: $dark-1;
 $wrapper-bg: rgba($light-1, 1);
 $content-bg: $light-1;
 $main-bg: $light-1;
-$sb1-bg: rgba($light-2, .7);
-$sb2-bg: rgba($light-3, .7);
+$sb1-bg: rgba(darken($light-1,.025), .9);
+$sb2-bg: rgba(darken($light-1,.04), .9);
 $footer-bg: $dark-2;
 $footer-color: $light-3;
 
@@ -87,6 +88,7 @@ $footer-color: $light-3;
 $header-bg: rgba($light-1, 1);
 $site-title-color: $dark-3;
 $site-description-color: $dark-4;
+
 
 /* Navigation colors */
 $primary-nav-bg: $light-3;
@@ -99,26 +101,23 @@ $sb-widget-title-color: $dark-3;
 $sb-widget-title-bg:$light-1;
 $sb-widget-border-color: $border-color-dark;
 $sb-widget-bg:$light-1;
-
 $sb-widget-color:$dark-3;
 $sb-widget-link-color:$dark-1;
 
-/* @todo
-comments.scss
-forms.scss
-page-templates.scss
-pagination.scss
+$footer-widget-title-color: $light-3;
+$footer-widget-title-bg:transparent;
+$footer-widget-border-color: transparent;
+$footer-widget-bg:transparent;
+$footer-widget-color:$light-3;
+$footer-widget-link-color:$light-1;
 
 
-post-page.scss
-side-menu.scss
-table.scss
-thumbnails.scss
-variables.scss
-widget-search-form.scss
-widgets.scss
 
- */
+
+@if ($is_sleek_header == 1) {
+  $primary-nav-bg:$dark-2
+}
+
 
 // Don't remove the below line.
 // It's used for overriding the variables.
@@ -128,6 +127,6 @@ widgets.scss
 //
 
 //@todo use contrast ratio.
-@if (abs(lightness($primary-nav-bg) - lightness($primary-nav-color)) < 20) {
+@if (abs(lightness($primary-nav-bg) - lightness($primary-nav-color)) < 30) {
   $primary-nav-color: set-color($primary-nav-bg);
 }

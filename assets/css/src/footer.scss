@@ -12,12 +12,17 @@ list-style: none;
 }
 
 #copyright-container {
+  background: darken($footer-bg,.025);
   font-family: $headings-font-stack;
   font-size: .8em;
   font-weight: 300;
   color: $light-3;
   a {
-    color: $light-1
+    color: $light-1;
+    text-decoration: none;
+  }
+  a:hover{
+    color: $primary;
   }
   .inner {
     padding: .5*$padding $padding;

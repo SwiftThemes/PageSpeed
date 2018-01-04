@@ -47,7 +47,7 @@ hr {
 .meta .tags a {
   font-size: .8em;
   background: $primary;
-  color: $light-1;
+  color: $button-color;
   padding: 1px 4px;
   font-weight: bold;
   text-decoration: none;
@@ -55,7 +55,7 @@ hr {
 }
 
 .meta .tags a:hover {
-  text-shadow: 0 1px 0 rgba($dark-1, 0.4);
+  text-shadow: 0 1px 0 rgba(#000, 0.4);
 
 }
 

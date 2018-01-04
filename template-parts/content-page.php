@@ -73,10 +73,10 @@ $after_content_default = array(
 		?>
     </div><!-- .entry-content -->
 
-	<?php if ( get_theme_mod( 'single_page_meta_after_body', $after_content_default ) ): ?>
+	<?php if ( get_theme_mod( 'single_page_meta_after_body', $after_content_default ) ):?>
         <footer class="entry-footer">
             <div class="inner footer meta">
-				<?php helium_generate_post_meta( get_theme_mod( 'single_page_meta_above_title', $after_content_default ) ) ?>
+				<?php helium_generate_post_meta( get_theme_mod( 'single_page_meta_after_body', $after_content_default ) ) ?>
             </div>
         </footer>
 	<?php endif; ?>

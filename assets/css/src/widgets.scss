@@ -15,7 +15,7 @@
 .widget a{
   color: $sb-widget-link-color;
 }
-.widget a:hover{color:$primary}
+.widget a:hover{color:$primary;text-decoration: none}
 
 .sb > .widget:first-child .widget-title {
   padding-top: 0
@@ -31,6 +31,19 @@
 .rtl .widget {
   ul, ol {
     padding-left: 0;
+  }
+}
+
+.fc{
+  .widget-title{
+    color: $footer-widget-title-color;
+    background: $footer-widget-title-bg;
+  }
+  .widget{
+    color: $footer-widget-color;
+  }
+  .widget a{
+    color: $footer-widget-link-color;
   }
 }
 
