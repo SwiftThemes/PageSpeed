@@ -24,12 +24,13 @@
  */
 function hybrid_register_sidebar( $args ) {
 
+	//@todo move the CF tag to register sidebars
 	// Set up some default sidebar arguments.
 	$defaults = array(
 		'id'            => '',
 		'name'          => '',
 		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget cf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>'

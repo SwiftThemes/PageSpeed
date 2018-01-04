@@ -42,7 +42,7 @@ $page_speed_color_schemes['default']      = array(
 	'sb-widget-bg'           => '',
 
 );
-$page_speed_color_schemes['blue']         = array(
+$page_speed_color_schemes['Denim']         = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -89,7 +89,7 @@ $page_speed_color_schemes['blue']         = array(
 	'saturation'             => 22
 
 );
-$page_speed_color_schemes['yellow-black'] = array(
+$page_speed_color_schemes['Goldfinch'] = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
