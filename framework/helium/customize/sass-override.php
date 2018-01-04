@@ -36,7 +36,7 @@ function helium_override_sass( $wp_customize ) {
 
 	// Show excerpts or full post
 	$wp_customize->add_setting( 'scss_override', array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'esc_textarea',
 		'default' => '//Here you can override any SCSS variables defined in the theme '."\n\n",
 
 	) );

@@ -266,19 +266,19 @@ label {
 
 .color-picker-hue {
     display: block !important;
-    width: 34px !important;
-    height: 29px;
-    margin-top: 5px !important;
+    width: 40px !important;
+    height: 31px;
+    margin-left: 8px !important;
     float: right;
     font-weight: bold;
     border-width: 0 !important;
-    background: #dedede !important;
+    background: #FFF !important;
     border-radius: 3px;
 }
 
 #customize-control-shades_from .iris-strip-horiz {
-    width: 234px !important;
-    float: left;
+    width: auto !important;
+    overflow: hidden;
 }
 
 .cf:before,

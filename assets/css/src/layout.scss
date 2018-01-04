@@ -220,18 +220,25 @@ body {
   border-bottom: solid 1px $border-color-dark
 }
 
-.layout-r-sb,
-.layout-rr-sb {
+.layout-r-sb {
 
   #sb1 > .inner {
     border-left: solid 1px $border-color-dark
   }
 }
 
-.layout-l-sb,
-.layout-ll-sb {
+.layout-l-sb {
   #sb1 > .inner {
     border-right: solid 1px $border-color-dark
+  }
+}
+
+
+.layout-ll-sb,
+.layout-rr-sb{
+  #sb1 > .inner {
+    border: solid 1px $border-color-dark;
+    border-width: 0 1px;
   }
 }
 

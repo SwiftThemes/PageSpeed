@@ -103,7 +103,8 @@ $comment-borders-color: $light-4;
 
 /* Comment form */
 #respond {
-  border-top: double 5px $light-4
+  border-top: double 5px $light-4;
+  padding-top: $vr;
 }
 
 #commentform label {

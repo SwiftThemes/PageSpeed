@@ -12,7 +12,6 @@ function helium_generate_post_meta( $metas = array() ) {
 	foreach ( $metas as $meta ) {
 
 
-
 		switch ( $meta['key'] ) {
 			case 'AuthorLink':
 				echo get_the_author();
@@ -23,20 +22,20 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp';
 				break;
 			case 'Text':
-				echo wp_kses($meta['value'],$allowed_tags);
+				echo wp_kses( $meta['value'], $allowed_tags );
 				break;
 			case 'Line':
 				echo '<hr class="separator">';
 				break;
 			case 'Cat':
 				if ( has_category() ) {
-					echo wp_kses($meta['value'],$allowed_tags) . get_the_category_list( ', ' );
+					echo wp_kses( $meta['value'], $allowed_tags ) . get_the_category_list( ', ' );
 					echo '&nbsp';
 				}
 				break;
 			case 'Tags':
 				if ( has_tag() ) {
-					echo wp_kses($meta['value'],$allowed_tags) . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
+					echo wp_kses( $meta['value'], $allowed_tags ) . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
 					echo '&nbsp';
 
 				}
@@ -68,9 +67,10 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp';
 				break;
 			default:
-				if(current_user_can('customize')){
-					echo _e('Something went wrong, please contact support','page-speed')+'!!! #'+$meta['key'];
+				if ( current_user_can( 'customize' ) ) {
+					echo _e( 'Something went wrong, please contact support', 'page-speed' ) + '!!! #' + $meta['key'];
 				}
+				break;
 
 
 		}

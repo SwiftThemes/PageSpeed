@@ -80,11 +80,9 @@
 
 // Remove description when sticky
 .is-sticky {
-  #site-header-container {
-    padding: $padding/4 0;
-  }
   .site-title {
     font-size: 1.8em;
+    padding: 10px 0;
   }
   .site-description {
     display: none;

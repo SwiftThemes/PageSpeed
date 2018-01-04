@@ -88,7 +88,7 @@ function helium_drag_drop_control_register( $wp_customize ) {
                             </div>
                             <div class="draggable cf">
                                 <label>Author Posts</label>
-                                <input class="tag" type="hidden" data-type="author_posts"/>
+                                <input class="tag" type="hidden" data-type="AuthorPosts"/>
                             </div>
                             <div class="draggable cf">
                                 <label>Author HomePage</label>
