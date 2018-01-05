@@ -257,9 +257,10 @@ class Helium_Styles {
 	public function write_css() {
 
 		$theme_name = wp_get_theme()->stylesheet;
-		$content    = $this->minify_css( $this->generate_css( 'af' ) );
 
-		update_option( $theme_name . '_above_fold_css', $content );
+		//@todo We are not seperating above fold css,below two lines should ve deleted
+//		$content    = $this->minify_css( $this->generate_css( 'af' ) );
+//		update_option( $theme_name . '_above_fold_css', $content );
 
 		try {
 			global $wp_filesystem;
