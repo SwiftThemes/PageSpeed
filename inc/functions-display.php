@@ -130,7 +130,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			'item_spacing'    => 'preserve',
 			'depth'           => 0,
 			'walker'          => '',
-			'theme_location'  => 'header',
+			'theme_location'  => 'primary',
 			'fallback_cb'     => 'page_speed_dummy_menu'
 
 		);
@@ -205,8 +205,8 @@ function pagespeed_breadcrumbs() {
 
 function page_speed_dummy_menu() {
 
-	if ( current_user_can( 'customize' ) && ! has_nav_menu( 'primary' ) && ! has_nav_menu( 'header' ) ) {
-		echo '<div style="text-align: center"> <a href="#" >Howdy!! Thanks for choosing PageSpeed :-).<br />Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away !!</a></div>';
+	if ( current_user_can( 'customize' ) && ! has_nav_menu( 'primary' ) && ! has_nav_menu( 'secondary' ) ) {
+		echo '<div style="text-align: center"> <a href="#" >'.__('Howdy!! Thanks for choosing PageSpeed :-).<br />Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away!!','page-speed').'</a></div>';
 	}
 
 	return null;

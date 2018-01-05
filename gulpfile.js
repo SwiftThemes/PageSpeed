@@ -70,7 +70,12 @@ buildInclude = [
     '!assets/bower_components/**/*',
     '!style.css.map',
     '!assets/js/custom/*',
-    '!assets/css/patrials/*'
+    '!assets/css/patrials/*',
+    '!gulp/*',
+    '!*.psd',
+    '!assets/**/*.psd',
+    '!gulpfile.js'
+
 
 ];
 

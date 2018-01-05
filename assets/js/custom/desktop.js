@@ -177,7 +177,9 @@
         if (isMobile()) {
             return
         }
-        var bottomSpacing = $('#site-footer-container').outerHeight() + $('#copyright-container').outerHeight()
+        // Adding 60 as margin of error.
+        // @todo make top spacing dynamic when using sticky nav
+        var bottomSpacing = $('#site-footer-container').outerHeight() + $('#copyright-container').outerHeight()+60
         $("#sticky-sb1,#sticky-sb2").sticky({topSpacing: 10, bottomSpacing: bottomSpacing, responsiveWidth: true});
     }
 

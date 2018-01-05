@@ -5,7 +5,7 @@
 
 var bump         = require('gulp-bump');
 var prompt       = require('gulp-prompt');
-var handleErrors = require('../util/handleErrors');
+var handleErrors = require('../../util/handleErrors');
 var semver       = require('semver');
 var replace      = require('gulp-replace');
 var gutil        = require('gulp-util');
