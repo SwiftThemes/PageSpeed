@@ -206,7 +206,7 @@ function pagespeed_breadcrumbs() {
 function page_speed_dummy_menu() {
 
 	if ( current_user_can( 'customize' ) && ! has_nav_menu( 'primary' ) && ! has_nav_menu( 'secondary' ) ) {
-		echo '<div style="text-align: center"> <a href="#" >'.__('Howdy!! Thanks for choosing PageSpeed :-).<br />Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away!!','page-speed').'</a></div>';
+		echo '<div style="text-align: center" class="nav"> <a href="#" >'.__('Howdy!! Thanks for choosing PageSpeed :-).<br />Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away!!','page-speed').'</a></div>';
 	}
 
 	return null;
