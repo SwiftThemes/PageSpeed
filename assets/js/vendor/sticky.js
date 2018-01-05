@@ -131,7 +131,7 @@
                     }
                 }
             }
-        },100),
+        },50),
         resizer = throttle(function() {
             windowHeight = $window.height();
 
@@ -149,7 +149,7 @@
                     s.stickyElement.css('width', newWidth);
                 }
             }
-        },100),
+        },50),
         methods = {
             init: function(options) {
                 return this.each(function() {
