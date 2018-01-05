@@ -62,7 +62,7 @@
     <div class="clear"></div>
 	<?php
 	$default = array(
-		array( 'Cat' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+		array( 'key' => 'Tags', 'value' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
 	);
 	$meta    = get_theme_mod( 'archives_meta_after_body', $default );
 
@@ -73,7 +73,7 @@
 
         <footer class="entry-footer">
             <div class="inner footer meta">
-				<?php echo do_shortcode( $meta ) ?>
+				<?php echo helium_generate_post_meta( $meta ) ?>
             </div>
         </footer>
 	<?php }

@@ -121,7 +121,7 @@ $page_speed_color_schemes['Goldfinch'] = array(
 	// Header Colors
 	'header-bg'              => '#101820',
 	'site-title-color'       => '$primary-nav-bg',
-	'site-description-color' => '',
+	'site-description-color' => '$light-6',
 
 	// Sidebar Widgets
 	'sb-widget-title-color'  => '#FFF',

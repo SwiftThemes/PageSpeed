@@ -1,6 +1,6 @@
 /*
 Theme Name: Page Speed
-Theme URI: https://SwiftThemes.Com/PageSpeed/
+Theme URI: https://swiftthemes.com/getting-started-pagespeed/
 Author: Satish Gandham
 Author URI: https://satishgandham.com/
 Description: PageSpeed is a super fast, lite, powerful and search engine optimized responsive WordPress theme that will transform your business and put you ahead of the competition. Whether you are building a business site, a WooCommerce store, a personal blog, a professional blog, a PBN or a niche site, PageSpeed is perfect for anything you want to build with WordPress.
@@ -30,7 +30,9 @@ Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
 */
 
-/* Required classes for WordPress
-Their actual rules are in SRC folder of */
+/*
+Required classes for WordPress
+Their actual rules are in assets/src/post-page.scss, assets/src/af-generic-classes.scss
+*/
 .wp-caption{}
 .wp-caption-text{}

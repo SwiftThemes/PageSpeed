@@ -20,6 +20,13 @@ function helium_float( $val ){
 	return (float) $val;
 }
 
+/**
+ * Usually used for arrays which are sanitized at other place.
+ * @param $val
+ *
+ * @return mixed
+ */
 function helium_pass( $val ){
+
 	return $val;
 }
