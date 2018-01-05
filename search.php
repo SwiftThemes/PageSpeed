@@ -60,7 +60,7 @@ else :
 
 endif;
 ?>
-<?php get_sidebar('home'); ?>
+<?php get_sidebar(); ?>
 
 </div><!-- #content -->
 <?php get_footer(); ?>

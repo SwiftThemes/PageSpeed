@@ -1,4 +1,4 @@
-## PageSpeed 
+# PageSpeed 
 The super fast WordPress theme built using the super lite theme framework Helium.
 
 ### Installation
@@ -21,8 +21,8 @@ Make these changes in the customizer
     * Add Lato with weight 300 and Questrial with weight 400/normal in Google Fonts #1 and #2
     * Set primary font 
         * Font stack to **Questrial, sans-serif**
-        * Size to **18px**
-        * Line height **1.75**
+        * Size to **17px**
+        * Line height **1.7**
         * Weight **normal**
     * Set secondary font
         * Font stack to **'Lato', sans-serif**
@@ -32,7 +32,16 @@ Make these changes in the customizer
     * Latest Posts Design ->
         * Homepage thumbnail size **640x0, Centered**
     
-**Note**: Choose a logo that is 48px to 72px tall with 5-10px space above and below the logo if you are using sleek header.
+**Note**: Choose a logo that is 48px to 72px tall with 5-8px space above and below the logo if you are using sleek header.
+
+###Complete user guide
+The latest user guide can be fount at [PageSpeed Manual](https://swiftthemes.com/getting-started-pagespeed/)
+
 #### Demos
+1. [demos.SwiftThemes.Com](http://demos.swiftthemes.com)
 1. [TheGeekDaily.Com](https://TheGeekDaily.Com)
 1. [SatishGandham.Com](http://SatishGandham.Com)
+
+
+#### Known issues
+1. Google font selection in customizer is not working in safari browser.
