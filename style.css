@@ -30,7 +30,9 @@ Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
 */
 
-/* Required classes for WordPress
-Their actual rules are in SRC folder of */
+/*
+Required classes for WordPress
+Their actual rules are in assets/src/post-page.scss, assets/src/af-generic-classes.scss
+*/
 .wp-caption{}
 .wp-caption-text{}
