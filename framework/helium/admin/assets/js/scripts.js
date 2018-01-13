@@ -20,9 +20,9 @@
                 jQuery.post(ajaxurl, data, function (response) {
                     $('#clear-sass').text('Clear Transients').prop('disabled', false)
                     if (response) {
-                        $('#clear_cache_results').text('Cleared Cache')
+                        $('#clear_cache_results').text('Cleared transients')
                     } else {
-                        $('#clear_cache_results').text('Error clearing cache :-(')
+                        $('#clear_cache_results').text('Error clearing transients :-(')
                     }
                 });
 
