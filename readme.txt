@@ -1,1 +1,1 @@
-* Please check reademe.md
+* Please check readme.md

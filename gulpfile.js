@@ -63,6 +63,8 @@ buildInclude = [
 
     // include specific files and folders
     'screenshot.png',
+    'readme.txt',
+    'readme.md',
 
     // exclude files and folders
     '!node_modules/**/*',
