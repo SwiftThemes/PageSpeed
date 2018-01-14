@@ -69,6 +69,7 @@ class Helium_Styles {
 	 */
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
+		require_once( HELIUM_ADMIN . 'scss-helpers.php' );
 		WP_Filesystem();
 
 		$this->prefix = wp_get_theme()->stylesheet . '_';
