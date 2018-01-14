@@ -21,3 +21,4 @@ require_once( HELIUM_ADMIN . 'framework-options.php' );
 require_once( HELIUM_DIR . 'libs/class-tgm-plugin-activation.php' );
 
 require_once( HELIUM_ADMIN . 'register-required-plugins.php' );
+require_once( HELIUM_ADMIN . 'scss-helpers.php' );
