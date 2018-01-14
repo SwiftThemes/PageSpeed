@@ -251,7 +251,7 @@ class Helium_Styles {
 		require_once( HELIUM_DIR . 'libs/pre-process.php' );
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
-
+//		$scss->setFormatter( 'scss_formatter_compressed' );
 		return $scss->compile( $content );
 	}
 
