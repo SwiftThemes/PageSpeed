@@ -39,26 +39,26 @@ function image_size_control_register( $wp_customize ) {
 
 		//@todo use named array for settings
 
-		public function build_field_html( $key, $setting ) {
-			$value = '';
-			if ( isset( $this->settings[ $key ] ) ) {
-				$value = esc_attr($this->settings[ $key ]->value());
-			}
-			$this->html[] = '<div><input type="text" value="' . $value . '" ' . $this->get_link( $key ) . ' /></div>';
-		}
+//		public function build_field_html( $key, $setting ) {
+//			$value = '';
+//			if ( isset( $this->settings[ $key ] ) ) {
+//				$value = sanitize_text_field($this->settings[ $key ]->value());
+//			}
+//			$this->html[] = '<div><input type="text" value="' . $value . '" ' . $this->get_link( $key ) . ' /></div>';
+//		}
 
 		public function render_content() {
 			$output = '<label>' . $this->label . '</label><div class="clear"></div><br>';
 
 			if ( isset( $this->settings[0] ) ) {
-				$value = esc_attr($this->settings[0]->value());
+				$value = intval($this->settings[0]->value());
 			} else {
 				$value = '';
 			}
 			$output .= '<div class="thumb-dimensions"><input type="number" value="' . $value . '" ' . $this->get_link( 0 ) . ' /><span class="x">x</span>';
 
 			if ( isset( $this->settings[1] ) ) {
-				$value = esc_attr($this->settings[1]->value());
+				$value = intval($this->settings[1]->value());
 			} else {
 				$value = '';
 			}

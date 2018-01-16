@@ -28,11 +28,11 @@ function he_get_font_stacks() {
 
 	if ( get_theme_mod( 'gfont_1' ) ) {
 		$temp         = get_theme_mod( 'gfont_1' );
-		$font_stack[] = esc_attr( $temp['stack'] );
+		$font_stack[] = sanitize_text_field( $temp['stack'] );
 	}
 	if ( get_theme_mod( 'gfont_2' ) ) {
 		$temp         = get_theme_mod( 'gfont_2' );
-		$font_stack[] = esc_attr( $temp['stack'] );
+		$font_stack[] = sanitize_text_field( $temp['stack'] );
 	}
 	$web_safe_stacks = array(
 		'Helvetica Neue,Helvetica,Arial,sans-serif',
@@ -50,7 +50,7 @@ function he_get_font_stacks() {
 		'\'Courier New\', Courier, monospace'
 	);
 
-	array_push( $web_safe_stacks, esc_attr( get_theme_mod( 'custom_font_stack' ) ) );
+	array_push( $web_safe_stacks, sanitize_text_field( get_theme_mod( 'custom_font_stack' ) ) );
 
 	$web_safe_stacks = array_merge( $font_stack, $web_safe_stacks );
 

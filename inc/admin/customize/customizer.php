@@ -215,7 +215,7 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 10,
 				'choices'  => array(
 					'regular' => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-' . esc_attr( get_theme_mod( 'theme_layout', 'centered' ) ) . '.png',
+						'url'   => ADMIN_IMAGES_URI . '/layout-' . sanitize_text_field( get_theme_mod( 'theme_layout', 'centered' ) ) . '.png',
 						'label' => __( 'Regular', 'page-speed' )
 					),
 					'1c'      => array(

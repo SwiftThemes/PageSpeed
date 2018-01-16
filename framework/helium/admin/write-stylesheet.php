@@ -177,14 +177,14 @@ class Helium_Styles {
 		}
 
 
-		$color_scheme = esc_attr( get_theme_mod( 'color_scheme', 'default' ) );
+		$color_scheme = sanitize_text_field( get_theme_mod( 'color_scheme', 'default' ) );
 		GLOBAL $page_speed_color_schemes;
 		$color_scheme = $page_speed_color_schemes[ $color_scheme ];
 
 
 		$override = '';
 		$override .= "/** Overridden by settings from customizer */\n\n";
-		$override .= '$site_width:' . esc_attr( get_theme_mod( 'site_width', '1160px' ) ) . ";\n";
+		$override .= '$site_width:' . sanitize_text_field( get_theme_mod( 'site_width', '1160px' ) ) . ";\n";
 		$override .= '$main_width:' . helium_float( get_theme_mod( 'main_width', '56' ) ) . ";\n";
 		$override .= '$left_sidebar_width:' . helium_float( get_theme_mod( 'left_sidebar_width', '18.75' ) ) . ";\n";
 
@@ -196,16 +196,16 @@ class Helium_Styles {
 //		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
 
 
-		$override .= '$body-font-stack:' . esc_html(get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' )) . ";\n";
+		$override .= '$body-font-stack:' . sanitize_text_field(get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' )) . ";\n";
 		$override .= '$base-font-size:' . intval(get_theme_mod( 'primary_font_size', 16 )) . "px;\n";
 		$override .= '$base-line-height:' . helium_float(get_theme_mod( 'primary_font_lh', 1.7 )) . "em;\n";
-		$override .= '$body-font-weight:' . esc_attr(get_theme_mod( 'primary_font_weight', 'normal' ) ). ";\n";
+		$override .= '$body-font-weight:' . sanitize_text_field(get_theme_mod( 'primary_font_weight', 'normal' ) ). ";\n";
 
 
-		$override .= '$headings-font-stack:' . esc_html(get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' )) . ";\n";
-		$override .= '$headings-font-weight:' . esc_attr(get_theme_mod( 'secondary_font_weight', 'bold' ) ). ";\n";
+		$override .= '$headings-font-stack:' . sanitize_text_field(get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' )) . ";\n";
+		$override .= '$headings-font-weight:' . sanitize_text_field(get_theme_mod( 'secondary_font_weight', 'bold' ) ). ";\n";
 
-		$override .= '$container_type:' . esc_attr(get_theme_mod( 'container_type', 'regular' ) ). ';';
+		$override .= '$container_type:' . sanitize_text_field(get_theme_mod( 'container_type', 'regular' ) ). ';';
 
 		if ( get_theme_mod( 'enable_card_style_widgets_sb', true ) ) {
 			$override .= '$sb_widget_cards:1;';
@@ -221,7 +221,7 @@ class Helium_Styles {
 		if ( get_theme_mod( 'override_color_scheme', false ) ) {
 			$colors_override = '';
 			$colors_override .= "/** Overridden by settings from customizer */\n\n";
-			$colors_override .= '$primary:' . esc_attr(get_theme_mod( 'primary_color', '#007AFF' )) . ';';
+			$colors_override .= '$primary:' . sanitize_text_field(get_theme_mod( 'primary_color', '#007AFF' )) . ';';
 			$colors_override .= '$hue:' . absint(get_theme_mod( 'shades_from', '211' ) ). ';';
 			$colors_override .= '$saturation:' . absint(get_theme_mod( 'shade_saturation', 8 )) . ';';
 			if ( get_theme_mod( 'invert_colors', false ) ) {
@@ -234,7 +234,7 @@ class Helium_Styles {
 		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
 
 
-		$content = str_replace( '/**SCSS_override**/', esc_html(get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' )), $content );
+		$content = str_replace( '/**SCSS_override**/', sanitize_text_field(get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' )), $content );
 
 		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
