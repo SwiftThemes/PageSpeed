@@ -42,6 +42,17 @@ The latest user guide can be fount at [PageSpeed Manual](https://swiftthemes.com
 1. [TheGeekDaily.Com](https://TheGeekDaily.Com)
 1. [SatishGandham.Com](http://SatishGandham.Com)
 
-
 #### Known issues
 1. Google font selection in customizer is not working in safari browser.
+
+
+
+## Copyright and License
+
+The following resources are included within the theme package.
+
+* [scssphp](https://github.com/leafo/scssphp/) by Leaf Corcoran - Licensed under the [GPL VERSION 3](https://github.com/leafo/scssphp/blob/v0.0.12/LICENSE.md).
+
+All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
+
+2009&thinsp;&ndash;&thinsp;2018 &copy; [Satish Gandham](http://satishgandham.com)<hello@satishgandham.com>.

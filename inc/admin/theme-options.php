@@ -12,18 +12,19 @@ function helium_theme_options_display() {
     </style>
     <div class="wrap">
 
-        <h2>PageSpeed Theme Options</h2>
+        <h2>PageSpeed Theme</h2>
 		<?php settings_errors(); ?>
 
         <div class="tabs-container" id="tabs">
             <ul>
-                <li><a href="#tabs-1">Settings</a></li>
+<!--                <li><a href="#tabs-1">Settings</a></li>-->
                 <li><a href="#tabs-2">Tools</a></li>
 <!--                <li><a href="#tabs-3">Activation</a></li>-->
 
 
             </ul>
-
+            <?php /*
+<!--
             <div id="tabs-1">
                 <form id="helium_theme_options">
                     <input type="hidden"
@@ -40,6 +41,8 @@ function helium_theme_options_display() {
                     </div>
                 </form>
             </div>
+            -->
+ */?>
             <div id="tabs-2">
 				<?php pagespeed_help() ?>
             </div>
