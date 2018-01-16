@@ -107,5 +107,5 @@ function helium_generate_gfont_link() {
 		}
 	}
 
-	return $base;
+	return esc_url($base);
 }

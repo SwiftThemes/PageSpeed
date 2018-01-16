@@ -18,8 +18,6 @@ apply_filters( 'hybrid_sidebar_defaults', 'pagespeed_sidebar_defaults', 1 );
  */
 function pagespeed_register_sidebars() {
 
-//	error_log(var_dump(get_theme_mods()));
-
 	$single_suffix = '';
 	$append        = '';
 	if (
@@ -33,7 +31,6 @@ function pagespeed_register_sidebars() {
 
 
 		if ( get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
-//			$single_suffix = ' #Single';
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'left-home',
@@ -352,9 +349,9 @@ function pagespeed_register_sidebars() {
 	);
 
 	for ( $i = 1; $i < 4 + 1; $i ++ ) {
-		register_sidebars(1, array(
-			'id'            => 'footer-'.$i,
-			'name'          => __( 'Footer Column ', 'page-speed' ).'#'.$i,
+		register_sidebars( 1, array(
+			'id'            => 'footer-' . $i,
+			'name'          => __( 'Footer Column ', 'page-speed' ) . '#' . $i,
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'description'   => esc_html__( 'Add widgets to footer here.', 'page-speed' ),

@@ -92,7 +92,6 @@ if ( ! class_exists( 'Helium') ) {
 			require_once( HELIUM_DIR . 'sanitization-functions.php' );
 
 			require_once( HELIUM_CUSTOMIZE . 'control-image-dimensions.php' );
-			require_once( HELIUM_CUSTOMIZE . 'control-responsive-content.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-font-selection.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-typography.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-he-select.php' );
@@ -168,10 +167,10 @@ if ( ! class_exists( 'Helium') ) {
 		public function get_meta( $key = null ) {
 
 			if ( is_admin() && isset( $_GET['post'] ) && $_GET['post'] ) {
-				$post_id = $_GET['post'];
+				$post_id = intval($_GET['post']);
 			} else if ( is_singular() ) {
 				global $post;
-				$post_id = $post->ID;
+				$post_id = intval($post->ID); //@todo is casting required?
 			} else {
 				return null;
 			}

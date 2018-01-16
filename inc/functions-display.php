@@ -147,7 +147,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 
 //		if ( has_nav_menu( 'header' ) ) :
 		?>
-        <div id="header-nav-container" class="cf <?php echo $container_class ?>">
+        <div id="header-nav-container" class="cf <?php echo sanitize_html_class($container_class) ?>">
             <div id="primary" class="">
 				<?php do_action( 'pagespeed_header_nav_start' ); ?>
 				<?php wp_nav_menu( $args ); ?>

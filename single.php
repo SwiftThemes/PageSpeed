@@ -55,7 +55,7 @@ else :
 endif;
 ?>
 <?php
-if ( has_post_thumbnail() && get_theme_mod( 'single_post_layout' )  === '1c') {
+if ( has_post_thumbnail() && '1c' === get_theme_mod( 'single_post_layout' ) ) {
 	get_sidebar( 'single-column' );
 } else {
 	get_sidebar();

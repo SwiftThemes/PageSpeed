@@ -15,7 +15,6 @@
 //add_action( 'after_switch_theme', 'helium_set_fs_status' );
 
 function helium_set_fs_status() {
-	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 	WP_Filesystem();
 	global $wp_filesystem;
 
@@ -23,7 +22,6 @@ function helium_set_fs_status() {
 
 	if ( $can_read ) {
 		$upload_dir = wp_upload_dir();
-//		$file       = trailingslashit( $upload_dir['basedir'] ) . wp_get_theme()->stylesheet . '.css';
 		$file      = trailingslashit( $upload_dir['basedir'] );
 		$can_write = $wp_filesystem->is_writable( $file );
 	}
@@ -34,7 +32,6 @@ function helium_set_fs_status() {
 		return true;
 	} else {
 		set_theme_mod( 'can_read_write', false );
-
 		return false;
 	}
 }

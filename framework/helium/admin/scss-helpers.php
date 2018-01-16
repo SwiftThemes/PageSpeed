@@ -13,10 +13,14 @@
  */
 
 function helium_generate_scss( $values ) {
+	//@todo Check why $values may be null or not array.
+	if ( ! is_array( $values ) ) {
+		return;
+	}
 	$keys_to_skip = array( 'primary', 'hue', 'saturation', 'invert' );
-	$out = '';
+	$out          = '';
 	foreach ( $values as $key => $value ) {
-		if ( $value && array_search($key, $keys_to_skip) === false ) {
+		if ( $value && array_search( $key, $keys_to_skip ) === false ) {
 			$out .= '$' . $key . ':' . $value . ';';
 		}
 	}
@@ -37,6 +41,11 @@ function helium_generate_scss( $values ) {
  * @return Just read special SCSS properties.
  */
 function helium_get_hue_and_primary_color( $values ) {
+	//@todo Check why $values may be null or not array.
+	if ( ! is_array( $values ) ) {
+		return;
+	}
+
 	$values_to_set = array( 'primary', 'hue', 'saturation', 'invert' );
 	$out           = '';
 	foreach ( $values_to_set as $key ) {
@@ -44,5 +53,6 @@ function helium_get_hue_and_primary_color( $values ) {
 			$out .= '$' . $key . ':' . $values[ $key ] . ';';
 		}
 	}
+
 	return $out;
 }

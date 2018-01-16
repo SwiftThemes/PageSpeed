@@ -50,7 +50,6 @@ class PageSpeed {
 		require_once( HELIUM_THEME_CUSTOMIZE . 'customizer.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'header.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'home-page.php' );
-		require_once( HELIUM_THEME_CUSTOMIZE . 'archives.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'footer.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'post-metas.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'thumbnails-excerpts.php' );

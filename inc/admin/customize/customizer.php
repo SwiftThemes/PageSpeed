@@ -54,7 +54,7 @@ function pagespeed_customize( $wp_customize ) {
 			'section'    => 'title_tagline',
 			'settings'   => 'mobile_logo',
 			'priority'   => 32,
-			'height'     => 32,
+			'height'     => 48,
 			'flex_width' => true,
 		)
 	) );
@@ -215,7 +215,7 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 10,
 				'choices'  => array(
 					'regular' => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-' . get_theme_mod( 'theme_layout', 'centered' ) . '.png',
+						'url'   => ADMIN_IMAGES_URI . '/layout-' . sanitize_text_field( get_theme_mod( 'theme_layout', 'centered' ) ) . '.png',
 						'label' => __( 'Regular', 'page-speed' )
 					),
 					'1c'      => array(
