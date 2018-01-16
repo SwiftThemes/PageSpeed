@@ -44,10 +44,10 @@ function helium_help_text_control_register() {
 				echo '<span class="customize-control-title">' . esc_html($this->label) . '</span>';
 			}
 			if ( isset( $this->content ) ) {
-				echo wp_kses($this->content);
+				echo wp_kses_post($this->content);
 			}
 			if ( isset( $this->description ) ) {
-				echo '<span class="description customize-control-description">' . wp_kses($this->description) . '</span>';
+				echo '<span class="description customize-control-description">' . wp_kses_post($this->description) . '</span>';
 			}
 		}
 	}

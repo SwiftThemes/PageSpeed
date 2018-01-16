@@ -8,8 +8,8 @@
 
 function helium_get_thumb_size( $namespace ) {
 	return array(
-		get_theme_mod( $namespace . '_width', 100 ),
-		get_theme_mod( $namespace . '_height', 100 )
+		intval( get_theme_mod( $namespace . '_width', 100 ) ),
+		intval( get_theme_mod( $namespace . '_height', 100 ) )
 	);
 }
 

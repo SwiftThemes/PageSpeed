@@ -53,6 +53,8 @@ function pagespeed_put_css_in_head() {
 	if ( ! is_customize_preview() ) {
 		return;
 	}
+	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+
 	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
 	echo '<style>' . $style_generator->generate_css( 'af' ) . '</style>';
 	echo '<style>' . $style_generator->generate_css( 'bf' ) . '</style>';

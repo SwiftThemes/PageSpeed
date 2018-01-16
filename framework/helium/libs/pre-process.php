@@ -2699,7 +2699,7 @@ class scss_parser {
 		$this->sourceName = $sourceName;
 		$this->rootParser = $rootParser;
 
-		require_once( ABSPATH . 'wp-admin/includes/file.php' );
+//		require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
 		if (empty(self::$operatorStr)) {
 			self::$operatorStr = $this->makeOperatorStr(self::$operators);
