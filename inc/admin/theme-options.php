@@ -23,6 +23,7 @@ function helium_theme_options_display() {
 
 
             </ul>
+            <?php /*
 <!--
             <div id="tabs-1">
                 <form id="helium_theme_options">
@@ -41,6 +42,7 @@ function helium_theme_options_display() {
                 </form>
             </div>
             -->
+ */?>
             <div id="tabs-2">
 				<?php pagespeed_help() ?>
             </div>
