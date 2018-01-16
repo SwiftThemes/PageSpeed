@@ -270,7 +270,7 @@ class Helium_Styles {
 			$file       = trailingslashit( $upload_dir['basedir'] ) . $theme_name = wp_get_theme()->stylesheet . '.css';
 			$wp_filesystem->put_contents( $file, $content );
 		} catch ( Exception $e ) {
-			echo 'Message: ' . $e->getMessage();
+			echo 'Message: ' . esc_html($e->getMessage());
 		}
 
 	}

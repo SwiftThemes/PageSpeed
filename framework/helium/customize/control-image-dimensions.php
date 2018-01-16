@@ -42,7 +42,7 @@ function image_size_control_register( $wp_customize ) {
 		public function build_field_html( $key, $setting ) {
 			$value = '';
 			if ( isset( $this->settings[ $key ] ) ) {
-				$value = $this->settings[ $key ]->value();
+				$value = esc_attr($this->settings[ $key ]->value());
 			}
 			$this->html[] = '<div><input type="text" value="' . $value . '" ' . $this->get_link( $key ) . ' /></div>';
 		}
@@ -51,21 +51,21 @@ function image_size_control_register( $wp_customize ) {
 			$output = '<label>' . $this->label . '</label><div class="clear"></div><br>';
 
 			if ( isset( $this->settings[0] ) ) {
-				$value = $this->settings[0]->value();
+				$value = esc_attr($this->settings[0]->value());
 			} else {
 				$value = '';
 			}
 			$output .= '<div class="thumb-dimensions"><input type="number" value="' . $value . '" ' . $this->get_link( 0 ) . ' /><span class="x">x</span>';
 
 			if ( isset( $this->settings[1] ) ) {
-				$value = $this->settings[1]->value();
+				$value = esc_attr($this->settings[1]->value());
 			} else {
 				$value = '';
 			}
 			$output .= '<input type="number" value="' . $value . '" ' . $this->get_link( 1 ) . ' /></div>';
 
 			if ( isset( $this->settings[2] ) ) {
-				$value = $this->settings[2]->value();
+				$value = esc_attr($this->settings[2]->value());
 			} else {
 				$value = '';
 			}

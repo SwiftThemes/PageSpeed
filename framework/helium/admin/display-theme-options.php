@@ -6,8 +6,7 @@ function display_theme_options( $options ) {
 	foreach ( $options as $option ) {
 		switch ( $option['type'] ) {
 			case 'checkbox':
-
-				$value = get_theme_mod( $option['id'], $option['default'] );
+				$value = helium_boolean(get_theme_mod( $option['id'], $option['default'] ));
 				echo "
 					<div class='checkbox option'>
 					<label>

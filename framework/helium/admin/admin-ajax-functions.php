@@ -38,7 +38,7 @@ add_action( 'wp_ajax_helium_save_theme_options', 'helium_save_theme_options' );
 function helium_save_theme_options() {
 	check_ajax_referer( 'helium_ajax_nonce', 'security' );
 	$params = array();
-	parse_str( $_POST['data'], $params );
+	parse_str( wp_unslash($_POST['data']), $params );
 
 	GLOBAL $theme_options;
 
@@ -49,7 +49,7 @@ function helium_save_theme_options() {
 	foreach ( $theme_options as $option ) {
 		if ( $option['id'] ) {
 			$id          = $option['id'];
-			$mods[ $id ] = isset( $params[ $id ] ) ? $params[ $id ] : 0;
+			$mods[ $id ] = isset( $params[ $id ] ) ? helium_boolean($params[ $id ]) : 0;
 		}
 	}
 

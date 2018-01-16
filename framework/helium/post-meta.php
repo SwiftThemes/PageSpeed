@@ -6,6 +6,8 @@
  * Time: 1:32 AM
  */
 
+//@todo Some unnecessary escaping?
+
 function helium_generate_post_meta( $metas = array() ) {
 	ob_start();
 	$allowed_tags = wp_kses_allowed_html( 'post' );

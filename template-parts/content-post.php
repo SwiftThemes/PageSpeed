@@ -46,9 +46,9 @@ $after_content_default = array(
 
     <div class="entry-content">
 		<?php
-		/* translators: %s: Name of current post */
 		the_content( sprintf(
-			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'page-speed' ),
+		/* translators: %s: Name of current post */
+		__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'page-speed' ),
 			get_the_title()
 		) );
 		?>
