@@ -15,6 +15,7 @@
 //add_action( 'after_switch_theme', 'helium_set_fs_status' );
 
 function helium_set_fs_status() {
+	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 	WP_Filesystem();
 	global $wp_filesystem;
 
