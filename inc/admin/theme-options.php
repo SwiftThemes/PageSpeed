@@ -12,7 +12,7 @@ function helium_theme_options_display() {
     </style>
     <div class="wrap">
 
-        <h2>PageSpeed Theme</h2>
+        <h2>PageSpeed Theme Helpers</h2>
 		<?php settings_errors(); ?>
 
         <div class="tabs-container" id="tabs">

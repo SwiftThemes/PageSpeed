@@ -14,6 +14,18 @@ function pagespeed_more_sidebars( $wp_customize ) {
 		'priority' => 29,
 	) );
 
+
+	$wp_customize->add_setting( 'example-control_', array('sanitize_callback' => 'helium_pass',) );
+
+	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-control_', array(
+		'section'  => 'sidebar_settings',
+		'priority' => 5,
+		'label'    => __( ' ', 'page-speed' ),
+		'content'  => __( 'Note: Reload the page if you make changes to the below 3 settings. Else the new sidebars won\'t appear in widgets panel', 'page-speed' ) . '</p>',
+//		'description' => __( 'Optional: Example Description.', 'page-speed' ),
+	) ) );
+
+
 	$wp_customize->add_setting( 'dedicated_sidebars_on_home', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => false,
