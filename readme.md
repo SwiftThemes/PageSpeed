@@ -54,7 +54,9 @@ Helium framework used in this theme is not related to gantry.org and we don't ha
 The following resources are included within the theme package.
 
 * [scssphp](https://github.com/leafo/scssphp/) by Leaf Corcoran - Licensed under the [GPL VERSION 3](https://github.com/leafo/scssphp/blob/v0.0.12/LICENSE.md).
-* [TGM Plugin Activation](http://tgmpluginactivation.com) by Leaf Corcoran - Licensed under the [GPL-2.0 or Later](https://opensource.org/licenses/GPL-2.0).
+* [Hybrid Core](https://themehybrid.com/hybrid-core) by [Justin Tadlock](http://justintadlock.com) - licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
+
+* [TGM Plugin Activation](http://tgmpluginactivation.com) by Thomas Griffin - Licensed under the [GPL-2.0 or Later](https://opensource.org/licenses/GPL-2.0).
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
