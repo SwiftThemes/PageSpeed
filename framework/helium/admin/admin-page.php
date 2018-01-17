@@ -15,7 +15,7 @@ function helium_theme_menu() {
 
 	$helium_theme_options = add_theme_page(
 		'PageSpeed Theme Options',            // The title to be displayed in the browser window for this page.
-		'Theme Options',            // The text to be displayed for this menu item
+		'PageSpeed Helpers',            // The text to be displayed for this menu item
 		'administrator',            // Which type of users can see this menu item
 		'helium_theme_options',    // The unique ID - that is, the slug - for this menu item
 		'helium_theme_options_display'     // The name of the function to call when rendering this menu's page
