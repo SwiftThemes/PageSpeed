@@ -13,7 +13,6 @@ function helium_generate_post_meta( $metas = array() ) {
 	$allowed_tags = wp_kses_allowed_html( 'post' );
 	foreach ( $metas as $meta ) {
 
-
 		switch ( $meta['key'] ) {
 			case 'AuthorLink':
 				echo get_the_author();
@@ -69,7 +68,7 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp';
 				break;
 			default:
-				if ( current_user_can( 'customize' ) ) {
+				if ( current_user_can( 'customize' ) && isset($meta['key'])) {
 					echo _e( 'Something went wrong, please contact support', 'page-speed' ) + '!!! #' + $meta['key'];
 				}
 				break;
