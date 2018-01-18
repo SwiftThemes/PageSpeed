@@ -1,6 +1,6 @@
 <?php do_action( 'pagespeed_before_footer' ); ?>
-<?php global $he; ?>
-<?php if ( ! $he->get_meta( 'hide_footer_widgets' ) && ( is_active_sidebar( "footer-1" ) || is_active_sidebar( "footer-2" ) || is_active_sidebar( "footer-3" ) || is_active_sidebar( "footer-4" ) || is_active_sidebar( "footer-5" ) ) ): ?>
+<?php global $helium; ?>
+<?php if ( ! $helium->get_meta( 'hide_footer_widgets' ) && ( is_active_sidebar( "footer-1" ) || is_active_sidebar( "footer-2" ) || is_active_sidebar( "footer-3" ) || is_active_sidebar( "footer-4" ) || is_active_sidebar( "footer-5" ) ) ): ?>
     <footer id="site-footer-container" class="cf">
         <div id="site-footer" class="sb hybrid">
 			<?php
@@ -32,7 +32,7 @@
 			)
 		);
 		?>
-		<?php echo wp_kses_post( get_theme_mod( 'copyright_text', 'Copyright &copy; ' . date_i18n( __( 'Y', 'page-speed' ) ) ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
+		<?php echo wp_kses_post( get_theme_mod( 'copyright_text', __( 'Copyright', 'page-speed' ) . ' &copy; ' . date_i18n( __( 'Y', 'page-speed' ) ) ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
 						                          rel="home">' . get_bloginfo( "name" ) . '</a>' ) ?>
     </div>
 </div>

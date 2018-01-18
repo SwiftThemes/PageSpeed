@@ -82,7 +82,7 @@ if ( ! class_exists( 'Helium') ) {
 		 * Load the helium framework core
 		 */
 		public function core() {
-			require_once( HELIUM_DIR . 'meta-scs.php' );
+//			require_once( HELIUM_DIR . 'meta-scs.php' );
 //			require_once( HELIUM_DIR . 'customizer.php' );
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
 //			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );
@@ -98,7 +98,7 @@ if ( ! class_exists( 'Helium') ) {
 			require_once( HELIUM_CUSTOMIZE . 'control-help-text.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-drag-drop.php' );
 			require_once( HELIUM_CUSTOMIZE . 'utils.php' );
-			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
+//			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
 			require_once( HELIUM_CUSTOMIZE . 'sass-override.php' );
 			require_once( HELIUM_CUSTOMIZE . 'load-scripts.php' );
 
@@ -128,7 +128,7 @@ if ( ! class_exists( 'Helium') ) {
 //			add_theme_support( 'custom-header' );
 			add_theme_support( 'custom-logo' );
 			add_theme_support( 'automatic-feed-links' );
-			add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+			add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'gallery', 'caption' ) );
 			add_theme_support( 'title-tag' ); //not sure
 			add_theme_support( 'customize-selective-refresh-widgets' );
 		}

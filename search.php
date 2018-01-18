@@ -1,18 +1,4 @@
 <?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
 
 /*
  * @todo
@@ -23,12 +9,6 @@ get_header();
 
 ?>
 <?php if ( have_posts() ) : ?>
-
-	<!--	--><?php //if ( is_home() && ! is_front_page() ) : ?>
-	<!--		<header>-->
-	<!--			<h1 class="page-title screen-reader-text">--><?php //single_post_title(); ?><!--</h1>-->
-	<!--		</header>-->
-	<!--	--><?php //endif; ?>
 
 	<?php
 	// Start the loop.
@@ -48,7 +28,7 @@ get_header();
 	// Previous/next page navigation.
 	the_posts_pagination( array(
 		'prev_text'          => __( 'Previous page', 'page-speed' ),
-		'mid_size' => 2,
+		'mid_size'           => 2,
 		'next_text'          => __( 'Next page', 'page-speed' ),
 		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
 	) );

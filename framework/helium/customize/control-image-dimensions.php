@@ -24,7 +24,7 @@
  * @package    Helium
  * @subpackage Customize
  * @author     Satish Gandham <hello@SatishGandham.Com>
- * @copyright  Copyright (c) 2017 - 2017, Satish Gandham
+ * @copyright  Copyright (c) 2017 - 2018, Satish Gandham
  */
 
 
@@ -38,14 +38,6 @@ function image_size_control_register( $wp_customize ) {
 	class Helium_Customize_Control_Image_Size extends WP_Customize_Control {
 
 		//@todo use named array for settings
-
-//		public function build_field_html( $key, $setting ) {
-//			$value = '';
-//			if ( isset( $this->settings[ $key ] ) ) {
-//				$value = sanitize_text_field($this->settings[ $key ]->value());
-//			}
-//			$this->html[] = '<div><input type="text" value="' . $value . '" ' . $this->get_link( $key ) . ' /></div>';
-//		}
 
 		public function render_content() {
 			$output = '<label>' . $this->label . '</label><div class="clear"></div><br>';
@@ -69,7 +61,6 @@ function image_size_control_register( $wp_customize ) {
 			} else {
 				$value = '';
 			}
-//			$output .= '<div><input type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' /></div>';
 			$output .= '<div class="thumb-align">
 <select type="text" value="' . $value . '" ' . $this->get_link( 2 ) . ' >
 			<option value="alignleft" ' . selected( $value, 'alignleft', false ) . '>' . __( 'Align left', 'page-speed') . '</option>

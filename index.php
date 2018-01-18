@@ -1,4 +1,22 @@
 <?php
+
+/*
+    Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License version 2,
+    as published by the Free Software Foundation.
+
+    You may NOT assume that you can use any other version of the GPL.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    The license for this software can likely be found here:
+    http://www.gnu.org/licenses/gpl-2.0.html
+ */
 /**
  * The main template file
  *
@@ -9,10 +27,8 @@
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
  */
+
 
 get_header();
 
@@ -48,7 +64,7 @@ endif;
 if ( is_home() && get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
 	get_sidebar( 'home' );
 } else {
-	get_sidebar( );
+	get_sidebar();
 }
 ?>
 

@@ -18,7 +18,6 @@ $theme_name = wp_get_theme()->stylesheet;
 //@todo use customize_save_after hook
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
 
-//add_action( 'after_switch_theme', 'helium_write_stylesheet_on_theme_switch' );
 
 
 function helium_write_stylesheet_on_theme_switch() {

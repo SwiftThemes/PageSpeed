@@ -11,13 +11,13 @@ add_action( 'pagespeed_header_start', 'pagespeed_add_menu_icon', 16 );
 
 if ( ! function_exists( 'pagespeed_site_branding' ) ) {
 	function pagespeed_site_branding() {
-		global $he;
+		global $helium;
 		?>
 		<header id="site-header" role="banner" class="cf">
 			<div id="site-branding">
 				<?php
                 // If
-				if ( $he->is_mobile() && get_theme_mod( 'mobile_logo' ) ):
+				if ( $helium->is_mobile() && get_theme_mod( 'mobile_logo' ) ):
 					echo sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
 						esc_url( home_url( '/' ) ),
 						wp_get_attachment_image( intval(get_theme_mod( 'mobile_logo' )), array( 9999, 32 ), false, array(

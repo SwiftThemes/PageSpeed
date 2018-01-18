@@ -58,16 +58,16 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
 	);
 	$wp_customize->add_setting( 'home_meta_above_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => array(),
 
 	) );
 	$wp_customize->add_setting( 'home_meta_below_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => array(),
 	) );
 	$wp_customize->add_setting( 'home_meta_after_body', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $default,
 	) );
 
@@ -118,16 +118,16 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 		array( 'key' => 'Tags', 'value' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
 	);
 	$wp_customize->add_setting( 'archives_meta_above_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => array(),
 
 	) );
 	$wp_customize->add_setting( 'archives_meta_below_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => array(),
 	) );
 	$wp_customize->add_setting( 'archives_meta_after_body', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $default,
 	) );
 
@@ -191,15 +191,15 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'single_post_meta_above_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $above_title_default,
 	) );
 	$wp_customize->add_setting( 'single_post_meta_below_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $below_title_default,
 	) );
 	$wp_customize->add_setting( 'single_post_meta_after_body', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $after_content_default,
 	) );
 
@@ -259,15 +259,15 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'single_page_meta_above_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $above_title_default,
 	) );
 	$wp_customize->add_setting( 'single_page_meta_below_title', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $below_title_default,
 	) );
 	$wp_customize->add_setting( 'single_page_meta_after_body', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_post_meta',
 		'default'           => $after_content_default,
 	) );
 	$wp_customize->add_control(

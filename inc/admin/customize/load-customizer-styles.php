@@ -11,8 +11,8 @@
  * Enqueue the stylesheet.
  */
 function pagespeed_enqueue_customizer_stylesheet() {
-    wp_register_style( 'my-customizer-css', HELIUM_THEME_URI . 'assets/css/customizer.css', NULL, NULL, 'all' );
-    wp_enqueue_style( 'my-customizer-css' );
+    wp_register_style( 'helium-customizer-css', HELIUM_THEME_URI . 'assets/css/customizer.css', NULL, NULL, 'all' );
+    wp_enqueue_style( 'helium-customizer-css' );
 
 }
 add_action( 'customize_controls_print_styles', 'pagespeed_enqueue_customizer_stylesheet' );

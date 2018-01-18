@@ -1,17 +1,3 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
-
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
 		<?php if ( get_theme_mod( 'archives_meta_above_title' ) ): ?>
@@ -66,7 +52,7 @@
 	);
 	$meta    = get_theme_mod( 'archives_meta_after_body', $default );
 
-	if ( 1 == count( $meta ) && $meta[0]['key'] == 'line' ) {
+	if ( 1 == count( $meta ) && $meta[0]['key'] == 'Line' ) {
 		echo '<hr class="separator">';
 	} else {
 		?>

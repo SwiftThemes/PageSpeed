@@ -47,6 +47,7 @@ The latest user guide can be fount at [PageSpeed Manual](https://swiftthemes.com
 
 #### FAQ
 **Is the Helium framework related to gantry.org?**
+
 Helium framework used in this theme is not related to gantry.org and we don't have any affiliation with them.
 
 ## Copyright and License
@@ -55,9 +56,12 @@ The following resources are included within the theme package.
 
 * [scssphp](https://github.com/leafo/scssphp/) by Leaf Corcoran - Licensed under the [GPL VERSION 3](https://github.com/leafo/scssphp/blob/v0.0.12/LICENSE.md).
 * [Hybrid Core](https://themehybrid.com/hybrid-core) by [Justin Tadlock](http://justintadlock.com) - licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
-
 * [TGM Plugin Activation](http://tgmpluginactivation.com) by Thomas Griffin - Licensed under the [GPL-2.0 or Later](https://opensource.org/licenses/GPL-2.0).
+* [Mobile Detect](http://mobiledetect.net) by Victor Stanciu - Licensed under the [ MIT License](http://www.opensource.org/licenses/mit-license.php).
+* [Sticky](http://stickyjs.com) by [Anthony Garand](http://anthonygarand.com/) - Licensed under the [ MIT License](http://www.opensource.org/licenses/mit-license.php).
+
+bbPress*.css files located in /css are Licensed under the [GPL-2.0 or Later](https://opensource.org/licenses/GPL-2.0).
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2009&thinsp;&ndash;&thinsp;2018 &copy; [Satish Gandham](http://satishgandham.com)<hello@satishgandham.com>.
+2009&thinsp;&ndash;&thinsp;2018 &copy; [Satish Gandham](http://satishgandham.com).

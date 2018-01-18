@@ -16,7 +16,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'color_scheme', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'default',
 
 	) );
@@ -29,13 +29,13 @@ function pagespeed_customize_colors( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'primary_color', array(
-		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '#007AFF',
 
 	) );
 
 	$wp_customize->add_setting( 'shades_from', array(
-		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'absint',
 		'default'           => '211',
 
 	) );

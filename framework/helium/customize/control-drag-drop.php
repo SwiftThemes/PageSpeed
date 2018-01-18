@@ -74,17 +74,17 @@ function helium_drag_drop_control_register( $wp_customize ) {
 
                 <div class="draggable cf has-input clone">
                     <label><?php _e('Text','page-speed')?></label>
-                    <input class="text" type="text" data-type="Text" placeholder="<?php _e('Any text','page-speed')?>"/>
+                    <input class="text" type="text" data-type="Text" placeholder="<?php echo esc_attr(__('Any text','page-speed'))?>"/>
                 </div>
 
                 <div class="draggable cf has-input ">
                     <label><?php _e('Cat','page-speed')?></label>
-                    <input class="cat" type="text" data-type="Cat" placeholder="<?php _e('Filed under','page-speed')?>"
+                    <input class="cat" type="text" data-type="Cat" placeholder="<?php echo esc_attr(__('Filed under','page-speed'))?>"
                            onclick="this.select()"/>
                 </div>
                 <div class="draggable cf has-input ">
                     <label><?php _e('Tags','page-speed')?></label>
-                    <input class="tag" type="text" data-type="Tags" placeholder="<?php _e('Tagged with','page-speed')?>"
+                    <input class="tag" type="text" data-type="Tags" placeholder=<?php echo esc_attr(__('Tagged with','page-speed'))?>"
                            onclick="this.select()"/>
                 </div>
                 <div class="draggable cf">
