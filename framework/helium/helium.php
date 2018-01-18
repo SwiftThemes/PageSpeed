@@ -128,7 +128,7 @@ if ( ! class_exists( 'Helium') ) {
 //			add_theme_support( 'custom-header' );
 			add_theme_support( 'custom-logo' );
 			add_theme_support( 'automatic-feed-links' );
-			add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+			add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'gallery', 'caption' ) );
 			add_theme_support( 'title-tag' ); //not sure
 			add_theme_support( 'customize-selective-refresh-widgets' );
 		}

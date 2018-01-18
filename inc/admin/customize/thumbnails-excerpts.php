@@ -116,7 +116,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'archives_show_excerpts', array(
-		'label'   => 'Show excerpts on archives',
+		'label'   => __('Show excerpts on archives', 'page-speed' ),
 		'section' => 'archives_design',
 		'type'    => 'checkbox',
 
