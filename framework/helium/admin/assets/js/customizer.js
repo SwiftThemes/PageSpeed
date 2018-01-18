@@ -187,10 +187,10 @@
 
             $(control.selector + " .sortable").sortable({
                 update: function () {
-                    updateValue(2000)
+                    updateValue(500)
                 },
                 change: function () {
-                    updateValue(2000)
+                    updateValue(500)
                 },
                 over: function (e, ui) {
                     isOutside = false;
@@ -222,7 +222,7 @@
                         } else {
                         }
                     }
-                    updateValue(2000)
+                    updateValue(500)
 
                 }
             })
