@@ -1,6 +1,6 @@
 <?php
 
-global $he;
+global $helium;
 
 
 $above_title_default   = array(
@@ -20,7 +20,7 @@ $after_content_default = array(
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( ! $he->get_meta( 'hide_title' ) ): ?>
+	<?php if ( ! $helium->get_meta( 'hide_title' ) ): ?>
         <header class="entry-header">
 			<?php if ( get_theme_mod( 'single_page_meta_above_title', $above_title_default ) ): ?>
                 <div class="entry-meta meta above-title">

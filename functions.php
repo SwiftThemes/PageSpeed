@@ -40,8 +40,8 @@ new Hybrid();
 
 // Launch the Helium framework.
 require_once( trailingslashit( HELIUM_DIR ) . 'helium.php' );
-$he = new Helium();
-global $he;
+$helium = new Helium();
+global $helium;
 // Launch PageSpeed
 require_once( trailingslashit( get_template_directory() ) . 'inc/page-speed-class.php' );
 new PageSpeed();

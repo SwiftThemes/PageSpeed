@@ -173,16 +173,16 @@ function pagespeed_sticky_logo() {
 }
 
 function pagespeed_mobile_search() {
-	global $he;
-	if ( ! $he->is_mobile() ) {
+	global $helium;
+	if ( ! $helium->is_mobile() ) {
 		return;
 	}
 	get_template_part( 'searchform-nav' );
 }
 
 function pagespeed_breadcrumbs() {
-	global $he;
-	if ( $he->get_meta( 'hide_breadcrumbs' ) ) {
+	global $helium;
+	if ( $helium->get_meta( 'hide_breadcrumbs' ) ) {
 		return;
 	}
 

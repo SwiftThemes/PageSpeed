@@ -62,8 +62,8 @@ function pagespeed_add_image_bg_for_single_post() {
 		return;
 	}
 	//@todo Add different sizes for mobile and desktop;
-	global $he;
-	if ( $he->is_mobile() ) {
+	global $helium;
+	if ( $helium->is_mobile() ) {
 		$size = array(
 			560,
 			224
@@ -77,7 +77,7 @@ function pagespeed_add_image_bg_for_single_post() {
 	?>
     <style>
         #content {
-            background-image: url('<?php echo get_the_post_thumbnail_url(null, $size)?>')
+            background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, $size))?>')
         }
     </style>
 	<?php
