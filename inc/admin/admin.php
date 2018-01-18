@@ -7,7 +7,7 @@
  */
 
 require_once( HELIUM_THEME_CUSTOMIZE . 'load-customizer-styles.php' );
-//require_once( HELIUM_THEME_ADMIN . 'theme-options.php' );
+require_once( HELIUM_THEME_ADMIN . 'theme-options.php' );
 require_once( HELIUM_THEME_ADMIN . 'color-schemes.php' );
 //require_once( HELIUM_THEME_CUSTOMIZE . 'home-page.php' );
 //require_once( HELIUM_THEME_CUSTOMIZE . 'customizer.php' );
