@@ -76,7 +76,7 @@ function helium_font_selection_control_register( $wp_customize ) {
                                            value="{{data.value.fontObject.family}}"
                                            placeholder="<?php esc_attr_e( 'Search a font','page-speed'); ?>" />
 
-                                    <label class="select"><strong>Weights</strong>
+                                    <label class="select"><strong><?php _e('Weights','page-speed')?></strong>
                                         <select type="text" class="weights" multiple>
                                             <# for ( key in data.value.fontObject.variants ) { #>
                                                 <option value="{{ data.value.fontObject.variants[key] }}"
@@ -89,7 +89,7 @@ function helium_font_selection_control_register( $wp_customize ) {
                                         </select>
                                     </label>
 
-                                    <label class="select"><strong>Subsets</strong>
+                                    <label class="select"><strong><?php _e('Subsets','page-speed')?></strong>
                                         <select type="text" class="subsets" multiple>
                                             <# for ( key in data.value.fontObject.subsets ) { #>
                                                 <option value="{{ data.value.fontObject.subsets[key] }}"

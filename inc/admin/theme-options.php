@@ -12,13 +12,13 @@ function helium_theme_options_display() {
     </style>
     <div class="wrap">
 
-        <h2>PageSpeed Theme Helpers</h2>
+        <h2>PageSpeed <?php _e('Theme Helpers', 'page-speed')?></h2>
 		<?php settings_errors(); ?>
 
         <div class="tabs-container" id="tabs">
             <ul>
 <!--                <li><a href="#tabs-1">Settings</a></li>-->
-                <li><a href="#tabs-2">Tools</a></li>
+                <li><a href="#tabs-2"><?php _e('Tools','page-speed')?></a></li>
 <!--                <li><a href="#tabs-3">Activation</a></li>-->
 
 

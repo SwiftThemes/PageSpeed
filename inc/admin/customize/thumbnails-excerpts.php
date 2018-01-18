@@ -70,7 +70,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'home_show_excerpts', array(
-		'label'   => 'Show excerpts on home page',
+		'label'   => __('Show excerpts on home page', 'page-speed' ),
 		'section' => 'home_page_design',
 		'type'    => 'checkbox',
 
