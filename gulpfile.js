@@ -67,15 +67,14 @@ buildInclude = [
     'readme.md',
 
     // exclude files and folders
+    '!assets/images/customize/color-schemes/color_schemes.psd',
     '!node_modules/**/*',
     '!buildtheme/**/*',
     '!assets/bower_components/**/*',
     '!style.css.map',
     '!assets/js/custom/*',
-    '!assets/css/patrials/*',
     '!gulp/*',
     '!*.psd',
-    '!assets/**/*.psd',
     '!gulpfile.js'
 
 

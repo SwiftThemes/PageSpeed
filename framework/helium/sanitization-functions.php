@@ -47,13 +47,12 @@ function helium_sanitize_gfonts( $val ) {
 }
 
 /**
- * Usually used for arrays which are sanitized at other place.
+ * Used only during development.
  *
  * @param $val
  *
  * @return mixed
  */
 function helium_pass( $val ) {
-
 	return $val;
 }
