@@ -24,12 +24,6 @@ get_header();
 ?>
 <?php if ( have_posts() ) : ?>
 
-	<!--	--><?php //if ( is_home() && ! is_front_page() ) : ?>
-	<!--		<header>-->
-	<!--			<h1 class="page-title screen-reader-text">--><?php //single_post_title(); ?><!--</h1>-->
-	<!--		</header>-->
-	<!--	--><?php //endif; ?>
-
 	<?php
 	// Start the loop.
 	while ( have_posts() ) : the_post();
@@ -48,7 +42,7 @@ get_header();
 	// Previous/next page navigation.
 	the_posts_pagination( array(
 		'prev_text'          => __( 'Previous page', 'page-speed' ),
-		'mid_size' => 2,
+		'mid_size'           => 2,
 		'next_text'          => __( 'Next page', 'page-speed' ),
 		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
 	) );

@@ -7,10 +7,6 @@
  * @link https://codex.wordpress.org/Plugin_API/Action_Reference/add_meta_boxes
  */
 function helium_add_meta_boxes( $post_type ) {
-//	$post_types = helium_get_post_types();
-//	foreach($post_types as $post_type){
-//		add_meta_box( 'helium_page_options', __( 'Helium Options', 'page-speed'), 'helium_build_meta_box', $post_type, 'side', 'high','' );
-//	}
 	add_meta_box( 'helium_page_options', __( 'Helium Framework Options', 'page-speed'), 'helium_build_meta_box', 'page', 'side', 'high','' );
 }
 

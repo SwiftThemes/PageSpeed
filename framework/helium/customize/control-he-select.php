@@ -25,7 +25,7 @@
  * @package    Helium
  * @subpackage Customize
  * @author     Satish Gandham <hello@SatishGandham.Com>
- * @copyright  Copyright (c) 2017 - 2017, Satish Gandham
+ * @copyright  Copyright (c) 2017 - 2018, Satish Gandham
  */
 
 

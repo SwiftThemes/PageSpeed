@@ -10,9 +10,6 @@
 add_action( 'admin_menu', 'helium_theme_menu' );
 
 function helium_theme_menu() {
-	//add_theme_page( __( 'Helium Help', 'page-speed' ), __( 'Helium Help', 'page-speed' ), 'edit_theme_options', 'helium-help', 'pagespeed_help' );
-
-
 	$helium_theme_options = add_theme_page(
 		'PageSpeed ' . __( 'Theme Helpers', 'page-speed' ),            // The title to be displayed in the browser window for this page.
 		'PageSpeed ' . __( 'Helpers','page-speed' ),            // The text to be displayed for this menu item
@@ -20,7 +17,6 @@ function helium_theme_menu() {
 		'helium_theme_options',    // The unique ID - that is, the slug - for this menu item
 		'helium_theme_options_display'     // The name of the function to call when rendering this menu's page
 	);
-
 
 	add_action( "admin_print_styles-$helium_theme_options", 'helium_admin_stylesheet' );
 	add_action( "admin_print_footer_scripts-$helium_theme_options", 'helium_admin_scripts' );

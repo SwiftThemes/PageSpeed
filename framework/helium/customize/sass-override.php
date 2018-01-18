@@ -32,9 +32,6 @@ function helium_override_sass( $wp_customize ) {
 		'priority' => 80,
 	) );
 
-
-
-	// Show excerpts or full post
 	$wp_customize->add_setting( 'scss_override', array(
 		'sanitize_callback' => 'esc_textarea',
 		'default' => '//Here you can override any SCSS variables defined in the theme '."\n\n",

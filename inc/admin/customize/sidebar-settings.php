@@ -22,7 +22,6 @@ function pagespeed_more_sidebars( $wp_customize ) {
 		'priority' => 5,
 		'label'    => __( ' ', 'page-speed' ),
 		'content'  => __( 'Note: Reload the page if you make changes to the below 3 settings. Else the new sidebars won\'t appear in widgets panel', 'page-speed' ) . '</p>',
-//		'description' => __( 'Optional: Example Description.', 'page-speed' ),
 	) ) );
 
 

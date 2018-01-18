@@ -36,7 +36,6 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'priority' => 5,
 		'label'    => __( ' ', 'page-speed' ),
 		'content'  => __( 'If you would like to use Google fonts, first add them in the two options below.', 'page-speed' ) . '</p>',
-//		'description' => __( 'Optional: Example Description.', 'page-speed' ),
 	) ) );
 
 
@@ -48,7 +47,6 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'label'    => __( ' ', 'page-speed' ),
 		'content'  => __( '<hr /><ul><li>Please choose the weights and character subsets you need carefully as adding more weights and subsets will slow down your site.</li>
 <li> If you are not using the font(s) below, clear it so that they are not unnecessarily loaded</li></ul>', 'page-speed' ) . '</p>',
-//		'description' => __( 'Optional: Example Description.', 'page-speed' ),
 	) ) );
 
 

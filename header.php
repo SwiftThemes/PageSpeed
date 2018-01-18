@@ -42,6 +42,3 @@
     <main id="main" role="main">
     <div class="inner">
 <?php do_action( 'pagespeed_main_start' ); ?>
-<?php //var_dump(get_theme_mod('gfont_1'))?>
-<?php //var_dump(get_theme_mod('gfont_2'))?>
-

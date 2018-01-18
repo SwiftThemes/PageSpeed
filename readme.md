@@ -53,6 +53,10 @@ Helium framework used in this theme is not related to gantry.org and we don't ha
 
 The following resources are included within the theme package.
 
+
+Mobile detect
+sticky
+twenty themes
 * [scssphp](https://github.com/leafo/scssphp/) by Leaf Corcoran - Licensed under the [GPL VERSION 3](https://github.com/leafo/scssphp/blob/v0.0.12/LICENSE.md).
 * [Hybrid Core](https://themehybrid.com/hybrid-core) by [Justin Tadlock](http://justintadlock.com) - licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
