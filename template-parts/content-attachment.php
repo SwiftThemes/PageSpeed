@@ -9,7 +9,8 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image($post->ID, array(1200, 0), false, array('class' => 'gallery-full aligncenter')); ?>
+		<a href="<?php echo esc_url(wp_get_attachment_url($post->ID)); ?>">
+            <?php echo wp_get_attachment_image($post->ID, array(1200, 0), false, array('class' => 'gallery-full aligncenter')); ?>
 		</a>
 		<?php
 
