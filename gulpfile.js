@@ -183,8 +183,8 @@ gulp.task('styles', function () {
  */
 gulp.task('vendorsJs', function () {
     return gulp.src(['./assets/js/vendor/*.js', bower + '**/*.js'])
-        .pipe(concat('vendors.js'))
-        .pipe(gulp.dest('./assets/js'))
+        // .pipe(concat('vendors.js'))
+        // .pipe(gulp.dest('./assets/js'))
         .pipe(rename({
             basename: "vendors",
             suffix: '.min'
@@ -203,8 +203,8 @@ gulp.task('vendorsJs', function () {
 
 gulp.task('scriptsJs', function () {
     return gulp.src('./assets/js/custom/*.js')
-        .pipe(concat('custom.js'))
-        .pipe(gulp.dest('./assets/js'))
+        // .pipe(concat('custom.js'))
+        // .pipe(gulp.dest('./assets/js'))
         .pipe(rename({
             basename: "custom",
             suffix: '.min'
