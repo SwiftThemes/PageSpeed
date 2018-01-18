@@ -11,7 +11,7 @@ function pagespeed_customize( $wp_customize ) {
 
 	// Logo position
 	$wp_customize->add_setting( 'logo_position', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'left',
 	) );
 	$wp_customize->add_control(
@@ -67,7 +67,7 @@ function pagespeed_customize( $wp_customize ) {
 		'description' => '',
 	) );
 	$wp_customize->add_setting( 'theme_layout', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'centered',
 
 	) );
@@ -108,7 +108,7 @@ function pagespeed_customize( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'container_type', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'regular',
 
 	) );
@@ -141,7 +141,7 @@ function pagespeed_customize( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'site_width', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '1160px',
 
 	) );
@@ -200,7 +200,7 @@ function pagespeed_customize( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'single_post_layout', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'regular',
 	) );
 

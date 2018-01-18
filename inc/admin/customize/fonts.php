@@ -17,19 +17,19 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 	//@todo add proper sanitization callbacks
 	$wp_customize->add_setting( 'gfont_1', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_gfonts',
 		'default'           => '',
 
 	) );
 
 	$wp_customize->add_setting( 'gfont_2', array(
-		'sanitize_callback' => 'helium_pass',
+		'sanitize_callback' => 'helium_sanitize_gfonts',
 		'default'           => '',
 
 	) );
 
 
-	$wp_customize->add_setting( 'example-control', array( 'sanitize_callback' => 'helium_pass', ) );
+	$wp_customize->add_setting( 'example-control', array( 'sanitize_callback' => 'sanitize_text_field', ) );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-control', array(
 		'section'  => 'fonts',
@@ -40,7 +40,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	) ) );
 
 
-	$wp_customize->add_setting( 'example-2', array( 'sanitize_callback' => 'helium_pass', ) );
+	$wp_customize->add_setting( 'example-2', array( 'sanitize_callback' => 'sanitize_text_field', ) );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-2', array(
 		'section'  => 'fonts',
@@ -91,7 +91,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'default'           => 1.7,
 	) );
 	$wp_customize->add_setting( 'primary_font_weight', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'normal',
 	) );
 
@@ -129,7 +129,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'default'           => '',
 	) );
 	$wp_customize->add_setting( 'secondary_font_weight', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'bold',
 	) );
 
@@ -155,7 +155,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'custom_font_stack', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '',
 	) );
 

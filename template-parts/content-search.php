@@ -66,7 +66,7 @@
 	);
 	$meta    = get_theme_mod( 'archives_meta_after_body', $default );
 
-	if ( 1 == count( $meta ) && $meta[0]['key'] == 'line' ) {
+	if ( 1 == count( $meta ) && $meta[0]['key'] == 'Line' ) {
 		echo '<hr class="separator">';
 	} else {
 		?>
