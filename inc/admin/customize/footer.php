@@ -18,13 +18,13 @@ function pagespeed_customize_footer( $wp_customize ) {
 	// Show excerpts or full post
 	$wp_customize->add_setting( 'copyright_text', array(
 		'sanitize_callback' => 'helium_meta',
-		'default'           => 'Copyright &copy; ' . date( "Y" ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
+		'default'           => __('Copyright', 'page-speed' ).' &copy; ' . date( "Y" ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
 						                          rel="home">' . get_bloginfo( "name" ) . '</a>',
 
 	) );
 
 	$wp_customize->add_control( 'copyright_text', array(
-		'label'   => 'Copyright text',
+		'label'   => __( 'Copyright text', 'page-speed' ),
 		'section' => 'footer',
 		'type'    => 'textarea',
 

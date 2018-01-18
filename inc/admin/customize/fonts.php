@@ -18,18 +18,18 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	//@todo add proper sanitization callbacks
 	$wp_customize->add_setting( 'gfont_1', array(
 		'sanitize_callback' => 'helium_pass',
-		'default' => '',
+		'default'           => '',
 
 	) );
 
 	$wp_customize->add_setting( 'gfont_2', array(
 		'sanitize_callback' => 'helium_pass',
-		'default' => '',
+		'default'           => '',
 
 	) );
 
 
-	$wp_customize->add_setting( 'example-control', array('sanitize_callback' => 'helium_pass',) );
+	$wp_customize->add_setting( 'example-control', array( 'sanitize_callback' => 'helium_pass', ) );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-control', array(
 		'section'  => 'fonts',
@@ -40,7 +40,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	) ) );
 
 
-	$wp_customize->add_setting( 'example-2', array('sanitize_callback' => 'helium_pass',) );
+	$wp_customize->add_setting( 'example-2', array( 'sanitize_callback' => 'helium_pass', ) );
 
 	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-2', array(
 		'section'  => 'fonts',
@@ -80,19 +80,19 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 	$wp_customize->add_setting( 'primary_font_stack', array(
 		'sanitize_callback' => 'helium_meta',
-		'default' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+		'default'           => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 	) );
 	$wp_customize->add_setting( 'primary_font_size', array(
 		'sanitize_callback' => 'helium_float',
-		'default' => 16,
+		'default'           => 16,
 	) );
 	$wp_customize->add_setting( 'primary_font_lh', array(
 		'sanitize_callback' => 'helium_float',
-		'default' => 1.7,
+		'default'           => 1.7,
 	) );
 	$wp_customize->add_setting( 'primary_font_weight', array(
 		'sanitize_callback' => 'esc_attr',
-		'default' => 'normal',
+		'default'           => 'normal',
 	) );
 
 
@@ -118,19 +118,19 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 	$wp_customize->add_setting( 'secondary_font_stack', array(
 		'sanitize_callback' => 'helium_meta',
-		'default' => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+		'default'           => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 	) );
 	$wp_customize->add_setting( 'secondary_font_size', array(
 		'sanitize_callback' => 'helium_float',
-		'default' => '',
+		'default'           => '',
 	) );
 	$wp_customize->add_setting( 'secondary_font_lh', array(
 		'sanitize_callback' => 'helium_float',
-		'default' => '',
+		'default'           => '',
 	) );
 	$wp_customize->add_setting( 'secondary_font_weight', array(
 		'sanitize_callback' => 'esc_attr',
-		'default' => 'bold',
+		'default'           => 'bold',
 	) );
 
 
@@ -154,14 +154,13 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	);
 
 
-
 	$wp_customize->add_setting( 'custom_font_stack', array(
 		'sanitize_callback' => 'esc_attr',
-		'default' => '',
+		'default'           => '',
 	) );
 
 	$wp_customize->add_control( 'custom_font_stack', array(
-		'label'   => 'Custom Font Stack',
+		'label'   => __( 'Custom Font Stack', 'page-speed' ),
 		'section' => 'fonts',
 		'type'    => 'text',
 

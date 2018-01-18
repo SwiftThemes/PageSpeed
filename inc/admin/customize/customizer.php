@@ -62,7 +62,7 @@ function pagespeed_customize( $wp_customize ) {
 
 	// Layout
 	$wp_customize->add_section( 'layout_settings', array(
-		'title'       => 'Layout',
+		'title'       => __( 'Layout', 'page-speed' ),
 		'priority'    => 20,
 		'description' => '',
 	) );
@@ -226,8 +226,6 @@ function pagespeed_customize( $wp_customize ) {
 			)
 		)
 	);
-
-
 
 
 }

@@ -42,7 +42,7 @@ function helium_override_sass( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'scss_override', array(
-		'label'   => 'Override the SCSS variables',
+		'label'   => __( 'Override the SCSS variables', 'page-speed' ),
 		'section' => 'scss',
 		'type'    => 'textarea',
 

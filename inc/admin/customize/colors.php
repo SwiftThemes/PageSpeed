@@ -111,7 +111,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 
 
 	$wp_customize->add_control( 'shade_saturation', array(
-		'label'   => 'Amount of base color in the shades',
+		'label'   =>  __('Amount of base color in the shades','page-speed'),
 		'description'=>__('Higher the number more color the lights and darks have.','page-speed'),
 		'section' => 'colors',
 		'type'    => 'number',
@@ -119,7 +119,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'invert_colors', array(
-		'label'   => 'Invert light and dark colors',
+		'label'   =>  __('Invert light and dark colors','page-speed'),
 		'section' => 'colors',
 		'type'    => 'checkbox',
 

@@ -110,9 +110,9 @@ function helium_typography_control_register( $wp_customize ) {
 
                         <div class="typography">
 
-                            <label class="select">Font stack
+                            <label class="select"><?php _e('Font stack','page-speed')?>
                                 <select type="text" class="stack">
-                                    <option value=" ">Select font</option>
+                                    <option value=" "><?php _e('Select Font','page-speed')?></option>
                                     <# for ( key in data.stacks) { #>
                                         <option value="{{ data.stacks[key] }}"
 
@@ -124,7 +124,7 @@ function helium_typography_control_register( $wp_customize ) {
                             </label>
 
                             <label class="c3">
-                                Size
+	                            <?php _e('Size','page-speed')?>
                                 <select type="text" class="size">
                                     <# for ( key in data.fontSizes) { #>
                                         <option value="{{ data.fontSizes[key] }}"
@@ -141,7 +141,7 @@ function helium_typography_control_register( $wp_customize ) {
                             </label>
 
                             <label class="c3">
-                                Line height (em)
+	                            <?php _e('Line Height','page-speed')?> (em)
                                 <input type="number" class="lineHeight" value="{{data.value.lh}}" min="0.80"
                                        max="2.00" step=".01">
                             </label>
