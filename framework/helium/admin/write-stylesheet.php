@@ -19,7 +19,6 @@ $theme_name = wp_get_theme()->stylesheet;
 add_action( 'update_option_theme_mods_' . $theme_name, 'helium_write_stylesheet', 20 );
 
 
-
 function helium_write_stylesheet_on_theme_switch() {
 	helium_write_stylesheet();
 }
@@ -119,14 +118,13 @@ class Helium_Styles {
 				}
 			}
 
-			delete_transient( $this->prefix . 'sass_file_list' );
-
-			set_transient( $this->prefix . 'sass_file_list', array(
-				'above_fold' => $this->af_files,
-				'below_fold' => $this->bf_files,
-			), 1800 );
-
-
+			if ( 'NOT_SET' !== get_theme_mod( 'can_read_write', 'NOT_SET' ) ) {
+				delete_transient( $this->prefix . 'sass_file_list' );
+				set_transient( $this->prefix . 'sass_file_list', array(
+					'above_fold' => $this->af_files,
+					'below_fold' => $this->bf_files,
+				), 1800 );
+			}
 		}
 	}
 
@@ -172,8 +170,10 @@ class Helium_Styles {
 					$content .= $wp_filesystem->get_contents( $file_name );
 				}
 			}
-			delete_transient( $transient );
-			set_transient( $transient, $content, 1800 );
+			if ( 'NOT_SET' !== get_theme_mod( 'can_read_write', 'NOT_SET' ) ) {
+				delete_transient( $transient );
+				set_transient( $transient, $content, 1800 );
+			}
 		}
 
 
@@ -196,16 +196,16 @@ class Helium_Styles {
 //		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
 
 
-		$override .= '$body-font-stack:' . sanitize_text_field(get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' )) . ";\n";
-		$override .= '$base-font-size:' . intval(get_theme_mod( 'primary_font_size', 16 )) . "px;\n";
-		$override .= '$base-line-height:' . helium_float(get_theme_mod( 'primary_font_lh', 1.7 )) . "em;\n";
-		$override .= '$body-font-weight:' . sanitize_text_field(get_theme_mod( 'primary_font_weight', 'normal' ) ). ";\n";
+		$override .= '$body-font-stack:' . sanitize_text_field( get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
+		$override .= '$base-font-size:' . intval( get_theme_mod( 'primary_font_size', 16 ) ) . "px;\n";
+		$override .= '$base-line-height:' . helium_float( get_theme_mod( 'primary_font_lh', 1.7 ) ) . "em;\n";
+		$override .= '$body-font-weight:' . sanitize_text_field( get_theme_mod( 'primary_font_weight', 'normal' ) ) . ";\n";
 
 
-		$override .= '$headings-font-stack:' . sanitize_text_field(get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' )) . ";\n";
-		$override .= '$headings-font-weight:' . sanitize_text_field(get_theme_mod( 'secondary_font_weight', 'bold' ) ). ";\n";
+		$override .= '$headings-font-stack:' . sanitize_text_field( get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
+		$override .= '$headings-font-weight:' . sanitize_text_field( get_theme_mod( 'secondary_font_weight', 'bold' ) ) . ";\n";
 
-		$override .= '$container_type:' . sanitize_text_field(get_theme_mod( 'container_type', 'regular' ) ). ';';
+		$override .= '$container_type:' . sanitize_text_field( get_theme_mod( 'container_type', 'regular' ) ) . ';';
 
 		if ( get_theme_mod( 'enable_card_style_widgets_sb', true ) ) {
 			$override .= '$sb_widget_cards:1;';
@@ -221,9 +221,9 @@ class Helium_Styles {
 		if ( get_theme_mod( 'override_color_scheme', false ) ) {
 			$colors_override = '';
 			$colors_override .= "/** Overridden by settings from customizer */\n\n";
-			$colors_override .= '$primary:' . sanitize_text_field(get_theme_mod( 'primary_color', '#007AFF' )) . ';';
-			$colors_override .= '$hue:' . absint(get_theme_mod( 'shades_from', '211' ) ). ';';
-			$colors_override .= '$saturation:' . absint(get_theme_mod( 'shade_saturation', 8 )) . ';';
+			$colors_override .= '$primary:' . sanitize_text_field( get_theme_mod( 'primary_color', '#007AFF' ) ) . ';';
+			$colors_override .= '$hue:' . absint( get_theme_mod( 'shades_from', '211' ) ) . ';';
+			$colors_override .= '$saturation:' . absint( get_theme_mod( 'shade_saturation', 8 ) ) . ';';
 			if ( get_theme_mod( 'invert_colors', false ) ) {
 				$colors_override .= '$invert:' . 1 . ';';
 			}
@@ -234,7 +234,7 @@ class Helium_Styles {
 		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
 
 
-		$content = str_replace( '/**SCSS_override**/', sanitize_text_field(get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' )), $content );
+		$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
 
 		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
@@ -252,10 +252,6 @@ class Helium_Styles {
 
 		$theme_name = wp_get_theme()->stylesheet;
 
-		//@todo We are not seperating above fold css,below two lines should ve deleted
-//		$content    = $this->minify_css( $this->generate_css( 'af' ) );
-//		update_option( $theme_name . '_above_fold_css', $content );
-
 		try {
 			global $wp_filesystem;
 			$content    = $this->generate_css( 'bf' );
@@ -266,21 +262,5 @@ class Helium_Styles {
 			echo 'Message: ' . esc_html( $e->getMessage() );
 		}
 
-	}
-
-
-	private function minify_css( $buffer ) {
-//		if (WP_DEBUG)
-//			return $buffer;
-
-		$buffer = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer );
-
-		// Remove space after colons
-		$buffer = str_replace( ': ', ':', $buffer );
-
-		// Remove whitespace
-		$buffer = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $buffer );
-
-		return $buffer;
 	}
 }
