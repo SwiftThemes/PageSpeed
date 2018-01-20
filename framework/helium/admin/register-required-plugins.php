@@ -63,7 +63,7 @@ array(
 'required'  => false,
 ),
 array(
-'name'      => 'Dynamic Thumbnails [Generates optimum thumbnails]',
+'name'      => 'Dynamic Thumbnails [Generates optimum thumbnails, Strongly Recommended]',
 'slug'      => 'dynamic-thumbnails',
 'required'  => false,
 ),
