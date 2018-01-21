@@ -26,7 +26,7 @@
 add_action( 'customize_register', 'helium_help_text_control_register', 1 );
 
 function helium_help_text_control_register() {
-	class He_Help_Text extends WP_Customize_Control {
+	class Helium_Help_Text extends WP_Customize_Control {
 
 		// Whitelist content parameter
 		public $content = '';

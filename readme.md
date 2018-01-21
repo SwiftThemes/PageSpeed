@@ -59,8 +59,8 @@ The following resources are included within the theme package.
 * [TGM Plugin Activation](http://tgmpluginactivation.com) by Thomas Griffin - Licensed under the [GPL-2.0 or Later](https://opensource.org/licenses/GPL-2.0).
 * [Mobile Detect](http://mobiledetect.net) by Victor Stanciu - Licensed under the [ MIT License](http://www.opensource.org/licenses/mit-license.php).
 * [Sticky](http://stickyjs.com) by [Anthony Garand](http://anthonygarand.com/) - Licensed under the [ MIT License](http://www.opensource.org/licenses/mit-license.php).
-
-bbPress*.css files located in /css are Licensed under the [GPL-2.0 or Later](https://opensource.org/licenses/GPL-2.0).
+* Some bits of code from Twenty Seventeen and Twenty Sixteen - Licensed under GPLv2 or later. Copyright 2016 WordPress.org 
+* bbPress*.css files located in /css are Licensed under the [GPL-2.0 or Later](https://opensource.org/licenses/GPL-2.0).
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 

@@ -17,7 +17,7 @@ function pagespeed_more_sidebars( $wp_customize ) {
 
 	$wp_customize->add_setting( 'example-control_', array('sanitize_callback' => 'sanitize_text_field',) );
 
-	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-control_', array(
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-control_', array(
 		'section'  => 'sidebar_settings',
 		'priority' => 5,
 		'label'    => __( ' ', 'page-speed' ),

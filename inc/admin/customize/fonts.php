@@ -31,7 +31,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 	$wp_customize->add_setting( 'example-control', array( 'sanitize_callback' => 'sanitize_text_field', ) );
 
-	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-control', array(
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-control', array(
 		'section'  => 'fonts',
 		'priority' => 5,
 		'label'    => __( ' ', 'page-speed' ),
@@ -41,7 +41,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 	$wp_customize->add_setting( 'example-2', array( 'sanitize_callback' => 'sanitize_text_field', ) );
 
-	$wp_customize->add_control( new He_Help_Text( $wp_customize, 'example-2', array(
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-2', array(
 		'section'  => 'fonts',
 		'priority' => 15,
 		'label'    => __( ' ', 'page-speed' ),

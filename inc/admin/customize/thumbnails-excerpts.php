@@ -64,7 +64,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'home_thumb_position', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
 		'default'           => 'alternate',
 
 	) );
@@ -148,7 +148,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'archives_thumb_position', array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
 		'default'           => 'alternate',
 
 	) );

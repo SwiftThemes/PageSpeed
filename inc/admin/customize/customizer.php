@@ -11,7 +11,7 @@ function pagespeed_customize( $wp_customize ) {
 
 	// Logo position
 	$wp_customize->add_setting( 'logo_position', array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'helium_sanitize_choice_field',
 		'default'           => 'left',
 	) );
 	$wp_customize->add_control(
@@ -67,7 +67,7 @@ function pagespeed_customize( $wp_customize ) {
 		'description' => '',
 	) );
 	$wp_customize->add_setting( 'theme_layout', array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'helium_sanitize_choice_field',
 		'default'           => 'centered',
 
 	) );
@@ -108,7 +108,7 @@ function pagespeed_customize( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'container_type', array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'helium_sanitize_choice_field',
 		'default'           => 'regular',
 
 	) );
@@ -142,7 +142,7 @@ function pagespeed_customize( $wp_customize ) {
 
 	$wp_customize->add_setting( 'site_width', array(
 		'sanitize_callback' => 'sanitize_text_field',
-		'default'           => '1160px',
+		'default'           => '1260px',
 
 	) );
 	$wp_customize->add_setting( 'main_width', array(
@@ -162,7 +162,7 @@ function pagespeed_customize( $wp_customize ) {
 
 	$wp_customize->add_control( 'site_width', array(
 		'label'       => __( 'Main container width', 'page-speed' ),
-		'description' => __( 'Along with units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 1600 px',
+		'description' => __( 'Along with units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 1260px',
 		'section'     => 'layout_settings',
 		'type'        => 'text',
 		'priority'    => 20,
@@ -200,7 +200,7 @@ function pagespeed_customize( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'single_post_layout', array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'helium_sanitize_choice_field',
 		'default'           => 'regular',
 	) );
 

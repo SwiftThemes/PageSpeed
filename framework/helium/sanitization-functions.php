@@ -20,6 +20,27 @@ function helium_float( $val ) {
 	return (float) $val;
 }
 
+function helium_sanitize_choice_field( $val, $setting ) {
+	global $wp_customize;
+	$control = $wp_customize->get_control( $setting->id );
+	if ( array_key_exists( $val, $control->choices ) ) {
+		return $val;
+	} else {
+		return $setting->default;
+	}
+}
+
+function helium_sanitize_thumbnail_alignment($val){
+	$choices = array(
+		'alignleft',
+		'aligncneter',
+		'alignright',
+		'alternate',
+	);
+	if ( array_key_exists( $val, $choices ) ) {
+		return $val;
+	}
+}
 function helium_sanitize_post_meta( $val ) {
 	return array_map( 'helium_sanitize_post_meta_values', $val );
 }
