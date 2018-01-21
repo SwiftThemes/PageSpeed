@@ -184,7 +184,7 @@ class Helium_Styles {
 
 		$override = '';
 		$override .= "/** Overridden by settings from customizer */\n\n";
-		$override .= '$site_width:' . sanitize_text_field( get_theme_mod( 'site_width', '1160px' ) ) . ";\n";
+		$override .= '$site_width:' . sanitize_text_field( get_theme_mod( 'site_width', '1260px' ) ) . ";\n";
 		$override .= '$main_width:' . helium_float( get_theme_mod( 'main_width', '56' ) ) . ";\n";
 		$override .= '$left_sidebar_width:' . helium_float( get_theme_mod( 'left_sidebar_width', '18.75' ) ) . ";\n";
 

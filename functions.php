@@ -60,7 +60,6 @@ function pagespeed_put_css_in_head() {
 	echo '<style>' . $style_generator->generate_css( 'bf' ) . '</style>';
 }
 
-
 /**
  * Replace the_excerpt "more" text with a link
  * @todo Move to a better place.

@@ -23,7 +23,7 @@
  * Time: 8:04 PM
  */
 
-function he_get_font_stacks() {
+function helium_get_font_stacks() {
 	$font_stack = array();
 
 	if ( get_theme_mod( 'gfont_1' ) ) {

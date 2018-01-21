@@ -51,7 +51,7 @@ function helium_typography_control_register( $wp_customize ) {
 
 
 
-			$this->json['stacks'] = he_get_font_stacks();
+			$this->json['stacks'] = helium_get_font_stacks();
 
 			$this->json['fontSizes'] = array(
 				8,

@@ -1,5 +1,5 @@
 <?php
-add_filter( 'comment_form_fields', 'he_move_comment_field_to_bottom' );
+add_filter( 'comment_form_fields', 'helium_move_comment_field_to_bottom' );
 
 /**
  * Change the WordPress comemnt box default position
@@ -8,8 +8,8 @@ add_filter( 'comment_form_fields', 'he_move_comment_field_to_bottom' );
  *
  * @return mixed
  */
-if ( ! function_exists( 'he_move_comment_field_to_bottom' ) ) {
-	function he_move_comment_field_to_bottom( $fields ) {
+if ( ! function_exists( 'helium_move_comment_field_to_bottom' ) ) {
+	function helium_move_comment_field_to_bottom( $fields ) {
 		$comment_field = $fields['comment'];
 		unset( $fields['comment'] );
 
