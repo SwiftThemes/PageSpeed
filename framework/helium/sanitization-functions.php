@@ -30,17 +30,20 @@ function helium_sanitize_choice_field( $val, $setting ) {
 	}
 }
 
-function helium_sanitize_thumbnail_alignment($val){
+function helium_sanitize_thumbnail_alignment( $val ) {
 	$choices = array(
 		'alignleft',
-		'aligncneter',
+		'aligncenter',
 		'alignright',
 		'alternate',
 	);
-	if ( array_key_exists( $val, $choices ) ) {
+	if ( array_search( $val, $choices ) !== false ) {
 		return $val;
+	} else {
+		return 'alternate';
 	}
 }
+
 function helium_sanitize_post_meta( $val ) {
 	return array_map( 'helium_sanitize_post_meta_values', $val );
 }
