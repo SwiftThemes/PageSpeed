@@ -42,7 +42,6 @@ function helium_write_to_uploads( $content, $destination ) {
 		$wp_filesystem->put_contents( $file, $content, FS_CHMOD_FILE );
 	} else {
 		set_theme_mod( 'can_read_write', false );
-
 		return;
 	}
 
@@ -259,7 +258,7 @@ class Helium_Styles {
 			$file       = trailingslashit( $upload_dir['basedir'] ) . $theme_name = wp_get_theme()->stylesheet . '.css';
 			$wp_filesystem->put_contents( $file, $content );
 		} catch ( Exception $e ) {
-			echo 'Message: ' . esc_html( $e->getMessage() );
+			echo __('Message:','page-speed') .' '. esc_html( $e->getMessage() );
 		}
 
 	}

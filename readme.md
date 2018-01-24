@@ -10,6 +10,9 @@ If you are downloading from here (GitHub), then
 5. Go to your `WordPress dashboard` -> `Appearance` -> `Add Themes` -> `Upload theme` and upload the archive you created in the above step and activate it.
 6. All customizations can be done from customizer @ `WordPress dashboard` -> `Appearance` -> `Customize`
 
+**Note**: PageSpeed generates the stylesheet (page-speed.css) and writes to uploads folder when you update the theme options.
+If you don't have read/write permissions on the server, it falls back to the default stylesheet included in the theme.
+
 #### Get the design in screenshot
 Make these changes in the customizer
 1. Layout ->
