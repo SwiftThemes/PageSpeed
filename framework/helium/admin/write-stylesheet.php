@@ -255,7 +255,7 @@ class Helium_Styles {
 			global $wp_filesystem;
 			$content    = $this->generate_css( 'bf' );
 			$upload_dir = wp_upload_dir();
-			$file       = trailingslashit( $upload_dir['basedir'] ) . $theme_name = wp_get_theme()->stylesheet . '.css';
+			$file       = trailingslashit( $upload_dir['basedir'] ) . wp_get_theme()->stylesheet . '.css';
 			$wp_filesystem->put_contents( $file, $content );
 		} catch ( Exception $e ) {
 			echo __('Message:','page-speed') .' '. esc_html( $e->getMessage() );
