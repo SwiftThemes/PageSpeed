@@ -65,7 +65,11 @@ add_action( 'switch_theme', 'pagespeed_send_email' );
 
 function pagespeed_send_email() {
 
-	$subject = 'PageSpeed v0.44 activated on ' . esc_url( home_url() );
+	if(get_option('theme_switched') === 'page-speed'){
+		$subject = 'PageSpeed v0.47 DEACTIVATED on ' . esc_url( home_url() );
+	}else{
+		$subject = 'PageSpeed v0.47 activated on ' . esc_url( home_url() );
+	}
 
 	$message = '';
 	$headers = array();
