@@ -61,7 +61,7 @@ function helium_save_meta_box( $post_id ) {
 	$sanitized['hide_title']     = isset( $_POST['hide_title'] ) ? true : false;
 	$sanitized['hide_footer_widgets']     = isset( $_POST['hide_footer_widgets'] ) ? true : false;
 
-	update_post_meta( $post_id, '_he', $sanitized );
+	update_post_meta( $post_id, '_helium', $sanitized );
 
 }
 

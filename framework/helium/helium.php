@@ -175,7 +175,7 @@ if ( ! class_exists( 'Helium') ) {
 				return null;
 			}
 
-			$meta = get_post_meta( $post_id, '_he', true );
+			$meta = get_post_meta( $post_id, '_helium', true );
 
 			if ( $key ) {
 				return isset( $meta[ $key ] ) ? $meta[ $key ] : null;
