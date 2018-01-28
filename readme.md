@@ -53,6 +53,9 @@ The latest user guide can be fount at [PageSpeed Manual](https://swiftthemes.com
 
 Helium framework used in this theme is not related to gantry.org and we don't have any affiliation with them.
 
+#### Credits
+* Special thanks to [Carolina Nymark](http://theme.tips) {@poena} for patiently reviewing the theme :)
+
 ## Copyright and License
 
 The following resources are included within the theme package.
