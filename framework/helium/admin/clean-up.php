@@ -10,7 +10,7 @@ add_action( 'switch_theme', 'helium_theme_cleanup' );
 
 
 function helium_theme_cleanup() {
-	$prefix = wp_get_theme()->stylesheet . '_';
+	$prefix = get_option('theme_switched') . '_';
 	//Clear transients
 	delete_transient( $prefix . 'sass_file_list' );
 	delete_transient( $prefix . 'sass_combined_bf' );
