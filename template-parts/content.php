@@ -60,8 +60,7 @@
 		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
 	);
 	$meta    = get_theme_mod( 'home_meta_after_body', $default );
-
-	if ( 1 == count( $meta ) && $meta[0]['key'] == 'Line' ) {
+    if ( 1 == count( $meta ) && $meta[0]['key'] == 'Line' ) {
 		echo '<hr class="separator">';
 	} else {
 		?>

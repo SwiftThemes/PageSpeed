@@ -45,11 +45,26 @@ function helium_sanitize_thumbnail_alignment( $val ) {
 }
 
 function helium_sanitize_post_meta( $val ) {
-	return array_map( 'helium_sanitize_post_meta_values', $val );
+	$sanitized= array_map( 'helium_sanitize_post_meta_values', $val );
+	return array_filter($sanitized);
 }
 
 function helium_sanitize_post_meta_values( $val ) {
 	$san          = array();
+	$valid_keys = array(
+		'Text',
+		'Cat',
+		'Tags',
+		'AuthorPosts',
+		'AuthorLink',
+		'Published',
+		'Updated',
+		'Line',
+	);
+	if ( array_search( $val['key'], $valid_keys ) === false ) {
+		return false;
+	}
+
 	$san['key']   = sanitize_text_field( $val['key'] );
 	$san['value'] = sanitize_text_field( $val['value'] );
 
