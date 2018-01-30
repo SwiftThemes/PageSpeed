@@ -298,7 +298,7 @@ function pagespeed_get_color_scheme_choices() {
 	$choices = array();
 	foreach ( $page_speed_color_schemes as $key => $value ) {
 		$choices[ $key ] = array(
-			'url'   => ADMIN_IMAGES_URI . '/color-schemes/' . $key . '.png',
+			'url'   => HELIUM_ADMIN_IMAGES_URI . '/color-schemes/' . $key . '.png',
 			'label' => $key
 		);
 	}

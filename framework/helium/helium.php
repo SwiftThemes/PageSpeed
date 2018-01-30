@@ -61,7 +61,7 @@ if ( ! class_exists( 'Helium') ) {
 			define( 'HELIUM_VENDOR', trailingslashit( HELIUM_DIR . 'vendor' ) );
 			define( 'HELIUM_CUSTOMIZE', trailingslashit( HELIUM_DIR . 'customize' ) );
 			// Admin paths
-			define( 'ADMIN_IMAGES_URI', trailingslashit( HELIUM_THEME_URI . '/assets/images/customize' ) );
+			define( 'HELIUM_ADMIN_IMAGES_URI', trailingslashit( HELIUM_THEME_URI . '/assets/images/customize' ) );
 
 			define( 'HELIUM_THEME_ASSETS', trailingslashit( HELIUM_THEME_DIR . 'assets' ) );
 			define( 'HELIUM_THEME_ASSETS_URI', trailingslashit( HELIUM_THEME_URI . 'assets' ) );
