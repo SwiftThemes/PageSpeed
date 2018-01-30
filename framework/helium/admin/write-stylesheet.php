@@ -192,7 +192,6 @@ class Helium_Styles {
 			$override .= '$header_height:' . $this->get_header_height() . ";\n";
 		}
 
-//		$override .= "\n" . get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) . "\n";
 
 
 		$override .= '$body-font-stack:' . sanitize_text_field( get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
@@ -242,8 +241,6 @@ class Helium_Styles {
 		require_once( HELIUM_DIR . 'libs/pre-process.php' );
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
-
-//		$scss->setFormatter( 'scss_formatter_compressed' );
 		return $scss->compile( $content );
 	}
 

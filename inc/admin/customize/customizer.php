@@ -24,15 +24,15 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 30,
 				'choices'  => array(
 					'left'   => array(
-						'url'   => ADMIN_IMAGES_URI . '/logo-left.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/logo-left.png',
 						'label' => __( 'Left', 'page-speed' ),
 					),
 					'center' => array(
-						'url'   => ADMIN_IMAGES_URI . '/logo-center.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/logo-center.png',
 						'label' => __( 'Center', 'page-speed' ),
 					),
 					'right'  => array(
-						'url'   => ADMIN_IMAGES_URI . '/logo-right.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/logo-right.png',
 						'label' => __( 'Right', 'page-speed' ),
 					),
 				)
@@ -81,23 +81,23 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 10,
 				'choices'  => array(
 					'l-sb'     => array(
-						'url'   => ADMIN_IMAGES_URI . 'layout-l-sb.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-l-sb.png',
 						'label' => __( 'Content / Sidebar', 'page-speed' )
 					),
 					'centered' => array(
-						'url'   => ADMIN_IMAGES_URI . 'layout-centered.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-centered.png',
 						'label' => __( 'Sidebar / Content / Sidebar', 'page-speed' ),
 					),
 					'r-sb'     => array(
-						'url'   => ADMIN_IMAGES_URI . 'layout-r-sb.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-r-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
 					'rr-sb'    => array(
-						'url'   => ADMIN_IMAGES_URI . 'layout-rr-sb.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-rr-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
 					'll-sb'    => array(
-						'url'   => ADMIN_IMAGES_URI . 'layout-ll-sb.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-ll-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
 
@@ -123,15 +123,15 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 10,
 				'choices'  => array(
 					'regular' => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-centered.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/layout-centered.png',
 						'label' => __( 'Regular', 'page-speed' )
 					),
 					'boxed'   => array(
-						'url'   => ADMIN_IMAGES_URI . '/container-boxed.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/container-boxed.png',
 						'label' => __( 'Boxed', 'page-speed' ),
 					),
 					'wide'    => array(
-						'url'   => ADMIN_IMAGES_URI . '/container-wide.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/container-wide.png',
 						'label' => __( 'Wide', 'page-speed' ),
 					),
 				)
@@ -215,11 +215,11 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 10,
 				'choices'  => array(
 					'regular' => array(
-						'url'   => ADMIN_IMAGES_URI . '/layout-' . sanitize_text_field( get_theme_mod( 'theme_layout', 'centered' ) ) . '.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/layout-' . sanitize_text_field( get_theme_mod( 'theme_layout', 'centered' ) ) . '.png',
 						'label' => __( 'Regular', 'page-speed' )
 					),
 					'1c'      => array(
-						'url'   => ADMIN_IMAGES_URI . '/single-post-1c.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/single-post-1c.png',
 						'label' => __( 'Boxed', 'page-speed' ),
 					)
 				)

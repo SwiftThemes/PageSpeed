@@ -44,8 +44,6 @@ function helium_drag_drop_control_register( $wp_customize ) {
 
 		public function to_json() {
 			parent::to_json();
-			//@todo delete this line
-			$this->json['test']  = $this->booom;
 			$this->json['value'] = $this->value();
 
 		}

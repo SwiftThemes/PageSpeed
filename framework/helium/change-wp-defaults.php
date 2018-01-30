@@ -26,7 +26,6 @@ if ( ! function_exists( 'helium_move_comment_field_to_bottom' ) ) {
 		$fields['url'] = '<p class="comment-form-url"><label for="url">' . __( 'Website','page-speed') . '</label> ' .
 		                 '<input id="url"  placeholder="'.esc_attr(__('Your website url','page-speed')).'" name="url" type="url" value="' . sanitize_text_field( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></p>';
 
-//		$fields['class_form'] = 'cf';
 		return $fields;
 	}
 }

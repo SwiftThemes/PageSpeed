@@ -8,7 +8,7 @@
 				?>
             <div class="fc-<?php echo $i ?> fc">
                 <div class="inner">
-				<?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( "footer-$i" ) ) ?>
+				<?php if ( dynamic_sidebar( "footer-$i" ) ) ?>
                 </div>
                 </div>
                 <!--End of footer-1 -->

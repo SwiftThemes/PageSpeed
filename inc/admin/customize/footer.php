@@ -18,7 +18,7 @@ function pagespeed_customize_footer( $wp_customize ) {
 	// Show excerpts or full post
 	$wp_customize->add_setting( 'copyright_text', array(
 		'sanitize_callback' => 'helium_meta',
-		'default'           => __('Copyright', 'page-speed' ).' &copy; ' . date( "Y" ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
+		'default'           => __('Copyright', 'page-speed' ).' &copy; ' . date_i18n(__('Y','page-speed')) . ' ' . '<a href="' . esc_url( home_url() ) . '"
 						                          rel="home">' . get_bloginfo( "name" ) . '</a>',
 
 	) );

@@ -17,32 +17,30 @@ add_action( 'wp_head', 'pagespeed_add_image_bg_for_single_post', 99 );
 
 
 function pagespeed_register_styles() {
-	wp_register_style( 'page-speed', HELIUM_THEME_CSS_URI . 'style.prod.css' );
-	wp_register_style( 'page-speed-icons', HELIUM_THEME_CSS_URI . 'font-icons.css' );
+	wp_register_style( 'pagespeed', HELIUM_THEME_CSS_URI . 'style.prod.css' );
+	wp_register_style( 'pagespeed-icons', HELIUM_THEME_CSS_URI . 'font-icons.css' );
 
 	$upload_dir = wp_upload_dir();
-	wp_register_style( 'page-speed-generated', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
-	wp_register_style( 'page-speed-print-styles', HELIUM_THEME_CSS_URI . 'print-styles.css' );
+	wp_register_style( 'pagespeed-generated', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
+	wp_register_style( 'pagespeed-print-styles', HELIUM_THEME_CSS_URI . 'print-styles.css' );
 }
 
 function pagespeed_enqueue_styles() {
-	wp_enqueue_style( 'page-speed-icons' );
+	wp_enqueue_style( 'pagespeed-icons' );
 
 	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write',false ) ) {
-		wp_enqueue_style( 'page-speed' );
+		wp_enqueue_style( 'pagespeed' );
 	} else {
-		wp_enqueue_style( 'page-speed-generated', '', null, 'screen' );
+		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
 	}
 
 
-	wp_enqueue_style( 'page-speed-print-styles', '', null, 'screen' );
+	wp_enqueue_style( 'pagespeed-print-styles', '', null, 'screen' );
 
 }
 
 
 function pagespeed_load_fonts() {
-	//https://fonts.googleapis.com/css?family=Metal+Mania|Open+Sans:300,300i,400&amp;subset=cyrillic,latin-ext
-	//https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,400i&amp;subset=cyrillic
 
 	$url = helium_generate_gfont_link();
 
@@ -61,7 +59,6 @@ function pagespeed_add_image_bg_for_single_post() {
 	if ( ! is_single() || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
 		return;
 	}
-	//@todo Add different sizes for mobile and desktop;
 	global $helium;
 	if ( $helium->is_mobile() ) {
 		$size = array(
@@ -81,31 +78,4 @@ function pagespeed_add_image_bg_for_single_post() {
         }
     </style>
 	<?php
-}
-
-function helium_generate_gfont_link() {
-	$g1 = get_theme_mod( 'gfont_1' );
-	$g2 = get_theme_mod( 'gfont_2' );
-
-	if ( ! $g1 && ! $g2 ) {
-		return false;
-	}
-
-	$base = 'https://fonts.googleapis.com/css?family=';
-
-	if ( $g1 ) {
-		$base .= str_replace( ' ', '+', $g1['fontObject']['family'] );
-		if ( isset( $g1['weights'] ) && $g1['weights'] ) {
-			$base .= ':' . implode( ',', $g1['weights'] );
-		}
-	}
-
-	if ( $g2 ) {
-		$base .= '|' . str_replace( ' ', '+', $g2['fontObject']['family'] );
-		if ( isset( $g2['weights'] ) && $g2['weights'] ) {
-			$base .= ':' . implode( ',', $g2['weights'] );
-		}
-	}
-
-	return esc_url($base);
 }

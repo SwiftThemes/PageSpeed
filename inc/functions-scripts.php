@@ -15,7 +15,6 @@ add_action( 'wp_enqueue_scripts', 'pagespeed_enqueue_scripts', 9 );
 
 
 function pagespeed_register_scripts() {
-	//@todo remove
 	wp_register_script( 'pagespeed-vendors-js', HELIUM_THEME_JS_URI . 'vendors.min.js', array( 'jquery' ) );
 	wp_register_script( 'pagespeed-custom-js', HELIUM_THEME_JS_URI . 'custom.min.js', array( 'jquery' ) );
 	wp_register_script( 'pagespeed-custom-js-dev', HELIUM_THEME_JS_URI . 'custom/desktop.js', array( 'jquery' ) );

@@ -90,7 +90,6 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			$container_class .= ' has-sticky-logo';
 		}
 
-//		if ( has_nav_menu( 'primary' ) ) :
 		?>
         <div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
             <div id="primary" class="">
@@ -104,7 +103,6 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
             </div>
         </div>
 		<?php
-//		endif;
 	}
 }
 if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
@@ -145,7 +143,6 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			$container_class .= ' has-sticky-logo';
 		}
 
-//		if ( has_nav_menu( 'header' ) ) :
 		?>
         <div id="header-nav-container" class="cf <?php echo sanitize_html_class( $container_class ) ?>">
             <div id="primary" class="">
@@ -154,7 +151,6 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
             </div>
         </div>
 		<?php
-//		endif;
 	}
 }
 
@@ -193,7 +189,6 @@ function pagespeed_breadcrumbs() {
 		'show_on_front' => false,
 		'show_home'     => __( 'Home', 'page-speed' ),
 		'show_browse'   => false,
-//		"singular_{$post_type}_taxonomy" => false,
 		'echo'          => true
 	);
 	if ( current_theme_supports( 'breadcrumb-trail' ) ) {

@@ -15,7 +15,6 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'priority' => 35,
 	) );
 
-	//@todo add proper sanitization callbacks
 	$wp_customize->add_setting( 'gfont_1', array(
 		'sanitize_callback' => 'helium_sanitize_gfonts',
 		'default'           => '',

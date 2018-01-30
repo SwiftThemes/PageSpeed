@@ -66,10 +66,11 @@ function pagespeed_put_css_in_head() {
  */
 
 function pagespeed_new_excerpt_more( $more ) {
-	global $post;
-
+	if ( is_admin() ) {
+		return $more;
+	}
 	return '<p class="more-link">
-<a class=" he-btn" href="' . esc_url( get_permalink( $post->ID ) ) . '">' . __( 'Read more', 'page-speed' ) . ' <span class="icon">&rarr;</span></a>
+<a class=" he-btn" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read more', 'page-speed' ) . ' <span class="icon">&rarr;</span></a>
 </p>';
 }
 

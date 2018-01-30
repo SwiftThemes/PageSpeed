@@ -10,7 +10,7 @@
  * @license
  */
 
-if ( ! class_exists( 'Helium') ) {
+if ( ! class_exists( 'Helium' ) ) {
 
 	/**
 	 * The Helium class launches the helium and hybrid frameworks.
@@ -30,7 +30,6 @@ if ( ! class_exists( 'Helium') ) {
 		 * @access public
 		 * @return void
 		 */
-
 		public function __construct() {
 
 			add_action( 'after_setup_theme', array( $this, 'constants' ), - 95 );
@@ -61,7 +60,7 @@ if ( ! class_exists( 'Helium') ) {
 			define( 'HELIUM_VENDOR', trailingslashit( HELIUM_DIR . 'vendor' ) );
 			define( 'HELIUM_CUSTOMIZE', trailingslashit( HELIUM_DIR . 'customize' ) );
 			// Admin paths
-			define( 'ADMIN_IMAGES_URI', trailingslashit( HELIUM_THEME_URI . '/assets/images/customize' ) );
+			define( 'HELIUM_ADMIN_IMAGES_URI', trailingslashit( HELIUM_THEME_URI . '/assets/images/customize' ) );
 
 			define( 'HELIUM_THEME_ASSETS', trailingslashit( HELIUM_THEME_DIR . 'assets' ) );
 			define( 'HELIUM_THEME_ASSETS_URI', trailingslashit( HELIUM_THEME_URI . 'assets' ) );
@@ -75,17 +74,14 @@ if ( ! class_exists( 'Helium') ) {
 
 			define( 'HELIUM_CHILD_THEME_URI', trailingslashit( get_stylesheet_directory_uri() ) );
 
-			define('HELIUM_ADMIN_ASSETS_URI',trailingslashit(HELIUM_THEME_URI.'framework/helium/admin/assets/') );
+			define( 'HELIUM_ADMIN_ASSETS_URI', trailingslashit( HELIUM_THEME_URI . 'framework/helium/admin/assets/' ) );
 		}
 
 		/**
 		 * Load the helium framework core
 		 */
 		public function core() {
-//			require_once( HELIUM_DIR . 'meta-scs.php' );
-//			require_once( HELIUM_DIR . 'customizer.php' );
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
-//			require_once( HELIUM_DIR . 'dynamic-thumbnails.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
 			require_once( HELIUM_DIR . 'body-css-classes.php' );
 			require_once( HELIUM_DIR . 'post-meta.php' );
@@ -98,7 +94,6 @@ if ( ! class_exists( 'Helium') ) {
 			require_once( HELIUM_CUSTOMIZE . 'control-help-text.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-drag-drop.php' );
 			require_once( HELIUM_CUSTOMIZE . 'utils.php' );
-//			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
 			require_once( HELIUM_CUSTOMIZE . 'sass-override.php' );
 			require_once( HELIUM_CUSTOMIZE . 'load-scripts.php' );
 
@@ -119,13 +114,9 @@ if ( ! class_exists( 'Helium') ) {
 		 */
 		public function add_theme_support() {
 
-//			add_theme_support( 'hybrid-core-template-hierarchy' );
 			add_theme_support( 'breadcrumb-trail' );
-			//add_theme_support( 'theme-layouts', array( 'default' => '2c-l' ) );
 
 			add_theme_support( 'post-thumbnails' );
-//			add_theme_support( 'custom-background' );
-//			add_theme_support( 'custom-header' );
 			add_theme_support( 'custom-logo' );
 			add_theme_support( 'automatic-feed-links' );
 			add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'gallery', 'caption' ) );
@@ -167,10 +158,10 @@ if ( ! class_exists( 'Helium') ) {
 		public function get_meta( $key = null ) {
 
 			if ( is_admin() && isset( $_GET['post'] ) && $_GET['post'] ) {
-				$post_id = intval($_GET['post']);
+				$post_id = intval( $_GET['post'] );
 			} else if ( is_singular() ) {
 				global $post;
-				$post_id = intval($post->ID); //@todo is casting required?
+				$post_id = intval( $post->ID ); //@todo is casting required?
 			} else {
 				return null;
 			}
