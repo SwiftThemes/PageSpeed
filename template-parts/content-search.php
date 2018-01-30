@@ -18,7 +18,7 @@
 	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'archives_show_thumbnails', true ) ) : ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'archives_thumb' ), array( 'class' => get_theme_mod( 'archives_thumb_position', 'alternate' ) ) ) ?>
+				<?php the_post_thumbnail( helium_get_thumb_size( 'archives_thumb' ), array( 'class' => sanitize_html_class( get_theme_mod( 'archives_thumb_position', 'alternate' ) ) ) ) ?>
             </a>
         </div><!-- .post-thumbnail -->
 	<?php endif; ?>
@@ -59,7 +59,7 @@
 
         <footer class="entry-footer">
             <div class="inner footer meta">
-				<?php  helium_generate_post_meta( $meta ) ?>
+				<?php helium_generate_post_meta( $meta ) ?>
             </div>
         </footer>
 	<?php }

@@ -25,17 +25,9 @@
                     stack[font['stack']] = font['stack']
 
                     wp.customize.control('primary_font')['params']['stacks'][font['stack']] = font['stack']
-
-                    // wp.customize.control( 'primary_font' )['params']['stacks'].push(font['stack'])
-
                     wp.customize.control('primary_font').renderContent();
-
                     wp.customize.control('secondary_font')['params']['stacks'][font['stack']] = font['stack']
                     wp.customize.control('secondary_font').renderContent();
-
-
-                    // wp.customize.control( 'secondary_font' )['params']['choices'][font['stack']] = font['stack']
-                    // wp.customize.control( 'secondary_font' ).renderContent();
                 }
             );
 

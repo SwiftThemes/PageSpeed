@@ -32,9 +32,6 @@ add_action( 'customize_register', 'image_size_control_register', 1 );
 
 function image_size_control_register( $wp_customize ) {
 
-	// Register the control type.
-	// $wp_customize->register_control_type( 'Helium_Customize_Control_Image_Size' );
-
 	class Helium_Customize_Control_Image_Size extends WP_Customize_Control {
 
 		//@todo use named array for settings

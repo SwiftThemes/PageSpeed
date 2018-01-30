@@ -17,25 +17,25 @@ add_action( 'wp_head', 'pagespeed_add_image_bg_for_single_post', 99 );
 
 
 function pagespeed_register_styles() {
-	wp_register_style( 'page-speed', HELIUM_THEME_CSS_URI . 'style.prod.css' );
-	wp_register_style( 'page-speed-icons', HELIUM_THEME_CSS_URI . 'font-icons.css' );
+	wp_register_style( 'pagespeed', HELIUM_THEME_CSS_URI . 'style.prod.css' );
+	wp_register_style( 'pagespeed-icons', HELIUM_THEME_CSS_URI . 'font-icons.css' );
 
 	$upload_dir = wp_upload_dir();
-	wp_register_style( 'page-speed-generated', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
-	wp_register_style( 'page-speed-print-styles', HELIUM_THEME_CSS_URI . 'print-styles.css' );
+	wp_register_style( 'pagespeed-generated', trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' );
+	wp_register_style( 'pagespeed-print-styles', HELIUM_THEME_CSS_URI . 'print-styles.css' );
 }
 
 function pagespeed_enqueue_styles() {
-	wp_enqueue_style( 'page-speed-icons' );
+	wp_enqueue_style( 'pagespeed-icons' );
 
 	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write',false ) ) {
-		wp_enqueue_style( 'page-speed' );
+		wp_enqueue_style( 'pagespeed' );
 	} else {
-		wp_enqueue_style( 'page-speed-generated', '', null, 'screen' );
+		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
 	}
 
 
-	wp_enqueue_style( 'page-speed-print-styles', '', null, 'screen' );
+	wp_enqueue_style( 'pagespeed-print-styles', '', null, 'screen' );
 
 }
 

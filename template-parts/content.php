@@ -2,7 +2,7 @@
 	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'home_show_thumbnails', true ) && 'aligncenter' === get_theme_mod( 'home_thumb_position', 'alternate' ) ) : ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => get_theme_mod( 'home_thumb_position', 'alternate' ) ) ) ?>
+				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => sanitize_html_class(get_theme_mod( 'home_thumb_position', 'alternate' )) ) ) ?>
             </a>
         </div><!-- .post-thumbnail -->
 	<?php endif; ?>
@@ -27,7 +27,7 @@
 	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'home_show_thumbnails', true ) && 'aligncenter' !== get_theme_mod( 'home_thumb_position', 'alternate' ) ) : ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => get_theme_mod( 'home_thumb_position', 'alternate' ) ) ) ?>
+				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => sanitize_html_class( get_theme_mod( 'home_thumb_position', 'alternate' ) ) ) ) ?>
             </a>
         </div><!-- .post-thumbnail -->
 	<?php endif; ?>
@@ -60,14 +60,14 @@
 		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
 	);
 	$meta    = get_theme_mod( 'home_meta_after_body', $default );
-    if ( 1 == count( $meta ) && $meta[0]['key'] == 'Line' ) {
+	if ( 1 == count( $meta ) && $meta[0]['key'] == 'Line' ) {
 		echo '<hr class="separator">';
 	} else {
 		?>
 
         <footer class="entry-footer">
             <div class="inner footer meta">
-				<?php  helium_generate_post_meta( $meta ) ?>
+				<?php helium_generate_post_meta( $meta ) ?>
             </div>
         </footer>
 	<?php }

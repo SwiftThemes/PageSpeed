@@ -2,7 +2,6 @@
 
 
 function helium_theme_options_display() {
-//	require_once HELIUM_ADMIN . '/display-theme-options.php';
 	GLOBAL $theme_options;
 	?>
     <!-- Create a header in the default WordPress 'wrap' container -->
