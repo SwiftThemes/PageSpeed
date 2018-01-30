@@ -72,7 +72,7 @@ buildInclude = [
     '!buildtheme/**/*',
     '!assets/bower_components/**/*',
     '!style.css.map',
-    '!assets/js/custom/*',
+    // '!assets/js/custom/*',
     '!gulp/*',
     '!*.psd',
     '!gulpfile.js'
