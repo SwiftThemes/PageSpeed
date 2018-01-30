@@ -56,3 +56,29 @@ function helium_get_font_stacks() {
 
 	return array_combine( $web_safe_stacks, $web_safe_stacks );
 }
+
+function helium_generate_gfont_link() {
+	$g1 = get_theme_mod( 'gfont_1' );
+	$g2 = get_theme_mod( 'gfont_2' );
+
+	if ( ! $g1 && ! $g2 ) {
+		return false;
+	}
+
+	$base = 'https://fonts.googleapis.com/css?family=';
+
+	if ( $g1 ) {
+		$base .= str_replace( ' ', '+', $g1['fontObject']['family'] );
+		if ( isset( $g1['weights'] ) && $g1['weights'] ) {
+			$base .= ':' . implode( ',', $g1['weights'] );
+		}
+	}
+
+	if ( $g2 ) {
+		$base .= '|' . str_replace( ' ', '+', $g2['fontObject']['family'] );
+		if ( isset( $g2['weights'] ) && $g2['weights'] ) {
+			$base .= ':' . implode( ',', $g2['weights'] );
+		}
+	}
+	return esc_url($base);
+}

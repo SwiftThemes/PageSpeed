@@ -49,16 +49,12 @@ class PageSpeed {
 
 		require_once( HELIUM_THEME_CUSTOMIZE . 'customizer.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'header.php' );
-//		require_once( HELIUM_THEME_CUSTOMIZE . 'home-page.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'footer.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'post-metas.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'thumbnails-excerpts.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'colors.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'fonts.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'sidebar-settings.php' );
-//		require_once( HELIUM_THEME_CUSTOMIZE . 'more-sidebars.php' );
-//		require_once( HELIUM_THEME_CUSTOMIZE . 'custom-content.php' );
-
 
 		add_theme_support( 'breadcrumb-trail' );
 
