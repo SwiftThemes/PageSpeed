@@ -15,25 +15,26 @@
 .ui-tabs-nav a {
     text-decoration: none;
     font-weight: bold;
+    font-size: 24px;
+    font-weight: 300;
     color: #444;
-    padding: 6px;
+    padding: 10px;
     border: solid 1px #CCC;
     border-width: 1px 1px 0;
     display: inline-block;
 }
 
 .ui-tabs-active a {
-    padding-bottom: 7px;
+    padding-bottom: 11px;
     margin-bottom: -1px;
     z-index: 3;
-    background: #FFF;
+    background: #f1f1f1;
 }
 
 .ui-tabs-panel {
     padding: 10px;
-    background: #fff;
     border: solid 1px #CCC;
-    border-width: 0 1px 1px;
+    border-width: 0;
 }
 
 .clear {
@@ -89,27 +90,37 @@
 }
 
 #options-saved,
-#can-write{
+#can-write {
     color: green;
 }
 
 #options-saved:before,
-#can-write:before{
+#can-write:before {
     content: "\f147";
 }
 
 #options-save-error,
-#can-not-write{
+#can-not-write {
     color: red;
 }
 
 #options-save-error:before,
-#can-not-write:before{
+#can-not-write:before {
 
     content: "\f158";
 }
 
+.about {
+    font-size: 16px;
+    line-height: 26px;
+    color: #444;
+}
 
+/*.about h2:before {content: "\f487";font-family: dashicons;color:rgb(0, 122, 255);padding-right: 10px}*/
+.about h2 {
+margin-bottom: 10px;
+    font-weight: 400;
+}
 
 /**/
 /**
