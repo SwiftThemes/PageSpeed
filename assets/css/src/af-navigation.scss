@@ -1,0 +1,151 @@
+@media only screen and (min-width: 768px) {
+  .nav-container {
+    border-bottom: solid 1px $border-color;
+  }
+
+  .is-sticky .has-sticky-logo.nav-container #primary-nav {
+    margin-left: 44px;
+  }
+  .nav {
+    ul {
+      margin: 0;
+      padding: 0
+    }
+    ul li {
+      display: inline;
+      margin: 0;
+      float: left
+    }
+    a {
+      color: $primary-nav-color;
+      padding: .25em .5em;
+      display: block;
+      text-decoration: none;
+    }
+    li:hover,
+    a:hover,
+    li:hover ul {
+      background: shift-color($primary-nav-bg);
+      color: $primary-nav-color;
+    }
+
+    li ul li:hover,
+    li ul a:hover {
+      background: shift-color($primary-nav-bg, .05);
+    }
+
+    ul li li {
+      display: block;
+      width: 100%
+    }
+    ul ul {
+      display: none;
+      width: 180px
+    }
+    /* first level */
+    ul li {
+      position: relative;
+      z-index: 2;
+    }
+    ul li:hover > ul {
+      display: inline;
+      position: absolute;
+      top: 2.125em; //2.15em
+      left: 0;
+      background: shift-color($primary-nav-bg)
+    }
+    ul li:hover ul ul {
+      display: none
+    }
+
+    /* second level */
+    ul ul li:hover > ul {
+      display: block;
+      position: absolute;
+      left: 180px;
+      top: 0;
+    }
+    ul li:hover ul li:hover ul li a {
+      display: block
+    }
+    ul ul ul ul {
+      display: none
+    }
+
+    /* third level */
+
+    /* Icons */
+    .menu-item-has-children > a:after {
+      content: '\BB';
+      opacity: .5;
+      margin-left: 5px;
+      display: inline-block;
+    }
+
+    .menu > .menu-item-has-children > a:after {
+      @include rotate(90deg)
+    }
+  }
+}
+
+#primary-nav-container {
+  background: $primary-nav-bg;
+}
+
+#secondary-nav-container {
+  background: $secondary-nav-bg;
+}
+
+#secondary-nav-container.nav-container {
+
+  border-bottom: none;
+  .nav {
+    ul li {
+      position: relative;
+      z-index: 4;
+    }
+    a {
+      color: $secondary-nav-color;
+    }
+    a:hover {
+      color: $primary;
+      background: shift-color($secondary-nav-bg)
+    }
+
+    li:hover,
+    a:hover,
+    li:hover ul {
+      background: shift-color($secondary-nav-bg);
+    }
+
+  }
+}
+
+@if ($is_sleek_header == 1) {
+
+  #site-header-container {
+    padding: 0;
+  }
+  #primary {
+    .nav .menu > li > a {
+      line-height: $header-height;
+      padding-top: 0;
+      padding-bottom: 0
+    }
+    .nav .menu > li:hover > ul {
+      top: $header-height;
+    }
+  }
+}
+
+
+
+#menu {
+  display: none
+}
+
+
+#side-pane {
+  width: 0;
+  display: none
+}

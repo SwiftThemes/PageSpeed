@@ -31,10 +31,8 @@ function pagespeed_enqueue_styles() {
 	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write', false ) ) {
 		wp_enqueue_style( 'pagespeed' );
 	} else {
-//		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
-		$upload_dir = wp_upload_dir();
+		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
         echo '<style>'.get_theme_mod('af_css').'</style>';
-		echo '<link rel="preload" href="' . trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' . '" as="style" onload="this.rel=\'stylesheet\'">';
 	}
 
 

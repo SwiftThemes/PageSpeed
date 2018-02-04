@@ -1,12 +1,3 @@
-article:nth-child(even) .alternate{
-  float: left;
-  margin-right:10px;
-}
-article:nth-child(odd) .alternate{
-  float: right;
-  margin-left:10px;
-}
-
 .post-thumbnail img.alignleft{
   margin-right: 10px;
 }
@@ -15,4 +6,12 @@ article:nth-child(odd) .alternate{
 }
 .post-thumbnail img.aligncenter{
   margin-bottom: $vr;
+}
+article:nth-child(even) .alternate{
+  float: left;
+  margin-right:10px;
+}
+article:nth-child(odd) .alternate{
+  float: right;
+  margin-left:10px;
 }

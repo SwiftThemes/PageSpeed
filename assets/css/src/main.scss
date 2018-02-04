@@ -4,18 +4,22 @@
 @import "colors";
 
 
-@import "af-reset";
+@import "reset";
 @import "forms";
+
+
 @import "af-typography";
-
-@import "business-site";
-
-@import "layout";
+@import "af-layout";
 @import "af-header";
+@import "af-navigation";
+@import "af-layout-responsive";
+
+@import "navigation";
 @import "buttons";
 @import "af-generic-classes";
 @import "widgets";
-@import "navigation";
+
+@import "business-site";
 
 @import "common";
 
@@ -37,7 +41,6 @@
 @import "gallery";
 
 
-@import "af-layout-responsive";
 
 @import "table";
 

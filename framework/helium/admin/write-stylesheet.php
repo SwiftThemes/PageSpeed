@@ -96,7 +96,7 @@ class Helium_Styles {
 							$file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
 						}
 					}
-
+					// Short this to disable separation.
 					if ( $this->is_above_fold( $file_name ) ) {
 						array_push( $this->af_files, $file );
 					} elseif ( 'main' !== $file ) {
@@ -242,6 +242,9 @@ class Helium_Styles {
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
 
+		if($af_bf == 'af'){
+			$scss->setFormatter( 'scss_formatter_compressed' );
+		}
 		return $scss->compile( $content );
 	}
 
