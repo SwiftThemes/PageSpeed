@@ -1,5 +1,3 @@
-//@import "variables";
-
 #wrapper,
 .hybrid {
   width: $site_width;
@@ -24,7 +22,6 @@ body {
   height: 100%; /* force the BODY element to match the height of the HTML element */
 }
 
-// #content{padding-bottom: $vr}
 #main > .inner {
   padding-top: $padding;
   padding-bottom: $padding
@@ -161,27 +158,20 @@ body {
 .layout-ll-sb
 {
   #sb1 {
-    //background: rgba(0, 255, 255, .5);
     background: $sb1-bg !important;
   }
   #sb2 {
-    //background: rgba(255, 255, 0, .5);
     background: $sb2-bg !important;
 
   }
 
 }
-//
-//.layout-ll-sb #sb1 > .inner,
-//.layout-rr-sb #sb1 >.inner{padding-top:0;padding-bottom: 0}
-
 #sb1{
   background: $sb1-bg;
 }
 .layout-centered.container-wide 
 {
   #sb1, #wrapper, #sb2 {
-    //background: rgba(0, 255, 255, .5);
     //@todo not represented correctly
     background: rgba($sb1-bg, 1) !important;
   }

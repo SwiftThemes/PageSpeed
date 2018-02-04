@@ -28,14 +28,17 @@ function pagespeed_register_styles() {
 function pagespeed_enqueue_styles() {
 	wp_enqueue_style( 'pagespeed-icons' );
 
-	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write',false ) ) {
+	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write', false ) ) {
 		wp_enqueue_style( 'pagespeed' );
 	} else {
-		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
+//		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
+		$upload_dir = wp_upload_dir();
+        echo '<style>'.get_theme_mod('af_css').'</style>';
+		echo '<link rel="preload" href="' . trailingslashit( $upload_dir['baseurl'] ) . wp_get_theme()->stylesheet . '.css' . '" as="style" onload="this.rel=\'stylesheet\'">';
 	}
 
 
-	wp_enqueue_style( 'pagespeed-print-styles', '', null, 'screen' );
+	wp_enqueue_style( 'pagespeed-print-styles', '', null, 'print' );
 
 }
 

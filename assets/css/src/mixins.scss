@@ -29,7 +29,7 @@
 
 
 @mixin gradient($from, $to,$type) {
-  /* fallback/image non-cover color */
+  ///* fallback/image non-cover color */
   background-color: $from;
   /* Firefox 3.6+ */
   background-image: -moz-linear-gradient($from, $to);

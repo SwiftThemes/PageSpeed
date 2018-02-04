@@ -27,7 +27,7 @@ $btn-pink: rgb(255, 44, 85);
 
 /**colors**/
 
-/* Generated colors */
+///* Generated colors */
 
 $light-1: hsla($hue, $saturation, 97, $alpha);
 $light-2: hsla($hue, $saturation, 94, $alpha);
@@ -64,7 +64,7 @@ $border-color-light: rgba($dark-6, .07);
 $border-color-dark: rgba($dark-4, .1);
 
 
-/* Generic Colors */
+///* Generic Colors */
 $body-color: $dark-3;
 $link-color: $dark-1;
 $meta-color: rgba($dark-6,.8);
@@ -74,7 +74,7 @@ $sticky-header-bg: rgba($dark-1, 0.75);
 $button-bg: $primary;
 $button-color: rgba($light-1, 1);
 
-/* Layout colors */
+///* Layout colors */
 $body-bg: $dark-1;
 $wrapper-bg: rgba($light-1, 1);
 $content-bg: $light-1;
@@ -84,19 +84,19 @@ $sb2-bg: rgba(darken($light-1,.04), .9);
 $footer-bg: $dark-2;
 $footer-color: $light-3;
 
-/* Header Colors */
+///* Header Colors */
 $header-bg: rgba($light-1, 1);
 $site-title-color: $dark-3;
 $site-description-color: $dark-4;
 
 
-/* Navigation colors */
+///* Navigation colors */
 $primary-nav-bg: $dark-3;
 $primary-nav-color: $light-1;
 $secondary-nav-bg: $dark-2;
 $secondary-nav-color: $light-3;
 
-/* Widgets */
+///* Widgets */
 $sb-widget-title-color: $dark-3;
 $sb-widget-title-bg:$light-1;
 $sb-widget-border-color: $border-color-dark;

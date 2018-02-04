@@ -42,6 +42,7 @@ function helium_write_to_uploads( $content, $destination ) {
 		$wp_filesystem->put_contents( $file, $content, FS_CHMOD_FILE );
 	} else {
 		set_theme_mod( 'can_read_write', false );
+
 		return;
 	}
 
@@ -96,7 +97,7 @@ class Helium_Styles {
 						}
 					}
 
-					if ( 0 && $this->is_above_fold( $file_name ) ) {
+					if ( $this->is_above_fold( $file_name ) ) {
 						array_push( $this->af_files, $file );
 					} elseif ( 'main' !== $file ) {
 						array_push( $this->bf_files, $file );
@@ -182,7 +183,7 @@ class Helium_Styles {
 
 
 		$override = '';
-		$override .= "/** Overridden by settings from customizer */\n\n";
+		$override .= "///** Overridden by settings from customizer */\n\n";
 		$override .= '$site_width:' . sanitize_text_field( get_theme_mod( 'site_width', '1260px' ) ) . ";\n";
 		$override .= '$main_width:' . helium_float( get_theme_mod( 'main_width', '56' ) ) . ";\n";
 		$override .= '$left_sidebar_width:' . helium_float( get_theme_mod( 'left_sidebar_width', '18.75' ) ) . ";\n";
@@ -191,7 +192,6 @@ class Helium_Styles {
 			$override .= '$is_sleek_header:1' . ";\n";
 			$override .= '$header_height:' . $this->get_header_height() . ";\n";
 		}
-
 
 
 		$override .= '$body-font-stack:' . sanitize_text_field( get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
@@ -218,7 +218,7 @@ class Helium_Styles {
 
 		if ( get_theme_mod( 'override_color_scheme', false ) ) {
 			$colors_override = '';
-			$colors_override .= "/** Overridden by settings from customizer */\n\n";
+			$colors_override .= "///** Overridden by settings from customizer */\n\n";
 			$colors_override .= '$primary:' . sanitize_text_field( get_theme_mod( 'primary_color', '#007AFF' ) ) . ';';
 			$colors_override .= '$hue:' . absint( get_theme_mod( 'shades_from', '211' ) ) . ';';
 			$colors_override .= '$saturation:' . absint( get_theme_mod( 'shade_saturation', 8 ) ) . ';';
@@ -241,6 +241,7 @@ class Helium_Styles {
 		require_once( HELIUM_DIR . 'libs/pre-process.php' );
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
+
 		return $scss->compile( $content );
 	}
 
@@ -254,8 +255,9 @@ class Helium_Styles {
 			$upload_dir = wp_upload_dir();
 			$file       = trailingslashit( $upload_dir['basedir'] ) . wp_get_theme()->stylesheet . '.css';
 			$wp_filesystem->put_contents( $file, $content );
+			set_theme_mod( 'af_css', $this->generate_css( 'af' ) );
 		} catch ( Exception $e ) {
-			echo __('Message:','page-speed') .' '. esc_html( $e->getMessage() );
+			echo __( 'Message:', 'page-speed' ) . ' ' . esc_html( $e->getMessage() );
 		}
 
 	}
