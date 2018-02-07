@@ -1,6 +1,6 @@
-.he-btn,.button,.btn,a.btn{
+.he-btn, .button, .btn, a.btn {
   padding: 6px 8px;
-  color: rgba($button-color,1)!important;
+  color: rgba($button-color, 1) !important;
   background: $button-bg;
   @include gradient(lighten($button-bg, .1), darken($button-bg, .1), linear);
   @include border-radius(.3em);
@@ -11,7 +11,7 @@
   border-width: 0;
 }
 
-.he-btn:hover,.button:hover,.btn:hover,a.btn:hover{
+.he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
   @include sharp-shadow();
   @include gradient(lighten($primary, .1), darken($primary, .2), linear);
 
@@ -48,7 +48,13 @@
 
 /* Sizes */
 
-.he-btn.outline{background: none!important;border-style: solid}
+.he-btn.outline {
+  background: none !important;
+  border-style: solid;
+  border-width: 2px;
+  padding: 4px 6px;
+}
+
 .he-btn.outline.xs,
 .he-btn.outline.x-small,
 .he-btn.outline.extra-small {
@@ -91,7 +97,7 @@
   @include border-radius(1em);
 }
 
-.he-btn.outline{
+.he-btn.outline {
   background: none;
 }
 
@@ -138,6 +144,49 @@
   @include gradient(#fc5fa6, #fc2a19, linear)
 }
 
+/* Outline buttons */
+.he-btn.red.outline {
+  color: #ff5e3a!important;
+}
+
+.he-btn.orange.outline {
+  color: #ff9500!important;
+}
+
+.he-btn.yellow.outline {
+  color: #ffdb4c!important;
+}
+
+.he-btn.green.outline {
+  color: #87fc70!important;
+}
+
+.he-btn.teal.outline {
+  color: #52edc7!important;
+}
+
+.he-btn.blue.outline {
+  color: #0e74ff!important;
+}
+
+.he-btn.black.outline {
+  color: #4a4a4a!important;
+}
+
+.he-btn.grey.outline,
+.he-btn.gray.outline,
+.he-btn.silver.outline {
+  color: #dbddde!important;
+}
+
+.he-btn.purple.outline {
+  color: #d56efd!important;
+}
+
+.he-btn.pink.outline {
+  color: #fc5fa6!important;
+}
+
 .more-link {
   margin-top: -($vr/2);
   text-transform: uppercase;
@@ -145,13 +194,17 @@
   position: relative;
   font-size: .9em;
 }
-.more-link .he-btn{  padding: 0 8px;  }
+
+.more-link .he-btn {
+  padding: 0 8px;
+}
+
 .more-link .icon {
   background: rgba(0, 0, 0, .1);
 
   text-align: center;
-  margin:auto -8px 0 6px;
-  padding:0 6px;
+  margin: auto -8px 0 6px;
+  padding: 0 6px;
   float: right;
   -webkit-border-top-right-radius: .3em;
   -webkit-border-bottom-right-radius: .3em;
