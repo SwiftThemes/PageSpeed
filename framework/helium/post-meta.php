@@ -16,14 +16,14 @@ function helium_generate_post_meta( $metas = array() ) {
 		switch ( $meta['key'] ) {
 			case 'AuthorLink':
 				echo get_the_author();
-				echo '&nbsp';
+				echo '&nbsp;';
 				break;
 			case 'AuthorPosts':
 				echo get_the_author_posts_link();
-				echo '&nbsp';
+				echo '&nbsp;';
 				break;
 			case 'Text':
-				echo wp_kses( $meta['value'], $allowed_tags );
+				echo '<span>'.wp_kses( $meta['value'], $allowed_tags ).'</span>';
 				break;
 			case 'Line':
 				echo '<hr class="separator">';
@@ -31,13 +31,13 @@ function helium_generate_post_meta( $metas = array() ) {
 			case 'Cat':
 				if ( has_category() ) {
 					echo wp_kses( $meta['value'], $allowed_tags ) . get_the_category_list( ', ' );
-					echo '&nbsp';
+					echo '&nbsp;';
 				}
 				break;
 			case 'Tags':
 				if ( has_tag() ) {
 					echo wp_kses( $meta['value'], $allowed_tags ) . get_the_tag_list( '<div class="tags">', ' ', '</div>' );
-					echo '&nbsp';
+					echo '&nbsp;';
 
 				}
 				break;
@@ -51,7 +51,7 @@ function helium_generate_post_meta( $metas = array() ) {
 				$out = '<span class="date updated fa-clock-o"><a class="" href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark">';
 				$out .= '<time class="entry-date" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( $date ) . '</time></a></span> ';
 				echo $out;
-				echo '&nbsp';
+				echo '&nbsp;';
 				break;
 
 			case 'Updated':
@@ -65,7 +65,7 @@ function helium_generate_post_meta( $metas = array() ) {
 				$out .= '<time class="entry-date" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( $date ) . '</time></a></span> ';
 
 				echo $out;
-				echo '&nbsp';
+				echo '&nbsp;';
 				break;
 			default:
 				if ( current_user_can( 'customize' ) && isset($meta['key'])) {
