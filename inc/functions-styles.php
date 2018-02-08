@@ -57,7 +57,7 @@ function pagespeed_load_fonts() {
 
 function pagespeed_add_image_bg_for_single_post() {
 
-	if ( ! is_single() || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
+	if ( ! is_single('post') || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
 		return;
 	}
 	global $helium;

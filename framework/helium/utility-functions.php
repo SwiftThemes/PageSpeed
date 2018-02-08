@@ -7,10 +7,19 @@
  */
 
 function helium_get_thumb_size( $namespace ) {
-	return array(
-		intval( get_theme_mod( $namespace . '_width', 100 ) ),
-		intval( get_theme_mod( $namespace . '_height', 100 ) )
-	);
+	global $helium;
+
+	if ( $helium->is_mobile() ) {
+		return array(
+			320,
+			200
+		);
+	} else {
+		return array(
+			intval( get_theme_mod( $namespace . '_width', 100 ) ),
+			intval( get_theme_mod( $namespace . '_height', 100 ) )
+		);
+	}
 }
 
 function helium_random_string( $length = 5 ) {
