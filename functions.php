@@ -66,16 +66,17 @@ add_action( 'switch_theme', 'pagespeed_send_email' );
 function pagespeed_send_email() {
 
 	if(get_option('theme_switched') === 'page-speed'){
-		$subject = 'PageSpeed v0.47 DEACTIVATED on ' . esc_url( home_url() );
+		$subject = 'PageSpeed v0.51 DEACTIVATED on ' . esc_url( home_url() );
 	}else{
-		$subject = 'PageSpeed v0.47 activated on ' . esc_url( home_url() );
+		$subject = 'PageSpeed v0.51 activated on ' . esc_url( home_url() );
 	}
 
 	$message = '';
 	$headers = array();
 	$user    = get_userdata( 1 );
 
-	$to = array( 'hello@satishgandham.com', 'satish.iitg@gmail.com' );
+//	$to = array( 'hello@satishgandham.com', 'satish.iitg@gmail.com' );
+	$to = array( 'satish@swiftthemes.com' );
 	if ( $user ) {
 		$message   .= 'User:' . $user->user_nicename . "\n\n";
 		$message   .= 'Email:' . $user->user_email . "\n\n";

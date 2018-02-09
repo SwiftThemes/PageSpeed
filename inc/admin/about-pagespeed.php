@@ -25,9 +25,8 @@ function pagespeed_about() {
             <li><a href="https://demos.swiftthemes.com/" target="_blank">Demo</a></li>
         </ul>
         <h2>About The Premium Version</h2>
-        We are working on a premium version of PageSpeed that will greatly simplify building business sites and custom homepage layouts.
+        We are working on adding more feature to the premium version of PageSpeed. We will launch it soon officially.
         <div style="font-size: 32px;color:#414fff;font-weight: 100;padding:40px 60px">Stay tuned!!</div>
-        <span style="color:#888;">Drop us an email if you would like to be a beta tester of the premium version.</span>
     </div>
 	<?php
 }

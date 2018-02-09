@@ -1,18 +1,29 @@
 .page-template-tpl-full-width,
 .page-template-tpl-wide,
-.attachment-image{
+.page-template-tpl-airy,
+.attachment-image {
   #left,
-  #main{width:100%}
+  #main {
+    width: 100%;
+    margin: auto
+  }
+}
+
+.page-template-tpl-airy #main {
+  width: 70%;
+  float: none;
 }
 
 /* Right sidebar */
 .page-template-tpl-rsb #left {
   width: 100%;
 }
+
 .page-template-tpl-rsb #main {
   width: 75%;
   float: left;
 }
+
 #sb-page-rsb {
   width: 25%;
   float: right;
@@ -22,15 +33,18 @@
 .page-template-tpl-lsb #left {
   width: 100%;
 }
+
 .page-template-tpl-lsb #main {
   width: 75%;
   float: right;
 }
+
 #sb-page-lsb {
   width: 25%;
   float: left;
 }
 
-
 /* Wide */
-.page-template-tpl-wide #content{width:100%}
+.page-template-tpl-wide #content {
+  width: 100%
+}

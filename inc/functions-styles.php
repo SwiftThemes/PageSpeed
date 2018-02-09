@@ -32,7 +32,7 @@ function pagespeed_enqueue_styles() {
 		wp_enqueue_style( 'pagespeed' );
 	} else {
 		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
-        echo '<style>'.get_theme_mod('af_css').'</style>';
+		echo '<style>' . get_theme_mod( 'af_css' ) . '</style>';
 	}
 
 
@@ -56,10 +56,6 @@ function pagespeed_load_fonts() {
 
 
 function pagespeed_add_image_bg_for_single_post() {
-
-	if ( ! is_single('post') || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
-		return;
-	}
 	global $helium;
 	if ( $helium->is_mobile() ) {
 		$size = array(
@@ -72,6 +68,22 @@ function pagespeed_add_image_bg_for_single_post() {
 			560
 		);
 	}
+	if ( is_page() && basename( get_page_template() ) === 'tpl-airy-img.php' ) {
+		?>
+        <style>
+        #content {
+            background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, $size))?>')
+        }
+        </style>
+		<?php
+        return;
+	}
+
+
+	if ( ! is_singular( 'post' ) || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
+		return;
+	}
+
 	?>
     <style>
         #content {
