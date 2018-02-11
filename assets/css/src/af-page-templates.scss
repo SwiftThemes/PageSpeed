@@ -8,13 +8,17 @@
     margin: auto
   }
 }
-
+.page-template-tpl-wide.elementor-page,
+.page-template-tpl-full-width.elementor-page{
+  #main > .inner{padding: 0}
+  .entry.main{margin-bottom: 0}
+}
 .page-template-tpl-airy #main {
   width: 70%;
   float: none;
 }
 
-/* Right sidebar */
+///* Right sidebar */
 .page-template-tpl-rsb #left {
   width: 100%;
 }
@@ -29,7 +33,7 @@
   float: right;
 }
 
-/* Right sidebar */
+///* Right sidebar */
 .page-template-tpl-lsb #left {
   width: 100%;
 }
@@ -44,7 +48,7 @@
   float: left;
 }
 
-/* Wide */
+///* Wide */
 .page-template-tpl-wide #content {
   width: 100%
 }

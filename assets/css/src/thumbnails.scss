@@ -1,17 +1,28 @@
-.post-thumbnail img.alignleft{
+.post-thumbnail img.alignleft {
   margin-right: 10px;
 }
-.post-thumbnail img.alignright{
+
+.post-thumbnail img.alignright {
   margin-left: 10px;
 }
-.post-thumbnail img.aligncenter{
+
+.post-thumbnail img.aligncenter {
   margin-bottom: $vr;
 }
-article:nth-child(even) .alternate{
+
+article:nth-child(even) .alternate {
   float: left;
-  margin-right:10px;
+  margin-right: 10px;
 }
-article:nth-child(odd) .alternate{
+
+article:nth-child(odd) .alternate {
   float: right;
-  margin-left:10px;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .alternate {
+    float: none;
+    margin: auto;
+  }
 }

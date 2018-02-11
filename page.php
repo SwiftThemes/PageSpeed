@@ -30,6 +30,6 @@ else:
 endif;
 ?>
 
-</div><!-- #content -->
+</div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>
 

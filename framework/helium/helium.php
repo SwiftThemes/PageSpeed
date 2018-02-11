@@ -82,6 +82,9 @@ if ( ! class_exists( 'Helium') ) {
 		 * Load the helium framework core
 		 */
 		public function core() {
+			require_once( HELIUM_DIR . 'pro/bootstrap.php' );
+
+
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
 			require_once( HELIUM_DIR . 'body-css-classes.php' );

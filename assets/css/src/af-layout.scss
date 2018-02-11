@@ -14,12 +14,12 @@
 }
 
 html {
-  min-height: 100%; /* make sure it is at least as tall as the viewport */
+  min-height: 100%; ///* make sure it is at least as tall as the viewport */
   position: relative;
 }
 
 body {
-  height: 100%; /* force the BODY element to match the height of the HTML element */
+  height: 100%; ///* force the BODY element to match the height of the HTML element */
 }
 
 #main > .inner {
@@ -27,89 +27,104 @@ body {
   padding-bottom: $padding
 }
 
-/* centered layout */
-.layout-centered,
-.layout-ll-sb,
-.layout-rr-sb
-{
-  #left {
-    float: left;
-    width: 75%;
-    width: ($main_width+$left_sidebar_width)+0%;
-  }
-  #main {
-    float: right;
-    width: 75%;
-    width: $main_width/($main_width+$left_sidebar_width)*100%;
-  }
-  #sb1 {
-    float: left;
-    width: 25%;
-    width: $left_sidebar_width/($main_width+$left_sidebar_width)*100%;
+///* centered layout */
+@if $layout=='centered' or $layout=='ll-sb' or $layout=='rr-sb' {
+  .layout-centered,
+  .layout-ll-sb,
+  .layout-rr-sb {
+    #left {
+      float: left;
+      width: 75%;
+      width: ($main_width+$left_sidebar_width)+0%;
+    }
+    #main {
+      float: right;
+      width: 75%;
+      width: $main_width/($main_width+$left_sidebar_width)*100%;
+    }
+    #sb1 {
+      float: left;
+      width: 25%;
+      width: $left_sidebar_width/($main_width+$left_sidebar_width)*100%;
 
-  }
-  #sb2 {
-    float: left;
-    width: 25%;
-    width: 100%  - ($main_width+$left_sidebar_width);
+    }
+    #sb2 {
+      float: left;
+      width: 25%;
+      width: 100%  - ($main_width+$left_sidebar_width);
 
+    }
   }
 }
 
-.layout-ll-sb {
-  #sb2 {
-    float: left
-  }
-  #left {
-    float: right
-  }
-}
-.layout-rr-sb {
-  #sb1 {
-    float: right
-  }
-  #left,#main {
-    float: left
-  }
-  #sb2{float: right}
-}
-/* Left sidebar */
-.layout-l-sb{
-  #sb2 {
-    float: left;
-    display: none;
-  }
-  #left {
-    width: 100%
-  }
-  #main {
-    float: right;
-    overflow: hidden;
-    width: $main_width+0%;
-  }
-  #sb1 {
-    float: left;
-    width: 100%-$main_width;
+@if $layout=='ll-sb' {
+  .layout-ll-sb {
+    #sb2 {
+      float: left
+    }
+    #left {
+      float: right
+    }
   }
 }
 
-/* Right sidebar */
-.layout-r-sb {
-  #left {
-    float: left;
-    width: 100%
+@if $layout=='rr-sb' {
+  .layout-rr-sb {
+    #sb1 {
+      float: right
+    }
+    #left, #main {
+      float: left
+    }
+    #sb2 {
+      float: right
+    }
   }
-  #main {
-    float: left;
-    width: $main_width+0%;
+}
+
+@if $layout=='l-sb' {
+
+  //* Left sidebar */
+  .layout-l-sb {
+    #sb2 {
+      float: left;
+      display: none;
+    }
+    #left {
+      width: 100%
+    }
+    #main {
+      float: right;
+      overflow: hidden;
+      width: $main_width+0%;
+    }
+    #sb1 {
+      float: left;
+      width: 100%-$main_width;
+    }
   }
-  #sb1 {
-    float: right;
-    width: 100%-$main_width;
-  }
-  #sb2 {
-    float: left;
-    display: none
+}
+
+@if $layout=='r-sb' {
+
+  //* Right sidebar */
+  .layout-r-sb {
+    #left {
+      float: left;
+      width: 100%
+    }
+    #main {
+      float: left;
+      width: $main_width+0%;
+    }
+    #sb1 {
+      float: right;
+      width: 100%-$main_width;
+    }
+    #sb2 {
+      float: left;
+      display: none
+    }
   }
 }
 
@@ -121,7 +136,6 @@ body {
 #sb2 > .inner,
 #sb-page-rsb > .inner,
 #sb-page-lsb > .inner {
-  //height: 100%;
   background: inherit;
 
   padding-top: $padding/2 + 3;
@@ -138,44 +152,54 @@ body {
   width: 50%;
   float: left;
 }
-#ns1 >.inner,
-#ns2 >.inner{padding-top: 23px;padding-bottom: 20px}
-#ns1{
+
+#ns1 > .inner,
+#ns2 > .inner {
+  padding-top: 23px;
+  padding-bottom: 20px
+}
+
+#ns1 {
 
   margin: 0 0 0 -40px;
   padding: 0 0 0 40px;
 
 }
-#ns2{
+
+#ns2 {
 
   margin: 0 -40px 0 0;
   padding: 0 40px 0 0;
 
 }
 
-.layout-centered,
-.layout-rr-sb,
-.layout-ll-sb
-{
-  #sb1 {
-    background: $sb1-bg !important;
-  }
-  #sb2 {
-    background: $sb2-bg !important;
+@if $layout=='centered' or $layout=='ll-sb' or $layout=='rr-sb' {
+
+  .layout-centered,
+  .layout-rr-sb,
+  .layout-ll-sb {
+    #sb1 {
+      background: $sb1-bg !important;
+    }
+    #sb2 {
+      background: $sb2-bg !important;
+
+    }
 
   }
-
 }
-#sb1{
+
+#sb1 {
   background: $sb1-bg;
 }
-.layout-centered.container-wide 
-{
+
+.layout-centered.container-wide {
   #sb1, #wrapper, #sb2 {
     //@todo not represented correctly
     background: rgba($sb1-bg, 1) !important;
   }
 }
+
 //end
 
 #site-footer-container {
@@ -189,7 +213,7 @@ body {
   }
 }
 
-/* delete later */
+//* delete later */
 body {
   background: $body-bg;
 }
@@ -223,33 +247,38 @@ body {
   }
 }
 
+@if $layout=='ll-sb' or $layout=='rr-sb' {
 
-.layout-ll-sb,
-.layout-rr-sb{
-  #sb1 > .inner {
-    border: solid 1px $border-color-dark;
-    border-width: 0 1px;
+  .layout-ll-sb,
+  .layout-rr-sb {
+    #sb1 > .inner {
+      border: solid 1px $border-color-dark;
+      border-width: 0 1px;
+    }
   }
 }
 
-.layout-centered {
-  #sb1 > .inner {
-    border-right: solid 1px $border-color-dark
-  }
-  #sb2 > .inner {
-    border-left: solid 1px $border-color-dark
+@if $layout=='centered' or $layout=='ll-sb' or $layout=='rr-sb' {
+
+  .layout-centered {
+    #sb1 > .inner {
+      border-right: solid 1px $border-color-dark
+    }
+    #sb2 > .inner {
+      border-left: solid 1px $border-color-dark
+    }
   }
 }
 
 #site-footer-container {
 
   background: $footer-bg;
-  color: rgba($footer-color,.7)
+  color: rgba($footer-color, .7)
 }
 
 #site-footer-container {
   a {
-    color: rgba($footer-color,1)
+    color: rgba($footer-color, 1)
   }
   a:hover {
     color: $primary
@@ -261,6 +290,7 @@ body {
     width: 100%
   }
 }
+
 @media only screen and (min-width: 1200px) {
   .container-boxed {
     #wrapper {
@@ -272,6 +302,7 @@ body {
     }
   }
 }
+
 @media only screen and (max-width: 1200px) {
   #site-footer-container {
     padding: 20px 0

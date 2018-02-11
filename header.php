@@ -35,7 +35,7 @@
         </div>
     </div><!--#site-header-container -->
 <?php do_action( 'pagespeed_after_header' ); ?>
-
+    <div id="content-wrapper">
     <div id="content" class="cf hybrid">
     <div id="left">
     <main id="main" role="main">

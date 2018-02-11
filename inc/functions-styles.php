@@ -32,10 +32,7 @@ function pagespeed_enqueue_styles() {
 		wp_enqueue_style( 'pagespeed' );
 	} else {
 		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
-		echo '<style>' . get_theme_mod( 'af_css' ) . '</style>';
 	}
-
-
 	wp_enqueue_style( 'pagespeed-print-styles', '', null, 'print' );
 
 }
@@ -46,11 +43,7 @@ function pagespeed_load_fonts() {
 	$url = helium_generate_gfont_link();
 
 	if ( $url ):
-
-		wp_enqueue_style( 'helium_google_fonts', $url )
-		?>
-
-		<?php
+		wp_enqueue_style( 'helium_google_fonts', $url );
 	endif;
 }
 
@@ -71,12 +64,12 @@ function pagespeed_add_image_bg_for_single_post() {
 	if ( is_page() && basename( get_page_template() ) === 'tpl-airy-img.php' ) {
 		?>
         <style>
-        #content {
-            background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, $size))?>')
-        }
+            #content-wrapper {
+                background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, $size))?>')
+            }
         </style>
 		<?php
-        return;
+		return;
 	}
 
 
@@ -86,7 +79,7 @@ function pagespeed_add_image_bg_for_single_post() {
 
 	?>
     <style>
-        #content {
+        #content-wrapper {
             background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, $size))?>')
         }
     </style>

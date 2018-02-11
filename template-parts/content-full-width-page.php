@@ -18,7 +18,7 @@ $after_content_default = array(
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('main'); ?>>
 
 	<?php if ( ! $helium->get_meta( 'hide_title' ) ): ?>
         <header class="entry-header">

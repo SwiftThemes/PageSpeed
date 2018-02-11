@@ -42,7 +42,7 @@
       display: none;
       width: 180px
     }
-    /* first level */
+    //* first level */
     ul li {
       position: relative;
       z-index: 2;
@@ -58,7 +58,7 @@
       display: none
     }
 
-    /* second level */
+    //* second level */
     ul ul li:hover > ul {
       display: block;
       position: absolute;
@@ -72,9 +72,9 @@
       display: none
     }
 
-    /* third level */
+    //* third level */
 
-    /* Icons */
+    //* Icons */
     .menu-item-has-children > a:after {
       content: '\BB';
       opacity: .5;
@@ -96,7 +96,7 @@
   background: $secondary-nav-bg;
 }
 
-#secondary-nav-container.nav-container {
+#secondary {
 
   border-bottom: none;
   .nav {

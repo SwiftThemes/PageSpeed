@@ -76,7 +76,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'primary_font_stack', array(
-		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 	) );
 	$wp_customize->add_setting( 'primary_font_size', array(
@@ -114,7 +114,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'secondary_font_stack', array(
-		'sanitize_callback' => 'helium_meta',
+		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 	) );
 	$wp_customize->add_setting( 'secondary_font_size', array(

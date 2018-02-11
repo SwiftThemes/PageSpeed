@@ -23,7 +23,7 @@
   clear: both
 }
 
-/* WordPress classes */
+// WordPress classes
 .alternate,
 .pull-left,
 .alignleft {
@@ -54,7 +54,7 @@ article {
   color: $wp-caption-text-color;
 }
 
-/* end */
+///* end */
 .circle, .round {
   @include border-radius(50%)
 }
@@ -65,8 +65,8 @@ article {
 }
 .cf:before,
 .cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+  content: " "; //* 1 */
+  display: table; //* 2 */
 }
 .cf:after {
   clear: both;

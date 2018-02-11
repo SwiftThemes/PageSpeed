@@ -194,16 +194,22 @@ class Helium_Styles {
 		}
 
 
-		$override .= '$body-font-stack:' . sanitize_text_field( get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
-		$override .= '$base-font-size:' . intval( get_theme_mod( 'primary_font_size', 16 ) ) . "px;\n";
-		$override .= '$base-line-height:' . helium_float( get_theme_mod( 'primary_font_lh', 1.7 ) ) . "em;\n";
-		$override .= '$body-font-weight:' . sanitize_text_field( get_theme_mod( 'primary_font_weight', 'normal' ) ) . ";\n";
+		if ( get_theme_mod( 'primary_font_stack' ) && get_theme_mod( 'primary_font_stack' ) != '' ) {
+			$override .= '$body-font-stack:' . sanitize_text_field( get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
+			$override .= '$base-font-size:' . intval( get_theme_mod( 'primary_font_size', 16 ) ) . "px;\n";
+			$override .= '$base-line-height:' . helium_float( get_theme_mod( 'primary_font_lh', 1.7 ) ) . "em;\n";
+			$override .= '$body-font-weight:' . sanitize_text_field( get_theme_mod( 'primary_font_weight', 'normal' ) ) . ";\n";
+		}
 
-
-		$override .= '$headings-font-stack:' . sanitize_text_field( get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
-		$override .= '$headings-font-weight:' . sanitize_text_field( get_theme_mod( 'secondary_font_weight', 'bold' ) ) . ";\n";
+		if ( get_theme_mod( 'secondary_font_stack' ) && get_theme_mod( 'secondary_font_stack' ) != '' ) {
+			$override .= '$headings-font-stack:' . sanitize_text_field( get_theme_mod( 'secondary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
+			$override .= '$headings-font-weight:' . sanitize_text_field( get_theme_mod( 'secondary_font_weight', 'bold' ) ) . ";\n";
+		}
 
 		$override .= '$container_type:' . sanitize_text_field( get_theme_mod( 'container_type', 'regular' ) ) . ';';
+
+		$override .='$layout:'.get_theme_mod('theme_layout','centered').';';
+		$override .='$logo-position:'.get_theme_mod('logo_position','left').';';
 
 		if ( get_theme_mod( 'enable_card_style_widgets_sb', true ) ) {
 			$override .= '$sb_widget_cards:1;';
@@ -242,9 +248,10 @@ class Helium_Styles {
 		$scss = new scssc();
 		$scss->setImportPaths( $this->source );
 
-		if($af_bf == 'af'){
+		if ( $af_bf == 'af' ) {
 			$scss->setFormatter( 'scss_formatter_compressed' );
 		}
+
 		return $scss->compile( $content );
 	}
 
@@ -254,11 +261,15 @@ class Helium_Styles {
 
 		try {
 			global $wp_filesystem;
-			$content    = $this->generate_css( 'bf' );
+			$content = $this->generate_css( 'bf' );
+			if ( ! HELIUM_PRO ) {
+				$content = $this->generate_css( 'af' ) . $content;
+			} else {
+				set_theme_mod( 'af_css', $this->generate_css( 'af' ) );
+			}
 			$upload_dir = wp_upload_dir();
 			$file       = trailingslashit( $upload_dir['basedir'] ) . wp_get_theme()->stylesheet . '.css';
 			$wp_filesystem->put_contents( $file, $content );
-			set_theme_mod( 'af_css', $this->generate_css( 'af' ) );
 		} catch ( Exception $e ) {
 			echo __( 'Message:', 'page-speed' ) . ' ' . esc_html( $e->getMessage() );
 		}

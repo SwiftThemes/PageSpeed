@@ -68,6 +68,6 @@ if ( is_home() && get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
 }
 ?>
 
-</div><!-- #content -->
+</div></div><!-- #content -->
 <?php get_footer(); ?>
 
