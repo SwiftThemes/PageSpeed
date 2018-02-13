@@ -281,6 +281,86 @@ label {
     overflow: hidden;
 }
 
+/* Upsell */
+#accordion-section-upsell h3.accordion-section-title:after {
+    content: "Unlock";
+    padding: 2px 8px 3px;
+    font-size: 14px;
+    color: #FFF !important;
+    border-radius: 3px;
+    line-height: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: #396afc; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2948ff, #396afc); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#accordion-section-upsell:hover h3.accordion-section-title:after {
+    background: red;
+}
+
+.upsell-intro {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.6em
+}
+
+.features {
+    margin-bottom: 20px
+}
+
+.features li {
+    margin-left: 0;
+}
+
+.features li:before {
+    content: "\f147";
+    font-family: dashicons;
+    background: rgb(76, 217, 100);
+    color: #FFF;
+    display: block;
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin: 2px 5px 0 0;
+    border-radius: 50%;
+}
+
+.upsell .lg-btn {
+    display: block;
+    margin: 0 10px;
+    color: #FFF;
+    text-align: center;
+    padding: 20px 10px;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 300;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    background: #EB3349; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F45C43, #EB3349); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.upsell .lg-btn:hover {
+    background: #F45C43; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F45C43, #EB3349); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.upsell-feature {
+    font-size: 1.2em;margin-bottom: 10px;
+    line-height: 1.25em;
+}
+
+#accordion-panel-theme_options {
+    margin-bottom: 16px
+}
+
 .cf:before,
 .cf:after {
     content: " ";

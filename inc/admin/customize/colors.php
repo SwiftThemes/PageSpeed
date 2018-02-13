@@ -12,6 +12,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 	$wp_customize->add_section( 'colors', array(
 		'title'    => __( 'Color Settings', 'page-speed' ),
 		'priority' => 30,
+		'panel'    => 'theme_options'
 	) );
 
 
@@ -54,8 +55,6 @@ function pagespeed_customize_colors( $wp_customize ) {
 	) );
 
 
-
-
 	include_once( HELIUM_THEME_ADMIN . 'color-schemes.php' );
 
 	$wp_customize->add_control(
@@ -72,12 +71,11 @@ function pagespeed_customize_colors( $wp_customize ) {
 	);
 
 
-
 	$wp_customize->add_control( 'override_color_scheme', array(
-		'label'   => __( 'Override shades generated from color scheme', 'page-speed' ),
-		'description'=>__('Check this if you want to use the below three options.','page-speed'),
-		'section' => 'colors',
-		'type'    => 'checkbox',
+		'label'       => __( 'Override shades generated from color scheme', 'page-speed' ),
+		'description' => __( 'Check this if you want to use the below three options.', 'page-speed' ),
+		'section'     => 'colors',
+		'type'        => 'checkbox',
 
 	) );
 
@@ -86,10 +84,10 @@ function pagespeed_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'primary_color',
 			array(
-				'label'      => __( 'Primary Color', 'page-speed' ),
-				'description'=>__('Used for buttons and links','page-speed'),
-				'section'    => 'colors',
-				'settings'   => 'primary_color',
+				'label'       => __( 'Primary Color', 'page-speed' ),
+				'description' => __( 'Used for buttons and links', 'page-speed' ),
+				'section'     => 'colors',
+				'settings'    => 'primary_color',
 			) )
 	);
 
@@ -99,29 +97,40 @@ function pagespeed_customize_colors( $wp_customize ) {
 			$wp_customize,
 			'shades_from',
 			array(
-				'mode'=>'hue',
-				'label'      => __( 'Base color for shades', 'page-speed' ),
-				'description'=>__('Used to generate light and dark colors used in the theme','page-speed'),
-				'section'    => 'colors',
-				'settings'   => 'shades_from',
+				'mode'        => 'hue',
+				'label'       => __( 'Base color for shades', 'page-speed' ),
+				'description' => __( 'Used to generate light and dark colors used in the theme', 'page-speed' ),
+				'section'     => 'colors',
+				'settings'    => 'shades_from',
 			) )
 	);
 
 
-
-
 	$wp_customize->add_control( 'shade_saturation', array(
-		'label'   =>  __('Amount of base color in the shades','page-speed'),
-		'description'=>__('Higher the number more color the lights and darks have.','page-speed'),
-		'section' => 'colors',
-		'type'    => 'number',
+		'label'       => __( 'Amount of base color in the shades', 'page-speed' ),
+		'description' => __( 'Higher the number more color the lights and darks have.', 'page-speed' ),
+		'section'     => 'colors',
+		'type'        => 'number',
 
 	) );
 
 	$wp_customize->add_control( 'invert_colors', array(
-		'label'   =>  __('Invert light and dark colors','page-speed'),
+		'label'   => __( 'Invert light and dark colors', 'page-speed' ),
 		'section' => 'colors',
 		'type'    => 'checkbox',
 
 	) );
+
+	$wp_customize->add_setting( 'example-2', array( 'sanitize_callback' => 'sanitize_text_field', ) );
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-2', array(
+		'section'  => 'colors',
+		'priority' => 215,
+		'label'    => __( ' ', 'page-speed' ),
+		'content'  => sprintf( '<p class="upsell-feature">%s</p><a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&utm_medium=color_upgrade&utm_campaign=basic" target="_blank"
+                                  class="button button-primary"><span class="dashicons dashicons-awards"
+                                                                      style="margin-top: 3px"></span> %s</a></p>',
+			__( 'Need more color schemes, color options and gradients?', 'page-speed' ),
+			__( 'Go Pro', 'page-speed' )
+		),
+	) ) );
 }

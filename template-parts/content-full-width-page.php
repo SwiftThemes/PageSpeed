@@ -18,7 +18,7 @@ $after_content_default = array(
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('main'); ?>>
 
 	<?php if ( ! $helium->get_meta( 'hide_title' ) ): ?>
         <header class="entry-header">
@@ -37,13 +37,7 @@ $after_content_default = array(
 			<?php endif ?>
         </header><!-- .entry-header -->
 	<?php endif; ?>
-	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
-        <div class="post-thumbnail">
-            <a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'pagespeed-featured-image' ); ?>
-            </a>
-        </div><!-- .post-thumbnail -->
-	<?php endif; ?>
+
 
     <div class="entry-content">
 		<?php

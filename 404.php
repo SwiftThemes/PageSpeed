@@ -8,6 +8,6 @@ get_sidebar( 'single' );
 
 ?>
 
-</div><!-- #content -->
+</div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>
 

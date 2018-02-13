@@ -48,6 +48,6 @@ if ( has_post_thumbnail() && '1c' === get_theme_mod( 'single_post_layout' ) ) {
 }
 ?>
 
-</div><!-- #content -->
+</div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>
 

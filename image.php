@@ -46,6 +46,7 @@ endif;
 </div><!-- main inner-->
 </main>
 </div>
-</div><!-- #content -->
+
+</div></div><!-- #content -->
 <?php get_footer(); ?>
 

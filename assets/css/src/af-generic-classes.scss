@@ -23,7 +23,8 @@
   clear: both
 }
 
-/* WordPress classes */
+// WordPress classes
+.alternate,
 .pull-left,
 .alignleft {
   float: left;
@@ -48,34 +49,12 @@ article {
   margin: auto;
 }
 
-.wp-caption {
-}
-
 .wp-caption-text {
   font-style: italic;
   color: $wp-caption-text-color;
 }
 
-/* Show only when sticky
-Breaks when we have nested stickies, but we don't have them
-*/
-.sticky-show {
-  display: none;
-}
-
-.is-sticky .sticky-show {
-  display: inline-block;
-}
-
-.is-sticky #site-header-container,
-.is-sticky #primary-nav-container,
-.is-sticky #sticky-search {
-  -webkit-box-shadow: 0px 1px 22px -10px $sticky-header-bg;
-  -moz-box-shadow: 0px 1px 22px -10px $sticky-header-bg;
-  box-shadow: 0px 1px 22px -10px $sticky-header-bg;
-}
-
-/* end */
+///* end */
 .circle, .round {
   @include border-radius(50%)
 }
@@ -84,30 +63,14 @@ Breaks when we have nested stickies, but we don't have them
 .emoji{
   width: 1em;
 }
-/**/
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 .cf:before,
 .cf:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+  content: " "; //* 1 */
+  display: table; //* 2 */
 }
-
 .cf:after {
   clear: both;
 }
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
 .cf {
   *zoom: 1;
 }

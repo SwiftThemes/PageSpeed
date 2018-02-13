@@ -28,14 +28,12 @@ function pagespeed_register_styles() {
 function pagespeed_enqueue_styles() {
 	wp_enqueue_style( 'pagespeed-icons' );
 
-	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write',false ) ) {
+	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write', false ) ) {
 		wp_enqueue_style( 'pagespeed' );
 	} else {
 		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
 	}
-
-
-	wp_enqueue_style( 'pagespeed-print-styles', '', null, 'screen' );
+	wp_enqueue_style( 'pagespeed-print-styles', '', null, 'print' );
 
 }
 
@@ -45,20 +43,12 @@ function pagespeed_load_fonts() {
 	$url = helium_generate_gfont_link();
 
 	if ( $url ):
-
-		wp_enqueue_style( 'helium_google_fonts', $url )
-		?>
-
-		<?php
+		wp_enqueue_style( 'helium_google_fonts', $url );
 	endif;
 }
 
 
 function pagespeed_add_image_bg_for_single_post() {
-
-	if ( ! is_single() || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
-		return;
-	}
 	global $helium;
 	if ( $helium->is_mobile() ) {
 		$size = array(
@@ -71,9 +61,25 @@ function pagespeed_add_image_bg_for_single_post() {
 			560
 		);
 	}
+	if ( is_page() && basename( get_page_template() ) === 'tpl-airy-img.php' ) {
+		?>
+        <style>
+            #content-wrapper {
+                background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, $size))?>')
+            }
+        </style>
+		<?php
+		return;
+	}
+
+
+	if ( ! is_singular( 'post' ) || get_theme_mod( 'single_post_layout' ) !== '1c' || ! has_post_thumbnail() ) {
+		return;
+	}
+
 	?>
     <style>
-        #content {
+        #content-wrapper {
             background-image: url('<?php echo esc_url(get_the_post_thumbnail_url(null, $size))?>')
         }
     </style>

@@ -11,7 +11,6 @@
     <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
 
@@ -36,7 +35,7 @@
         </div>
     </div><!--#site-header-container -->
 <?php do_action( 'pagespeed_after_header' ); ?>
-
+    <div id="content-wrapper">
     <div id="content" class="cf hybrid">
     <div id="left">
     <main id="main" role="main">

@@ -96,6 +96,7 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_CUSTOMIZE . 'utils.php' );
 			require_once( HELIUM_CUSTOMIZE . 'sass-override.php' );
 			require_once( HELIUM_CUSTOMIZE . 'load-scripts.php' );
+			require_once( HELIUM_CUSTOMIZE . 'upsell.php' );
 
 			require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
 

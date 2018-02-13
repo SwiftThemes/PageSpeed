@@ -30,5 +30,5 @@ endwhile;
 get_sidebar('page-left');
 ?>
 
-</div><!-- #content -->
+</div></div><!-- #content -->
 <?php get_footer(); ?>

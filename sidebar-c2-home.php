@@ -3,7 +3,7 @@
 		<?php
 		if ( is_active_sidebar( 'right-home' ) ) :
 			?>
-			<div id="" class="sb">
+			<div class="sb">
 				<?php dynamic_sidebar( 'right-home' ); ?>
 			</div>
 			<?php

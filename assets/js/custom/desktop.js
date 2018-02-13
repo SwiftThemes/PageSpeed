@@ -5,7 +5,7 @@
     'use strict';
     GLOBAL = {}
     GLOBAL.DESKTOP_WIDTH = 1160;
-
+    GLOBAL.hasSideMenu = false
     $(document).ready(function () {
         setSidebarHeights()
         menuHandler();
@@ -103,7 +103,7 @@
                 $('#ns1 >.inner,#ns2 >.inner').height(height)
             }
 
-            $('.layout-rr-sb #ns1 >.inner,.layout-rr-sb #ns2 >.inner,.layout-ll-sb #ns1 >.inner,.layout-ll-sb #ns2 >.inner').height(height+40)
+            $('.layout-rr-sb #ns1 >.inner,.layout-rr-sb #ns2 >.inner,.layout-ll-sb #ns1 >.inner,.layout-ll-sb #ns2 >.inner').height(height + 40)
 
 
         }
@@ -157,17 +157,23 @@
      * Add side menu when on mobile.
      */
     function addSideMenu() {
-        $('#primary-nav-container,#secondary-nav-container,#header-nav-container').hide()
-        $('.open-drawer').show()
-        $('#side-pane-inner').append($('#header-nav').html()).append($('#primary-nav').html()).append($('#secondary-nav').html())
+        if (!GLOBAL.hasSideMenu) {
+            $('#primary-nav-container,#secondary-nav-container,#header-nav-container').hide()
+            $('.open-drawer').show()
+            $('#side-pane-inner').append($('#header-nav').html()).append($('#primary-nav').html()).append($('#secondary-nav').html())
+            GLOBAL.hasSideMenu = true
+        }
     }
 
     /**
      * Remove side menu added by addSideMenu
      */
     function removeSideMenu() {
-        $('#primary-nav-container,#secondary-nav-container,header-nav-container').show()
-        $('.open-drawer,#side-pane').hide()
+        if (GLOBAL.hasSideMenu) {
+            $('#primary-nav-container,#secondary-nav-container,header-nav-container').show()
+            $('.open-drawer,#side-pane').hide()
+            GLOBAL.hasSideMenu = false
+        }
     }
 
     /**
@@ -179,7 +185,7 @@
         }
         // Adding 60 as margin of error.
         // @todo make top spacing dynamic when using sticky nav
-        var bottomSpacing = $('#site-footer-container').outerHeight() + $('#copyright-container').outerHeight()+60
+        var bottomSpacing = $('#site-footer-container').outerHeight() + $('#copyright-container').outerHeight() + 60
         $("#sticky-sb1,#sticky-sb2").sticky({topSpacing: 10, bottomSpacing: bottomSpacing, responsiveWidth: true});
     }
 
@@ -188,7 +194,10 @@
             return
         }
         //@todo add stick-it, it is stikcy always now.
-        $("#primary-nav-container.stick-it,.sleek-header #site-header-container").sticky({responsiveWidth: true, zIndex: 9});
+        $("#primary-nav-container.stick-it,.sleek-header #site-header-container").sticky({
+            responsiveWidth: true,
+            zIndex: 9
+        });
     }
 
     function makeHeaderSticky() {

@@ -12,6 +12,7 @@ function pagespeed_customize_header( $wp_customize ) {
 	$wp_customize->add_section( 'header', array(
 		'title'    => __( 'Header', 'page-speed' ),
 		'priority' => 22,
+		'panel'=>'theme_options'
 	) );
 
 	$wp_customize->add_setting( 'is_sticky_nav', array(

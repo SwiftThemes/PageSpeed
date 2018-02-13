@@ -18,8 +18,7 @@ $is_sleek_header: 0;
 $header_height: 48px;
 
 // Typography
-$body-font-stack: serif, Garamond;
-$body-font-stack: 'Open Sans', sans-serif;
+$body-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $body-font-weight: normal;
 $base-font-size: 17px;
 $base-line-height: 1.6em;
@@ -29,8 +28,12 @@ $headings-font-weight: bold;
 
 $vr: $base-font-size*($base-line-height/1em);
 
+
+// For css optimization
+$layout: 'centered';
+$logo-position: 'left';
 // Don't remove the below line.
 // It's used for overriding the variables.
-/** Moment of truth **/
+///** Moment of truth **/
 
 /**variables**/

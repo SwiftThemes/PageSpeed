@@ -15,18 +15,22 @@
   font-style: italic;
 }
 .custom-logo{display:block}
-.logo-left {
-  #site-header {
-    float: left;
-  }
-  .ps-header-ad {
-    float: right;
-  }
-  #header-nav-container{
-    float: right;
+
+@if $logo-position=='left' {
+
+  .logo-left {
+    #site-header {
+      float: left;
+    }
+    .ps-header-ad {
+      float: right;
+    }
+    #header-nav-container {
+      float: right;
+    }
   }
 }
-
+@if $logo-position=='center'{
 .logo-center {
   #site-header {
     text-align: center;
@@ -40,21 +44,23 @@
     float: right;
   }
 }
+}
+@if $logo-position=='right' {
 
-.logo-right {
-  #site-header {
-    float: right;
-  }
+  .logo-right {
+    #site-header {
+      float: right;
+    }
 
-  .ps-header-ad {
-    float: left;
-  }
+    .ps-header-ad {
+      float: left;
+    }
 
-  #header-nav-container{
-    float: left;
+    #header-nav-container {
+      float: left;
+    }
   }
 }
-
 .custom-logo-mobile{
   float: left
 }

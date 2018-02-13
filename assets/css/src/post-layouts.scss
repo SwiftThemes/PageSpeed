@@ -1,4 +1,5 @@
-.singular-post.single-1c.has-thumb {
+.singular-post.single-1c.has-thumb,
+.page-template-tpl-airy-img{
   #main,
   #left {
     margin: auto !important;
@@ -7,10 +8,11 @@
     width: 100%;
   }
 
-  #content {
+  #content-wrapper {
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-attachment: fixed;
+    background-position: 50% 0;
   }
   #left, #sticky-sb1-sticky-wrapper, #sticky-sb1 {
     background: none
@@ -19,13 +21,14 @@
     display: none
   }
 
+  #content,
   #main {
     background: transparent !important;
   }
   .entry {
     width: 60%;
     margin: auto;
-    margin-top: 260px;
+    margin-top: 220px;
     background: rgba($light-1, 1) !important;
     @include border-radius(1em);
     padding: $padding;
@@ -40,9 +43,10 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .singular-post.single-1c.has-thumb {
-    #content {
-      background-size: auto 50vh;
+  .singular-post.single-1c.has-thumb,
+  .page-template-tpl-airy-img{
+    #content-wrapper {
+      background-size: auto 60vh;
     }
     .entry {
       width: auto;

@@ -9,6 +9,12 @@
 add_action( 'customize_register', 'pagespeed_customize', 888 );
 function pagespeed_customize( $wp_customize ) {
 
+	$wp_customize->add_panel( 'theme_options', array(
+		'title'       => __( 'Theme Options', 'page-speed' ),
+		'description' => '', // Include html tags such as <p>
+		'priority'    => 10, // Mixed with top-level-section hierarchy.
+	) );
+
 	// Logo position
 	$wp_customize->add_setting( 'logo_position', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
@@ -64,6 +70,7 @@ function pagespeed_customize( $wp_customize ) {
 	$wp_customize->add_section( 'layout_settings', array(
 		'title'       => __( 'Layout', 'page-speed' ),
 		'priority'    => 20,
+		'panel'       => 'theme_options',
 		'description' => '',
 	) );
 	$wp_customize->add_setting( 'theme_layout', array(

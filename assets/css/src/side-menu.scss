@@ -34,9 +34,6 @@
   right: 10px;
   height: 32px;
   margin: auto;
-
-  //@include vertical-align();
-
 }
 
 #menu svg {
@@ -59,10 +56,6 @@ body {
   left: 0
 }
 
-#side-pane {
-  width: 0;
-  display: none
-}
 
 .menu-open {
   position: relative;

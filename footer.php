@@ -39,8 +39,8 @@
 <?php
 wp_footer();
 ?>
-</body>
 <div id="side-pane">
     <div id="side-pane-inner"></div>
 </div>
+</body>
 </html>
