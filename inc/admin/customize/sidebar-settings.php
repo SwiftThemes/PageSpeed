@@ -12,6 +12,7 @@ function pagespeed_more_sidebars( $wp_customize ) {
 	$wp_customize->add_section( 'sidebar_settings', array(
 		'title'    => __( 'Sidebar Settings', 'page-speed' ),
 		'priority' => 29,
+		'panel'=>'theme_options'
 	) );
 
 
