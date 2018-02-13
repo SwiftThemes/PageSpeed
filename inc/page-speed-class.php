@@ -55,6 +55,8 @@ class PageSpeed {
 		require_once( HELIUM_THEME_CUSTOMIZE . 'colors.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'fonts.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'sidebar-settings.php' );
+		require_once( HELIUM_THEME_INC.'pro/customize-backgrounds.php' );
+		require_once( HELIUM_THEME_INC . 'pro/admin-gradients.php' );
 
 		add_theme_support( 'breadcrumb-trail' );
 

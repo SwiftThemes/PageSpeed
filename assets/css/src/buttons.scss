@@ -2,7 +2,7 @@
   padding: 6px 8px;
   color: rgba($button-color, 1) !important;
   background: $button-bg;
-  @include gradient(lighten($button-bg, .1), darken($button-bg, .1), linear);
+  @include gradient(top,lighten($button-bg, .1), darken($button-bg, .1));
   @include border-radius(.3em);
   text-decoration: none !important;
   //margin-left: 10px;
@@ -13,7 +13,7 @@
 
 .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
   @include sharp-shadow();
-  @include gradient(lighten($primary, .1), darken($primary, .2), linear);
+  @include gradient(top,lighten($primary, .1), darken($primary, .2));
 
 }
 
@@ -103,45 +103,45 @@
 
 /* Colors */
 .he-btn.red {
-  @include gradient(#ff5e3a, #ff2a68, linear)
+  @include gradient(top,#ff5e3a, #ff2a68)
 }
 
 .he-btn.orange {
-  @include gradient(#ff9500, #ff5e3a, linear)
+  @include gradient(top,#ff9500, #ff5e3a)
 }
 
 .he-btn.yellow {
-  @include gradient(#ffdb4c, #ffcd02, linear)
+  @include gradient(top,#ffdb4c, #ffcd02)
 }
 
 .he-btn.green {
-  @include gradient(#87fc70, #0bd318, linear)
+  @include gradient(top,#87fc70, #0bd318)
 }
 
 .he-btn.teal {
-  @include gradient(#52edc7, #5ac8fb, linear)
+  @include gradient(top,#52edc7, #5ac8fb)
 }
 
 .he-btn.blue {
-  @include gradient(#0e74ff, #1d62f0, linear)
+  @include gradient(top,#0e74ff, #1d62f0)
 }
 
 .he-btn.black {
-  @include gradient(#4a4a4a, #2b2b2b, linear)
+  @include gradient(top,#4a4a4a, #2b2b2b)
 }
 
 .he-btn.grey,
 .he-btn.gray,
 .he-btn.silver {
-  @include gradient(#dbddde, #898c90, linear)
+  @include gradient(top,#dbddde, #898c90)
 }
 
 .he-btn.purple {
-  @include gradient(#d56efd, #842abf, linear)
+  @include gradient(top,#d56efd, #842abf)
 }
 
 .he-btn.pink {
-  @include gradient(#fc5fa6, #fc2a19, linear)
+  @include gradient(top,#fc5fa6, #fc2a19)
 }
 
 /* Outline buttons */

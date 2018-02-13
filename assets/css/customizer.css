@@ -281,6 +281,24 @@ label {
     overflow: hidden;
 }
 
+/* Gradient */
+.gradient{border: solid 1px #DDD;padding-bottom: 10px;background: #FFF;margin-bottom: 10px;padding:0 10px 10px}
+.gradient .title{
+    margin:0 -10px 10px;
+    background: #DDD;
+    padding: 5px 10px;
+}
+.gradient .wp-picker-container{
+    float: left;
+}
+.gradient .angle{
+    line-height: 21px;
+}
+.gradient .single_color{
+    width: 49%;
+    float: left;
+}
+
 .cf:before,
 .cf:after {
     content: " ";

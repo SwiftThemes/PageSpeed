@@ -97,6 +97,7 @@ if ( ! class_exists( 'Helium') ) {
 			require_once( HELIUM_CUSTOMIZE . 'control-he-select.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-help-text.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-drag-drop.php' );
+			require_once( HELIUM_CUSTOMIZE . 'control-gradient.php' );
 			require_once( HELIUM_CUSTOMIZE . 'utils.php' );
 //			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
 			require_once( HELIUM_CUSTOMIZE . 'sass-override.php' );

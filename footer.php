@@ -19,7 +19,6 @@
     </footer>
 <?php endif; ?>
 
-</div><!-- #wrapper -->
 <div id="copyright-container">
     <div class="inner hybrid">
 		<?php
@@ -36,6 +35,9 @@
 						                          rel="home">' . get_bloginfo( "name" ) . '</a>' ) ?>
     </div>
 </div>
+
+</div><!-- #wrapper -->
+
 <?php
 wp_footer();
 ?>

@@ -6,7 +6,6 @@
             var control = this;
             control.container.on('change', 'input.family',
                 function (e) {
-                    var parent = $(e.target.parentNode)
                     if (($(this).val())) {
                         var font = {}
                         var fontObject = JSON.parse($(this).attr('data-fontOb'))
@@ -204,7 +203,7 @@
                     if (isOutside) {
 
 
-                        if(ui.item[0].className.indexOf('can-remove') !== -1){
+                        if (ui.item[0].className.indexOf('can-remove') !== -1) {
                             ui.item.remove();
                             return
                         }
@@ -227,6 +226,73 @@
             );
         }
     })
+
+
+    // Gradient
+    wp.customize.controlConstructor['he_colors'] = wp.customize.Control.extend({
+        ready: function () {
+            var control = this;
+
+
+            if (control.setting().is_gradient == 0) {
+                control.container.find('.if_gradient').hide()
+            }
+
+            attachColorPicker()
+
+            function attachColorPicker() {
+                control.container.find('.gradient-color-picker').wpColorPicker({
+                    // A callback to fire whenever the color changes to a valid color
+                    change: function (event, ui) {
+                        var setting = _.extend({}, control.setting())
+                        var name = $(this).data('name')
+                        setting[name] = control.params.value[name] =ui.color.toString()
+                        control.setting.set(setting)
+
+                    },
+                });
+            }
+
+
+            control.container.on('change', '.is_gradient',
+                function (e) {
+                    var setting = _.extend({}, control.setting())
+                    if (setting['is_gradient']) {
+                        setting['is_gradient'] = control.params.value.is_gradient = 0
+                    } else {
+                        setting['is_gradient'] = control.params.value.is_gradient = 1
+                    }
+                    control.setting.set(setting)
+                    control.renderContent()
+                    attachColorPicker()
+
+                    if (control.setting().is_gradient == 0) {
+                        control.container.find('.if_gradient').hide()
+                    }
+                }
+            );
+
+            control.container.on('change', '.angle', function () {
+                var setting = _.extend({}, control.setting())
+                setting['gradient_angle'] = $(this).val();
+                control.setting.set(setting)
+
+            });
+
+            control.container.on('change', '.enable-colors', function () {
+                var setting = _.extend({}, control.setting())
+                if (setting['enable']) {
+                    setting['enable'] = control.params.value.enable = 0
+                } else {
+                    setting['enable'] = control.params.value.enable = 1
+                }
+                control.setting.set(setting)
+
+            });
+
+
+        }
+    });
 
 
 })(jQuery);

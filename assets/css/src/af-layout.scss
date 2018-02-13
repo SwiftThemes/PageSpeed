@@ -127,16 +127,16 @@ body {
     }
   }
 }
-
-#sb1, #sb2 {
-  background: inherit;
-}
+//for gradients
+//#sb1, #sb2 {
+//  background: inherit;
+//}
 
 #sb1 > .inner,
 #sb2 > .inner,
 #sb-page-rsb > .inner,
 #sb-page-lsb > .inner {
-  background: inherit;
+  //background: inherit;
 
   padding-top: $padding/2 + 3;
   padding-bottom: $padding/2 + 3;
@@ -179,10 +179,10 @@ body {
   .layout-rr-sb,
   .layout-ll-sb {
     #sb1 {
-      background: $sb1-bg !important;
+      background: $sb1-bg ; //removed important for gradients
     }
     #sb2 {
-      background: $sb2-bg !important;
+      background: $sb2-bg ;
 
     }
 
@@ -196,7 +196,7 @@ body {
 .layout-centered.container-wide {
   #sb1, #wrapper, #sb2 {
     //@todo not represented correctly
-    background: rgba($sb1-bg, 1) !important;
+    background: rgba($sb1-bg, 1);
   }
 }
 
@@ -294,7 +294,7 @@ body {
 @media only screen and (min-width: 1200px) {
   .container-boxed {
     #wrapper {
-      margin: 20px auto 0;
+      margin: 20px auto;
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       border-radius: 8px;

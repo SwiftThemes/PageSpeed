@@ -63,11 +63,10 @@ $border-color: rgba($dark-6, .1);
 $border-color-light: rgba($dark-6, .07);
 $border-color-dark: rgba($dark-4, .1);
 
-
 ///* Generic Colors */
 $body-color: $dark-3;
 $link-color: $dark-1;
-$meta-color: rgba($dark-6,.8);
+$meta-color: rgba($dark-6, .8);
 $wp-caption-text-color: $dark-4;
 $sticky-header-bg: rgba($dark-1, 0.75);
 
@@ -79,8 +78,8 @@ $body-bg: $dark-1;
 $wrapper-bg: rgba($light-1, 1);
 $content-bg: $light-1;
 $main-bg: $light-1;
-$sb1-bg: rgba(darken($light-1,.025), .9);
-$sb2-bg: rgba(darken($light-1,.04), .9);
+$sb1-bg: rgba(darken($light-1, .025), .9);
+$sb2-bg: rgba(darken($light-1, .04), .9);
 $footer-bg: $dark-2;
 $footer-color: $light-3;
 
@@ -88,7 +87,6 @@ $footer-color: $light-3;
 $header-bg: rgba($light-1, 1);
 $site-title-color: $dark-3;
 $site-description-color: $dark-4;
-
 
 ///* Navigation colors */
 $primary-nav-bg: $dark-3;
@@ -98,31 +96,27 @@ $secondary-nav-color: $light-3;
 
 ///* Widgets */
 $sb-widget-title-color: $dark-3;
-$sb-widget-title-bg:$light-1;
+$sb-widget-title-bg: $light-1;
 $sb-widget-border-color: $border-color-dark;
-$sb-widget-bg:$light-1;
-$sb-widget-color:$dark-3;
-$sb-widget-link-color:$dark-1;
+$sb-widget-bg: $light-1;
+$sb-widget-color: $dark-3;
+$sb-widget-link-color: $dark-1;
 
 $footer-widget-title-color: $light-3;
-$footer-widget-title-bg:transparent;
+$footer-widget-title-bg: transparent;
 $footer-widget-border-color: transparent;
-$footer-widget-bg:transparent;
-$footer-widget-color:$light-3;
-$footer-widget-link-color:$light-1;
-
-
-
+$footer-widget-bg: transparent;
+$footer-widget-color: $light-3;
+$footer-widget-link-color: $light-1;
 
 @if ($is_sleek_header == 1) {
-  $primary-nav-bg:$dark-2
+  $primary-nav-bg: $dark-2
 }
-
 
 // Don't remove the below line.
 // It's used for overriding the variables.
 /**color_scheme**/
-
+/**handpicked_colors**/
 /**SCSS_override**/
 //
 
