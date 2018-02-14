@@ -33,18 +33,5 @@ function pagespeed_customize_footer( $wp_customize ) {
 
 
 
-	$wp_customize->add_setting( 'example-3', array( 'sanitize_callback' => 'sanitize_text_field', ) );
-
-	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-3', array(
-		'section'  => 'footer',
-		'priority' => 215,
-		'label'    => __( ' ', 'page-speed' ),
-		'content'  => sprintf( '<p class="upsell-feature">%s</p><a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&utm_medium=footer_upgrade&utm_campaign=basic" target="_blank"
-                                  class="button button-primary"><span class="dashicons dashicons-awards"
-                                                                      style="margin-top: 3px"></span> %s</a></p>',
-			__( 'Want to customize footer columns and their widths?', 'page-speed' ),
-			__( 'Go Pro', 'page-speed' )
-		),
-	) ) );
 
 }
