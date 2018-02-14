@@ -43,6 +43,36 @@ function helium_customizer_upsell( $wp_customize ) {
 		              )
 	) ) );
 
+
+	$wp_customize->add_setting( 'example-3', array( 'sanitize_callback' => 'sanitize_text_field', ) );
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-3', array(
+		'section'  => 'footer',
+		'priority' => 215,
+		'label'    => __( ' ', 'page-speed' ),
+		'content'  => sprintf( '<p class="upsell-feature">%s</p><a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&utm_medium=footer_upgrade&utm_campaign=basic" target="_blank"
+                                  class="button button-primary"><span class="dashicons dashicons-awards"
+                                                                      style="margin-top: 3px"></span> %s</a></p><p style="margin-top: 10px;font-family: serif;font-style: italic;font-weight: bold;color:#999">%s</p>',
+			__( 'Want to customize the number of footer columns and their widths? Or just support the development :-)', 'page-speed' ),
+			__( 'Go Pro', 'page-speed' ),
+			__( 'Page Speed is probably the only theme with no public facing credits or links to our site. 
+			We know important it is to keep your outbound links to minimum for your SEO efforts. #mintMoney', 'page-speed' )
+		),
+	) ) );
+
+
+	$wp_customize->add_setting( 'example-2', array( 'sanitize_callback' => 'sanitize_text_field', ) );
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-2', array(
+		'section'  => 'colors',
+		'priority' => 215,
+		'label'    => __( ' ', 'page-speed' ),
+		'content'  => sprintf( '<p class="upsell-feature">%s</p><a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&utm_medium=color_upgrade&utm_campaign=basic" target="_blank"
+                                  class="button button-primary"><span class="dashicons dashicons-awards"
+                                                                      style="margin-top: 3px"></span> %s</a></p>',
+			__( 'Need more color schemes, color options and gradients?', 'page-speed' ),
+			__( 'Go Pro', 'page-speed' )
+		),
+	) ) );
+
 }
 
 
