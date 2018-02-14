@@ -6,7 +6,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	$wp_customize->add_panel( 'thumbnails_excerpts', array(
 		'title'       => __( 'Thumbnails, Excerpts & Meta', 'page-speed' ),
 		'description' => '', // Include html tags such as <p>
-		'priority'    => 40, // Mixed with top-level-section hierarchy.
+		'priority'    => 11, // Mixed with top-level-section hierarchy.
 	) );
 
 
