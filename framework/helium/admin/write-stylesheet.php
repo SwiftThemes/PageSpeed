@@ -208,8 +208,8 @@ class Helium_Styles {
 
 		$override .= '$container_type:' . sanitize_text_field( get_theme_mod( 'container_type', 'regular' ) ) . ';';
 
-		$override .='$layout:'.get_theme_mod('theme_layout','centered').';';
-		$override .='$logo-position:'.get_theme_mod('logo_position','left').';';
+		$override .= '$layout:' . get_theme_mod( 'theme_layout', 'centered' ) . ';';
+		$override .= '$logo-position:' . get_theme_mod( 'logo_position', 'left' ) . ';';
 
 		if ( get_theme_mod( 'enable_card_style_widgets_sb', true ) ) {
 			$override .= '$sb_widget_cards:1;';
@@ -262,7 +262,7 @@ class Helium_Styles {
 		try {
 			global $wp_filesystem;
 			$content = $this->generate_css( 'bf' );
-			if ( ! HELIUM_PRO ) {
+			if ( ! defined( 'HELIUM_PRO' ) ) {
 				$content = $this->generate_css( 'af' ) . $content;
 			} else {
 				set_theme_mod( 'af_css', $this->generate_css( 'af' ) );
