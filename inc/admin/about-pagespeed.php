@@ -51,34 +51,34 @@ function pagespeed_about() {
 			) ?>
 
         </ul>
-		<?php echo sprintf( '
-  <h2>PageSpeed %s <a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&utm_medium=admin_page&utm_campaign=basic" target="_blank"
-                                  class="button button-primary"><span class="dashicons dashicons-awards"
-                                                                      style="margin-top: 3px"></span> %s</a></h2>
-       %s',
-			__( 'Premium', 'page-speed' ),
-			__( 'Go Pro', 'page-speed' ),
-			__( ' While the free version you are using is limited in no way, upgrading to the premium version gets you priority
-        support and the following additional features.', 'page-speed' )
-
-		) ?>
-
-			<?php echo sprintf( '
-<ul style="list-style: circle;list-style-position: inside;margin-left: 40px;font-size: 1.2em;">
-            <li>%s</li>
-            <li>%s</li>
-            <li>%s</li>
-            <li>%s</li>
-            <li>%s</li>
-            <li>%s</li>
-            </ul>',
-				__( 'Support for non render blocking CSS for higher Google PageSpeed score.', 'page-speed' ),
-				__( 'Color options and gradients.', 'page-speed' ),
-				__( 'Customizable footer columns.', 'page-speed' ),
-				__( 'Prebuilt layouts for use with page builders.', 'page-speed' ),
-				__( 'More color schemes.', 'page-speed' ),
-				__( 'Search form in navigation.', 'page-speed' )
-			) ?>
+<!--		--><?php //echo sprintf( '
+//  <h2>PageSpeed %s <a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&utm_medium=admin_page&utm_campaign=basic" target="_blank"
+//                                  class="button button-primary"><span class="dashicons dashicons-awards"
+//                                                                      style="margin-top: 3px"></span> %s</a></h2>
+//       %s',
+//			__( 'Premium', 'page-speed' ),
+//			__( 'Go Pro', 'page-speed' ),
+//			__( ' While the free version you are using is limited in no way, upgrading to the premium version gets you priority
+//        support and the following additional features.', 'page-speed' )
+//
+//		) ?>
+<!---->
+<!--			--><?php //echo sprintf( '
+//<ul style="list-style: circle;list-style-position: inside;margin-left: 40px;font-size: 1.2em;">
+//            <li>%s</li>
+//            <li>%s</li>
+//            <li>%s</li>
+//            <li>%s</li>
+//            <li>%s</li>
+//            <li>%s</li>
+//            </ul>',
+//				__( 'Support for non render blocking CSS for higher Google PageSpeed score.', 'page-speed' ),
+//				__( 'Color options and gradients.', 'page-speed' ),
+//				__( 'Customizable footer columns.', 'page-speed' ),
+//				__( 'Prebuilt layouts for use with page builders.', 'page-speed' ),
+//				__( 'More color schemes.', 'page-speed' ),
+//				__( 'Search form in navigation.', 'page-speed' )
+//			) ?>
 
     </div>
 	<?php

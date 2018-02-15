@@ -8,4 +8,8 @@
 
 require_once 'functions-styles.php';
 
+if ( is_admin() ) {
+	require_once 'disable-updates.php';
+}
+
 define( 'HELIUM_PRO', true );
