@@ -15,6 +15,9 @@ add_filter( 'site_transient_update_themes', 'helium_disable_theme_update');
 
 
 function helium_disable_theme_update( $themes ) {
+	if(!is_object($themes)){
+		return;
+	}
 	unset( $themes->response[ 'page-speed' ] );
 	return $themes;
 }
