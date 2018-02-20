@@ -25,11 +25,10 @@
 
 add_action( 'customize_register', 'helium_override_sass', 600 );
 function helium_override_sass( $wp_customize ) {
-
-
 	$wp_customize->add_section( 'scss', array(
 		'title'    => __( 'Override SCSS variables', 'page-speed' ),
-		'priority' => 80,
+		'priority' => 180,
+		'panel'=>'theme_options'
 	) );
 
 	$wp_customize->add_setting( 'scss_override', array(
@@ -44,7 +43,4 @@ function helium_override_sass( $wp_customize ) {
 		'type'    => 'textarea',
 
 	) );
-
-
-
 }

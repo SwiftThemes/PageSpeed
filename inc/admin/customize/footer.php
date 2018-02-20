@@ -12,6 +12,7 @@ function pagespeed_customize_footer( $wp_customize ) {
 	$wp_customize->add_section( 'footer', array(
 		'title'    => __( 'Footer', 'page-speed' ),
 		'priority' => 80,
+		'panel'=>'theme_options'
 	) );
 
 
@@ -29,6 +30,8 @@ function pagespeed_customize_footer( $wp_customize ) {
 		'type'    => 'textarea',
 
 	) );
+
+
 
 
 }

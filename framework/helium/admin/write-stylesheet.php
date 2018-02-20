@@ -359,7 +359,7 @@ class Helium_Styles {
 		try {
 			global $wp_filesystem;
 			$content = $this->generate_css( 'bf' );
-			if ( ! HELIUM_PRO ) {
+			if ( ! defined( 'HELIUM_PRO' ) ) {
 				$content = $this->generate_css( 'af' ) . $content;
 			} else {
 				set_theme_mod( 'af_css', $this->generate_css( 'af' ) );

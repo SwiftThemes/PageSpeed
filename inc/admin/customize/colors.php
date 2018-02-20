@@ -12,6 +12,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 	$wp_customize->add_section( 'colors', array(
 		'title'    => __( 'Color Schemes', 'page-speed' ),
 		'priority' => 30,
+		'panel'    => 'theme_options'
 	) );
 
 
@@ -119,7 +120,4 @@ function pagespeed_customize_colors( $wp_customize ) {
 		'type'    => 'checkbox',
 
 	) );
-
-
-
 }

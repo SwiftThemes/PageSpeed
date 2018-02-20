@@ -79,6 +79,41 @@ buildInclude = [
 
 
 ];
+buildIncludeOrg = [
+    // include common file types
+    '**/*.php',
+    '**/*.html',
+    '**/*.css',
+    '**/*.scss',
+    '**/*.js',
+    '**/*.svg',
+    '**/*.ttf',
+    '**/*.otf',
+    '**/*.eot',
+    '**/*.woff',
+    '**/*.woff2',
+
+    // include specific files and folders
+    'screenshot.png',
+    'readme.txt',
+    'readme.md',
+
+    // exclude files and folders
+    '!framework/helium/pro/',
+    '!framework/helium/pro/bootstrap.php',
+    '!framework/helium/pro/functions-styles.php',
+    '!assets/images/customize/color-schemes/color_schemes.psd',
+    '!node_modules/**/*',
+    '!buildtheme/**/*',
+    '!assets/bower_components/**/*',
+    '!style.css.map',
+    // '!assets/js/custom/*',
+    '!gulp/*',
+    '!*.psd',
+    '!gulpfile.js'
+
+
+];
 
 // Load plugins
 var gulp = require('gulp'),
@@ -273,6 +308,13 @@ gulp.task('buildFiles', function () {
 });
 
 
+gulp.task('buildFilesOrg', function () {
+    return gulp.src(buildIncludeOrg)
+        .pipe(gulp.dest(build))
+        .pipe(notify({message: 'Copy from buildFiles complete', onLast: true}));
+});
+
+
 /**
  * Images
  *
@@ -311,6 +353,12 @@ gulp.task('buildZip', function () {
 gulp.task('build', function (cb) {
     runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
+
+// Package Distributable Theme
+gulp.task('buildOrg', function (cb) {
+    runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFilesOrg', 'buildImages', 'buildZip', 'cleanupFinal', cb);
+});
+
 
 
 // Watch Task
