@@ -7,5 +7,6 @@
  */
 
 require_once 'functions-styles.php';
+require_once 'admin-display-theme-options.php';
 
 define( 'HELIUM_PRO', true );
