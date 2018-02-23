@@ -270,7 +270,7 @@ class Helium_Styles {
 			$content = str_replace( '/**colors**/', $colors_override, $content );
 		} else if ( get_theme_mod( 'invert_colors', false ) ) {
 			$colors_override = '$invert:' . 1 . ';';
-			$content = str_replace( '/**colors**/', $colors_override, $content );
+			$content         = str_replace( '/**colors**/', $colors_override, $content );
 		}
 
 
@@ -384,10 +384,10 @@ class Helium_Styles {
 		try {
 			global $wp_filesystem;
 			$content = $this->generate_css( 'bf' );
-			if ( ! defined( 'HELIUM_PRO' ) ) {
-				$content = $this->generate_css( 'af' ) . $content;
-			} else {
+			if ( defined( 'HELIUM_PRO' ) && get_theme_mod( 'enable_non_render_blocking_css', false ) ) {
 				set_theme_mod( 'af_css', $this->generate_css( 'af' ) );
+			} else {
+				$content = $this->generate_css( 'af' ) . $content;
 			}
 			$upload_dir = wp_upload_dir();
 			$file       = trailingslashit( $upload_dir['basedir'] ) . wp_get_theme()->stylesheet . '.css';
