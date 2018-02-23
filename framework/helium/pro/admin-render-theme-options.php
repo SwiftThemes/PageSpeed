@@ -1,6 +1,5 @@
 <?php
 function helium_display_theme_options( $options ) {
-	$mods = get_theme_mods();
 	foreach ( $options as $option ) {
 		switch ( $option['type'] ) {
 			case 'checkbox':

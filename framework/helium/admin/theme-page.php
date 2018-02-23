@@ -8,7 +8,8 @@
 
 
 function helium_theme_options_display() {
-	include_once ''
+	include_once HELIUM_THEME_INC.'pro/admin-theme-options.php';
+
 	?>
     <!-- Create a header in the default WordPress 'wrap' container -->
     <style>
@@ -31,10 +32,10 @@ function helium_theme_options_display() {
 				<?php pagespeed_about() ?>
             </div>
             <div id="tabs-2">
-				<?php pagespeed_help() ?>
+				<?php helium_display_theme_options($page_speed_theme_options) ?>
             </div>
             <div id="tabs-3">
-				<?php pagespeed_help() ?>
+				<?php helium_tools() ?>
             </div>
 
         </div>

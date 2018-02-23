@@ -1,0 +1,12 @@
+@if $transparent_backgrounds == 1{
+  body{background: $light-1;}
+  #wrapper,
+  #site-header-container,
+  #content,
+  #content-wrapper,
+  #main,
+  #wrapper #sb1,
+  #wrapper #sb2,
+  #site-footer-container,
+  #copyright-container{background: transparent}
+}

@@ -236,4 +236,21 @@
         }
     }
 
+
+
+
+    $( function() {
+        alert('hey__')
+        if ('undefined' !== typeof wp && wp.customize && wp.customize.selectiveRefresh) {
+            alert('hi')
+            wp.customize.selectiveRefresh.bind('render-partials-response', function (setting) {
+                alert('hi')
+                if (setting.transport === 'postMessage') {
+                    jQuery('body').css('opacity', '0.6')
+                }
+            });
+        }
+    } );
+
+
 })(jQuery);

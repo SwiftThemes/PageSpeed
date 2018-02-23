@@ -12,10 +12,22 @@
   margin-bottom: $vr;
   color: $sb-widget-color;
 }
-.widget a{
+
+.widget a {
   color: $sb-widget-link-color;
 }
-.widget a:hover{color:$primary;text-decoration: none}
+
+.widget a:hover {
+  color: $primary;
+  text-decoration: none
+}
+
+#sb2 .widget {
+  color: $sb2-widget-color;
+  a {
+    color: $sb2-widget-link-color;
+  }
+}
 
 .sb > .widget:first-child .widget-title {
   padding-top: 0
@@ -34,21 +46,21 @@
   }
 }
 
-.fc{
-  .widget-title{
+.fc {
+  .widget-title {
     color: $footer-widget-title-color;
     background: $footer-widget-title-bg;
   }
-  .widget{
+  .widget {
     color: $footer-widget-color;
   }
-  .widget a{
+  .widget a {
     color: $footer-widget-link-color;
   }
 }
 
 @if ($sb_widget_cards == 1) {
-  #content .sb{
+  #content .sb {
 
     .widget {
       border: solid 1px $sb-widget-border-color;
@@ -79,7 +91,9 @@
   }
 
   @media only screen and (max-width: 800px) {
-    #content .sb .widget {margin: 0 0 20px;  }
+    #content .sb .widget {
+      margin: 0 0 20px;
+    }
   }
 
-  }
+}

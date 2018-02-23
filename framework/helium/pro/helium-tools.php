@@ -1,6 +1,6 @@
 <?php
 
-function pagespeed_help() {
+function helium_tools() {
 	?>
     <div class="wrap">
         <p style="font-size:20px;font-weight: 300">

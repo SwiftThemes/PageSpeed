@@ -7,7 +7,7 @@
  * @subpackage Customize
  */
 
-add_action( 'customize_register', 'helium_gradient_control_register', 10 );
+add_action( 'customize_register', 'helium_gradient_control_register', 1 );
 
 function helium_gradient_control_register( $wp_customize ) {
 	$wp_customize->register_control_type( 'Helium_Customize_Gradient' );
@@ -19,7 +19,17 @@ function helium_gradient_control_register( $wp_customize ) {
 
 		public function to_json() {
 			parent::to_json();
-			$this->json['value'] = $this->value();
+			$this->json['value']      = $this->value();
+			$this->json['directions'] = array(
+				'to top'    => '2191',
+				'to right'  => '2192',
+				'to left'   => '2190',
+				'to bottom' => '2193',
+				'to top left' => '2196',
+				'to top right' => '2197',
+				'to bottom right' => '2198',
+				'to bottom left' => '2199',
+			);
 
 		}
 
@@ -81,11 +91,18 @@ function helium_gradient_control_register( $wp_customize ) {
                                value="{{data.value.bg_end}}">
                     </label>
 
-                    <label>
-                        <!-- Range control for gradient angle -->
-                        <input type="number" class="angle" style="width: auto;overflow: hidden" placeholder="Angle"
-                               value="{{data.value.gradient_angle}}" min="0" max="180" step="5"/>
+                    <label class="select">
+                        <select type="text" class="direction" style="width: auto">
+                            <# for ( key in data.directions ) { #>
+                                <option value="{{ key }}"
+
+                                <# if ( data.value.direction == data.directions[key] ) { #> selected="selected" <# } #>
+                                        >&#x{{data.directions[key]}};
+                                        </option>
+                                        <# } #>
+                        </select>
                     </label>
+
                 </div>
 
 

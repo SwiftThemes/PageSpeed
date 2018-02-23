@@ -16,7 +16,7 @@ $footer-columns: 4;
 
 $is_sleek_header: 0;
 $header_height: 48px;
-
+$transparent_backgrounds: 0;
 // Typography
 $body-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $body-font-weight: normal;
@@ -27,7 +27,6 @@ $headings-font-stack: 'Open Sans', sans-serif;
 $headings-font-weight: bold;
 
 $vr: $base-font-size*($base-line-height/1em);
-
 
 // For css optimization
 $layout: 'centered';

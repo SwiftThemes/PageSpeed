@@ -219,7 +219,11 @@ class Helium_Styles {
 			$override .= '$sb_widget_cards:1;';
 		} else {
 			$override .= '$sb_widget_cards:0;';
-
+		}
+		if ( get_theme_mod( 'enable_transparent_backgrounds', false ) ) {
+			$override .= '$transparent_backgrounds:1;';
+		} else {
+			$override .= '$transparent_backgrounds:0;';
 		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
@@ -229,13 +233,13 @@ class Helium_Styles {
 		foreach ( PAGE_SPEED_GRADIENT_BGS as $value ) {
 
 			$defaults = array(
-				'enable'         => 0,
-				'text_color'     => '$dark-3',
-				'link_color'     => '$primary',
-				'bg_start'       => '#fff',
-				'is_gradient'    => 0,
-				'bg_end'         => '#fff',
-				'gradient_angle' => '90',
+				'enable'             => 0,
+				'text_color'         => '$dark-3',
+				'link_color'         => '$primary',
+				'bg_start'           => '#fff',
+				'is_gradient'        => 0,
+				'bg_end'             => '#fff',
+				'gradient_direction' => 'to top',
 			);
 			$val      = wp_parse_args( get_theme_mod( $value ), $defaults );
 
@@ -243,7 +247,7 @@ class Helium_Styles {
 			$temp .= '$' . $value . '_is_gradient:' . $val['is_gradient'] . ';';
 			$temp .= '$' . $value . '_gradient_start:' . $val['bg_start'] . ';';
 			$temp .= '$' . $value . '_gradient_end:' . $val['bg_end'] . ';';
-			$temp .= '$' . $value . '_gradient_angle:' . $val['gradient_angle'] . ';';
+			$temp .= '$' . $value . '_gradient_direction:' . $val['gradient_direction'] . ';';
 			$temp .= '$' . $value . '_text_color:' . $val['text_color'] . ';';
 			$temp .= '$' . $value . '_link_color:' . $val['link_color'] . ';';
 
@@ -263,6 +267,9 @@ class Helium_Styles {
 			if ( get_theme_mod( 'invert_colors', false ) ) {
 				$colors_override .= '$invert:' . 1 . ';';
 			}
+			$content = str_replace( '/**colors**/', $colors_override, $content );
+		} else if ( get_theme_mod( 'invert_colors', false ) ) {
+			$colors_override = '$invert:' . 1 . ';';
 			$content = str_replace( '/**colors**/', $colors_override, $content );
 		}
 
@@ -320,6 +327,24 @@ class Helium_Styles {
 		if ( $temp['enable'] ) {
 			$hand_picked_colors .= '$secondary-nav-bg:' . $temp['bg_start'] . ';';
 			$hand_picked_colors .= '$secondary-nav-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'sb1_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$sb1-widget-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$sb1-widget-border-color:darken(' . $temp['bg_start'] . ',.1);';
+			$hand_picked_colors .= '$sb1-widget-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$sb1-widget-link-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'sb2_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$sb2-widget-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$sb2-widget-border-color:darken(' . $temp['bg_start'] . ',.1);';
+			$hand_picked_colors .= '$sb2-widget-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$sb2-widget-link-color:' . $temp['link_color'] . ';';
 		}
 
 		$temp = get_theme_mod( 'footer_colors' );

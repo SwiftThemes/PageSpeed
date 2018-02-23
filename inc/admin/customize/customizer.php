@@ -146,24 +146,27 @@ function pagespeed_customize( $wp_customize ) {
 		)
 	);
 
-
 	$wp_customize->add_setting( 'site_width', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '1260px',
+		'transport'         => 'postMessage',
 
 	) );
 	$wp_customize->add_setting( 'main_width', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => 56,
+		'transport'         => 'postMessage',
 
 	) );
 	$wp_customize->add_setting( 'left_sidebar_width', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => '18.75',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'enable_card_style_widgets_sb', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => true,
+		'transport'         => 'postMessage',
 	) );
 
 

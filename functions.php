@@ -56,9 +56,68 @@ function pagespeed_put_css_in_head() {
 	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
 	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
-	echo '<style>' . $style_generator->generate_css( 'af' ) . '</style>';
-	echo '<style>' . $style_generator->generate_css( 'bf' ) . '</style>';
+
+	$misc_css = "
+#selective_refresh_loader{width:100%;height:100%;background:rgba(0,0,0,.5);
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:9999;
+  
+  display:none;
+ 
+
 }
+#selective_refresh_loader p{
+ 
+    background: #FFF;  
+  
+font-family:sans-serif;
+  -webkit-background-clip: text;
+  font-size:32px;
+  line-height:1em;
+  font-weight:900;
+    color: transparent;
+
+  height: 0;
+  padding:64px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    letter-spacing:-1px;
+		animation: blink 3s linear infinite;
+	}
+@keyframes blink{
+0%{opacity: 0;}
+20%{opacity: .5;}
+50%{opacity: 1;}
+80%{opacity: .2;}
+100%{opacity: .1;}
+}
+";
+	echo '<style id="page-speed-inline-styles">' . $style_generator->generate_css( 'af' ) . $style_generator->generate_css( 'bf' ) . ' ' . $misc_css . '</style>';
+}
+
+add_action( 'wp_footer', 'pagespeed_put_selective_refresh_loader', 9 );
+
+function pagespeed_put_selective_refresh_loader() {
+	if ( ! is_customize_preview() ) {
+		return;
+	}
+	echo '<div id="selective_refresh_loader"><p data-shadow="' . __( 'Reloading Stylesheet', 'page-speed' ) . '">' . __( 'Reloading Stylesheet', 'page-speed' ) . '</p></div>';
+}
+
+function pagespeed_get_css() {
+	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
+
+	return $style_generator->generate_css( 'af' ) . $style_generator->generate_css( 'bf' );
+}
+
 
 /**
  * Replace the_excerpt "more" text with a link
@@ -69,9 +128,13 @@ function pagespeed_new_excerpt_more( $more ) {
 	if ( is_admin() ) {
 		return $more;
 	}
+
 	return '<p class="more-link">
 <a class=" he-btn" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read more', 'page-speed' ) . ' <span class="icon">&rarr;</span></a>
 </p>';
 }
 
 add_filter( 'excerpt_more', 'pagespeed_new_excerpt_more' );
+
+
+add_theme_support( 'customize-selective-refresh-widgets' );

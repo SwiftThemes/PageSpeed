@@ -246,7 +246,7 @@
                     change: function (event, ui) {
                         var setting = _.extend({}, control.setting())
                         var name = $(this).data('name')
-                        setting[name] = control.params.value[name] =ui.color.toString()
+                        setting[name] = control.params.value[name] = ui.color.toString()
                         control.setting.set(setting)
 
                     },
@@ -272,12 +272,14 @@
                 }
             );
 
-            control.container.on('change', '.angle', function () {
-                var setting = _.extend({}, control.setting())
-                setting['gradient_angle'] = $(this).val();
-                control.setting.set(setting)
 
-            });
+            control.container.on('change', 'select.direction',
+                function (e) {
+                    var setting = _.extend({}, control.setting())
+                    setting['gradient_direction'] = $(this).val();
+                    control.setting.set(setting)
+                }
+            );
 
             control.container.on('change', '.enable-colors', function () {
                 var setting = _.extend({}, control.setting())
@@ -295,6 +297,15 @@
     });
 
 
+
+
+
 })(jQuery);
 
-//data-customize-setting-link="home_show_excerpts"
+
+
+wp.customize.bind( 'change', function ( setting ) {
+    if(setting.transport === 'postMessage'){
+        jQuery('#customize-preview').find('body').css('opacity','.5')
+    }
+});
