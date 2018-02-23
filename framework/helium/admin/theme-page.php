@@ -8,7 +8,7 @@
 
 
 function helium_theme_options_display() {
-	include_once HELIUM_THEME_INC.'pro/admin-theme-options.php';
+	include_once HELIUM_THEME_INC . 'pro/admin-theme-options.php';
 
 	?>
     <!-- Create a header in the default WordPress 'wrap' container -->
@@ -32,7 +32,22 @@ function helium_theme_options_display() {
 				<?php pagespeed_about() ?>
             </div>
             <div id="tabs-2">
-				<?php helium_display_theme_options($page_speed_theme_options) ?>
+                <form id="helium_theme_options">
+                    <input type="hidden"
+                           name="helium_ajax_nonce" id="helium_ajax_nonce"
+                           value="<?php echo wp_create_nonce( 'helium_ajax_nonce' ) ?>"/>
+
+					<?php helium_display_theme_options( $page_speed_theme_options ) ?>
+                    <div id="helium-options-footer" class="cf">
+                        <button class="button button-primary button-hero alignright" id="save_theme_options">Save
+                            settings
+                        </button>
+                        <span id="options-changed" class="options-status">You have unsaved changes</span>
+                        <span id="options-saved" class="options-status">Settings saved</span>
+                        <span id="options-save-error" class="options-status">Error saving settings</span>
+                    </div>
+                </form>
+
             </div>
             <div id="tabs-3">
 				<?php helium_tools() ?>
