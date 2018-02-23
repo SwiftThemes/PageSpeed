@@ -38,6 +38,6 @@ $page_speed_theme_options[] = array(
 	'name'     => 'Separate above fold CSS',
 	'desc'     => __( 'Enable this option to eliminate render blocking CSS.', 'page-speed'),
 	'type'     => 'checkbox',
-	'default'  => true,
+	'default'  => false,
 	'sanitize' => 'boolean'
 );
