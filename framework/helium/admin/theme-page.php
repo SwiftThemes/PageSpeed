@@ -26,6 +26,7 @@ function helium_theme_options_display() {
                 <li><a href="#tabs-1"><?php _e( 'About', 'page-speed' ) ?></a></li>
                 <li><a href="#tabs-2"><?php _e( 'Theme Options', 'page-speed' ) ?></a></li>
                 <li><a href="#tabs-3"><?php _e( 'Tools', 'page-speed' ) ?></a></li>
+                <li><a href="#tabs-4"><?php _e( 'Activation', 'page-speed' ) ?></a></li>
             </ul>
 
             <div id="tabs-1">
@@ -51,6 +52,21 @@ function helium_theme_options_display() {
             </div>
             <div id="tabs-3">
 				<?php helium_tools() ?>
+            </div>
+
+
+            <div id="tabs-4">
+                <form id="license_activation">
+                    <input type="hidden"
+                           name="helium_ajax_nonce" id="helium_ajax_nonce"
+                           value="<?php echo wp_create_nonce( 'helium_ajax_nonce' ) ?>"/>
+                    <label>
+                        Your license key
+                        <input type="text" style="width:300px" name="key"/>
+                        <input type="button" id="validate_license" value="Check">
+                        <input type="button" id="activate_license" value="Activate">
+                    </label>
+                </form>
             </div>
 
         </div>

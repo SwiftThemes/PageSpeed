@@ -95,5 +95,33 @@
         });
 
 
+        activateLicense()
+
+        function activateLicense() {
+            $('#activate_license').click(function (e) {
+                e.preventDefault()
+                var url = 'https://members.swiftthemes.com/softsale/api/check-license'
+                var data = {
+                    'action': 'helium_activate_license',
+                    'security': $('#helium_ajax_nonce').val(),
+                    'data': $("#license_activation").serialize()
+                };
+
+                jQuery.post(ajaxurl, data, function (response) {
+
+                    $('#options-changed').hide()
+
+
+                    if (response) {
+                        $('#options-saved').show()
+                        originalThemeOptions = $("#helium_theme_options").serialize()
+                    } else {
+                        $('#options-save-error').show()
+                        $('#clear_cache_results').text('Error clearing cache :-(')
+                    }
+                });
+            })
+        }
+
     })
 })(jQuery)
