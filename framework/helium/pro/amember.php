@@ -6,10 +6,10 @@
  * @example
  *    // Script that handles user-submitted license key and makes activation
  *    // it is recommended to replace filesystem calls to database calls
- *    $checker = new Am_LicenseChecker($GET['license_key']);
+ *    $checker = new Am_LicenseChecker($_GET['license_key']);
  *    if ($checker->checkLicenseKey())
  *    {
- *        file_put_contents('license_key.php', $GET['license_key']));
+ *        file_put_contents('license_key.php', $_GET['license_key']));
  *    } else {
  *        echo "<html><body><h4>License key incorrect</h4>";
  *        echo "Error #" . $checker->getCode() . ' : ' . $checker->getMessage() . "<br />";
@@ -32,7 +32,7 @@
 class Am_LicenseChecker
 {
 	/** that is how activation cache will be encrypted - CHANGE IT! */
-	private $_local_encryption_key = 'b8fe077762e97a7dc677edadba43cf36080db913';
+	private $_local_encryption_key = 'd7b1c18903b47cf50cc47a000b210944eeef9885';
 
 	// successful code
 	const OK = 'ok';
@@ -89,7 +89,7 @@ class Am_LicenseChecker
 	 *          'sdomain' : 'Secure Domain (if application can use 2 domains)': override getSdomain() method to return
 	 *          'hardware-id' : Hardware ID - it can be any info on your choice that identifies the installation - override getHardwareId() method to return
 	 *  */
-	protected $request_vars = array (  0 => 'url',);
+	protected $request_vars = array (  0 => 'domain',);
 	/** @var array() */
 	public $openurl_callbacks = array( // fsockopen, curl, fopen
 		array('this', 'openUrlFsockopen'),
@@ -135,7 +135,6 @@ class Am_LicenseChecker
 			self::LICENSE_SERVER_ERROR);
 
 		$this->license_response = $body;
-		$this->setError($body->code);
 
 		return $this->code === self::OK;
 	}
@@ -398,7 +397,7 @@ class Am_LicenseChecker
 		$headers = trim($headers); $body = trim($body);
 		if (preg_match('/^Transfer-Encoding:\s+chunked/m', $headers))
 		{
-			$body = preg_replace('/[a-eA-E0-9]+\n(.+)0(\n)?/ms', '\\1', $body);
+			$body = preg_replace('/[a-fA-F0-9]+\n(.+)0(\n)?/ms', '\\1', $body);
 		}
 		if (preg_match('/^HTTP\/1\.. (\d\d\d) (.+)$/m', $headers, $regs))
 		{
@@ -420,7 +419,8 @@ class Am_LicenseChecker
 		{
 			curl_setopt($ch, CURLOPT_URL, $url);
 			curl_setopt($ch, CURLOPT_POST, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/x-www-form-urlencoded"));
+			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 		} else {
 			curl_setopt($ch, CURLOPT_URL, $url . '?' . http_build_query($params));
 		}

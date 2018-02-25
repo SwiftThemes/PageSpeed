@@ -12,8 +12,7 @@ function helium_activate_license() {
 	if ( isset( $params['key'] ) && $params['key'] ) {
 		$license_key = preg_replace( '/[^A-Za-z0-9-_]/', '', trim( $params['key'] ) );
 		$checker     = new Am_LicenseChecker( $license_key, HELIUM_ACTIVATION_URL, '' );
-		$theme_slug  = get_option( 'stylesheet' );
-		$mods        = get_option( "theme_mods_$theme_slug" );
+		$mods        = get_site_option( "helium_license", array() );
 
 		if ( ! $checker->checkLicenseKey() ) {
 			$mods['license_key']   = $license_key;
@@ -21,8 +20,21 @@ function helium_activate_license() {
 			$response['status']    = 'Error';
 			$response['code']      = 'license_key_invalid';
 			$response['msg']       = $checker->license_response->message ? $checker->license_response->message : __( 'The license key you entered is invalid', 'page-speed' );
-//			$response['data']      = $checker->license_response;
+			$response['data']      = $checker->license_response;
 		} else {
+
+			$activation_cache      = get_theme_mod( 'license_activation_cache' );
+			$prev_activation_cache = $activation_cache; // store previous value to detect change
+
+
+			$ret = empty( $activation_cache ) ?
+				$checker->activate( $activation_cache ) : // explictly bind license to new installation
+				$checker->checkActivation( $activation_cache ); // just check activation for subscription expriation, etc.
+
+			if ( $prev_activation_cache != $activation_cache ) {
+				$mods['license_activation_cache'] = $activation_cache;
+			}
+
 			$mods['license_key']          = sanitize_text_field( $license_key );
 			$mods['license_valid']        = true;
 			$mods['license_scheme_id']    = absint( $checker->license_response->scheme_id );
@@ -30,11 +42,11 @@ function helium_activate_license() {
 			$mods['license_expires']      = date( $checker->license_response->license_expires );
 
 			$response['status'] = 'Success';
-			$response['msg']    = __( 'License key validated successfully', 'page-speed' );
+			$response['msg']    = $checker->license_response->message ? $checker->license_response->message : __( 'License key validated successfully', 'page-speed' );
 			$response['data']   = $checker->license_response;
 		}
 
-		update_option( "theme_mods_$theme_slug", $mods );
+		update_site_option( "helium_license", $mods );
 
 	} else {
 		$response['status'] = 'Error';
