@@ -44,7 +44,7 @@ gulp.task('deploy', function () {
         recursive: true,
         clean: true,
         exclude: [],
-        port:1122
+        port: 1122
     };
     rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/page-speed/';
     rsyncConf.hostname = '172.93.98.50'; // hostname
@@ -60,11 +60,11 @@ gulp.task('deploy', function () {
         rsyncConf.username = 'tgdgeeks'; // ssh username
         rsyncConf.destination = '/home/tgdgeeks/public_html/wp-content/themes/page-speed'; // path where uploaded files go
         // Missing/Invalid Target
-    }else if (argv.swift) {
+    } else if (argv.swift) {
         rsyncConf.username = 'swiftswift'; // ssh username
         rsyncConf.destination = '/home/swiftswift/public_html/blog/wp-content/themes/page-speed'; // path where uploaded files go
         // Missing/Invalid Target
-    }else if(argv.demo){
+    } else if (argv.demo) {
         rsyncConf.username = 'swiftswift'; // ssh username
         rsyncConf.destination = '/home/swiftswift/public_html/__demos__/wp-content/themes/page-speed'; // path where uploaded files go
     } else {
@@ -90,7 +90,7 @@ gulp.task('share', function () {
         emptyDirectories: true,
         recursive: true,
         clean: true,
-        port:1122,
+        port: 1122,
         exclude: [],
     };
     rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/';
@@ -100,8 +100,16 @@ gulp.task('share', function () {
     rsyncConf.username = 'swiftswift'; // ssh username
     rsyncConf.destination = '/home/swiftswift/public_html/page-speed_GBmZxE97uCJctcwXxI78.zip'; // path where uploaded files go
 // Use gulp-rsync to sync the files
-    return gulp.src(rsyncPaths)
-        .pipe(rsync(rsyncConf));
+//     return gulp.src(rsyncPaths)
+//         .pipe(rsync(rsyncConf));
+
+    gulp.src(rsyncPaths)
+        .pipe(rsync(rsyncConf))
+
+    rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
+    gulp.src(rsyncPaths)
+        .pipe(rsync(rsyncConf))
+    return
 
 });
 

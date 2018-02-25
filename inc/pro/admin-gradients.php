@@ -6,7 +6,10 @@
  * Time: 12:45 AM
  */
 
-define( 'PAGE_SPEED_GRADIENT_BGS', array(
+
+global $pagespeed_gradient_bgs;
+
+$pagespeed_gradient_bgs = array(
 	'body_colors',
 	'header_colors',
 	'primary_nav_colors',
@@ -16,4 +19,4 @@ define( 'PAGE_SPEED_GRADIENT_BGS', array(
 	'sb2_colors',
 	'footer_colors',
 	'copyright_colors'
-) );
+);

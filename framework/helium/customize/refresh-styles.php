@@ -1,7 +1,7 @@
 <?php
 
-
-define( 'PAGE_SPEED_SELECTIVE_REFRESHABLES', array(
+global $pagespeed_selective_refreshables;
+$pagespeed_selective_refreshables = array(
 	'site_width',
 	'main_width',
 	'left_sidebar_width',
@@ -22,8 +22,7 @@ define( 'PAGE_SPEED_SELECTIVE_REFRESHABLES', array(
 	'secondary_font_lh',
 	'secondary_font_weight',
 
-) );
-
+);
 
 add_action( 'customize_register', 'helium_refresh_styles', 9000 );
 function helium_refresh_styles( $wp_customize ) {
@@ -50,5 +49,8 @@ function helium_get_values_requiring_css_refresh( $wp_customize ) {
 //	return array('body_colors');
 //	return $require_css_refresh;
 
-	return array_merge( PAGE_SPEED_GRADIENT_BGS, PAGE_SPEED_SELECTIVE_REFRESHABLES );
+	global $pagespeed_gradient_bgs;
+	global $pagespeed_selective_refreshables;
+
+	return array_merge( $pagespeed_gradient_bgs, $pagespeed_selective_refreshables );
 }

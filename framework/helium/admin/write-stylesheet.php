@@ -230,7 +230,9 @@ class Helium_Styles {
 
 
 		$temp = '';
-		foreach ( PAGE_SPEED_GRADIENT_BGS as $value ) {
+		global $pagespeed_gradient_bgs;
+
+		foreach ( $pagespeed_gradient_bgs as $value ) {
 
 			$defaults = array(
 				'enable'             => 0,

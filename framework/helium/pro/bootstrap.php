@@ -40,6 +40,7 @@ function helium_filter_update_checks( $query_args ) {
 	return $query_args;
 }
 
+
 function helium_filter_download_link( $query_args ) {
 	$url_components = parse_url( $query_args->download_url );
 
