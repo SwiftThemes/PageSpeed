@@ -16,7 +16,7 @@ if ( is_admin() ) {
 	require_once 'disable-updates.php';
 	require_once 'admin-ajax-functions.php';
 	require 'plugin-update-checker/plugin-update-checker.php';
-	require 'license-form.php';
+	require 'license.php';
 
 	$theme_slug           = get_option( 'stylesheet' );
 	$theme_update_checker = Puc_v4_Factory::buildUpdateChecker(

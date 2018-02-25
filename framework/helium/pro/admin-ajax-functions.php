@@ -15,7 +15,6 @@ function helium_activate_license() {
 		$mods        = get_site_option( "helium_license", array() );
 
 		if ( ! $checker->checkLicenseKey() ) {
-			$mods['license_key']   = $license_key;
 			$mods['license_valid'] = false;
 			$response['status']    = 'Error';
 			$response['code']      = 'license_key_invalid';
@@ -35,16 +34,20 @@ function helium_activate_license() {
 				$mods['license_activation_cache'] = $activation_cache;
 			}
 
-			$mods['license_key']          = sanitize_text_field( $license_key );
-			$mods['license_valid']        = true;
-			$mods['license_scheme_id']    = absint( $checker->license_response->scheme_id );
-			$mods['license_scheme_title'] = sanitize_text_field( $checker->license_response->license_scheme_title );
-			$mods['license_expires']      = date( $checker->license_response->license_expires );
+			$mods['license_valid'] = true;
 
 			$response['status'] = 'Success';
 			$response['msg']    = $checker->license_response->message ? $checker->license_response->message : __( 'License key validated successfully', 'page-speed' );
 			$response['data']   = $checker->license_response;
 		}
+
+		$mods['license_key']          = sanitize_text_field( $license_key );
+		$mods['license_valid']        = true;
+		$mods['license_scheme_id']    = absint( $checker->license_response->scheme_id );
+		$mods['license_scheme_title'] = sanitize_text_field( $checker->license_response->license_scheme_title );
+		$mods['license_expires']      = date( $checker->license_response->license_expires );
+		$mods['license_data']         = $checker->license_response;
+
 
 		update_site_option( "helium_license", $mods );
 
@@ -53,7 +56,8 @@ function helium_activate_license() {
 		$response['msg']    = __( 'Please enter a valid license', 'page-speed' );
 	}
 
+	echo helium_license_info();
 
-	wp_send_json( $response );
+//	wp_send_json( $response );
 	wp_die();
 }

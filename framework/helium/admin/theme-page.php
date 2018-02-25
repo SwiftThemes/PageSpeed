@@ -19,7 +19,7 @@ function helium_theme_options_display() {
     <div class="wrap">
 
         <h1>PageSpeed <?php _e( 'Theme Helpers', 'page-speed' ) ?></h1>
-		<?php settings_errors(); ?>
+		<?php settings_errors();?>
 
         <div class="tabs-container" id="tabs">
             <ul>

@@ -107,14 +107,17 @@
                     'data': $("#license_activation").serialize()
                 };
 
+                var button = $(this)
+                button.prop('disabled', true);
+
+
                 jQuery.post(ajaxurl, data, function (response) {
 
-                    $('#options-changed').hide()
-
+                    var button = $('#activate_license')
+                    button.prop('disabled', false);
 
                     if (response) {
-                        $('#options-saved').show()
-                        originalThemeOptions = $("#helium_theme_options").serialize()
+                        $('#license-info').html(response)
                     } else {
                         $('#options-save-error').show()
                         $('#clear_cache_results').text('Error clearing cache :-(')
