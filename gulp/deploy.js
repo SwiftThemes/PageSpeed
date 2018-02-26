@@ -106,9 +106,9 @@ gulp.task('share', function () {
     gulp.src(rsyncPaths)
         .pipe(rsync(rsyncConf))
 
-    rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
-    gulp.src(rsyncPaths)
-        .pipe(rsync(rsyncConf))
+    // rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
+    // gulp.src(rsyncPaths)
+    //     .pipe(rsync(rsyncConf))
     return
 
 });

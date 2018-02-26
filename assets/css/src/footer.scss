@@ -1,18 +1,19 @@
-#footer-links{
+#footer-links {
   text-align: center;
   margin: 0;
 }
-#footer-links li{
+
+#footer-links li {
   display: inline-block;
-list-style: none;
+  list-style: none;
 }
 
-#footer-links li a{
+#footer-links li a {
   padding: 5px 6px;
 }
 
 #copyright-container {
-  background: darken($footer-bg,.025);
+  background: darken($footer-bg, .025);
   font-family: $headings-font-stack;
   font-size: .8em;
   font-weight: 300;
@@ -21,11 +22,15 @@ list-style: none;
     color: $light-1;
     text-decoration: none;
   }
-  a:hover{
+  a:hover {
     color: $primary;
   }
   .inner {
     padding: .5*$padding $padding;
     text-align: center
   }
+}
+
+.rtl #site-footer-container .fc {
+  float: right
 }

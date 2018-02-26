@@ -138,14 +138,36 @@
   }
 }
 
-
-
 #menu {
   display: none
 }
 
-
 #side-pane {
   width: 0;
   display: none
+}
+
+.rtl {
+  ul li {
+    float: right
+  }
+
+  //* Icons */
+  .menu-item-has-children > a:after {
+    content: '\BB';
+    opacity: .5;
+    margin-left: 5px;
+    display: none;
+  }
+  .menu-item-has-children > a:before {
+    content: '\2192';
+    opacity: .5;
+    margin-right: 5px;
+    float: left;
+    display: inline-block;
+  }
+
+  .menu > .menu-item-has-children > a:before {
+    @include rotate(90deg)
+  }
 }
