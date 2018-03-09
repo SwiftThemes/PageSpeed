@@ -348,7 +348,8 @@ function pagespeed_register_sidebars() {
 		)
 	);
 
-	for ( $i = 1; $i < 4 + 1; $i ++ ) {
+	$columns = get_theme_mod( 'footer_column_count', 4 );
+	for ( $i = 1; $i < $columns + 1; $i ++ ) {
 		register_sidebars( 1, array(
 			'id'            => 'footer-' . $i,
 			'name'          => __( 'Footer Column ', 'page-speed' ) . '#' . $i,

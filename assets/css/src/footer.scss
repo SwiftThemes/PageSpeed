@@ -34,3 +34,28 @@
 .rtl #site-footer-container .fc {
   float: right
 }
+
+@if $fc1-width{
+  .fc-1{width:$fc1-width*1%;color:red}
+}
+@if $fc2-width{
+  .fc-2{width:$fc2-width*1%}
+}
+@if $fc3-width{
+  .fc-3{width:$fc3-width*1%}
+}
+@if $fc4-width{
+  .fc-4{width:$fc4-width*1%}
+}
+@if $fc5-width{
+  .fc-5{width:$fc5-width*1%}
+}
+@if $fc6-width{
+  .fc-6{width:$fc6-width*1%}
+}
+@if $fc1-width{
+  .fc-7{width:$fc1-width*1%}
+}
+@if $fc8-width{
+  .fc-8{width:$fc8-width*1%}
+}

@@ -47,6 +47,6 @@ function helium_save_theme_options() {
 		}
 	}
 	update_option( "theme_mods_$theme_slug", $mods );
-
+	echo __('Theme options saved','page-speed');
 	wp_die();
 }

@@ -226,6 +226,15 @@ class Helium_Styles {
 			$override .= '$transparent_backgrounds:0;';
 		}
 
+
+		$footer_widths = get_theme_mod( 'footer_widths' );
+
+		for ( $i = 0; $i <= get_theme_mod( 'footer_column_count', 4 ); $i ++ ) {
+			if(isset($footer_widths[ $i ])){
+				$override .= '$fc' . ( $i + 1 ) . '-width:' . $footer_widths[ $i ] . '%;';
+			}
+		}
+
 		$content = str_replace( '/**variables**/', $override, $content );
 
 

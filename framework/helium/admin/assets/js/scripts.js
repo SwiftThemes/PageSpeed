@@ -75,7 +75,6 @@
                         originalThemeOptions = $("#helium_theme_options").serialize()
                     } else {
                         $('#options-save-error').show()
-                        $('#clear_cache_results').text('Error clearing cache :-(')
                     }
                 });
             })

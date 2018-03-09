@@ -381,6 +381,10 @@ label {
     margin-bottom: 16px
 }
 
+
+.ui-slider{background:#333;width:100%;padding:0;position: relative;height: 100px;border:solid 2px #fff200;}
+.ui-slider-handle{background:#fff200;position: absolute;height: 100px;padding: 1px}
+
 .cf:before,
 .cf:after {
     content: " ";

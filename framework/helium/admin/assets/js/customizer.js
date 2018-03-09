@@ -1,6 +1,77 @@
 (function ($) {
 
 
+    // $('#_customize-input-footer_column_count').on('input', function () {
+    //     var columns = $(this).val();
+    //     var current = wp.customize.control('footer_widths').setting();
+    //     var current = wp.customize.control('footer_widths').setting.set([25, 25, 25]);
+    //
+    //
+    //     $(".column-slider").slider({
+    //         values: [10, 20, 40]
+    //     });
+    //
+    // });
+
+
+    // Change the previewed URL to the selected page when changing the page_for_posts.
+    wp.customize('footer_column_count', function (setting) {
+        setting.bind(function (columns) {
+
+            var width = 100 / columns;
+            var positions = [];
+
+            for (var i = 1; i < columns; i++) {
+                positions.push(width * i*1.00);
+            }
+
+            var footer_widths_control = wp.customize.control('footer_widths')
+            footer_widths_control.setting.set(positions);
+
+            $(footer_widths_control.selector).find('.column-slider').slider("destroy")
+            $(footer_widths_control.selector).find('.column-slider').slider({
+                values: positions,
+                change: function (event, ui) {
+                    console.log($(this).slider('values'));
+                    footer_widths_control.setting.set($(this).slider('values'))
+
+                }
+
+            });
+        });
+    });
+
+
+    wp.customize.controlConstructor['he_columns'] = wp.customize.Control.extend({
+        ready: function () {
+            var control = this;
+
+            function getValues() {
+                var values_dirty = control.setting()
+                var values = []
+                var current = 0;
+                for (var i = 0; i < values_dirty.length; i++) {
+                    values.push(current + values_dirty[i]);
+                    current += values_dirty[i];
+                }
+                return values;
+            }
+
+
+            $(".column-slider").slider({
+                values: getValues(),
+                change: function (event, ui) {
+
+                    control.setting.set($(this).slider('values'))
+
+                }
+
+            });
+
+        }
+    })
+
+
     wp.customize.controlConstructor['he_font'] = wp.customize.Control.extend({
         ready: function () {
             var control = this;
@@ -297,15 +368,11 @@
     });
 
 
-
-
-
 })(jQuery);
 
 
-
-wp.customize.bind( 'change', function ( setting ) {
-    if(setting.transport === 'postMessage'){
-        jQuery('#customize-preview').find('body').css('opacity','.5')
+wp.customize.bind('change', function (setting) {
+    if (setting.transport === 'postMessage') {
+        jQuery('#customize-preview').find('body').css('opacity', '.5')
     }
 });

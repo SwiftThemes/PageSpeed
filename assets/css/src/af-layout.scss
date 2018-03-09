@@ -127,6 +127,7 @@ body {
     }
   }
 }
+
 //for gradients
 //#sb1, #sb2 {
 //  background: inherit;
@@ -179,10 +180,10 @@ body {
   .layout-rr-sb,
   .layout-ll-sb {
     #sb1 {
-      background: $sb1-bg ; //removed important for gradients
+      background: $sb1-bg; //removed important for gradients
     }
     #sb2 {
-      background: $sb2-bg ;
+      background: $sb2-bg;
 
     }
 
@@ -206,11 +207,9 @@ body {
   padding: $padding 0;
 }
 
-#site-footer-container {
-  .fc {
-    width: 100%/$footer-columns;
-    float: left
-  }
+.fc {
+  width: 100%/$footer-columns;
+  float: left
 }
 
 //* delete later */
