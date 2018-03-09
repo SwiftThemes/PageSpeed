@@ -23,7 +23,6 @@ $btn-pink: rgb(255, 44, 85);
 // Don't remove the below line.
 // It's used for overriding the variables. COLORS_FROM_COLOR_SCJEMES
 
-
 /**colors_from_color_scheme**/
 
 /**colors**/
@@ -103,7 +102,6 @@ $sb-widget-bg: $light-1;
 $sb-widget-color: $dark-3;
 $sb-widget-link-color: $dark-1;
 
-
 $sb1-widget-title-color: $sb-widget-title-color;
 $sb1-widget-title-bg: $sb-widget-title-bg;
 $sb1-widget-border-color: $sb-widget-border-color;
@@ -117,8 +115,6 @@ $sb1-widget-border-color: $sb-widget-border-color;
 $sb1-widget-bg: $sb-widget-bg;
 $sb1-widget-color: $sb-widget-color;
 $sb1-widget-link-color: $sb-widget-link-color;
-
-
 
 $footer-widget-title-color: $light-3;
 $footer-widget-title-bg: transparent;
@@ -130,6 +126,17 @@ $footer-widget-link-color: $light-1;
 @if ($is_sleek_header == 1) {
   $primary-nav-bg: $dark-2
 }
+
+// Dummy for color options
+$body_colors_enable: 0;
+$header_colors_enable: 0;
+$primary-nav_colors_enable: 0;
+$secondary-nav_colors_enable: 0;
+$content_colors_enable: 0;
+$sb1_colors_enable: 0;
+$sb2_colors_enable: 0;
+$copyright_colors_enable: 0;
+$footer_colors_enable: 0;
 
 // Don't remove the below line.
 // It's used for overriding the variables.
