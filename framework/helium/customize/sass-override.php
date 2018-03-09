@@ -28,12 +28,26 @@ function helium_override_sass( $wp_customize ) {
 	$wp_customize->add_section( 'scss', array(
 		'title'    => __( 'Override SCSS variables', 'page-speed' ),
 		'priority' => 180,
-		'panel'=>'theme_options'
+		'panel'    => 'theme_options'
 	) );
+
+
+	$wp_customize->add_setting( 'enable_scss_override', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => true,
+	) );
+
+	$wp_customize->add_control( 'enable_scss_override', array(
+		'label'       => __( 'Enable SCSS override', 'page-speed' ),
+		'description' => __( 'Disable this option if you see any styles compilation errors.', 'page-speed' ),
+		'section'     => 'scss',
+		'type'        => 'checkbox',
+	) );
+
 
 	$wp_customize->add_setting( 'scss_override', array(
 		'sanitize_callback' => 'sanitize_textarea_field',
-		'default' => __('//Here you can override any SCSS variables defined in the theme','page-speed')." \n\n",
+		'default'           => __( '//Here you can override any SCSS variables defined in the theme', 'page-speed' ) . " \n\n",
 
 	) );
 

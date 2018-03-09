@@ -230,7 +230,7 @@ class Helium_Styles {
 		$footer_widths = get_theme_mod( 'footer_widths' );
 
 		for ( $i = 0; $i <= get_theme_mod( 'footer_column_count', 4 ); $i ++ ) {
-			if(isset($footer_widths[ $i ])){
+			if ( isset( $footer_widths[ $i ] ) ) {
 				$override .= '$fc' . ( $i + 1 ) . '-width:' . $footer_widths[ $i ] . '%;';
 			}
 		}
@@ -371,9 +371,12 @@ class Helium_Styles {
 		$content = str_replace( '/**handpicked_colors**/', $hand_picked_colors, $content );
 
 
-		$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
+		if ( get_theme_mod( 'enable_scss_override' ) ) {
 
-		if ( 1 || defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
+			$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
+
+		}
+		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 
@@ -385,7 +388,17 @@ class Helium_Styles {
 			$scss->setFormatter( 'scss_formatter_compressed' );
 		}
 
-		return $scss->compile( $content );
+		try {
+			$compiled = $scss->compile( $content );
+			delete_transient( $this->prefix . 'sass_error' );
+		} catch ( Exception $e ) {
+			set_transient( $this->prefix . 'sass_error', $e->getMessage(), 600 );
+			helium_write_to_uploads( $content, 'combined.scss' );
+
+			return false;
+		}
+
+		return $compiled;
 	}
 
 	public function write_css() {
@@ -395,6 +408,10 @@ class Helium_Styles {
 		try {
 			global $wp_filesystem;
 			$content = $this->generate_css( 'bf' );
+			if ( ! $content ) {
+				//Don't overwrite the stylesheet with empty content.
+				return;
+			}
 			if ( defined( 'HELIUM_PRO' ) && get_theme_mod( 'enable_non_render_blocking_css', false ) ) {
 				set_theme_mod( 'af_css', $this->generate_css( 'af' ) );
 			} else {
