@@ -21,6 +21,7 @@ $pagespeed_selective_refreshables = array(
 	'secondary_font_size',
 	'secondary_font_lh',
 	'secondary_font_weight',
+	'footer_widths',
 
 );
 
@@ -38,12 +39,12 @@ function helium_refresh_styles( $wp_customize ) {
 
 
 function helium_get_values_requiring_css_refresh( $wp_customize ) {
-	$require_css_refresh = array();
-	foreach ( $wp_customize->settings() as $setting ) {
-		if ( 'theme_mod' === $setting->type && 'postMessage' === $setting->transport ) {
-			array_push( $require_css_refresh, $setting->id );
-		}
-	}
+//	$require_css_refresh = array();
+//	foreach ( $wp_customize->settings() as $setting ) {
+//		if ( 'theme_mod' === $setting->type && 'postMessage' === $setting->transport ) {
+//			array_push( $require_css_refresh, $setting->id );
+//		}
+//	}
 
 
 //	return array('body_colors');

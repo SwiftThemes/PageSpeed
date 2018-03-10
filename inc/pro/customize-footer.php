@@ -7,6 +7,7 @@ function pagespeed_customize_footer_columns( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_column_count', array(
 		'sanitize_callback' => 'absint',
 		'default'           => 4,
+//		'transport'         => 'postMessage',
 
 	) );
 
@@ -24,6 +25,7 @@ function pagespeed_customize_footer_columns( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_widths', array(
 		'sanitize_callback' => 'helium_sanitize_column_widths',
 		'default'           => array( 25, 25, 25 ),
+		'transport'         => 'postMessage',
 
 	) );
 
