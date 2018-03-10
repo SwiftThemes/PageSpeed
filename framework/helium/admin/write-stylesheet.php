@@ -395,6 +395,11 @@ class Helium_Styles {
 			set_transient( $this->prefix . 'sass_error', $e->getMessage(), 600 );
 			helium_write_to_uploads( $content, 'combined.scss' );
 
+
+			delete_transient( $this->prefix . 'sass_file_list' );
+			delete_transient( $this->prefix . 'sass_combined_bf' );
+			delete_transient( $this->prefix . 'sass_combined_af' );
+
 			return false;
 		}
 
