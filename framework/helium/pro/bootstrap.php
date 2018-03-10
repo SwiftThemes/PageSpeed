@@ -18,7 +18,7 @@ if ( is_admin() ) {
 	require 'plugin-update-checker/plugin-update-checker.php';
 	require 'license.php';
 
-	$theme_slug           = get_option( 'stylesheet' );
+	$theme_slug = get_option( 'stylesheet' );
 	$theme_update_checker = Puc_v4_Factory::buildUpdateChecker(
 		'https://updates.swiftthemes.com/?action=get_metadata&slug=' . $theme_slug, //Metadata URL.
 		HELIUM_THEME_DIR . 'functions.php',
@@ -36,24 +36,35 @@ function helium_filter_update_checks( $query_args ) {
 		$query_args['license_key'] = get_theme_mod( 'license_key' );
 		$query_args['url']         = get_site_url();
 	}
-
 	return $query_args;
 }
 
 
 function helium_filter_download_link( $query_args ) {
-	$url_components = parse_url( $query_args->download_url );
 
-	if ( strpos( $url_components['query'], 'license_key' ) ) {
-		return $query_args;
-	}
-	if ( $url_components['query'] ) {
-		$query_args->download_url .= '&license_key=' . get_theme_mod( 'license_key' ) . '&url=' . urlencode( get_site_url() );
-	} else {
-		$query_args->download_url .= '?license_key=' . get_theme_mod( 'license_key' ) . '&url=' . urlencode( get_site_url() );
-	}
+	$download_url = $query_args->download_url;
+
+	add_query_arg( array(
+		'license_key' => get_theme_mod( 'license_key' ),
+		'url'         => urlencode( get_site_url() )
+	), $download_url );
+
+	$query_args->download_url = $download_url;
 
 	return $query_args;
+//
+//	$url_components = parse_url( $query_args->download_url );
+//
+//	if ( strpos( $url_components['query'], 'license_key' ) ) {
+//		return $query_args;
+//	}
+//	if ( $url_components['query'] ) {
+//		$query_args->download_url .= '&license_key=' . get_theme_mod( 'license_key' ) . '&url=' . urlencode( get_site_url() );
+//	} else {
+//		$query_args->download_url .= '?license_key=' . get_theme_mod( 'license_key' ) . '&url=' . urlencode( get_site_url() );
+//	}
+//
+//	return $query_args;
 }
 
 
