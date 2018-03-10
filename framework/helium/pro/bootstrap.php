@@ -18,7 +18,7 @@ if ( is_admin() ) {
 	require 'plugin-update-checker/plugin-update-checker.php';
 	require 'license.php';
 
-	$theme_slug = get_option( 'stylesheet' );
+	$theme_slug           = get_option( 'stylesheet' );
 	$theme_update_checker = Puc_v4_Factory::buildUpdateChecker(
 		'https://updates.swiftthemes.com/?action=get_metadata&slug=' . $theme_slug, //Metadata URL.
 		HELIUM_THEME_DIR . 'functions.php',
@@ -32,20 +32,25 @@ if ( is_admin() ) {
 }
 
 function helium_filter_update_checks( $query_args ) {
-	if ( get_theme_mod( 'license_key' ) ) {
-		$query_args['license_key'] = get_theme_mod( 'license_key' );
+	$license     = get_site_option( "helium_license", array() );
+	$license_key = isset( $license['license_key'] ) ? $license['license_key'] : '';
+
+	if ( $license_key ) {
+		$query_args['license_key'] = $license_key;
 		$query_args['url']         = get_site_url();
 	}
+
 	return $query_args;
 }
 
 
 function helium_filter_download_link( $query_args ) {
-
 	$download_url = $query_args->download_url;
+	$license      = get_site_option( "helium_license", array() );
+	$license_key  = isset( $license['license_key'] ) ? $license['license_key'] : '';
 
 	add_query_arg( array(
-		'license_key' => get_theme_mod( 'license_key' ),
+		'license_key' => $license_key,
 		'url'         => urlencode( get_site_url() )
 	), $download_url );
 
