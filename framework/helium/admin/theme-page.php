@@ -40,12 +40,13 @@ function helium_theme_options_display() {
 
 					<?php helium_display_theme_options( $page_speed_theme_options ) ?>
                     <div id="helium-options-footer" class="cf">
-                        <button class="button button-primary button-hero alignright" id="save_theme_options">Save
-                            settings
+                        <button class="button button-primary button-hero alignright" id="save_theme_options">
+	                        <?php _e( 'Save
+                            settings', 'page-speed' ) ?></a>
                         </button>
-                        <span id="options-changed" class="options-status">You have unsaved changes</span>
-                        <span id="options-saved" class="options-status">Settings saved</span>
-                        <span id="options-save-error" class="options-status">Error saving settings</span>
+                        <span id="options-changed" class="options-status"><?php _e( 'You have unsaved changes', 'page-speed' ) ?></span>
+                        <span id="options-saved" class="options-status"><?php _e( 'Settings saved', 'page-speed' ) ?></span>
+                        <span id="options-save-error" class="options-status"><?php _e( 'Error saving settings', 'page-speed' ) ?></span>
                     </div>
                 </form>
 

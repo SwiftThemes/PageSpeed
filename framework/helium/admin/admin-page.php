@@ -12,7 +12,8 @@ add_action( 'admin_menu', 'helium_theme_menu' );
 function helium_theme_menu() {
 	$helium_theme_options = add_theme_page(
 		'PageSpeed ' . __( 'Theme Helpers', 'page-speed' ),            // The title to be displayed in the browser window for this page.
-		'PageSpeed ' . __( 'Helpers', 'page-speed' ),            // The text to be displayed for this menu item
+//		'PageSpeed ' . __( 'Helpers', 'page-speed' ),            // The text to be displayed for this menu item
+		'PageSpeed',            // The text to be displayed for this menu item
 		'edit_theme_options',            // Which type of users can see this menu item
 		'helium_theme_options',    // The unique ID - that is, the slug - for this menu item
 		'helium_theme_options_display'     // The name of the function to call when rendering this menu's page
