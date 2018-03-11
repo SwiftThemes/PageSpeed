@@ -253,16 +253,15 @@ class Helium_Styles {
 				'gradient_direction' => 'to top',
 			);
 			$val      = wp_parse_args( get_theme_mod( $value ), $defaults );
-
-			$temp .= '$' . $value . '_enable:' . $val['enable'] . ';';
-			$temp .= '$' . $value . '_is_gradient:' . $val['is_gradient'] . ';';
-			$temp .= '$' . $value . '_gradient_start:' . $val['bg_start'] . ';';
-			$temp .= '$' . $value . '_gradient_end:' . $val['bg_end'] . ';';
-			$temp .= '$' . $value . '_gradient_direction:' . $val['gradient_direction'] . ';';
-			$temp .= '$' . $value . '_text_color:' . $val['text_color'] . ';';
-			$temp .= '$' . $value . '_link_color:' . $val['link_color'] . ';';
-
-
+			if ( $val['enable'] ) {
+				$temp .= '$' . $value . '_enable:' . $val['enable'] . ';';
+				$temp .= '$' . $value . '_is_gradient:' . $val['is_gradient'] . ';';
+				$temp .= '$' . $value . '_gradient_start:' . $val['bg_start'] . ';';
+				$temp .= '$' . $value . '_gradient_end:' . $val['bg_end'] . ';';
+				$temp .= '$' . $value . '_gradient_direction:' . $val['gradient_direction'] . ';';
+				$temp .= '$' . $value . '_text_color:' . $val['text_color'] . ';';
+				$temp .= '$' . $value . '_link_color:' . $val['link_color'] . ';';
+			}
 		};
 
 
