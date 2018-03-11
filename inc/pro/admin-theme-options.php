@@ -36,7 +36,7 @@ $page_speed_theme_options = array();
 $page_speed_theme_options[] = array(
 	'id'       => 'enable_non_render_blocking_css',
 	'name'     => 'Separate above fold CSS',
-	'desc'     => __( 'Enable this option to eliminate render blocking CSS.', 'page-speed'),
+	'desc'     => __( 'Enable this option to eliminate render blocking CSS.<br />Please read <a href="https://swiftthemes.com/get-100-page-speed-score-mobile-desktops/"><strong>PageSpeed Optimization Guide</strong></a> for info to take advantage of this option.', 'page-speed'),
 	'type'     => 'checkbox',
 	'default'  => false,
 	'sanitize' => 'boolean'

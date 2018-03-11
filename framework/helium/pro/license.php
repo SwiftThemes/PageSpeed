@@ -84,6 +84,9 @@ function helium_license_info() {
 			case 'other_error':
 				$message .= $license['license_data']->message;
 				break;
+            default:
+	            $message .= 'Oh Snap!!, Sorry something went wrong :-(. Probably an invalid license key. Please contact support.';
+
 		}
 	}
 
