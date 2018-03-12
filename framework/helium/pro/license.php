@@ -21,12 +21,14 @@ function helium_render_license_form() {
 		?>
     </div>
     <div class="clear"></div>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <div style="margin-top: 20px">
         <a href="https://forums.swiftthemes.com" class="button button-primary">Support</a>&nbsp;&nbsp;
         <a href="https://members.swiftthemes.com" class="button button-primary">Members area</a>
     </div>
+    <br/>
+	<?php _e( 'You can use the theme without activation. All features will work without any limitation.<br />Activation is only required for one click updates.', 'page-speed' ) ?>
 	<?php
 }
 
@@ -84,8 +86,8 @@ function helium_license_info() {
 			case 'other_error':
 				$message .= $license['license_data']->message;
 				break;
-            default:
-	            $message .= 'Oh Snap!!, Sorry something went wrong :-(. Probably an invalid license key. Please contact support.';
+			default:
+				$message .= 'Oh Snap!!, Sorry something went wrong :-(. Probably an invalid license key. Please contact support.';
 
 		}
 	}
