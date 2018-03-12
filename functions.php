@@ -154,8 +154,10 @@ function pagespeed_new_excerpt_more( $more ) {
 		return $more;
 	}
 
+	$button_text = get_theme_mod( 'read_more_text', __( 'Read more', 'page-speed' ) );
+
 	return '<p class="more-link">
-<a class=" he-btn" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read more', 'page-speed' ) . ' <span class="icon">&rarr;</span></a>
+<a class=" he-btn" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . $button_text . ' <span class="icon">&rarr;</span></a>
 </p>';
 }
 

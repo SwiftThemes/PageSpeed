@@ -12,30 +12,30 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	// Add all the required sections
 	$wp_customize->add_section( 'home_page_design', array(
-		'title'    => __( 'Latest Posts Design', 'page-speed' ),
-		'panel'    => 'thumbnails_excerpts',
-		'priority' => 30,
+		'title'    => __( 'Latest Posts', 'page-speed' ),
+		'panel'    => 'theme_options',
+		'priority' => 90,
 	) );
 
 	// Add all the required sections
 	$wp_customize->add_section( 'archives_design', array(
 		'title'    => __( 'Archives, Categories, Tags', 'page-speed' ),
-		'panel'    => 'thumbnails_excerpts',
-		'priority' => 30,
+		'panel'    => 'theme_options',
+		'priority' => 90,
 	) );
 
 	// Add all the required sections
 	$wp_customize->add_section( 'single_post_design', array(
 		'title'    => __( 'Single Post', 'page-speed' ),
-		'panel'    => 'thumbnails_excerpts',
-		'priority' => 30,
+		'panel'    => 'theme_options',
+		'priority' => 90,
 	) );
 
 	// Add all the required sections
 	$wp_customize->add_section( 'single_page_design', array(
 		'title'    => __( 'Single Page', 'page-speed' ),
-		'panel'    => 'thumbnails_excerpts',
-		'priority' => 30,
+		'panel'    => 'theme_options',
+		'priority' => 90,
 	) );
 
 	// Show excerpts or full post
@@ -70,7 +70,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'home_show_excerpts', array(
-		'label'   => __('Show excerpts on home page', 'page-speed' ),
+		'label'   => __( 'Show excerpts on home page', 'page-speed' ),
 		'section' => 'home_page_design',
 		'type'    => 'checkbox',
 
@@ -116,7 +116,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'archives_show_excerpts', array(
-		'label'   => __('Show excerpts on archives', 'page-speed' ),
+		'label'   => __( 'Show excerpts on archives', 'page-speed' ),
 		'section' => 'archives_design',
 		'type'    => 'checkbox',
 
