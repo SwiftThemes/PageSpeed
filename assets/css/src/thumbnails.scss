@@ -22,7 +22,10 @@ article:nth-child(odd) .alternate {
 
 @media only screen and (max-width: 800px) {
   .alternate {
-    float: none;
-    margin: auto;
+    float: none !important;
+    width: 120%;
+    max-width: 120%;
+    margin: auto -10%;
+    margin-bottom: 12px;
   }
 }
