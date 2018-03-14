@@ -1,3 +1,4 @@
+
 @if $body_colors_enable == 1 {
   body {
     @if $body_colors_is_gradient == 0 {
@@ -32,21 +33,6 @@
       @include gradient($primary_nav_colors_gradient_direction, $primary_nav_colors_gradient_start, $primary_nav_colors_gradient_end)
     }
   }
-
-
-  //@if $is_sleek_header ==1{
-  //  #primary {
-  //    @if $primary-nav_colors_is_gradient == 0 {
-  //      background: $primary-nav_colors_gradient_start;
-  //    }
-  //    @if $primary-nav_colors_is_gradient == 1 {
-  //      @include gradient($primary_nav_colors_gradient_direction, $primary_nav_colors_gradient_start, $primary_nav_colors_gradient_end)
-  //    }
-  //  }
-  //
-  //
-  //}
-
 }
 
 @if $secondary-nav_colors_enable == 1 {

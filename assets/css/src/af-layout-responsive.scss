@@ -50,5 +50,17 @@
 
   //Hide menus
   #primary-nav-container,#secondary-nav-container,#header-nav-container{display: none}
-}
 
+  .post-thumbnail {
+    .alternate,
+    .alignleft,
+    .alignright {
+      float: none !important;
+      width: 120%;
+      max-width: 120%;
+      margin: auto -10%;
+      margin-bottom: 12px;
+    }
+
+  }
+}
