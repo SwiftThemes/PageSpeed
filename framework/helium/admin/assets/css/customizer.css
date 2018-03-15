@@ -390,6 +390,11 @@ label {
 #accordion-section-fonts,
 #accordion-section-single_page_design{margin-bottom:20px}
 
+
+.display-column-widths{
+    width:50%;float:left;
+}
+
 .cf:before,
 .cf:after {
     content: " ";

@@ -21,22 +21,24 @@
             var width = 100 / columns;
             var positions = [];
 
-            for (var i = 1; i < columns; i++) {
+            for (var i = 1; i <= columns; i++) {
                 positions.push(width * i * 1.00);
             }
 
             var footer_widths_control = wp.customize.control('footer_widths')
             footer_widths_control.setting.set(positions);
 
+            $(footer_widths_control.selector).find('.values').html(column_positions_to_widths(positions))
+
+
             $(footer_widths_control.selector).find('.column-slider').slider("destroy")
             $(footer_widths_control.selector).find('.column-slider').slider({
                 values: positions,
                 change: function (event, ui) {
-                    console.log($(this).slider('values'));
                     footer_widths_control.setting.set($(this).slider('values'))
+                    $(footer_widths_control.selector).find('.values').html(column_positions_to_widths(positions))
 
                 }
-
             });
         });
     });
@@ -57,11 +59,15 @@
                 return values;
             }
 
+            var values = getValues();
+            $(control.selector).find('.values').html(column_positions_to_widths(values))
+
 
             $(".column-slider").slider({
-                values: getValues(),
+                values: values,
                 change: function (event, ui) {
                     control.setting.set($(this).slider('values'))
+                    $(control.selector).find('.values').html(column_positions_to_widths(values))
                 },
                 step: .01
             });
@@ -365,6 +371,16 @@
         }
     });
 
+
+    function column_positions_to_widths(values) {
+        var new_values = values.slice()
+        var text = '<div class="display-column-widths">Col #1:&nbsp;<strong>' + values[0].toFixed(2) + '%</strong></div>';
+        for (var i = 1; i < new_values.length; i++) {
+            text = text + '<div class="display-column-widths">Col #' + (i + 1) + ':&nbsp;<strong>' + (new_values[i] - new_values[i - 1]).toFixed(2) + '%</strong></div>';
+        }
+
+        return text;
+    }
 
 })(jQuery);
 

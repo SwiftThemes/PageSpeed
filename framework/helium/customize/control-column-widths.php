@@ -41,14 +41,16 @@ function helium_he_column_widths( $wp_customize ) {
 
 		public function to_json() {
 			parent::to_json();
-			$this->json['value'] = 'Holaaaa';
 		}
 
 		public function content_template() {
 
 			?>
-			<h1>Hi</h1>
+            <label class="customize-control-title">{{{ data.label }}}</label>
+            <em>Drag the vertical lines to adjust the widths.</em><br /><br />
 			<div class="column-slider"></div>
+            <div class="values"></div>
+
 			<?php
 		}
 
