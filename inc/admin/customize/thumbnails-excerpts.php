@@ -102,6 +102,59 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 			)
 		)
 	);
+// Show thumbnail
+	$wp_customize->add_setting( 'home_show_thumbnails_mobile', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => true,
+
+	) );
+
+	// Thumbnail size
+	$wp_customize->add_setting( 'home_thumb_width_mobile', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
+	) );
+	$wp_customize->add_setting( 'home_thumb_height_mobile', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
+	) );
+
+	$wp_customize->add_setting( 'home_thumb_position_mobile', array(
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
+		'default'           => 'alternate',
+
+	) );
+
+
+
+	$wp_customize->add_control( 'home_show_thumbnails_mobile', array(
+		'label'   => __( 'Show thumbnails on home page #Mobile', 'page-speed' ),
+		'section' => 'home_page_design',
+		'type'    => 'checkbox',
+
+	) );
+
+	//@todo use named array for settings
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Image_Size(
+			$wp_customize,
+			'home_thumb_mobile',
+			array(
+				'label'    => esc_html__( 'Home page thumbnail size #Mobile', 'page-speed' ),
+				'section'  => 'home_page_design',
+				'priority' => 10,
+				'type'     => 'text',
+				'settings' => array(
+					'home_thumb_width_mobile',
+					'home_thumb_height_mobile',
+					'home_thumb_position_mobile',
+				),
+			)
+		)
+	);
 
 
 	/**
@@ -166,6 +219,55 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 					'archives_thumb_width',
 					'archives_thumb_height',
 					'archives_thumb_position',
+				),
+			)
+		)
+	);
+
+	// Show thumbnail
+	$wp_customize->add_setting( 'archives_show_thumbnails_mobile', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => true,
+
+	) );
+
+	$wp_customize->add_control( 'archives_show_thumbnails_mobile', array(
+		'label'   => __( 'Show thumbnails on archives #Mobile', 'page-speed' ),
+		'section' => 'archives_design',
+		'type'    => 'checkbox',
+
+	) );
+
+	// Thumbnail size
+	$wp_customize->add_setting( 'archives_thumb_width_mobile', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
+	) );
+	$wp_customize->add_setting( 'archives_thumb_height_mobile', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+	) );
+
+	$wp_customize->add_setting( 'archives_thumb_position_mobile', array(
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
+		'default'           => 'alternate',
+
+	) );
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Image_Size(
+			$wp_customize,
+			'archives_thumb_mobile',
+			array(
+				'label'    => esc_html__( 'Archives thumbnail size #Mobile', 'page-speed' ),
+				'section'  => 'archives_design',
+				'priority' => 10,
+				'type'     => 'text',
+				'settings' => array(
+					'archives_thumb_width_mobile',
+					'archives_thumb_height_mobile',
+					'archives_thumb_position_mobile',
 				),
 			)
 		)

@@ -36,6 +36,7 @@ function helium_sanitize_thumbnail_alignment( $val ) {
 		'aligncenter',
 		'alignright',
 		'alternate',
+		'stretched'
 	);
 	if ( array_search( $val, $choices ) !== false ) {
 		return $val;

@@ -37,7 +37,7 @@ function image_size_control_register( $wp_customize ) {
 		//@todo use named array for settings
 
 		public function render_content() {
-			$output = '<label>' . $this->label . '</label><div class="clear"></div><br>';
+			$output = '<label style="font-weight: bold">' . $this->label . '</label><div class="clear"></div><br>';
 
 			if ( isset( $this->settings[0] ) ) {
 				$value = intval($this->settings[0]->value());
@@ -64,6 +64,7 @@ function image_size_control_register( $wp_customize ) {
 			<option value="aligncenter" ' . selected( $value, 'aligncneter', false ) . '>' . __( 'Centered', 'page-speed') . '</option>
 			<option value="alignright" ' . selected( $value, 'alignright', false ) . '>' . __( 'Align right', 'page-speed') . '</option>
 			<option value="alternate" ' . selected( $value, 'alternate', false ) . '>' . __( 'Alternate', 'page-speed') . '</option>
+			<option value="stretched" ' . selected( $value, 'stretched', false ) . '>' . __( 'Stretched [Only for mobiles]', 'page-speed') . '</option>
 			</select></div>';
 
 

@@ -9,7 +9,9 @@
 
 //Tablets
 @media only screen and (max-width: 800px) {
-  .hybrid{width:100%}
+  .hybrid {
+    width: 100%
+  }
 
   .site-title {
     font-size: 8vw;
@@ -22,7 +24,7 @@
     #left,
     #main,
     .hybrid,
-    #site-footer-container .fc{
+    #site-footer-container .fc {
       width: 100%;
       box-sizing: border-box;
       float: none;
@@ -38,29 +40,30 @@
       margin: auto
     }
 
-    #site-header{float: none}
+    #site-header {
+      float: none
+    }
   }
 
-  #copyright-container{
-    .hybrid{
+  #copyright-container {
+    .hybrid {
       width: 100%;
       box-sizing: border-box;
     }
   }
 
   //Hide menus
-  #primary-nav-container,#secondary-nav-container,#header-nav-container{display: none}
+  #primary-nav-container, #secondary-nav-container, #header-nav-container {
+    display: none
+  }
 
   .post-thumbnail {
-    .alternate,
-    .alignleft,
-    .alignright {
+    .stretched {
       float: none !important;
       width: 120%;
       max-width: 120%;
       margin: auto -10%;
       margin-bottom: 12px;
     }
-
   }
 }

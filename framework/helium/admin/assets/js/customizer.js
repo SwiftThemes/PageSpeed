@@ -22,7 +22,7 @@
             var positions = [];
 
             for (var i = 1; i < columns; i++) {
-                positions.push(width * i*1.00);
+                positions.push(width * i * 1.00);
             }
 
             var footer_widths_control = wp.customize.control('footer_widths')
@@ -61,11 +61,9 @@
             $(".column-slider").slider({
                 values: getValues(),
                 change: function (event, ui) {
-
                     control.setting.set($(this).slider('values'))
-
-                }
-
+                },
+                step: .01
             });
 
         }
