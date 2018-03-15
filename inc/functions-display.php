@@ -182,6 +182,12 @@ function pagespeed_breadcrumbs() {
 		return;
 	}
 
+	if ( is_page() && get_theme_mod( 'hide_breadcrumbs_on_page', false ) ) {
+		return;
+	}
+	if ( is_singular( 'post' ) && get_theme_mod( 'hide_breadcrumbs_on_post', false ) ) {
+		return;
+	}
 	$defaults = array(
 		'separator'     => '/',
 		'before'        => '<div data-icon="h" class="icon"></div>',

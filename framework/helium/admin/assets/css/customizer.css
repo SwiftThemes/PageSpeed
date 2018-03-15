@@ -385,6 +385,11 @@ label {
 .ui-slider{background:#333;width:100%;padding:0;position: relative;height: 100px;border:solid 2px #fff200;}
 .ui-slider-handle{background:#fff200;position: absolute;height: 100px;padding: 1px}
 
+
+#accordion-section-footer,
+#accordion-section-fonts,
+#accordion-section-single_page_design{margin-bottom:20px}
+
 .cf:before,
 .cf:after {
     content: " ";

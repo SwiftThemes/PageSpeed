@@ -48,7 +48,6 @@ function pagespeed_about() {
 				admin_url( '/customize.php?autofocus[section]=layout_settings' ),
 				__( 'Customize PageSpeed', 'page-speed' ),
 				__( 'About PageSpeed', 'page-speed' ),
-				__( 'About PageSpeed', 'page-speed' ),
 				__( 'User Guide', 'page-speed' ),
 				__( 'Optimization Guide', 'page-speed' ),
 				__( 'Customize like the demo', 'page-speed' ),
