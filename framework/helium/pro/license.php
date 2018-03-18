@@ -28,7 +28,7 @@ function helium_render_license_form() {
         <a href="https://members.swiftthemes.com" class="button button-primary">Members area</a>
     </div>
     <br/>
-	<?php _e( 'You can use the theme without activation. All features will work without any limitation.<br />Activation is only required for one click updates.', 'page-speed' ) ?>
+<!--	--><?php //_e( 'You can use the theme without activation. All features will work without any limitation.<br />Activation is only required for one click updates.', 'page-speed' ) ?>
 	<?php
 }
 

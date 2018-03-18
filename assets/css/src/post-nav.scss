@@ -3,6 +3,7 @@
   margin-bottom: $vr;
   height: $vr+4px;
 
+  max-width: 100%;
 
   .nav-previous,
   .nav-next{
@@ -11,6 +12,7 @@
     text-overflow: ellipsis;
     @include border-radius(5px);
     margin-bottom: $vr;
+    max-width: 100%;
 
 
   }

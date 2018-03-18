@@ -1,12 +1,21 @@
-@if $transparent_backgrounds == 1{
-  body{background: $light-1;}
+@if $transparent_backgrounds == 1 {
+  body {
+    background: $light-1;
+  }
   #wrapper,
-  #site-header-container,
   #content,
   #content-wrapper,
   #main,
   #wrapper #sb1,
   #wrapper #sb2,
   #site-footer-container,
-  #copyright-container{background: transparent}
+  #copyright-container {
+    background: transparent
+  }
+
+  @if $is_sleek_header ==0 {
+    #site-header-container {
+      background: transparent
+    }
+  }
 }
