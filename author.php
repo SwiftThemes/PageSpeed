@@ -18,6 +18,41 @@
  */
 
 get_header();
+
+?>
+
+
+<?php
+$curauth     = get_userdata( intval( $author ) );
+$author_name = $curauth->display_name;
+
+?>
+<div id="archive-info" class="clearfix" style="margin-top: 20px">
+    <div class="archive-title reset">
+        <span class="normal"><?php _e( 'About', 'page-speed' ) ?> </span>
+		<?php echo $author_name; ?>
+    </div>
+    <div class="alignleft author-avatar"><?php echo get_avatar( $curauth->user_email, 90 ); ?>
+    </div>
+	<?php
+	if ( ! empty( $curauth->user_description ) ):
+		echo '<p style="margin-left: 100px">' . $curauth->user_description . '</p>';
+	endif;
+	?>
+	<?php if ( ! empty( $curauth->user_url ) ): ?>
+        <strong><?php _e( 'Website:', 'page-speed' ) ?> </strong> <a
+                href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?>
+        </a><br/>
+	<?php endif; ?>
+	<?php
+	printf( ( ( get_the_author_posts() > 0 ) ? _n( '%1$s has written %2$s article so far, you can find it below.',
+		'%1$s has written %2$s articles so far, you can find them below.', get_the_author_posts(), 'page-speed' ) : __( '%1$s has written no articles so far.', 'page-speed' ) ), $curauth->nickname, '<strong>' . get_the_author_posts() . '</strong>' ); ?>
+    <br/>
+</div>
+
+<div class="clear"></div>
+
+<?php
 if ( have_posts() ) :
 	// Start the loop.
 	while ( have_posts() ) : the_post();

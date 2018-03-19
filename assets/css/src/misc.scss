@@ -1,1 +1,11 @@
 .gallery-full{margin-bottom: $vr}
+
+#archive-info {margin-bottom: $vr}
+.archive-title{font-size:40px;margin-bottom:$vr/2}
+.archive-title h1{font-size:40px;display:inline}
+
+
+#archive-info .author-avatar{margin:5px 10px 0 0;
+}
+
+#archive-info .author-avatar img{@include border-radius(50%)}

@@ -29,7 +29,7 @@ function helium_auto_clear_transients() {
 	}
 
 
-	if ( $theme->parent()->get( 'Version' ) !== get_theme_mod( 'theme_version' ) ) {
+	if ( $theme->parent() && $theme->parent()->get( 'Version' ) !== get_theme_mod( 'theme_version' ) ) {
 
 		$prefix = wp_get_theme()->stylesheet . '_';
 		delete_transient( $prefix . 'sass_file_list' );

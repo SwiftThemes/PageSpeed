@@ -18,6 +18,21 @@
  */
 
 get_header();
+
+
+?>
+<div id="archive-info" class="cf">
+    <div class="archive-title">
+		<?php _e( 'Archives for', 'page-speed' ) ?>
+        <h1>
+			<?php single_cat_title(); ?>
+        </h1>
+    </div>
+	<?php echo category_description() ?>
+    <div class="separator"></div>
+
+</div>
+<?php
 if ( have_posts() ) :
 	// Start the loop.
 	while ( have_posts() ) : the_post();
