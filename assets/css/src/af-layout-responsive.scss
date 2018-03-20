@@ -60,9 +60,9 @@
   .post-thumbnail {
     .stretched {
       float: none !important;
-      width: 120%;
+      width: 100vw;
       max-width: 120%;
-      margin: auto -10%;
+      margin: auto -20px;
       margin-bottom: 12px;
     }
   }
