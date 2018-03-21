@@ -30,6 +30,8 @@ var prompt = require('gulp-prompt');
 // gulp-if - https://www.npmjs.com/package/gulp-if
 var gulpif = require('gulp-if');
 
+var markdown = require('gulp-markdown');
+
 gulp.task('deploy', function () {
 
     // Dirs and Files to sync
@@ -106,12 +108,20 @@ gulp.task('share', function () {
     gulp.src(rsyncPaths)
         .pipe(rsync(rsyncConf))
 
-    // rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
+    rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
     // gulp.src(rsyncPaths)
     //     .pipe(rsync(rsyncConf))
     return
 
 });
+
+
+gulp.task('markdown', function () {
+        gulp.src('**/*.md')
+            .pipe(markdown())
+            .pipe(gulp.dest('./'))
+    }
+)
 
 function throwError(taskName, msg) {
     throw new gutil.PluginError({

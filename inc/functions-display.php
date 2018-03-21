@@ -20,9 +20,12 @@ add_action( 'pagespeed_header_nav_end', 'pagespeed_nav_search', 12 );
 
 
 if ( ! function_exists( 'pagespeed_nav_search' ) ) {
-    function pagespeed_nav_search(){
-	    get_template_part( 'searchform-nav' );
-    }
+	function pagespeed_nav_search() {
+		if ( ! get_theme_mod( 'show_search_in_header', false ) ) {
+			return;
+		}
+		get_template_part( 'searchform-nav' );
+	}
 
 }
 if ( ! function_exists( 'pagespeed_above_header' ) ) {
