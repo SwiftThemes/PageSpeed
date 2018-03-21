@@ -333,7 +333,7 @@ gulp.task('buildImages', function () {
  */
 gulp.task('buildZip', function () {
     // return 	gulp.src([build+'/**/', './.jshintrc','./.bowerrc','./.gitignore' ])
-    return gulp.src(build + '/**/',{base:'../buildtheme/'})
+    return gulp.src(build + '/**/', {base: '../buildtheme/'})
         .pipe(zip(project + '.zip'))
         .pipe(gulp.dest('../'))
         .pipe(gulp.dest('/Users/satish/Dropbox/Public/'))
@@ -351,14 +351,13 @@ gulp.task('buildZip', function () {
 
 // Package Distributable Theme
 gulp.task('build', function (cb) {
-    runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'buildImages', 'buildZip', 'cleanupFinal', cb);
+    runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'markdown', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
 
 // Package Distributable Theme
 gulp.task('buildOrg', function (cb) {
     runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFilesOrg', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
-
 
 
 // Watch Task

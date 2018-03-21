@@ -31,6 +31,8 @@ var prompt = require('gulp-prompt');
 var gulpif = require('gulp-if');
 
 var markdown = require('gulp-markdown');
+var dest = require('gulp-dest');
+var runSequence = require('gulp-run-sequence');
 
 gulp.task('deploy', function () {
 
@@ -81,44 +83,71 @@ gulp.task('deploy', function () {
 });
 
 
-gulp.task('share', function () {
-    rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/page-speed.zip'];
 
-    // Default options for rsync
-    rsyncConf = {
-        progress: true,
-        incremental: true,
-        relative: true,
-        emptyDirectories: true,
-        recursive: true,
-        clean: true,
-        port: 1122,
-        exclude: [],
-    };
+// Default options for rsync
+rsyncConfGlobal = {
+    progress: true,
+    incremental: true,
+    relative: true,
+    emptyDirectories: true,
+    recursive: true,
+    clean: true,
+    port: 1122,
+    exclude: [],
+};
+rsyncConfGlobal.hostname = '172.93.98.50'; // hostname
+rsyncConfGlobal.username = 'swiftswift'; // ssh username
+
+
+gulp.task('uploadToUpdateServer', function () {
+
+    var rsyncConf = Object.assign({}, rsyncConfGlobal);
     rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/';
-    rsyncConf.hostname = '172.93.98.50'; // hostname
 
+    var rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/page-speed.zip'];
+    // rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
 
-    rsyncConf.username = 'swiftswift'; // ssh username
-    rsyncConf.destination = '/home/swiftswift/public_html/page-speed_GBmZxE97uCJctcwXxI78.zip'; // path where uploaded files go
-// Use gulp-rsync to sync the files
-//     return gulp.src(rsyncPaths)
-//         .pipe(rsync(rsyncConf));
 
     gulp.src(rsyncPaths)
         .pipe(rsync(rsyncConf))
 
-    rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
-    // gulp.src(rsyncPaths)
-    //     .pipe(rsync(rsyncConf))
     return
 
 });
 
 
+gulp.task('uploadChangeLog', function () {
+    var rsyncConf = Object.assign({}, rsyncConfGlobal);
+
+    var rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/page-speed/changelog.html'];
+
+    rsyncConf.destination = '/home/swiftswift/public_html/changelog/page-speed.html'; // path where uploaded files go
+
+    gulp.src(rsyncPaths)
+        .pipe(rsync(rsyncConf))
+
+    return
+
+});
+
+
+// Package Distributable Theme
+gulp.task('share', function (cb) {
+    runSequence('uploadToUpdateServer','uploadChangeLog', cb);
+});
+
+
+
+
 gulp.task('markdown', function () {
-        gulp.src('**/*.md')
+        gulp.src([
+            '**/*.md',
+            '!node_modules/**/*',
+            '!buildtheme/**/*',
+            '!assets/bower_components/**/*'])
             .pipe(markdown())
+            .pipe(dest('./', {ext: '.html'}))
+
             .pipe(gulp.dest('./'))
     }
 )

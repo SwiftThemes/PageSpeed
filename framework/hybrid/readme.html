@@ -1,0 +1,31 @@
+<h1 id="hybrid-core-wordpress-theme-framework">Hybrid Core: WordPress Theme Framework</h1>
+<p>Hybrid Core is a framework for developing WordPress themes.  It allows theme developers to build themes without having to code much of the complex &quot;logic&quot; or other complicated functionality often needed in themes.  The framework takes care of a lot of these things so theme authors can get back to doing what matter the most:  developing and designing cool themes.  </p>
+<p>The framework was built to make it easy for developers to include (or not include) specific, pre-coded features.  Themes handle all the markup, style, and scripts while the framework handles the logic.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="why-was-this-framework-built-">Why was this framework built?</h3>
+<p>In 2008, I started work on Hybrid Core.  At the time, it was used in only one of my themes on my newly-launched site, <a href="http://themehybrid.com">Theme Hybrid</a>.  The idea was that I&#39;d have a base of reusable scripts that I could use along with any theme I built in the future.  Eventually, others wanted to use it too, so I officially released it to the public.  Basically, I decided to share the framework that had gotten my own business started with the entire WordPress community.</p>
+<h3 id="who-is-hybrid-core-for-">Who is Hybrid Core for?</h3>
+<p>Primarily, Hybrid Core is for me, Justin Tadlock.  I use it to build all of my <a href="http://themehybrid.com/themes">WordPress themes</a> at Theme Hybrid, which is my plugin and theme site.</p>
+<p>However, I also maintain it for other theme authors who need a solid framework behind their themes that doesn&#39;t force them into certain markup and gives them ultimate flexibility.</p>
+<h3 id="how-do-i-install-hybrid-core-">How do I install Hybrid Core?</h3>
+<p>The most basic method is to add the framework folder to your theme folder.  Assuming a folder name of <code>hybrid-core</code> (you can name the folder anything), you&#39;d add this code to your theme&#39;s <code>functions.php</code> file:</p>
+<pre><code>// Launch the Hybrid Core framework.
+require_once( trailingslashit( get_template_directory() ) . &#39;hybrid-core/hybrid.php&#39; );
+new Hybrid();
+</code></pre><p>That will load and initialize the framework.  You&#39;ll have to learn the ins-and-outs of the framework though to actually make use of it.  The code itself is very well documented.</p>
+<h3 id="where-can-i-find-documentation-">Where can I find documentation?</h3>
+<p>The documentation is handled via Hybrid Core&#39;s <a href="https://github.com/justintadlock/hybrid-core/wiki">wiki</a>.  This is community-contributed documentation that I hope you will add to if you use the framework.</p>
+<h3 id="where-can-i-ask-support-questions-">Where can I ask support questions?</h3>
+<p>I have a membership site at <a href="http://themehybrid.com">Theme Hybrid</a> where I&#39;ll answer any support questions you have via the site&#39;s support forums.</p>
+<h3 id="can-i-install-hybrid-core-as-a-theme-">Can I install Hybrid Core as a theme?</h3>
+<p>No, Hybrid Core is not a theme.  It is a framework that you drop into your theme folder to help you build themes.</p>
+<h3 id="wait-aren-t-frameworks-parent-themes-">Wait. Aren&#39;t frameworks parent themes?</h3>
+<p>No, not really, they&#39;re not.  Unfortunately, many theme authors have co-opted the term &quot;framework&quot; and applied it to themes intended to be used solely as parent themes.  I suppose you could stretch the term framework to pretty much apply to any base code that you can build from, but this has meant for some confusing terminology in the WordPress community.  We already have a term for what these &quot;framework&quot; themes are &mdash; they&#39;re called &quot;parent themes&quot;.  If you&#39;re interested in reading more on this topic, I recommend checking out &quot;<a href="http://justintadlock.com/archives/2010/08/16/frameworks-parent-child-and-grandchild-themes">Frameworks? Parent, child, and  grandchild themes?</a>&quot; for an in-depth discussion on the subject.</p>
+<h3 id="so-i-can-t-have-child-themes-">So, I can&#39;t have child themes?</h3>
+<p>You can&#39;t create child themes for Hybrid Core because it&#39;s not a theme.  However, Hybrid Core was built so that theme authors could create awesome parent (or standalone) themes.  You, your users, or other theme authors can build child themes for your themes.</p>
+<p>I was one of the original theme authors to help pioneer the parent/child theme movement.  I&#39;m a big believer in child themes being the absolute best way to make theme customizations.  Therefore, Hybrid Core is built with this idea in mind.  As you learn more about the framework, you&#39;ll understand how it makes child theme development even better.</p>
+<h2 id="donations">Donations</h2>
+<p>I make little money directly from Hybrid Core.  Developers (those who use the framework) account for only a small percentage of my paying club members.  This means that development time/money comes straight out of my own pocket.  I&#39;m happy to do it and enjoy it.  However, <a href="http://themehybrid.com/donate">donations to the project</a> are certainly appreciated and help greatly.</p>
+<h2 id="copyright-and-license">Copyright and License</h2>
+<p>This project is licensed under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU GPL</a>, version 2 or later.</p>
+<p>2008&thinsp;&ndash;&thinsp;2015 &copy; <a href="http://justintadlock.com">Justin Tadlock</a>.</p>

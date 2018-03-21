@@ -1,0 +1,108 @@
+<h1 id="change-log">Change Log</h1>
+<p>You can see the changes made via the <a href="https://github.com/justintadlock/hybrid-core/commits/master">commit log</a> for the latest release.</p>
+<h2 id="-3-0-0-2015-08-17">[3.0.0] - 2015-08-17</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Media grabber now supports the <code>[gallery]</code> shortcode.</li>
+<li>Custom attributes can now be passed into <code>hybrid_attr()</code>.</li>
+<li>Fix for core WP issues that doesn&#39;t allow users to edit the posts page content.</li>
+<li>Separated One Five style into <code>one-five.css</code> and <code>one-five-rtl.css</code>.</li>
+<li>Added color palette customizer control.</li>
+<li>Added multiple checkbox customizer control.</li>
+<li>Added dropdown terms customizer control.</li>
+<li>Added layout customizer control.</li>
+<li>Added radio image customizer control.</li>
+<li>Added select customizer control that supports <code>&lt;optgroup&gt;</code>.</li>
+<li>Added multiple select customizer control.</li>
+<li>Added array map customizer setting.</li>
+<li>Added image data customizer setting.</li>
+<li>Complete overhaul of theme layouts with a new Layouts API and many UI and other improvements.</li>
+<li>The post class now has the <code>.has-pages</code> class when it&#39;s a paged post.</li>
+<li>New <code>Hybrid_Chat</code> class that better handles chat posts.</li>
+<li>New <code>hybrid_is_plural()</code> function to go along with core WP&#39;s <code>is_singular()</code>.</li>
+<li>New <code>hybrid_get_attachment_type()</code> and <code>hybrid_get_attachment_subtype()</code> functions for getting attachment mime types.</li>
+<li>WordPress.org and theme URLs now use the translated URLs if available so that translators can link to language-specific pages/sites.</li>
+<li>Language-specific PHP files are now loaded from the child theme (first) and parent theme.</li>
+<li>New media metadata class and functions.  This makes it easy to get media file metadata for attachments (limited to audio, video, and images).</li>
+<li>Adds context-based classes to sidebars and menus.</li>
+<li>Post stylesheets extension now built into the framework.  Added extra functions.</li>
+<li>Added extra functions for working with post templates.</li>
+<li>Adds support for WP&#39;s <code>title-tag</code> feature.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li><code>Hybrid</code> class now loads a few things at different priorities for more flexibility.</li>
+<li>Files and folders were renamed and restructured to make a bit more sense.</li>
+<li>Only load extensions if both the theme supports them and if the file exists.</li>
+<li>Overhauled the constants.</li>
+<li>Coding style updates.  PHPDoc blocks stay the same.  Single-line comments within functions now use <code>//</code> and single-line comments within the file use <code>#</code>.</li>
+<li>The theme-specific &quot;template&quot; <code>&lt;meta&gt;</code> tag is now a &quot;generator&quot; <code>&lt;meta&gt;</code> tag.</li>
+<li>All framework constants have a trailing slash.</li>
+</ul>
+<h3 id="deprecated">Deprecated</h3>
+<ul>
+<li><code>hybrid_loop_title()</code> in favor of WP&#39;s <code>the_archive_title()</code>.</li>
+<li><code>hybrid_loop_description()</code> in favor of WP&#39;s <code>the_achive_description()</code>.</li>
+<li><code>loop_pagination()</code> in favor of WP&#39;s <code>the_posts_pagination()</code>.</li>
+<li><code>hybrid_get_attachment_id_from_url()</code> in favor of WP&#39;s <code>attachment_url_to_postid()</code>.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Dropped the <code>hybrid_is_textdomain_loaded()</code> functionality (wasn&#39;t used since 2.0.0).</li>
+<li><code>reset.css</code> stylesheet.</li>
+<li><code>hybrid-core-styles</code> and <code>hybrid-core-scripts</code>.  The specific styles/scripts are now registered, leaving the enqueue to theme authors.</li>
+<li>Filter on image size names.</li>
+<li>Filter on id3 keys.</li>
+<li>Several text strings in an effort to make the framework have as few text strings as possible.</li>
+<li><code>hybrid_admin_setup()</code>, which was not really needed.</li>
+<li>Title attributes for most everything for better accessibility.</li>
+<li>bbPress theme support filter removal.</li>
+<li>Atomic hooks functionality.</li>
+<li>Random Custom Background extension.</li>
+<li>Featured Header extension.</li>
+<li>Cleaner Caption extension.</li>
+<li>Custom background customizer control.</li>
+<li>Textarea customizer control.</li>
+<li>Old, unused wrapper for admin theme settings page. Use the customizer!</li>
+<li>Admin widgets screen CSS file.</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Schema.org comment microdata brought up to date.</li>
+<li>Schema.org body/content/post errors.</li>
+<li>Media grabber fix when WP auto-embed returns a shortcode.</li>
+<li>Fixed invalid <code>itemprop</code> attribute for comment reply link with no space.</li>
+</ul>
+<h3 id="security">Security</h3>
+<ul>
+<li>Many text strings are now escaped on output to harden security.</li>
+<li>Better escaping over URLs to harden security.</li>
+</ul>
+<h2 id="past-change-logs">Past change logs</h2>
+<p>Versions prior to 3.0.0 do not have change logs. However, you can view the commit logs for each version.</p>
+<ul>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/2.0.4">2.0.4</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/2.0.3">2.0.3</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/2.0.2">2.0.2</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/2.0.1">2.0.1</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/commits/2.0">2.0.0</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.6.2">1.6.2</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.6.1">1.6.1</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.6.0">1.6.0</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.5.5">1.5.5</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.5.4">1.5.4</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.5.3">1.5.3</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.5.2">1.5.2</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.5.1">1.5.1</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.5">1.5.0</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.4.3">1.4.3</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.4.2">1.4.2</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.4.1">1.4.1</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.4">1.4.0</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.3.1">1.3.1</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.3">1.3.0</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.2.1">1.2.1</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.2">1.2.0</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.1.1">1.1.1</a></li>
+<li><a href="https://github.com/justintadlock/hybrid-core/tree/1.1">1.1.0</a></li>
+</ul>
