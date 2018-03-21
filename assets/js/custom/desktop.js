@@ -64,8 +64,13 @@
             if ($('body').hasClass('menu-open')) {
                 return
             }
+            if($("#search-field").is(":focus")){
+                console.log('#search-field is in focus, retunring.')
+                return
+            }
             $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container-sticky-wrapper.is-sticky').css({'opacity': 0})
-        }, 2000)
+        }, 3000)
+
     }, 1000)
 
     /**

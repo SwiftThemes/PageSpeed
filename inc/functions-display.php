@@ -14,6 +14,17 @@ add_action( 'pagespeed_after_header', 'pagespeed_mobile_search', 14 );
 add_action( 'pagespeed_primary_nav_start', 'pagespeed_sticky_logo', 12 );
 add_action( 'pagespeed_main_start', 'pagespeed_breadcrumbs', 12 );
 
+
+add_action( 'pagespeed_primary_nav_end', 'pagespeed_nav_search', 12 );
+add_action( 'pagespeed_header_nav_end', 'pagespeed_nav_search', 12 );
+
+
+if ( ! function_exists( 'pagespeed_nav_search' ) ) {
+    function pagespeed_nav_search(){
+	    get_template_part( 'searchform-nav' );
+    }
+
+}
 if ( ! function_exists( 'pagespeed_above_header' ) ) {
 	function pagespeed_above_header() {
 		$args = array(
@@ -98,6 +109,8 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 
 						<?php do_action( 'pagespeed_primary_nav_start' ); ?>
 						<?php wp_nav_menu( $args ); ?>
+						<?php do_action( 'pagespeed_primary_nav_end' ); ?>
+
                     </div>
                 </div>
             </div>
@@ -148,6 +161,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
             <div id="primary" class="">
 				<?php do_action( 'pagespeed_header_nav_start' ); ?>
 				<?php wp_nav_menu( $args ); ?>
+				<?php do_action( 'pagespeed_header_nav_end' ); ?>
             </div>
         </div>
 		<?php
@@ -173,7 +187,7 @@ function pagespeed_mobile_search() {
 	if ( ! $helium->is_mobile() ) {
 		return;
 	}
-	get_template_part( 'searchform-nav' );
+	get_template_part( 'searchform-mobile' );
 }
 
 function pagespeed_breadcrumbs() {
@@ -190,7 +204,7 @@ function pagespeed_breadcrumbs() {
 	}
 	$defaults = array(
 		'separator'     => '/',
-		'before'        => '<div data-icon="h" class="icon"></div>',
+		'before'        => '<span class="icon he-home"></span>',
 		'after'         => false,
 		'show_on_front' => false,
 		'show_home'     => __( 'Home', 'page-speed' ),
