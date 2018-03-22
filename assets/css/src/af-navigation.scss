@@ -146,6 +146,7 @@
   background: $primary-nav-bg;
   border: solid 1px shift-color($primary-nav-bg, .15);
   border-width: 0 1px 1px;
+  z-index:4;
 }
 
 #nav-search input {

@@ -1,6 +1,7 @@
 ## [0.84] - 21-03-2018
 ### Changed
 - update the theme update details URL
+
 ## [0.82] - 21-03-2018
 
 ### Added
