@@ -22,6 +22,8 @@ class PageSpeed {
 		add_action( 'after_setup_theme', array( $this, 'admin' ), - 80 );
 		add_action( 'after_setup_theme', array( $this, 'core' ), - 70 );
 
+		$content_width = helium_get_site_width() * get_theme_mod( 'main_width', 55 ) - 80;
+
 	}
 
 	/**
@@ -56,6 +58,7 @@ class PageSpeed {
 		require_once( HELIUM_THEME_CUSTOMIZE . 'fonts.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'sidebar-settings.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'misc.php' );
+		require_once( HELIUM_THEME_CUSTOMIZE . 'home.php' );
 		require_once( HELIUM_THEME_INC.'pro/bootstrap.php' );
 
 		add_theme_support( 'breadcrumb-trail' );

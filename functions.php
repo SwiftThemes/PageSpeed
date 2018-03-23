@@ -44,6 +44,7 @@ $helium = new Helium();
 global $helium;
 // Launch PageSpeed
 require_once( trailingslashit( get_template_directory() ) . 'inc/page-speed-class.php' );
+require_once( HELIUM_DIR . 'utility-functions.php' );
 new PageSpeed();
 
 
@@ -165,3 +166,4 @@ add_filter( 'excerpt_more', 'pagespeed_new_excerpt_more' );
 
 
 add_theme_support( 'customize-selective-refresh-widgets' );
+

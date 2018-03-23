@@ -21,7 +21,6 @@ function pagespeed_customize_footer_columns( $wp_customize ) {
 	) );
 
 
-	// Show excerpts or full post
 	$wp_customize->add_setting( 'footer_widths', array(
 		'sanitize_callback' => 'helium_sanitize_column_widths',
 		'default'           => array( 25, 25, 25 ),

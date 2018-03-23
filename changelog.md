@@ -1,6 +1,16 @@
+## [0.86] - 23-03-2018
+
+### Added
+- Fix for youtube videos overflowing and breaking layout.
+- Integrate No Nonsense slider.
+
+### Changed
+- Remove background attachment:fixed from the gradient mixin. Buttons and other gradients will pop out more. Added background-attachment:fixed to individual large elements like mody, main, sidebar etc..
+- Update icon font to include chevrons for slider and instagarm icon.
+
 ## [0.84] - 21-03-2018
 ### Changed
-- update the theme update details URL
+- Update the theme update details URL
 
 ## [0.82] - 21-03-2018
 

@@ -14,7 +14,6 @@ function pagespeed_customize( $wp_customize ) {
 		'description' => '', // Include html tags such as <p>
 		'priority'    => 10, // Mixed with top-level-section hierarchy.
 	) );
-
 	// Logo position
 	$wp_customize->add_setting( 'logo_position', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
@@ -186,7 +185,6 @@ function pagespeed_customize( $wp_customize ) {
 		'type'        => 'number',
 		'priority'    => 20,
 		'input_attrs' => array( 'min' => 40, 'max' => 100 )
-
 	) );
 	$wp_customize->add_control( 'left_sidebar_width', array(
 		'label'       => __( 'Left sidebar width', 'page-speed' ),

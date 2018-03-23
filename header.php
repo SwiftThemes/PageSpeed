@@ -8,7 +8,7 @@
  * @since 1.0
  */
 ?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +37,8 @@
 <?php do_action( 'pagespeed_after_header' ); ?>
     <div id="content-wrapper">
     <div id="content" class="cf hybrid">
+<?php do_action( 'pagespeed_content_start' ); ?>
     <div id="left">
-    <main id="main" role="main">
-    <div class="inner">
+        <main id="main" role="main">
+            <div class="inner">
 <?php do_action( 'pagespeed_main_start' ); ?>

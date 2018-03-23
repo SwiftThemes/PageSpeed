@@ -101,3 +101,13 @@
 .he-swift:before {
   content: "\75";
 }
+.he-chevron-circle-left:before {
+  content: "\76";
+}
+.he-chevron-circle-right:before {
+  content: "\77";
+}
+.he-instagram:before {
+  content: "\78";
+}
+
