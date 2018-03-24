@@ -5,7 +5,7 @@ function pagespeed_misc_options( $wp_customize ) {
 	$wp_customize->add_section( 'misc', array(
 		'title'    => __( 'Miscellaneous', 'page-speed' ),
 		'panel'    => 'theme_options',
-		'priority' => 90,
+		'priority' => 120,
 	) );
 
 	// Show excerpts or full post

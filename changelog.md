@@ -1,3 +1,12 @@
+## [0.90] - 24-03-2018
+
+### Added
+- Option to show social media profile links in header.
+- New customizer control to choose and sort above links.
+
+### Removed
+- Bottom borders for navigations and header.
+
 ## [0.88] - 23-03-2018
 
 ### Changed

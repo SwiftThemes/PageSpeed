@@ -84,13 +84,11 @@ function helium_drag_sort_control_register( $wp_customize ) {
 
                 <div class="sortable connected">
                     <# for ( index in data.value) { #>
-                        <# var key = data.value[index]['key']; var value = data.value[index]['value']  #>
-
                             <div class="draggable cf can-remove">
 
-                                <label>{{key}}</label>
+                                <label>{{data.value[index]}}</label>
                                 <input class="tag" type="hidden"
-                                       data-type="{{key}}"/>
+                                       data-type="{{data.value[index]}}"/>
                             </div>
                             <#}#>
 

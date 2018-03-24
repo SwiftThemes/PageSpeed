@@ -59,7 +59,6 @@ class PageSpeed {
 		require_once( HELIUM_THEME_CUSTOMIZE . 'sidebar-settings.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'misc.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'home.php' );
-		require_once( HELIUM_THEME_CUSTOMIZE . 'social-media.php' );
 		require_once( HELIUM_THEME_INC.'pro/bootstrap.php' );
 
 		add_theme_support( 'breadcrumb-trail' );
