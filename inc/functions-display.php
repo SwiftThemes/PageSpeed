@@ -15,19 +15,7 @@ add_action( 'pagespeed_primary_nav_start', 'pagespeed_sticky_logo', 12 );
 add_action( 'pagespeed_main_start', 'pagespeed_breadcrumbs', 12 );
 
 
-add_action( 'pagespeed_primary_nav_end', 'pagespeed_nav_search', 12 );
-add_action( 'pagespeed_header_nav_end', 'pagespeed_nav_search', 12 );
 
-
-if ( ! function_exists( 'pagespeed_nav_search' ) ) {
-	function pagespeed_nav_search() {
-		if ( ! get_theme_mod( 'show_search_in_header', false ) ) {
-			return;
-		}
-		get_template_part( 'searchform-nav' );
-	}
-
-}
 if ( ! function_exists( 'pagespeed_above_header' ) ) {
 	function pagespeed_above_header() {
 		$args = array(

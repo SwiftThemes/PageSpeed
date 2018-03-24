@@ -1,7 +1,7 @@
 @media only screen and (min-width: 768px) {
-  .nav-container {
-    border-bottom: solid 1px $border-color;
-  }
+  //.nav-container {
+  //  border-bottom: solid 1px $border-color;
+  //}
 
   .is-sticky .has-sticky-logo.nav-container #primary-nav {
     margin-left: 44px;
@@ -129,8 +129,8 @@
   background: $primary-nav-bg;
 }
 
-#nav-search .he-search {
-  line-height: 1.4167em;
+#nav-search .search-icon {
+  line-height: 1.418em;
   padding: 0 10px;
   font-size: 1.5em;
   border: solid 1px shift-color($primary-nav-bg, .15);
@@ -161,10 +161,14 @@
 
 }
 
+#nav-social-media a{padding: 0 .25em}
+#nav-social-media .icon{  line-height: 1.418em;
+font-size: 1.55em}
 @if ($is_sleek_header == 1) {
 
   #site-header-container {
     padding: 0;
+    border-width: 0;
   }
   .site-title,
   #nav-search .he-search {

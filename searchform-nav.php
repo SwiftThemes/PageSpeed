@@ -1,5 +1,5 @@
 <div id="nav-search" class="nav">
-    <a href="#" class="he-search"></a>
+    <a href="#" class="search-icon"><span class="icon he-search"></span></a>
     <form role="search" method="get" class="cf mobile-nav-search-form"
           action="<?php echo esc_url( home_url( '/' ) ); ?>">
         <label>

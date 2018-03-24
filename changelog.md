@@ -1,3 +1,9 @@
+## [0.88] - 23-03-2018
+
+### Changed
+- Refine search icon vertical alignment.
+- Fix an issue with inline slides when window is resized.
+
 ## [0.86] - 23-03-2018
 
 ### Added

@@ -47,9 +47,6 @@
 .he-twitter:before {
   content: "\63";
 }
-.he-youtube-play:before {
-  content: "\64";
-}
 .he-reddit:before {
   content: "\65";
 }
@@ -110,4 +107,27 @@
 .he-instagram:before {
   content: "\78";
 }
-
+.he-stack-exchange:before {
+  content: "\79";
+}
+.he-quora:before {
+  content: "\41";
+}
+.he-android:before {
+  content: "\42";
+}
+.he-apple:before {
+  content: "\43";
+}
+.he-google-plus:before {
+  content: "\44";
+}
+.he-goodreads:before {
+  content: "\7a";
+}
+.he-linkedin:before {
+  content: "\45";
+}
+.he-youtube:before {
+  content: "\46";
+}
