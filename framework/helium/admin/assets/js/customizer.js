@@ -208,7 +208,8 @@
 
 
     /* Darg and drop */
-    wp.customize.controlConstructor['he_drag_drop'] = wp.customize.Control.extend({
+    wp.customize.controlConstructor['he_drag_drop'] =
+    wp.customize.controlConstructor['he_drag_sort'] = wp.customize.Control.extend({
 
         ready: function () {
 
