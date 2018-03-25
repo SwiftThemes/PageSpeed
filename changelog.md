@@ -1,3 +1,9 @@
+## [0.91] - 25-03-2018
+
+### Changed
+- Fix read more button icon vertical alignment issue.
+- Make the post comment button text bold.
+
 ## [0.90] - 24-03-2018
 
 ### Added

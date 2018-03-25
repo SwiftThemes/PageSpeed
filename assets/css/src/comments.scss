@@ -147,7 +147,8 @@ li.comment.bypostauthor {
   background: $primary;
   color: $light-1;
   border: 0;
-  border-radius: 3px;
+  font-weight: bold;
+  @include border-radius(3px)
 }
 
 #commentform #submit:hover {
