@@ -1,4 +1,16 @@
-## [0.91] - 25-03-2018
+## [0.94] - 25-03-2018
+
+### Added
+- Add option to set the number of posts to show in slider.
+- Add option to show recent posts in slider.
+- Add hover effect for social media icons.
+
+### Changed
+- Reduce the nav search icon padding.
+- Fix issue with customizer crashing due to improper default for social media sortable.
+- Fix instagaram url field not showing up.
+
+## [0.92] - 25-03-2018
 
 ### Changed
 - Fix read more button icon vertical alignment issue.

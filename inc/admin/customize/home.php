@@ -48,6 +48,26 @@ function pagespeed_customize_home( $wp_customize ) {
 		);
 
 
+		$wp_customize->add_setting( 'home_slider_posts_per_page', array(
+			'sanitize_callback' => 'absint',
+			'default'           => 4
+		) );
+
+
+		$wp_customize->add_control( 'home_slider_posts_per_page', array(
+			'label'           => __( 'Number of posts to show in slider', 'page-speed' ),
+//			'description'     => __( 'Slider height in pixels without the units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': site_width/2',
+			'section'         => 'home_page_design',
+			'type'            => 'number',
+			'priority'        => 10,
+			'active_callback' => function () {
+				return get_theme_mod( 'show_slider_on_homepage', false );
+			},
+			'input_attrs'     => array( 'min' => 1, 'max' => 20 )
+		) );
+
+
+
 		$wp_customize->add_setting( 'home_slider_height', array(
 			'sanitize_callback' => 'absint',
 			'default'           => (int) helium_get_site_width() / 2

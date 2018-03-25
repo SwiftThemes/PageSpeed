@@ -25,16 +25,11 @@ function pagespeed_customize_misc( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'show_social_media_link_in_header', array(
-		'label'    => __( 'Show search in primary navigation', 'page-speed' ),
+		'label'    => __( 'Show social media profile links in header', 'page-speed' ),
 		//@todo add link to the panel.
 		'description'    => __( 'You can add your links from the social media section.', 'page-speed' ),
 		'section'  => 'header',
 		'type'     => 'checkbox',
 		'priority' => 40,
-
 	) );
-
-
-
-
 }

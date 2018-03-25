@@ -18,7 +18,7 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'social_media_order_nav', array(
 		'sanitize_callback' => 'helium_pass',
-		'default'           => false,
+		'default'           => array(),
 	) );
 
 
@@ -113,7 +113,7 @@ function pagespeed_customize_social_media( $wp_customize ) {
 		'section'         => 'social_media',
 		'type'            => 'url',
 		'active_callback' => function () {
-			return ( array_search( 'instagaram', get_theme_mod( 'social_media_order_nav', array() ) ) !== false );
+			return ( array_search( 'instagram', get_theme_mod( 'social_media_order_nav', array() ) ) !== false );
 		},
 	) );
 

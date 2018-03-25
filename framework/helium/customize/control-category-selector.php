@@ -41,9 +41,8 @@ function helium_category_dropdown_control( $wp_customize ) {
 
 			?>
             <label class="customize-control-title">{{{ data.label }}}
-
-<!--                {{JSON.stringify(data)}}-->
-                <select multiple  {{{ data.link }}}>
+                <select multiple {{{ data.link }}}>
+                    <option><?php _e( 'Recent posts', 'page-speed' ) ?></option>
                     <# for ( key in data.cats ) { #>
                         <option
 

@@ -9,18 +9,25 @@
 
 if ( defined( 'NNS_URI' ) && get_theme_mod( 'show_slider_on_homepage', false ) ) {
 	if ( 'wide' === get_theme_mod( 'container_type', 'regular' ) ) {
-		add_action( 'pagespeed_after_header', 'pagespeed_nns_home_slider', 8 );
+		add_action( 'pagespeed_after_header', 'pagespeed_nns_home_slider', 15 );
 	} else {
-		add_action( 'pagespeed_content_start', 'pagespeed_nns_home_slider', 8 );
+		add_action( 'pagespeed_content_start', 'pagespeed_nns_home_slider', 15 );
 	}
 }
 
 
 function pagespeed_nns_home_slider() {
+	if ( ! is_home() ) {
+		return;
+	}
+
 
 	global $helium;
 
-	$query_args = array( 'cat' => get_theme_mod( 'home_slider_categories' ), array() );
+	$query_args = array( 'cat'   => get_theme_mod( 'home_slider_categories' ),
+		array(),
+		                 'posts_per_page' => get_theme_mod( 'home_slider_posts_per_page', 4 )
+	);
 	$template   = 'wide' === get_theme_mod( 'container_type', 'regular' ) ? 'background_image' : 'inline_image';
 
 	$site_width = helium_get_site_width();
