@@ -106,6 +106,7 @@ gulp.task('uploadToUpdateServer', function () {
 
     var rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/page-speed.zip'];
     rsyncConf.destination = '/home/swiftswift/public_html/__updates__/packages/page-speed.zip'; // path where uploaded files go
+    // rsyncConf.destination = '/home/swiftswift/public_html/page-speed_GBmZxE97uCJctcwXxI78.zip'; // path where uploaded files go
 
 
     gulp.src(rsyncPaths)

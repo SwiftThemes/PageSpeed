@@ -1,3 +1,14 @@
+## [0.97] - 26-03-2018
+### Added
+- Option to show first post on home page in full when using excerpts.
+
+### Changed
+- Change SCSS default to false and add line break to default value.
+
+## [0.96] - 26-03-2018
+### Changed
+- Set input type image & button to auto width instead of 100%
+
 ## [0.94] - 25-03-2018
 
 ### Added

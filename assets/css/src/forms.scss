@@ -10,7 +10,10 @@ textarea {
   font-weight: lighter;
   @include border-radius(3px)
 }
+textarea{min-height:100px}
+input[type="image"],
 input[type="checkbox"],
+input[type="button"],
 input[type="radio"]{
   width: auto;
   height: auto;

@@ -2,7 +2,7 @@
 	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'home_show_thumbnails', true ) && 'aligncenter' === get_theme_mod( 'home_thumb_position', 'alternate' ) ) : ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => sanitize_html_class(get_theme_mod( 'home_thumb_position', 'alternate' )) ) ) ?>
+				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => sanitize_html_class( get_theme_mod( 'home_thumb_position', 'alternate' ) ) ) ) ?>
             </a>
         </div><!-- .post-thumbnail -->
 	<?php endif; ?>
@@ -24,16 +24,18 @@
 		<?php endif ?>
     </header><!-- .entry-header -->
 
-    <?php helium_show_thumbnail('home_thumb')?>
+	<?php $is_full_length = $wp_query->current_post ==0 && is_front_page() && get_theme_mod( 'show_first_post_in_full', false ) || ! get_theme_mod( 'home_show_excerpts', true ); ?>
+	<?php if ( !$is_full_length ) {
+		helium_show_thumbnail( 'home_thumb' );
+	} ?>
 
     <div class="entry-content">
 		<?php
 		/* translators: %s: Name of current post */
-		if ( get_theme_mod( 'home_show_excerpts', true ) ) {
-			the_excerpt();
-
-		} else {
+		if ( $is_full_length ) {
 			the_content();
+		} else {
+			the_excerpt();
 		}
 		?>
         <div class="clear"></div>

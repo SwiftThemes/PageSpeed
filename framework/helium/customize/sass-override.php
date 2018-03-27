@@ -34,7 +34,7 @@ function helium_override_sass( $wp_customize ) {
 
 	$wp_customize->add_setting( 'enable_scss_override', array(
 		'sanitize_callback' => 'helium_boolean',
-		'default'           => true,
+		'default'           => false,
 	) );
 
 	$wp_customize->add_control( 'enable_scss_override', array(
@@ -47,7 +47,7 @@ function helium_override_sass( $wp_customize ) {
 
 	$wp_customize->add_setting( 'scss_override', array(
 		'sanitize_callback' => 'sanitize_textarea_field',
-		'default'           => __( '//Here you can override any SCSS variables defined in the theme', 'page-speed' ) . " \n\n",
+		'default'           => __( "//Here you can override any SCSS variables defined in the theme\n\n", 'page-speed' ) . " \n\n",
 
 	) );
 

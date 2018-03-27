@@ -143,6 +143,9 @@
 .he-btn.pink {
   @include gradient(top,#fc5fa6, #fc2a19)
 }
+.he-btn.white {
+  @include gradient(top,#fff, #f7f7f7)
+}
 
 /* Outline buttons */
 .he-btn.red.outline {
@@ -185,6 +188,10 @@
 
 .he-btn.pink.outline {
   color: #fc5fa6!important;
+}
+
+.he-btn.white.outline {
+  color: #FFF!important;
 }
 
 .more-link {

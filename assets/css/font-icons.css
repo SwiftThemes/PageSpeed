@@ -131,3 +131,16 @@
 .he-youtube:before {
   content: "\46";
 }
+.he-skype:before {
+  content: "\64";
+}
+.he-burst-new:before {
+  content: "\47";
+}
+.he-burst-sale:before {
+  content: "\48";
+}
+.he-quote-1:before {
+  content: "\4a";
+}
+

@@ -12,7 +12,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	// Add all the required sections
 	$wp_customize->add_section( 'home_page_design', array(
-		'title'    => __( 'Latest Posts', 'page-speed' ),
+		'title'    => __( 'Latest Posts, HomePage', 'page-speed' ),
 		'panel'    => 'theme_options',
 		'priority' => 90,
 	) );
@@ -73,6 +73,8 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 		'label'   => __( 'Show excerpts on home page', 'page-speed' ),
 		'section' => 'home_page_design',
 		'type'    => 'checkbox',
+		'priority' => 6,
+
 
 	) );
 
