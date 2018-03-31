@@ -5,6 +5,7 @@
     'use strict';
     GLOBAL = {}
     GLOBAL.DESKTOP_WIDTH = 1160;
+    GLOBAL.MOBILE_WIDTH = 800;
     GLOBAL.hasSideMenu = false
     $(document).ready(function () {
         setSidebarHeights()
@@ -86,7 +87,7 @@
     }
 
     function isMobile() {
-        if (window.innerWidth <= 800) {
+        if (window.innerWidth <= GLOBAL.MOBILE_WIDTH) {
             return true
         } else {
             return false

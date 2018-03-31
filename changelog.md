@@ -1,3 +1,9 @@
+## [0.98] - 31-03-2018
+
+### Changed
+- Change outline button hover style 
+- Refine card style widgets when window is resized
+
 ## [0.97] - 26-03-2018
 ### Added
 - Option to show first post on home page in full when using excerpts.

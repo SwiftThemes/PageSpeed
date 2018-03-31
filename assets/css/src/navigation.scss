@@ -17,7 +17,7 @@ Breaks when we have nested stickies, but we don't have them
   box-shadow: 0px 1px 22px -10px $sticky-header-bg;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $mobile_width) {
   #side-pane-inner .menu:first-child {
     border-bottom: solid 10px rgba($light-3, .2);
     padding-bottom: 20px

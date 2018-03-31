@@ -1,16 +1,21 @@
-.he-btn, .button, .btn, a.btn {
-  padding: 6px 8px;
-  color: rgba($button-color, 1) !important;
-  background: $button-bg;
-  @include gradient(top,lighten($button-bg, .1), darken($button-bg, .1));
-  @include border-radius(.3em);
-  text-decoration: none !important;
-  //margin-left: 10px;
-  //margin-right: 10px;
-  display: inline-block;
-  border-width: 0;
-}
+body {
+  .he-btn, .button, .btn, a.btn {
+    padding: 6px 8px;
+    color: rgba($button-color, 1);
+    background: $button-bg;
+    @include gradient(top, lighten($button-bg, .1), darken($button-bg, .1));
+    @include border-radius(.3em);
+    text-decoration: none !important;
+    //margin-left: 10px;
+    //margin-right: 10px;
+    display: inline-block;
+    border-width: 0;
+  }
 
+  .he-btn:hover, .button:hover, .btn:hover, a.btn:hover{
+    color: rgba($button-color, .9);
+  }
+}
 .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
   @include sharp-shadow();
   @include gradient(top,lighten($primary, .1), darken($primary, .2));
@@ -49,7 +54,7 @@
 /* Sizes */
 
 .he-btn.outline {
-  background: none !important;
+  background-color: transparent;
   border-style: solid;
   border-width: 2px;
   padding: 4px 6px;
@@ -97,97 +102,114 @@
   @include border-radius(1em);
 }
 
-.he-btn.outline {
-  background: none;
+body .he-btn.outline {
+  background-color: transparent;
+  background-image: none;
+}
+body .he-btn.outline:hover {
+  color: #FFF;
 }
 
 /* Colors */
-.he-btn.red {
+.he-btn.red,
+.he-btn.red.outline:hover{
   @include gradient(top,#ff5e3a, #ff2a68)
 }
 
-.he-btn.orange {
+.he-btn.orange,
+.he-btn.orange.outline:hover {
   @include gradient(top,#ff9500, #ff5e3a)
 }
 
-.he-btn.yellow {
+.he-btn.yellow,
+.he-btn.yellow.outline:hover {
   @include gradient(top,#ffdb4c, #ffcd02)
 }
 
-.he-btn.green {
-  @include gradient(top,#87fc70, #0bd318)
+.he-btn.green,
+.he-btn.green.outline:hover {
+  @include gradient(top, #88db6b, #64b448)
 }
-
-.he-btn.teal {
+.he-btn.teal ,
+.he-btn.teal.outline:hover{
   @include gradient(top,#52edc7, #5ac8fb)
 }
 
-.he-btn.blue {
+.he-btn.blue ,
+.he-btn.blue.outline:hover{
   @include gradient(top,#0e74ff, #1d62f0)
 }
 
-.he-btn.black {
+.he-btn.black,
+.he-btn.black.outline:hover {
   @include gradient(top,#4a4a4a, #2b2b2b)
 }
 
 .he-btn.grey,
 .he-btn.gray,
-.he-btn.silver {
+.he-btn.silver,
+.he-btn.grey.outline:hover,
+.he-btn.gray.outline:hover,
+.he-btn.silver.outline:hover{
   @include gradient(top,#dbddde, #898c90)
 }
 
-.he-btn.purple {
+.he-btn.purple,
+.he-btn.purple.outline:hover{
   @include gradient(top,#d56efd, #842abf)
 }
 
-.he-btn.pink {
+.he-btn.pink,
+.he-btn.pink.outline:hover {
   @include gradient(top,#fc5fa6, #fc2a19)
 }
-.he-btn.white {
-  @include gradient(top,#fff, #f7f7f7)
+.he-btn.white,
+.he-btn.white.outline:hover {
+  @include gradient(top,#fff, #f7f7f7);
+  color:#333;
 }
 
 /* Outline buttons */
 .he-btn.red.outline {
-  color: #ff5e3a!important;
+  color: #ff5e3a;
 }
 
 .he-btn.orange.outline {
-  color: #ff9500!important;
+  color: #ff9500;
 }
 
 .he-btn.yellow.outline {
-  color: #ffdb4c!important;
+  color: #ffdb4c;
 }
 
 .he-btn.green.outline {
-  color: #87fc70!important;
+  color: #64b448;
 }
 
 .he-btn.teal.outline {
-  color: #52edc7!important;
+  color: #52edc7;
 }
 
 .he-btn.blue.outline {
-  color: #0e74ff!important;
+  color: #0e74ff;
 }
 
 .he-btn.black.outline {
-  color: #4a4a4a!important;
+  color: #4a4a4a;
 }
 
 .he-btn.grey.outline,
 .he-btn.gray.outline,
 .he-btn.silver.outline {
-  color: #dbddde!important;
+  color: #dbddde;
 }
 
 .he-btn.purple.outline {
-  color: #d56efd!important;
+  color: #d56efd;
 }
 
 .he-btn.pink.outline {
-  color: #fc5fa6!important;
+  color: #fc5fa6;
 }
 
 .he-btn.white.outline {

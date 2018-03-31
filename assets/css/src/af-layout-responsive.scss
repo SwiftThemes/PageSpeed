@@ -8,7 +8,7 @@
 }
 
 //Tablets
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $mobile_width) {
   .hybrid {
     width: 100%
   }

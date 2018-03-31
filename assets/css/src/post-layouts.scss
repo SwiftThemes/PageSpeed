@@ -42,7 +42,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $mobile_width) {
   .singular-post.single-1c.has-thumb,
   .page-template-tpl-airy-img{
     #content-wrapper {
