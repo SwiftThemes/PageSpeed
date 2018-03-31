@@ -34,6 +34,11 @@ define( 'HELIUM_DIR', trailingslashit( HELIUM_THEME_FRAMEWORK . 'helium' ) );
 define( 'HELIUM_ADMIN', trailingslashit( HELIUM_DIR ) . 'admin/' );
 define( 'HELIUM_URI', trailingslashit( HELIUM_THEME_URI . 'framework/helium' ) );
 
+
+add_theme_support('woocommerce');
+
+
+
 // Launch the Hybrid Core framework.
 require_once( trailingslashit( HYBRID_DIR ) . 'hybrid.php' );
 new Hybrid();

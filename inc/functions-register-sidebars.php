@@ -348,6 +348,20 @@ function pagespeed_register_sidebars() {
 		)
 	);
 
+
+	if ( class_exists( 'WooCommerce' ) ) {
+
+		hybrid_register_sidebar(
+			array(
+				'id'           => 'woo',
+				'name'         => esc_html_x( 'WooCommerce Sidebar', 'sidebar', 'page-speed' ),
+				'description'  => esc_html__( 'Add widgets to the WooCommerce pages here', 'page-speed' ),
+				'before_title' => '<div class="widget-title heading">',
+				'after_title'  => '</div>',
+			)
+		);
+	}
+
 	$columns = get_theme_mod( 'footer_column_count', 4 );
 	for ( $i = 1; $i < $columns + 1; $i ++ ) {
 		register_sidebars( 1, array(
