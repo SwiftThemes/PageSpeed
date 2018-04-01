@@ -9,5 +9,6 @@
 //require_once( HELIUM_THEME_ADMIN . 'theme-options.php' );
 require_once( HELIUM_THEME_ADMIN . 'color-schemes.php' );
 require_once( HELIUM_THEME_ADMIN . 'about-pagespeed.php' );
+require_once( HELIUM_THEME_ADMIN . 'migrations.php' );
 
 

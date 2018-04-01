@@ -1,3 +1,18 @@
+## [1.02] - 01-04-2018
+
+### Added
+- New landing page template.
+
+## [1.00] - 01-04-2018
+
+### Changed
+- Fix thumbnail hide settings not working.
+
+## [0.99] - 31-03-2018
+
+### Changed
+- Fix for thumbnails position not working as expected when centered.
+
 ## [0.98] - 31-03-2018
 
 ### Changed

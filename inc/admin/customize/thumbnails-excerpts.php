@@ -45,7 +45,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	) );
 	// Show thumbnail
-	$wp_customize->add_setting( 'home_show_thumbnails', array(
+	$wp_customize->add_setting( 'home_thumb_show', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => true,
 
@@ -78,7 +78,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	) );
 
-	$wp_customize->add_control( 'home_show_thumbnails', array(
+	$wp_customize->add_control( 'home_thumb_show', array(
 		'label'   => __( 'Show thumbnails on home page', 'page-speed' ),
 		'section' => 'home_page_design',
 		'type'    => 'checkbox',
@@ -105,7 +105,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 		)
 	);
 // Show thumbnail
-	$wp_customize->add_setting( 'home_show_thumbnails_mobile', array(
+	$wp_customize->add_setting( 'home_thumb_show_mobile', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => true,
 
@@ -131,7 +131,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 
 
-	$wp_customize->add_control( 'home_show_thumbnails_mobile', array(
+	$wp_customize->add_control( 'home_thumb_show_mobile', array(
 		'label'   => __( 'Show thumbnails on home page #Mobile', 'page-speed' ),
 		'section' => 'home_page_design',
 		'type'    => 'checkbox',
@@ -178,13 +178,13 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	// Show thumbnail
-	$wp_customize->add_setting( 'archives_show_thumbnails', array(
+	$wp_customize->add_setting( 'archives_thumb_show', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => true,
 
 	) );
 
-	$wp_customize->add_control( 'archives_show_thumbnails', array(
+	$wp_customize->add_control( 'archives_thumb_show', array(
 		'label'   => __( 'Show thumbnails on archives', 'page-speed' ),
 		'section' => 'archives_design',
 		'type'    => 'checkbox',
@@ -227,13 +227,13 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	);
 
 	// Show thumbnail
-	$wp_customize->add_setting( 'archives_show_thumbnails_mobile', array(
+	$wp_customize->add_setting( 'archives_thumb_show_mobile', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => true,
 
 	) );
 
-	$wp_customize->add_control( 'archives_show_thumbnails_mobile', array(
+	$wp_customize->add_control( 'archives_thumb_show_mobile', array(
 		'label'   => __( 'Show thumbnails on archives #Mobile', 'page-speed' ),
 		'section' => 'archives_design',
 		'type'    => 'checkbox',

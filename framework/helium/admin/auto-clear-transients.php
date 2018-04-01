@@ -24,7 +24,6 @@ function helium_auto_clear_transients() {
 		delete_transient( $prefix . 'sass_combined_bf' );
 		delete_transient( $prefix . 'sass_combined_af' );
 
-
 		set_theme_mod( 'stylesheet_version', $theme->get( 'Version' ) );
 	}
 

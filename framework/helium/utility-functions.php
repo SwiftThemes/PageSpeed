@@ -30,9 +30,8 @@ function helium_show_thumbnail( $namespace ) {
 	} else {
 		$suffix = '';
 	}
-
-	?>
-	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( $namespace . '_show_thumbnails' . $suffix, true ) && 'aligncenter' !== get_theme_mod( $namespace . '_position' . $suffix, 'alternate' ) ) : ?>
+    ?>
+	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( $namespace . '_show' . $suffix, true ) ) : ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( helium_get_thumb_size( $namespace ), array( 'class' => sanitize_html_class( get_theme_mod( $namespace . '_position' . $suffix, 'alternate' ) ) ) ) ?>
