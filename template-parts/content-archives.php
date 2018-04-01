@@ -1,4 +1,19 @@
+<?php
+if ( $helium->is_mobile() ) {
+	$suffix = '_mobile';
+} else {
+	$suffix = '';
+}
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php
+	if ( 'aligncenter' === get_theme_mod( 'archives_thumb_position' . $suffix, 'alternate' ) ) {
+		helium_show_thumbnail( 'archives_thumb' );
+	}
+
+	?>
+    
     <header class="entry-header">
 		<?php if ( get_theme_mod( 'archives_meta_above_title' ) ): ?>
             <div class="entry-meta meta above-title">
@@ -16,8 +31,12 @@
     </header><!-- .entry-header -->
 
 
-	<?php helium_show_thumbnail('archives_thumb')?>
-
+	<?php
+	if ( 
+	     'aligncenter' !== get_theme_mod( 'archives_thumb_position' . $suffix, 'alternate' ) ) {
+		helium_show_thumbnail( 'archives_thumb' );
+	}
+	?>
 
     <div class="entry-content">
 		<?php
