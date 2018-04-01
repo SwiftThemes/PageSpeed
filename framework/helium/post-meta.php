@@ -13,6 +13,9 @@ function helium_generate_post_meta( $metas = array() ) {
 	$allowed_tags = wp_kses_allowed_html( 'post' );
 	foreach ( $metas as $meta ) {
 
+		if(!isset($meta['key'])){
+			continue;
+		}
 		switch ( $meta['key'] ) {
 			case 'AuthorLink':
 				echo get_the_author();
