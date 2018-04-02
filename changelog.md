@@ -1,3 +1,13 @@
+## [1.05] - 02-04-2018
+
+### Changed
+- Hot fix for archives not working.
+
+## [1.04] - 02-04-2018
+
+### Added
+- WooCommerce support
+
 ## [1.02] - 01-04-2018
 
 ### Added

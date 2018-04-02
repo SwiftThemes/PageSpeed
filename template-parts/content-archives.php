@@ -1,4 +1,6 @@
 <?php
+global $helium;
+
 if ( $helium->is_mobile() ) {
 	$suffix = '_mobile';
 } else {
