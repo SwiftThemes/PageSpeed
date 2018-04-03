@@ -1,3 +1,10 @@
+## [1.06] - 03-04-2018
+
+### Changed
+-Inherit font-size for bbPress forums from the theme.
+
+### Changed
+- Hot fix for archives not working.
 ## [1.05] - 02-04-2018
 
 ### Changed

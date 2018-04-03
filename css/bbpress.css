@@ -17,7 +17,7 @@
 	clear: both;
 	margin-bottom: 20px;
 	overflow: hidden;
-	font-size: 12px;
+	/*font-size: 12px;*/
 }
 
 #bbpress-forums div.even,
@@ -81,7 +81,7 @@ body.reply-edit .reply {
 #bbpress-forums ul.bbp-forums,
 #bbpress-forums ul.bbp-replies,
 #bbpress-forums ul.bbp-search-results {
-	font-size: 12px;
+	/*font-size: 12px;*/
 	overflow: hidden;
 	border: 1px solid #eee;
 	margin-bottom: 20px;
@@ -407,7 +407,7 @@ div.bbp-breadcrumb {
 
 div.bbp-breadcrumb,
 div.bbp-topic-tags {
-	font-size: 12px;
+	/*font-size: 12px;*/
 }
 
 #bbpress-forums div.bbp-breadcrumb p,
@@ -718,7 +718,7 @@ p.form-allowed-tags {
 #bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content {
 	width: 100%;
 	margin: 0;
-	font-size: 12px;
+	/*font-size: 12px;*/
 }
 
 #bbpress-forums div.bbp-the-content-wrapper table,
@@ -733,7 +733,7 @@ p.form-allowed-tags {
 }
 
 #bbpress-forums div.bbp-the-content-wrapper input {
-	font-size: 12px;
+	/*font-size: 12px;*/
 	padding: 5px;
 	margin: 0 2px 0 0;
 	line-height: 1em;
@@ -807,7 +807,7 @@ p.form-allowed-tags {
 	}
 	#bbpress-forums #bbp-your-profile fieldset span.description {
 		margin: 5px 0 0 20%;
-		font-size: 12px;
+		/*font-size: 12px;*/
 		font-style: italic;
 		float: left;
 		clear: left;
@@ -886,7 +886,7 @@ div.bbp-template-notice a {
 	div.bbp-template-notice p {
 		margin: 0.5em 0 6px 0 !important;
 		padding: 2px;
-		font-size: 12px;
+		/*font-size: 12px;*/
 		line-height: 140%;
 	}
 
@@ -1190,7 +1190,7 @@ body.my-account #bbpress-forums {
 		height: auto;
 	}
 	#bbpress-forums div.bbp-reply-author .bbp-author-role {
-		font-size: 12px;
+		/*font-size: 12px;*/
 		font-style: normal;
 	}
 	#bbpress-forums .bbp-body div.bbp-reply-content {
