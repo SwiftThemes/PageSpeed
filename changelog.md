@@ -1,10 +1,13 @@
+## [1.08] - 07-04-2018
+
+### Changed
+- Change top and bottom margin for business site classes.
+
 ## [1.06] - 03-04-2018
 
 ### Changed
--Inherit font-size for bbPress forums from the theme.
+- Inherit font-size for bbPress forums from the theme.
 
-### Changed
-- Hot fix for archives not working.
 ## [1.05] - 02-04-2018
 
 ### Changed

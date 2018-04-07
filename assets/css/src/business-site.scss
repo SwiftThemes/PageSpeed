@@ -187,8 +187,8 @@
   }
 
   .pull-all {
-    margin: -20px;
-    padding: 20px
+    margin: -$padding -20px;
+    padding:$padding 20px
   }
 
   .pull-l {
@@ -202,8 +202,8 @@
   }
 
   .pull-t, .pull-top {
-    margin-top: -20px;
-    padding-top: 20px;
+    margin-top: -$padding;
+    padding-top: $padding;
   }
 
   .pull-b, .pull-bottom {
@@ -218,10 +218,10 @@
     margin-left: -20px;
   }
   .pull-trl {
-    padding-top: 20px;
+    padding-top:-$padding;
     padding-left: 20px;
     padding-right: 20px;
-    margin-top: -20px;
+    margin-top: -$padding;
     margin-right: -20px;
     margin-left: -20px;
   }
