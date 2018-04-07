@@ -99,9 +99,11 @@ buildIncludeOrg = [
     'readme.md',
 
     // exclude files and folders
-    '!framework/helium/pro/',
-    '!framework/helium/pro/bootstrap.php',
-    '!framework/helium/pro/functions-styles.php',
+    '!framework/helium/{pro,pro/**}',
+    '!inc/{pro,pro/**}',
+
+    // '!framework/helium/pro/bootstrap.php',
+    // '!framework/helium/pro/functions-styles.php',
     '!assets/images/customize/color-schemes/color_schemes.psd',
     '!node_modules/**/*',
     '!buildtheme/**/*',
