@@ -10,7 +10,10 @@ textarea {
   font-weight: lighter;
   @include border-radius(3px)
 }
+textarea{min-height:100px}
+input[type="image"],
 input[type="checkbox"],
+input[type="button"],
 input[type="radio"]{
   width: auto;
   height: auto;
@@ -38,7 +41,7 @@ button {
   width: auto;
   padding: 5px 20px;
   background: $primary;
-  @include gradient(lighten($primary, .1), darken($primary, .1), linear);
+  @include gradient(top,lighten($primary, .1), darken($primary, .1));
   border: none;
   color: rgba($light-1,1);
   float: right;

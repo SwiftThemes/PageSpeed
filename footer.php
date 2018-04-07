@@ -4,7 +4,9 @@
     <footer id="site-footer-container" class="cf">
         <div id="site-footer" class="sb hybrid">
 			<?php
-			for ( $i = 1; $i <= 4; $i ++ ):
+			$columns = get_theme_mod( 'footer_column_count', 4 );
+
+			for ( $i = 1; $i <= $columns; $i ++ ):
 				?>
             <div class="fc-<?php echo $i ?> fc">
                 <div class="inner">
@@ -19,7 +21,6 @@
     </footer>
 <?php endif; ?>
 
-</div><!-- #wrapper -->
 <div id="copyright-container">
     <div class="inner hybrid">
 		<?php
@@ -36,6 +37,9 @@
 						                          rel="home">' . get_bloginfo( "name" ) . '</a>' ) ?>
     </div>
 </div>
+
+</div><!-- #wrapper -->
+
 <?php
 wp_footer();
 ?>

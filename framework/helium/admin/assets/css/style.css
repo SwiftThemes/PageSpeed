@@ -118,8 +118,55 @@
 
 /*.about h2:before {content: "\f487";font-family: dashicons;color:rgb(0, 122, 255);padding-right: 10px}*/
 .about h2 {
-margin-bottom: 10px;
+    margin-bottom: 10px;
     font-weight: 400;
+}
+
+.license {
+    font-size: 1.2em;
+
+    margin-bottom: 30px;
+}
+
+.license label {
+    position: relative
+}
+
+.license .button {
+    position: absolute;
+    right: 6px;
+    top: -5px;
+}
+
+.license-key {
+    width: 340px;
+    padding: 10px 80px 10px 4px;
+    border-radius: 5px;
+}
+
+.license-info {
+    padding: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-width: 3px;
+    background: #FFF;
+
+    display: inline;
+
+    margin-bottom: 40px;
+
+}
+
+.he-error {
+    color: red;
+}
+
+.he-success {
+    color: green
+}
+
+.he-warning {
+    color: orange
 }
 
 /**/

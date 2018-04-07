@@ -13,6 +13,9 @@ function helium_generate_post_meta( $metas = array() ) {
 	$allowed_tags = wp_kses_allowed_html( 'post' );
 	foreach ( $metas as $meta ) {
 
+		if(!isset($meta['key'])){
+			continue;
+		}
 		switch ( $meta['key'] ) {
 			case 'AuthorLink':
 				echo get_the_author();
@@ -48,7 +51,7 @@ function helium_generate_post_meta( $metas = array() ) {
 					$date = get_the_date();
 				}
 
-				$out = '<span class="date updated fa-clock-o"><a class="" href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark">';
+				$out = '<span class="date updated"><a class="" href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark">';
 				$out .= '<time class="entry-date" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( $date ) . '</time></a></span> ';
 				echo $out;
 				echo '&nbsp;';
@@ -61,7 +64,7 @@ function helium_generate_post_meta( $metas = array() ) {
 					$date = get_the_modified_date();
 				}
 
-				$out = '<span class="date updated fa-clock-o"><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_post_modified_time() ) . '" rel="bookmark">';
+				$out = '<span class="date updated"><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_post_modified_time() ) . '" rel="bookmark">';
 				$out .= '<time class="entry-date" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">' . esc_html( $date ) . '</time></a></span> ';
 
 				echo $out;

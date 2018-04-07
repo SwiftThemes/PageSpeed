@@ -1,12 +1,86 @@
 (function ($) {
 
 
+    // $('#_customize-input-footer_column_count').on('input', function () {
+    //     var columns = $(this).val();
+    //     var current = wp.customize.control('footer_widths').setting();
+    //     var current = wp.customize.control('footer_widths').setting.set([25, 25, 25]);
+    //
+    //
+    //     $(".column-slider").slider({
+    //         values: [10, 20, 40]
+    //     });
+    //
+    // });
+
+
+    // Change the previewed URL to the selected page when changing the page_for_posts.
+    wp.customize('footer_column_count', function (setting) {
+        setting.bind(function (columns) {
+
+            var width = 100 / columns;
+            var positions = [];
+
+            for (var i = 1; i <= columns; i++) {
+                positions.push(width * i * 1.00);
+            }
+
+            var footer_widths_control = wp.customize.control('footer_widths')
+            footer_widths_control.setting.set(positions);
+
+            $(footer_widths_control.selector).find('.values').html(column_positions_to_widths(positions))
+
+
+            $(footer_widths_control.selector).find('.column-slider').slider("destroy")
+            $(footer_widths_control.selector).find('.column-slider').slider({
+                values: positions,
+                change: function (event, ui) {
+                    footer_widths_control.setting.set($(this).slider('values'))
+                    $(footer_widths_control.selector).find('.values').html(column_positions_to_widths(positions))
+
+                }
+            });
+        });
+    });
+
+
+    wp.customize.controlConstructor['he_columns'] = wp.customize.Control.extend({
+        ready: function () {
+            var control = this;
+
+            function getValues() {
+                var values_dirty = control.setting()
+                var values = []
+                var current = 0;
+                for (var i = 0; i < values_dirty.length; i++) {
+                    values.push(current + values_dirty[i]);
+                    current += values_dirty[i];
+                }
+                return values;
+            }
+
+            var values = getValues();
+            $(control.selector).find('.values').html(column_positions_to_widths(values))
+
+
+            $(".column-slider").slider({
+                values: values,
+                change: function (event, ui) {
+                    control.setting.set($(this).slider('values'))
+                    $(control.selector).find('.values').html(column_positions_to_widths(values))
+                },
+                step: .01
+            });
+
+        }
+    })
+
+
     wp.customize.controlConstructor['he_font'] = wp.customize.Control.extend({
         ready: function () {
             var control = this;
             control.container.on('change', 'input.family',
                 function (e) {
-                    var parent = $(e.target.parentNode)
                     if (($(this).val())) {
                         var font = {}
                         var fontObject = JSON.parse($(this).attr('data-fontOb'))
@@ -204,7 +278,99 @@
                     if (isOutside) {
 
 
-                        if(ui.item[0].className.indexOf('can-remove') !== -1){
+                        if (ui.item[0].className.indexOf('can-remove') !== -1) {
+                            ui.item.remove();
+                            return
+                        }
+                        //Delete only clones
+                        if (ui.item[0].className.indexOf('clone') === -1) {
+                            ui.item.prependTo(control.selector + ' .draggables');
+                        } else {
+                        }
+                    }
+                    updateValue(500)
+
+                }
+            })
+
+
+            control.container.on('change', 'input',
+                function (e) {
+                    updateValue(200)
+                }
+            );
+        }
+    })
+
+    wp.customize.controlConstructor['he_drag_sort'] = wp.customize.Control.extend({
+
+        ready: function () {
+
+            var control = this;
+            var timer, isOutside;
+
+            function getValue(dom_node) {
+                var out = []
+                dom_node.find('input').each(function () {
+                    var key = $(this).data('type')
+                    out.push(key)
+                });
+                return out
+            }
+
+            function updateValue(delay) {
+                clearTimeout(timer)
+                timer = setTimeout(function () {
+                    control.setting.set(getValue($(selector)))
+                }, delay)
+            }
+
+
+            $(control.selector + " .draggable.clone").draggable({
+                cancel: null,
+                helper: "clone",
+                containment: control.selector + ' .sortable',
+                connectToSortable: control.selector + ' .connected'
+            });
+
+            $(control.selector + " .draggable").draggable({
+                cancel: null,
+                containment: control.selector + ' .sortable',
+                connectToSortable: control.selector + ' .connected'
+            });
+
+
+            var selector = control.selector + ' .sortable'
+
+
+            $(control.selector + " .sortable").sortable({
+                update: function () {
+                    updateValue(500)
+                },
+                change: function () {
+                    updateValue(500)
+                },
+                over: function (e, ui) {
+                    isOutside = false;
+                },
+
+                out: function (e, ui) {
+                    isOutside = true;
+                },
+                create: function () {
+                    return
+
+
+                },
+
+                receive: function (e, ui) {
+                    ui.helper.first().removeAttr('style'); // undo styling set by jqueryUI
+                },
+                beforeStop: function (e, ui) {
+                    if (isOutside) {
+
+
+                        if (ui.item[0].className.indexOf('can-remove') !== -1) {
                             ui.item.remove();
                             return
                         }
@@ -229,6 +395,90 @@
     })
 
 
+    // Gradient
+    wp.customize.controlConstructor['he_colors'] = wp.customize.Control.extend({
+        ready: function () {
+            var control = this;
+
+
+            if (control.setting().is_gradient == 0) {
+                control.container.find('.if_gradient').hide()
+            }
+
+            attachColorPicker()
+
+            function attachColorPicker() {
+                control.container.find('.gradient-color-picker').wpColorPicker({
+                    // A callback to fire whenever the color changes to a valid color
+                    change: function (event, ui) {
+                        var setting = _.extend({}, control.setting())
+                        var name = $(this).data('name')
+                        setting[name] = control.params.value[name] = ui.color.toString()
+                        control.setting.set(setting)
+
+                    },
+                });
+            }
+
+
+            control.container.on('change', '.is_gradient',
+                function (e) {
+                    var setting = _.extend({}, control.setting())
+                    if (setting['is_gradient']) {
+                        setting['is_gradient'] = control.params.value.is_gradient = 0
+                    } else {
+                        setting['is_gradient'] = control.params.value.is_gradient = 1
+                    }
+                    control.setting.set(setting)
+                    control.renderContent()
+                    attachColorPicker()
+
+                    if (control.setting().is_gradient == 0) {
+                        control.container.find('.if_gradient').hide()
+                    }
+                }
+            );
+
+
+            control.container.on('change', 'select.direction',
+                function (e) {
+                    var setting = _.extend({}, control.setting())
+                    setting['gradient_direction'] = $(this).val();
+                    control.setting.set(setting)
+                }
+            );
+
+            control.container.on('change', '.enable-colors', function () {
+                var setting = _.extend({}, control.setting())
+                if (setting['enable']) {
+                    setting['enable'] = control.params.value.enable = 0
+                } else {
+                    setting['enable'] = control.params.value.enable = 1
+                }
+                control.setting.set(setting)
+
+            });
+
+
+        }
+    });
+
+
+    function column_positions_to_widths(values) {
+        var new_values = values.slice()
+        var text = '<div class="display-column-widths">Col #1:&nbsp;<strong>' + values[0].toFixed(2) + '%</strong></div>';
+        for (var i = 1; i < new_values.length; i++) {
+            text = text + '<div class="display-column-widths">Col #' + (i + 1) + ':&nbsp;<strong>' + (new_values[i] - new_values[i - 1]).toFixed(2) + '%</strong></div>';
+        }
+
+        return text;
+    }
+
 })(jQuery);
 
-//data-customize-setting-link="home_show_excerpts"
+
+wp.customize.bind('change', function (setting) {
+    if (setting.transport === 'postMessage') {
+        jQuery('#customize-preview').find('body').css('opacity', '.5')
+    }
+});

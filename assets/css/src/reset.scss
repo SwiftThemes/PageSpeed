@@ -5,9 +5,6 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
-}
 
 article,
 aside,
@@ -205,3 +202,5 @@ optgroup {
 }
 
 input,textarea, button{border-radius: 0}
+
+iframe{max-width: 100%;}

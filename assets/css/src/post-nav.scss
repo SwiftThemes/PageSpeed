@@ -1,0 +1,62 @@
+.nav-links {
+  font-size: .75em;
+  margin-bottom: $vr;
+  height: $vr+4px;
+
+  max-width: 100%;
+
+  .nav-previous,
+  .nav-next{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include border-radius(5px);
+    margin-bottom: $vr;
+    max-width: 100%;
+
+
+  }
+  a:hover{text-decoration: none}
+  .nav-previous > a,
+  .nav-next > a {
+    position: relative;
+    background: rgba($light-4,.8);
+    display: block;
+    padding:0 5px;
+
+    .nav-subtitle{
+      background: rgba($primary,.5);
+      position: absolute;
+      top:0;
+      bottom: 0;
+      padding:0 5px
+    }
+  }
+
+
+  .nav-previous a{
+    padding-left: 6em;
+
+  }
+  .nav-next a{
+    padding-right: 6em;
+
+  }
+  .nav-previous > a:hover,
+  .nav-next > a:hover{background: rgba($primary,1);color:$light-1}
+  .nav-title{overflow: auto}
+  .nav-previous {
+
+    float: left;
+    .nav-subtitle {
+      left: 0;
+    }
+  }
+  .nav-next {
+    float: right;
+    .nav-subtitle {
+      right:0;
+    }
+  }
+}
+

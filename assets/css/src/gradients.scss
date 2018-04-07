@@ -1,0 +1,109 @@
+
+@if $body_colors_enable == 1 {
+  body {
+    @if $body_colors_is_gradient == 0 {
+      background: $body_colors_gradient_start;
+    }
+    @if $body_colors_is_gradient == 1 {
+      @include gradient($body_colors_gradient_direction, $body_colors_gradient_start, $body_colors_gradient_end)
+    }
+
+  }
+}
+
+@if $header_colors_enable == 1 {
+
+  #site-header-container {
+    @if $header_colors_is_gradient == 0 {
+      background: $header_colors_gradient_start;
+    }
+    @if $header_colors_is_gradient == 1 {
+      @include gradient($header_colors_gradient_direction, $header_colors_gradient_start, $header_colors_gradient_end)
+    }
+
+  }
+}
+
+@if $primary-nav_colors_enable == 1 {
+  #primary-nav-container {
+    @if $primary-nav_colors_is_gradient == 0 {
+      background: $primary-nav_colors_gradient_start;
+    }
+    @if $primary-nav_colors_is_gradient == 1 {
+      @include gradient($primary_nav_colors_gradient_direction, $primary_nav_colors_gradient_start, $primary_nav_colors_gradient_end)
+    }
+  }
+}
+
+@if $secondary-nav_colors_enable == 1 {
+
+  #secondary-nav-container {
+    @if $secondary-nav_colors_is_gradient == 0 {
+      background: $secondary-nav_colors_gradient_start;
+    }
+    @if $secondary-nav_colors_is_gradient == 1 {
+      @include gradient($secondary_nav_colors_gradient_direction, $secondary_nav_colors_gradient_start, $secondary_nav_colors_gradient_end)
+    }
+  }
+}
+
+@if $content_colors_enable == 1 {
+
+  #content,
+  #main {
+    @if $content_colors_is_gradient == 0 {
+      background: $content_colors_gradient_start;
+    }
+    @if $content_colors_is_gradient == 1 {
+      @include gradient($content_colors_gradient_direction, $content_colors_gradient_start, $content_colors_gradient_end)
+    }
+  }
+}
+
+@if $sb1_colors_enable == 1 {
+
+  #wrapper #sb1 {
+    @if $sb1_colors_is_gradient == 0 {
+      background: $sb1_colors_gradient_start;
+    }
+    @if $sb1_colors_is_gradient == 1 {
+      @include gradient($sb1_colors_gradient_direction, $sb1_colors_gradient_start, $sb1_colors_gradient_end)
+    }
+  }
+}
+
+@if $sb2_colors_enable == 1 {
+
+  #wrapper #sb2 {
+    @if $sb2_colors_is_gradient == 0 {
+      background: $sb2_colors_gradient_start;
+    }
+    @if $sb2_colors_is_gradient == 1 {
+      @include gradient($sb2_colors_gradient_direction, $sb2_colors_gradient_start, $sb2_colors_gradient_end)
+    }
+  }
+}
+
+@if $footer_colors_enable == 1 {
+
+  #site-footer-container {
+    @if $footer_colors_is_gradient == 0 {
+      background: $footer_colors_gradient_start;
+    }
+    @if $footer_colors_is_gradient == 1 {
+      @include gradient($footer_colors_gradient_direction, $footer_colors_gradient_start, $footer_colors_gradient_end)
+    }
+  }
+}
+
+@if $copyright_colors_enable == 1 {
+
+  #copyright-container {
+    @if $copyright_colors_is_gradient == 0 {
+      background: $copyright_colors_gradient_start;
+    }
+    @if $copyright_colors_is_gradient == 1 {
+      @include gradient($copyright_colors_gradient_direction, $copyright_colors_gradient_start, $copyright_colors_gradient_end)
+    }
+  }
+}

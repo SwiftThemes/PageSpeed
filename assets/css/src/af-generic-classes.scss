@@ -54,6 +54,17 @@ article {
   color: $wp-caption-text-color;
 }
 
+
+
+.embed-wrap {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
 ///* end */
 .circle, .round {
   @include border-radius(50%)
@@ -80,6 +91,6 @@ article {
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: $mobile_width) {
   .inner{padding:0 20px}
 }

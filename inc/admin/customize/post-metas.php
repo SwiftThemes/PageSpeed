@@ -175,6 +175,17 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	 */
 
 
+	$wp_customize->add_setting( 'hide_breadcrumbs_on_post', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+	) );
+
+	$wp_customize->add_control( 'hide_breadcrumbs_on_post', array(
+		'label'   => __( 'Hide breadcrumbs on single post. Breadcrumbs add SEO value to the page, disable them only if you know what you are doing.', 'post-speed' ),
+		'section' => 'single_post_design',
+		'type'    => 'checkbox',
+	) );
+	
 	$above_title_default   = array(
 		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' )
 	);
@@ -243,6 +254,19 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	/**
 	 * Single page
 	 */
+
+
+	$wp_customize->add_setting( 'hide_breadcrumbs_on_page', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+	) );
+
+	$wp_customize->add_control( 'hide_breadcrumbs_on_page', array(
+		'label'   => __( 'Hide breadcrumbs on single page. Breadcrumbs add SEO value to the page, disable them only if you know what you are doing. Note: There is an option to hide breadcrumbs individually on a per page basis from the page edit screen.', 'page-speed' ),
+		'section' => 'single_page_design',
+		'type'    => 'checkbox',
+	) );
+
 
 	$above_title_default   = array(
 		array()

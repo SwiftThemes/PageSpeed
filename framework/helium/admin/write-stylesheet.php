@@ -68,6 +68,8 @@ class Helium_Styles {
 	 */
 	public function __construct( $src, $main = 'main.scss' ) {
 		require_once( ABSPATH . 'wp-admin/includes/file.php' );
+		include_once ABSPATH . 'wp-includes/class-wp-customize-manager.php';
+
 		require_once( HELIUM_ADMIN . 'scss-helpers.php' );
 		WP_Filesystem();
 
@@ -75,6 +77,8 @@ class Helium_Styles {
 		$this->main   = trailingslashit( $src ) . $main;
 		$this->source = trailingslashit( $src );
 		$this->set_file_list();
+
+
 	}
 
 	private function set_file_list() {
@@ -215,11 +219,53 @@ class Helium_Styles {
 			$override .= '$sb_widget_cards:1;';
 		} else {
 			$override .= '$sb_widget_cards:0;';
+		}
+		if ( get_theme_mod( 'enable_transparent_backgrounds', false ) ) {
+			$override .= '$transparent_backgrounds:1;';
+		} else {
+			$override .= '$transparent_backgrounds:0;';
+		}
 
+
+		$footer_widths = get_theme_mod( 'footer_widths' );
+
+		for ( $i = 0; $i <= get_theme_mod( 'footer_column_count', 4 ); $i ++ ) {
+			if ( isset( $footer_widths[ $i ] ) ) {
+				$override .= '$fc' . ( $i + 1 ) . '-width:' . $footer_widths[ $i ] . '%;';
+			}
 		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
-		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ), $content );
+
+
+		$temp = '';
+		global $pagespeed_gradient_bgs;
+
+		foreach ( $pagespeed_gradient_bgs as $value ) {
+
+			$defaults = array(
+				'enable'             => 0,
+				'text_color'         => '$dark-3',
+				'link_color'         => '$primary',
+				'bg_start'           => '#fff',
+				'is_gradient'        => 0,
+				'bg_end'             => '#fff',
+				'gradient_direction' => 'to top',
+			);
+			$val      = wp_parse_args( get_theme_mod( $value ), $defaults );
+			if ( $val['enable'] ) {
+				$temp .= '$' . $value . '_enable:' . $val['enable'] . ';';
+				$temp .= '$' . $value . '_is_gradient:' . $val['is_gradient'] . ';';
+				$temp .= '$' . $value . '_gradient_start:' . $val['bg_start'] . ';';
+				$temp .= '$' . $value . '_gradient_end:' . $val['bg_end'] . ';';
+				$temp .= '$' . $value . '_gradient_direction:' . $val['gradient_direction'] . ';';
+				$temp .= '$' . $value . '_text_color:' . $val['text_color'] . ';';
+				$temp .= '$' . $value . '_link_color:' . $val['link_color'] . ';';
+			}
+		};
+
+
+		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ) . $temp, $content );
 
 
 		if ( get_theme_mod( 'override_color_scheme', false ) ) {
@@ -232,14 +278,103 @@ class Helium_Styles {
 				$colors_override .= '$invert:' . 1 . ';';
 			}
 			$content = str_replace( '/**colors**/', $colors_override, $content );
+		} else if ( get_theme_mod( 'invert_colors', false ) ) {
+			$colors_override = '$invert:' . 1 . ';';
+			$content         = str_replace( '/**colors**/', $colors_override, $content );
 		}
 
 
 		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
 
+		// Overriding the individual colors
+		$hand_picked_colors = '';
 
-		$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
+		$temp = get_theme_mod( 'body_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$body-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$body-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$link-color:' . $temp['link_color'] . ';';
+		}
+		$temp = get_theme_mod( 'header_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$header-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$site-title-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$site-description-color:lighten(' . $temp['text_color'] . ',.2);';
+		}
 
+		$temp = get_theme_mod( 'content_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$content-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$sb-widget-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$sb-widget-link-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'sb1_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$sb1-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$sb-widget-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$sb-widget-link-color:' . $temp['link_color'] . ';';
+		}
+		$temp = get_theme_mod( 'sb2_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$sb2-bg:' . $temp['bg_start'] . ';';
+		}
+
+		$temp = get_theme_mod( 'primary_nav_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$primary-nav-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$primary-nav-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'secondary_nav_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$secondary-nav-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$secondary-nav-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'sb1_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$sb1-widget-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$sb1-widget-border-color:darken(' . $temp['bg_start'] . ',.1);';
+			$hand_picked_colors .= '$sb1-widget-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$sb1-widget-link-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'sb2_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$sb2-widget-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$sb2-widget-border-color:darken(' . $temp['bg_start'] . ',.1);';
+			$hand_picked_colors .= '$sb2-widget-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$sb2-widget-link-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'footer_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$footer-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$footer-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$footer-widget-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$footer-widget-link-color:' . $temp['link_color'] . ';';
+		}
+
+
+		$content = str_replace( '/**handpicked_colors**/', $hand_picked_colors, $content );
+
+
+		if ( get_theme_mod( 'enable_scss_override' ) ) {
+
+			$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
+
+		}
 		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
@@ -252,7 +387,22 @@ class Helium_Styles {
 			$scss->setFormatter( 'scss_formatter_compressed' );
 		}
 
-		return $scss->compile( $content );
+		try {
+			$compiled = $scss->compile( $content );
+			delete_transient( $this->prefix . 'sass_error' );
+		} catch ( Exception $e ) {
+			set_transient( $this->prefix . 'sass_error', $e->getMessage(), 600 );
+			helium_write_to_uploads( $content, 'combined.scss' );
+
+
+			delete_transient( $this->prefix . 'sass_file_list' );
+			delete_transient( $this->prefix . 'sass_combined_bf' );
+			delete_transient( $this->prefix . 'sass_combined_af' );
+
+			return false;
+		}
+
+		return $compiled;
 	}
 
 	public function write_css() {
@@ -262,10 +412,14 @@ class Helium_Styles {
 		try {
 			global $wp_filesystem;
 			$content = $this->generate_css( 'bf' );
-			if ( ! defined( 'HELIUM_PRO' ) ) {
-				$content = $this->generate_css( 'af' ) . $content;
-			} else {
+			if ( ! $content ) {
+				//Don't overwrite the stylesheet with empty content.
+				return;
+			}
+			if ( defined( 'HELIUM_PRO' ) && get_theme_mod( 'enable_non_render_blocking_css', false ) ) {
 				set_theme_mod( 'af_css', $this->generate_css( 'af' ) );
+			} else {
+				$content = $this->generate_css( 'af' ) . $content;
 			}
 			$upload_dir = wp_upload_dir();
 			$file       = trailingslashit( $upload_dir['basedir'] ) . wp_get_theme()->stylesheet . '.css';

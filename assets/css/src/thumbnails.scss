@@ -20,9 +20,5 @@ article:nth-child(odd) .alternate {
   margin-left: 10px;
 }
 
-@media only screen and (max-width: 800px) {
-  .alternate {
-    float: none;
-    margin: auto;
-  }
-}
+// Mobile specific thumbnail code moved to af-layout-responsive.
+

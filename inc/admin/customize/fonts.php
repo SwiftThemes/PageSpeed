@@ -13,19 +13,21 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	$wp_customize->add_section( 'fonts', array(
 		'title'    => __( 'Typography', 'page-speed' ),
 		'priority' => 35,
-		'panel'=>'theme_options'
+		'panel'    => 'theme_options'
 
 	) );
 
 	$wp_customize->add_setting( 'gfont_1', array(
 		'sanitize_callback' => 'helium_sanitize_gfonts',
 		'default'           => '',
+		'transport'         => 'postMessage',
 
 	) );
 
 	$wp_customize->add_setting( 'gfont_2', array(
 		'sanitize_callback' => 'helium_sanitize_gfonts',
 		'default'           => '',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -80,18 +82,22 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	$wp_customize->add_setting( 'primary_font_stack', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'primary_font_size', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => 16,
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'primary_font_lh', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => 1.7,
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'primary_font_weight', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'normal',
+		'transport'         => 'postMessage',
 	) );
 
 
@@ -118,18 +124,22 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	$wp_customize->add_setting( 'secondary_font_stack', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'secondary_font_size', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => '',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'secondary_font_lh', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => '',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'secondary_font_weight', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => 'bold',
+		'transport'         => 'postMessage',
 	) );
 
 
@@ -156,6 +166,7 @@ function pagespeed_customize_fonts( $wp_customize ) {
 	$wp_customize->add_setting( 'custom_font_stack', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '',
+		'transport'         => 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'custom_font_stack', array(

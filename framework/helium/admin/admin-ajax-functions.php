@@ -30,3 +30,23 @@ function helium_update_file_system_status() {
 	}
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
+
+add_action( 'wp_ajax_helium_save_theme_options', 'helium_save_theme_options' );
+function helium_save_theme_options() {
+	include_once HELIUM_THEME_INC . 'pro/admin-theme-options.php';
+	check_ajax_referer( 'helium_ajax_nonce', 'security' );
+	$params = array();
+	parse_str( $_POST['data'], $params );
+	GLOBAL $page_speed_theme_options;
+	$theme_slug = get_option( 'stylesheet' );
+	$mods = get_option( "theme_mods_$theme_slug" );
+	foreach ( $page_speed_theme_options as $option ) {
+		if ( $option['id'] ) {
+			$id          = $option['id'];
+			$mods[ $id ] = isset( $params[ $id ] ) ? $params[ $id ] : 0;
+		}
+	}
+	update_option( "theme_mods_$theme_slug", $mods );
+	echo __('Theme options saved','page-speed');
+	wp_die();
+}

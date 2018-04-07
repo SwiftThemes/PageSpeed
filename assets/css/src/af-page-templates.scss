@@ -1,6 +1,7 @@
 .page-template-tpl-full-width,
 .page-template-tpl-wide,
 .page-template-tpl-airy,
+.page-template-tpl-landing,
 .attachment-image {
   #left,
   #main {
@@ -8,6 +9,7 @@
     margin: auto
   }
 }
+.page-template-tpl-landing.elementor-page,
 .page-template-tpl-wide.elementor-page,
 .page-template-tpl-full-width.elementor-page{
   #main > .inner{padding: 0}
@@ -52,3 +54,7 @@
 .page-template-tpl-wide #content {
   width: 100%
 }
+
+
+.woocommerce #main{width:75%;float: left}
+.woocommerce #sb-woo{width:25%;float: left}

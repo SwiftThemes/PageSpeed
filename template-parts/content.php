@@ -1,11 +1,20 @@
+<?php
+global $helium;
+if ( $helium->is_mobile() ) {
+	$suffix = '_mobile';
+} else {
+	$suffix = '';
+}
+$is_full_length = $wp_query->current_post == 0 && is_front_page() && get_theme_mod( 'show_first_post_in_full', false ) || ! get_theme_mod( 'home_show_excerpts', true ); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
-	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'home_show_thumbnails', true ) && 'aligncenter' === get_theme_mod( 'home_thumb_position', 'alternate' ) ) : ?>
-        <div class="post-thumbnail">
-            <a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => sanitize_html_class(get_theme_mod( 'home_thumb_position', 'alternate' )) ) ) ?>
-            </a>
-        </div><!-- .post-thumbnail -->
-	<?php endif; ?>
+
+
+	<?php
+	if ( ! $is_full_length && 'aligncenter' === get_theme_mod( 'home_thumb_position' . $suffix, 'alternate' ) ) {
+		helium_show_thumbnail( 'home_thumb' );
+	}
+
+	?>
 
     <header class="entry-header">
 
@@ -24,22 +33,20 @@
 		<?php endif ?>
     </header><!-- .entry-header -->
 
-	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( 'home_show_thumbnails', true ) && 'aligncenter' !== get_theme_mod( 'home_thumb_position', 'alternate' ) ) : ?>
-        <div class="post-thumbnail">
-            <a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( helium_get_thumb_size( 'home_thumb' ), array( 'class' => sanitize_html_class( get_theme_mod( 'home_thumb_position', 'alternate' ) ) ) ) ?>
-            </a>
-        </div><!-- .post-thumbnail -->
-	<?php endif; ?>
+	<?php
+	if ( ! $is_full_length &&
+	     'aligncenter' !== get_theme_mod( 'home_thumb_position' . $suffix, 'alternate' ) ) {
+		helium_show_thumbnail( 'home_thumb' );
+	}
+	?>
 
     <div class="entry-content">
 		<?php
 		/* translators: %s: Name of current post */
-		if ( get_theme_mod( 'home_show_excerpts', true ) ) {
-			the_excerpt();
-
-		} else {
+		if ( $is_full_length ) {
 			the_content();
+		} else {
+			the_excerpt();
 		}
 		?>
         <div class="clear"></div>

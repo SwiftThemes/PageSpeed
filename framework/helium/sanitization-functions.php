@@ -36,6 +36,7 @@ function helium_sanitize_thumbnail_alignment( $val ) {
 		'aligncenter',
 		'alignright',
 		'alternate',
+		'stretched'
 	);
 	if ( array_search( $val, $choices ) !== false ) {
 		return $val;
@@ -45,12 +46,13 @@ function helium_sanitize_thumbnail_alignment( $val ) {
 }
 
 function helium_sanitize_post_meta( $val ) {
-	$sanitized= array_map( 'helium_sanitize_post_meta_values', $val );
-	return array_filter($sanitized);
+	$sanitized = array_map( 'helium_sanitize_post_meta_values', $val );
+
+	return array_filter( $sanitized );
 }
 
 function helium_sanitize_post_meta_values( $val ) {
-	$san          = array();
+	$san        = array();
 	$valid_keys = array(
 		'Text',
 		'Cat',
@@ -83,6 +85,28 @@ function helium_sanitize_gfonts( $val ) {
 	}
 
 	return $san;
+}
+
+function helium_sanitize_column_widths( $vals ) {
+	if ( ! is_array( $vals ) ) {
+		return array();
+	} else {
+		$vals = array_map( 'abs', $vals );
+		asort( $vals );
+
+		$sanitized = array();
+		$prev      = 0;
+		foreach ( $vals as $val ) {
+			array_push( $sanitized, $val - $prev );
+			$prev = $val;
+		}
+//		array_push( $sanitized, 100 - $prev );
+
+
+		return $sanitized;
+	}
+
+
 }
 
 /**

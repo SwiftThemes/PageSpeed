@@ -28,7 +28,7 @@
   .entry {
     width: 60%;
     margin: auto;
-    margin-top: 220px;
+    margin-top: 300px;
     background: rgba($light-1, 1) !important;
     @include border-radius(1em);
     padding: $padding;
@@ -42,7 +42,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: $mobile_width) {
   .singular-post.single-1c.has-thumb,
   .page-template-tpl-airy-img{
     #content-wrapper {

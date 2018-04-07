@@ -1,12 +1,13 @@
-@media only screen and (min-width: 768px) {
-  .nav-container {
-    border-bottom: solid 1px $border-color;
-  }
+@media only screen and (min-width: $mobile_width) {
+  //.nav-container {
+  //  border-bottom: solid 1px $border-color;
+  //}
 
   .is-sticky .has-sticky-logo.nav-container #primary-nav {
     margin-left: 44px;
   }
   .nav {
+    float: left;
     ul {
       margin: 0;
       padding: 0
@@ -121,10 +122,59 @@
   }
 }
 
+#nav-search {
+  float: right;
+  display: inline;
+  position: relative;
+  background: $primary-nav-bg;
+}
+
+#nav-search .search-icon {
+  line-height: 1.418em;
+  padding: 0 .1668em;
+  font-size: 1.5em;
+  border: solid 1px shift-color($primary-nav-bg, .15);
+  border-width: 0 1px;
+}
+
+#nav-search form {
+  display: none;
+  top: 2.125em;
+  right: 0;
+  position: absolute;
+  padding: 10px;
+  background: $primary-nav-bg;
+  border: solid 1px shift-color($primary-nav-bg, .15);
+  border-width: 0 1px 1px;
+  z-index:4;
+}
+
+#nav-search input {
+  line-height: 1.6em;
+  height: 1.5em;
+  width: 13em;
+  font-size: 1.2em;
+}
+
+#nav-search:hover form {
+  display: block;
+
+}
+
+#nav-social-media a{padding: 0 .25em}
+#nav-social-media .icon{  line-height: 1.418em;
+font-size: 1.5em}
+#nav-social-media .icon:hover{text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);}
+
 @if ($is_sleek_header == 1) {
 
   #site-header-container {
     padding: 0;
+    border-width: 0;
+  }
+  .site-title,
+  #nav-search .he-search {
+    line-height: $header-height;
   }
   #primary {
     .nav .menu > li > a {
@@ -136,16 +186,45 @@
       top: $header-height;
     }
   }
+
+  #nav-search form {
+    top: $header-height;
+  }
 }
-
-
 
 #menu {
   display: none
 }
 
-
 #side-pane {
   width: 0;
   display: none
+}
+
+.rtl {
+  .nav {
+    float: right
+  }
+  ul li {
+    float: right
+  }
+
+  //* Icons */
+  .menu-item-has-children > a:after {
+    content: '\BB';
+    opacity: .5;
+    margin-left: 5px;
+    display: none;
+  }
+  .menu-item-has-children > a:before {
+    content: '\2192';
+    opacity: .5;
+    margin-right: 5px;
+    float: left;
+    display: inline-block;
+  }
+
+  .menu > .menu-item-has-children > a:before {
+    @include rotate(90deg)
+  }
 }

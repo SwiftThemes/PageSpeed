@@ -14,7 +14,6 @@ function pagespeed_customize( $wp_customize ) {
 		'description' => '', // Include html tags such as <p>
 		'priority'    => 10, // Mixed with top-level-section hierarchy.
 	) );
-
 	// Logo position
 	$wp_customize->add_setting( 'logo_position', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
@@ -146,24 +145,27 @@ function pagespeed_customize( $wp_customize ) {
 		)
 	);
 
-
 	$wp_customize->add_setting( 'site_width', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '1260px',
+		'transport'         => 'postMessage',
 
 	) );
 	$wp_customize->add_setting( 'main_width', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => 56,
+		'transport'         => 'postMessage',
 
 	) );
 	$wp_customize->add_setting( 'left_sidebar_width', array(
 		'sanitize_callback' => 'helium_float',
 		'default'           => '18.75',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_setting( 'enable_card_style_widgets_sb', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => true,
+		'transport'         => 'postMessage',
 	) );
 
 
@@ -183,7 +185,6 @@ function pagespeed_customize( $wp_customize ) {
 		'type'        => 'number',
 		'priority'    => 20,
 		'input_attrs' => array( 'min' => 40, 'max' => 100 )
-
 	) );
 	$wp_customize->add_control( 'left_sidebar_width', array(
 		'label'       => __( 'Left sidebar width', 'page-speed' ),

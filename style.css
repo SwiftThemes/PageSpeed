@@ -1,15 +1,15 @@
 /*
-Theme Name: Page Speed
+Theme Name: Page Speed Pro
 Theme URI: https://swiftthemes.com/getting-started-pagespeed/
 Author: Satish Gandham
 Author URI: https://satishgandham.com/
 Description: PageSpeed is a super lite, powerful, responsive and search engine optimized (SEO) fast loading free WordPress theme, that will transform your business and put you ahead of the competition. Whether you are building a business site, a WooCommerce store, a personal blog, a professional blog, a PBN or a niche site, Page Speed free responsive WordPress theme with its support for page builders like elementor, beaver, is perfect for anything you want to build.
-Version: 0.52
+Version: 1.08
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-colors, custom-menu, custom-logo, featured-images, microformats, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, footer-widgets, full-width-template
 Text Domain: page-speed
-
+Details URI: http://swiftthemes.com/changelog/page-speed.html
 
 Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
@@ -34,5 +34,8 @@ Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 Required classes for WordPress
 Their actual rules are in assets/src/post-page.scss, assets/src/af-generic-classes.scss
 */
-.wp-caption{}
-.wp-caption-text{}
+.wp-caption {
+}
+
+.wp-caption-text {
+}

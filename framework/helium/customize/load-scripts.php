@@ -28,9 +28,20 @@ add_action( 'customize_controls_print_footer_scripts', 'helium_customizer_script
 //Notes
 //add_action( 'customize_controls_enqueue_scripts', 'theme_customize_style' );
 
-function helium_customizer_scripts(){
+function helium_customizer_scripts() {
 	wp_enqueue_script( 'wp-util' );
-	wp_enqueue_script( 'jquery-ui-autocomplete' ,array('jquery'));
-	wp_enqueue_script('helium-customizer-scripts', HELIUM_ADMIN_ASSETS_URI . 'js/customizer.js',array('jquery-ui-autocomplete'));
+	wp_enqueue_script( 'jquery-ui-autocomplete', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery-ui-slider', array( 'jquery' ) );
+	wp_enqueue_script( 'helium-customizer-scripts', HELIUM_ADMIN_ASSETS_URI . 'js/customizer.js', array(
+		'jquery',
+		'jquery-ui-autocomplete',
+		'jquery-ui-slider'
+	) );
+}
+
+add_action( 'customize_preview_init', 'helium_customizer_refresh_scripts' );
+function helium_customizer_refresh_scripts() {
+
+	wp_enqueue_script( 'helium-customizer-reload-css', HELIUM_ADMIN_ASSETS_URI . 'js/reload-css.js', array(), '' );
 
 }

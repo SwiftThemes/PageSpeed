@@ -39,7 +39,7 @@ function helium_drag_drop_control_register( $wp_customize ) {
 	class Helium_Customize_Control_Drag_Drop extends WP_Customize_Control {
 
 		public $type = 'he_drag_drop';
-		public $booom;
+		public $sortables;
 
 
 		public function to_json() {

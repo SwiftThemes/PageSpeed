@@ -5,6 +5,7 @@
     'use strict';
     GLOBAL = {}
     GLOBAL.DESKTOP_WIDTH = 1160;
+    GLOBAL.MOBILE_WIDTH = 800;
     GLOBAL.hasSideMenu = false
     $(document).ready(function () {
         setSidebarHeights()
@@ -64,8 +65,13 @@
             if ($('body').hasClass('menu-open')) {
                 return
             }
+            if($("#search-field").is(":focus")){
+                console.log('#search-field is in focus, retunring.')
+                return
+            }
             $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container-sticky-wrapper.is-sticky').css({'opacity': 0})
-        }, 2000)
+        }, 3000)
+
     }, 1000)
 
     /**
@@ -81,7 +87,7 @@
     }
 
     function isMobile() {
-        if (window.innerWidth <= 800) {
+        if (window.innerWidth <= GLOBAL.MOBILE_WIDTH) {
             return true
         } else {
             return false
@@ -235,5 +241,4 @@
             }
         }
     }
-
 })(jQuery);
