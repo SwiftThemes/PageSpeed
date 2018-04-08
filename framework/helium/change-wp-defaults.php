@@ -30,3 +30,9 @@ if ( ! function_exists( 'helium_move_comment_field_to_bottom' ) ) {
 	}
 }
 
+
+add_filter('embed_oembed_html', 'helium_wrap_embed_with_div', 10, 3);
+
+function helium_wrap_embed_with_div($html, $url, $attr) {
+	return '<div class="embed-wrap">'.$html.'</div>';
+}

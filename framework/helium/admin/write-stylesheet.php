@@ -363,8 +363,17 @@ class Helium_Styles {
 		if ( $temp['enable'] ) {
 			$hand_picked_colors .= '$footer-bg:' . $temp['bg_start'] . ';';
 			$hand_picked_colors .= '$footer-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$footer-widget-title-color:' . $temp['text_color'] . ';';
 			$hand_picked_colors .= '$footer-widget-color:' . $temp['text_color'] . ';';
 			$hand_picked_colors .= '$footer-widget-link-color:' . $temp['link_color'] . ';';
+		}
+
+		$temp = get_theme_mod( 'copyright_colors' );
+		$temp = wp_parse_args( $temp, $defaults );
+		if ( $temp['enable'] ) {
+			$hand_picked_colors .= '$copyright-bg:' . $temp['bg_start'] . ';';
+			$hand_picked_colors .= '$copyright-color:' . $temp['text_color'] . ';';
+			$hand_picked_colors .= '$copyright-link-color:' . $temp['link_color'] . ';';
 		}
 
 

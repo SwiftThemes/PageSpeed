@@ -123,6 +123,13 @@ $footer-widget-bg: transparent;
 $footer-widget-color: $light-3;
 $footer-widget-link-color: $light-1;
 
+// Copyright colors
+
+$copyright-bg: darken($footer-bg, .025);;
+$copyright-color: $light-3;
+$copyright-link-color: $light-1;
+
+
 @if ($is_sleek_header == 1) {
   $primary-nav-bg: $dark-2
 }

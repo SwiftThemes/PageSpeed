@@ -13,13 +13,13 @@
 }
 
 #copyright-container {
-  background: darken($footer-bg, .025);
+  background: $copyright-bg;
   font-family: $headings-font-stack;
   font-size: .8em;
   font-weight: 300;
-  color: $light-3;
+  color: $copyright-color;
   a {
-    color: $light-1;
+    color: $copyright-link-color;
     text-decoration: none;
   }
   a:hover {
