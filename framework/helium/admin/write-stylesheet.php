@@ -241,17 +241,18 @@ class Helium_Styles {
 		$temp = '';
 		global $pagespeed_gradient_bgs;
 
-		foreach ( $pagespeed_gradient_bgs as $value ) {
+		$defaults = array(
+			'enable'             => 0,
+			'text_color'         => '$dark-3',
+			'link_color'         => '$primary',
+			'bg_start'           => '#fff',
+			'is_gradient'        => 0,
+			'bg_end'             => '#fff',
+			'gradient_direction' => 'to top',
+		);
 
-			$defaults = array(
-				'enable'             => 0,
-				'text_color'         => '$dark-3',
-				'link_color'         => '$primary',
-				'bg_start'           => '#fff',
-				'is_gradient'        => 0,
-				'bg_end'             => '#fff',
-				'gradient_direction' => 'to top',
-			);
+		// Individual gradients
+		foreach ( $pagespeed_gradient_bgs as $value ) {
 			$val      = wp_parse_args( get_theme_mod( $value ), $defaults );
 			if ( $val['enable'] ) {
 				$temp .= '$' . $value . '_enable:' . $val['enable'] . ';';

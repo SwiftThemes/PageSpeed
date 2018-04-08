@@ -181,7 +181,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'hide_breadcrumbs_on_post', array(
-		'label'   => __( 'Hide breadcrumbs on single post. Breadcrumbs add SEO value to the page, disable them only if you know what you are doing.', 'post-speed' ),
+		'label'   => __( 'Hide breadcrumbs on single post. Breadcrumbs add SEO value to the page, disable them only if you know what you are doing.', 'page-speed' ),
 		'section' => 'single_post_design',
 		'type'    => 'checkbox',
 	) );

@@ -24,13 +24,11 @@ get_header();
 
 <?php
 $curauth     = get_userdata( intval( $author ) );
-$author_name = $curauth->display_name;
-
 ?>
 <div id="archive-info" class="clearfix" style="margin-top: 20px">
     <div class="archive-title reset">
         <span class="normal"><?php _e( 'About', 'page-speed' ) ?> </span>
-		<?php echo $author_name; ?>
+		<?php echo $curauth->display_name;; ?>
     </div>
     <div class="alignleft author-avatar"><?php echo get_avatar( $curauth->user_email, 90 ); ?>
     </div>
