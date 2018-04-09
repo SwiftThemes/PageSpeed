@@ -3,6 +3,7 @@
 ### Changed
 - Fix footer and copyright colors not working.
 - Add couple of helper classes for forms.
+- Do not auto hide navigation when user is hovering over it.
 
 ## [1.08] - 07-04-2018
 

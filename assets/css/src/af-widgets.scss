@@ -57,6 +57,9 @@
   .widget a {
     color: $footer-widget-link-color;
   }
+  .widget a:hover {
+    color: $primary;
+  }
 }
 
 @if ($sb_widget_cards == 1) {

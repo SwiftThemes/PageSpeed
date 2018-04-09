@@ -70,7 +70,10 @@ article {
 .circle, .round {
   @include border-radius(50%)
 }
+.sharp{
+  @include border-radius(0)
 
+}
 
 .emoji{
   width: 1em;

@@ -46,7 +46,7 @@ gulp.task('watch', function () {
 var project = 'page-speed', // Project name, used for build zip.
     url = 'neat.dev', // Local Development URL for BrowserSync. Change as-needed.
     bower = './assets/bower_components/'; // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
-build = '../buildtheme/page-speed/' // Files that you want to package into a zip go here
+build = '/Users/satish/Work/Development/can-delete/buildtheme/page-speed/' // Files that you want to package into a zip go here
 buildInclude = [
     // include common file types
     '**/*.php',
@@ -335,10 +335,10 @@ gulp.task('buildImages', function () {
  */
 gulp.task('buildZip', function () {
     // return 	gulp.src([build+'/**/', './.jshintrc','./.bowerrc','./.gitignore' ])
-    return gulp.src(build + '/**/', {base: '../buildtheme/'})
+    return gulp.src(build + '/**/', {base: '/Users/satish/Work/Development/can-delete/buildtheme/'})
         .pipe(zip(project + '.zip'))
-        .pipe(gulp.dest('../'))
-        .pipe(gulp.dest('/Users/satish/Dropbox/Public/'))
+        .pipe(gulp.dest('/Users/satish/Desktop'))
+        // .pipe(gulp.dest('/Users/satish/Dropbox/Public/'))
         .pipe(notify({message: 'Zip task complete', onLast: true}));
 });
 
