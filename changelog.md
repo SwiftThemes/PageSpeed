@@ -1,9 +1,12 @@
-## [1.10] - 08-04-2018
+## [1.10] - 09-04-2018
 
 ### Changed
 - Fix footer and copyright colors not working.
 - Add couple of helper classes for forms.
 - Do not auto hide navigation when user is hovering over it.
+
+### Added
+- Add two page templates for use with WooCommerce
 
 ## [1.08] - 07-04-2018
 

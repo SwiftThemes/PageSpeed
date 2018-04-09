@@ -101,9 +101,16 @@ buildIncludeOrg = [
     // exclude files and folders
     '!framework/helium/{pro,pro/**}',
     '!inc/{pro,pro/**}',
+    'tpl-airy-img.php',
+    'tpl-airy.php',
+    'tpl-full-width.php',
+    'tpl-landing.php',
+    'tpl-lsb.php',
+    'tpl-rsb.php',
+    'tpl-woo-lsb.php',
+    'tpl-woo-rsb.php',
 
-    // '!framework/helium/pro/bootstrap.php',
-    // '!framework/helium/pro/functions-styles.php',
+
     '!assets/images/customize/color-schemes/color_schemes.psd',
     '!node_modules/**/*',
     '!buildtheme/**/*',
