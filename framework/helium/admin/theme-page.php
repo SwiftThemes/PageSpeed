@@ -23,7 +23,7 @@ function helium_theme_options_display() {
 
         <div class="tabs-container" id="tabs">
             <ul>
-                <li><a href="#tabs-1"><?php _e( 'About', 'page-speed' ) ?></a></li>
+                <li><a href="#tabs-1"><?php _e( 'Getting Started', 'page-speed' ) ?></a></li>
                 <li><a href="#tabs-2"><?php _e( 'Theme Options', 'page-speed' ) ?></a></li>
                 <li><a href="#tabs-3"><?php _e( 'Tools', 'page-speed' ) ?></a></li>
                 <li><a href="#tabs-4"><?php _e( 'Activation', 'page-speed' ) ?></a></li>

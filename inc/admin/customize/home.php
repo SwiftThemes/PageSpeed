@@ -12,7 +12,7 @@ function pagespeed_is_slider_enabled() {
 
 add_action( 'customize_register', 'pagespeed_customize_home', 600 );
 function pagespeed_customize_home( $wp_customize ) {
-	if ( NNS_URI ) {
+	if ( defined( 'NNS_URI' ) ) {
 
 
 		$wp_customize->add_setting( 'show_slider_on_homepage', array(
