@@ -6,7 +6,7 @@
  * Time: 4:19 PM
  */
 
-add_action( 'wp_enqueue_scripts', 'helium_enqueue_styles', 9 );
+add_action( 'wp_enqueue_scripts', 'helium_enqueue_styles', -999 );
 
 function helium_enqueue_styles() {
 	if ( get_theme_mod( 'enable_non_render_blocking_css', false ) ) {

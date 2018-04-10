@@ -13,7 +13,8 @@ textarea {
 }
 
 textarea {
-  min-height: 100px
+  min-height: 100px;
+  max-width: 100%;
 }
 
 input[type="image"],

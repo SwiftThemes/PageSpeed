@@ -110,6 +110,10 @@ buildIncludeOrg = [
     'tpl-woo-lsb.php',
     'tpl-woo-rsb.php',
 
+    'author.php',
+    'category.php',
+    'tag.php',
+
 
     '!assets/images/customize/color-schemes/color_schemes.psd',
     '!node_modules/**/*',

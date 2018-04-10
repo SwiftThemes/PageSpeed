@@ -1,4 +1,4 @@
-body {
+body  {
   .he-btn, .button, .btn, a.btn {
     padding: 6px 8px;
     color: rgba($button-color, 1);
@@ -113,7 +113,8 @@ body .he-btn.outline:hover {
 /* Colors */
 .he-btn.red,
 .he-btn.red.outline:hover{
-  @include gradient(top,#ff5e3a, #ff2a68)
+  @include gradient(top, #ef473a,#cb2d3e)
+  //@include gradient(top,#f00000, #cb2d3e)
 }
 
 .he-btn.orange,
@@ -123,7 +124,7 @@ body .he-btn.outline:hover {
 
 .he-btn.yellow,
 .he-btn.yellow.outline:hover {
-  @include gradient(top,#ffdb4c, #ffcd02)
+  @include gradient(top,#fff200, #ffcd02)
 }
 
 .he-btn.green,
@@ -151,7 +152,8 @@ body .he-btn.outline:hover {
 .he-btn.grey.outline:hover,
 .he-btn.gray.outline:hover,
 .he-btn.silver.outline:hover{
-  @include gradient(top,#dbddde, #898c90)
+  @include gradient(top,#f4f4f4, #dee1e1);
+  color:#333!important;
 }
 
 .he-btn.purple,

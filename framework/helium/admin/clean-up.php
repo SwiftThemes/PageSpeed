@@ -17,6 +17,7 @@ function helium_theme_cleanup() {
 	delete_transient( $prefix . 'sass_combined_af' );
 	delete_transient( $prefix . 'sass_error' );
 
+	return;
 	//Delete stylesheet
 	require_once( ABSPATH . 'wp-admin/includes/file.php' );
 	WP_Filesystem();

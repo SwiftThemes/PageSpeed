@@ -37,7 +37,7 @@ var runSequence = require('gulp-run-sequence');
 gulp.task('deploy', function () {
 
     // Dirs and Files to sync
-    rsyncPaths = ['/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/page-speed/'];
+    rsyncPaths = ['/Users/satish/Work/Development/can-delete/buildtheme/page-speed/'];
 
     // Default options for rsync
     rsyncConf = {
@@ -50,7 +50,7 @@ gulp.task('deploy', function () {
         exclude: [],
         port: 1122
     };
-    rsyncConf.root = '/Users/satish/Work/Development/htdocs/helium/wp-content/themes/buildtheme/page-speed/';
+    rsyncConf.root = '/Users/satish/Work/Development/can-delete/buildtheme/page-speed/';
     rsyncConf.hostname = '172.93.98.50'; // hostname
 
 

@@ -6,6 +6,9 @@
  * Time: 10:49 PM
  */
 
+function pagespeed_is_slider_enabled() {
+	return get_theme_mod( 'show_slider_on_homepage', false );
+}
 
 add_action( 'customize_register', 'pagespeed_customize_home', 600 );
 function pagespeed_customize_home( $wp_customize ) {
@@ -19,7 +22,6 @@ function pagespeed_customize_home( $wp_customize ) {
 
 		$wp_customize->add_control( 'show_slider_on_homepage', array(
 			'label'    => __( 'Show slider on home page', 'page-speed' ),
-//			'description' => __( 'Create separate sidebars for home page.', 'page-speed' ),
 			'section'  => 'home_page_design',
 			'type'     => 'checkbox',
 			'priority' => 10,
@@ -40,9 +42,7 @@ function pagespeed_customize_home( $wp_customize ) {
 					'label'           => esc_html__( 'Slider Categories', 'page-speed' ),
 					'section'         => 'home_page_design',
 					'priority'        => 10,
-					'active_callback' => function () {
-						return get_theme_mod( 'show_slider_on_homepage', false );
-					},
+					'active_callback' => 'pagespeed_is_slider_enabled',
 				)
 			)
 		);
@@ -60,12 +60,9 @@ function pagespeed_customize_home( $wp_customize ) {
 			'section'         => 'home_page_design',
 			'type'            => 'number',
 			'priority'        => 10,
-			'active_callback' => function () {
-				return get_theme_mod( 'show_slider_on_homepage', false );
-			},
+			'active_callback' => 'pagespeed_is_slider_enabled',
 			'input_attrs'     => array( 'min' => 1, 'max' => 20 )
 		) );
-
 
 
 		$wp_customize->add_setting( 'home_slider_height', array(
@@ -80,9 +77,7 @@ function pagespeed_customize_home( $wp_customize ) {
 			'section'         => 'home_page_design',
 			'type'            => 'number',
 			'priority'        => 10,
-			'active_callback' => function () {
-				return get_theme_mod( 'show_slider_on_homepage', false );
-			},
+			'active_callback' => 'pagespeed_is_slider_enabled',
 			'input_attrs'     => array( 'min' => 300, 'max' => 1000 )
 		) );
 
