@@ -40,9 +40,9 @@ function helium_theme_options_display() {
         <div class="tabs-container" id="tabs">
             <ul>
                 <li><a href="#tabs-1"><?php _e( 'Getting Started', 'page-speed' ) ?></a></li>
-				<?php if ( defined( 'HELIUM_PRO' ) ) { ?>
+                <li><a href="#tabs-3"><?php _e( 'Tools', 'page-speed' ) ?></a></li>
+                <?php if ( defined( 'HELIUM_PRO' ) ) { ?>
                     <li><a href="#tabs-2"><?php _e( 'Theme Options', 'page-speed' ) ?></a></li>
-                    <li><a href="#tabs-3"><?php _e( 'Tools', 'page-speed' ) ?></a></li>
                     <li><a href="#tabs-4"><?php _e( 'Activation', 'page-speed' ) ?></a></li>
 				<?php } else { ?>
                     <li><a href="#tabs-5"><?php _e( 'Pro vs Free', 'page-speed' ) ?></a></li>
@@ -51,6 +51,9 @@ function helium_theme_options_display() {
 
             <div id="tabs-1">
 				<?php pagespeed_about() ?>
+            </div>
+            <div id="tabs-3">
+		        <?php helium_tools() ?>
             </div>
 			<?php if ( defined( 'HELIUM_PRO' ) ) { ?>
                 <div id="tabs-2">
@@ -75,9 +78,7 @@ function helium_theme_options_display() {
                     </form>
 
                 </div>
-                <div id="tabs-3">
-					<?php helium_tools() ?>
-                </div>
+
                 <div id="tabs-4">
 					<?php helium_render_license_form() ?>
                 </div>

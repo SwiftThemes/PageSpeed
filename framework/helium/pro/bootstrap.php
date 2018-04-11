@@ -8,7 +8,6 @@
 
 require_once 'functions-styles.php';
 require_once 'admin-render-theme-options.php';
-require_once( 'helium-tools.php' );
 
 
 //@todo move below code to a better place.
