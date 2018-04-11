@@ -9,24 +9,6 @@ function pagespeed_about() {
 	?>
     <div class="about">
 		<?php echo sprintf( '
-  
-        <h2>%s :-)</h2>
-        %s',
-			__( 'A BIG Thank You', 'page-speed' ),
-			__( 'First off, a big thank you for choosing Page Speed amongst the thousands of theme options available to
-        you.<br>
-        We hope you find Page Speed useful and easy to use. If you have any <strong>ideas/questions/problems</strong>, please don\'t hesitate to ask/share on the <a
-                href="https://forums.swiftthemes.com/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic">SUPPORT FORUM</a>
-        or shoot an email to <a href="mailto:satish@swiftthemes.com?Subject=Question%20about%20PageSpeed"
-                                target="_top"><strong>satish@SwiftThemes.com</strong></a>. 
-                                It\'s always a pleasure to hear from you and we take your feedback very seriously. <br /><br />
-        If you like the theme, please recommend it to your peers and <a
-                href="https://wordpress.org/support/theme/page-speed/reviews/#new-post" target="_blank">REVIEW IT</a> on
-        WordPress.Org', 'page-speed' )
-
-		)
-		?>
-		<?php echo sprintf( '
 
         <h2>%s</h2>
         %s',

@@ -1,3 +1,28 @@
+.theme-options {
+    background: #FFF;
+    padding: 40px;
+    border: solid 1px #DDD
+}
+
+.greet {
+    font-size: 16px;
+    line-height: 1.6em;
+    max-width: 960px
+}
+
+.greet h3 {
+    color: #999;
+    font-weight: normal;
+    margin: 0;
+    text-transform: capitalize
+}
+
+.greet h1 {
+    font-weight: bold;
+    font-size: 48px;
+    padding: 20px 0
+}
+
 #tabs {
     max-width: 960px
 }
@@ -22,13 +47,15 @@
     border: solid 1px #CCC;
     border-width: 1px 1px 0;
     display: inline-block;
+    background: #F1F1F1;
+
 }
 
 .ui-tabs-active a {
     padding-bottom: 11px;
     margin-bottom: -1px;
     z-index: 3;
-    background: #f1f1f1;
+    background: #FFF;
 }
 
 .ui-tabs-panel {
@@ -54,15 +81,13 @@
     letter-spacing: -3px;
 }
 
-#helium_theme_options .option:nth-child(2n) {
-    background: #f1f2f5;
+#helium_theme_options .option:nth-child(2n+1) {
+    background: #f8f8f8;
 }
 
 #helium-options-footer {
     padding: 10px;
-    background: red;
     margin: 10px -10px -10px;
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 .options-status {
@@ -167,6 +192,90 @@
 
 .he-warning {
     color: orange
+}
+
+table {
+    empty-cells: show;
+    border: 1px solid #DDD;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+table caption {
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center
+}
+
+th {
+    font-size: 18px !important;
+    text-align: center !important;
+}
+
+td, th {
+    border-left: 1px solid #DDD;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 16px 10px;
+
+}
+
+td.pad {
+    padding: .5em 1em
+}
+
+table thead, table th, table tfoot {
+    background-color: #EEE;
+    text-align: left;
+    vertical-align: bottom
+}
+
+table td {
+    background-color: transparent;
+    border-bottom: 1px solid #DDD
+
+}
+
+table tr:nth-child(2n) td {
+    background-color: #F6F6F6
+}
+
+.pure-table-bordered td {
+    border-bottom: 1px solid #DDD
+}
+
+table tbody > tr:last-child > td {
+    border-bottom-width: 0
+}
+
+table td, table th {
+    border-bottom: 1px solid #DDD
+}
+
+table tbody > tr:last-child > td {
+    border-bottom-width: 0
+}
+
+.tg .dashicons {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    background: #24B24B;
+    color: #FFF;
+}
+
+.tg .dashicons-no {
+    background: #FA2337;
+}
+
+.tg tr  td:first-child {
+    text-align: left;
 }
 
 /**/
