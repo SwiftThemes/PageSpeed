@@ -3,7 +3,7 @@ $page_speed_color_schemes = array();
 GLOBAL $page_speed_color_schemes;
 
 
-$page_speed_color_schemes['default']      = array(
+$page_speed_color_schemes['default']   = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -42,7 +42,7 @@ $page_speed_color_schemes['default']      = array(
 	'sb-widget-bg'           => '',
 
 );
-$page_speed_color_schemes['Denim']         = array(
+$page_speed_color_schemes['Denim']     = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -138,7 +138,7 @@ $page_speed_color_schemes['Goldfinch'] = array(
 	'saturation'             => 12
 
 );
-$page_speed_color_schemes['Fuchsia']      = array(
+$page_speed_color_schemes['Fuchsia']   = array(
 	//Generic colors
 	'body-color'       => '',
 	'link-color'       => '',
@@ -229,19 +229,17 @@ $page_speed_color_schemes['Amaranth'] = array(
 	'sb-widget-border-color' => '',
 	'sb-widget-bg'           => '',
 
-	'footer-widget-title-color'=> '$light-3',
-
+	'footer-widget-title-color' => '$light-3',
 
 
 	//Important vars
-	'primary'                => '#eb5055',
-	'hue'                    => 'hue(#353a4a)',
-	'saturation'             => 33
+	'primary'                   => '#eb5055',
+	'hue'                       => 'hue(#353a4a)',
+	'saturation'                => 33
 
 
 );
-$page_speed_color_schemes['Vanilla'] = array(
-
+$page_speed_color_schemes['Vanilla']  = array(
 
 
 	//Generic colors
@@ -281,17 +279,72 @@ $page_speed_color_schemes['Vanilla'] = array(
 	'sb-widget-border-color' => '',
 	'sb-widget-bg'           => '$light-1',
 
-	'footer-widget-title-color'=> '',
-
+	'footer-widget-title-color' => '',
 
 
 //Important vars
-	'primary'                => '#ED0E11',
+	'primary'                   => '#ED0E11',
 //	'primary'                => '#025FFF',
-	'hue'                    => '30',
-	'saturation'             => 66,
+	'hue'                       => '30',
+	'saturation'                => 66,
 
 );
+
+$page_speed_color_schemes['Canvas'] = array(
+
+
+	//Generic colors
+	'body-color' => '$dark-2',
+	'link-color' => '',
+	'meta-color' => '',
+
+	'button-bg'              => '',
+	'button-color'           => '',
+	'wp-caption-text-color'  => '',
+
+	// Layout colors
+	'body-bg'                => '#FFF',
+	'wrapper-bg'             => 'transparent',
+	'content-bg'             => 'transparent',
+	'main-bg'                => 'transparent',
+	'sb1-bg'                 => 'transparent',
+	'sb2-bg'                 => 'transparent',
+	'footer-bg'              => '',
+	'footer-color'           => '',
+
+	// Header Colors
+	'header-bg'              => 'transparent',
+	'sticky-header-bg'       => '',
+	'site-title-color'       => '',
+	'site-description-color' => '',
+
+	// Navigation Colors
+	'primary-nav-bg'         => '$primary',
+	'primary-nav-color'      => '$light-1',
+	'secondary-nav-bg'       => '',
+	'secondary-nav-color'    => '',
+
+	// Sidebar Widgets
+	'sb-widget-title-color'  => '',
+	'sb-widget-title-bg'     => 'transparent',
+	'sb-widget-border-color' => 'transparent',
+	'sb-widget-bg'           => 'transparent',
+
+	'footer-widget-title-color' => '',
+
+
+//Important vars
+//	'primary'                => '#08b83a',
+	'primary'                   => '#11b836',
+//	'primary'                => '#025FFF',
+	'hue'                       => '0',
+	'saturation'                => 0,
+
+);
+
+if ( ! defined( 'HELIUM_PRO' ) || ! HELIUM_PRO ) {
+	unset( $page_speed_color_schemes['Canvas'] );
+}
 
 function pagespeed_get_color_scheme_choices() {
 	GLOBAL $page_speed_color_schemes;
@@ -302,5 +355,6 @@ function pagespeed_get_color_scheme_choices() {
 			'label' => $key
 		);
 	}
+
 	return $choices;
 }

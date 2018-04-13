@@ -27,7 +27,7 @@ if ( ! function_exists( 'pagespeed_site_branding' ) ) {
 					);
 
 				elseif ( get_theme_mod( 'custom_logo' ) ):
-					the_custom_logo();
+					echo helium_custom_logo();
 				else:
 					?>
 					<?php if ( is_front_page() && is_home() ) : ?>
@@ -69,4 +69,68 @@ function pagespeed_add_menu_icon() {
 				</svg>
 	</div>
 	<?php
+}
+
+
+function helium_custom_logo($blog_id = 0){
+	$html = '';
+	$switched_blog = false;
+
+	if ( is_multisite() && ! empty( $blog_id ) && (int) $blog_id !== get_current_blog_id() ) {
+		switch_to_blog( $blog_id );
+		$switched_blog = true;
+	}
+
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$home_link = get_theme_mod('logo_link',false)?esc_url(get_theme_mod('logo_link')):esc_url( home_url( '/' ) );
+
+	// We have a logo. Logo is go.
+	if ( $custom_logo_id ) {
+		$custom_logo_attr = array(
+			'class'    => 'custom-logo',
+			'itemprop' => 'logo',
+		);
+
+
+		/*
+		 * If the logo alt attribute is empty, get the site title and explicitly
+		 * pass it to the attributes used by wp_get_attachment_image().
+		 */
+		$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+		if ( empty( $image_alt ) ) {
+			$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
+		}
+
+		/*
+		 * If the alt attribute is not empty, there's no need to explicitly pass
+		 * it because wp_get_attachment_image() already adds the alt attribute.
+		 */
+		$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="%2$s" itemprop="url">%3$s</a>',
+			$home_link,
+			get_bloginfo( 'description', 'display' ),
+			wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
+		);
+	}
+
+	// If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
+    elseif ( is_customize_preview() ) {
+		$html = sprintf( '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
+			$home_link
+		);
+	}
+
+	if ( $switched_blog ) {
+		restore_current_blog();
+	}
+
+	/**
+	 * Filters the custom logo output.
+	 *
+	 * @since 4.5.0
+	 * @since 4.6.0 Added the `$blog_id` parameter.
+	 *
+	 * @param string $html    Custom logo HTML output.
+	 * @param int    $blog_id ID of the blog to get the custom logo for.
+	 */
+	return apply_filters( 'get_custom_logo', $html, $blog_id );
 }

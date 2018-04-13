@@ -1,3 +1,12 @@
+## [1.16] - 13-04-2018
+
+### Changed
+- Fix slider showing up on internal pages
+
+### Added
+- New Canvas color scheme a very flexible color scheme that give you a clean canvas to customize the colors from scratch.
+- Option to link the logo to a custom link
+
 ## [1.14] - 12-04-2018
 
 ### Changed
