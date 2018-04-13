@@ -146,6 +146,11 @@ function helium_pro_vs_free() {
             <td class="tg-yw4l"><span class="dashicons dashicons-yes"></span></td>
         </tr>
         <tr>
+            <td class="tg-yw4l">Search form in header</td>
+            <td class="tg-yw4l"><span class="dashicons dashicons-no"></span></td>
+            <td class="tg-yw4l"><span class="dashicons dashicons-yes"></span></td>
+        </tr>
+        <tr>
             <td class="tg-yw4l">More Color Schemes</td>
             <td class="tg-yw4l"><span class="dashicons dashicons-no"></span></td>
             <td class="tg-yw4l"><span class="dashicons dashicons-yes"></span></td>

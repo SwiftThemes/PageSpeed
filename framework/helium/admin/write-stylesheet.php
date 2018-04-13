@@ -95,7 +95,7 @@ class Helium_Styles {
 				if ( preg_match( '/".+"/', $file, $matches ) ) {
 					$file_name = $file = str_replace( '"', '', $matches[0] );
 					$file      = HELIUM_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
-					if ( in_array( $file_name, $this->scss_variable_files ) ) {
+					if ( 1 || in_array( $file_name, $this->scss_variable_files ) ) {
 						if ( $wp_filesystem->is_file( HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss' ) ) {
 							$file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
 						}

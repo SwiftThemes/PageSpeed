@@ -1,3 +1,14 @@
+## [1.14] - 12-04-2018
+
+### Changed
+- Fix an issue with instagram social media icon.
+- Let child theme override scss files.
+- Use up_head for critical css
+## [1.12] - 11-04-2018
+
+### Changed
+- Refine options page styling.
+
 ## [1.10] - 09-04-2018
 
 ### Changed

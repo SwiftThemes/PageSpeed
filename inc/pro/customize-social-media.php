@@ -101,13 +101,13 @@ function pagespeed_customize_social_media( $wp_customize ) {
 	) );
 
 
-	$wp_customize->add_setting( 'instagaram', array(
+	$wp_customize->add_setting( 'instagram', array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => '',
 
 	) );
 
-	$wp_customize->add_control( 'instagaram', array(
+	$wp_customize->add_control( 'instagram', array(
 		'label'           => 'Instagram',
 		'description'     => __( 'Enter full url to your Instagram profile.', 'page-speed' ),
 		'section'         => 'social_media',
