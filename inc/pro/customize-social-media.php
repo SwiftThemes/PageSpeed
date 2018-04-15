@@ -50,6 +50,39 @@ function pagespeed_customize_social_media( $wp_customize ) {
 	);
 
 
+	$wp_customize->add_setting( 'social_media_personal_or_business', array(
+		'sanitize_callback' => 'sanitize_text_field',
+		'default'           => 'Person',
+	) );
+
+	$wp_customize->add_control(
+		'social_media_personal_or_business',
+		array(
+			'label'   => __( 'Are the social media link below belong to a person or organization?', 'mytheme' ),
+			'section' => 'social_media',
+			'type'    => 'select',
+			'choices' => array(
+				'Person'     => 'Person',
+				'Organization' => 'Business/Organization',
+			),
+		)
+	);
+
+	$wp_customize->add_setting( 'webiste_url', array(
+		'sanitize_callback' => 'esc_url',
+		'default'           => '',
+
+	) );
+
+	$wp_customize->add_control( 'webiste_url', array(
+		'label'       => 'Website url',
+		'description' => __( 'If your blog is separate from main website, enter your main website url here.', 'page-speed' ),
+		'section'     => 'social_media',
+		'type'        => 'url',
+		'transport'   => 'postMessage'
+	) );
+
+
 	$wp_customize->add_setting( 'facebook', array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => '',
