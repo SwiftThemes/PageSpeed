@@ -1,0 +1,17 @@
+blockquote {
+  position: relative;
+  padding: 1em 1.5em;
+  font-size: 1.25em;
+  line-height: 1.25;
+}
+
+blockquote:before {
+  content: 'J';
+  font-family: 'swift-icons';
+  display: inline-block;
+  position: absolute;
+  color: rgba($primary, .8);
+  top: 0;
+  left: 0;
+  transform: rotate(-175deg);
+}

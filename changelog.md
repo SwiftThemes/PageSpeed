@@ -5,6 +5,7 @@
   ref https://developers.google.com/search/docs/data-types/social-profile
 - Logo markup for business and professional blogs.
 - Add telephone to social media icons.
+- Add icon to blockquote
 
 ## [1.16] - 13-04-2018
 
