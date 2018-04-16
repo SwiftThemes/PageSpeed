@@ -4,6 +4,7 @@
 - Structured data for social media icons. When people search for you or you company, you social media profiles will be displayed in knowledge panel
   ref https://developers.google.com/search/docs/data-types/social-profile
 - Logo markup for business and professional blogs.
+- Add telephone to social media icons.
 
 ## [1.16] - 13-04-2018
 

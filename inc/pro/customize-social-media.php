@@ -44,6 +44,7 @@ function pagespeed_customize_social_media( $wp_customize ) {
 					array( 'key' => 'reddit', 'value' => 'Reddit' ),
 					array( 'key' => 'github', 'value' => 'Github' ),
 					array( 'key' => 'quora', 'value' => 'Quora' ),
+					array( 'key' => 'telephone', 'value' => 'Telephone' ),
 				)
 			)
 		)
@@ -297,6 +298,22 @@ function pagespeed_customize_social_media( $wp_customize ) {
 		'type'            => 'url',
 		'active_callback' => function () {
 			return ( array_search( 'reddit', get_theme_mod( 'social_media_order_nav', array() ) ) !== false );
+		},
+	) );
+
+	$wp_customize->add_setting( 'telephone', array(
+		'sanitize_callback' => 'sanitize_text_field',
+		'default'           => '',
+
+	) );
+
+	$wp_customize->add_control( 'telephone', array(
+		'label'           => 'telephone',
+		'description'     => __( 'Enter your business phone number.', 'page-speed' ),
+		'section'         => 'social_media',
+		'type'            => 'url',
+		'active_callback' => function () {
+			return ( array_search( 'telephone', get_theme_mod( 'social_media_order_nav', array() ) ) !== false );
 		},
 	) );
 

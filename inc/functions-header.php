@@ -13,12 +13,14 @@ if ( ! function_exists( 'pagespeed_site_branding' ) ) {
 	function pagespeed_site_branding() {
 		global $helium;
 		if ( get_theme_mod( 'social_media_personal_or_business', 'Person' ) === 'Organization' ) {
-			$schema = 'itemscope itemtype=http://schema.org/Organization';
-		}
+			$schema = 'itemscope itemtype="http://schema.org/Organization"';
+		}else{
+			$schema='';
+        }
 
 		?>
         <header id="site-header" role="banner" class="cf">
-            <div id="site-branding" "<?php echo $schema ?>">
+            <div id="site-branding" <?php echo $schema ?>>
 				<?php
 				// If
 				if ( $helium->is_mobile() && get_theme_mod( 'mobile_logo' ) ):

@@ -20,18 +20,22 @@ function pagespeed_nav_social_media() {
 		return;
 	}
 	$item_type = 'http://schema.org/' . get_theme_mod( 'social_media_personal_or_business', 'Person' );
-	$main_url = get_theme_mod('webiste_url',esc_url( home_url( '/' ) ));
-    ?>
-    <div id="nav-social-media" class="cf nav alignright" >
+	$main_url  = get_theme_mod( 'webiste_url', esc_url( home_url( '/' ) ) );
+	?>
+    <div id="nav-social-media" class="cf nav alignright">
         <span itemscope itemtype="<?php echo $item_type ?>">
-        <link itemprop="url" href="<?php echo $main_url?>">
+        <link itemprop="url" href="<?php echo $main_url ?>">
 
         <ul class="menu">
 			<?php
 			foreach (
 				get_theme_mod( 'social_media_order_nav', array() ) as $link
 			) {
-				echo '<li><a  itemprop="sameAs" href="' . get_theme_mod( $link, '#' ) . '" class="' . $link . '"><span class="icon he-' . $link . '"></span></a></li>';
+			    if('telephone' == $link){
+				    echo '<li><a  itemprop="sameAs" href="tel:' . get_theme_mod( $link, '#' ) . '" class="' . $link . '" title="Call '.get_theme_mod( $link, '#' ).'"><span class="icon he-' . $link . '"></span></a></li>';
+			    }else{
+				    echo '<li><a  itemprop="sameAs" href="' . get_theme_mod( $link, '#' ) . '" class="' . $link . '"><span class="icon he-' . $link . '"></span></a></li>';
+			    }
 			} ?>
 
         </ul>
