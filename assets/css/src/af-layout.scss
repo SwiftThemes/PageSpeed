@@ -1,4 +1,8 @@
-body{margin:0;padding:0}
+body {
+  margin: 0;
+  padding: 0
+}
+
 #wrapper,
 .hybrid {
   width: $site_width;
@@ -133,16 +137,30 @@ body {
 //#sb1, #sb2 {
 //  background: inherit;
 //}
+@if ($sb_widget_cards == 1) {
 
-#sb1 > .inner,
-#sb2 > .inner,
-#sb-page-rsb > .inner,
-#sb-page-lsb > .inner,
-#sb-woo > .inner{
-  //background: inherit;
+  #sb1 > .inner,
+  #sb2 > .inner,
+  #sb-page-rsb > .inner,
+  #sb-page-lsb > .inner,
+  #sb-woo > .inner {
+    //background: inherit;
 
-  padding-top: $padding/2 + 3;
-  padding-bottom: $padding/2 + 3;
+    padding-top: $padding*3/4;
+    padding-bottom: $padding*3/4;
+  }
+}  @else {
+  #sb1 > .inner,
+  #sb2 > .inner,
+  #sb-page-rsb > .inner,
+  #sb-page-lsb > .inner,
+  #sb-woo > .inner {
+    //background: inherit;
+    padding-top: $padding;
+    padding-bottom: $padding;
+
+
+  }
 }
 
 //Fix for sticky sidebar background
@@ -150,31 +168,32 @@ body {
   background: inherit;
 }
 
-#ns1,
-#ns2 {
-  width: 50%;
-  float: left;
-}
-
-#ns1 > .inner,
-#ns2 > .inner {
-  padding-top: 23px;
-  padding-bottom: 20px
-}
-
-#ns1 {
-
-  margin: 0 0 0 -40px;
-  padding: 0 0 0 40px;
-
-}
-
-#ns2 {
-
-  margin: 0 -40px 0 0;
-  padding: 0 40px 0 0;
-
-}
+//
+//#ns1,
+//#ns2 {
+//  width: 50%;
+//  float: left;
+//}
+//
+//#ns1 > .inner,
+//#ns2 > .inner {
+//  padding-top: 23px;
+//  padding-bottom: 20px
+//}
+//
+//#ns1 {
+//
+//  margin: 0 0 0 -40px;
+//  padding: 0 0 0 40px;
+//
+//}
+//
+//#ns2 {
+//
+//  margin: 0 -40px 0 0;
+//  padding: 0 40px 0 0;
+//
+//}
 
 @if $layout=='centered' or $layout=='ll-sb' or $layout=='rr-sb' {
 
