@@ -45,7 +45,8 @@
 
 ///* Left sidebar */
 .page-template-tpl-woo-lsb #left,
-.page-template-tpl-lsb #left {
+.page-template-tpl-lsb #left,
+.woocommerce #left{
   width: 100%;
 }
 
@@ -69,8 +70,7 @@
   width: 75%;
   float: left
 }
-
-.woocommerce #sb-woo {
+ #sb-woo {
   width: 25%;
   float: left
 }
