@@ -8,7 +8,9 @@
 
 
 function helium_theme_options_display() {
-	include_once HELIUM_THEME_INC . 'pro/admin-theme-options.php';
+	if ( defined( 'HELIUM_PRO' ) ) {
+		include_once HELIUM_THEME_INC . 'pro/admin-theme-options.php';
+	}
 	global $current_user;
 	?>
     <!-- Create a header in the default WordPress 'wrap' container -->
@@ -41,7 +43,7 @@ function helium_theme_options_display() {
             <ul>
                 <li><a href="#tabs-1"><?php _e( 'Getting Started', 'page-speed' ) ?></a></li>
                 <li><a href="#tabs-3"><?php _e( 'Tools', 'page-speed' ) ?></a></li>
-                <?php if ( defined( 'HELIUM_PRO' ) ) { ?>
+				<?php if ( defined( 'HELIUM_PRO' ) ) { ?>
                     <li><a href="#tabs-2"><?php _e( 'Theme Options', 'page-speed' ) ?></a></li>
                     <li><a href="#tabs-4"><?php _e( 'Activation', 'page-speed' ) ?></a></li>
 				<?php } else { ?>
@@ -53,7 +55,7 @@ function helium_theme_options_display() {
 				<?php pagespeed_about() ?>
             </div>
             <div id="tabs-3">
-		        <?php helium_tools() ?>
+				<?php helium_tools() ?>
             </div>
 			<?php if ( defined( 'HELIUM_PRO' ) ) { ?>
                 <div id="tabs-2">
@@ -97,11 +99,14 @@ function helium_theme_options_display() {
 
 function helium_pro_vs_free() {
 	?>
-    <p style="font-size:18px;font-weight: lighter">    While the free version you are using now is limited in no way, upgrading to the premium version gets you priority support and the following additional features.
-    <br>
-    <br>
-        <a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&amp;utm_medium=admin_page&amp;utm_campaign=basic" target="_blank" class="button button-primary"><span class="dashicons dashicons-awards" style="margin-top: 3px"></span> Go Pro</a>
-    <br>
+    <p style="font-size:18px;font-weight: lighter"> While the free version you are using now is limited in no way,
+        upgrading to the premium version gets you priority support and the following additional features.
+        <br>
+        <br>
+        <a href="https://swiftthemes.com/upgrade-pagespeed-pro/?utm_source=ps_theme_admin&amp;utm_medium=admin_page&amp;utm_campaign=basic"
+           target="_blank" class="button button-primary"><span class="dashicons dashicons-awards"
+                                                               style="margin-top: 3px"></span> Go Pro</a>
+        <br>
         <span style="font-size: 12px;color:#CCC">Use coupon code <code>V1SY7QGR</code> for 35% OFF.</span>
     </p>
     <table class="tg">
