@@ -1,3 +1,11 @@
+## [1.20] - 19-04-2018
+
+### Added
+- Add monochrome option for social media icons in header [PRO]
+
+### Removed
+- Removed narrow sidebars option.
+
 ## [1.18] - 13-04-2018
 
 ### Added
