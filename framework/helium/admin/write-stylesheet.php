@@ -391,7 +391,7 @@ class Helium_Styles {
 			$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
 
 		}
-		if ( 1|| defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
+		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 

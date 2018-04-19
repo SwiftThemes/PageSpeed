@@ -69,7 +69,7 @@ function pagespeed_customize_colors( $wp_customize ) {
 			array(
 				'label'    => esc_html__( 'Color Schemes', 'page-speed' ),
 				'section'  => 'colors',
-				'priority' => 10,
+				'priority' => 8,
 				'choices'  => pagespeed_get_color_scheme_choices()
 			)
 		)
