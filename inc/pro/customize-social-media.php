@@ -69,6 +69,18 @@ function pagespeed_customize_social_media( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'social_media_monochrome', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+
+	) );
+
+	$wp_customize->add_control( 'social_media_monochrome', array(
+		'label'       => 'Use monchrome icons',
+		'section'     => 'social_media',
+		'type'        => 'checkbox',
+	) );
+
 	$wp_customize->add_setting( 'webiste_url', array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => '',

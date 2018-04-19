@@ -42,7 +42,6 @@ function helium_write_to_uploads( $content, $destination ) {
 		$wp_filesystem->put_contents( $file, $content, FS_CHMOD_FILE );
 	} else {
 		set_theme_mod( 'can_read_write', false );
-
 		return;
 	}
 
@@ -220,6 +219,13 @@ class Helium_Styles {
 		} else {
 			$override .= '$sb_widget_cards:0;';
 		}
+
+		if ( get_theme_mod( 'social_media_monochrome', true ) ) {
+			$override .= '$social_media_monochrome:1;';
+		} else {
+			$override .= '$social_media_monochrome:0;';
+		}
+
 		if ( get_theme_mod( 'enable_transparent_backgrounds', false ) ) {
 			$override .= '$transparent_backgrounds:1;';
 		} else {
@@ -385,7 +391,7 @@ class Helium_Styles {
 			$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
 
 		}
-		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
+		if ( 1|| defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 

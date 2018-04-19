@@ -13,6 +13,15 @@
 .nav span.icon{position: relative;top:.25em}
 
 
+
+#nav-social-media .icon:hover{text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);}
+
+
+@if ($social_media_monochrome==0){
+  #nav-social-media a{padding: 0 .25em}
+
+  #nav-social-media .icon{  line-height: 1.418em;
+  font-size: 1.5em}
 #nav-social-media a{color:#FFF!important;}
 #nav-social-media .facebook{background: #3b5998}
 #nav-social-media .twitter{background: #1da1f2}
@@ -32,3 +41,28 @@
 #nav-social-media .whatsapp{background: #128c7e}
 #nav-social-media .reddit{background: #ff4500}
 #nav-social-media .goodreads{background: #553b08}
+
+} @else{
+  #nav-social-media a{padding: 0 .5em}
+  .nav span.icon{position: relative;top:.125em}
+
+  #nav-social-media a:hover{color:#FFF!important;}
+  #nav-social-media .facebook:hover{background: #3b5998}
+  #nav-social-media .twitter:hover{background: #1da1f2}
+  #nav-social-media .instagram:hover{background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+  #nav-social-media .youtube:hover{background: #ff0000}
+  #nav-social-media .github:hover{background: #4078c0}
+  #nav-social-media .linkedin:hover{background: #0077b5}
+  #nav-social-media .stack-exchange:hover{background: #1e5397}
+  #nav-social-media .dribbble:hover{background: #ea4c89}
+  #nav-social-media .quora:hover{background: #a82400}
+  #nav-social-media .google-plus:hover{background: #dd4b39}
+  #nav-social-media .whatsapp:hover{background: #128c7e}
+  #nav-social-media .reddit:hover{background: #ff4500}
+  #nav-social-media .goodreads:hover{background: #553b08}
+}
