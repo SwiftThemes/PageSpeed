@@ -54,8 +54,7 @@ function helium_customizer_upsell( $wp_customize ) {
                                                                       style="margin-top: 3px"></span> %s</a></p><p style="margin-top: 10px;font-family: serif;font-style: italic;font-weight: bold;color:#999">%s</p>',
 			__( 'Want to customize the number of footer columns and their widths? Or just support the development :-)', 'page-speed' ),
 			__( 'Go Pro', 'page-speed' ),
-			__( 'Page Speed is probably the only theme with no public facing credits or links to our site. 
-			We know important it is to keep your outbound links to minimum for your SEO efforts. #mintMoney', 'page-speed' )
+			__( 'Page Speed is probably the only theme with no public facing credits or links to our site. We know important it is to keep your outbound links to minimum for your SEO efforts. #mintMoney', 'page-speed' )
 		),
 	) ) );
 
