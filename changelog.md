@@ -1,3 +1,8 @@
+## [1.21] - 20-04-2018
+
+### Added
+- Added option to choose the WooCommerce layout.
+
 ## [1.20] - 19-04-2018
 
 ### Added

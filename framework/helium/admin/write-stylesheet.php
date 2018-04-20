@@ -220,11 +220,13 @@ class Helium_Styles {
 			$override .= '$sb_widget_cards:0;';
 		}
 
-		if ( get_theme_mod( 'social_media_monochrome', true ) ) {
+		if ( get_theme_mod( 'social_media_monochrome', false ) ) {
 			$override .= '$social_media_monochrome:1;';
 		} else {
 			$override .= '$social_media_monochrome:0;';
 		}
+
+		$override .= '$woocommerce_layout:\''.get_theme_mod( 'woocommerce_layout', 'r-sb' ).'\';' ;
 
 		if ( get_theme_mod( 'enable_transparent_backgrounds', false ) ) {
 			$override .= '$transparent_backgrounds:1;';

@@ -235,6 +235,40 @@ function pagespeed_customize( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'woocommerce_layout', array(
+		'sanitize_callback' => 'helium_sanitize_choice_field',
+		'default'           => 'r-sb',
+	) );
+
+
+	$wp_customize->add_control(
+		new Hybrid_Customize_Control_Radio_Image(
+			$wp_customize,
+			'woocommerce_layout',
+
+			array(
+				'label'           => esc_html__( 'WooCommerce Pages Layout', 'page-speed' ),
+				'description'     => esc_html__( 'This only applies to products and shop page. For checkout, account, orders etc.. edit the individual page and choose the template of your choice.', 'page-speed' ),
+				'section'         => 'layout_settings',
+				'priority'        => 10,
+				'choices'         => array(
+					'l-sb' => array(
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-l-sb.png',
+						'label' => __( 'Content / Sidebar', 'page-speed' )
+					),
+					'r-sb' => array(
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-r-sb.png',
+						'label' => __( 'Sidebar / Content', 'page-speed' ),
+					),
+				),
+				'active_callback' => function () {
+					return defined( 'WC_VERSION' );
+				}
+			)
+
+		)
+	);
+
 
 }
 

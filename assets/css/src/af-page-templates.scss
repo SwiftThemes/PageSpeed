@@ -66,11 +66,25 @@
   width: 100%
 }
 
-.woocommerce #main {
-  width: 75%;
-  float: left
+@if $woocommerce_layout == 'r-sb'{
+
+  .woocommerce #main {
+    width: 75%;
+    float: left
+  }
+} @else{
+
+  .woocommerce #main {
+    width: 75%;
+    float: right
+  }
+  #sb-woo {
+    width: 25%;
+    float: left
+  }
 }
- #sb-woo {
+
+#sb-woo {
   width: 25%;
   float: left
 }
