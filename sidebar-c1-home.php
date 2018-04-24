@@ -1,4 +1,4 @@
-<aside id="sb1" class="cf">
+<aside id="sb1" class="cf sb-container">
     <div class="inner cf">
 
 		<?php
@@ -19,39 +19,8 @@
 			<?php
 		endif;
 		?>
-		<?php
-		if ( ! in_array( get_theme_mod( 'theme_layout', 'centered' ), array( 'rr-sb', 'll-sb', 'centered' ) ) ):
-			if ( is_active_sidebar( 'ns-1-home' ) ) :
-				?>
-                <div id="ns1">
-                    <div class="inner alpha cf sb">
-						<?php dynamic_sidebar( 'ns-1-home' ); ?>
-                    </div>
-                </div>
-				<?php
-			endif;
-			if ( is_active_sidebar( 'ns-2-home' ) ) :
-				?>
-                <div id="ns2">
-                    <div class="inner omega cf sb">
-						<?php dynamic_sidebar( 'ns-2-home' ); ?>
-                    </div>
-                </div>
-				<?php
-			endif;
-		endif;
-		?>
 
         <div class="clear"></div>
 
-		<?php
-		if ( is_active_sidebar( 'left-bottom-home' ) ) :
-			?>
-            <div id="normal-sb" class="sb">
-				<?php dynamic_sidebar( 'left-bottom-home' ); ?>
-            </div>
-			<?php
-		endif;
-		?>
     </div>
 </aside>

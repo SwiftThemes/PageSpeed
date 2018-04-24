@@ -2,7 +2,7 @@
 </div><!-- main inner-->
 </main>
 
-<aside id="sb-page-lsb">
+<aside id="sb-page-lsb" class="sb-container">
 	<div class="inner">
 		<?php dynamic_sidebar( 'page-template-left' ); ?>
 	</div>

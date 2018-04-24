@@ -1,4 +1,4 @@
-<aside id="sb2">
+<aside id="sb2" class="sb-container">
     <div class="inner">
 		<?php
 		if ( is_active_sidebar( 'right-page' ) ) :

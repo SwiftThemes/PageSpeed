@@ -30,7 +30,9 @@ $is_sleek_header: 0;
 $header_height: 64px;
 $transparent_backgrounds: 0;
 
-$mobile_width:840px;
+$tablet_landscape: 1024px;
+$mobile_width:768px;
+$mobile_portrait_width:480px;
 
 // Typography
 $body-font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;

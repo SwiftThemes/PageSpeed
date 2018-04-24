@@ -1,6 +1,6 @@
 //* Smaller desktops */
 @media only screen and (max-width: 1200px) {
-  #wrapper{
+  #wrapper {
     width: 100%
   }
 }
@@ -64,4 +64,8 @@
       margin-bottom: 12px;
     }
   }
+}
+
+@media only screen and (min-width: $mobile_portrait_width) and (max-width: $mobile_width) {
+  body .sb-container{width:100%!important;margin: auto}
 }
