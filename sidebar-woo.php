@@ -2,7 +2,7 @@
 </div><!-- main inner-->
 </main>
 
-<aside id="sb-woo">
+<aside id="sb-woo" class="sb-container">
     <div class="inner cf">
         <div id="normal-sb" class="sb">
             <?php dynamic_sidebar( 'woo' ); ?>
