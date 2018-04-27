@@ -28,7 +28,7 @@ function pagespeed_register_sidebars() {
 	}
 
 
-	if ( 'll-sb' == get_theme_mod( 'theme_layout', 'centered' ) ) {
+	if ( 'll-sb' == get_theme_mod( 'theme_layout', 'r-sb' ) ) {
 		$left = __('Right','page-speed').' ';
 		$right = __('Left','page-speed').' ';
 
@@ -36,7 +36,7 @@ function pagespeed_register_sidebars() {
 		$left = __('Left','page-speed').' ';
 		$right = __('Right','page-speed').' ';
 	}
-	if ( in_array( get_theme_mod( 'theme_layout', 'centered' ), array( 'rr-sb', 'll-sb', 'centered' ) ) ) {
+	if ( in_array( get_theme_mod( 'theme_layout', 'r-sb' ), array( 'rr-sb', 'll-sb', 'centered' ) ) ) {
 
 		if ( get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
 			hybrid_register_sidebar(

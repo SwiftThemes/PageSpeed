@@ -188,7 +188,7 @@ class Helium_Styles {
 		$override = '';
 		$override .= "///** Overridden by settings from customizer */\n\n";
 		$override .= '$site_width:' . sanitize_text_field( get_theme_mod( 'site_width', '1260px' ) ) . ";\n";
-		$override .= '$main_width:' . helium_float( get_theme_mod( 'main_width', '56' ) ) . ";\n";
+		$override .= '$main_width:' . helium_float( get_theme_mod( 'main_width', '72' ) ) . ";\n";
 		$override .= '$left_sidebar_width:' . helium_float( get_theme_mod( 'left_sidebar_width', '18.75' ) ) . ";\n";
 
 		if ( get_theme_mod( 'enable_sleek_header', false ) ) {
@@ -211,7 +211,7 @@ class Helium_Styles {
 
 		$override .= '$container_type:' . sanitize_text_field( get_theme_mod( 'container_type', 'regular' ) ) . ';';
 
-		$override .= '$layout:' . get_theme_mod( 'theme_layout', 'centered' ) . ';';
+		$override .= '$layout:' . get_theme_mod( 'theme_layout', 'r-sb' ) . ';';
 		$override .= '$logo-position:' . get_theme_mod( 'logo_position', 'left' ) . ';';
 
 		if ( get_theme_mod( 'enable_card_style_widgets_sb', true ) ) {

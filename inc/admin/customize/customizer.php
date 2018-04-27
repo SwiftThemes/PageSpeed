@@ -74,7 +74,7 @@ function pagespeed_customize( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'theme_layout', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
-		'default'           => 'centered',
+		'default'           => 'r-sb',
 
 	) );
 	$wp_customize->add_control(
@@ -153,7 +153,7 @@ function pagespeed_customize( $wp_customize ) {
 	) );
 	$wp_customize->add_setting( 'main_width', array(
 		'sanitize_callback' => 'helium_float',
-		'default'           => 56,
+		'default'           => 72,
 		'transport'         => 'postMessage',
 
 	) );
@@ -223,7 +223,7 @@ function pagespeed_customize( $wp_customize ) {
 				'priority' => 10,
 				'choices'  => array(
 					'regular' => array(
-						'url'   => HELIUM_ADMIN_IMAGES_URI . '/layout-' . sanitize_text_field( get_theme_mod( 'theme_layout', 'centered' ) ) . '.png',
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/layout-' . sanitize_text_field( get_theme_mod( 'theme_layout', 'r-sb' ) ) . '.png',
 						'label' => __( 'Regular', 'page-speed' )
 					),
 					'1c'      => array(

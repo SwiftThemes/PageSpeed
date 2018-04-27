@@ -22,7 +22,7 @@ class PageSpeed {
 		add_action( 'after_setup_theme', array( $this, 'admin' ), - 80 );
 		add_action( 'after_setup_theme', array( $this, 'core' ), - 70 );
 
-		$content_width = helium_get_site_width() * get_theme_mod( 'main_width', 55 ) - 80;
+		$content_width = helium_get_site_width() * get_theme_mod( 'main_width', 72 ) - 80;
 
 	}
 

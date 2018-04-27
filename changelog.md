@@ -1,3 +1,10 @@
+## [1.22] - 27-04-2018
+
+### Changed
+- Changed default site layout to right sidebar.
+- Refine responsiveness of page templates.
+- Remove stray code from sidebar files.
+
 ## [1.21] - 20-04-2018
 
 ### Added
