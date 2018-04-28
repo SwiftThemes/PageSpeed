@@ -1,7 +1,9 @@
 .theme-options {
     background: #FFF;
     padding: 40px;
-    border: solid 1px #DDD
+    border: solid 1px #DDD;
+    max-width:960px;
+    margin-top: 20px;
 }
 
 .greet {
@@ -20,7 +22,8 @@
 .greet h1 {
     font-weight: bold;
     font-size: 48px;
-    padding: 20px 0
+    padding: 20px 0;
+    margin: 0;
 }
 
 #tabs {

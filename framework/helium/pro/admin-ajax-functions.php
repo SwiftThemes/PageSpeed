@@ -2,6 +2,9 @@
 
 add_action( 'wp_ajax_helium_activate_license', 'helium_activate_license' );
 function helium_activate_license() {
+	if(!current_user_can('switch_themes')){
+		return false;
+	}
 	check_ajax_referer( 'helium_ajax_nonce', 'security' );
 	include_once 'amember.php';
 	$params = array();
@@ -59,5 +62,18 @@ function helium_activate_license() {
 	echo helium_license_info();
 
 //	wp_send_json( $response );
+	wp_die();
+}
+
+
+add_action( 'wp_ajax_helium_dismiss_renew_nag', 'helium_dismiss_renew_nag' );
+function helium_dismiss_renew_nag() {
+	if(!current_user_can('switch_themes')){
+		return false;
+	}
+	$license = get_site_option( "helium_license", array() );
+	$license['license_renew_nag_show_after'] = time() + 86400 * 7;
+	update_site_option( "helium_license", $license );
+
 	wp_die();
 }

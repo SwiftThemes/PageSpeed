@@ -57,19 +57,6 @@ function helium_filter_download_link( $query_args ) {
 	$query_args->download_url = $download_url;
 
 	return $query_args;
-//
-//	$url_components = parse_url( $query_args->download_url );
-//
-//	if ( strpos( $url_components['query'], 'license_key' ) ) {
-//		return $query_args;
-//	}
-//	if ( $url_components['query'] ) {
-//		$query_args->download_url .= '&license_key=' . get_theme_mod( 'license_key' ) . '&url=' . urlencode( get_site_url() );
-//	} else {
-//		$query_args->download_url .= '?license_key=' . get_theme_mod( 'license_key' ) . '&url=' . urlencode( get_site_url() );
-//	}
-//
-//	return $query_args;
 }
 
 

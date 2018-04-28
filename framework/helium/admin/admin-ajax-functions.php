@@ -9,6 +9,9 @@
 add_action( 'wp_ajax_helium_clear_sass_cache', 'helium_clear_sass_cache' );
 
 function helium_clear_sass_cache() {
+	if(!current_user_can('switch_themes')){
+		return false;
+	}
 	$prefix = wp_get_theme()->stylesheet . '_';
 	delete_transient( $prefix . 'sass_file_list' );
 	delete_transient( $prefix . 'sass_combined_bf' );
@@ -23,6 +26,9 @@ function helium_clear_sass_cache() {
 add_action( 'wp_ajax_helium_update_file_system_status', 'helium_update_file_system_status' );
 
 function helium_update_file_system_status() {
+	if(!current_user_can('switch_themes')){
+		return false;
+	}
 	if(helium_set_fs_status()){
 		echo __('Update success, can read & write','page-speed').' :-)';
 	}else{
@@ -33,6 +39,9 @@ function helium_update_file_system_status() {
 
 add_action( 'wp_ajax_helium_save_theme_options', 'helium_save_theme_options' );
 function helium_save_theme_options() {
+	if(!current_user_can('switch_themes')){
+		return false;
+	}
 	include_once HELIUM_THEME_INC . 'pro/admin-theme-options.php';
 	check_ajax_referer( 'helium_ajax_nonce', 'security' );
 	$params = array();

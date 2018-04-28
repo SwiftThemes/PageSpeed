@@ -14,7 +14,7 @@ function helium_theme_options_display() {
 	global $current_user;
 	?>
     <!-- Create a header in the default WordPress 'wrap' container -->
-    <div class="wrap theme-options">
+    <div class="my-wrap theme-options">
         <div class="greet">
             <h3>Hi <?php echo sanitize_text_field( $current_user->display_name ) ?>,</h3>
             <h1><?php _e( 'Welcome to', 'page-speed' ) ?> Page Speed</h1>
