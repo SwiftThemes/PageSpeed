@@ -3,6 +3,22 @@
 add_action( 'customize_register', 'pagespeed_customize_misc', 1 );
 function pagespeed_customize_misc( $wp_customize ) {
 
+	$wp_customize->add_setting( 'separate_containers', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'separate_containers', array(
+		'label'    => __( 'Use separate containers for sidebars and main content', 'page-speed' ),
+		//@todo add link to the panel.
+//		'description'    => __( 'You can add your links from the social media section.', 'page-speed' ),
+		'section'  => 'layout_settings',
+		'type'     => 'checkbox',
+		'priority' => 20,
+	) );
+
+
 
 	$wp_customize->add_setting( 'show_search_in_header', array(
 		'sanitize_callback' => 'helium_boolean',

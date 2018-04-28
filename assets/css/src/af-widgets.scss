@@ -62,7 +62,7 @@
   }
 }
 
-@if ($sb_widget_cards == 1) {
+@if ($sb_widget_cards == 1 and $separate_containers ==0) {
   #content .sb {
 
     .widget {
@@ -100,5 +100,4 @@
 
     }
   }
-
 }

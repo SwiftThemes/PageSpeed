@@ -235,6 +235,13 @@ class Helium_Styles {
 		}
 
 
+		if ( get_theme_mod( 'separate_containers', false ) ) {
+			$override .= '$separate_containers:1;';
+		} else {
+			$override .= '$separate_containers:0;';
+		}
+
+
 		$footer_widths = get_theme_mod( 'footer_widths' );
 
 		for ( $i = 0; $i <= get_theme_mod( 'footer_column_count', 4 ); $i ++ ) {

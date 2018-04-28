@@ -22,6 +22,7 @@ $pagespeed_selective_refreshables = array(
 	'secondary_font_lh',
 	'secondary_font_weight',
 	'footer_widths',
+	'separate_containers'
 
 );
 

@@ -1,3 +1,12 @@
+## [1.24] - 28-04-2018
+
+### Added
+- Added option to have separate containers for sidebar and main.
+
+### Changed
+- Fix reply link in bbPress
+- Break long words
+
 ## [1.22] - 27-04-2018
 
 ### Changed

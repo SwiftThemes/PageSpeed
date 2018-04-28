@@ -197,14 +197,17 @@ function pagespeed_customize( $wp_customize ) {
 
 
 	$wp_customize->add_control( 'enable_card_style_widgets_sb', array(
-		'label'       => __( 'Show sidebar widgets in card style', 'page-speed' ),
-		'description' => __( ' ', 'page-speed' ),
-		'section'     => 'layout_settings',
-		'type'        => 'checkbox',
-		'priority'    => 20,
+		'label'           => __( 'Show sidebar widgets in card style', 'page-speed' ),
+		'description'     => __( ' ', 'page-speed' ),
+		'section'         => 'layout_settings',
+		'type'            => 'checkbox',
+		'priority'        => 20,
+		'active_callback' => function () {
+			return !get_theme_mod( 'separate_containers', false );
+		}
 	) );
 
-	// Home Page
+	// Home Page separate_containers
 
 
 	$wp_customize->add_setting( 'single_post_layout', array(
