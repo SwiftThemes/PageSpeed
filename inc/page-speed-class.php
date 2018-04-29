@@ -47,6 +47,7 @@ class PageSpeed {
 		require_once( HELIUM_THEME_INC . 'functions-display.php' );
 		require_once( HELIUM_THEME_INC . 'functions-header.php' );
 		require_once( HELIUM_THEME_INC . 'functions-eaa-filters.php' );
+		require_once( HELIUM_THEME_INC . 'home-slider.php' );
 
 
 		require_once( HELIUM_THEME_CUSTOMIZE . 'customizer.php' );
