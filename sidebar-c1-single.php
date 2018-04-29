@@ -1,26 +1,29 @@
 <aside id="sb1" class="cf sb-container">
-	<div class="inner cf">
+    <div class="inner cf">
 
 		<?php
 		if ( is_active_sidebar( 'left' ) ) :
 			?>
-			<div id="normal-sb" class="sb">
+            <div id="normal-sb" class="sb">
 				<?php dynamic_sidebar( 'left' ); ?>
-			</div>
+            </div>
+			<?php
+		else:
+			?>
+            <div id="normal-sb" class="sb">
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+            </div>
 			<?php
 		endif;
-		?>
-		<?php
+
 		if ( is_active_sidebar( 'left-sticky' ) ) :
 			?>
-			<div id="sticky-sb1" class="sb">
+            <div id="sticky-sb1" class="sb">
 				<?php dynamic_sidebar( 'left-sticky' ); ?>
-			</div>
+            </div>
 			<?php
 		endif;
 		?>
-
-		<div class="clear"></div>
-
-	</div>
+        <div class="clear"></div>
+    </div>
 </aside>

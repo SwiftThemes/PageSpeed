@@ -15,7 +15,6 @@ add_action( 'pagespeed_primary_nav_start', 'pagespeed_sticky_logo', 12 );
 add_action( 'pagespeed_main_start', 'pagespeed_breadcrumbs', 12 );
 
 
-
 if ( ! function_exists( 'pagespeed_above_header' ) ) {
 	function pagespeed_above_header() {
 		$args = array(
@@ -34,7 +33,6 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 			'item_spacing'    => 'preserve',
 			'depth'           => 0,
 			'walker'          => '',
-			'theme_location'  => 'secondary',
 
 		);
 
@@ -78,7 +76,6 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			'item_spacing'    => 'preserve',
 			'depth'           => 0,
 			'walker'          => '',
-			'theme_location'  => 'primary',
 			'fallback_cb'     => 'page_speed_dummy_menu'
 		);
 
@@ -132,9 +129,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			'item_spacing'    => 'preserve',
 			'depth'           => 0,
 			'walker'          => '',
-			'theme_location'  => 'primary',
 			'fallback_cb'     => 'page_speed_dummy_menu'
-
 		);
 
 
@@ -210,7 +205,28 @@ function pagespeed_breadcrumbs() {
 
 
 function page_speed_dummy_menu() {
+	if ( helium_is_preview_demo() ) {
 
+		$args = array(
+			'menu'            => 'main',
+			'container'       => 'nav',
+			'container_class' => 'nav',
+			'container_id'    => 'header-nav',
+			'menu_class'      => 'menu',
+			'menu_id'         => '',
+			'echo'            => true,
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s cf">%3$s</ul>',
+			'item_spacing'    => 'preserve',
+			'depth'           => 0,
+			'walker'          => '',
+		);
+
+		wp_nav_menu( $args );
+	}
 	if ( current_user_can( 'customize' ) && ! has_nav_menu( 'primary' ) && ! has_nav_menu( 'secondary' ) ) {
 		echo '<div style="text-align: center" class="nav"> <a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" >' . __( 'Howdy!! Thanks for choosing PageSpeed :-).<br />Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away!!', 'page-speed' ) . '</a></div>';
 	}
