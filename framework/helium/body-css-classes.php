@@ -10,14 +10,15 @@ add_filter( 'body_class', 'helium_body_classes' );
 
 function helium_body_classes( $classes ) {
 	global $helium;
-	$classes[] = $helium->is_mobile()?'mobile':'desktop';
+	$classes[] = $helium->is_mobile() ? 'mobile' : 'desktop';
 
-	if(is_single() && has_post_thumbnail()){
+	if ( is_single() && has_post_thumbnail() ) {
 		$classes[] = 'has-thumb';
 	}
 
-	if(get_theme_mod('enable_sleek_header')){
+	if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 		$classes[] = 'sleek-header';
 	}
+
 	return $classes;
 }
