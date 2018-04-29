@@ -64,7 +64,7 @@ $is_full_length = $wp_query->current_post == 0 && is_front_page() && get_theme_m
 
 	<?php
 	$default = array(
-		array( 'key' => 'Tag', 'value' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
+		array( 'key' => 'Tags', 'value' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
 	);
 	$meta    = get_theme_mod( 'home_meta_after_body', $default );
 	if ( 1 == count( $meta ) && $meta[0]['key'] == 'Line' ) {
