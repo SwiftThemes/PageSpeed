@@ -103,7 +103,7 @@ buildIncludeOrg = [
     '!inc/{pro,pro/**}',
     '!tpl-airy-img.php',
     '!tpl-airy.php',
-    '!tpl-full-width.php',
+    '!tpl-wide.php',
     '!tpl-landing.php',
     '!tpl-lsb.php',
     '!tpl-rsb.php',
