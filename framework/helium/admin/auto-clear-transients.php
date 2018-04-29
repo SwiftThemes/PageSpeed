@@ -17,6 +17,10 @@ add_action( 'admin_init', 'helium_auto_clear_transients' );
 function helium_auto_clear_transients() {
 	$theme = wp_get_theme();
 
+	if ( ! get_theme_mods() ) {
+		return; //If theme is not activated return
+	}
+
 	if ( $theme->get( 'Version' ) !== get_theme_mod( 'stylesheet_version' ) ) {
 
 		$prefix = wp_get_theme()->stylesheet . '_';
