@@ -55,7 +55,7 @@ function pagespeed_customize_post_meta( $wp_customize ) {
 	 * Home
 	 */
 	$default = array(
-		array( 'key' => 'Cat', 'value' => __( 'Filed under', 'page-speed' ) . '&nbsp;' ),
+		array( 'key' => 'Tag', 'value' => __( 'Tagged with', 'page-speed' ) . '&nbsp;' ),
 	);
 	$wp_customize->add_setting( 'home_meta_above_title', array(
 		'sanitize_callback' => 'helium_sanitize_post_meta',
