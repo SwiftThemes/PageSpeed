@@ -1,3 +1,13 @@
+## [1.24] - 29-04-2018
+
+### Added
+- Animation for thumbnails
+
+### Changed
+- Change default header style to sleek header
+- Change screenshot
+- Refine post meta function. It will now take before and after html.
+
 ## [1.24] - 28-04-2018
 
 ### Added

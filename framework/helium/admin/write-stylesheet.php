@@ -191,7 +191,7 @@ class Helium_Styles {
 		$override .= '$main_width:' . helium_float( get_theme_mod( 'main_width', '72' ) ) . ";\n";
 		$override .= '$left_sidebar_width:' . helium_float( get_theme_mod( 'left_sidebar_width', '18.75' ) ) . ";\n";
 
-		if ( get_theme_mod( 'enable_sleek_header', false ) ) {
+		if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 			$override .= '$is_sleek_header:1' . ";\n";
 			$override .= '$header_height:' . $this->get_header_height() . ";\n";
 		}
@@ -235,7 +235,7 @@ class Helium_Styles {
 		}
 
 
-		if ( get_theme_mod( 'separate_containers', false ) ) {
+		if ( get_theme_mod( 'separate_containers', true ) ) {
 			$override .= '$separate_containers:1;';
 		} else {
 			$override .= '$separate_containers:0;';

@@ -34,7 +34,7 @@ hr {
 .entry-footer {
   background: rgba($dark-1,.02);
   padding: .125*$padding 0;
-  border: solid 1px $border-color;
+  border: solid 1px rgba($dark-6,.08);
   border-width: 1px 0;
   margin: $vr (-$padding);
 }

@@ -59,7 +59,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 
 
 	function pagespeed_below_header() {
-		if ( get_theme_mod( 'enable_sleek_header', false ) ) {
+		if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 			return;
 		}
 		$args = array(
@@ -112,7 +112,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 	function pagespeed_header_navigation() {
 
-		if ( ! get_theme_mod( 'enable_sleek_header', false ) ) {
+		if ( ! get_theme_mod( 'enable_sleek_header', true ) ) {
 			return;
 		}
 

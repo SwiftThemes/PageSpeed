@@ -6,7 +6,7 @@ if ( $helium->is_mobile() ) {
 	$suffix = '';
 }
 $is_full_length = $wp_query->current_post == 0 && is_front_page() && get_theme_mod( 'show_first_post_in_full', false ) || ! get_theme_mod( 'home_show_excerpts', true ); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?>>
 
 
 	<?php
@@ -72,11 +72,11 @@ $is_full_length = $wp_query->current_post == 0 && is_front_page() && get_theme_m
 	} else {
 		?>
 
-        <footer class="entry-footer">
-            <div class="inner footer meta">
-				<?php helium_generate_post_meta( $meta ) ?>
-            </div>
-        </footer>
+
+		<?php helium_generate_post_meta( $meta, '<footer class="entry-footer">
+            <div class="inner footer meta">', '</div>
+        </footer>' ) ?>
+
 	<?php }
 	?>
 </article><!-- #post-## -->

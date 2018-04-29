@@ -16,7 +16,7 @@ function pagespeed_register_menus() {
 		'secondary' => __( 'Navigation above header', 'page-speed' ),
 	) );
 
-	if ( get_theme_mod( 'enable_sleek_header', false ) ) {
+	if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 		register_nav_menus( array(
 			'primary' => __( 'Navigation menu in header', 'page-speed' ),
 		) );

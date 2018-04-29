@@ -53,3 +53,46 @@ function helium_get_site_width() {
 		return (int) $site_width;
 	}
 }
+
+
+/**
+ * Initialize preview on demo
+ *
+ * @author Satish Gandham
+ * @package helium
+ * @version 0.0.1
+ * @since 1.25
+ */
+
+/**
+ * Check if it is demo preview
+ *
+ * @return bool
+ */
+function helium_is_preview_demo() {
+	$he_theme     = wp_get_theme();
+	$theme_name   = $he_theme->get( 'TextDomain' );
+	$active_theme = helium_get_raw_option( 'template' );
+
+	if ( is_child_theme() ) {
+		$theme_name = get_option( 'stylesheet' );
+		$template_name   = $he_theme->get( 'Template' );
+		$stylesheet_name = helium_get_raw_option( 'stylesheet' );
+		return apply_filters( 'helium_is_preview_demo', ( ( $active_theme != strtolower( $theme_name ) ) && ( $template_name == $stylesheet_name ) ) );
+	}
+	return apply_filters( 'helium_is_preview_demo', $active_theme != strtolower( $theme_name ) );
+}
+
+
+/**
+ * All options or a single option val
+ *
+ * @param string $opt_name Option name.
+ *
+ * @return bool|mixed
+ */
+function helium_get_raw_option( $opt_name ) {
+	$alloptions = wp_cache_get( 'alloptions', 'options' );
+	$alloptions = maybe_unserialize( $alloptions );
+	return isset( $alloptions[ $opt_name ] ) ? maybe_unserialize( $alloptions[ $opt_name ] ) : false;
+}

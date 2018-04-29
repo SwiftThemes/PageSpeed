@@ -10,7 +10,7 @@
  * @license
  */
 
-if ( ! class_exists( 'Helium') ) {
+if ( ! class_exists( 'Helium' ) ) {
 
 	/**
 	 * The Helium class launches the helium and hybrid frameworks.
@@ -75,7 +75,7 @@ if ( ! class_exists( 'Helium') ) {
 
 			define( 'HELIUM_CHILD_THEME_URI', trailingslashit( get_stylesheet_directory_uri() ) );
 
-			define('HELIUM_ADMIN_ASSETS_URI',trailingslashit(HELIUM_THEME_URI.'framework/helium/admin/assets/') );
+			define( 'HELIUM_ADMIN_ASSETS_URI', trailingslashit( HELIUM_THEME_URI . 'framework/helium/admin/assets/' ) );
 		}
 
 		/**
@@ -90,7 +90,9 @@ if ( ! class_exists( 'Helium') ) {
 			require_once( HELIUM_DIR . 'body-css-classes.php' );
 			require_once( HELIUM_DIR . 'post-meta.php' );
 			require_once( HELIUM_DIR . 'sanitization-functions.php' );
-
+			if ( helium_is_preview_demo() ) {
+				require_once( HELIUM_DIR . 'org-release.php' );
+			}
 			require_once( HELIUM_CUSTOMIZE . 'control-image-dimensions.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-font-selection.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-typography.php' );
@@ -170,10 +172,10 @@ if ( ! class_exists( 'Helium') ) {
 		public function get_meta( $key = null ) {
 
 			if ( is_admin() && isset( $_GET['post'] ) && $_GET['post'] ) {
-				$post_id = intval($_GET['post']);
+				$post_id = intval( $_GET['post'] );
 			} else if ( is_singular() ) {
 				global $post;
-				$post_id = intval($post->ID); //@todo is casting required?
+				$post_id = intval( $post->ID ); //@todo is casting required?
 			} else {
 				return null;
 			}

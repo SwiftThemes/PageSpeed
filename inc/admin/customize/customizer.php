@@ -145,6 +145,20 @@ function pagespeed_customize( $wp_customize ) {
 		)
 	);
 
+
+	$wp_customize->add_setting( 'separate_containers', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => true,
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( 'separate_containers', array(
+		'label'    => __( 'Use separate containers for sidebars and main content', 'page-speed' ),
+		'section'  => 'layout_settings',
+		'type'     => 'checkbox',
+		'priority' => 20,
+	) );
+
 	$wp_customize->add_setting( 'site_width', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '1260px',
@@ -203,7 +217,7 @@ function pagespeed_customize( $wp_customize ) {
 		'type'            => 'checkbox',
 		'priority'        => 20,
 		'active_callback' => function () {
-			return !get_theme_mod( 'separate_containers', false );
+			return !get_theme_mod( 'separate_containers', true );
 		}
 	) );
 

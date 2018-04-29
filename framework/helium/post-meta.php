@@ -8,12 +8,12 @@
 
 //@todo Some unnecessary escaping?
 
-function helium_generate_post_meta( $metas = array() ) {
+function helium_generate_post_meta( $metas = array(), $before = '', $after = '' ) {
 	ob_start();
 	$allowed_tags = wp_kses_allowed_html( 'post' );
 	foreach ( $metas as $meta ) {
 
-		if(!isset($meta['key'])){
+		if ( ! isset( $meta['key'] ) ) {
 			continue;
 		}
 		switch ( $meta['key'] ) {
@@ -26,7 +26,7 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp;';
 				break;
 			case 'Text':
-				echo '<span>'.wp_kses( $meta['value'], $allowed_tags ).'</span>';
+				echo '<span>' . wp_kses( $meta['value'], $allowed_tags ) . '</span>';
 				break;
 			case 'Line':
 				echo '<hr class="separator">';
@@ -71,7 +71,7 @@ function helium_generate_post_meta( $metas = array() ) {
 				echo '&nbsp;';
 				break;
 			default:
-				if ( current_user_can( 'customize' ) && isset($meta['key'])) {
+				if ( current_user_can( 'customize' ) && isset( $meta['key'] ) ) {
 					echo _e( 'Something went wrong, please contact support', 'page-speed' ) + '!!! #' + $meta['key'];
 				}
 				break;
@@ -83,6 +83,9 @@ function helium_generate_post_meta( $metas = array() ) {
 	$content = ob_get_contents();
 	ob_end_clean();
 
-	echo $content;
+	if ( $content ) {
+		echo $before . $content . $after;
+
+	}
 
 }
