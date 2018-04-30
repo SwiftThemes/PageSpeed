@@ -17,7 +17,7 @@ add_action( 'wp_head', 'pagespeed_add_image_bg_for_single_post', 99 );
 
 
 function pagespeed_register_styles() {
-	wp_register_style( 'pagespeed', HELIUM_THEME_CSS_URI . 'style.prod.css', array(), '1.29' );
+	wp_register_style( 'pagespeed', HELIUM_THEME_CSS_URI . 'style.prod.css', array(), '1.32' );
 	wp_register_style( 'pagespeed-icons', HELIUM_THEME_CSS_URI . 'font-icons.css' );
 
 	$upload_dir = wp_upload_dir();

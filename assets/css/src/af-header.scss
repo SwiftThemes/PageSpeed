@@ -86,7 +86,7 @@
 }
 
 // Remove description when sticky
-.is-sticky {
+.is-sticky,.sleek-header  {
   .site-title {
     font-size: 1.8em;
     //padding: 10px 0; removing because no padding is required. Line height takes care of it.
@@ -108,8 +108,3 @@
 #above-footer-ad-container {
   border-top: solid 1px $border-color;
 }
-
-
-//@todo, move to right place.
-.sleek-header .site-description{display: none}
-
