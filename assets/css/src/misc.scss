@@ -220,6 +220,13 @@
   background: #EFEFEF url('../images/preview-images/slide1.jpg') no-repeat;
   background-size: 100% auto
 }
+.demo-preview .site-title a:before {
+  content: "\75";
+  font-family: swift-icons;
+  font-size: .9em;
+  margin-right: 6px;
+  float: left;
+}
 
 @media only screen and (min-width: 1560px) {
   .demo-preview.home #content-wrapper {
