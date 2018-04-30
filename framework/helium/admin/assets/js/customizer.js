@@ -1,19 +1,5 @@
 (function ($) {
 
-
-    // $('#_customize-input-footer_column_count').on('input', function () {
-    //     var columns = $(this).val();
-    //     var current = wp.customize.control('footer_widths').setting();
-    //     var current = wp.customize.control('footer_widths').setting.set([25, 25, 25]);
-    //
-    //
-    //     $(".column-slider").slider({
-    //         values: [10, 20, 40]
-    //     });
-    //
-    // });
-
-
     // Change the previewed URL to the selected page when changing the page_for_posts.
     wp.customize('footer_column_count', function (setting) {
         setting.bind(function (columns) {
