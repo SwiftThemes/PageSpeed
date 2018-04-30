@@ -142,13 +142,13 @@ function pagespeed_put_selective_refresh_loader() {
 	echo '<div id="selective_refresh_loader"><p data-shadow="' . __( 'Reloading Stylesheet', 'page-speed' ) . '">' . __( 'Reloading Stylesheet', 'page-speed' ) . '</p></div>';
 }
 
-function pagespeed_get_css() {
-	require_once( ABSPATH . 'wp-admin/includes/file.php' );
-	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
-
-	return $style_generator->generate_css( 'af' ) . $style_generator->generate_css( 'bf' );
-}
-
+//function pagespeed_get_css() {
+//	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+//	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
+//
+//	return $style_generator->generate_css( 'af' ) . $style_generator->generate_css( 'bf' );
+//}
+//
 
 /**
  * Replace the_excerpt "more" text with a link

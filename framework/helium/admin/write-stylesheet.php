@@ -234,7 +234,6 @@ class Helium_Styles {
 			$override .= '$transparent_backgrounds:0;';
 		}
 
-
 		if ( get_theme_mod( 'separate_containers', true ) ) {
 			$override .= '$separate_containers:1;';
 		} else {
