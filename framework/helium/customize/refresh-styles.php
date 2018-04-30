@@ -46,13 +46,9 @@ function helium_get_values_requiring_css_refresh( $wp_customize ) {
 //			array_push( $require_css_refresh, $setting->id );
 //		}
 //	}
-
-
-//	return array('body_colors');
-//	return $require_css_refresh;
+//	var_dump( $require_css_refresh);
 
 	global $pagespeed_gradient_bgs;
 	global $pagespeed_selective_refreshables;
-
 	return array_merge( $pagespeed_gradient_bgs, $pagespeed_selective_refreshables );
 }

@@ -267,18 +267,20 @@ class Helium_Styles {
 		);
 
 		// Individual gradients
-		foreach ( $pagespeed_gradient_bgs as $value ) {
-			$val      = wp_parse_args( get_theme_mod( $value ), $defaults );
-			if ( $val['enable'] ) {
-				$temp .= '$' . $value . '_enable:' . $val['enable'] . ';';
-				$temp .= '$' . $value . '_is_gradient:' . $val['is_gradient'] . ';';
-				$temp .= '$' . $value . '_gradient_start:' . $val['bg_start'] . ';';
-				$temp .= '$' . $value . '_gradient_end:' . $val['bg_end'] . ';';
-				$temp .= '$' . $value . '_gradient_direction:' . $val['gradient_direction'] . ';';
-				$temp .= '$' . $value . '_text_color:' . $val['text_color'] . ';';
-				$temp .= '$' . $value . '_link_color:' . $val['link_color'] . ';';
-			}
-		};
+		if($pagespeed_gradient_bgs) {
+			foreach ( $pagespeed_gradient_bgs as $value ) {
+				$val = wp_parse_args( get_theme_mod( $value ), $defaults );
+				if ( $val['enable'] ) {
+					$temp .= '$' . $value . '_enable:' . $val['enable'] . ';';
+					$temp .= '$' . $value . '_is_gradient:' . $val['is_gradient'] . ';';
+					$temp .= '$' . $value . '_gradient_start:' . $val['bg_start'] . ';';
+					$temp .= '$' . $value . '_gradient_end:' . $val['bg_end'] . ';';
+					$temp .= '$' . $value . '_gradient_direction:' . $val['gradient_direction'] . ';';
+					$temp .= '$' . $value . '_text_color:' . $val['text_color'] . ';';
+					$temp .= '$' . $value . '_link_color:' . $val['link_color'] . ';';
+				}
+			};
+		}
 
 
 		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ) . $temp, $content );
