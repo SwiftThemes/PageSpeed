@@ -50,5 +50,7 @@ function helium_get_values_requiring_css_refresh( $wp_customize ) {
 
 	global $pagespeed_gradient_bgs;
 	global $pagespeed_selective_refreshables;
+	$pagespeed_gradient_bgs = $pagespeed_gradient_bgs ? $pagespeed_gradient_bgs : array();
+
 	return array_merge( $pagespeed_gradient_bgs, $pagespeed_selective_refreshables );
 }
