@@ -2,10 +2,7 @@
     $(function () {
         if ('undefined' !== typeof wp && wp.customize && wp.customize.selectiveRefresh) {
             wp.customize.selectiveRefresh.bind('render-partials-response', function (setting) {
-                // $('body').css('opacity', 1)
-                // $( 'body' ).removeClass( 'updating-styles' );
                 $('#selective_refresh_loader').hide()
-
             });
         }
 
@@ -28,11 +25,7 @@
              * @returns {jQuery.Promise} Resolved promise.
              */
             preparePlacement: function() {
-                // $( 'body' ).addClass( 'updating-styles' );
-                // $('body').css('opacity', .2)
-
                 $('#selective_refresh_loader').show()
-
             }
         });
 

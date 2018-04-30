@@ -462,9 +462,9 @@
 
 })(jQuery);
 
-
-wp.customize.bind('change', function (setting) {
-    if (setting.transport === 'postMessage') {
-        jQuery('#customize-preview').find('body').css('opacity', '.5')
-    }
-});
+//
+// wp.customize.bind('change', function (setting) {
+//     if (setting.transport === 'postMessage') {
+//         jQuery('#customize-preview').find('body').css('opacity', '.5')
+//     }
+// });
