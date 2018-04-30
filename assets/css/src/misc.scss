@@ -186,7 +186,7 @@
   }
   #sb1 .widget,
   #sb2 .widget {
-    background: #FFF;
+    background: $card-bg;
     padding: $padding/2;
   }
   #main > .inner {
@@ -205,19 +205,19 @@
   }
 
   article {
-    background: #FFF;
+    background: $card-bg;
     padding: $padding*1/4 $padding/2 0;
     margin: 0 0 27px;
   }
 
   .breadcrumb-trail {
     padding: $padding/2 $padding/2 $padding*3/4;
-    background: #FFF;
+    background: $card-bg;
   }
 }
 
 .demo-preview.home #content-wrapper {
-  background: #EFEFEF url('../images/preview-images/slide1.jpg') no-repeat;
+  background: #EFEFEF url('../images/preview-images/slide2.jpg') no-repeat;
   background-size: 100% auto
 }
 .demo-preview .site-title a:before {

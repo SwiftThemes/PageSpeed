@@ -71,7 +71,7 @@ $wp-caption-text-color: $dark-4;
 $sticky-header-bg: rgba($dark-1, 0.75);
 
 $button-bg: $primary;
-$button-color: rgba($light-1, 1);
+$button-color: #FFF;
 
 ///* Layout colors */
 $body-bg: $dark-1;
@@ -134,7 +134,12 @@ $copyright-link-color: $light-1;
   $primary-nav-bg: $dark-2
 }
 
+@if ($invert == 1){
+  $card-bg:$light-2
+} @else{
+  $card-bg:#FFF
 
+}
 // Don't remove the below line.
 // It's used for overriding the variables.
 /**color_scheme**/
