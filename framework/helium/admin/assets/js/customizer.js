@@ -451,6 +451,9 @@
 
 
     function column_positions_to_widths(values) {
+        if(!values.length){
+            return
+        }
         var new_values = values.slice()
         var text = '<div class="display-column-widths">Col #1:&nbsp;<strong>' + values[0].toFixed(2) + '%</strong></div>';
         for (var i = 1; i < new_values.length; i++) {
@@ -461,10 +464,3 @@
     }
 
 })(jQuery);
-
-//
-// wp.customize.bind('change', function (setting) {
-//     if (setting.transport === 'postMessage') {
-//         jQuery('#customize-preview').find('body').css('opacity', '.5')
-//     }
-// });
