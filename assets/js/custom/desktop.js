@@ -244,4 +244,12 @@
             }
         }
     }
+
+
+    // jQuery
+    $('#articles').masonry({
+        columnWidth: '.entry',
+        itemSelector: '.entry',
+        gutter: '.gutter-sizer',
+    });
 })(jQuery);
