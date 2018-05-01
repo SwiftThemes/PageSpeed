@@ -194,6 +194,8 @@ class Helium_Styles {
 		if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 			$override .= '$is_sleek_header:1' . ";\n";
 			$override .= '$header_height:' . $this->get_header_height() . ";\n";
+		}else{
+			$override .= '$is_sleek_header:0' . ";\n";
 		}
 
 

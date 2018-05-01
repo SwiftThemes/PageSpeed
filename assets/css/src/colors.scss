@@ -133,7 +133,6 @@ $copyright-link-color: $light-1;
 @if ($is_sleek_header == 1) {
   $primary-nav-bg: $dark-2
 }
-
 @if ($invert == 1){
   $card-bg:$light-2
 } @else{
