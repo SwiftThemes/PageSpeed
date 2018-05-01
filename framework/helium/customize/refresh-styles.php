@@ -54,3 +54,52 @@ function helium_get_values_requiring_css_refresh( $wp_customize ) {
 
 	return array_merge( $pagespeed_gradient_bgs, $pagespeed_selective_refreshables );
 }
+
+
+add_action( 'wp_head', 'pagespeed_put_css_in_head', 9 );
+
+function pagespeed_put_css_in_head() {
+	if ( ! is_customize_preview() ) {
+		return;
+	}
+	$misc_css = '<link rel="stylesheet" type="text/css" href="' . HELIUM_ADMIN_ASSETS_URI . 'css/selective-refresh-loader.css">';
+
+	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+
+	$style_generator = new Helium_Styles( HELIUM_THEME_ASSETS . 'css/src/' );
+
+	echo $misc_css . '<style id="page-speed-inline-styles">' . $style_generator->generate_css( 'af' ) . $style_generator->generate_css( 'bf' ) . '</style>';
+}
+
+add_action( 'wp_footer', 'pagespeed_put_selective_refresh_loader', 9 );
+
+function pagespeed_put_selective_refresh_loader() {
+	if ( ! is_customize_preview() ) {
+		return;
+	}
+	echo '<div id="selective_refresh_loader"><p data-shadow="' . __( 'Reloading Stylesheet', 'page-speed' ) . '">' . __( 'Reloading Stylesheet', 'page-speed' ) . '</p></div>';
+}
+
+add_action( 'pagespeed_before_header', 'pagespeed_show_errors' );
+
+function pagespeed_show_errors() {
+	if ( ! is_customize_preview() ) {
+		return;
+	}
+	$prefix = wp_get_theme()->stylesheet . '_';
+	$error  = get_transient( $prefix . 'sass_error' );
+	if ( $error ) {
+
+
+		echo '<div style="background: #f79ea8;color:#fff;padding:16px;font-size: 14px;font-family: Sans-serif">
+<h3>Oh Snap!!</h3>
+We are sorry, Something went wrong while compiling the styles. 
+If you recognize the variables in the error below, toggle/change them to see if it fixes the problem.
+Else, contact support with the below error message. 
+<br />
+<code>' . $error . '</code>
+<br />
+<strong>Note</strong>: Most of the times the error is due to wrong input in SCSS override setting. Disabling it might help</div>';
+
+	}
+}
