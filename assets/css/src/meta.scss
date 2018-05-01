@@ -50,6 +50,8 @@ hr {
   padding: 1px 4px;
   font-weight: bold;
   text-decoration: none;
+  display: inline-block;
+  line-height: 1.35em;
   @include border-radius(2px)
 }
 
