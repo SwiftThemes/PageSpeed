@@ -157,6 +157,7 @@ class Helium_Styles {
 
 	public function generate_css( $af_bf ) {
 		global $wp_filesystem;
+		global $page_speed_color_schemes;
 
 		$transient = $this->prefix . 'sass_combined_' . $af_bf;
 		$content   = get_transient( $transient );
@@ -181,7 +182,6 @@ class Helium_Styles {
 
 
 		$color_scheme = sanitize_text_field( get_theme_mod( 'color_scheme', 'default' ) );
-		GLOBAL $page_speed_color_schemes;
 		$color_scheme = $page_speed_color_schemes[ $color_scheme ];
 
 
@@ -268,6 +268,7 @@ class Helium_Styles {
 		);
 
 		// Individual gradients
+		// @todo why is this here?
 		if($pagespeed_gradient_bgs) {
 			foreach ( $pagespeed_gradient_bgs as $value ) {
 				$val = wp_parse_args( get_theme_mod( $value ), $defaults );
@@ -286,24 +287,24 @@ class Helium_Styles {
 
 		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ) . $temp, $content );
 
-
+		/* Overrride colors */
+		$colors_override = '';
 		if ( get_theme_mod( 'override_color_scheme', false ) ) {
-			$colors_override = '';
+
 			$colors_override .= "///** Overridden by settings from customizer */\n\n";
 			$colors_override .= '$primary:' . sanitize_text_field( get_theme_mod( 'primary_color', '#007AFF' ) ) . ';';
 			$colors_override .= '$hue:' . absint( get_theme_mod( 'shades_from', '211' ) ) . ';';
 			$colors_override .= '$saturation:' . absint( get_theme_mod( 'shade_saturation', 8 ) ) . ';';
-			if ( get_theme_mod( 'invert_colors', false ) ) {
-				$colors_override .= '$invert:' . 1 . ';';
-			}
-			$content = str_replace( '/**colors**/', $colors_override, $content );
-		} else if ( get_theme_mod( 'invert_colors', false ) ) {
-			$colors_override = '$invert:' . 1 . ';';
-			$content         = str_replace( '/**colors**/', $colors_override, $content );
 		}
-
+		if ( get_theme_mod( 'invert_colors', false ) ) {
+			$colors_override .= '$invert:' . 1 . ';';
+		}
+		$content         = str_replace( '/**colors_override**/', $colors_override, $content );
 
 		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
+
+
+		// End
 
 		// Overriding the individual colors
 		$hand_picked_colors = '';

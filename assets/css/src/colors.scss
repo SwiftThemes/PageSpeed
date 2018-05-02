@@ -20,12 +20,14 @@ $btn-blue: rgb(0, 122, 255);
 $btn-purple: rgb(88, 86, 214);
 $btn-pink: rgb(255, 44, 85);
 
-// Don't remove the below line.
-// It's used for overriding the variables. COLORS_FROM_COLOR_SCJEMES
+// Don't remove the below lines.
+// 1. Takes the hue, saturation from the color scheme and
+// makes them available to generate the shades.
+// 2. Used for overriding the hue, saturation and primary color.
 
 /**colors_from_color_scheme**/
 
-/**colors**/
+/**colors_override**/
 
 ///* Generated colors */
 
@@ -141,6 +143,9 @@ $copyright-link-color: $light-1;
 }
 // Don't remove the below line.
 // It's used for overriding the variables.
+// 1. All colors from color scheme.
+// 2. Hand picked colors from colors and gradients panel.
+
 /**color_scheme**/
 /**handpicked_colors**/
 /**SCSS_override**/
