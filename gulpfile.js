@@ -2,6 +2,7 @@
 var gulp = require('gulp'),
     scss = require('gulp-ruby-sass'),
     concatCss = require('gulp-concat-css');
+wpPot = require('gulp-wp-pot');
 
 
 var requireDir = require('require-dir');
@@ -151,6 +152,38 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'), // Helps prevent stream crashing on errors
     cache = require('gulp-cache'),
     sourcemaps = require('gulp-sourcemaps');
+
+
+gulp.task('pot', ['page-speed-translations', 'helium-translations',], function () {
+    // gulp.src( ...
+});
+
+gulp.task('page-speed-translations', function () {
+    return gulp.src('**/*.php')
+        .pipe(wpPot({
+            domain: 'page-speed',
+            package: 'page-speed'
+        }))
+        .pipe(gulp.dest('./languages/page-speed.pot'));
+});
+
+gulp.task('helium-translations', function () {
+    return gulp.src('**/*.php')
+        .pipe(wpPot({
+            domain: 'helium',
+            package: 'helium'
+        }))
+        .pipe(gulp.dest('./languages/helium.pot'));
+});
+//
+// gulp.task('hybrid-translations', function () {
+//     return gulp.src('**/*.php')
+//         .pipe(wpPot({
+//             domain: 'hybrid',
+//             package: 'hybrid'
+//         }))
+//         .pipe(gulp.dest('./languages/hybrid.pot'));
+// });
 
 
 /**
