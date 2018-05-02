@@ -48,8 +48,10 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'section'  => 'fonts',
 		'priority' => 15,
 		'label'    => __( ' ', 'page-speed' ),
-		'content'  => __( '<hr /><ul><li>Please choose the weights and character subsets you need carefully as adding more weights and subsets will slow down your site.</li>
-<li> If you are not using the font(s) below, clear it so that they are not unnecessarily loaded</li></ul>', 'page-speed' ),
+		'content'  => sprintf( '<hr /><ul><li>%s</li><li>%s</li></ul>',
+			__( 'Please choose the weights and character subsets you need carefully as adding more weights and subsets will slow down your site.', 'page-speed' ),
+			__( 'If you are not using the font(s) below, clear it so that they are not unnecessarily loaded', 'page-speed' )
+		),
 	) ) );
 
 
