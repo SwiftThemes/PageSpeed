@@ -61,6 +61,7 @@ buildInclude = [
     '**/*.eot',
     '**/*.woff',
     '**/*.woff2',
+    '**/*.pot',
 
     // include specific files and folders
     'screenshot.png',
@@ -93,6 +94,7 @@ buildIncludeOrg = [
     '**/*.eot',
     '**/*.woff',
     '**/*.woff2',
+    '**/*.pot',
 
     // include specific files and folders
     'screenshot.png',
@@ -397,12 +399,12 @@ gulp.task('buildZip', function () {
 
 // Package Distributable Theme
 gulp.task('build', function (cb) {
-    runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'markdown', 'buildImages', 'buildZip', 'cleanupFinal', cb);
+    runSequence('pot','styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'markdown', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
 
 // Package Distributable Theme
 gulp.task('buildOrg', function (cb) {
-    runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFilesOrg', 'buildImages', 'buildZip', 'cleanupFinal', cb);
+    runSequence('pot','styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFilesOrg', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
 
 

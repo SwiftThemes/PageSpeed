@@ -1,0 +1,2080 @@
+# Copyright (C) 2018 page-speed
+# This file is distributed under the same license as the page-speed package.
+msgid ""
+msgstr ""
+"Project-Id-Version: page-speed\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: archive.php:37, author.php:70, category.php:52, image.php:29, index.php:50, search.php:30, tag.php:53, tpl-airy-img.php:49, tpl-airy.php:49, tpl-full-width.php:49, tpl-landing.php:49, tpl-wide.php:32
+msgid "Previous page"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: archive.php:39, author.php:72, category.php:54, image.php:30, index.php:52, search.php:32, tag.php:55, tpl-airy-img.php:50, tpl-airy.php:50, tpl-full-width.php:50, tpl-landing.php:50, tpl-wide.php:33
+msgid "Next page"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: archive.php:40, author.php:73, category.php:55, image.php:31, index.php:53, search.php:33, tag.php:56, tpl-airy-img.php:51, tpl-airy.php:51, tpl-full-width.php:51, tpl-landing.php:51, tpl-wide.php:34
+msgid "Page"
+msgstr ""
+
+#: author.php:30
+msgid "About"
+msgstr ""
+
+#: author.php:41
+msgid "Website:"
+msgstr ""
+
+#: author.php:46
+msgid "%1$s has written %2$s article so far, you can find it below."
+msgid_plural "%1$s has written %2$s articles so far, you can find them below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: author.php:47
+msgid "%1$s has written no articles so far."
+msgstr ""
+
+#. undefined
+#: category.php:26, tag.php:26
+msgid "Archives for"
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:30
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:34
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:54
+msgid "Reply"
+msgstr ""
+
+#. undefined
+#: comments.php:60, single.php:28
+msgid "Previous"
+msgstr ""
+
+#. undefined
+#: comments.php:61, single.php:29
+msgid "Next"
+msgstr ""
+
+#: comments.php:69
+msgid "Comments are closed."
+msgstr ""
+
+#. undefined
+#. undefined
+#: footer.php:36, inc/pro/customize-backgrounds.php:294, inc/admin/customize/footer.php:22
+msgid "Copyright"
+msgstr ""
+
+#. undefined
+#: footer.php:36, inc/admin/customize/footer.php:22
+msgid "Y"
+msgstr ""
+
+#. undefined
+#. undefined
+#: searchform-mobile.php:9, searchform-nav.php:7, searchform.php:14
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#. undefined
+#: searchform-mobile.php:13, searchform-nav.php:11
+msgctxt "placeholder"
+msgid "Type and hit enter to search&hellip;"
+msgstr ""
+
+#: searchform.php:18
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: searchform.php:21
+msgctxt "placeholder"
+msgid "Search&hellip;"
+msgstr ""
+
+#: single.php:28
+msgid "Previous Post"
+msgstr ""
+
+#: single.php:29
+msgid "Next Post"
+msgstr ""
+
+#: tpl-airy-img.php:16
+msgid "Airy Image"
+msgstr ""
+
+#: tpl-airy.php:16
+msgid "Airy"
+msgstr ""
+
+#: tpl-full-width.php:16
+msgid "Full Width Page"
+msgstr ""
+
+#: tpl-landing.php:16
+msgid "Landing Page"
+msgstr ""
+
+#: tpl-lsb.php:3
+msgid "Left Sidebar"
+msgstr ""
+
+#: tpl-rsb.php:3
+msgid "Right Sidebar"
+msgstr ""
+
+#. undefined
+#: tpl-wide.php:3, inc/admin/customize/customizer.php:141
+msgid "Wide"
+msgstr ""
+
+#: tpl-woo-lsb.php:3
+msgid "Woo Left Sidebar"
+msgstr ""
+
+#: tpl-woo-rsb.php:3
+msgid "Woo Right Sidebar"
+msgstr ""
+
+#. undefined
+#: inc/functions-display.php:196, framework/hybrid/ext/breadcrumb-trail.php:246
+msgid "Home"
+msgstr ""
+
+#: inc/functions-display.php:233
+msgid "Howdy!! Thanks for choosing PageSpeed :-).<br />Set the primary navigation menu at <strong>appearance -> menus</strong> and I will go away!!"
+msgstr ""
+
+#: inc/functions-eaa-filters.php:6
+msgid "Above header"
+msgstr ""
+
+#: inc/functions-eaa-filters.php:7
+msgid "In header"
+msgstr ""
+
+#: inc/functions-eaa-filters.php:8
+msgid "Below header"
+msgstr ""
+
+#: inc/functions-eaa-filters.php:9
+msgid "Before main div"
+msgstr ""
+
+#: inc/functions-eaa-filters.php:10
+msgid "After main div"
+msgstr ""
+
+#: inc/functions-eaa-filters.php:11
+msgid "Above footer"
+msgstr ""
+
+#: inc/functions-register-nav-menus.php:16
+msgid "Navigation above header"
+msgstr ""
+
+#: inc/functions-register-nav-menus.php:21
+msgid "Navigation menu in header"
+msgstr ""
+
+#: inc/functions-register-nav-menus.php:25
+msgid "Navigation below header"
+msgstr ""
+
+#: inc/functions-register-nav-menus.php:29
+msgid "Footer links"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:27
+msgid "Appears on rest of the site like posts, archives etc..."
+msgstr ""
+
+#. undefined
+#. undefined
+#: inc/functions-register-sidebars.php:32, inc/functions-register-sidebars.php:37, inc/admin/customize/customizer.php:41
+msgid "Right"
+msgstr ""
+
+#. undefined
+#. undefined
+#: inc/functions-register-sidebars.php:33, inc/functions-register-sidebars.php:36, inc/admin/customize/customizer.php:33
+msgid "Left"
+msgstr ""
+
+#. undefined
+#. undefined
+#: inc/functions-register-sidebars.php:45, inc/functions-register-sidebars.php:68, inc/functions-register-sidebars.php:186
+msgctxt "sidebar"
+msgid "Sidebar #HomePage"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:46
+msgid "Appears on the left of main content, above the sticky widgets."
+msgstr ""
+
+#. undefined
+#: inc/functions-register-sidebars.php:58, inc/functions-register-sidebars.php:79
+msgctxt "sidebar"
+msgid "Sidebar Sticky #HomePage"
+msgstr ""
+
+#. undefined
+#: inc/functions-register-sidebars.php:59, inc/functions-register-sidebars.php:151
+msgid "Appears on the left of main content. Widgets added to this sidebar stick to the top of the page when you scroll"
+msgstr ""
+
+#. undefined
+#: inc/functions-register-sidebars.php:69, inc/functions-register-sidebars.php:161
+msgid "Appears on the right of main content, below the sticky widgets."
+msgstr ""
+
+#. undefined
+#: inc/functions-register-sidebars.php:80, inc/functions-register-sidebars.php:173
+msgid "Appears on the right of main content. Widgets added to this sidebar stick to the top of the page when you scroll"
+msgstr ""
+
+#. undefined
+#. undefined
+#: inc/functions-register-sidebars.php:92, inc/functions-register-sidebars.php:114, inc/functions-register-sidebars.php:210
+msgctxt "sidebar"
+msgid "Sidebar #Page"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:93
+msgid "Appears on the left of main content, above the sticky widgets on pages using default page template."
+msgstr ""
+
+#: inc/functions-register-sidebars.php:104
+msgctxt "sidebar"
+msgid "Sticky Left Sidebar #Page"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:105
+msgid "Appears on the left of main content on pages using default page template. Widgets added to this sidebar stick to the top of the page when you scroll"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:115
+msgid "Appears on the right of main content, above the sticky widgets on pages using default page template."
+msgstr ""
+
+#: inc/functions-register-sidebars.php:125
+msgctxt "sidebar"
+msgid "Sticky Right Sidebar #Page"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:126
+msgid "Appears on the right of main content on pages using default page template. Widgets added to this sidebar stick to the top of the page when you scroll"
+msgstr ""
+
+#. undefined
+#. undefined
+#: inc/functions-register-sidebars.php:138, inc/functions-register-sidebars.php:160, inc/functions-register-sidebars.php:234
+msgctxt "sidebar"
+msgid "Sidebar"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:139
+msgid "Appears on the left of main content, below the sticky widgets."
+msgstr ""
+
+#. undefined
+#: inc/functions-register-sidebars.php:150, inc/functions-register-sidebars.php:172
+msgctxt "sidebar"
+msgid "Sidebar Sticky"
+msgstr ""
+
+#. undefined
+#. undefined
+#: inc/functions-register-sidebars.php:187, inc/functions-register-sidebars.php:211, inc/functions-register-sidebars.php:235
+msgid "Above the sticky sidebar."
+msgstr ""
+
+#: inc/functions-register-sidebars.php:197
+msgctxt "sidebar"
+msgid "Sticky Sidebar #HomePage"
+msgstr ""
+
+#. undefined
+#. undefined
+#: inc/functions-register-sidebars.php:198, inc/functions-register-sidebars.php:222, inc/functions-register-sidebars.php:246
+msgid "Widgets added here stick to the page"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:221
+msgctxt "sidebar"
+msgid "Sticky Sidebar #Page"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:245
+msgctxt "sidebar"
+msgid "Sticky Sidebar"
+msgstr ""
+
+#. undefined
+#: inc/functions-register-sidebars.php:259, inc/functions-register-sidebars.php:269
+msgctxt "sidebar"
+msgid "Sidebar Page Template"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:260
+msgid "Add widgets to right sidebar page template here"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:270
+msgid "Add widgets to left sidebar page template here"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:282
+msgctxt "sidebar"
+msgid "WooCommerce Sidebar"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:283
+msgid "Add widgets to the WooCommerce pages here"
+msgstr ""
+
+#: inc/functions-register-sidebars.php:294
+msgid "Footer Column "
+msgstr ""
+
+#: inc/functions-register-sidebars.php:297
+msgid "Add widgets to footer here."
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: template-parts/content-archives.php:57, template-parts/content-attachment.php:20, template-parts/content-full-width-page.php:53, template-parts/content-page.php:53, template-parts/content-post.php:48, template-parts/content-search.php:40, template-parts/content.php:55
+msgid "Pages:"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: template-parts/content-archives.php:68, template-parts/content-post.php:14, template-parts/content-search.php:51, template-parts/content.php:67, framework/helium/customize/control-drag-drop.php:85, inc/admin/customize/post-metas.php:58, inc/admin/customize/post-metas.php:118, inc/admin/customize/post-metas.php:200
+msgid "Tagged with"
+msgstr ""
+
+#. undefined
+#. undefined
+#: template-parts/content-full-width-page.php:10, template-parts/content-page.php:10, inc/admin/customize/post-metas.php:275
+msgid "Written by"
+msgstr ""
+
+#. undefined
+#. undefined
+#: template-parts/content-full-width-page.php:15, template-parts/content-page.php:15, inc/admin/customize/post-metas.php:280
+msgid "Published on"
+msgstr ""
+
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: template-parts/content-full-width-page.php:46, template-parts/content-page.php:46, template-parts/content-post.php:41, template-parts/content-woo.php:22
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-none.php:9
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:15
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:19
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:24
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#. undefined
+#. undefined
+#: template-parts/content-post.php:4, framework/helium/customize/control-drag-drop.php:80, inc/admin/customize/post-metas.php:190
+msgid "Filed under"
+msgstr ""
+
+#. undefined
+#: template-parts/content-post.php:7, inc/admin/customize/post-metas.php:193
+msgid "Published by"
+msgstr ""
+
+#. undefined
+#: template-parts/content-post.php:9, inc/admin/customize/post-metas.php:195
+msgid "on"
+msgstr ""
+
+#. undefined
+#: framework/helium/change-wp-defaults.php:23, framework/helium/change-wp-defaults.php:23
+msgid "Name"
+msgstr ""
+
+#: framework/helium/change-wp-defaults.php:24
+msgid "Email"
+msgstr ""
+
+#: framework/helium/change-wp-defaults.php:25
+msgid "Email address"
+msgstr ""
+
+#: framework/helium/change-wp-defaults.php:26
+msgid "Website"
+msgstr ""
+
+#: framework/helium/change-wp-defaults.php:27
+msgid "Your website url"
+msgstr ""
+
+#. undefined
+#: framework/helium/change-wp-defaults.php:52, inc/admin/customize/misc.php:14
+msgid "Read more"
+msgstr ""
+
+#: framework/helium/org-release.php:48
+msgctxt "sidebar"
+msgid "Dummy sidebar"
+msgstr ""
+
+#: framework/helium/org-release.php:49
+msgid "Used only for theme preview."
+msgstr ""
+
+#. undefined
+#: framework/helium/post-meta.php:49, framework/helium/post-meta.php:62
+msgid "ago"
+msgstr ""
+
+#: framework/helium/post-meta.php:75
+msgid "Something went wrong, please contact support"
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:15
+msgid "Useful Links"
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:16
+msgid ""
+"We tried our best to make Page Speed very simple and easy to use. We hope to make it even better with your\n"
+"        valuable feedback & suggestions.\n"
+"        Here are some useful links to help you get started with the theme."
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:31
+msgid "Customize PageSpeed"
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:32
+msgid "About PageSpeed"
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:33
+msgid "User Guide"
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:34
+msgid "Optimization Guide"
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:35
+msgid "Customize like the demo"
+msgstr ""
+
+#: inc/admin/about-pagespeed.php:36
+msgid "Demo"
+msgstr ""
+
+#: inc/pro/admin-theme-options.php:39
+msgid "Enable this option to eliminate render blocking CSS.<br />Please read <a href=\"https://swiftthemes.com/get-100-page-speed-score-mobile-desktops/\"><strong>PageSpeed Optimization Guide</strong></a> for info to take advantage of this option."
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:10
+msgid "Colors & Gradients"
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:24
+msgid "Make backgrounds transparent"
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:25
+msgid "So that the backgrounds are not hidden by layers above it."
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:53
+msgid "Body"
+msgstr ""
+
+#. undefined
+#: inc/pro/customize-backgrounds.php:84, inc/admin/customize/header.php:13
+msgid "Header"
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:114
+msgid "Primary Navigation"
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:144
+msgid "Secondary Navigation"
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:174
+msgid "Content"
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:204
+msgid "Sidebar #1"
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:234
+msgid "Sidebar #2"
+msgstr ""
+
+#. undefined
+#: inc/pro/customize-backgrounds.php:264, inc/admin/customize/footer.php:13
+msgid "Footer"
+msgstr ""
+
+#: inc/pro/customize-footer.php:15
+msgid "Footer Columns"
+msgstr ""
+
+#: inc/pro/customize-footer.php:36
+msgid "Footer column widths"
+msgstr ""
+
+#: inc/pro/customize-misc.php:13
+msgid "Show search in primary navigation"
+msgstr ""
+
+#: inc/pro/customize-misc.php:26
+msgid "Show social media profile links in header"
+msgstr ""
+
+#: inc/pro/customize-misc.php:28
+msgid "You can add your links from the social media section."
+msgstr ""
+
+#: inc/pro/customize-misc.php:40
+msgid "Show first post in full length"
+msgstr ""
+
+#: inc/pro/customize-misc.php:42
+msgid "Select this option to show first post in full length when using excerpts."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:13
+msgid "Social Media"
+msgstr ""
+
+#: inc/pro/customize-social-media.php:30
+msgid "Drag and sort the social media profiles you want to appear in the header."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:92
+msgid "If your blog is separate from main website, enter your main website url here."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:107
+msgid "Enter full url to your Facebook Page or Group."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:124
+msgid "Enter full url to your twitter profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:141
+msgid "Enter full url to your YouTube chanel."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:158
+msgid "Enter full url to your Instagram profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:175
+msgid "Enter full url to your GitHub profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:192
+msgid "Enter full url to your Quora profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:208
+msgid "Enter full url to your Linkedin profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:224
+msgid "Enter full url to your Google Plus profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:240
+msgid "Enter url to join your WhatsApp group."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:257
+msgid "Enter full url to your Dribbble profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:274
+msgid "Enter full url to your Good Reads profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:291
+msgid "Enter full url to your StackOverflow profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:308
+msgid "Enter full url to your Reddit forum/profile."
+msgstr ""
+
+#: inc/pro/customize-social-media.php:324
+msgid "Enter your business phone number."
+msgstr ""
+
+#: framework/helium/admin/admin-ajax-functions.php:33
+msgid "Update success, can read & write"
+msgstr ""
+
+#: framework/helium/admin/admin-ajax-functions.php:35
+msgid "Update success, can't write"
+msgstr ""
+
+#: framework/helium/admin/admin-ajax-functions.php:59
+msgid "Theme options saved"
+msgstr ""
+
+#: framework/helium/admin/admin-metaboxes.php:10
+msgid "Helium Framework Options"
+msgstr ""
+
+#: framework/helium/admin/admin-metaboxes.php:24
+msgid "Hide breadcrumbs"
+msgstr ""
+
+#: framework/helium/admin/admin-metaboxes.php:30
+msgid "Hide page title"
+msgstr ""
+
+#: framework/helium/admin/admin-metaboxes.php:37
+msgid "Hide footer widgets"
+msgstr ""
+
+#: framework/helium/admin/admin-page.php:14
+msgid "Theme Helpers"
+msgstr ""
+
+#: framework/helium/admin/helium-tools.php:7
+msgid ""
+"Helium stores the SASS/CSS content to the database in a transient for a smoother experience on the theme customizer.<br/>\n"
+"            If you switched or upgraded your theme, and the customizer is not working as expected, try clearing the transients."
+msgstr ""
+
+#: framework/helium/admin/helium-tools.php:11
+msgid "Clear Transients"
+msgstr ""
+
+#: framework/helium/admin/helium-tools.php:19
+msgid ""
+"Helium saves your file system status on whether it can write the stylesheet to uploads directory or not.\n"
+"            It loads a pre-compiled stylesheet if it can not write to uploads and your layout and color changes might\n"
+"            not work.\n"
+"            You can force a recheck here."
+msgstr ""
+
+#: framework/helium/admin/helium-tools.php:27
+msgid "Can read & write"
+msgstr ""
+
+#: framework/helium/admin/helium-tools.php:29
+msgid "Can not read & write"
+msgstr ""
+
+#: framework/helium/admin/helium-tools.php:35
+msgid "Update File System Status"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:20
+msgid "Welcome to"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:26
+msgid ""
+"First off, a big thank you for choosing Page Speed amongst the thousands of theme options available to\n"
+"        you.<br>\n"
+"        We hope you find Page Speed useful and easy to use. If you have any <strong>ideas/questions/problems</strong>, please don't hesitate to ask/share on the <a\n"
+"                href=\"https://forums.swiftthemes.com/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic\">SUPPORT FORUM</a>\n"
+"        or shoot an email to <a href=\"mailto:satish@swiftthemes.com?Subject=Question%20about%20PageSpeed\"\n"
+"                                target=\"_top\"><strong>satish@SwiftThemes.com</strong></a>. \n"
+"                                It's always a pleasure to hear from you and we take your feedback very seriously. <br /><br />\n"
+"        If you like the theme, please recommend it to your peers and <a\n"
+"                href=\"https://wordpress.org/support/theme/page-speed/reviews/#new-post\" target=\"_blank\">REVIEW IT</a> on\n"
+"        WordPress.Org"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:44
+msgid "Getting Started"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:45
+msgid "Tools"
+msgstr ""
+
+#. undefined
+#: framework/helium/admin/theme-page.php:47, inc/admin/customize/customizer.php:13
+msgid "Theme Options"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:48
+msgid "Activation"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:50
+msgid "Pro vs Free"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:70
+msgid ""
+"Save\n"
+"                            settings"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:74
+msgid "You have unsaved changes"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:76
+msgid "Settings saved"
+msgstr ""
+
+#: framework/helium/admin/theme-page.php:78
+msgid "Error saving settings"
+msgstr ""
+
+#: framework/helium/admin/write-stylesheet.php:461
+msgid "Message:"
+msgstr ""
+
+#: framework/helium/customize/control-category-selector.php:45
+msgid "Recent posts"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:74
+msgid "Text"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:75
+msgid "Any text"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:79
+msgid "Cat"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:84
+msgid "Tags"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:89
+msgid "Author Posts"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:93
+msgid "Author HomePage"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:97
+msgid "Published"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:101
+msgid "Updated"
+msgstr ""
+
+#: framework/helium/customize/control-drag-drop.php:105
+msgid "Line"
+msgstr ""
+
+#. undefined
+#: framework/helium/customize/control-drag-drop.php:110, framework/helium/customize/control-drag-sort.php:82
+msgid "Drag them below"
+msgstr ""
+
+#: framework/helium/customize/control-font-selection.php:77
+msgid "Search a font"
+msgstr ""
+
+#: framework/helium/customize/control-font-selection.php:79
+msgid "Weights"
+msgstr ""
+
+#: framework/helium/customize/control-font-selection.php:92
+msgid "Subsets"
+msgstr ""
+
+#: framework/helium/customize/control-gradient.php:56
+msgid "Enable"
+msgstr ""
+
+#: framework/helium/customize/control-gradient.php:78
+msgid "Use gradient"
+msgstr ""
+
+#: framework/helium/customize/control-image-dimensions.php:63
+msgid "Align left"
+msgstr ""
+
+#: framework/helium/customize/control-image-dimensions.php:64
+msgid "Centered"
+msgstr ""
+
+#: framework/helium/customize/control-image-dimensions.php:65
+msgid "Align right"
+msgstr ""
+
+#: framework/helium/customize/control-image-dimensions.php:66
+msgid "Alternate"
+msgstr ""
+
+#: framework/helium/customize/control-image-dimensions.php:67
+msgid "Stretched [Only for mobiles]"
+msgstr ""
+
+#: framework/helium/customize/control-typography.php:113
+msgid "Font stack"
+msgstr ""
+
+#: framework/helium/customize/control-typography.php:115
+msgid "Select Font"
+msgstr ""
+
+#: framework/helium/customize/control-typography.php:127
+msgid "Size"
+msgstr ""
+
+#: framework/helium/customize/control-typography.php:144
+msgid "Line Height"
+msgstr ""
+
+#. undefined
+#: framework/helium/customize/refresh-styles.php:80, framework/helium/customize/refresh-styles.php:80
+msgid "Reloading Stylesheet"
+msgstr ""
+
+#: framework/helium/customize/sass-override.php:29
+msgid "Override SCSS variables"
+msgstr ""
+
+#: framework/helium/customize/sass-override.php:41
+msgid "Enable SCSS override"
+msgstr ""
+
+#: framework/helium/customize/sass-override.php:42
+msgid "Disable this option if you see any styles compilation errors."
+msgstr ""
+
+#: framework/helium/customize/sass-override.php:50
+msgid ""
+"//Here you can override any SCSS variables defined in the theme\n"
+"\n"
+""
+msgstr ""
+
+#: framework/helium/customize/sass-override.php:55
+msgid "Override the SCSS variables"
+msgstr ""
+
+#. undefined
+#. undefined
+#: framework/helium/customize/upsell.php:6, framework/helium/customize/upsell.php:56, framework/helium/customize/upsell.php:71
+msgid "Go Pro"
+msgstr ""
+
+#: framework/helium/customize/upsell.php:9
+msgid "Unlock"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: framework/helium/customize/upsell.php:16, framework/helium/customize/upsell.php:51, framework/helium/customize/upsell.php:66, inc/admin/customize/customizer.php:215, inc/admin/customize/fonts.php:40, inc/admin/customize/fonts.php:50, inc/admin/customize/fonts.php:64, inc/admin/customize/fonts.php:76, inc/admin/customize/home-slider.php:99, inc/admin/customize/sidebar-settings.php:24
+msgid " "
+msgstr ""
+
+#: framework/helium/customize/upsell.php:20
+msgid "Premium"
+msgstr ""
+
+#: framework/helium/customize/upsell.php:21
+msgid ""
+" While the free version you are using now is limited in no way, upgrading to the premium version gets you priority\n"
+"        support and the following additional features."
+msgstr ""
+
+#: framework/helium/customize/upsell.php:35
+msgid "Support for non render blocking CSS for a higher Google PageSpeed score."
+msgstr ""
+
+#: framework/helium/customize/upsell.php:36
+msgid "Color options and gradients."
+msgstr ""
+
+#: framework/helium/customize/upsell.php:37
+msgid "Customizable footer columns."
+msgstr ""
+
+#: framework/helium/customize/upsell.php:38
+msgid "Prebuilt layouts for use with page builders."
+msgstr ""
+
+#: framework/helium/customize/upsell.php:39
+msgid "More color schemes."
+msgstr ""
+
+#: framework/helium/customize/upsell.php:40
+msgid "Search form in navigation."
+msgstr ""
+
+#: framework/helium/customize/upsell.php:41
+msgid "Get PageSpeed Pro"
+msgstr ""
+
+#: framework/helium/customize/upsell.php:55
+msgid "Want to customize the number of footer columns and their widths? Or just support the development :-)"
+msgstr ""
+
+#: framework/helium/customize/upsell.php:57
+msgid "Page Speed is probably the only theme with no public facing credits or links to our site. We know important it is to keep your outbound links to minimum for your SEO efforts. #mintMoney"
+msgstr ""
+
+#: framework/helium/customize/upsell.php:70
+msgid "Need more color schemes, color options and gradients?"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: framework/helium/libs/class-tgm-plugin-activation.php:330
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. translators: %s: plugin name.
+#: framework/helium/libs/class-tgm-plugin-activation.php:332
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:334
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:340
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:346
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:352
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:358
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:364
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:370
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#: framework/helium/libs/class-tgm-plugin-activation.php:386, framework/helium/libs/class-tgm-plugin-activation.php:827, framework/helium/libs/class-tgm-plugin-activation.php:2533, framework/helium/libs/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#. undefined
+#: framework/helium/libs/class-tgm-plugin-activation.php:387, framework/helium/libs/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#. undefined
+#: framework/helium/libs/class-tgm-plugin-activation.php:388, framework/helium/libs/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: framework/helium/libs/class-tgm-plugin-activation.php:390
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: framework/helium/libs/class-tgm-plugin-activation.php:392
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. translators: 1: dashboard link.
+#: framework/helium/libs/class-tgm-plugin-activation.php:394
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:396
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:934
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#. undefined
+#: framework/helium/libs/class-tgm-plugin-activation.php:934, framework/helium/libs/class-tgm-plugin-activation.php:937
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:937
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#. undefined
+#: framework/helium/libs/class-tgm-plugin-activation.php:1121, framework/helium/libs/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#. translators: %s: version number
+#: framework/helium/libs/class-tgm-plugin-activation.php:1982
+msgid "TGMPA v%s"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#. translators: 1: install status, 2: update status
+#: framework/helium/libs/class-tgm-plugin-activation.php:2342
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#. translators: 1: number of plugins.
+#: framework/helium/libs/class-tgm-plugin-activation.php:2388
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: framework/helium/libs/class-tgm-plugin-activation.php:2392
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: framework/helium/libs/class-tgm-plugin-activation.php:2396
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: framework/helium/libs/class-tgm-plugin-activation.php:2400
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: framework/helium/libs/class-tgm-plugin-activation.php:2603
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: framework/helium/libs/class-tgm-plugin-activation.php:2608
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: framework/helium/libs/class-tgm-plugin-activation.php:2614
+msgid "Activate %2$s"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: framework/helium/libs/class-tgm-plugin-activation.php:3498
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: framework/helium/libs/class-tgm-plugin-activation.php:3501
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: framework/helium/libs/class-tgm-plugin-activation.php:3503
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:3507
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: framework/helium/libs/class-tgm-plugin-activation.php:3509
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#. undefined
+#: framework/helium/libs/class-tgm-plugin-activation.php:3509, framework/helium/libs/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#. undefined
+#: framework/helium/libs/class-tgm-plugin-activation.php:3509, framework/helium/libs/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: framework/helium/libs/class-tgm-plugin-activation.php:3512
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:3515
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: framework/helium/libs/class-tgm-plugin-activation.php:3517
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: framework/helium/libs/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: framework/helium/libs/class-tgm-plugin-activation.php:3520
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: framework/helium/pro/admin-ajax-functions.php:24
+msgid "The license key you entered is invalid"
+msgstr ""
+
+#: framework/helium/pro/admin-ajax-functions.php:43
+msgid "License key validated successfully"
+msgstr ""
+
+#: framework/helium/pro/admin-ajax-functions.php:59
+msgid "Please enter a valid license"
+msgstr ""
+
+#: framework/helium/pro/customizer.php:14
+msgid "Link logo to a custom link"
+msgstr ""
+
+#: framework/helium/pro/license.php:11
+msgid "Enter your license key"
+msgstr ""
+
+#: framework/helium/pro/license.php:41
+msgid "Please enter a valid license key. You can get your license key from <a href=\"https://members.SwiftThemes.Com/\">SwiftThemes Members Area</a>"
+msgstr ""
+
+#: framework/helium/pro/license.php:57
+msgid "Your license key is valid and expires in"
+msgstr ""
+
+#: framework/helium/pro/license.php:63
+msgid "We couldn't find your license key. Please verify that the key you entered matches then one in your SwiftThemes Members Area"
+msgstr ""
+
+#: framework/helium/pro/license.php:66
+msgid "Your license key is disabled. Please contact SwiftThemes support."
+msgstr ""
+
+#: framework/helium/pro/license.php:69
+msgid "Your license key expired. Please renew your subscription from the members area."
+msgstr ""
+
+#: framework/helium/pro/license.php:72
+msgid "We are having trouble reaching the activation server. Please try again in few minutes, if the error persists contact SwiftThemes support."
+msgstr ""
+
+#: framework/helium/pro/license.php:75
+msgid "The license key entered is invalid"
+msgstr ""
+
+#: framework/helium/pro/license.php:78
+msgid "You have reached the number of allowed activations. Upgrade your license or deactivate existing activations from SwiftThemes Members Area."
+msgstr ""
+
+#: framework/helium/pro/license.php:81
+msgid "Please activate your license by clicking the activate button above."
+msgstr ""
+
+#: framework/helium/pro/license.php:84
+msgid "You have reached the allowed number of re-activations. Please contact support."
+msgstr ""
+
+#: framework/helium/pro/license.php:107
+msgid "Please activate PageSpeed license to receive updates. You can get your license key from <a href=\"https://members.SwiftThemes.Com/\">SwiftThemes Members Area</a>"
+msgstr ""
+
+#: framework/helium/pro/license.php:108
+msgid "Enter license"
+msgstr ""
+
+#: framework/helium/pro/license.php:116
+msgid "License expiring"
+msgstr ""
+
+#: framework/helium/pro/license.php:119
+msgid "Your PageSpeed license is about to expire in %d Days. Please renew your subscription for uninterrupted theme updates."
+msgstr ""
+
+#: framework/helium/pro/license.php:120
+msgid "Renew now"
+msgstr ""
+
+#: framework/helium/pro/license.php:121
+msgid "Ignore if your subscription is set to auto renew"
+msgstr ""
+
+#: framework/helium/pro/license.php:128
+msgid "License expired"
+msgstr ""
+
+#: framework/helium/pro/license.php:132
+msgid "License error"
+msgstr ""
+
+#: framework/helium/pro/license.php:135
+msgid "Members area"
+msgstr ""
+
+#. undefined
+#. undefined
+#: framework/hybrid/admin/meta-box-post-layout.php:35, framework/hybrid/inc/functions-customize.php:72, inc/admin/customize/customizer.php:70
+msgid "Layout"
+msgstr ""
+
+#: framework/hybrid/admin/meta-box-post-style.php:35
+msgid "Style"
+msgstr ""
+
+#: framework/hybrid/admin/meta-box-post-template.php:41
+msgid "Template"
+msgstr ""
+
+#: framework/hybrid/ext/breadcrumb-trail.php:244
+msgid "Browse:"
+msgstr ""
+
+#: framework/hybrid/ext/breadcrumb-trail.php:245
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:247, framework/hybrid/inc/template-general.php:422
+msgid "404 Not Found"
+msgstr ""
+
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:248, framework/hybrid/inc/template-general.php:218
+msgid "Archives"
+msgstr ""
+
+#. translators: %s is the search query. The HTML entities are opening and closing curly quotes.
+#. translators: %s is the search query. The HTML entities are opening and closing curly quotes.
+#: framework/hybrid/ext/breadcrumb-trail.php:250, framework/hybrid/inc/template-general.php:400
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#. translators: %s is the page number.
+#: framework/hybrid/ext/breadcrumb-trail.php:252
+msgid "Page %s"
+msgstr ""
+
+#. translators: Minute archive title. %s is the minute time format.
+#. translators: Minute archive title. %s is the minute time format.
+#: framework/hybrid/ext/breadcrumb-trail.php:254, framework/hybrid/inc/template-general.php:354
+msgid "Minute %s"
+msgstr ""
+
+#. translators: Weekly archive title. %s is the week date format.
+#: framework/hybrid/ext/breadcrumb-trail.php:256
+msgid "Week %s"
+msgstr ""
+
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:708, framework/hybrid/inc/template-general.php:376
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:725, framework/hybrid/inc/template-general.php:354
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:742, framework/hybrid/inc/template-general.php:330
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:758, framework/hybrid/ext/breadcrumb-trail.php:787, framework/hybrid/ext/breadcrumb-trail.php:814, framework/hybrid/ext/breadcrumb-trail.php:841, framework/hybrid/ext/breadcrumb-trail.php:1176, framework/hybrid/inc/template-general.php:262, framework/hybrid/inc/template-general.php:286
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#. undefined
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:759, framework/hybrid/ext/breadcrumb-trail.php:815, framework/hybrid/ext/breadcrumb-trail.php:1180
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:760, framework/hybrid/ext/breadcrumb-trail.php:1184
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#. undefined
+#: framework/hybrid/ext/breadcrumb-trail.php:788, framework/hybrid/inc/template-general.php:286
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#. translators: Media dimensions - 1 is width and 2 is height.
+#. translators: Media dimensions - 1 is width and 2 is height.
+#: framework/hybrid/inc/class-media-meta.php:245, framework/hybrid/inc/template-media.php:172
+msgid "%1$s &#215; %2$s"
+msgstr ""
+
+#. translators: The %s is the sidebar name. This is used for the 'aria-label' attribute.
+#: framework/hybrid/inc/functions-attr.php:202
+msgctxt "sidebar aria label"
+msgid "%s Sidebar"
+msgstr ""
+
+#. translators: The %s is the menu name. This is used for the 'aria-label' attribute.
+#: framework/hybrid/inc/functions-attr.php:235
+msgctxt "nav menu aria label"
+msgid "%s Menu"
+msgstr ""
+
+#. translators: Post date/time "title" attribute.
+#: framework/hybrid/inc/functions-attr.php:476
+msgctxt "post time format"
+msgid "l, F j, Y, g:i a"
+msgstr ""
+
+#. translators: Comment date/time "title" attribute.
+#: framework/hybrid/inc/functions-attr.php:601
+msgctxt "comment time format"
+msgid "l, F j, Y, g:i a"
+msgstr ""
+
+#: framework/hybrid/inc/functions-customize.php:95
+msgid "Global Layout"
+msgstr ""
+
+#. translators: 1 is the page title. 2 is the page number.
+#: framework/hybrid/inc/functions-head.php:140
+msgid "%1$s Page %2$s"
+msgstr ""
+
+#. translators: Default theme layout option.
+#: framework/hybrid/inc/functions-layouts.php:51
+msgctxt "theme layout"
+msgid "Default"
+msgstr ""
+
+#. translators: Used as a placeholder for untitled posts on non-singular views.
+#: framework/hybrid/inc/functions-utility.php:94
+msgid "(Untitled)"
+msgstr ""
+
+#: framework/hybrid/inc/template-general.php:55
+msgid "http://wordpress.org"
+msgstr ""
+
+#: framework/hybrid/inc/template-general.php:55
+msgid "WordPress"
+msgstr ""
+
+#. translators: 1 is the week number and 2 is the year.
+#: framework/hybrid/inc/template-general.php:286
+msgid "Week %1$s of %2$s"
+msgstr ""
+
+#: framework/hybrid/inc/template-general.php:308
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#. translators: Separates tags, categories, etc. when displaying a post.
+#: framework/hybrid/inc/template-post.php:219
+msgctxt "taxonomy terms separator"
+msgid ", "
+msgstr ""
+
+#. undefined
+#: inc/admin/customize/colors.php:13, inc/admin/customize/colors.php:70
+msgid "Color Schemes"
+msgstr ""
+
+#: inc/admin/customize/colors.php:79
+msgid "Invert light and dark colors"
+msgstr ""
+
+#: inc/admin/customize/colors.php:86
+msgid "Override shades generated from the color scheme"
+msgstr ""
+
+#: inc/admin/customize/colors.php:87
+msgid "Check this if you want to use the below three options."
+msgstr ""
+
+#: inc/admin/customize/colors.php:98
+msgid "Primary Color"
+msgstr ""
+
+#: inc/admin/customize/colors.php:99
+msgid "Used for buttons and links"
+msgstr ""
+
+#: inc/admin/customize/colors.php:112
+msgid "Base color for shades"
+msgstr ""
+
+#: inc/admin/customize/colors.php:113
+msgid "Used to generate light and dark colors used in the theme"
+msgstr ""
+
+#: inc/admin/customize/colors.php:121
+msgid "Amount of base color in the shades"
+msgstr ""
+
+#: inc/admin/customize/colors.php:122
+msgid "Higher the number more color the lights and darks have."
+msgstr ""
+
+#: inc/admin/customize/customizer.php:27
+msgid "Logo position"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:37
+msgid "Center"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:58
+msgid "Logo for mobiles"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:85
+msgid "Site Layout"
+msgstr ""
+
+#. undefined
+#: inc/admin/customize/customizer.php:91, inc/admin/customize/customizer.php:274
+msgid "Content / Sidebar"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:95
+msgid "Sidebar / Content / Sidebar"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#: inc/admin/customize/customizer.php:99, inc/admin/customize/customizer.php:103, inc/admin/customize/customizer.php:107, inc/admin/customize/customizer.php:278
+msgid "Sidebar / Content"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:127
+msgid "Layout Container"
+msgstr ""
+
+#. undefined
+#: inc/admin/customize/customizer.php:133, inc/admin/customize/customizer.php:244
+msgid "Regular"
+msgstr ""
+
+#. undefined
+#: inc/admin/customize/customizer.php:137, inc/admin/customize/customizer.php:248
+msgid "Boxed"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:156
+msgid "Use separate containers for sidebars and main content"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:187
+msgid "Main container width"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:188
+msgid "Along with units."
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#: inc/admin/customize/customizer.php:188, inc/admin/customize/customizer.php:197, inc/admin/customize/customizer.php:205, inc/admin/customize/home-slider.php:84
+msgid "Default"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:196
+msgid "Content width"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:197
+msgid "In percentage without the % sign."
+msgstr ""
+
+#: inc/admin/customize/customizer.php:204
+msgid "Left sidebar width"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:205
+msgid "If you are using centered layout. Left sidebar width in percentage without the % sign."
+msgstr ""
+
+#: inc/admin/customize/customizer.php:214
+msgid "Show sidebar widgets in card style"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:238
+msgid "Single Post Layout"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:267
+msgid "WooCommerce Pages Layout"
+msgstr ""
+
+#: inc/admin/customize/customizer.php:268
+msgid "This only applies to products and shop page. For checkout, account, orders etc.. edit the individual page and choose the template of your choice."
+msgstr ""
+
+#: inc/admin/customize/fonts.php:14
+msgid "Typography"
+msgstr ""
+
+#: inc/admin/customize/fonts.php:41
+msgid "If you would like to use Google fonts, first add them in the two options below."
+msgstr ""
+
+#: inc/admin/customize/fonts.php:52
+msgid "Please choose the weights and character subsets you need carefully as adding more weights and subsets will slow down your site."
+msgstr ""
+
+#: inc/admin/customize/fonts.php:53
+msgid "If you are not using the font(s) below, clear it so that they are not unnecessarily loaded"
+msgstr ""
+
+#: inc/admin/customize/fonts.php:63
+msgid "Goolge Font #1"
+msgstr ""
+
+#: inc/admin/customize/fonts.php:75
+msgid "Goolge Font #2"
+msgstr ""
+
+#: inc/admin/customize/fonts.php:111
+msgid "Primary font"
+msgstr ""
+
+#: inc/admin/customize/fonts.php:112
+msgid "These font settings are used for the body of the page."
+msgstr ""
+
+#: inc/admin/customize/fonts.php:153
+msgid "Secondary Font"
+msgstr ""
+
+#: inc/admin/customize/fonts.php:154
+msgid "This font stack is used for headings."
+msgstr ""
+
+#: inc/admin/customize/fonts.php:175
+msgid "Custom Font Stack"
+msgstr ""
+
+#: inc/admin/customize/footer.php:28
+msgid "Copyright text"
+msgstr ""
+
+#: inc/admin/customize/header.php:24
+msgid "Stick the navigation bar"
+msgstr ""
+
+#: inc/admin/customize/header.php:35
+msgid "Enable sleek header"
+msgstr ""
+
+#: inc/admin/customize/header.php:36
+msgid "Sleek header puts the logo in the navigation menu. It's recommended to have a logo no taller than 48px when using this option. This option requires a reload to reflect changes."
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:18
+msgid "Home Page Slider"
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:19
+msgid "Configure the slider on home page."
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:33
+msgid "Show slider on home page"
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:51
+msgid "Slider Categories"
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:67
+msgid "Number of posts to show in slider"
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:83
+msgid "Slider height"
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:84
+msgid "Slider height in pixels without the units."
+msgstr ""
+
+#: inc/admin/customize/home-slider.php:100
+msgid "Install the \"No Nonsense Slider\" from the %srecommended plugins%s to use the slider options here."
+msgstr ""
+
+#: inc/admin/customize/misc.php:6
+msgid "Miscellaneous"
+msgstr ""
+
+#: inc/admin/customize/misc.php:19
+msgid "Read more button"
+msgstr ""
+
+#: inc/admin/customize/misc.php:20
+msgid "Change the text on read more button when using excerpts."
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:7
+msgid "Meta Information"
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:8
+msgid "Meta information that is displayed around the post title and at the end of post can be set here."
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:15
+msgid "Here you can customize the meta information above and below the post title, and after post content. Here is the list of shortcodes you can use."
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:27
+msgid "Latest Posts"
+msgstr ""
+
+#. undefined
+#: inc/admin/customize/post-metas.php:34, inc/admin/customize/thumbnails-excerpts.php:22
+msgid "Archives, Categories, Tags"
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:41
+msgid "Single post"
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:47
+msgid "Single page"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#: inc/admin/customize/post-metas.php:80, inc/admin/customize/post-metas.php:140, inc/admin/customize/post-metas.php:222, inc/admin/customize/post-metas.php:302
+msgid "Meta above the post title"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#: inc/admin/customize/post-metas.php:92, inc/admin/customize/post-metas.php:152, inc/admin/customize/post-metas.php:234, inc/admin/customize/post-metas.php:314
+msgid "Meta below the post title"
+msgstr ""
+
+#. undefined
+#. undefined
+#. undefined
+#: inc/admin/customize/post-metas.php:105, inc/admin/customize/post-metas.php:164, inc/admin/customize/post-metas.php:246, inc/admin/customize/post-metas.php:326
+msgid "Meta after the post content"
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:184
+msgid "Hide breadcrumbs on single post. Breadcrumbs add SEO value to the page, disable them only if you know what you are doing."
+msgstr ""
+
+#: inc/admin/customize/post-metas.php:265
+msgid "Hide breadcrumbs on single page. Breadcrumbs add SEO value to the page, disable them only if you know what you are doing. Note: There is an option to hide breadcrumbs individually on a per page basis from the page edit screen."
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:13
+msgid "Sidebar Settings"
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:25
+msgid "Note: Publish changes and reload the page if you make changes to the below 3 settings. Else the new sidebars won't appear in widgets panel"
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:35
+msgid "Dedicated sidebars for home page"
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:36
+msgid "Create separate sidebars for home page."
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:47
+msgid "Dedicated sidebars for default page template"
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:48
+msgid " Create separate sidebars for home page."
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:60
+msgid "Create sticky sidebars"
+msgstr ""
+
+#: inc/admin/customize/sidebar-settings.php:61
+msgid "Sticky sidebars or floating sidebars are sidebars that stick/float on the screen when the user is scrolling the page."
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:7
+msgid "Thumbnails, Excerpts & Meta"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:15
+msgid "Latest Posts, HomePage"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:29
+msgid "Single Post"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:36
+msgid "Single Page"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:73
+msgid "Show excerpts on home page"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:82
+msgid "Show thumbnails on home page"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:95
+msgid "Home page thumbnail size"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:135
+msgid "Show thumbnails on home page #Mobile"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:148
+msgid "Home page thumbnail size #Mobile"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:174
+msgid "Show excerpts on archives"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:188
+msgid "Show thumbnails on archives"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:216
+msgid "Archives thumbnail size"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:237
+msgid "Show thumbnails on archives #Mobile"
+msgstr ""
+
+#: inc/admin/customize/thumbnails-excerpts.php:265
+msgid "Archives thumbnail size #Mobile"
+msgstr ""

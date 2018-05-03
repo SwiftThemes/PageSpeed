@@ -32,7 +32,7 @@ function pagespeed_migrations() {
 	// end v0.99 --> v1.00
 
 	//v1.23 --> v1.26
-	if ( 'not_set' != get_theme_mod('can_read_write','not_set') && 'not_set' == get_theme_mod('separate_containers','not_set') ) {
+	if ( 'not_set' !== get_theme_mod('can_read_write','not_set') && 'not_set' === get_theme_mod('separate_containers','not_set') ) {
 		set_theme_mod('separate_containers', false);
 	}
 }
