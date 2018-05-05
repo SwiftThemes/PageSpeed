@@ -1,3 +1,7 @@
+## [1.39] - 06-05-2018
+- Fix issue with scroll bars appearing on chrome in windows.
+https://forums.swiftthemes.com/t/double-scroll-bar-on-desktop-bug/111/3
+
 ## [1.38] - 03-05-2018
 - Added a dedicated section for home slider options.
 - Included the POT files for translation.

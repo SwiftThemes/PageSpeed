@@ -319,7 +319,8 @@ body {
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       border-radius: 8px;
-      overflow: scroll;
+      //https://forums.swiftthemes.com/t/double-scroll-bar-on-desktop-bug/111/3
+      overflow: auto;
     }
   }
 }
