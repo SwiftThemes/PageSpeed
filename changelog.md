@@ -1,3 +1,11 @@
+## [1.38] - 03-05-2018
+- Added a dedicated section for home slider options.
+- Included the POT files for translation.
+- Refine tags styling in post meta.
+- Fix some issues witch customizer where changes were not reflected properly in the customizer.
+- Added animation for thumbnails.
+- Add two new icons, cross and tick.
+
 ## [1.24] - 29-04-2018
 
 ### Added

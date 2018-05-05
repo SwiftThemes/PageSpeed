@@ -36,7 +36,7 @@
 }
 
 @if $fc1-width{
-  .fc-1{width:$fc1-width*1%;color:red}
+  .fc-1{width:$fc1-width*1%;}
 }
 @if $fc2-width{
   .fc-2{width:$fc2-width*1%}

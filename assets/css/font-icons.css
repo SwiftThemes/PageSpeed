@@ -144,3 +144,10 @@
   content: "\4a";
 }
 
+
+.he-check-circle:before {
+  content: "\49";
+}
+.he-times-circle:before {
+  content: "\4b";
+}

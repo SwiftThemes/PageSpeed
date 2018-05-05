@@ -115,7 +115,7 @@ msgstr ""
 
 #. undefined
 #. undefined
-#: footer.php:36, inc/pro/customize-backgrounds.php:294, inc/admin/customize/footer.php:22
+#: footer.php:36, inc/pro/customize-backgrounds.php:304, inc/admin/customize/footer.php:22
 msgid "Copyright"
 msgstr ""
 
@@ -557,45 +557,63 @@ msgstr ""
 msgid "Colors & Gradients"
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:24
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#. undefined
+#: inc/pro/customize-backgrounds.php:21, framework/helium/customize/upsell.php:16, framework/helium/customize/upsell.php:51, framework/helium/customize/upsell.php:66, inc/admin/customize/customizer.php:215, inc/admin/customize/fonts.php:40, inc/admin/customize/fonts.php:50, inc/admin/customize/fonts.php:64, inc/admin/customize/fonts.php:76, inc/admin/customize/home-slider.php:99, inc/admin/customize/sidebar-settings.php:24
+msgid " "
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:22
+msgid "We are planning to revamp this section in future updates. If you are not already using these options, skip them for now. If you are using them, please keep an eye on changelog and the blog for updates. If you have any questions, please contact support, be assured, we got your back."
+msgstr ""
+
+#: inc/pro/customize-backgrounds.php:34
 msgid "Make backgrounds transparent"
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:25
+#: inc/pro/customize-backgrounds.php:35
 msgid "So that the backgrounds are not hidden by layers above it."
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:53
+#: inc/pro/customize-backgrounds.php:63
 msgid "Body"
 msgstr ""
 
 #. undefined
-#: inc/pro/customize-backgrounds.php:84, inc/admin/customize/header.php:13
+#: inc/pro/customize-backgrounds.php:94, inc/admin/customize/header.php:13
 msgid "Header"
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:114
+#: inc/pro/customize-backgrounds.php:124
 msgid "Primary Navigation"
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:144
+#: inc/pro/customize-backgrounds.php:154
 msgid "Secondary Navigation"
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:174
+#: inc/pro/customize-backgrounds.php:184
 msgid "Content"
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:204
+#: inc/pro/customize-backgrounds.php:214
 msgid "Sidebar #1"
 msgstr ""
 
-#: inc/pro/customize-backgrounds.php:234
+#: inc/pro/customize-backgrounds.php:244
 msgid "Sidebar #2"
 msgstr ""
 
 #. undefined
-#: inc/pro/customize-backgrounds.php:264, inc/admin/customize/footer.php:13
+#: inc/pro/customize-backgrounds.php:274, inc/admin/customize/footer.php:13
 msgid "Footer"
 msgstr ""
 
@@ -955,19 +973,6 @@ msgstr ""
 
 #: framework/helium/customize/upsell.php:9
 msgid "Unlock"
-msgstr ""
-
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#. undefined
-#: framework/helium/customize/upsell.php:16, framework/helium/customize/upsell.php:51, framework/helium/customize/upsell.php:66, inc/admin/customize/customizer.php:215, inc/admin/customize/fonts.php:40, inc/admin/customize/fonts.php:50, inc/admin/customize/fonts.php:64, inc/admin/customize/fonts.php:76, inc/admin/customize/home-slider.php:99, inc/admin/customize/sidebar-settings.php:24
-msgid " "
 msgstr ""
 
 #: framework/helium/customize/upsell.php:20
