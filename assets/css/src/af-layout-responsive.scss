@@ -33,9 +33,15 @@
     #sb2 {
       background: $light-3
     }
+    @if ($separate_containers == 1) {
+
+      #sb1 > .inner, #sb1 > .inner {
+        padding: 0;
+      }
+    }
     .widget {
       //width: 300px;
-      margin: auto
+      margin: 0 auto $vr
     }
 
     #site-header {
@@ -67,5 +73,8 @@
 }
 
 @media only screen and (min-width: $mobile_portrait_width) and (max-width: $mobile_width) {
-  body .sb-container{width:100%!important;margin: auto}
+  body .sb-container {
+    width: 100% !important;
+    margin: auto
+  }
 }
