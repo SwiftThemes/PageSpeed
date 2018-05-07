@@ -1,3 +1,9 @@
+## [1.40] - 07-05-2018
+- Fix few issues with responsivness.
+- Recommend slider from wp.org instead of Git
+- Use regular slider on mobile devices even when using wide layout.
+- Fix an issue with comments layout  when using card style.
+
 ## [1.39] - 06-05-2018
 - Fix issue with scroll bars appearing on chrome in windows.
 https://forums.swiftthemes.com/t/double-scroll-bar-on-desktop-bug/111/3

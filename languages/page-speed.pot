@@ -514,38 +514,38 @@ msgstr ""
 msgid "Something went wrong, please contact support"
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:15
+#: inc/admin/about-pagespeed.php:18
 msgid "Useful Links"
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:16
+#: inc/admin/about-pagespeed.php:19
 msgid ""
 "We tried our best to make Page Speed very simple and easy to use. We hope to make it even better with your\n"
 "        valuable feedback & suggestions.\n"
 "        Here are some useful links to help you get started with the theme."
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:31
+#: inc/admin/about-pagespeed.php:34
 msgid "Customize PageSpeed"
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:32
+#: inc/admin/about-pagespeed.php:35
 msgid "About PageSpeed"
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:33
+#: inc/admin/about-pagespeed.php:36
 msgid "User Guide"
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:34
+#: inc/admin/about-pagespeed.php:37
 msgid "Optimization Guide"
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:35
+#: inc/admin/about-pagespeed.php:38
 msgid "Customize like the demo"
 msgstr ""
 
-#: inc/admin/about-pagespeed.php:36
+#: inc/admin/about-pagespeed.php:39
 msgid "Demo"
 msgstr ""
 
