@@ -25,34 +25,18 @@ function helium_register_required_plugins() {
 	*/
 	$plugins = array(
 		array(
-			'name'               => 'No Nonsense Slider [Install if you need slider on home page]',
-			// The plugin name.
-			'slug'               => 'no-nonsense-slider',
-			// The plugin slug (typically the folder name).
-//			'source'             => HELIUM_THEME_INC . 'pro/plugins/no-nonsense-slider.zip',
-			'source'    => 'https://github.com/SwiftThemes/No-Nonsense-Slider/archive/master.zip',
-			// The plugin source.
-			'required'           => false,
-			// If false, the plugin is only 'recommended' instead of required.
-			'version'            => '',
-			// E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation'   => false,
-			// If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			'force_deactivation' => false,
-			// If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-			'external_url'       => '',
-			// If set, overrides default API URL and points to an external URL.
-			'is_callable'        => '',
-			// If set, this callable will be be checked for availability to determine if a plugin is active.
-		),
-		array(
 			'name'     => 'Easy AdSense Ads #EAA',
 			'slug'     => 'easy-adsense-ads-scripts-manager',
 			'required' => false,
 		),
 		array(
-			'name'     => 'Dynamic Thumbnails [Generates optimum thumbnails, Strongly Recommended]',
+			'name'     => 'Dynamic Thumbnails [Strongly Recommended]',
 			'slug'     => 'dynamic-thumbnails',
+			'required' => false,
+		),
+		array(
+			'name'     => 'HomePage Slider',
+			'slug'     => 'no-nonsense-slider',
 			'required' => false,
 		),
 	);
