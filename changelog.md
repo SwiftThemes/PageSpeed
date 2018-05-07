@@ -1,3 +1,5 @@
+## [1.41] - 08-05-2018
+- Fix an issue with site name appearing twice in copyright.
 ## [1.40] - 07-05-2018
 - Fix few issues with responsivness.
 - Recommend slider from wp.org instead of Git

@@ -115,12 +115,12 @@ msgstr ""
 
 #. undefined
 #. undefined
-#: footer.php:36, inc/pro/customize-backgrounds.php:304, inc/admin/customize/footer.php:22
+#: footer.php:38, inc/pro/customize-backgrounds.php:304, inc/admin/customize/footer.php:22
 msgid "Copyright"
 msgstr ""
 
 #. undefined
-#: footer.php:36, inc/admin/customize/footer.php:22
+#: footer.php:38, inc/admin/customize/footer.php:22
 msgid "Y"
 msgstr ""
 
