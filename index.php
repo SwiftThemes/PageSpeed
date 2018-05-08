@@ -33,43 +33,43 @@
 get_header();
 
 ?>
+<?php if ( have_posts() ) : ?>
 <div id="articles">
     <div class="gutter-sizer"></div>
-	<?php if ( have_posts() ) : ?>
 
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+	<?php
+	// Start the loop.
+	while ( have_posts() ) : the_post();
 
 
-			get_template_part( 'template-parts/content' );
+		get_template_part( 'template-parts/content' );
 
-			// End the loop.
-		endwhile;
+		// End the loop.
+	endwhile;
 
-		// Previous/next page navigation.
-		the_posts_pagination( array(
-			'prev_text'          => __( 'Previous page', 'page-speed' ),
-			'mid_size'           => 2,
-			'next_text'          => __( 'Next page', 'page-speed' ),
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
-		) );
-		echo '<div class="clear"></div>';
+	echo '</div>';
+	// Previous/next page navigation.
+	the_posts_pagination( array(
+		'prev_text'          => __( 'Previous page', 'page-speed' ),
+		'mid_size'           => 2,
+		'next_text'          => __( 'Next page', 'page-speed' ),
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
+	) );
+	echo '<div class="clear"></div>';
 
-// If no content, include the "No posts found" template.
+	// If no content, include the "No posts found" template.
 	else :
 		get_template_part( 'template-parts/content', 'none' );
 	endif;
 	?>
-</div>
-<?php
+	<?php
 
-if ( is_home() && get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
-	get_sidebar( 'home' );
-} else {
-	get_sidebar();
-}
-?>
+	if ( is_home() && get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
+		get_sidebar( 'home' );
+	} else {
+		get_sidebar();
+	}
+	?>
 
 </div></div><!-- #content -->
 <?php get_footer(); ?>

@@ -33,6 +33,16 @@
         $(document).on('click', '.menu-open #wrapper', function () {
             $('body').removeClass('menu-open')
         })
+
+
+
+        // Masonry
+        $('#articles').masonry({
+            columnWidth: '.entry',
+            itemSelector: '.entry',
+            gutter: '.gutter-sizer',
+        });
+
     })
     $(window).load(function () {
         setSidebarHeights()
@@ -246,10 +256,4 @@
     }
 
 
-    // jQuery
-    $('#articles').masonry({
-        columnWidth: '.entry',
-        itemSelector: '.entry',
-        gutter: '.gutter-sizer',
-    });
 })(jQuery);
