@@ -12,6 +12,15 @@ function pagespeed_is_slider_enabled() {
 
 add_action( 'customize_register', 'pagespeed_customize_home', 600 );
 function pagespeed_customize_home( $wp_customize ) {
+
+
+	$wp_customize->add_section( 'home_slider', array(
+		'title'       => __( 'Home Page Slider', 'page-speed' ),
+		'description' => __( 'Configure the slider on home page.', 'page-speed' ),
+		'panel'       => 'theme_options',
+		'priority'    => 58,
+	) );
+
 	if ( defined( 'NNS_URI' ) ) {
 
 
@@ -22,7 +31,7 @@ function pagespeed_customize_home( $wp_customize ) {
 
 		$wp_customize->add_control( 'show_slider_on_homepage', array(
 			'label'    => __( 'Show slider on home page', 'page-speed' ),
-			'section'  => 'home_page_design',
+			'section'  => 'home_slider',
 			'type'     => 'checkbox',
 			'priority' => 10,
 		) );
@@ -40,7 +49,7 @@ function pagespeed_customize_home( $wp_customize ) {
 				'home_slider_categories',
 				array(
 					'label'           => esc_html__( 'Slider Categories', 'page-speed' ),
-					'section'         => 'home_page_design',
+					'section'         => 'home_slider',
 					'priority'        => 10,
 					'active_callback' => 'pagespeed_is_slider_enabled',
 				)
@@ -56,8 +65,7 @@ function pagespeed_customize_home( $wp_customize ) {
 
 		$wp_customize->add_control( 'home_slider_posts_per_page', array(
 			'label'           => __( 'Number of posts to show in slider', 'page-speed' ),
-//			'description'     => __( 'Slider height in pixels without the units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': site_width/2',
-			'section'         => 'home_page_design',
+			'section'         => 'home_slider',
 			'type'            => 'number',
 			'priority'        => 10,
 			'active_callback' => 'pagespeed_is_slider_enabled',
@@ -74,7 +82,7 @@ function pagespeed_customize_home( $wp_customize ) {
 		$wp_customize->add_control( 'home_slider_height', array(
 			'label'           => __( 'Slider height', 'page-speed' ),
 			'description'     => __( 'Slider height in pixels without the units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': site_width/2',
-			'section'         => 'home_page_design',
+			'section'         => 'home_slider',
 			'type'            => 'number',
 			'priority'        => 10,
 			'active_callback' => 'pagespeed_is_slider_enabled',
@@ -82,5 +90,15 @@ function pagespeed_customize_home( $wp_customize ) {
 		) );
 
 
+	} else {
+		$wp_customize->add_setting( 'home-slider-help', array( 'sanitize_callback' => 'sanitize_text_field', ) );
+
+		$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'home-slider-help', array(
+			'section'  => 'home_slider',
+			'priority' => 15,
+			'label'    => __( ' ', 'page-speed' ),
+			'content'  => sprintf( __( 'Install the "No Nonsense Slider" from the %srecommended plugins%s to use the slider options here.', 'page-speed' ),
+				'<a href="' . admin_url( 'themes.php?page=tgmpa-install-plugins' ) . '" target="_blank">', '</a>' ),
+		) ) );
 	}
 }

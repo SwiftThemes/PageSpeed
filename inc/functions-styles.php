@@ -26,6 +26,9 @@ function pagespeed_register_styles() {
 }
 
 function pagespeed_enqueue_styles() {
+    if(is_customize_preview()){
+        return;
+    }
 	wp_enqueue_style( 'pagespeed-icons' );
 
 	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write', false ) ) {

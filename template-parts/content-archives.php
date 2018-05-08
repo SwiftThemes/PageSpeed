@@ -7,7 +7,7 @@ if ( $helium->is_mobile() ) {
 	$suffix = '';
 }
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 
 	<?php
 	if ( 'aligncenter' === get_theme_mod( 'archives_thumb_position' . $suffix, 'alternate' ) ) {

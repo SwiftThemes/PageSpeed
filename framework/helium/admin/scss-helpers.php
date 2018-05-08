@@ -27,8 +27,9 @@ function helium_generate_scss( $values ) {
 
 	//if a color scheme doesn't explicitly define header-bg
 	//use primary nav bg as header bg for sleek layout.
-	if ( 1 || ! $values['header-bg'] ) {
-		$out .= '@if($is_sleek_header == 1){$header-bg:$primary-nav-bg;$site-title-color:$primary-nav-color}';
+	if ( get_theme_mod( 'enable_sleek_header', true ) ) {
+		error_log('heeee');
+		$out .= '$header-bg:$primary-nav-bg;$site-title-color:$primary-nav-color;';
 	}
 
 	return $out;

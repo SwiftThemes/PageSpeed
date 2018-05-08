@@ -42,6 +42,7 @@ function helium_write_to_uploads( $content, $destination ) {
 		$wp_filesystem->put_contents( $file, $content, FS_CHMOD_FILE );
 	} else {
 		set_theme_mod( 'can_read_write', false );
+
 		return;
 	}
 
@@ -157,6 +158,7 @@ class Helium_Styles {
 
 	public function generate_css( $af_bf ) {
 		global $wp_filesystem;
+		global $page_speed_color_schemes;
 
 		$transient = $this->prefix . 'sass_combined_' . $af_bf;
 		$content   = get_transient( $transient );
@@ -181,7 +183,6 @@ class Helium_Styles {
 
 
 		$color_scheme = sanitize_text_field( get_theme_mod( 'color_scheme', 'default' ) );
-		GLOBAL $page_speed_color_schemes;
 		$color_scheme = $page_speed_color_schemes[ $color_scheme ];
 
 
@@ -194,6 +195,8 @@ class Helium_Styles {
 		if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 			$override .= '$is_sleek_header:1' . ";\n";
 			$override .= '$header_height:' . $this->get_header_height() . ";\n";
+		} else {
+			$override .= '$is_sleek_header:0' . ";\n";
 		}
 
 
@@ -226,14 +229,13 @@ class Helium_Styles {
 			$override .= '$social_media_monochrome:0;';
 		}
 
-		$override .= '$woocommerce_layout:\''.get_theme_mod( 'woocommerce_layout', 'r-sb' ).'\';' ;
+		$override .= '$woocommerce_layout:\'' . get_theme_mod( 'woocommerce_layout', 'r-sb' ) . '\';';
 
 		if ( get_theme_mod( 'enable_transparent_backgrounds', false ) ) {
 			$override .= '$transparent_backgrounds:1;';
 		} else {
 			$override .= '$transparent_backgrounds:0;';
 		}
-
 
 		if ( get_theme_mod( 'separate_containers', true ) ) {
 			$override .= '$separate_containers:1;';
@@ -253,6 +255,28 @@ class Helium_Styles {
 		$content = str_replace( '/**variables**/', $override, $content );
 
 
+		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ), $content );
+
+		/* Overrride colors */
+		$colors_override = '';
+		if ( get_theme_mod( 'override_color_scheme', false ) ) {
+
+			$colors_override .= "///** Overridden by settings from customizer */\n\n";
+			$colors_override .= '$primary:' . sanitize_text_field( get_theme_mod( 'primary_color', '#007AFF' ) ) . ';';
+			$colors_override .= '$hue:' . absint( get_theme_mod( 'shades_from', '211' ) ) . ';';
+			$colors_override .= '$saturation:' . absint( get_theme_mod( 'shade_saturation', 8 ) ) . ';';
+		}
+		if ( get_theme_mod( 'invert_colors', false ) ) {
+			$colors_override .= '$invert:' . 1 . ';';
+		}
+		$content = str_replace( '/**colors_override**/', $colors_override, $content );
+
+		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
+
+
+		// End
+
+
 		$temp = '';
 		global $pagespeed_gradient_bgs;
 
@@ -267,7 +291,8 @@ class Helium_Styles {
 		);
 
 		// Individual gradients
-		if($pagespeed_gradient_bgs) {
+		// @todo why is this here?
+		if ( $pagespeed_gradient_bgs ) {
 			foreach ( $pagespeed_gradient_bgs as $value ) {
 				$val = wp_parse_args( get_theme_mod( $value ), $defaults );
 				if ( $val['enable'] ) {
@@ -282,27 +307,8 @@ class Helium_Styles {
 			};
 		}
 
+		$content = str_replace( '/**handpicked_colors_raw**/', $temp, $content );
 
-		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ) . $temp, $content );
-
-
-		if ( get_theme_mod( 'override_color_scheme', false ) ) {
-			$colors_override = '';
-			$colors_override .= "///** Overridden by settings from customizer */\n\n";
-			$colors_override .= '$primary:' . sanitize_text_field( get_theme_mod( 'primary_color', '#007AFF' ) ) . ';';
-			$colors_override .= '$hue:' . absint( get_theme_mod( 'shades_from', '211' ) ) . ';';
-			$colors_override .= '$saturation:' . absint( get_theme_mod( 'shade_saturation', 8 ) ) . ';';
-			if ( get_theme_mod( 'invert_colors', false ) ) {
-				$colors_override .= '$invert:' . 1 . ';';
-			}
-			$content = str_replace( '/**colors**/', $colors_override, $content );
-		} else if ( get_theme_mod( 'invert_colors', false ) ) {
-			$colors_override = '$invert:' . 1 . ';';
-			$content         = str_replace( '/**colors**/', $colors_override, $content );
-		}
-
-
-		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
 
 		// Overriding the individual colors
 		$hand_picked_colors = '';

@@ -1,3 +1,23 @@
+## [1.41] - 08-05-2018
+- Fix an issue with site name appearing twice in copyright.
+## [1.40] - 07-05-2018
+- Fix few issues with responsivness.
+- Recommend slider from wp.org instead of Git
+- Use regular slider on mobile devices even when using wide layout.
+- Fix an issue with comments layout  when using card style.
+
+## [1.39] - 06-05-2018
+- Fix issue with scroll bars appearing on chrome in windows.
+https://forums.swiftthemes.com/t/double-scroll-bar-on-desktop-bug/111/3
+
+## [1.38] - 03-05-2018
+- Added a dedicated section for home slider options.
+- Included the POT files for translation.
+- Refine tags styling in post meta.
+- Fix some issues witch customizer where changes were not reflected properly in the customizer.
+- Added animation for thumbnails.
+- Add two new icons, cross and tick.
+
 ## [1.24] - 29-04-2018
 
 ### Added

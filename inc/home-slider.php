@@ -31,7 +31,7 @@ function pagespeed_nns_home_slider() {
 		array(),
 		'posts_per_page' => get_theme_mod( 'home_slider_posts_per_page', 4 )
 	);
-	$template   = 'wide' === get_theme_mod( 'container_type', 'regular' ) ? 'background_image' : 'inline_image';
+	$template   = 'wide' === get_theme_mod( 'container_type', 'regular' ) && !$helium->is_mobile()? 'background_image' : 'inline_image';
 
 	$site_width = helium_get_site_width();
 	$excerpts   = true;

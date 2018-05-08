@@ -8,6 +8,9 @@
 function pagespeed_about() {
 	?>
     <div class="about">
+<!--		--><?php //echo sprintf( '<h2>%s</h2>', __( 'Initial Setup', 'page-speed' ) ) ?>
+
+
 		<?php echo sprintf( '
 
         <h2>%s</h2>
