@@ -24,7 +24,7 @@ msgstr ""
 #. undefined
 #. undefined
 #. undefined
-#: archive.php:37, author.php:70, category.php:52, image.php:29, index.php:50, search.php:30, tag.php:53, tpl-airy-img.php:49, tpl-airy.php:49, tpl-full-width.php:49, tpl-landing.php:49, tpl-wide.php:32
+#: archive.php:37, author.php:70, category.php:52, image.php:29, index.php:53, search.php:30, tag.php:53, tpl-airy-img.php:49, tpl-airy.php:49, tpl-full-width.php:49, tpl-landing.php:49, tpl-wide.php:32
 msgid "Previous page"
 msgstr ""
 
@@ -39,7 +39,7 @@ msgstr ""
 #. undefined
 #. undefined
 #. undefined
-#: archive.php:39, author.php:72, category.php:54, image.php:30, index.php:52, search.php:32, tag.php:55, tpl-airy-img.php:50, tpl-airy.php:50, tpl-full-width.php:50, tpl-landing.php:50, tpl-wide.php:33
+#: archive.php:39, author.php:72, category.php:54, image.php:30, index.php:55, search.php:32, tag.php:55, tpl-airy-img.php:50, tpl-airy.php:50, tpl-full-width.php:50, tpl-landing.php:50, tpl-wide.php:33
 msgid "Next page"
 msgstr ""
 
@@ -54,7 +54,7 @@ msgstr ""
 #. undefined
 #. undefined
 #. undefined
-#: archive.php:40, author.php:73, category.php:55, image.php:31, index.php:53, search.php:33, tag.php:56, tpl-airy-img.php:51, tpl-airy.php:51, tpl-full-width.php:51, tpl-landing.php:51, tpl-wide.php:34
+#: archive.php:40, author.php:73, category.php:55, image.php:31, index.php:56, search.php:33, tag.php:56, tpl-airy-img.php:51, tpl-airy.php:51, tpl-full-width.php:51, tpl-landing.php:51, tpl-wide.php:34
 msgid "Page"
 msgstr ""
 
