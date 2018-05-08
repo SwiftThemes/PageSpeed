@@ -65,8 +65,14 @@
     .stretched {
       float: none !important;
       width: 100vw;
-      max-width: 120%;
-      margin: auto -20px;
+      max-width: 140%;
+      @if ($separate_containers == 1) {
+
+        margin: auto -40px;
+      }@else{
+        margin: auto -20px;
+
+      }
       margin-bottom: 12px;
     }
   }
