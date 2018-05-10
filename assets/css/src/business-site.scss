@@ -90,6 +90,10 @@
 
 }
 
+.pad-tb{
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
 .pad-trl {
   padding-top: $padding;
   padding-left: $padding;
@@ -116,7 +120,12 @@
   padding-bottom: $padding*2;
 }
 
-.pad2x-rl {
+
+.pad2x-tb {
+  padding-top: $padding*2;
+  padding-bottom: $padding*2;
+}
+  .pad2x-rl {
   padding-left: $padding*2;
   padding-right: $padding*2;
 
@@ -131,6 +140,9 @@
 .hero {
   h1 {
     font-size: 40px
+  }
+  .xl {
+    font-size: 80px
   }
 }
 
@@ -174,10 +186,13 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .hero {
     h1 {
       font-size: 6vw
+    }
+    .xl {
+      font-size: 14vw
     }
   }
   .title {
@@ -189,7 +204,7 @@
 
   .pull-all {
     margin: -$padding -20px;
-    padding:$padding 20px
+    padding: $padding 20px
   }
 
   .pull-l {
@@ -219,7 +234,7 @@
     margin-left: -20px;
   }
   .pull-trl {
-    padding-top:-$padding;
+    padding-top: -$padding;
     padding-left: 20px;
     padding-right: 20px;
     margin-top: -$padding;
@@ -261,6 +276,13 @@
     padding-left: 20px;
     padding-right: 20px;
 
+  }
+
+
+  .pad-tb,
+  .pad2x-tb {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .pad-trl,

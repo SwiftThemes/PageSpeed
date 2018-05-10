@@ -71,38 +71,41 @@ function helium_drag_drop_control_register( $wp_customize ) {
             <div class="draggables cf">
 
                 <div class="draggable cf has-input clone">
-                    <label><?php _e('Text','page-speed')?></label>
-                    <input class="text" type="text" data-type="Text" placeholder="<?php echo esc_attr(__('Any text','page-speed'))?>"/>
+                    <label><?php _e( 'Text', 'page-speed' ) ?></label>
+                    <input class="text" type="text" data-type="Text"
+                           placeholder="<?php echo esc_attr( __( 'Any text', 'page-speed' ) ) ?>"/>
                 </div>
 
                 <div class="draggable cf has-input ">
-                    <label><?php _e('Cat','page-speed')?></label>
-                    <input class="cat" type="text" data-type="Cat" placeholder="<?php echo esc_attr(__('Filed under','page-speed'))?>"
+                    <label><?php _e( 'Cat', 'page-speed' ) ?></label>
+                    <input class="cat" type="text" data-type="Cat"
+                           placeholder="<?php echo esc_attr( __( 'Filed under', 'page-speed' ) ) ?>"
                            onclick="this.select()"/>
                 </div>
                 <div class="draggable cf has-input ">
-                    <label><?php _e('Tags','page-speed')?></label>
-                    <input class="tag" type="text" data-type="Tags" placeholder=<?php echo esc_attr(__('Tagged with','page-speed'))?>"
-                           onclick="this.select()"/>
+                    <label><?php _e( 'Tags', 'page-speed' ) ?></label>
+                    <input class="tag" type="text" data-type="Tags"
+                           placeholder=<?php echo esc_attr( __( 'Tagged with', 'page-speed' ) ) ?>"
+                           onclick=" this.select()"/>
                 </div>
                 <div class="draggable cf">
-                    <label><?php _e('Author Posts','page-speed')?></label>
+                    <label><?php _e( 'Author Posts', 'page-speed' ) ?></label>
                     <input class="tag" type="hidden" data-type="AuthorPosts"/>
                 </div>
                 <div class="draggable cf">
-                    <label><?php _e('Author HomePage','page-speed')?></label>
+                    <label><?php _e( 'Author HomePage', 'page-speed' ) ?></label>
                     <input class="tag" type="hidden" data-type="AuthorLink"/>
                 </div>
                 <div class="draggable cf">
-                    <label><?php _e('Published','page-speed')?></label>
+                    <label><?php _e( 'Published', 'page-speed' ) ?></label>
                     <input class="tag" type="hidden" data-type="Published"/>
                 </div>
                 <div class="draggable cf">
-                    <label><?php _e('Updated','page-speed')?></label>
+                    <label><?php _e( 'Updated', 'page-speed' ) ?></label>
                     <input class="tag" type="hidden" data-type="Updated"/>
                 </div>
                 <div class="draggable cf">
-                    <label><?php _e('Line','page-speed')?></label>
+                    <label><?php _e( 'Line', 'page-speed' ) ?></label>
                     <input class="tag" type="hidden" data-type="Line"/>
                 </div>
             </div>
@@ -113,30 +116,26 @@ function helium_drag_drop_control_register( $wp_customize ) {
             <div class="sortable connected">
                 <# for ( index in data.value) { #>
                     <# var key = data.value[index]['key']; var value = data.value[index]['value']  #>
-
-                        <# if ( key == 'text') { #>
+                       
+                        <#if(value) { #>
                             <div class="draggable cf has-input can-remove">
                                 <# }else {#>
-                                    <#if(value) { #>
-                                        <div class="draggable cf has-input can-remove">
-                                            <# }else {#>
-                                                <div class="draggable cf can-remove">
+                                    <div class="draggable cf can-remove">
+                                        <# } #>
+                                            <label>{{key}}</label>
+                                            <#if(value) { #>
+                                                <input type="text" data-type="{{key}}" value="{{value}}"
+                                                       onclick="this.select()"/>
+                                                <# }else {#>
+                                                    <input class="tag" type="hidden"
+                                                           data-type="{{key}}"/>
                                                     <# } #>
-                                                        <# } #>
-                                                            <label>{{key}}</label>
-                                                            <#if(value) { #>
-                                                                <input type="text" data-type="{{key}}" value="{{value}}"
-                                                                       onclick="this.select()"/>
-                                                                <# }else {#>
-                                                                    <input class="tag" type="hidden"
-                                                                           data-type="{{key}}"/>
-                                                                    <# } #>
-                                                </div>
-                                                <#}#>
-
-                                        </div>
+                                    </div>
+                                    <#}#>
 
                             </div>
+
+            </div>
 
 
 			<?php
