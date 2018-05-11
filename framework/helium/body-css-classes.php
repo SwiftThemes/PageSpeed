@@ -16,9 +16,7 @@ function helium_body_classes( $classes ) {
 		$classes[] = 'has-thumb';
 	}
 
-	if ( get_theme_mod( 'enable_sleek_header', true ) ) {
-		$classes[] = 'sleek-header';
-	}
+
 
 	return $classes;
 }

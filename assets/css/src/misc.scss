@@ -248,30 +248,41 @@
 //
 
 /* Masonry */
-@media only screen and (min-width: $mobile_width) {
+//
+// Gutter to be equaly to our normal spacing.
 
-  .entry-title {
-    font-size: 1.3em
-  }
-  .post-thumbnail {
-    margin: 0 -20px 10px
-  }
+@if ($use_masonry==1) {
+  @media only screen and (min-width: $mobile_width) {
 
-  .post-thumbnail img {
-    width: 100%;
-    margin-bottom: 10px
-  }
-  .more-link {
-    display: none
-  }
+    $gutter: ($padding*.5)/(($site_width - $padding)*($main_width/100))*100;
 
-  #articles article {
-    width: 32%;
-    float: left;
-    box-sizing: border-box;
-    margin: 0 0 20px;
-  }
-  .gutter-sizer {
-    width: 2%
+
+
+    $article_width : (100 - ($masonry_column_count - 1)*$gutter)/$masonry_column_count;
+
+    .entry-title {
+      font-size: 1.3em
+    }
+    .post-thumbnail {
+      margin: 0 -20px 10px
+    }
+
+    .post-thumbnail img {
+      width: 100%;
+      margin-bottom: 10px
+    }
+    .more-link {
+      display: none
+    }
+
+    #articles article {
+      width: $article_width*1%;
+      float: left;
+      box-sizing: border-box;
+      margin: 0 0 $padding/2;
+    }
+    .gutter-sizer {
+      width: $gutter*1%
+    }
   }
 }

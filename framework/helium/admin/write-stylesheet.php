@@ -242,6 +242,14 @@ class Helium_Styles {
 		} else {
 			$override .= '$separate_containers:0;';
 		}
+		if ( get_theme_mod( 'use_masonry', false ) ) {
+			$override .= '$use_masonry:1;';
+		} else {
+			$override .= '$use_masonry:0;';
+		}
+
+		$override .= '$masonry_column_count:'.get_theme_mod( 'masonry_column_count', 3 ).';';
+
 
 
 		$footer_widths = get_theme_mod( 'footer_widths' );
@@ -408,7 +416,7 @@ class Helium_Styles {
 			$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
 
 		}
-		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
+		if (defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 

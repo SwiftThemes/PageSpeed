@@ -35,9 +35,9 @@
         })
 
 
-
+        //@todo Enable masonry on for large devices
         // Masonry
-        $('#articles').masonry({
+        $('.masonry #articles').masonry({
             columnWidth: '.entry',
             itemSelector: '.entry',
             gutter: '.gutter-sizer',

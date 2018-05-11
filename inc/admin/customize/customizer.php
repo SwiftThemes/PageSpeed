@@ -6,7 +6,7 @@
  * Time: 9:44 PM
  */
 
-add_action( 'customize_register', 'pagespeed_customize', 888 );
+add_action( 'customize_register', 'pagespeed_customize', 80 );
 function pagespeed_customize( $wp_customize ) {
 
 	$wp_customize->add_panel( 'theme_options', array(
@@ -188,7 +188,7 @@ function pagespeed_customize( $wp_customize ) {
 		'description' => __( 'Along with units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 1260px',
 		'section'     => 'layout_settings',
 		'type'        => 'text',
-		'priority'    => 20,
+		'priority'    => 60,
 
 	) );
 
@@ -197,7 +197,7 @@ function pagespeed_customize( $wp_customize ) {
 		'description' => __( 'In percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 70',
 		'section'     => 'layout_settings',
 		'type'        => 'number',
-		'priority'    => 20,
+		'priority'    => 60,
 		'input_attrs' => array( 'min' => 40, 'max' => 100 )
 	) );
 	$wp_customize->add_control( 'left_sidebar_width', array(
@@ -205,7 +205,7 @@ function pagespeed_customize( $wp_customize ) {
 		'description' => __( 'If you are using centered layout. Left sidebar width in percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 18.75',
 		'section'     => 'layout_settings',
 		'type'        => 'number',
-		'priority'    => 20,
+		'priority'    => 60,
 		'input_attrs' => array( 'min' => 0, 'max' => 60 )
 	) );
 
@@ -215,7 +215,7 @@ function pagespeed_customize( $wp_customize ) {
 		'description'     => __( ' ', 'page-speed' ),
 		'section'         => 'layout_settings',
 		'type'            => 'checkbox',
-		'priority'        => 20,
+		'priority'        => 60,
 		'active_callback' => function () {
 			return !get_theme_mod( 'separate_containers', true );
 		}

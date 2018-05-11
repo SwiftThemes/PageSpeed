@@ -414,7 +414,7 @@ msgstr ""
 #. undefined
 #. undefined
 #. undefined
-#: template-parts/content-archives.php:68, template-parts/content-post.php:14, template-parts/content-search.php:51, template-parts/content.php:67, framework/helium/customize/control-drag-drop.php:85, inc/admin/customize/post-metas.php:58, inc/admin/customize/post-metas.php:118, inc/admin/customize/post-metas.php:200
+#: template-parts/content-archives.php:68, template-parts/content-post.php:14, template-parts/content-search.php:51, template-parts/content.php:67, framework/helium/customize/control-drag-drop.php:88, inc/admin/customize/post-metas.php:58, inc/admin/customize/post-metas.php:118, inc/admin/customize/post-metas.php:200
 msgid "Tagged with"
 msgstr ""
 
@@ -456,7 +456,7 @@ msgstr ""
 
 #. undefined
 #. undefined
-#: template-parts/content-post.php:4, framework/helium/customize/control-drag-drop.php:80, inc/admin/customize/post-metas.php:190
+#: template-parts/content-post.php:4, framework/helium/customize/control-drag-drop.php:82, inc/admin/customize/post-metas.php:190
 msgid "Filed under"
 msgstr ""
 
@@ -623,6 +623,14 @@ msgstr ""
 
 #: inc/pro/customize-footer.php:36
 msgid "Footer column widths"
+msgstr ""
+
+#: inc/pro/customize-masonry.php:14
+msgid "Use masonry style for displaying posts on home page and archives."
+msgstr ""
+
+#: inc/pro/customize-masonry.php:32
+msgid "Number of masonry columns"
 msgstr ""
 
 #: inc/pro/customize-misc.php:13
@@ -832,7 +840,7 @@ msgstr ""
 msgid "Error saving settings"
 msgstr ""
 
-#: framework/helium/admin/write-stylesheet.php:461
+#: framework/helium/admin/write-stylesheet.php:467
 msgid "Message:"
 msgstr ""
 
@@ -844,40 +852,40 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:75
+#: framework/helium/customize/control-drag-drop.php:76
 msgid "Any text"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:79
+#: framework/helium/customize/control-drag-drop.php:80
 msgid "Cat"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:84
+#: framework/helium/customize/control-drag-drop.php:86
 msgid "Tags"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:89
+#: framework/helium/customize/control-drag-drop.php:92
 msgid "Author Posts"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:93
+#: framework/helium/customize/control-drag-drop.php:96
 msgid "Author HomePage"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:97
+#: framework/helium/customize/control-drag-drop.php:100
 msgid "Published"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:101
+#: framework/helium/customize/control-drag-drop.php:104
 msgid "Updated"
 msgstr ""
 
-#: framework/helium/customize/control-drag-drop.php:105
+#: framework/helium/customize/control-drag-drop.php:108
 msgid "Line"
 msgstr ""
 
 #. undefined
-#: framework/helium/customize/control-drag-drop.php:110, framework/helium/customize/control-drag-sort.php:82
+#: framework/helium/customize/control-drag-drop.php:113, framework/helium/customize/control-drag-sort.php:82
 msgid "Drag them below"
 msgstr ""
 
