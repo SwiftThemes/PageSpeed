@@ -37,11 +37,14 @@
 
         //@todo Enable masonry on for large devices
         // Masonry
-        $('.masonry #articles').masonry({
-            columnWidth: '.entry',
-            itemSelector: '.entry',
-            gutter: '.gutter-sizer',
-        });
+        if ($('body').hasClass('masonry')) {
+
+            $('#articles').masonry({
+                columnWidth: '.entry',
+                itemSelector: '.entry',
+                gutter: '.gutter-sizer',
+            });
+        }
 
     })
     $(window).load(function () {
@@ -75,13 +78,14 @@
             if ($('body').hasClass('menu-open')) {
                 return
             }
-            if($("#search-field").is(":focus")){
+            if ($("#search-field").is(":focus")) {
                 return
             }
 
-           if( $('#site-header-container-sticky-wrapper,#primary-nav-container-sticky-wrapper').is(":hover")){
-               return
-           };
+            if ($('#site-header-container-sticky-wrapper,#primary-nav-container-sticky-wrapper').is(":hover")) {
+                return
+            }
+            ;
             $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container-sticky-wrapper.is-sticky').css({'opacity': 0})
         }, 3000)
 

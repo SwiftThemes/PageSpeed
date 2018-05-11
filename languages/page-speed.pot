@@ -840,7 +840,7 @@ msgstr ""
 msgid "Error saving settings"
 msgstr ""
 
-#: framework/helium/admin/write-stylesheet.php:467
+#: framework/helium/admin/write-stylesheet.php:469
 msgid "Message:"
 msgstr ""
 

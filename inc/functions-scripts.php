@@ -29,7 +29,7 @@ function pagespeed_register_scripts() {
 
 function pagespeed_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
-	if ( get_theme_mod( 'use_masonry', false ) ) {
+	if ( get_theme_mod( 'use_masonry', false ) || is_customize_preview() ) {
 		wp_enqueue_script( 'jquery-masonry' );
 	}
 
