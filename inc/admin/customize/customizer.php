@@ -75,6 +75,7 @@ function pagespeed_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'theme_layout', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
 		'default'           => 'r-sb',
+		'transport'         => 'postMessage',
 
 	) );
 	$wp_customize->add_control(
@@ -116,6 +117,7 @@ function pagespeed_customize( $wp_customize ) {
 	$wp_customize->add_setting( 'container_type', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
 		'default'           => 'regular',
+		'transport'         => 'postMessage',
 
 	) );
 

@@ -27,6 +27,8 @@ function pagespeed_customize_home( $wp_customize ) {
 		$wp_customize->add_setting( 'show_slider_on_homepage', array(
 			'sanitize_callback' => 'helium_boolean',
 			'default'           => false,
+			'transport'         => 'postMessage',
+
 		) );
 
 		$wp_customize->add_control( 'show_slider_on_homepage', array(
@@ -40,6 +42,8 @@ function pagespeed_customize_home( $wp_customize ) {
 		$wp_customize->add_setting( 'home_slider_categories', array(
 			'sanitize_callback' => 'helium_pass',
 			'default'           => array( 0 ),
+			'transport'         => 'postMessage',
+
 		) );
 
 
@@ -59,7 +63,9 @@ function pagespeed_customize_home( $wp_customize ) {
 
 		$wp_customize->add_setting( 'home_slider_posts_per_page', array(
 			'sanitize_callback' => 'absint',
-			'default'           => 4
+			'default'           => 4,
+			'transport'         => 'postMessage',
+
 		) );
 
 
@@ -75,7 +81,9 @@ function pagespeed_customize_home( $wp_customize ) {
 
 		$wp_customize->add_setting( 'home_slider_height', array(
 			'sanitize_callback' => 'absint',
-			'default'           => (int) helium_get_site_width() / 2
+			'default'           => (int) helium_get_site_width() / 2,
+			'transport'         => 'postMessage',
+
 		) );
 
 

@@ -451,7 +451,7 @@
 
 
     function column_positions_to_widths(values) {
-        if(!values.length){
+        if (!values.length) {
             return
         }
         var new_values = values.slice()
@@ -462,5 +462,7 @@
 
         return text;
     }
+
+
 
 })(jQuery);
