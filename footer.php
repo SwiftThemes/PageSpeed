@@ -35,8 +35,8 @@
 		?>
 
 
-		<?php echo wp_kses_post( get_theme_mod( 'copyright_text', __( 'Copyright', 'page-speed' ) . ' &copy; ' . date_i18n( __( 'Y', 'page-speed' ) ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
-                                                                                                          rel="home">' . get_bloginfo( "name" ) . '</a>' ) ) ?>
+		<?php echo wp_kses_post( do_shortcode(get_theme_mod( 'copyright_text', __( 'Copyright', 'page-speed' ) . ' &copy; ' . date_i18n( __( 'Y', 'page-speed' ) ) . ' ' . '<a href="' . esc_url( home_url() ) . '"
+                                                                                                          rel="home">' . get_bloginfo( "name" ) . '</a>' ) )) ?>
     </div>
 </div>
 
