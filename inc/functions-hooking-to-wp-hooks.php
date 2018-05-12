@@ -8,9 +8,10 @@ function pagespeed_body_classes( $classes ) {
 	if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 		$classes[] = 'sleek-header';
 	}
-	if ( get_theme_mod( 'use_masonry', false ) ) {
+	if ( get_theme_mod( 'use_masonry', false ) && get_theme_mod( 'separate_containers', true ) ) {
 		$classes[] = 'masonry';
 	}
+
 	return $classes;
 }
 

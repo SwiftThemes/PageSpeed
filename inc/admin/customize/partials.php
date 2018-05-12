@@ -1,7 +1,7 @@
 <?php
 function pagespeed_customize_register( WP_Customize_Manager $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'body_classes', array(
-		'settings'            => array( 'container_type', 'theme_layout' ),
+		'settings'            => array( 'container_type', 'theme_layout', 'separate_containers' ),
 		'selector'            => '#boom',
 		'type'                => 'body_classes',
 		'container_inclusive' => false,
@@ -33,6 +33,24 @@ function pagespeed_customize_register( WP_Customize_Manager $wp_customize ) {
 		},
 		'fallback_refresh'    => false
 	) );
+
+	$wp_customize->selective_refresh->add_partial( 'masonry', array(
+		'settings'            => array(
+			'separate_containers',
+			'use_masonry',
+			'masonry_column_count',
+			'site_width',
+			'main_width'
+		),
+		'type'                => 'masonry',
+		'selector'            => '#boom',
+		'container_inclusive' => false,
+		'render_callback'     => function () {
+			return '_';
+		},
+		'fallback_refresh'    => false
+	) );
+
 }
 
 add_action( 'customize_register', 'pagespeed_customize_register' );

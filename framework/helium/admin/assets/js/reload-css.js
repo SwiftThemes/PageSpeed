@@ -60,25 +60,42 @@
                 }
 
             });
+            // @todo
+            // We shouldn't need this as we are not rendering anything.
+            wp.customize.selectiveRefresh.partialConstructor.masonry = wp.customize.selectiveRefresh.Partial.extend({
+                renderContent: function (placement) {
+                    wp.customize.selectiveRefresh.trigger('partial-content-rendered', placement);
+                    return true;
+                }
+            });
         }
 
 
         wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
-            if('home_slider' == placement.partial.id ){
-
+            if ('home_slider' == placement.partial.id) {
                 jQuery('.nns-slider').unslider('destroy');
-                
                 jQuery('.nns-slider').unslider({
                     autoplay: true,
-                    delay:6000,
-                    infinite:true,
+                    delay: 6000,
+                    infinite: true,
                     arrows: {
-                        //  Unslider default behaviour
                         prev: '<span class="unslider-arrow prev  he-chevron-circle-left"></span>',
                         next: '<span class="unslider-arrow next  he-chevron-circle-right"></span>',
-
                     }
                 });
+            }
+            if ('masonry' == placement.partial.id) {
+                setTimeout(function () {
+                    $('#articles').masonry('destroy');
+                    $('.masonry #articles').masonry({
+                        columnWidth: '.entry',
+                        itemSelector: '.entry',
+                        gutter: '.gutter-sizer',
+                    });
+
+
+                }, 50)
+
             }
         })
 

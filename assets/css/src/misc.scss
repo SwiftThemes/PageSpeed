@@ -251,14 +251,12 @@
 //
 // Gutter to be equaly to our normal spacing.
 
-@if ($use_masonry==1) {
+@if ($use_masonry==1 and $separate_containers ==1) {
   @media only screen and (min-width: $mobile_width) {
 
     $gutter: ($padding*.5)/(($site_width - $padding)*($main_width/100))*100;
 
-
-
-    $article_width : (100 - ($masonry_column_count - 1)*$gutter)/$masonry_column_count;
+    $article_width: (100 - ($masonry_column_count - 1)*$gutter)/$masonry_column_count;
 
     .entry-title {
       font-size: 1.3em

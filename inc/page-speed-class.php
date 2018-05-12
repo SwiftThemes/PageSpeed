@@ -50,6 +50,8 @@ class PageSpeed {
 		require_once( HELIUM_THEME_INC . 'home-slider.php' );
 
 
+		require_once( HELIUM_THEME_CUSTOMIZE . 'load-scripts.php' );
+
 		require_once( HELIUM_THEME_CUSTOMIZE . 'customizer.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'header.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'footer.php' );
@@ -61,6 +63,7 @@ class PageSpeed {
 		require_once( HELIUM_THEME_CUSTOMIZE . 'misc.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'home-slider.php' );
 		require_once( HELIUM_THEME_CUSTOMIZE . 'partials.php' );
+
 		require_once( HELIUM_THEME_INC.'pro/bootstrap.php' );
 
 		add_theme_support( 'breadcrumb-trail' );

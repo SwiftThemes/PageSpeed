@@ -15,8 +15,15 @@ if ( defined( 'NNS_URI' ) && get_theme_mod( 'show_slider_on_homepage', false ) )
 	}
 }
 
+add_action( 'pagespeed_after_header', 'pagespeed_nns_home_slider_placeholder', 15 );
+
 
 function pagespeed_nns_home_slider() {
+
+	// For customizer
+	if(!get_theme_mod( 'show_slider_on_homepage', false )){
+		return " ";
+	}
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 	if ( ! is_home() || $paged > 1 ) {
@@ -45,4 +52,10 @@ function pagespeed_nns_home_slider() {
 		$thumb_size = array( $site_width, get_theme_mod( 'home_slider_height', (int) ( $site_width / 2 ) ) );
 	}
 	nns_query_slider( $query_args, $template, $thumb_size, $excerpts );
+}
+
+function pagespeed_nns_home_slider_placeholder(){
+	if(is_customize_preview() && !get_theme_mod( 'show_slider_on_homepage', false )){
+		echo '<div class="nns-slider"></div>';
+	}
 }

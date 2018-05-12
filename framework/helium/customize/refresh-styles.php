@@ -24,7 +24,10 @@ $pagespeed_selective_refreshables = array(
 	'footer_widths',
 	'separate_containers',
 
-	'theme_layout'
+	'theme_layout',
+
+	'use_masonry',
+	'masonry_column_count'
 
 
 

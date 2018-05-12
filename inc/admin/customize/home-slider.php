@@ -55,7 +55,7 @@ function pagespeed_customize_home( $wp_customize ) {
 					'label'           => esc_html__( 'Slider Categories', 'page-speed' ),
 					'section'         => 'home_slider',
 					'priority'        => 10,
-					'active_callback' => 'pagespeed_is_slider_enabled',
+//					'active_callback' => 'pagespeed_is_slider_enabled',
 				)
 			)
 		);
@@ -74,7 +74,7 @@ function pagespeed_customize_home( $wp_customize ) {
 			'section'         => 'home_slider',
 			'type'            => 'number',
 			'priority'        => 10,
-			'active_callback' => 'pagespeed_is_slider_enabled',
+//			'active_callback' => 'pagespeed_is_slider_enabled',
 			'input_attrs'     => array( 'min' => 1, 'max' => 20 )
 		) );
 
@@ -93,7 +93,7 @@ function pagespeed_customize_home( $wp_customize ) {
 			'section'         => 'home_slider',
 			'type'            => 'number',
 			'priority'        => 10,
-			'active_callback' => 'pagespeed_is_slider_enabled',
+//			'active_callback' => 'pagespeed_is_slider_enabled',
 			'input_attrs'     => array( 'min' => 300, 'max' => 1000 )
 		) );
 

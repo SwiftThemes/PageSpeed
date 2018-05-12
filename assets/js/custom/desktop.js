@@ -5,7 +5,7 @@
     'use strict';
     GLOBAL = {}
     GLOBAL.DESKTOP_WIDTH = 1160;
-    GLOBAL.MOBILE_WIDTH = 800;
+    GLOBAL.MOBILE_WIDTH = 768;
     GLOBAL.hasSideMenu = false
     $(document).ready(function () {
         setSidebarHeights()
@@ -38,12 +38,12 @@
         //@todo Enable masonry on for large devices
         // Masonry
         if ($('body').hasClass('masonry')) {
-
-            $('#articles').masonry({
-                columnWidth: '.entry',
-                itemSelector: '.entry',
-                gutter: '.gutter-sizer',
-            });
+            if (window.innerWidth > 480)
+                $('#articles').masonry({
+                    columnWidth: '.entry',
+                    itemSelector: '.entry',
+                    gutter: '.gutter-sizer',
+                });
         }
 
     })
