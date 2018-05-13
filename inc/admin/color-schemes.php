@@ -203,7 +203,7 @@ $page_speed_color_schemes['Amaranth'] = array(
 
 	// Layout colors
 	'body-bg'                => '$dark-2',
-	'wrapper-bg'             => 'transparent',
+	'wrapper-bg'             => '',
 	'content-bg'             => '',
 	'main-bg'                => '',
 	'sb1-bg'                 => '',
