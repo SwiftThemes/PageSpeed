@@ -88,14 +88,15 @@
   #nav-social-media .goodreads {
     background: #553B08
   }
+  #nav-social-media .telephone {
+    background: #02B21F
+  }
 
 } @else {
   #nav-social-media a {
-    padding: 0 .5em
-  }
-  .nav span.icon {
-    position: relative;
-    top: .125em
+    padding: 0 .25em;
+    font-size: 1.25em;
+    line-height: 1.7em;
   }
 
   #nav-social-media a:hover {
@@ -143,6 +144,9 @@
   }
   #nav-social-media .goodreads:hover {
     background: #553B08
+  }
+  #nav-social-media .telephone:hover {
+    background: #02B21F
   }
 }
 

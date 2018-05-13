@@ -63,7 +63,7 @@ function pagespeed_customize_social_media( $wp_customize ) {
 			'section' => 'social_media',
 			'type'    => 'select',
 			'choices' => array(
-				'Person'     => 'Person',
+				'Person'       => 'Person',
 				'Organization' => 'Business/Organization',
 			),
 		)
@@ -72,18 +72,21 @@ function pagespeed_customize_social_media( $wp_customize ) {
 	$wp_customize->add_setting( 'social_media_monochrome', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => false,
+		'transport'         => 'postMessage',
+
 
 	) );
 
 	$wp_customize->add_control( 'social_media_monochrome', array(
-		'label'       => 'Use monchrome icons',
-		'section'     => 'social_media',
-		'type'        => 'checkbox',
+		'label'   => 'Use monchrome icons',
+		'section' => 'social_media',
+		'type'    => 'checkbox',
 	) );
 
 	$wp_customize->add_setting( 'webiste_url', array(
 		'sanitize_callback' => 'esc_url',
 		'default'           => '',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -92,13 +95,13 @@ function pagespeed_customize_social_media( $wp_customize ) {
 		'description' => __( 'If your blog is separate from main website, enter your main website url here.', 'page-speed' ),
 		'section'     => 'social_media',
 		'type'        => 'url',
-		'transport'   => 'postMessage'
 	) );
 
 
 	$wp_customize->add_setting( 'facebook', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -115,7 +118,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'twitter', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -132,7 +136,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'youtube', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -149,7 +154,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'instagram', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -166,7 +172,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'github', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -183,7 +190,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'quora', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -199,7 +207,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'linkedin', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -215,7 +224,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'google-plus', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -231,7 +241,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'whatsapp', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -248,7 +259,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'dribbble', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -265,7 +277,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'goodreads', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -282,7 +295,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'stack-overflow', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -299,7 +313,8 @@ function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_setting( 'reddit', array(
 		'sanitize_callback' => 'esc_url',
-		'default'           => '',
+		'default'           => '#',
+		'transport'         => 'postMessage',
 
 	) );
 
@@ -316,6 +331,7 @@ function pagespeed_customize_social_media( $wp_customize ) {
 	$wp_customize->add_setting( 'telephone', array(
 		'sanitize_callback' => 'sanitize_text_field',
 		'default'           => '',
+		'transport'         => 'postMessage',
 
 	) );
 

@@ -8,13 +8,21 @@
   margin: 0;
   line-height: 1.2em;
 }
-.site-title a{text-decoration: none;color:$site-title-color}
+
+.site-title a {
+  text-decoration: none;
+  color: $site-title-color
+}
+
 .site-description {
   margin: 0;
-  color:$site-description-color;
+  color: $site-description-color;
   font-style: italic;
 }
-.custom-logo{display:block}
+
+.custom-logo {
+  display: block
+}
 
 @if $logo-position=='left' {
 
@@ -30,21 +38,33 @@
     }
   }
 }
-@if $logo-position=='center'{
-.logo-center {
-  #site-header {
-    text-align: center;
-  }
-  #logo,.custom-logo {
-    display: block;
-    margin: auto
+
+@if $logo-position=='center' {
+  .logo-center {
+    #site-header {
+      text-align: center;
+    }
+    #logo, .custom-logo {
+      display: block;
+      margin: auto
+    }
+
+    .ps-header-ad {
+      float: right;
+    }
   }
 
-  .ps-header-ad {
-    float: right;
+  @if $is_sleek_header==1 {
+    #site-header {
+      display: inline-block;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+    }
   }
 }
-}
+
 @if $logo-position=='right' {
 
   .logo-right {
@@ -61,7 +81,8 @@
     }
   }
 }
-.custom-logo-mobile{
+
+.custom-logo-mobile {
   float: left
 }
 
@@ -86,7 +107,7 @@
 }
 
 // Remove description when sticky
-.is-sticky,.sleek-header  {
+.is-sticky, .sleek-header {
   .site-title {
     font-size: 1.8em;
     //padding: 10px 0; removing because no padding is required. Line height takes care of it.
@@ -102,9 +123,10 @@
   padding: .1*$padding 0;
 }
 
-#below-header-ad-container{
+#below-header-ad-container {
   border-bottom: solid 1px $border-color;
 }
+
 #above-footer-ad-container {
   border-top: solid 1px $border-color;
 }

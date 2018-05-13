@@ -27,7 +27,9 @@ $pagespeed_selective_refreshables = array(
 	'theme_layout',
 
 	'use_masonry',
-	'masonry_column_count'
+	'masonry_column_count',
+
+	'social_media_monochrome'
 
 
 

@@ -1,7 +1,11 @@
 @if ($use_masonry==1 and $separate_containers ==1) {
   // Fallback until masonry is triggred
-  body:not(#articles.masonry) .entry {
-    margin: 0 5px 20px
+  #articles :not(.masonry-brick).entry {
+    margin-right: 20px
+  }
+
+  #articles :not(.masonry-brick).entry:nth-child( #{$masonry_column_count}n+1 ) {
+    margin-right: 0
   }
 
   .entry-title {
