@@ -9,6 +9,8 @@ get_header();
 
 ?>
 <?php if ( have_posts() ) : ?>
+<div id="articles">
+    <div class="gutter-sizer"></div>
 
 	<?php
 	// Start the loop.
@@ -24,6 +26,7 @@ get_header();
 
 		// End the loop.
 	endwhile;
+	echo '</div><!--#articles-->';
 
 	// Previous/next page navigation.
 	the_posts_pagination( array(
