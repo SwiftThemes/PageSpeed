@@ -35,6 +35,11 @@ get_header();
 
 <?php
 if ( have_posts() ) :
+?>
+<div id="articles">
+    <div class="gutter-sizer"></div>
+
+	<?php
 	// Start the loop.
 	while ( have_posts() ) : the_post();
 
@@ -47,6 +52,7 @@ if ( have_posts() ) :
 
 		// End the loop.
 	endwhile;
+	echo '</div><!--#articles-->';
 
 	// Previous/next page navigation.
 	the_posts_pagination( array(
@@ -57,13 +63,13 @@ if ( have_posts() ) :
 	) );
 	echo '<div class="clear"></div>';
 
-// If no content, include the "No posts found" template.
-else :
-	get_template_part( 'template-parts/content', 'none' );
+	// If no content, include the "No posts found" template.
+	else :
+		get_template_part( 'template-parts/content', 'none' );
 
-endif;
-get_sidebar();
-?>
+	endif;
+	get_sidebar();
+	?>
 
 </div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>

@@ -1,22 +1,45 @@
+## [1.42] - 13-05-2018
+
+### Added
+- Masonry for homepage along with option to choose the number of columns.
+
+### Changed
+- Enable shortcodes in copyright text option
+- Update the mobile detect script
+- Fix an issue with meta options, where users were unable to remove text fields after adding.
+- Handle centered logo better. Specially when using sleek header
+
+
 ## [1.41] - 08-05-2018
+
+### Changed
 - Fix an issue with site name appearing twice in copyright.
+
 ## [1.40] - 07-05-2018
+
+### Changed
 - Fix few issues with responsivness.
 - Recommend slider from wp.org instead of Git
 - Use regular slider on mobile devices even when using wide layout.
 - Fix an issue with comments layout  when using card style.
 
 ## [1.39] - 06-05-2018
+
+### Changed
 - Fix issue with scroll bars appearing on chrome in windows.
 https://forums.swiftthemes.com/t/double-scroll-bar-on-desktop-bug/111/3
 
 ## [1.38] - 03-05-2018
+
+### Added
 - Added a dedicated section for home slider options.
 - Included the POT files for translation.
-- Refine tags styling in post meta.
-- Fix some issues witch customizer where changes were not reflected properly in the customizer.
 - Added animation for thumbnails.
 - Add two new icons, cross and tick.
+
+### Changed
+- Refine tags styling in post meta.
+- Fix some issues witch customizer where changes were not reflected properly in the customizer.
 
 ## [1.24] - 29-04-2018
 
@@ -173,7 +196,7 @@ https://forums.swiftthemes.com/t/double-scroll-bar-on-desktop-bug/111/3
 - New customizer control to choose and sort above links.
 
 ### Removed
-- Bottom borders for navigations and header.
+- Bottom borders for navigation's and header.
 
 ## [0.88] - 23-03-2018
 
@@ -189,7 +212,7 @@ https://forums.swiftthemes.com/t/double-scroll-bar-on-desktop-bug/111/3
 
 ### Changed
 - Remove background attachment:fixed from the gradient mixin. Buttons and other gradients will pop out more. Added background-attachment:fixed to individual large elements like mody, main, sidebar etc..
-- Update icon font to include chevrons for slider and instagarm icon.
+- Update icon font to include chevrons for slider and instagram icon.
 
 ## [0.84] - 21-03-2018
 ### Changed

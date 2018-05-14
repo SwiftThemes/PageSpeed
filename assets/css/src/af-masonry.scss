@@ -20,9 +20,18 @@
     margin-bottom: 10px
   }
   .more-link {
-    display: none
+    text-align: center;
+    span {
+      display: none
+    }
+    .he-btn {
+      background: hsla(hue($primary), 50, 99, 1);
+      border: solid 2px hsla(hue($primary), 50, 90, 1);
+      color: hsla(hue($primary), 50, 80, 1);
+      padding: .3em 1em!important;
+      @include border-radius(20px)
+    }
   }
-
   #articles article {
     float: left;
     box-sizing: border-box;
