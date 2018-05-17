@@ -156,7 +156,9 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps');
 
 
-gulp.task('pot', ['page-speed-translations', 'helium-translations',], function () {
+gulp.task('pot', ['page-speed-translations',
+    // 'helium-translations'
+], function () {
     // gulp.src( ...
 });
 
@@ -399,12 +401,12 @@ gulp.task('buildZip', function () {
 
 // Package Distributable Theme
 gulp.task('build', function (cb) {
-    runSequence('pot','styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'markdown', 'buildImages', 'buildZip', 'cleanupFinal', cb);
+    runSequence('pot', 'styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFiles', 'markdown', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
 
 // Package Distributable Theme
 gulp.task('buildOrg', function (cb) {
-    runSequence('pot','styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFilesOrg', 'buildImages', 'buildZip', 'cleanupFinal', cb);
+    runSequence('pot', 'styles', 'cleanup', 'vendorsJs', 'scriptsJs', 'buildFilesOrg', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
 
 

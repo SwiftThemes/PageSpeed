@@ -59,7 +59,7 @@ function pagespeed_customize_social_media( $wp_customize ) {
 	$wp_customize->add_control(
 		'social_media_personal_or_business',
 		array(
-			'label'   => __( 'Are the social media link below belong to a person or organization?', 'mytheme' ),
+			'label'   => __( 'Are the social media link below belong to a person or organization?', 'page-speed' ),
 			'section' => 'social_media',
 			'type'    => 'select',
 			'choices' => array(

@@ -1,3 +1,8 @@
+## [1.46] - 18-05-2018
+
+### Changed
+- Fix translations issue. https://forums.swiftthemes.com/t/cant-translate-to-zh-tw-language/136/9
+
 ## [1.42] - 13-05-2018
 
 ### Added
