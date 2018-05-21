@@ -1,8 +1,16 @@
 wp.customize.bind('ready', function () {
 
+    wp.customize.control('enable_card_style_widgets_sb', function (control) {
+        var setting = wp.customize('separate_containers');
+        control.active.set(!setting.get());
+        setting.bind(function (value) {
+            control.active.set(!value);
+        });
+    });
+
     wp.customize.control('use_masonry', function (control) {
         var setting = wp.customize('separate_containers');
-        control.active.set('large' === setting.get());
+        control.active.set(setting.get());
         setting.bind(function (value) {
             control.active.set(value);
         });

@@ -217,7 +217,7 @@ function pagespeed_customize( $wp_customize ) {
 		'description'     => __( ' ', 'page-speed' ),
 		'section'         => 'layout_settings',
 		'type'            => 'checkbox',
-		'priority'        => 60,
+		'priority'        => 45,
 		'active_callback' => function () {
 			return !get_theme_mod( 'separate_containers', true );
 		}
