@@ -1,3 +1,7 @@
+## [1.48] - 21-05-2018
+- Rename few options labels under layouts panel.
+- Hide sidebar width option when not required.
+
 ## [1.47] - 21-05-2018
 
 ###Added

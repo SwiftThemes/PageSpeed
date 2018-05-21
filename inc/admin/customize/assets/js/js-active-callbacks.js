@@ -29,5 +29,17 @@ wp.customize.bind('ready', function () {
         });
     });
 
+
+
+    wp.customize.control('left_sidebar_width', function (control) {
+        var setting = wp.customize('theme_layout');
+        control.active.set(['centered','rr-sb','ll-sb'].indexOf(setting.get()) !== -1);
+        setting.bind(function (value) {
+            debugger
+            control.active.set(['centered','rr-sb','ll-sb',].indexOf(value) !== -1);
+        });
+    });
+
+
     //Not implementing the same for home page slider since it has a dedicated UI.
 });

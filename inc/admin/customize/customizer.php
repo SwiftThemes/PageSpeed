@@ -186,7 +186,7 @@ function pagespeed_customize( $wp_customize ) {
 
 
 	$wp_customize->add_control( 'site_width', array(
-		'label'       => __( 'Main container width', 'page-speed' ),
+		'label'       => __( 'Site container width', 'page-speed' ),
 		'description' => __( 'Along with units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 1260px',
 		'section'     => 'layout_settings',
 		'type'        => 'text',
@@ -195,7 +195,7 @@ function pagespeed_customize( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'main_width', array(
-		'label'       => __( 'Content width', 'page-speed' ),
+		'label'       => __( 'Main content width', 'page-speed' ),
 		'description' => __( 'In percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 70',
 		'section'     => 'layout_settings',
 		'type'        => 'number',
@@ -204,11 +204,15 @@ function pagespeed_customize( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'left_sidebar_width', array(
 		'label'       => __( 'Left sidebar width', 'page-speed' ),
-		'description' => __( 'If you are using centered layout. Left sidebar width in percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 18.75',
+		'description' => __( 'If you are using layout with two sidebars. Left sidebar width in percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 18.75',
 		'section'     => 'layout_settings',
 		'type'        => 'number',
 		'priority'    => 60,
-		'input_attrs' => array( 'min' => 0, 'max' => 60 )
+		'input_attrs' => array( 'min' => 0, 'max' => 60 ),
+		'active_callback' => function () {
+			return in_array(get_theme_mod('theme_layout','r-sb'),array('centered','rr-sb','ll-sb'));
+		}
+
 	) );
 
 

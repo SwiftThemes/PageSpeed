@@ -193,7 +193,7 @@
     background: $card-bg;
     padding: $padding/2;
   }
-  #main > .inner {
+  #main > .inner{
     padding: $padding/2 0;
     background: transparent
   }
@@ -208,7 +208,11 @@
     padding: 0
   }
 
-  article.entry {
+  #comments {
+    background: $card-bg;
+    padding: $padding/2;
+  }
+    article.entry {
     background: $card-bg;
     padding: $padding*1/4 $padding/2 0;
     margin: 0 0 27px;
