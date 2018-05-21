@@ -1,3 +1,8 @@
+## [1.47] - 21-05-2018
+
+###Added
+- Option to have different menus for mobiles and tablets.
+
 ## [1.46] - 18-05-2018
 
 ### Changed

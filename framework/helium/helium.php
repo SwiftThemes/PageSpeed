@@ -162,6 +162,10 @@ if ( ! class_exists( 'Helium' ) ) {
 			return $this->mobile_detect->isMobile() && ! $this->mobile_detect->isTablet();
 		}
 
+		public function is_tablet() {
+			return $this->mobile_detect->isTablet();
+		}
+
 		/**
 		 * Returns the post/page meta value of the given key.
 		 *

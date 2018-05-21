@@ -29,4 +29,37 @@ function pagespeed_register_menus() {
 		'footer_links' => __( 'Footer links', 'page-speed' ),
 	) );
 
+
+	if ( get_theme_mod( 'different_navigation_for_tablets', false ) ) {
+		register_nav_menus( array(
+			'secondary_tablet' => __( 'Navigation above header #Tablets', 'page-speed' ),
+		) );
+
+		if ( get_theme_mod( 'enable_sleek_header', true ) ) {
+			register_nav_menus( array(
+				'primary_tablet' => __( 'Navigation menu in header #Tablets', 'page-speed' ),
+			) );
+		} else {
+			register_nav_menus( array(
+				'primary_tablet' => __( 'Navigation below header #Tablets', 'page-speed' ),
+			) );
+		}
+
+	}
+	if ( get_theme_mod( 'different_navigation_for_mobiles', false ) ) {
+		register_nav_menus( array(
+			'secondary_mobile' => __( 'Navigation above header #Mobiles', 'page-speed' ),
+		) );
+
+		if ( get_theme_mod( 'enable_sleek_header', true ) ) {
+			register_nav_menus( array(
+				'primary_mobile' => __( 'Navigation menu in header #Mobiles', 'page-speed' ),
+			) );
+		} else {
+			register_nav_menus( array(
+				'primary_mobile' => __( 'Navigation below header #Mobiles', 'page-speed' ),
+			) );
+		}
+	}
+
 }

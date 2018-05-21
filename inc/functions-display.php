@@ -17,8 +17,20 @@ add_action( 'pagespeed_main_start', 'pagespeed_breadcrumbs', 12 );
 
 if ( ! function_exists( 'pagespeed_above_header' ) ) {
 	function pagespeed_above_header() {
+		global $helium;
+
+		$theme_location = 'secondary';
+
+		if ( get_theme_mod( 'different_navigation_for_tablets', false ) && $helium->is_tablet() ) {
+			$theme_location = 'secondary_tablet';
+		}
+
+		if ( get_theme_mod( 'different_navigation_for_mobiles', false ) && $helium->is_mobile() ) {
+			$theme_location = 'secondary_mobile';
+		}
+
 		$args = array(
-			'theme_location'  => 'secondary',
+			'theme_location'  => $theme_location,
 			'container'       => 'nav',
 			'container_class' => 'nav',
 			'container_id'    => 'secondary-nav',
@@ -37,7 +49,7 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 		);
 
 
-		if ( has_nav_menu( 'secondary' ) ) :
+		if ( has_nav_menu( $theme_location ) ) :
 			?>
             <div id="secondary-nav-container" class="nav-container cf">
                 <div id="secondary" class="">
@@ -60,8 +72,18 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 		if ( get_theme_mod( 'enable_sleek_header', true ) ) {
 			return;
 		}
+
+		global $helium;
+		$theme_location = 'primary';
+		if ( get_theme_mod( 'different_navigation_for_tablets', false ) && $helium->is_tablet() ) {
+			$theme_location = 'primary_tablet';
+		}
+
+		if ( get_theme_mod( 'different_navigation_for_mobiles', false ) && $helium->is_mobile() ) {
+			$theme_location = 'primary_mobile';
+		}
 		$args = array(
-			'theme_location'  => 'primary',
+			'theme_location'  => $theme_location,
 			'container'       => 'nav',
 			'container_class' => 'nav',
 			'container_id'    => 'primary-nav',
@@ -113,8 +135,18 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			return;
 		}
 
+		global $helium;
+		$theme_location = 'primary';
+		if ( get_theme_mod( 'different_navigation_for_tablets', false ) && $helium->is_tablet() ) {
+
+			$theme_location = 'primary_tablet';
+		}
+		if ( get_theme_mod( 'different_navigation_for_mobiles', false ) && $helium->is_mobile() ) {
+			$theme_location = 'primary_mobile';
+		}
+
 		$args = array(
-			'theme_location'  => 'primary',
+			'theme_location'  => $theme_location,
 			'container'       => 'nav',
 			'container_class' => 'nav',
 			'container_id'    => 'header-nav',

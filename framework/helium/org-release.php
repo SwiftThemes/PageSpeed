@@ -42,13 +42,16 @@ function helium_org_release_body_classes( $classes ) {
 add_action( 'widgets_init', 'helium_org_release_register_sidebars' );
 
 function helium_org_release_register_sidebars() {
-	hybrid_register_sidebar(
-		array(
-			'id'           => 'sidebar-1',
-			'name'         => esc_html_x( 'Dummy sidebar', 'sidebar', 'page-speed' ),
-			'description'  => esc_html__( 'Used only for theme preview.', 'page-speed' ),
-			'before_title' => '<div class="widget-title heading">',
-			'after_title'  => '</div>',
-		)
-	);
+	// Just an extra check.
+	if ( 'NOT_SET' === get_theme_mod( 'can_read_write', 'NOT_SET' ) ) {
+		hybrid_register_sidebar(
+			array(
+				'id'           => 'sidebar-1',
+				'name'         => esc_html_x( 'Not used', 'sidebar', 'page-speed' ),
+				'description'  => esc_html__( 'Used only for theme preview.', 'page-speed' ),
+				'before_title' => '<div class="widget-title heading">',
+				'after_title'  => '</div>',
+			)
+		);
+	}
 }

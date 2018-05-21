@@ -41,3 +41,21 @@ $page_speed_theme_options[] = array(
 	'default'  => false,
 	'sanitize' => 'boolean'
 );
+
+$page_speed_theme_options[] = array(
+	'id'       => 'different_navigation_for_mobiles',
+	'name'     => 'Different navigation menu for mobiles',
+	'desc'     => __( 'Enable this option if you want to have different menus on mobiles', 'page-speed'),
+	'type'     => 'checkbox',
+	'default'  => false,
+	'sanitize' => 'boolean'
+);
+
+$page_speed_theme_options[] = array(
+	'id'       => 'different_navigation_for_tablets',
+	'name'     => 'Different navigation menu for tablets',
+	'desc'     => __( 'Enable this option if you want to have different menus on tablets', 'page-speed'),
+	'type'     => 'checkbox',
+	'default'  => false,
+	'sanitize' => 'boolean'
+);
