@@ -30,7 +30,7 @@ function helium_show_thumbnail( $namespace ) {
 	} else {
 		$suffix = '';
 	}
-    ?>
+	?>
 	<?php if ( '' !== get_the_post_thumbnail() && get_theme_mod( $namespace . '_show' . $suffix, true ) ) : ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
@@ -71,8 +71,9 @@ function helium_get_site_width() {
  */
 function helium_is_preview_demo() {
 	$he_theme     = wp_get_theme();
-	$theme_name   = $he_theme->get( 'TextDomain' );
+	$theme_name   = 'pagespeed' == $he_theme->get( 'TextDomain' )?'page-speed':$he_theme->get( 'TextDomain' );
 	$active_theme = helium_get_raw_option( 'template' );
+
 
 	if ( is_child_theme() ) {
 		$theme_name = get_option( 'stylesheet' );
