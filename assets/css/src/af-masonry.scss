@@ -10,13 +10,14 @@
     #articles :not(.masonry-brick).entry:nth-child( #{$masonry_column_count}n+1 ) {
       margin-right: 0
     }
+
+    .post-thumbnail {
+      margin: 0 -20px 10px
+    }
   }
 
   #articles .entry-title {
     font-size: 1.3em
-  }
-  .post-thumbnail {
-    margin: 0 -20px 10px
   }
 
   .post-thumbnail img {

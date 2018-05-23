@@ -1,3 +1,13 @@
+## [1.51] - 23-05-2018
+
+### Changed
+- Fix labels hidden for checkboxes in comment form.
+- Add bottom margin for images.
+- Option to disable sticky header when using sleek header.
+- Stickies won’t be hidden behind the navigation menu.
+- Fix sidebar widths issue on woocommerce pages in mobile.
+- Fix an issue with mobile navigation when logo is centered.
+
 ## [1.48] - 21-05-2018
 - Rename few options labels under layouts panel.
 - Hide sidebar width option when not required.
