@@ -10,6 +10,8 @@ node_modules
 ## Build files
 assets/js/custom.js
 assets/js/custom.min.js
+assets/js/vendors.js
+assets/js/vendors.min.js
 assets/css/style.prod.css
 assets/css/src/*.css
 assets/css/src/*.map

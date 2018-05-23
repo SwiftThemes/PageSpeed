@@ -140,26 +140,26 @@ body {
 //}
 @if ($sb_widget_cards == 1) {
 
-  #sb1 > .inner,
-  #sb2 > .inner,
-  #sb-page-rsb > .inner,
-  #sb-page-lsb > .inner,
-  #sb-woo > .inner {
-    //background: inherit;
-
-    padding-top: $padding*3/4;
-    padding-bottom: $padding*3/4;
+  //#sb1 > .inner,
+  //#sb2 > .inner,
+  //#sb-page-rsb > .inner,
+  //#sb-page-lsb > .inner,
+  //#sb-woo > .inner
+  .sb-container > .inner {
+    padding-top: $padding/2;
+    padding-bottom: $padding/2;
   }
-}  @else {
-  #sb1 > .inner,
-  #sb2 > .inner,
-  #sb-page-rsb > .inner,
-  #sb-page-lsb > .inner,
-  #sb-woo > .inner {
+} @else {
+  //#sb1 > .inner,
+  //#sb2 > .inner,
+  //#sb-page-rsb > .inner,
+  //#sb-page-lsb > .inner,
+  //#sb-woo > .inner
+  //
+  .sb-container > .inner {
     //background: inherit;
     padding-top: $padding;
     padding-bottom: $padding;
-
 
   }
 }

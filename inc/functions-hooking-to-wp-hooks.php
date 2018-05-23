@@ -12,6 +12,11 @@ function pagespeed_body_classes( $classes ) {
 		$classes[] = 'masonry';
 	}
 
+
+	if ( get_theme_mod( 'is_sticky_nav' ) ) {
+		$classes[] = 'sticky-nav';
+	}
+
 	return $classes;
 }
 

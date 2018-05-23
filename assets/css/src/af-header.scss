@@ -62,6 +62,9 @@
       left: 0;
       right: 0;
     }
+    @media only screen and (max-width: $mobile_portrait_width) {
+      #site-header { position: static;}
+    }
   }
 }
 

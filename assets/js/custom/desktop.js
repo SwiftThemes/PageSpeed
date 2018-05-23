@@ -209,7 +209,10 @@
         // Adding 60 as margin of error.
         // @todo make top spacing dynamic when using sticky nav
         var bottomSpacing = $('#site-footer-container').outerHeight() + $('#copyright-container').outerHeight() + 60
-        $("#sticky-sb1,#sticky-sb2").sticky({topSpacing: 10, bottomSpacing: bottomSpacing, responsiveWidth: true});
+
+        var topSpacing = $('.sticky-nav #primary .nav').outerHeight()+20;
+
+        $("#sticky-sb1,#sticky-sb2").sticky({topSpacing: topSpacing, bottomSpacing: bottomSpacing, responsiveWidth: true});
     }
 
     function makeNavSticky() {
@@ -217,7 +220,7 @@
             return
         }
         //@todo add stick-it, it is stikcy always now.
-        $("#primary-nav-container.stick-it,.sleek-header #site-header-container").sticky({
+        $(".sticky-nav  #primary-nav-container,.sleek-header.sticky-nav  #site-header-container").sticky({
             responsiveWidth: true,
             zIndex: 9
         });

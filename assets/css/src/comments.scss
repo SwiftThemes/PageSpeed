@@ -121,12 +121,17 @@ li.comment.bypostauthor {
   padding-top: $vr;
 }
 
-#commentform label {
-  display: none
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment {
+  label {
+    display: none;
+  }
 }
-.comment-subscription-form p{margin-bottom: 0}
-.comment-subscription-form label {
-  display: inline
+
+.comment-subscription-form p {
+  margin-bottom: 0
 }
 
 .comment-form-author,

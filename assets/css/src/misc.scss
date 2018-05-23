@@ -158,8 +158,12 @@
   #sb1, #sb2 {
     background: transparent !important
   }
-  #sb1 > .inner,
-  #sb2 > .inner {
+
+  // @todo should be changed to .sb-container
+  //#sb1 > .inner,
+  //#sb2 > .inner,
+  //#sb-woo > .inner
+  .sb-container .inner {
     border-width: 0 !important;
     padding: $padding/2
   }
@@ -188,12 +192,13 @@
     }
 
   }
-  #sb1 .widget,
-  #sb2 .widget {
+  //#sb1 .widget,
+  //#sb2 .widget,
+  .sb-container .widget {
     background: $card-bg;
     padding: $padding/2;
   }
-  #main > .inner{
+  #main > .inner {
     padding: $padding/2 0;
     background: transparent
   }
@@ -212,7 +217,8 @@
     background: $card-bg;
     padding: $padding/2;
   }
-    article.entry {
+  article.entry,
+  div.entry.product {
     background: $card-bg;
     padding: $padding*1/4 $padding/2 0;
     margin: 0 0 27px;

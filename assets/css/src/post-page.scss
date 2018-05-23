@@ -15,10 +15,13 @@
   a {
     color: $primary
   }
+  img{margin-bottom: $vr/2}
+
   .wp-caption {
     margin-bottom: $vr;
     background: $light-3;
   }
+  .wp-caption img{margin-bottom: 0}
   .wp-caption-text {
     padding: 0 10px 5px 10px;
   }
