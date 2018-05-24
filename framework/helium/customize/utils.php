@@ -82,3 +82,56 @@ function helium_generate_gfont_link() {
 	}
 	return esc_url($base);
 }
+
+
+function helium_plugin_install_url( $plugin ) {
+	// This is to prevent the issue where this URL is called from outside the admin
+	if ( is_admin() || ! function_exists( 'get_plugins' ) ) {
+		return false;
+	}
+
+	$plugins = get_plugins();
+	$plugins = array_keys( $plugins );
+
+	$installed = false;
+	foreach ( $plugins as $plugin_path ) {
+		if ( strpos( $plugin_path, $plugin . '/' ) === 0 ) {
+			$installed = true;
+			break;
+		}
+	}
+
+
+	if ( $installed && ! is_plugin_active( $plugin ) ) {
+		$url = add_query_arg(
+			array(
+				'page'           => 'tgmpa-install-plugins',
+				'plugin'         => $plugin,
+				'tgmpa-activate' => 'activate-plugin',
+				'plugin_source'  => ! empty( $source ) ? urlencode( $source ) : false,
+			),
+			admin_url( 'themes.php' ) );
+
+
+		return wp_nonce_url( $url,
+			'tgmpa-activate',
+			'tgmpa-nonce'
+		);
+	} elseif ( $installed && is_plugin_active( $plugin ) ) {
+		return '#';
+	} else {
+		$url = add_query_arg(
+			array(
+				'page'          => 'tgmpa-install-plugins',
+				'plugin'        => $plugin,
+				'tgmpa-install' => 'install-plugin',
+				'plugin_source' => ! empty( $source ) ? urlencode( $source ) : false,
+			),
+			admin_url( 'themes.php' ) );
+
+		return wp_nonce_url( $url,
+			'tgmpa-install-plugin',
+			'tgmpa-nonce'
+		);
+	}
+}

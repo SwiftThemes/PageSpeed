@@ -1,7 +1,7 @@
 <?php
 
 
-add_action( 'customize_register', 'pagespeed_customize_backgrounds' ,1);
+add_action( 'customize_register', 'pagespeed_customize_backgrounds', 1 );
 function pagespeed_customize_backgrounds( $wp_customize ) {
 
 
@@ -18,6 +18,7 @@ function pagespeed_customize_backgrounds( $wp_customize ) {
 	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'backgrounds-deprecated', array(
 		'section'  => 'backgrounds',
 		'priority' => 1,
+		'type'     => 'he-error',
 		'label'    => __( ' ', 'page-speed' ),
 		'content'  => __( 'We are planning to revamp this section in future updates. If you are not already using these options, skip them for now. If you are using them, please keep an eye on changelog and the blog for updates. If you have any questions, please contact support, be assured, we got your back.', 'page-speed' ),
 	) ) );
@@ -309,8 +310,6 @@ function pagespeed_customize_backgrounds( $wp_customize ) {
 			)
 		)
 	);
-
-
 
 
 //

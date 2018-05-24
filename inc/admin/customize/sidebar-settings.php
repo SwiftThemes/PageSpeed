@@ -21,6 +21,7 @@ function pagespeed_more_sidebars( $wp_customize ) {
 	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'example-control_', array(
 		'section'  => 'sidebar_settings',
 		'priority' => 5,
+		'type' =>'info',
 		'label'    => __( ' ', 'page-speed' ),
 		'content'  => __( 'Note: Publish changes and reload the page if you make changes to the below 3 settings. Else the new sidebars won\'t appear in widgets panel', 'page-speed' ) . '</p>',
 	) ) );

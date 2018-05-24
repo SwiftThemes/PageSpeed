@@ -52,9 +52,9 @@ function pagespeed_customize_home( $wp_customize ) {
 				$wp_customize,
 				'home_slider_categories',
 				array(
-					'label'           => esc_html__( 'Slider Categories', 'page-speed' ),
-					'section'         => 'home_slider',
-					'priority'        => 10,
+					'label'    => esc_html__( 'Slider Categories', 'page-speed' ),
+					'section'  => 'home_slider',
+					'priority' => 10,
 //					'active_callback' => 'pagespeed_is_slider_enabled',
 				)
 			)
@@ -70,12 +70,12 @@ function pagespeed_customize_home( $wp_customize ) {
 
 
 		$wp_customize->add_control( 'home_slider_posts_per_page', array(
-			'label'           => __( 'Number of posts to show in slider', 'page-speed' ),
-			'section'         => 'home_slider',
-			'type'            => 'number',
-			'priority'        => 10,
+			'label'       => __( 'Number of posts to show in slider', 'page-speed' ),
+			'section'     => 'home_slider',
+			'type'        => 'number',
+			'priority'    => 10,
 //			'active_callback' => 'pagespeed_is_slider_enabled',
-			'input_attrs'     => array( 'min' => 1, 'max' => 20 )
+			'input_attrs' => array( 'min' => 1, 'max' => 20 )
 		) );
 
 
@@ -88,13 +88,13 @@ function pagespeed_customize_home( $wp_customize ) {
 
 
 		$wp_customize->add_control( 'home_slider_height', array(
-			'label'           => __( 'Slider height', 'page-speed' ),
-			'description'     => __( 'Slider height in pixels without the units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': site_width/2',
-			'section'         => 'home_slider',
-			'type'            => 'number',
-			'priority'        => 10,
+			'label'       => __( 'Slider height', 'page-speed' ),
+			'description' => __( 'Slider height in pixels without the units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': site_width/2',
+			'section'     => 'home_slider',
+			'type'        => 'number',
+			'priority'    => 10,
 //			'active_callback' => 'pagespeed_is_slider_enabled',
-			'input_attrs'     => array( 'min' => 300, 'max' => 1000 )
+			'input_attrs' => array( 'min' => 300, 'max' => 1000 )
 		) );
 
 
@@ -105,6 +105,7 @@ function pagespeed_customize_home( $wp_customize ) {
 			'section'  => 'home_slider',
 			'priority' => 15,
 			'label'    => __( ' ', 'page-speed' ),
+			'type'     => 'info',
 			'content'  => sprintf( __( 'Install the "No Nonsense Slider" from the %srecommended plugins%s to use the slider options here.', 'page-speed' ),
 				'<a href="' . admin_url( 'themes.php?page=tgmpa-install-plugins' ) . '" target="_blank">', '</a>' ),
 		) ) );

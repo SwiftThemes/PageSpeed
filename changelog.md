@@ -1,3 +1,6 @@
+## [1.52] - 24-05-2018
+- Prompt users to install the required plugins when they are using features that require them.
+
 ## [1.51] - 23-05-2018
 
 ### Changed

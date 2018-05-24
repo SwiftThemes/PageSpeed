@@ -71,16 +71,18 @@ function helium_get_site_width() {
  */
 function helium_is_preview_demo() {
 	$he_theme     = wp_get_theme();
-	$theme_name   = 'pagespeed' == $he_theme->get( 'TextDomain' )?'page-speed':$he_theme->get( 'TextDomain' );
+	$theme_name   = 'pagespeed' == $he_theme->get( 'TextDomain' ) ? 'page-speed' : $he_theme->get( 'TextDomain' );
 	$active_theme = helium_get_raw_option( 'template' );
 
 
 	if ( is_child_theme() ) {
-		$theme_name = get_option( 'stylesheet' );
+		$theme_name      = get_option( 'stylesheet' );
 		$template_name   = $he_theme->get( 'Template' );
 		$stylesheet_name = helium_get_raw_option( 'stylesheet' );
+
 		return apply_filters( 'helium_is_preview_demo', ( ( $active_theme != strtolower( $theme_name ) ) && ( $template_name == $stylesheet_name ) ) );
 	}
+
 	return apply_filters( 'helium_is_preview_demo', $active_theme != strtolower( $theme_name ) );
 }
 
@@ -95,5 +97,6 @@ function helium_is_preview_demo() {
 function helium_get_raw_option( $opt_name ) {
 	$alloptions = wp_cache_get( 'alloptions', 'options' );
 	$alloptions = maybe_unserialize( $alloptions );
+
 	return isset( $alloptions[ $opt_name ] ) ? maybe_unserialize( $alloptions[ $opt_name ] ) : false;
 }

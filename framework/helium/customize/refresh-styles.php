@@ -12,7 +12,6 @@ $pagespeed_selective_refreshables = array(
 	'shades_from',
 	'shade_saturation',
 	'invert_colors',
-	'enable_transparent_backgrounds',
 	'primary_font_stack',
 	'primary_font_size',
 	'primary_font_lh',
@@ -21,15 +20,17 @@ $pagespeed_selective_refreshables = array(
 	'secondary_font_size',
 	'secondary_font_lh',
 	'secondary_font_weight',
-	'footer_widths',
 	'separate_containers',
 
 	'theme_layout',
 
+	// Premium
+	'footer_widths',
 	'use_masonry',
 	'masonry_column_count',
+	'social_media_monochrome',
+	'enable_transparent_backgrounds',
 
-	'social_media_monochrome'
 
 
 

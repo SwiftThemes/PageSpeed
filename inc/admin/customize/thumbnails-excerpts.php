@@ -70,13 +70,34 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'home_show_excerpts', array(
-		'label'   => __( 'Show excerpts on home page', 'page-speed' ),
-		'section' => 'home_page_design',
-		'type'    => 'checkbox',
+		'label'    => __( 'Show excerpts on home page', 'page-speed' ),
+		'section'  => 'home_page_design',
+		'type'     => 'checkbox',
 		'priority' => 6,
 
 
 	) );
+
+
+	$wp_customize->add_setting( 'dummy1', array(
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
+		'default'           => 'alternate',
+
+	) );
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'dummy1', array(
+		'section'         => 'home_page_design',
+		'priority'        => 10,
+		'label'           => __( ' ', 'page-speed' ),
+		'type'            => 'warning',
+		'content'         => sprintf(
+			__( 'Please <a href="%s" target="_blank">Install Dynamic Thumbnails</a> plugin to generate the correct size thumbnails.', 'page-speed' ),
+			admin_url( 'themes.php?page=tgmpa-install-plugins' )
+		),
+		'active_callback' => function () {
+			return ! function_exists( 'sdt_stop_thumbs' ) && ( get_theme_mod( 'home_thumb_show', true ) || get_theme_mod( 'home_thumb_show_mobile', true ) );
+		}
+	) ) );
+
 
 	$wp_customize->add_control( 'home_thumb_show', array(
 		'label'   => __( 'Show thumbnails on home page', 'page-speed' ),
@@ -84,6 +105,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 		'type'    => 'checkbox',
 
 	) );
+
 
 	//@todo use named array for settings
 
@@ -128,7 +150,6 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 		'default'           => 'alternate',
 
 	) );
-
 
 
 	$wp_customize->add_control( 'home_thumb_show_mobile', array(
@@ -177,6 +198,27 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	) );
 
+
+	$wp_customize->add_setting( 'dummy2', array(
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
+		'default'           => 'alternate',
+
+	) );
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'dummy2', array(
+		'section'         => 'archives_design',
+		'priority'        => 10,
+		'label'           => __( ' ', 'page-speed' ),
+		'type'            => 'warning',
+		'content'         => sprintf(
+			__( 'Please <a href="%s" target="_blank">Install Dynamic Thumbnails</a> plugin to generate the correct size thumbnails.', 'page-speed' ),
+			admin_url( 'themes.php?page=tgmpa-install-plugins' )
+		),
+		'active_callback' => function () {
+			return ! function_exists( 'sdt_stop_thumbs' ) && ( get_theme_mod( 'home_thumb_show', true ) || get_theme_mod( 'home_thumb_show_mobile', true ) );
+		}
+	) ) );
+
+
 	// Show thumbnail
 	$wp_customize->add_setting( 'archives_thumb_show', array(
 		'sanitize_callback' => 'helium_boolean',
@@ -190,6 +232,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 		'type'    => 'checkbox',
 
 	) );
+
 
 	// Thumbnail size
 	$wp_customize->add_setting( 'archives_thumb_width', array(

@@ -7,7 +7,7 @@
     "gulp": "^3.5.6"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.2",
+    "browser-sync": "^2.24.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-bump": "^2.9.0",
@@ -26,7 +26,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
     "gulp-prompt": "^0.2.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^1.2.3",
     "gulp-replace": "^0.5.4",
     "gulp-rimraf": "^0.2.2",
     "gulp-rsync": "0.0.8",
@@ -37,7 +37,7 @@
     "gulp-uglify": "^2.0.1",
     "gulp-uglifycss": "^1.0.9",
     "gulp-util": "^3.0.8",
-    "gulp-wp-pot": "^2.3.0",
+    "gulp-wp-pot": "^2.3.1",
     "gulp-zip": "^4.1.0",
     "minimist": "^1.2.0",
     "require-dir": "^0.3.2",

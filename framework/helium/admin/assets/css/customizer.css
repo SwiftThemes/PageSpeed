@@ -396,6 +396,47 @@ label {
     width:50%;float:left;
 }
 
+.box{border: solid 1px #CCC;background: #FFF;padding: 10px 10px 10px 32px;position: relative}
+
+.box:before{
+    font-family: Dashicons;
+    float: left;
+    display: block;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.box.warning{
+    background: #f8f3d6;
+    border-color:#cec16f;
+    color:#967132
+}
+.box.warning:before{
+    content: "\f534";
+}
+.box.info{
+    background: #cde8f5;
+    border-color:#7ebddf;
+    color:#4480ae
+}
+.box.info:before{
+    content: "\f348";
+}
+.box.he-error{
+    background: #ecc8c5;
+    border-color:#bd8181;
+    color:#b32f2d
+}
+.box.he-error:before{
+    content: "\f153";
+}
 .cf:before,
 .cf:after {
     content: " ";

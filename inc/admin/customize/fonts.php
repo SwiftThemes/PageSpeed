@@ -38,7 +38,8 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'section'  => 'fonts',
 		'priority' => 5,
 		'label'    => __( ' ', 'page-speed' ),
-		'content'  => __( 'If you would like to use Google fonts, first add them in the two options below.', 'page-speed' ),
+		'type'     => 'info',
+		'content'  => __( 'If you would like to use Google fonts, first add them to the two options below.', 'page-speed' ),
 	) ) );
 
 
@@ -48,7 +49,8 @@ function pagespeed_customize_fonts( $wp_customize ) {
 		'section'  => 'fonts',
 		'priority' => 15,
 		'label'    => __( ' ', 'page-speed' ),
-		'content'  => sprintf( '<hr /><ul><li>%s</li><li>%s</li></ul>',
+		'type'     => 'warning',
+		'content'  => sprintf( '<ul><li>%s</li><li>%s</li></ul>',
 			__( 'Please choose the weights and character subsets you need carefully as adding more weights and subsets will slow down your site.', 'page-speed' ),
 			__( 'If you are not using the font(s) below, clear it so that they are not unnecessarily loaded', 'page-speed' )
 		),

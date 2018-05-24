@@ -5,7 +5,7 @@ if ( $helium->is_mobile() ) {
 } else {
 	$suffix = '';
 }
-$is_full_length = $wp_query->current_post == 0 && is_front_page() && get_theme_mod( 'show_first_post_in_full', false ) || ! get_theme_mod( 'home_show_excerpts', true ); ?>
+$is_full_length = $wp_query->current_post == 0 && is_front_page() && get_theme_mod( 'use_masonry', false ) && get_theme_mod( 'show_first_post_in_full', false ) || ! get_theme_mod( 'home_show_excerpts', true ); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?>>
 
 
