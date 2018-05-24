@@ -106,7 +106,7 @@ function pagespeed_customize_home( $wp_customize ) {
 			'priority' => 15,
 			'label'    => __( ' ', 'page-speed' ),
 			'type'     => 'info',
-			'content'  => sprintf( __( 'Install the "No Nonsense Slider" from the %srecommended plugins%s to use the slider options here.', 'page-speed' ),
+			'content'  => sprintf( __( 'Install the "No Nonsense Slider" from the %srecommended plugins%s to enable the slider options here.', 'page-speed' ),
 				'<a href="' . admin_url( 'themes.php?page=tgmpa-install-plugins' ) . '" target="_blank">', '</a>' ),
 		) ) );
 	}
