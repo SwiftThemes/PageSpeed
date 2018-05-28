@@ -8,12 +8,12 @@
     GLOBAL.MOBILE_WIDTH = 768;
     GLOBAL.hasSideMenu = false
     $(document).ready(function () {
+        triggerMasonry()
         setSidebarHeights()
         menuHandler();
         makeSideBarsSticky()
         makeNavSticky()
         makeHeaderSticky()
-
 
         //Clear the timeout when user is interacting with the nav
         $('#primary-nav-container,#sticky-search').on('click', function () {
@@ -35,16 +35,10 @@
         })
 
 
-        //@todo Enable masonry on for large devices
-        // Masonry
-        if ($('body').hasClass('masonry')) {
-            if (window.innerWidth > 480)
-                $('#articles').masonry({
-                    columnWidth: '.entry',
-                    itemSelector: '.entry',
-                    gutter: '.gutter-sizer',
-                });
-        }
+
+
+
+
 
     })
     $(window).load(function () {
@@ -55,6 +49,7 @@
         menuHandler();
         removeStickiesOnMobile();
         unsetSidebarHeights();
+        //@todo why are we not calling setSidebarHeights?
     });
 
     window.addEventListener('scroll', function () {
@@ -114,32 +109,19 @@
     /**
      * Set the sidebar heights dynamically so that broders and background appear
      * properly
+     * @todo Apply these to woocommerce pages as well.
      */
     function setSidebarHeights() {
         if (isDesktop()) {
+            $('.sb-container >.inner').height('')
             var height = document.getElementById('content').offsetHeight
-            $('#sb1 >.inner,#sb2 >.inner').height(height)
-
-            $('#sb-page-rsb >.inner,#sb-page-lsb >.inner').height(height)
-
-            if (!document.getElementById('sticky-sb') && !document.getElementById('normal-sb')) {
-                $('#ns1 >.inner,#ns2 >.inner').height(height)
-            }
-
-            $('.layout-rr-sb #ns1 >.inner,.layout-rr-sb #ns2 >.inner,.layout-ll-sb #ns1 >.inner,.layout-ll-sb #ns2 >.inner').height(height + 40)
-
-
+            $('.sb-container >.inner').height(height)
         }
     }
 
     function unsetSidebarHeights() {
         if (isMobile()) {
-            var height = document.getElementById('content').offsetHeight
-            $('#sb1 >.inner,#sb2 >.inner').height('')
-
-            if (!document.getElementById('sticky-sb') && !document.getElementById('normal-sb')) {
-                $('#ns1 >.inner,#ns2 >.inner').height('')
-            }
+            $('.sb-container >.inner').height('')
         }
     }
 
@@ -210,9 +192,13 @@
         // @todo make top spacing dynamic when using sticky nav
         var bottomSpacing = $('#site-footer-container').outerHeight() + $('#copyright-container').outerHeight() + 60
 
-        var topSpacing = $('.sticky-nav #primary .nav').outerHeight()+20;
+        var topSpacing = $('.sticky-nav #primary .nav').outerHeight() + 20;
 
-        $("#sticky-sb1,#sticky-sb2").sticky({topSpacing: topSpacing, bottomSpacing: bottomSpacing, responsiveWidth: true});
+        $("#sticky-sb1,#sticky-sb2").sticky({
+            topSpacing: topSpacing,
+            bottomSpacing: bottomSpacing,
+            responsiveWidth: true
+        });
     }
 
     function makeNavSticky() {
@@ -262,5 +248,17 @@
         }
     }
 
+
+    function triggerMasonry() {
+        // Masonry
+        if ($('body').hasClass('masonry')) {
+            if (window.innerWidth > 480)
+                $('#articles').masonry({
+                    columnWidth: '.entry',
+                    itemSelector: '.entry',
+                    gutter: '.gutter-sizer',
+                });
+        }
+    }
 
 })(jQuery);

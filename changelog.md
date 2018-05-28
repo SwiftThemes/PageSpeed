@@ -1,4 +1,12 @@
+## [1.53] - 25-05-2018
+
+### Changed
+- Refine javascript.
+- Calculate sidebar height after the masonry is ready.
+
 ## [1.52] - 24-05-2018
+
+### Changed
 - Prompt users to install the required plugins when they are using features that require them.
 
 ## [1.51] - 23-05-2018
