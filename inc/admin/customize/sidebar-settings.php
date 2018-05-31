@@ -34,7 +34,7 @@ function pagespeed_more_sidebars( $wp_customize ) {
 
 	$wp_customize->add_control( 'dedicated_sidebars_on_home', array(
 		'label'       => __( 'Dedicated sidebars for home page', 'page-speed' ),
-		'description' => __( 'Create separate sidebars for home page.', 'page-speed' ),
+		'description' => __( 'Create different sidebars for home page.', 'page-speed' ),
 		'section'     => 'sidebar_settings',
 		'type'        => 'checkbox',
 		'priority'    => 30,
@@ -46,7 +46,7 @@ function pagespeed_more_sidebars( $wp_customize ) {
 
 	$wp_customize->add_control( 'dedicated_sidebars_on_default_page_template', array(
 		'label'       => __( 'Dedicated sidebars for default page template', 'page-speed' ),
-		'description' => __( ' Create separate sidebars for home page.', 'page-speed' ),
+		'description' => __( ' Create different sidebars for default page template.', 'page-speed' ),
 		'section'     => 'sidebar_settings',
 		'type'        => 'checkbox',
 		'priority'    => 30,
