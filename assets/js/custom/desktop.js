@@ -77,10 +77,10 @@
                 return
             }
 
-            if ($('#site-header-container-sticky-wrapper,#primary-nav-container-sticky-wrapper').is(":hover")) {
+            if (!isMobile() && $('#site-header-container-sticky-wrapper,#primary-nav-container-sticky-wrapper').is(":hover")) {
                 return
             }
-            ;
+
             $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container-sticky-wrapper.is-sticky').css({'opacity': 0})
         }, 3000)
 
