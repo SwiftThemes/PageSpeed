@@ -121,9 +121,6 @@ function helium_license_nag() {
 			$message .= '<em>' . __( 'Ignore if your subscription is set to auto renew', 'page-speed' ) . '</a></em><br />';
 			$class   = 'warning';
 		}
-		if ( $days_left < 7 ) {
-			$class = 'warning';
-		}
 		if ( $days_left < 0 ) {
 			$candy = __( 'License expired', 'page-speed' );
 		}
@@ -133,7 +130,6 @@ function helium_license_nag() {
 
 		$message = $license['license_data']->message. '. ';
 		$message .= 'Please check members area for more info.<br /><a href="https://members.swiftthemes.com/login/" target="_blank" class="he-btn">' . __( 'Members area', 'page-speed' ) . '</a><br />';
-
 
 	}
 	?>
