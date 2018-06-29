@@ -102,6 +102,7 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_CUSTOMIZE . 'control-gradient.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-column-widths.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-category-selector.php' );
+			require_once( HELIUM_CUSTOMIZE . 'control-slider-selector.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-drag-sort.php' );
 			require_once( HELIUM_CUSTOMIZE . 'utils.php' );
 //			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
