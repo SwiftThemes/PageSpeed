@@ -21,8 +21,7 @@ function pagespeed_customize_home( $wp_customize ) {
 		'priority'    => 58,
 	) );
 
-	if ( defined( 'NNS_URI' ) ) {
-
+	if ( defined( 'SRS_URI' ) ) {
 
 		$wp_customize->add_setting( 'show_slider_on_homepage', array(
 			'sanitize_callback' => 'helium_boolean',

@@ -73,8 +73,8 @@
 
         wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
             if ('home_slider' == placement.partial.id) {
-                jQuery('.nns-slider').unslider('destroy');
-                jQuery('.nns-slider').unslider({
+                jQuery('.srs-slider').unslider('destroy');
+                jQuery('.srs-slider').unslider({
                     autoplay: true,
                     delay: 6000,
                     infinite: true,

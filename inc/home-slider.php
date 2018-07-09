@@ -7,21 +7,21 @@
  */
 
 
-if ( defined( 'NNS_URI' ) && get_theme_mod( 'show_slider_on_homepage', false ) ) {
+if ( defined( 'SRS_URI' ) && get_theme_mod( 'show_slider_on_homepage', false ) ) {
 
 
 	if ( get_theme_mod( 'use_custom_slider', false ) && get_theme_mod( 'custom_slider_id', 0 ) ) {
-		add_action( 'pagespeed_after_header', 'pagespeed_nns_custom_home_slider', 15 );
+		add_action( 'pagespeed_after_header', 'pagespeed_srs_custom_home_slider', 15 );
 
 	} else {
-		add_action( 'pagespeed_after_header', 'pagespeed_nns_home_slider', 15 );
+		add_action( 'pagespeed_after_header', 'pagespeed_srs_home_slider', 15 );
 	}
 }
 
-add_action( 'pagespeed_after_header', 'pagespeed_nns_home_slider_placeholder', 15 );
+add_action( 'pagespeed_after_header', 'pagespeed_srs_home_slider_placeholder', 15 );
 
 
-function pagespeed_nns_home_slider() {
+function pagespeed_srs_home_slider() {
 
 	// For customizer
 	if ( ! get_theme_mod( 'show_slider_on_homepage', false ) ) {
@@ -57,13 +57,13 @@ function pagespeed_nns_home_slider() {
 	swift_query_slider( $query_args, $template, $thumb_size, $excerpts );
 }
 
-function pagespeed_nns_home_slider_placeholder() {
+function pagespeed_srs_home_slider_placeholder() {
 	if ( is_customize_preview() && ! get_theme_mod( 'show_slider_on_homepage', false ) ) {
-		echo '<div class="nns-slider"></div>';
+		echo '<div class="srs-slider"></div>';
 	}
 }
 
-function pagespeed_nns_custom_home_slider() {
+function pagespeed_srs_custom_home_slider() {
 
 	// For customizer
 	if ( ! get_theme_mod( 'show_slider_on_homepage', false ) ) {
@@ -77,7 +77,7 @@ function pagespeed_nns_custom_home_slider() {
 
 	$slider = get_post_meta( get_theme_mod( 'custom_slider_id', 0 ), '_slider', true );
 
-	if(!$slider){
+	if ( ! $slider ) {
 		return;
 	}
 
@@ -95,26 +95,25 @@ function pagespeed_nns_custom_home_slider() {
 		$size = array( $site_width, get_theme_mod( 'home_slider_height', (int) ( $site_width / 2 ) ) );
 	}
 
-	if('background' ==$props['slider_type']){
-		$height=$props['height'].'px';
+	if ( 'background' == $props['slider_type'] ) {
+		$height = $props['height'] . 'px';
 
 		if ( ( $helium->is_mobile() ) ) {
-			$height = (string)($props['height'] / $props['width'] * 100).'vw';
+			$height = (string) ( $props['height'] / $props['width'] * 100 ) . 'vw';
 		} else {
 			$height = $props['height'] . 'px';
 		}
-	}else{
-		$height='auto';
+	} else {
+		$height = 'auto';
 	}
 
 
+	$slider_width = isset( $props['stretch'] ) && $props['stretch'] ? '100%' : $props['width'] . 'px';
 
-	$slider_width = isset($props['stretch']) && $props['stretch']?'100%':$props['width'].'px';
 
-
-	$out = "<div class='simple-slider-wrap' style='width:{$slider_width};margin: auto'><div class='nns-slider' style='height:{$height};'><ul>";
+	$out = "<div class='simple-slider-wrap' style='width:{$slider_width};margin: auto'><div class='srs-slider' style='height:{$height};'><ul>";
 	foreach ( $slider['slides'] as $slide ) {
-		$out .= swift_get_slide($slide,$size,$props['slider_type']);;
+		$out .= srs_get_slide( $slide, $size, $props['slider_type'] );;
 	}
 	$out .= '</ul></div></div> ';
 
