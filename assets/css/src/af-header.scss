@@ -133,3 +133,17 @@
 #above-footer-ad-container {
   border-top: solid 1px $border-color;
 }
+
+#connect-ah{font-size:.8em;background: lighten($primary,.4)}
+.sm ul{margin: 0}
+.sm ul li{
+  display: inline;
+  list-style: none;
+  margin: 0;
+}
+#connect-ah .icon{top:.2em;position: relative}
+#connect-ah a{
+padding:8px 5px 6px;color:rgba(darken($primary,.3),.8);text-decoration: none}
+#connect-ah a:hover {
+  color: $primary;
+}

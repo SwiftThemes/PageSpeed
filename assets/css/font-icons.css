@@ -143,11 +143,13 @@
 .he-quote-1:before {
   content: "\4a";
 }
-
-
 .he-check-circle:before {
   content: "\49";
 }
 .he-times-circle:before {
   content: "\4b";
+}
+.he-email:before,
+.he-envelope:before {
+  content: "\4c";
 }

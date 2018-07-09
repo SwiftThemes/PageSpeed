@@ -1,3 +1,8 @@
+## [1.60] - 25-05-2018
+
+### Added
+- Option to add contact info and social media icons above header.
+
 ## [1.53] - 25-05-2018
 
 ### Changed

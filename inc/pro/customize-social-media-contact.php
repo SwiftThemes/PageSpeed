@@ -10,9 +10,31 @@ add_action( 'customize_register', 'pagespeed_customize_social_media', 600 );
 function pagespeed_customize_social_media( $wp_customize ) {
 
 	$wp_customize->add_section( 'social_media', array(
-		'title'    => __( 'Social Media', 'page-speed' ),
+		'title'    => __( 'Social Media & Contact Info', 'page-speed' ),
 		'priority' => 90,
 		'panel'    => 'theme_options'
+	) );
+
+	$wp_customize->add_setting( 'contact_email', array(
+		'sanitize_callback' => 'sanitize_email',
+		'default'           => '',
+	) );
+	$wp_customize->add_control( 'contact_email', array(
+		'label'       => 'Contact Email',
+		'description' => __( 'Used in the header when you enable it in header options.', 'page-speed' ),
+		'section'     => 'social_media',
+		'type'        => 'email',
+	) );
+
+	$wp_customize->add_setting( 'contact_number', array(
+		'sanitize_callback' => 'sanitize_text_field',
+		'default'           => '',
+	) );
+	$wp_customize->add_control( 'contact_number', array(
+		'label'       => 'Contact Number',
+		'description' => __( 'Used in the header when you enable it in header options.', 'page-speed' ),
+		'section'     => 'social_media',
+		'type'        => 'tel',
 	) );
 
 
