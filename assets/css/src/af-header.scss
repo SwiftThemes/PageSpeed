@@ -1,6 +1,8 @@
 #site-header-container {
   padding: $padding/2 0;
   background: $header-bg;
+  position: relative;
+  z-index: 3;
 }
 
 .site-title {
