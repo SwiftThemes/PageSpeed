@@ -26,10 +26,10 @@ function pagespeed_customize_register( WP_Customize_Manager $wp_customize ) {
 			'home_slider_height'
 		),
 		'type'                => 'home_slider',
-		'selector'            => '.nns-slider',
+		'selector'            => '.srs_-slider',
 		'container_inclusive' => true,
 		'render_callback'     => function () {
-			pagespeed_nns_home_slider();
+			pagespeed_srs__home_slider();
 		},
 		'fallback_refresh'    => false
 	) );

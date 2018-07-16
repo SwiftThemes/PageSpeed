@@ -21,8 +21,7 @@ function pagespeed_customize_home( $wp_customize ) {
 		'priority'    => 58,
 	) );
 
-	if ( defined( 'NNS_URI' ) ) {
-
+	if ( defined( 'SRS_URI' ) ) {
 
 		$wp_customize->add_setting( 'show_slider_on_homepage', array(
 			'sanitize_callback' => 'helium_boolean',
@@ -37,6 +36,39 @@ function pagespeed_customize_home( $wp_customize ) {
 			'type'     => 'checkbox',
 			'priority' => 10,
 		) );
+
+		$wp_customize->add_setting( 'use_custom_slider', array(
+			'sanitize_callback' => 'helium_boolean',
+			'default'           => false,
+			'transport'         => 'postMessage',
+		) );
+
+		$wp_customize->add_control( 'use_custom_slider', array(
+			'label'    => __( 'Use any of the custom sliders you created', 'page-speed' ),
+			'section'  => 'home_slider',
+			'type'     => 'checkbox',
+			'priority' => 10,
+		) );
+
+
+		$wp_customize->add_setting( 'custom_slider_id', array(
+			'sanitize_callback' => 'helium_pass',
+			'default'           => 0,
+		) );
+
+		$wp_customize->add_control(
+			new Helium_Slider_Dropdown_Control(
+				$wp_customize,
+				'custom_slider_id',
+				array(
+					'label'    => esc_html__( 'Select a slider', 'page-speed' ),
+					'section'  => 'home_slider',
+					'priority' => 10,
+					'setting'  => 'custom_slider_id'
+//					'active_callback' => 'pagespeed_is_slider_enabled',
+				)
+			)
+		);
 
 
 		$wp_customize->add_setting( 'home_slider_categories', array(

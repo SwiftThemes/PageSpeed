@@ -68,21 +68,6 @@ function helium_category_dropdown_control( $wp_customize ) {
 		 */
 		public function render_content() {
 			return false;
-			echo '<h1>Hi</h1>';
-			if ( ! empty( $this->cats ) ) {
-				?>
-                <label>
-                    <span class="customize-category-select-control"><?php echo esc_html( $this->label ); ?></span>
-                    <select <?php $this->link(); ?>>
-						<?php
-						foreach ( $this->cats as $cat ) {
-							printf( '<option value="%s" %s>%s</option>', $cat->term_id, selected( $this->value(), $cat->term_id, false ), $cat->name );
-						}
-						?>
-                    </select>
-                </label>
-				<?php
-			}
 		}
 	}
 }
