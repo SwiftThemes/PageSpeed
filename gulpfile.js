@@ -78,8 +78,6 @@ buildInclude = [
     '!gulp/*',
     '!*.psd',
     '!gulpfile.js'
-
-
 ];
 buildIncludeOrg = [
     // include common file types
@@ -179,15 +177,6 @@ gulp.task('helium-translations', function () {
         }))
         .pipe(gulp.dest('./languages/helium.pot'));
 });
-//
-// gulp.task('hybrid-translations', function () {
-//     return gulp.src('**/*.php')
-//         .pipe(wpPot({
-//             domain: 'hybrid',
-//             package: 'hybrid'
-//         }))
-//         .pipe(gulp.dest('./languages/hybrid.pot'));
-// });
 
 
 /**

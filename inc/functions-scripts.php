@@ -35,7 +35,7 @@ function pagespeed_enqueue_scripts() {
 
 	wp_enqueue_script( 'pagespeed-vendors-js' );
 
-	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 		wp_enqueue_script( 'pagespeed-custom-js-dev' );
 	} else {
 		wp_enqueue_script( 'pagespeed-custom-js' );

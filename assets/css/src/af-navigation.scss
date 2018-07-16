@@ -2,6 +2,7 @@
   .is-sticky .has-sticky-logo.nav-container #primary-nav {
     margin-left: 44px;
   }
+  .open-drawer{display: flex}
   .nav {
     float: left;
     ul {
@@ -182,13 +183,13 @@
   }
 }
 
-#menu {
+.open-drawer {
   display: none
 }
 
 #side-pane {
   width: 0;
-  display: none
+  height: 0;
 }
 
 .rtl {

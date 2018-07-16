@@ -29,6 +29,11 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 			$theme_location = 'secondary_mobile';
 		}
 
+
+		$after='';
+		if($helium->is_mobile()){
+			$after='<span class="status" onclick = "void(0)"></span>';
+		}
 		$args = array(
 			'theme_location'  => $theme_location,
 			'container'       => 'nav',
@@ -38,7 +43,7 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 			'menu_id'         => '',
 			'echo'            => true,
 			'before'          => '',
-			'after'           => '',
+			'after'           => $after,
 			'link_before'     => '',
 			'link_after'      => '',
 			'items_wrap'      => '<ul id="%1$s" class="%2$s cf">%3$s</ul>',
@@ -82,6 +87,11 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 		if ( get_theme_mod( 'different_navigation_for_mobiles', false ) && $helium->is_mobile() ) {
 			$theme_location = 'primary_mobile';
 		}
+
+		$after='';
+		if($helium->is_mobile()){
+			$after='<span class="status" onclick = "void(0)"></span>';
+		}
 		$args = array(
 			'theme_location'  => $theme_location,
 			'container'       => 'nav',
@@ -91,7 +101,7 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			'menu_id'         => '',
 			'echo'            => true,
 			'before'          => '',
-			'after'           => '',
+			'after'           => $after,
 			'link_before'     => '',
 			'link_after'      => '',
 			'items_wrap'      => '<ul id="%1$s" class="%2$s cf">%3$s</ul>',
@@ -145,6 +155,10 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			$theme_location = 'primary_mobile';
 		}
 
+		$after='';
+		if($helium->is_mobile()){
+		    $after='<span class="status" onclick = "void(0)"></span>';
+        }
 		$args = array(
 			'theme_location'  => $theme_location,
 			'container'       => 'nav',
@@ -154,7 +168,7 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			'menu_id'         => '',
 			'echo'            => true,
 			'before'          => '',
-			'after'           => '',
+			'after'           => $after,
 			'link_before'     => '',
 			'link_after'      => '',
 			'items_wrap'      => '<ul id="%1$s" class="%2$s cf">%3$s</ul>',

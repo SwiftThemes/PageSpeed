@@ -47,6 +47,7 @@ wp_footer();
 ?>
 <div id="side-pane">
     <div id="side-pane-inner"></div>
+    <div id="menu-close"><span>[X]</span><?php _e('Close','page-speed')?></div>
 </div>
 </body>
 </html>

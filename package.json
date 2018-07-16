@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "A super lite WordPress theme",
   "main": "gulp.js",
-  "dependencies": {
-    "gulp": "^3.5.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.24.4",
     "gulp": "^3.9.1",

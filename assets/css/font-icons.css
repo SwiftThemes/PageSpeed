@@ -153,3 +153,10 @@
 .he-envelope:before {
   content: "\4c";
 }
+.he-plus-square-o:before {
+  content: "\4d";
+}
+.he-minus-square-o:before {
+  content: "\4e";
+}
+

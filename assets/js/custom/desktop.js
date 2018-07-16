@@ -25,19 +25,29 @@
          * Moved these event listeners from add side menu function.
          * Find a suitable place.
          */
-        $('.open-drawer').click(function (event) {
+        $('.open-drawer,#menu-close').click(function (event) {
             event.preventDefault();
             event.stopPropagation();
             $('body').toggleClass('menu-open');
         })
-        $(document).on('click', '.menu-open #wrapper', function () {
-            $('body').removeClass('menu-open')
+
+        $(document).on('click', '#side-pane-inner .menu li.menu-item-has-children .status', function (e) {
+            e.preventDefault()
+            var li = $(e.target).parent()
+            if (li.hasClass('expanded')) {
+                li.removeClass('expanded')
+            } else {
+                li.addClass('expanded')
+            }
         })
 
 
-
-
-
+        $('body').on('focus', '.#search-field', function () {
+            clearTimeout(GLOBAL.hideStickyTimer)
+        })
+        $('#site-header-container-sticky-wrapper,#primary-nav-container-sticky-wrapper').hover(function () {
+            clearTimeout(GLOBAL.hideStickyTimer)
+        })
 
 
     })
@@ -66,25 +76,27 @@
          * @todo
          * Overloading both stickies, seperate it out?
          */
-
         clearTimeout(GLOBAL.hideStickyTimer)
         $('#primary-nav-container-sticky-wrapper,#sticky-search-sticky-wrapper,.sleek-header #site-header-container-sticky-wrapper').css({opacity: 1})
         GLOBAL.hideStickyTimer = setTimeout(function () {
-            if ($('body').hasClass('menu-open')) {
-                return
-            }
-            if ($("#search-field").is(":focus")) {
-                return
-            }
 
-            if (!isMobile() && $('#site-header-container-sticky-wrapper,#primary-nav-container-sticky-wrapper').is(":hover")) {
+            if($(".he-search-wrapper #search-field").val()){
+                clearTimeout(GLOBAL.hideStickyTimer)
                 return
             }
+            // if ($(".he-search-wrapper #search-field").val() || $("#search-field").is(":focus")) {
+            //     clearTimeout(GLOBAL.hideStickyTimer)
+            //     return
+            // }
+            // if (!isMobile() && $('#site-header-container-sticky-wrapper,#primary-nav-container-sticky-wrapper').is(":hover")) {
+            //     return
+            // }
 
             $('#primary-nav-container-sticky-wrapper.is-sticky,#sticky-search-sticky-wrapper.is-sticky,.sleek-header #site-header-container-sticky-wrapper.is-sticky').css({'opacity': 0})
         }, 3000)
 
     }, 1000)
+
 
     /**
      * Check if the current device is desktop or mobile.
@@ -164,7 +176,7 @@
     function addSideMenu() {
         if (!GLOBAL.hasSideMenu) {
             $('#primary-nav-container,#secondary-nav-container,#header-nav-container').hide()
-            $('.open-drawer').show()
+            $('.open-drawer').css('display', 'flex');
             $('#side-pane-inner').append($('#header-nav').html()).append($('#primary-nav').html()).append($('#secondary-nav').html())
             GLOBAL.hasSideMenu = true
         }
