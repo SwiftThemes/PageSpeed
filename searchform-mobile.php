@@ -1,7 +1,7 @@
 <div id="sticky-search">
 	<div class="inner">
 		<?php pagespeed_sticky_logo(); ?>
-		<div class="he-search-wrapper">
+		<div id ="mobile-search-form" class="he-search-wrapper">
 			<form role="search" method="get" class="cf mobile-nav-search-form"
 			      action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<label>

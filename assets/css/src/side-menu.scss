@@ -77,8 +77,8 @@ body {
     right: 0;
     top: 0;
     overflow: auto;
-  }
 
+  }
   #menu-close {
     font-weight: lighter;
     position: fixed;
@@ -100,6 +100,12 @@ body {
     display: block;
   }
 }
+
+#side-pane-inner
+  #mobile-search-form {
+    padding: 20px;
+  background: rgba($primary,.8);
+  }
 
 #site-header-container {
   position: relative;

@@ -1,67 +1,77 @@
 .he-nag {
-    max-width: 1040px;
     position: relative;
     box-sizing: border-box;
     background: #FFF;
-    padding:5px 10px 5px 0;
+    padding: 5px;
 
+    margin-top: 10px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     overflow: hidden;
-height: 105px;
 
-position: relative}
+    position: relative
+}
+
+.he-nag.warning {
+    padding-left: 54px
+}
+
+.he-nag.warning:before {
+    font-family: Dashicons;
+    content: "\f534";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 32px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: orangered;
+    color: #FFF;
+}
 
 .he-nag .candy {
-    float: left;
-    height: 145px;
-    margin: -30px 10px -25px 0;
-    padding:0 10px;
-    line-height: 140px;
+    background: red;
     color: #FFF;
-    font-size: 24px;
-    text-transform: capitalize;
-    font-weight: bold;
-
-
-    background: #EB3349;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-    transform: skewY(-10deg);
+    padding: 3px 5px;
+    border-radius: 3px;
 }
-.he-nag .he-btn{
+
+.he-nag .he-btn {
     color: #FFF;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    padding:4px 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 4px 12px;
     display: inline-block;
     margin: 8px 0;
-    background: #396afc;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-transform: uppercase;
+    background: red;
+    font-weight: bold;
+    font-size: .9em;
+    letter-spacing: 1px;
 }
 
-.he-nag .he-btn:hover{
-    background: -webkit-linear-gradient(to top, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.he-nag .he-btn:hover {
+    background: -webkit-linear-gradient(to top, #2948FF, #396AFC); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2948FF, #396AFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .he-nag em {
     font-family: serif;
-    color:#999;
+    color: #999;
     font-size: 12px;
 }
 
-.he-nag .close:before{
+.he-nag .close:before {
     content: "\f335";
     font-family: Dashicons;
     position: absolute;
-    top:5px;
-    right:5px;
+    top: 5px;
+    right: 5px;
     font-size: 20px;
     cursor: pointer;
 }

@@ -105,7 +105,7 @@ function helium_license_nag() {
 	}
 	if ( ! $license ) {
 		$message = __( 'Please activate PageSpeed license to receive updates. You can get your license key from <a href="https://members.SwiftThemes.Com/">SwiftThemes Members Area</a>', 'page-speed' );
-		$candy     = __( 'Enter license', 'page-speed' );
+		$candy   = __( 'Enter license', 'page-speed' );
 		$class   = 'warning';
 
 	} else if ( $license['license_data']->code == 'ok' ) {
@@ -124,21 +124,18 @@ function helium_license_nag() {
 		if ( $days_left < 0 ) {
 			$candy = __( 'License expired', 'page-speed' );
 		}
-    } else {
-		$class   = 'warning';
+	} else {
+		$class = 'warning';
 		$candy = __( 'License error', 'page-speed' );
 
-		$message = $license['license_data']->message. '. ';
+		$message = $license['license_data']->message . '. ';
 		$message .= 'Please check members area for more info.<br /><a href="https://members.swiftthemes.com/login/" target="_blank" class="he-btn">' . __( 'Members area', 'page-speed' ) . '</a><br />';
 
 	}
 	?>
     <div class="he-nag <?php echo $class ?>">
         <div class="close" id="close-he-license"></div>
-        <div class="candy">
-			<?php echo $candy ?>
-        </div>
-        <p><?php echo $message ?></p>
+        <p><strong class=""><?php echo $candy ?></strong> <?php echo $message ?></p>
     </div>
 	<?php
 }
