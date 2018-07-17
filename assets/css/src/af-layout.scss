@@ -34,7 +34,7 @@ body {
 }
 
 ///* centered layout */
-@if $layout=='centered' or $layout=='ll-sb' or $layout=='rr-sb' {
+@if $layout=='centered' or $layout=='ll-sb' or $layout=='rr-sb' or $layout=='single' {
   .layout-centered,
   .layout-ll-sb,
   .layout-rr-sb {
@@ -62,7 +62,14 @@ body {
     }
   }
 }
-
+@if $layout=='single' {
+  .layout-single{
+    #main {
+      margin: auto;
+      width: $main_width*1%;
+    }
+  }
+}
 @if $layout=='ll-sb' {
   .layout-ll-sb {
     #sb2 {

@@ -69,6 +69,7 @@ get_header();
 	} else {
 		get_sidebar();
 	}
+
 	?>
 
 </div></div><!-- #content -->

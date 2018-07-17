@@ -19,11 +19,11 @@
 
 get_header();
 if ( have_posts() ) :
-    ?>
+?>
 <div id="articles">
     <div class="gutter-sizer"></div>
 
-    <?php
+	<?php
 	// Start the loop.
 	while ( have_posts() ) : the_post();
 
@@ -47,13 +47,13 @@ if ( have_posts() ) :
 	) );
 	echo '<div class="clear"></div>';
 
-// If no content, include the "No posts found" template.
-else :
-	get_template_part( 'template-parts/content', 'none' );
+	// If no content, include the "No posts found" template.
+	else :
+		get_template_part( 'template-parts/content', 'none' );
 
-endif;
-get_sidebar();
-?>
+	endif;
+	get_sidebar();
+	?>
 
 </div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>

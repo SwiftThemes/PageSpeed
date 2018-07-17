@@ -718,6 +718,7 @@ p.form-allowed-tags {
 #bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content {
 	width: 100%;
 	margin: 0;
+	height: 160px;
 	/*font-size: 12px;*/
 }
 
@@ -750,7 +751,6 @@ p.form-allowed-tags {
 #bbpress-forums div.wp-editor-container {
 	margin: 0;
 	padding: 0;
-	line-height: 0;
 }
 
 #bbpress-forums div.bbp-the-content-wrapper td.mceStatusbar {

@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'pagespeed_after_body' ); ?>
 
-<div id="wrapper" class="cf">
+<div id="wrapper" class="cf"> <!-- closed in footer -->
 <?php do_action( 'pagespeed_before_header' ); ?>
 
     <div id="site-header-container"
@@ -38,6 +38,7 @@
     <div id="content-wrapper">
     <div id="content" class="cf hybrid">
 <?php do_action( 'pagespeed_content_start' ); ?>
+<!-- Closed in sidebar -->
     <div id="left">
         <main id="main" role="main">
             <div class="inner">

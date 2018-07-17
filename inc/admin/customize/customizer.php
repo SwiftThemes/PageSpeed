@@ -107,6 +107,10 @@ function pagespeed_customize( $wp_customize ) {
 						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-ll-sb.png',
 						'label' => __( 'Sidebar / Content', 'page-speed' ),
 					),
+					'single'    => array(
+						'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-single.png',
+						'label' => __( 'Sidebar / Content', 'page-speed' ),
+					),
 
 				)
 			)
@@ -114,6 +118,20 @@ function pagespeed_customize( $wp_customize ) {
 	);
 
 
+//	$wp_customize->add_setting( 'single_column_width', array(
+//		'sanitize_callback' => 'helium_float',
+//		'default'           => 'regular',
+//		'transport'         => 'postMessage',
+//	) );
+//	$wp_customize->add_control( 'single_column_width', array(
+//		'label'       => __( 'Main content width', 'page-speed' ),
+//		'description' => __( 'In percentage without the % sign.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': 70',
+//		'section'     => 'layout_settings',
+//		'type'        => 'number',
+//		'priority'    => 60,
+//		'input_attrs' => array( 'min' => 40, 'max' => 100 )
+//	) );
+//
 	$wp_customize->add_setting( 'container_type', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
 		'default'           => 'regular',

@@ -33,7 +33,7 @@ function pagespeed_customize_masonry( $wp_customize ) {
 		'section'         => 'layout_settings',
 		'type'            => 'number',
 		'priority'        => 20,
-		'input_attrs'     => array( 'min' => 2, 'max' => 4 ),
+		'input_attrs'     => array( 'min' => 2, 'max' => 8 ),
 		'active_callback' => function () {
 			return get_theme_mod( 'use_masonry', false ) && get_theme_mod( 'separate_containers', true );
 		}

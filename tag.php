@@ -68,7 +68,9 @@ if ( have_posts() ) :
 		get_template_part( 'template-parts/content', 'none' );
 
 	endif;
-	get_sidebar();
+	if ( 'single' != get_theme_mod( 'theme_layout', 'r-sb' ) ) {
+		get_sidebar();
+	}
 	?>
 
 </div></div><!-- #content-wrapper,#content -->

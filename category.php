@@ -62,13 +62,15 @@ if ( have_posts() ) :
 	) );
 	echo '<div class="clear"></div>';
 
-// If no content, include the "No posts found" template.
-else :
-	get_template_part( 'template-parts/content', 'none' );
+	// If no content, include the "No posts found" template.
+	else :
+		get_template_part( 'template-parts/content', 'none' );
 
-endif;
-get_sidebar();
-?>
+	endif;
+	if ( 'single' != get_theme_mod( 'theme_layout', 'r-sb' ) ) {
+		get_sidebar();
+	}
+	?>
 
 </div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>
