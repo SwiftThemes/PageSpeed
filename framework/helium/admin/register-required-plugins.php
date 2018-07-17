@@ -24,6 +24,19 @@ function helium_register_required_plugins() {
 	* If the source is NOT from the .org repo, then source is also required.
 	*/
 	$plugins = array(
+		// This is an example of how to include a plugin bundled with a theme.
+		array(
+			'name'               => 'Simple Responsive Slider', // The plugin name.
+			'slug'               => 'simple-responsive-slider', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/plugins/simple-responsive-slider.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+		),
+
 		array(
 			'name'     => 'Easy AdSense Ads #EAA',
 			'slug'     => 'easy-adsense-ads-scripts-manager',
@@ -34,11 +47,11 @@ function helium_register_required_plugins() {
 			'slug'     => 'dynamic-thumbnails',
 			'required' => false,
 		),
-		array(
-			'name'     => 'HomePage Slider',
-			'slug'     => 'no-nonsense-slider',
-			'required' => false,
-		),
+//		array(
+//			'name'     => 'HomePage Slider',
+//			'slug'     => 'no-nonsense-slider',
+//			'required' => false,
+//		),
 	);
 
 	/*
