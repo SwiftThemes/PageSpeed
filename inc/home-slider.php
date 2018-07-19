@@ -54,7 +54,7 @@ function pagespeed_srs_home_slider() {
 	} else {
 		$thumb_size = array( $site_width, get_theme_mod( 'home_slider_height', (int) ( $site_width / 2 ) ) );
 	}
-	swift_query_slider( $query_args, $template, $thumb_size, $excerpts );
+	srs_query_slider( $query_args, $template, $thumb_size, $excerpts );
 }
 
 function pagespeed_srs_home_slider_placeholder() {

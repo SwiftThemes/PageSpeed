@@ -1,3 +1,12 @@
+## [1.62] - 19-07-2018
+
+### Added
+- Added single column layout option.
+### Chaged
+- Integration with the new simple responsive slider
+- Revamped mobile menu with search and social media included.
+
+
 ## [1.60] - 25-05-2018
 
 ### Added

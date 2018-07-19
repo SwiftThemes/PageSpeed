@@ -67,7 +67,8 @@ buildInclude = [
     'screenshot.png',
     'readme.txt',
     'readme.md',
-    'plugins/*.zip',
+    'plugins',
+    '**/plugins/*.zip',
 
     // exclude files and folders
     '!assets/images/customize/color-schemes/color_schemes.psd',

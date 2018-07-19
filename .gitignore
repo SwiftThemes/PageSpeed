@@ -1,5 +1,6 @@
 buildtheme
 node_modules
+plugins
 .DS_Store
 .git
 *.zip
