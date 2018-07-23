@@ -228,6 +228,7 @@ function pagespeed_customize( $wp_customize ) {
 		'priority'    => 60,
 		'input_attrs' => array( 'min' => 0, 'max' => 60 ),
 		'active_callback' => function () {
+
 			return in_array(get_theme_mod('theme_layout','r-sb'),array('centered','rr-sb','ll-sb'));
 		}
 

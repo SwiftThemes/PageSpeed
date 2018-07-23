@@ -2,7 +2,8 @@
 
 ### Added
 - Added single column layout option.
-### Chaged
+
+### Changed
 - Integration with the new simple responsive slider
 - Revamped mobile menu with search and social media included.
 

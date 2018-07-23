@@ -10,7 +10,7 @@
 				</label>
 				<div class="input">
 					<input type="search" class="search-field" id="search-field"
-					       placeholder="<?php echo esc_attr_x( 'Type and hit enter to search&hellip;', 'placeholder', 'page-speed' ); ?>"
+					       placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'page-speed' ); ?>"
 					       value="<?php echo get_search_query(); ?>" name="s"/>
 				</div>
 			</form>
