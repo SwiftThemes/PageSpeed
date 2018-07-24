@@ -38,8 +38,15 @@ if ( ! class_exists( 'Helium' ) ) {
 			add_action( 'after_setup_theme', array( $this, 'add_theme_support' ), 11 );
 			add_action( 'after_setup_theme', array( $this, 'admin' ), 95 );
 			add_action( 'after_setup_theme', array( $this, 'load_mobile_detect' ), 95 );
+			add_action( 'after_setup_theme', array( $this, 'butter_bean_load' ), 95 );
 
 
+		}
+
+
+		public function butter_bean_load() {
+
+			require_once( trailingslashit(get_template_directory()).'framework/butterbean/butterbean.php' );
 		}
 
 
@@ -113,6 +120,9 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_CUSTOMIZE . 'load-customizer-styles.php' );
 
 			require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
+
+
+			require_once( HELIUM_ADMIN . 'register-meta-fields.php' );
 
 
 		}

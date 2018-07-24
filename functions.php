@@ -54,6 +54,11 @@ new PageSpeed();
 
 
 
+function butter_bean_load() {
+
+	require_once( trailingslashit(get_template_directory()).'framework/butterbean/butterbean.php' );
+}
+add_action( 'plugins_loaded', 'butter_bean_load' );
 
 
 add_theme_support( 'customize-selective-refresh-widgets' );
