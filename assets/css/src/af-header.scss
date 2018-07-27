@@ -149,3 +149,8 @@ padding:8px 5px 6px;color:rgba(darken($primary,.3),.8);text-decoration: none}
 #connect-ah a:hover {
   color: $primary;
 }
+
+#wrapper .pull-hero{
+  margin-top:($header_height)*-1;
+  padding-top:$header_height;
+}

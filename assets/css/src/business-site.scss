@@ -8,7 +8,7 @@
 
   }
 }
-
+.card{background: #FFF}
 .block {
   display: block;
 }
@@ -62,7 +62,14 @@
 .no-padding {
   padding: 0
 }
-
+#wrapper
+.reset{
+  p,img,article{margin:0}
+}
+.pad10{
+  padding:10px
+}
+.pad20{padding:20px}
 .pad, .padding,
 .pad-all, .padding-all {
   padding: $padding;
@@ -302,4 +309,9 @@
   right:0;
   top:0;
   bottom:0;
+}
+
+.so-panel article.entry{
+  background: transparent;
+  box-sizing: border-box;
 }
