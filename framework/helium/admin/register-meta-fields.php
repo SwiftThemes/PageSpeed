@@ -40,9 +40,15 @@ function helium_butter_bean_register_mangers( $butterbean, $post_type ) {
 function helium_butter_bean_register_sections( $butterbean, $post_type ) {
 	$manager = $butterbean->get_manager( 'pagespeed' );
 	$manager->register_section(
-		'main',
+		'header',
 		array(
-			'label' => esc_html__( 'Main', 'page-speed' ),
+			'label' => esc_html__( 'Header', 'page-speed' ),
+			'icon'  => 'dashicons-layout'
+		)
+	);	$manager->register_section(
+		'css',
+		array(
+			'label' => esc_html__( 'Custom CSS', 'page-speed' ),
 			'icon'  => 'dashicons-layout'
 		)
 	);
@@ -54,8 +60,34 @@ function helium_butter_bean_register_sections( $butterbean, $post_type ) {
 function helium_butter_bean_register_settings( $butterbean, $post_type ) {
 	$manager = $butterbean->get_manager( 'pagespeed' );
 
+
 	$manager->register_setting(
-		'layout', // Same as control name.
+		'header_bg', // Same as control name.
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses'
+		)
+	);
+
+	$manager->register_setting(
+		'css_all', // Same as control name.
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses'
+		)
+	);
+	$manager->register_setting(
+		'css_desktops', // Same as control name.
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses'
+		)
+	);
+	$manager->register_setting(
+		'css_mobiles', // Same as control name.
+		array(
+			'sanitize_callback' => 'wp_filter_nohtml_kses'
+		)
+	);
+	$manager->register_setting(
+		'css_tablets', // Same as control name.
 		array(
 			'sanitize_callback' => 'wp_filter_nohtml_kses'
 		)
@@ -65,38 +97,42 @@ function helium_butter_bean_register_settings( $butterbean, $post_type ) {
 function helium_butter_bean_register_controls( $butterbean, $post_type ) {
 	$manager = $butterbean->get_manager( 'pagespeed' );
 	$manager->register_control(
-		'layout',
+		'css_all',
 		array(
-			'type'        => 'radio-image',
-			'section'     => 'main',
-			'label'       => 'Example Radio Image',
-			'description' => 'Example description.',
-			'choices'  => array(
-				'l-sb'     => array(
-					'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-l-sb.png',
-					'label' => __( 'Content / Sidebar', 'page-speed' )
-				),
-				'centered' => array(
-					'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-centered.png',
-					'label' => __( 'Sidebar / Content / Sidebar', 'page-speed' ),
-				),
-				'r-sb'     => array(
-					'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-r-sb.png',
-					'label' => __( 'Sidebar / Content', 'page-speed' ),
-				),
-				'rr-sb'    => array(
-					'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-rr-sb.png',
-					'label' => __( 'Sidebar / Content', 'page-speed' ),
-				),
-				'll-sb'    => array(
-					'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-ll-sb.png',
-					'label' => __( 'Sidebar / Content', 'page-speed' ),
-				),
-				'single'    => array(
-					'url'   => HELIUM_ADMIN_IMAGES_URI . 'layout-single.png',
-					'label' => __( 'Sidebar / Content', 'page-speed' ),
-				)
-			)
+			'type'        => 'textarea',
+			'section'     => 'css',
+			'attr'        => array( 'class' => 'widefat code' ),
+			'label'       => 'All devices',
+			'description' => 'Rules added here will be applied to all screen sizes.'
+		)
+	);
+	$manager->register_control(
+		'css_desktops',
+		array(
+			'type'        => 'textarea',
+			'section'     => 'css',
+			'attr'        => array( 'class' => 'widefat code' ),
+			'label'       => 'Desktops',
+			'description' => 'Rules added here will be applied only to desktops.'
+		)
+	);
+	$manager->register_control(
+		'css_mobiles',
+		array(
+			'type'        => 'textarea',
+			'section'     => 'css',
+			'attr'        => array( 'class' => 'widefat code' ),
+			'label'       => 'Small screen mobile devices',
+			'description' => 'Rules added here will be applied only to mobiles. Screen size less than 768px'
+		)
+	);	$manager->register_control(
+		'css_tablets',
+		array(
+			'type'        => 'textarea',
+			'section'     => 'css',
+			'attr'        => array( 'class' => 'widefat code' ),
+			'label'       => 'Tablets',
+			'description' => 'Rules added here will be applied only to tablets. Screen size less than 768px'
 		)
 	);
 
