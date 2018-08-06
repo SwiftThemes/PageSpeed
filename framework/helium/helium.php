@@ -90,7 +90,6 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_DIR . 'body-css-classes.php' );
 			require_once( HELIUM_DIR . 'post-meta.php' );
 			require_once( HELIUM_DIR . 'sanitization-functions.php' );
-			require_once( HELIUM_DIR . 'widgets/post-loop.php' );
 			if ( helium_is_preview_demo() ) {
 				require_once( HELIUM_DIR . 'org-release.php' );
 			}
@@ -114,6 +113,11 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_CUSTOMIZE . 'load-customizer-styles.php' );
 
 			require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
+
+
+
+
+
 
 
 		}

@@ -6,7 +6,7 @@ if ( $helium->is_mobile() ) {
 } else {
 	$suffix = '';
 }
-$img_width = absint( $width / 3 );
+$img_width = absint( 1200 / 3 );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf pull-left pad10' ); ?> style="width:33.33%">
     <div class="pad10 card cf">
