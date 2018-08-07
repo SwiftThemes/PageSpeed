@@ -25,21 +25,21 @@
 
 // WordPress classes
 .alternate,
-.pull-left,
 .alignleft {
   float: left;
 }
 
-.pull-right,
 .alignright {
   float: right;
 }
 
 article {
-  .alignleft {
+  .alignleft.wp-caption,
+  .alignleft.img {
     margin-right: 10px;
   }
-  .alignright {
+  .alignright.wp-caption
+  .alignright.img {
     margin-left: 10px;
   }
 }
@@ -54,7 +54,9 @@ article {
   color: $wp-caption-text-color;
 }
 
-
+.card{
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+}
 
 //.embed-wrap,
 //.embed-youtube {

@@ -45,8 +45,7 @@ if ( ! class_exists( 'Helium' ) ) {
 
 
 		public function butter_bean_load() {
-
-			require_once( trailingslashit(get_template_directory()).'framework/butterbean/butterbean.php' );
+			require_once( trailingslashit( get_template_directory() ) . 'framework/butterbean/butterbean.php' );
 		}
 
 
@@ -94,8 +93,10 @@ if ( ! class_exists( 'Helium' ) ) {
 
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
-			require_once( HELIUM_DIR . 'body-css-classes.php' );
+			require_once( HELIUM_DIR . 'filters-css-classes.php' );
+			require_once( HELIUM_DIR . 'hooks-filters.php' );
 			require_once( HELIUM_DIR . 'post-meta.php' );
+			require_once( HELIUM_DIR . 'sanitization-functions.php' );
 			require_once( HELIUM_DIR . 'sanitization-functions.php' );
 			if ( helium_is_preview_demo() ) {
 				require_once( HELIUM_DIR . 'org-release.php' );

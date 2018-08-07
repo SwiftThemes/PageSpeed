@@ -217,12 +217,12 @@
     background: $card-bg;
     padding: $padding/2;
   }
-  article.entry,
+  #articles{article.entry,
   div.entry.product {
     background: $card-bg;
     padding: $padding*1/4 $padding/2 0;
     margin: 0 0 27px;
-  }
+  }}
 
   .breadcrumb-trail {
     padding: $padding/2 $padding/2 $padding*3/4;

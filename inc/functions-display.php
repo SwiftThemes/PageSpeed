@@ -30,9 +30,9 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 		}
 
 
-		$after='';
-		if($helium->is_mobile()){
-			$after='<span class="status" onclick = "void(0)"></span>';
+		$after = '';
+		if ( $helium->is_mobile() ) {
+			$after = '<span class="status" onclick = "void(0)"></span>';
 		}
 		$args = array(
 			'theme_location'  => $theme_location,
@@ -88,9 +88,9 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			$theme_location = 'primary_mobile';
 		}
 
-		$after='';
-		if($helium->is_mobile()){
-			$after='<span class="status" onclick = "void(0)"></span>';
+		$after = '';
+		if ( $helium->is_mobile() ) {
+			$after = '<span class="status" onclick = "void(0)"></span>';
 		}
 		$args = array(
 			'theme_location'  => $theme_location,
@@ -155,10 +155,10 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			$theme_location = 'primary_mobile';
 		}
 
-		$after='';
-		if($helium->is_mobile()){
-		    $after='<span class="status" onclick = "void(0)"></span>';
-        }
+		$after = '';
+		if ( $helium->is_mobile() ) {
+			$after = '<span class="status" onclick = "void(0)"></span>';
+		}
 		$args = array(
 			'theme_location'  => $theme_location,
 			'container'       => 'nav',
@@ -223,8 +223,8 @@ function pagespeed_mobile_search() {
 }
 
 function pagespeed_breadcrumbs() {
-	global $helium;
-	if ( $helium->get_meta( 'hide_breadcrumbs' ) ) {
+
+	if ( get_post_meta( get_queried_object_id(), 'hide_breadcrumbs', true ) ) {
 		return;
 	}
 

@@ -17,6 +17,19 @@ function helium_body_classes( $classes ) {
 	}
 
 
+	return $classes;
+}
+
+
+add_filter( 'content_div_class', 'helium_content_div_classes' );
+function helium_content_div_classes( $classes ) {
+
+	global $post;
+	if(is_singular() &&get_post_meta( $post->ID, 'pull_content', true )){
+		$classes .=' pull-content';
+	}
 
 	return $classes;
 }
+
+

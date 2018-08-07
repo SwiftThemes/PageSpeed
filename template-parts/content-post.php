@@ -16,6 +16,7 @@ $after_content_default = array(
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if ( ! get_post_meta(get_queried_object_id(),'hide_page_title', true) ): ?>
     <header class="entry-header">
 		<?php if ( get_theme_mod( 'single_post_meta_above_title', $above_title_default ) ): ?>
             <div class="entry-meta meta above-title">
@@ -32,7 +33,7 @@ $after_content_default = array(
 		<?php endif ?>
     </header>
     <!-- .entry-header -->
-
+	<?php endif ?>
 
     <div class="entry-content">
 		<?php

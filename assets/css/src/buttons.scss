@@ -1,4 +1,4 @@
-body  {
+body {
   .he-btn, .button, .btn, a.btn {
     padding: 6px 8px;
     color: rgba($button-color, 1);
@@ -12,14 +12,20 @@ body  {
     border-width: 0;
   }
 
-  .he-btn:hover, .button:hover, .btn:hover, a.btn:hover{
+  .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
     color: rgba($button-color, .9);
   }
 }
+
 .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
   @include sharp-shadow();
-  @include gradient(top,lighten($primary, .1), darken($primary, .2));
+  @include gradient(top, lighten($primary, .1), darken($primary, .2));
 
+}
+.strong{
+  font-weight:bold;
+  text-transform: uppercase;
+  letter-spacing: .025em;
 }
 
 /* Sizes */
@@ -100,50 +106,54 @@ body  {
 
 .he-btn.fully-round {
   @include border-radius(1em);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 body .he-btn.outline {
   background-color: transparent;
   background-image: none;
 }
+
 body .he-btn.outline:hover {
   color: #FFF;
 }
 
 /* Colors */
 .he-btn.red,
-.he-btn.red.outline:hover{
-  @include gradient(top, #ef473a,#cb2d3e)
+.he-btn.red.outline:hover {
+  @include gradient(top, #EF473A, #CB2D3E)
   //@include gradient(top,#f00000, #cb2d3e)
 }
 
 .he-btn.orange,
 .he-btn.orange.outline:hover {
-  @include gradient(top,#ff9500, #ff5e3a)
+  @include gradient(top, #FF9500, #FF5E3A)
 }
 
 .he-btn.yellow,
 .he-btn.yellow.outline:hover {
-  @include gradient(top,#fff200, #ffcd02)
+  @include gradient(top, #FFF200, #FFCD02)
 }
 
 .he-btn.green,
 .he-btn.green.outline:hover {
-  @include gradient(top, #88db6b, #64b448)
-}
-.he-btn.teal ,
-.he-btn.teal.outline:hover{
-  @include gradient(top,#52edc7, #5ac8fb)
+  @include gradient(top, #88DB6B, #64B448)
 }
 
-.he-btn.blue ,
-.he-btn.blue.outline:hover{
-  @include gradient(top,#0e74ff, #1d62f0)
+.he-btn.teal,
+.he-btn.teal.outline:hover {
+  @include gradient(top, #52EDC7, #5AC8FB)
+}
+
+.he-btn.blue,
+.he-btn.blue.outline:hover {
+  @include gradient(top, #0E74FF, #1D62F0)
 }
 
 .he-btn.black,
 .he-btn.black.outline:hover {
-  @include gradient(top,#4a4a4a, #2b2b2b)
+  @include gradient(top, #4A4A4A, #2B2B2B)
 }
 
 .he-btn.grey,
@@ -151,71 +161,77 @@ body .he-btn.outline:hover {
 .he-btn.silver,
 .he-btn.grey.outline:hover,
 .he-btn.gray.outline:hover,
-.he-btn.silver.outline:hover{
-  @include gradient(top,#f4f4f4, #dee1e1);
-  color:#333!important;
+.he-btn.silver.outline:hover {
+  @include gradient(top, #F4F4F4, #DEE1E1);
+  color: #333 !important;
 }
 
 .he-btn.purple,
-.he-btn.purple.outline:hover{
-  @include gradient(top,#d56efd, #842abf)
+.he-btn.purple.outline:hover {
+  @include gradient(top, #D56EFD, #842ABF)
+}
+
+.he-btn.violet,
+.he-btn.violet.outline:hover {
+  @include gradient(top, #8E9CFF, #7887FF)
 }
 
 .he-btn.pink,
 .he-btn.pink.outline:hover {
-  @include gradient(top,#fc5fa6, #fc2a19)
+  @include gradient(top, #FC5FA6, #FC2A19)
 }
+
 .he-btn.white,
 .he-btn.white.outline:hover {
-  @include gradient(top,#fff, #f7f7f7);
-  color:#333;
+  @include gradient(top, #FFF, #F7F7F7);
+  color: #333;
 }
 
 /* Outline buttons */
 .he-btn.red.outline {
-  color: #ff5e3a;
+  color: #FF5E3A;
 }
 
 .he-btn.orange.outline {
-  color: #ff9500;
+  color: #FF9500;
 }
 
 .he-btn.yellow.outline {
-  color: #ffdb4c;
+  color: #FFDB4C;
 }
 
 .he-btn.green.outline {
-  color: #64b448;
+  color: #64B448;
 }
 
 .he-btn.teal.outline {
-  color: #52edc7;
+  color: #52EDC7;
 }
 
 .he-btn.blue.outline {
-  color: #0e74ff;
+  color: #0E74FF;
 }
 
 .he-btn.black.outline {
-  color: #4a4a4a;
+  color: #4A4A4A;
 }
 
 .he-btn.grey.outline,
 .he-btn.gray.outline,
 .he-btn.silver.outline {
-  color: #dbddde;
+  color: #DBDDDE;
 }
 
 .he-btn.purple.outline {
-  color: #d56efd;
+  color: #D56EFD;
 }
 
 .he-btn.pink.outline {
-  color: #fc5fa6;
+  color: #FC5FA6;
 }
 
 .he-btn.white.outline {
-  color: #FFF!important;
+  color: #FFF !important;
 }
 
 .more-link {

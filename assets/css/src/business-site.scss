@@ -8,7 +8,7 @@
 
   }
 }
-
+.card{background: #FFF}
 .block {
   display: block;
 }
@@ -62,7 +62,14 @@
 .no-padding {
   padding: 0
 }
-
+#wrapper
+.reset{
+  p,img,article{margin:0}
+}
+.pad10{
+  padding:10px
+}
+.pad20{padding:20px}
 .pad, .padding,
 .pad-all, .padding-all {
   padding: $padding;
@@ -186,6 +193,19 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
 }
 
+@media only screen and (min-width: 768px) {
+  .col3{width:33.33%}
+}
+@media only screen and (min-width: 468px) and (max-width: 768px) {
+  .col {
+    width: 50%
+  }
+}
+@media only screen and (max-width: 468px) {
+  .col {
+    width: 100%
+  }
+}
 @media only screen and (max-width: 768px) {
   .hero {
     h1 {
@@ -302,4 +322,9 @@
   right:0;
   top:0;
   bottom:0;
+}
+
+.so-panel article.entry{
+  background: transparent;
+  box-sizing: border-box;
 }

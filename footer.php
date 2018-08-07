@@ -1,6 +1,5 @@
 <?php do_action( 'pagespeed_before_footer' ); ?>
-<?php global $helium; ?>
-<?php if ( ! $helium->get_meta( 'hide_footer_widgets' ) && ( is_active_sidebar( "footer-1" ) || is_active_sidebar( "footer-2" ) || is_active_sidebar( "footer-3" ) || is_active_sidebar( "footer-4" ) || is_active_sidebar( "footer-5" ) ) ): ?>
+<?php if ( ! get_post_meta( get_queried_object_id(), 'hide_footer_widgets', true ) && ( is_active_sidebar( "footer-1" ) || is_active_sidebar( "footer-2" ) || is_active_sidebar( "footer-3" ) || is_active_sidebar( "footer-4" ) || is_active_sidebar( "footer-5" ) ) ): ?>
     <footer id="site-footer-container" class="cf">
         <div id="site-footer" class="sb hybrid">
 			<?php
