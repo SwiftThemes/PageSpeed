@@ -66,6 +66,9 @@ class PageSpeed {
 
 		require_once( HELIUM_THEME_INC.'pro/bootstrap.php' );
 
+		require_once( HELIUM_THEME_DIR.'demo-sites/set-1.php' );
+
+
 		add_theme_support( 'breadcrumb-trail' );
 
 	}

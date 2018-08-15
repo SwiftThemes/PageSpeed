@@ -328,3 +328,7 @@
   background: transparent;
   box-sizing: border-box;
 }
+
+.inline-list{
+  li{display: inline;margin: 0 10px 0 0}
+}

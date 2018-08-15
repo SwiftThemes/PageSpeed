@@ -57,6 +57,7 @@ button {
   margin-left: 0;
   margin-right: 0;
   font-family: $body-font-stack;
+  font-weight: bold;
 }
 
 .stacked-form {
@@ -97,10 +98,14 @@ button {
   }
 }
 
+
+.inline-form{
+  input,button{margin-right: 10px}
+}
 @media only screen and (max-width: $mobile_width) {
   .inline-form {
     input,
-    textarea {
+    textarea,button {
       margin: auto auto $padding/2;
       width: 100%;
       max-width: 540px;

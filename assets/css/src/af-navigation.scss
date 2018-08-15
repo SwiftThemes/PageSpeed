@@ -20,6 +20,13 @@
       display: block;
       text-decoration: none;
     }
+    ul ul {
+      display: none;
+      width: 180px
+    }
+
+
+
     li:hover,
     a:hover,
     li:hover ul {
@@ -36,53 +43,8 @@
       display: block;
       width: 100%
     }
-    ul ul {
-      display: none;
-      width: 180px
-    }
-    //* first level */
-    ul li {
-      position: relative;
-      z-index: 2;
-    }
-    ul li:hover > ul {
-      display: inline;
-      position: absolute;
-      top: 2.125em; //2.15em
-      left: 0;
-      background: shift-color($primary-nav-bg)
-    }
-    ul li:hover ul ul {
-      display: none
-    }
-
-    //* second level */
-    ul ul li:hover > ul {
-      display: block;
-      position: absolute;
-      left: 180px;
-      top: 0;
-    }
-    ul li:hover ul li:hover ul li a {
-      display: block
-    }
-    ul ul ul ul {
-      display: none
-    }
-
-    //* third level */
-
-    //* Icons */
-    .menu-item-has-children > a:after {
-      content: '\BB';
-      opacity: .5;
-      margin-left: 5px;
-      display: inline-block;
-    }
-
-    .menu > .menu-item-has-children > a:after {
-      @include rotate(90deg)
-    }
+    // Moved some code from here to below fold (navigation.scss)
+    // We don't need hover styles above the fold.
   }
 }
 

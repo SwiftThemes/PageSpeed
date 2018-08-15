@@ -8,7 +8,7 @@
 function pagespeed_about() {
 	?>
     <div class="about">
-<!--		--><?php //echo sprintf( '<h2>%s</h2>', __( 'Initial Setup', 'page-speed' ) ) ?>
+        <!--		--><?php //echo sprintf( '<h2>%s</h2>', __( 'Initial Setup', 'page-speed' ) ) ?>
 
 
 		<?php echo sprintf( '
@@ -29,6 +29,8 @@ function pagespeed_about() {
             <li><a href="https://swiftthemes.com/getting-started-pagespeed/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic" target="_blank">%s</a></li>
             <li><a href="https://swiftthemes.com/get-100-page-speed-score-mobile-desktops/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic" target="_blank">%s</a></li>
             <li><a href="https://swiftthemes.com/customize-pagespeed-like-demo/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic" target="_blank">%s</a></li>
+            <li><a href="https://swiftthemes.com/using-pagebuilder-prebuilt-layouts/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic">%s</a></li>
+            <li><a href="https://swiftthemes.com/importing-demo-sites-pagespeed-theme/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic">%s</a></li>
             <li><a href="https://demos.swiftthemes.com/?utm_source=ps_theme_admin&utm_medium=useful_links&utm_campaign=basic" target="_blank">%s</a></li>',
 				admin_url( '/customize.php?autofocus[section]=layout_settings' ),
 				__( 'Customize PageSpeed', 'page-speed' ),
@@ -36,6 +38,8 @@ function pagespeed_about() {
 				__( 'User Guide', 'page-speed' ),
 				__( 'Optimization Guide', 'page-speed' ),
 				__( 'Customize like the demo', 'page-speed' ),
+				__( 'Using the prebuilt layouts', 'page-speed' ),
+				__( 'Importing The Demo Sites', 'page-speed' ),
 				__( 'Demo', 'page-speed' )
 			) ?>
 

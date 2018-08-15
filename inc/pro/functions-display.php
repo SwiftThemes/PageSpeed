@@ -88,3 +88,16 @@ if ( ! function_exists( 'pagespeed_get_social_media' ) ) {
 	}
 }
 
+function pagespeed_sc_social_media(){
+	$item_type = 'http://schema.org/' . get_theme_mod( 'social_media_personal_or_business', 'Person' );
+	$main_url  = get_theme_mod( 'webiste_url', esc_url( home_url( '/' ) ) ); ?>
+<div id="" class="cf nav inline-list">
+        <span itemscope itemtype="<?php echo $item_type ?>">
+        <link itemprop="url" href="<?php echo $main_url ?>">
+
+	        <?php echo pagespeed_get_social_media() ?>
+            </span>
+</div>
+<?php
+}
+add_shortcode( 'social_media_icons', 'pagespeed_sc_social_media' );

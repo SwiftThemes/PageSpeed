@@ -29,7 +29,7 @@ function helium_register_required_plugins() {
 			'name'               => 'Simple Responsive Slider', // The plugin name.
 			'slug'               => 'simple-responsive-slider', // The plugin slug (typically the folder name).
 			'source'             => get_template_directory() . '/plugins/simple-responsive-slider.zip', // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
@@ -47,11 +47,23 @@ function helium_register_required_plugins() {
 			'slug'     => 'dynamic-thumbnails',
 			'required' => false,
 		),
-//		array(
-//			'name'     => 'HomePage Slider',
-//			'slug'     => 'no-nonsense-slider',
-//			'required' => false,
-//		),
+		array(
+			'name'     => 'PageBuilder [For prebuilt layouts]',
+			'slug'     => 'siteorigin-panels',
+			'required' => false,
+		),
+		array(
+			'name'     => 'Widgets Bundle [For prebuilt layouts]',
+			'slug'     => 'so-widgets-bundle',
+			'required' => false,
+		),
+		array(
+			'name'     => 'Demo Import [For prebuilt sites]',
+			'slug'     => 'one-click-demo-import',
+			'required' => false,
+		),
+
+
 	);
 
 	/*

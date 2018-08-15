@@ -63,3 +63,12 @@ add_action( 'plugins_loaded', 'butter_bean_load' );
 
 add_theme_support( 'customize-selective-refresh-widgets' );
 
+
+
+
+function pagespeed_layouts_folder(){
+	$layout_folders[] = get_template_directory() . '/so-layouts';
+	return $layout_folders;
+
+}
+add_filter( 'siteorigin_panels_local_layouts_directories', 'pagespeed_layouts_folder' );

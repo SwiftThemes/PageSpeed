@@ -10,7 +10,7 @@ function helium_add_meta_boxes( $post_type ) {
 	add_meta_box( 'helium_page_options', __( 'Helium Framework Options', 'page-speed'), 'helium_build_meta_box', 'page', 'side', 'high','' );
 }
 
-add_action( 'admin_init', 'helium_add_meta_boxes' );
+//add_action( 'admin_init', 'helium_add_meta_boxes' );
 
 
 function helium_build_meta_box() {

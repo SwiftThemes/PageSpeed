@@ -1,3 +1,16 @@
+## [2.00] - 12-08-2018
+
+### Added 
+- Prebuilt layouts and sites.
+- Custom meta options 
+   * Option to set header background on a per post/page basis.
+   * Custom CSS for post/page.
+https://swiftthemes.com/using-pagebuilder-prebuilt-layouts/
+https://swiftthemes.com/importing-demo-sites-pagespeed-theme/
+
+### Changed
+- Moved hide title, breadcrumbs, footer widgets to the new interface. You will have to update these options.
+
 ## [1.62] - 19-07-2018
 
 ### Added
