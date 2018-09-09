@@ -11,6 +11,10 @@ https://swiftthemes.com/importing-demo-sites-pagespeed-theme/
 ### Changed
 - Moved hide title, breadcrumbs, footer widgets to the new interface. You will have to update these options.
 
+### Upgrade Notice
+- If you are upgrading to this version, and your slider stops working, please install the new slider from recommended plugins.
+
+
 ## [1.62] - 19-07-2018
 
 ### Added

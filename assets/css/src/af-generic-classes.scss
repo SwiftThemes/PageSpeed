@@ -35,11 +35,11 @@
 
 article {
   .alignleft.wp-caption,
-  .alignleft.img {
+  img.alignleft {
     margin-right: 10px;
   }
   .alignright.wp-caption
-  .alignright.img {
+  img.alignright {
     margin-left: 10px;
   }
 }
