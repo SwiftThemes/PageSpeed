@@ -10,7 +10,7 @@ $is_full_length = $wp_query->current_post == 0 && is_front_page() && !get_theme_
 
 
 	<?php
-	if ( ! $is_full_length && 'aligncenter' === get_theme_mod( 'home_thumb_position' . $suffix, 'alternate' ) ) {
+	if ( ! $is_full_length && 'aligncenter' === get_theme_mod( 'home_thumb_alignment' . $suffix, 'alternate' ) ) {
 		helium_show_thumbnail( 'home_thumb' );
 	}
 
@@ -35,7 +35,7 @@ $is_full_length = $wp_query->current_post == 0 && is_front_page() && !get_theme_
 
 	<?php
 	if ( ! $is_full_length &&
-	     'aligncenter' !== get_theme_mod( 'home_thumb_position' . $suffix, 'alternate' ) ) {
+	     'aligncenter' !== get_theme_mod( 'home_thumb_alignment' . $suffix, 'alternate' ) ) {
 		helium_show_thumbnail( 'home_thumb' );
 	}
 	?>

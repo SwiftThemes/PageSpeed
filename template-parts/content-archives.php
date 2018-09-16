@@ -10,7 +10,7 @@ if ( $helium->is_mobile() ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?>>
 
 	<?php
-	if ( 'aligncenter' === get_theme_mod( 'archives_thumb_position' . $suffix, 'alternate' ) ) {
+	if ( 'aligncenter' === get_theme_mod( 'archives_thumb_alignment' . $suffix, 'alternate' ) ) {
 		helium_show_thumbnail( 'archives_thumb' );
 	}
 
@@ -35,7 +35,7 @@ if ( $helium->is_mobile() ) {
 
 	<?php
 	if ( 
-	     'aligncenter' !== get_theme_mod( 'archives_thumb_position' . $suffix, 'alternate' ) ) {
+	     'aligncenter' !== get_theme_mod( 'archives_thumb_alignment' . $suffix, 'alternate' ) ) {
 		helium_show_thumbnail( 'archives_thumb' );
 	}
 	?>

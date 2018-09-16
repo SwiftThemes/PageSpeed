@@ -63,7 +63,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	) );
 
-	$wp_customize->add_setting( 'home_thumb_position', array(
+	$wp_customize->add_setting( 'home_thumb_alignment', array(
 		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
 		'default'           => 'alternate',
 
@@ -121,7 +121,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 				'settings' => array(
 					'home_thumb_width',
 					'home_thumb_height',
-					'home_thumb_position',
+					'home_thumb_alignment',
 				),
 			)
 		)
@@ -145,7 +145,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 	) );
 
-	$wp_customize->add_setting( 'home_thumb_position_mobile', array(
+	$wp_customize->add_setting( 'home_thumb_alignment_mobile', array(
 		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
 		'default'           => 'alternate',
 
@@ -173,7 +173,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 				'settings' => array(
 					'home_thumb_width_mobile',
 					'home_thumb_height_mobile',
-					'home_thumb_position_mobile',
+					'home_thumb_alignment_mobile',
 				),
 			)
 		)
@@ -245,7 +245,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 		'default'           => '120',
 	) );
 
-	$wp_customize->add_setting( 'archives_thumb_position', array(
+	$wp_customize->add_setting( 'archives_thumb_alignment', array(
 		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
 		'default'           => 'alternate',
 
@@ -263,7 +263,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 				'settings' => array(
 					'archives_thumb_width',
 					'archives_thumb_height',
-					'archives_thumb_position',
+					'archives_thumb_alignment',
 				),
 			)
 		)
@@ -294,7 +294,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 		'default'           => '120',
 	) );
 
-	$wp_customize->add_setting( 'archives_thumb_position_mobile', array(
+	$wp_customize->add_setting( 'archives_thumb_alignment_mobile', array(
 		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
 		'default'           => 'alternate',
 
@@ -312,9 +312,204 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 				'settings' => array(
 					'archives_thumb_width_mobile',
 					'archives_thumb_height_mobile',
-					'archives_thumb_position_mobile',
+					'archives_thumb_alignment_mobile',
 				),
 			)
 		)
 	);
+
+
+
+
+
+
+
+
+
+
+
+// Show thumbnail
+	$wp_customize->add_setting( 'post_thumb_show', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+
+	) );
+
+	$wp_customize->add_setting( 'post_thumb_position', array(
+		'sanitize_callback' => 'helium_pass',
+		'default'           => 'below_title',
+	) );
+
+	// Thumbnail size
+	$wp_customize->add_setting( 'post_thumb_width', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
+	) );
+	$wp_customize->add_setting( 'post_thumb_height', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
+	) );
+
+	$wp_customize->add_setting( 'post_thumb_alignment', array(
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
+		'default'           => 'alternate',
+
+	) );
+
+
+
+	$wp_customize->add_setting( 'dummy5', array(
+		'sanitize_callback' => '',
+		'default'           => 'alternate',
+
+	) );
+	$wp_customize->add_control( new Helium_Help_Text( $wp_customize, 'dummy5', array(
+		'section'         => 'single_post_design',
+		'priority'        => 10,
+		'label'           => __( ' ', 'page-speed' ),
+		'type'            => 'warning',
+		'content'         => sprintf(
+			__( 'Please <a href="%s" target="_blank">Install Dynamic Thumbnails</a> plugin to generate the correct size thumbnails.', 'page-speed' ),
+			admin_url( 'themes.php?page=tgmpa-install-plugins' )
+		),
+		'active_callback' => function () {
+			return ! function_exists( 'sdt_stop_thumbs' ) && ( get_theme_mod( 'post_thumb_show', true ) || get_theme_mod( 'post_thumb_show_mobile', true ) );
+		}
+	) ) );
+
+
+	$wp_customize->add_control( 'post_thumb_show', array(
+		'label'   => __( 'Show thumbnails on single post', 'page-speed' ),
+		'section' => 'single_post_design',
+		'type'    => 'checkbox',
+
+	) );
+
+
+	$wp_customize->add_control( 'post_thumb_position', array(
+		'label'   => __( 'Thumbnail position', 'page-speed' ),
+		'section' => 'single_post_design',
+		'type'    => 'select',
+		'choices' => array(
+			'above_title' => __( 'Above title','page-speed' ),
+			'below_title' => __( 'Below title','page-speed' ),
+		),
+		'active_callback' => function () {
+			return get_theme_mod('post_thumb_show');
+		}
+
+	) );
+
+
+
+
+	//@todo use named array for settings
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Image_Size(
+			$wp_customize,
+			'post_thumb',
+			array(
+				'label'    => esc_html__( 'Single post thumbnail size', 'page-speed' ),
+				'section'  => 'single_post_design',
+				'priority' => 10,
+				'type'     => 'text',
+				'settings' => array(
+					'post_thumb_width',
+					'post_thumb_height',
+					'post_thumb_alignment',
+				),
+
+				'active_callback' => function () {
+					return get_theme_mod('post_thumb_show');
+				}
+			)
+
+		)
+	);
+
+	// Show thumbnail
+	$wp_customize->add_setting( 'post_thumb_show_mobile', array(
+		'sanitize_callback' => 'helium_boolean',
+		'default'           => false,
+
+	) );
+
+
+	$wp_customize->add_setting( 'post_thumb_alignment', array(
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
+		'default'           => 'alternate',
+
+	) );
+
+	// Thumbnail size
+	$wp_customize->add_setting( 'post_thumb_width_mobile', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
+	) );
+	$wp_customize->add_setting( 'post_thumb_height_mobile', array(
+		'sanitize_callback' => 'absint',
+		'default'           => '120',
+
+	) );
+
+	$wp_customize->add_setting( 'post_thumb_alignment_mobile', array(
+		'sanitize_callback' => 'helium_sanitize_thumbnail_alignment',
+		'default'           => 'alternate',
+
+	) );
+
+
+	$wp_customize->add_control( 'post_thumb_show_mobile', array(
+		'label'   => __( 'Show thumbnails on single post #Mobile', 'page-speed' ),
+		'section' => 'single_post_design',
+		'type'    => 'checkbox',
+
+	) );
+
+
+
+	$wp_customize->add_control( 'post_thumb_position_mobile', array(
+		'label'   => __( 'Thumbnail position #mobile', 'page-speed' ),
+		'section' => 'single_post_design',
+		'type'    => 'select',
+		'choices' => array(
+			'above_title' => __( 'Above title','page-speed' ),
+			'below_title' => __( 'Below title','page-speed' ),
+		),
+		'active_callback' => function () {
+			return get_theme_mod('post_thumb_show_mobile');
+		}
+
+	) );
+
+
+
+	//@todo use named array for settings
+
+	$wp_customize->add_control(
+		new Helium_Customize_Control_Image_Size(
+			$wp_customize,
+			'post_thumb_mobile',
+			array(
+				'label'    => esc_html__( 'Single post thumbnail size #Mobile', 'page-speed' ),
+				'section'  => 'single_post_design',
+				'priority' => 10,
+				'type'     => 'text',
+				'settings' => array(
+					'post_thumb_width_mobile',
+					'post_thumb_height_mobile',
+					'post_thumb_alignment_mobile',
+				),
+
+				'active_callback' => function () {
+					return get_theme_mod('post_thumb_show_mobile');
+				}
+			)
+		)
+	);
+
 }

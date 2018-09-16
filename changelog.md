@@ -1,3 +1,8 @@
+## [2.10] - 16-09-2018
+
+### Added 
+- Option to display thumbnails on single post.
+
 ## [2.00] - 12-08-2018
 
 ### Added 
