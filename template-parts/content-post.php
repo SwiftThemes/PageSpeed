@@ -24,7 +24,7 @@ if($helium->is_mobile()){
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( 'above_title' == get_theme_mod( 'post_thumb_position'.$thumb_suffix, 'below_title' ) ) {
+	<?php if (get_theme_mod('post_thumb_show'.$thumb_suffix) && 'above_title' == get_theme_mod( 'post_thumb_position'.$thumb_suffix, 'below_title' ) ) {
 		helium_show_thumbnail( 'post_thumb' );
 	} ?>
 
@@ -45,7 +45,7 @@ if($helium->is_mobile()){
 			<?php endif ?>
         </header>
 
-		<?php if ( 'below_title' == get_theme_mod( 'post_thumb_position'.$thumb_suffix, 'below_title' ) ) {
+		<?php if (get_theme_mod('post_thumb_show'.$thumb_suffix) &&  'below_title' == get_theme_mod( 'post_thumb_position'.$thumb_suffix, 'below_title' ) ) {
 			helium_show_thumbnail( 'post_thumb' );
 		} ?>
         <!-- .entry-header -->

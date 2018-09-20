@@ -375,7 +375,7 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 			admin_url( 'themes.php?page=tgmpa-install-plugins' )
 		),
 		'active_callback' => function () {
-			return ! function_exists( 'sdt_stop_thumbs' ) && ( get_theme_mod( 'post_thumb_show', true ) || get_theme_mod( 'post_thumb_show_mobile', true ) );
+			return ! function_exists( 'sdt_stop_thumbs' ) && ( get_theme_mod( 'post_thumb_show', false ) || get_theme_mod( 'post_thumb_show_mobile', false ) );
 		}
 	) ) );
 
