@@ -49,6 +49,17 @@ function helium_write_to_uploads( $content, $destination ) {
 
 }
 
+function helium_all_theme_mods_scss() {
+	$mods = get_theme_mods();
+	$scss = '';
+	foreach ( $mods as $key => $value ) {
+		if ( ! is_array( $value ) && $value != '' ) {
+			$scss .= '$' . $key . ': ' . $value . ";\n";
+		}
+	}
+
+	return $scss;
+}
 
 class Helium_Styles {
 
@@ -58,6 +69,8 @@ class Helium_Styles {
 	private $bf_files = array();  // Below fold css files
 	private $scss_variable_files = array( 'variables', 'colors', 'mixins' );
 	private $prefix;
+
+	private $background_images = array( 'body', 'header', 'footer' );
 
 	/**
 	 * Helium_Styles constructor.
@@ -156,6 +169,25 @@ class Helium_Styles {
 		}
 	}
 
+	private function set_bg_image_variables() {
+		$out = '';
+		foreach ( $this->background_images as $key ) {
+			$prefix = $key . '_background_';
+
+			if ( ! get_theme_mod( $prefix . 'image_url', 0 ) ) {
+				continue;
+			}
+			$out .= '$' . $prefix . 'image_url:\'' . get_theme_mod( $prefix . 'image_url', 0 ) . "';\n";
+			$out .= '$' . $prefix . 'image_id:' . get_theme_mod( $prefix . 'image_id', 0 ) . ";\n";
+			$out .= '$' . $prefix . 'repeat:' . get_theme_mod( $prefix . 'repeat', 'no-repeat' ) . ";\n";
+			$out .= '$' . $prefix . 'size:' . get_theme_mod( $prefix . 'size', 'cover' ) . ";\n";
+			$out .= '$' . $prefix . 'position:' . get_theme_mod( $prefix . 'position', 0 ) . ";\n";
+			$out .= '$' . $prefix . 'attach:' . get_theme_mod( $prefix . 'attach', 'fixed' ) . ";\n";
+		}
+
+		return $out;
+	}
+
 	public function generate_css( $af_bf ) {
 		global $wp_filesystem;
 		global $page_speed_color_schemes;
@@ -187,6 +219,8 @@ class Helium_Styles {
 
 
 		$override = '';
+//		$override = helium_all_theme_mods_scss();
+		$override .= $this->set_bg_image_variables();
 		$override .= "///** Overridden by settings from customizer */\n\n";
 		$override .= '$site_width:' . sanitize_text_field( get_theme_mod( 'site_width', '1260px' ) ) . ";\n";
 		$override .= '$main_width:' . helium_float( get_theme_mod( 'main_width', '72' ) ) . ";\n";
@@ -248,8 +282,7 @@ class Helium_Styles {
 			$override .= '$use_masonry:0;';
 		}
 
-		$override .= '$masonry_column_count:'.get_theme_mod( 'masonry_column_count', 3 ).';';
-
+		$override .= '$masonry_column_count:' . get_theme_mod( 'masonry_column_count', 3 ) . ';';
 
 
 		$footer_widths = get_theme_mod( 'footer_widths' );
@@ -416,7 +449,7 @@ class Helium_Styles {
 			$content = str_replace( '/**SCSS_override**/', sanitize_text_field( get_theme_mod( 'scss_override', '/* No __SCSS__ Override */' ) ), $content );
 
 		}
-		if (defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
+		if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 			helium_write_to_uploads( $content, 'combined.scss' );
 		}
 

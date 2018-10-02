@@ -32,6 +32,26 @@ $pagespeed_selective_refreshables = array(
 	'enable_transparent_backgrounds',
 
 
+	'body_background_image_url',
+	'body_background_image_id',
+	'body_background_repeat',
+	'body_background_size',
+	'body_background_attach',
+	'body_background_position',
+
+	'header_background_image_url',
+	'header_background_image_id',
+	'header_background_repeat',
+	'header_background_size',
+	'header_background_attach',
+	'header_background_position',
+
+	'footer_background_image_url',
+	'footer_background_image_id',
+	'footer_background_repeat',
+	'footer_background_size',
+	'footer_background_attach',
+	'footer_background_position',
 
 
 );

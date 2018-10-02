@@ -126,6 +126,9 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_ADMIN . 'register-meta-fields.php' );
 
 
+
+			require_once(  HELIUM_DIR . 'customize/customizer-background-control/customizer-background-control.php');
+
 		}
 
 

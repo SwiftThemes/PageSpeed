@@ -1,4 +1,3 @@
-
 @if $body_colors_enable == 1 {
   body {
     @if $body_colors_is_gradient == 0 {
@@ -8,6 +7,16 @@
       @include gradient($body_colors_gradient_direction, $body_colors_gradient_start, $body_colors_gradient_end)
     }
 
+  }
+}
+
+@if $body_background_image_url != 0 {
+  body {
+    background-image: url($body_background_image_url);
+    background-attachment: $body_background_attach;
+    background-repeat: $body_background_repeat;
+    background-size: $body_background_size;
+    background-position: $body_background_position;
   }
 }
 
@@ -23,6 +32,17 @@
 
   }
 }
+
+@if $header_background_image_url != 0 {
+  #site-header-container {
+    background-image: url($header_background_image_url);
+    background-attachment: $header_background_attach;
+    background-repeat: $header_background_repeat;
+    background-size: $header_background_size;
+    background-position: $header_background_position;
+  }
+}
+
 
 @if $primary-nav_colors_enable == 1 {
   #primary-nav-container {
@@ -93,6 +113,17 @@
     @if $footer_colors_is_gradient == 1 {
       @include gradient($footer_colors_gradient_direction, $footer_colors_gradient_start, $footer_colors_gradient_end)
     }
+  }
+}
+
+
+@if $footer_background_image_url != 0 {
+  #site-footer-container {
+    background-image: url($footer_background_image_url);
+    background-attachment: $footer_background_attach;
+    background-repeat: $footer_background_repeat;
+    background-size: $footer_background_size;
+    background-position: $footer_background_position;
   }
 }
 

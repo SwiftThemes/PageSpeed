@@ -1,3 +1,8 @@
+## [2.12] - 02-10-2018
+
+### Added 
+- Background images option for body, header and footer.
+
 ## [2.10] - 16-09-2018
 
 ### Added 
