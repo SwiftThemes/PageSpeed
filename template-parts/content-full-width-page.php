@@ -20,7 +20,7 @@ $after_content_default = array(
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('main'); ?>>
 
-	<?php if ( ! $helium->get_meta( 'hide_title' ) ): ?>
+	<?php if ( ! get_post_meta(get_queried_object_id(),'hide_page_title', true) ): ?>
         <header class="entry-header">
 			<?php if ( get_theme_mod( 'single_page_meta_above_title', $above_title_default ) ): ?>
                 <div class="entry-meta meta above-title">
