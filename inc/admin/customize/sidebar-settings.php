@@ -54,7 +54,7 @@ function pagespeed_more_sidebars( $wp_customize ) {
 
 	$wp_customize->add_setting( 'enable_sticky_sidebars', array(
 		'sanitize_callback' => 'helium_boolean',
-		'default'           => false,
+		'default'           => true,
 	) );
 
 	$wp_customize->add_control( 'enable_sticky_sidebars', array(

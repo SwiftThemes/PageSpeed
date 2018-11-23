@@ -59,3 +59,12 @@ $page_speed_theme_options[] = array(
 	'default'  => false,
 	'sanitize' => 'boolean'
 );
+
+$page_speed_theme_options[] = array(
+	'id'       => 'lazy_load_images',
+	'name'     => 'Lazy load image',
+	'desc'     => __( 'Defers loading of images that are not visible on screen saving you bandwidth and makes your site appear faster', 'page-speed'),
+	'type'     => 'checkbox',
+	'default'  => false,
+	'sanitize' => 'boolean'
+);

@@ -26,10 +26,7 @@ if ( ! function_exists( 'pagespeed_site_branding' ) ) {
 				if ( $helium->is_mobile() && get_theme_mod( 'mobile_logo' ) ):
 					echo sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
 						esc_url( home_url( '/' ) ),
-						wp_get_attachment_image( intval( get_theme_mod( 'mobile_logo' ) ), array(
-							9999,
-							32
-						), false, array(
+						wp_get_attachment_image( intval( get_theme_mod( 'mobile_logo' ) ), 'full', false, array(
 							'class'    => 'custom-logo-mobile',
 							'itemprop' => 'logo',
 						) )

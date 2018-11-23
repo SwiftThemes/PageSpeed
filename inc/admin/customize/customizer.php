@@ -61,6 +61,7 @@ function pagespeed_customize( $wp_customize ) {
 			'priority'   => 32,
 			'height'     => 48,
 			'flex_width' => true,
+			'flex_height' => true,
 		)
 	) );
 
