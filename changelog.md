@@ -1,3 +1,9 @@
+## [2.13] - 23-11-2018
+
+### Changed 
+- Fix logo pixelated issue no mobiles.
+https://forums.swiftthemes.com/t/mobile-logo-not-displaying-correctly/285/12
+
 ## [2.12] - 02-10-2018
 
 ### Added 
