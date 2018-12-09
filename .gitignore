@@ -16,6 +16,7 @@ assets/js/vendors.min.js
 assets/css/style.prod.css
 assets/css/src/*.css
 assets/css/src/*.map
+**/*.min.js
 
 languages/*
 

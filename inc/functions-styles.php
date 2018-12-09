@@ -14,6 +14,7 @@ add_action( 'wp_enqueue_scripts', 'pagespeed_load_fonts', 7 );
 add_action( 'wp_enqueue_scripts', 'pagespeed_register_styles', 8 );
 add_action( 'wp_enqueue_scripts', 'pagespeed_enqueue_styles', 9 );
 add_action( 'wp_head', 'pagespeed_add_image_bg_for_single_post', 99 );
+add_action( 'wp_head', 'pagespeed_preload_icons', 99 );
 
 
 function pagespeed_register_styles() {
@@ -87,4 +88,9 @@ function pagespeed_add_image_bg_for_single_post() {
         }
     </style>
 	<?php
+}
+
+function pagespeed_preload_icons(){
+echo '<link rel="preload" href="'.HELIUM_THEME_ASSETS_URI.'fonts/swift-icons.woff" as="font" type="font/woff">';
+
 }

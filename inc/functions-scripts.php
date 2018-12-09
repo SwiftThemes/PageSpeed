@@ -23,7 +23,7 @@ function pagespeed_register_scripts(){
         'jquery-masonry',
     ));
 
-    wp_register_script('pagespeed-lazy-load', HELIUM_THEME_JS_URI . 'custom/lazy-load.min.js', array(
+    wp_register_script('pagespeed-lazy-load', HELIUM_THEME_JS_URI . 'custom/lazy-load.js', array(
         'jquery',
         'pagespeed-custom-js',
     ));

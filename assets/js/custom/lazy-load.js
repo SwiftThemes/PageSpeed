@@ -1,8 +1,8 @@
 jQuery(function ($) {
 
     stopInvisibleImages();
-    window.addEventListener('scroll', callLazyLoadImages);
-    window.addEventListener('touchmove', callLazyLoadImages);
+
+
 
     function stopInvisibleImages() {
         $('img').each(
@@ -52,6 +52,10 @@ jQuery(function ($) {
         )
         if (!count) {
             window.removeEventListener('scroll', callLazyLoadImages)
+            window.removeEventListener('touchmove', callLazyLoadImages)
         }
     }
+
+    window.addEventListener('scroll', callLazyLoadImages);
+    window.addEventListener('touchmove', callLazyLoadImages);
 });
