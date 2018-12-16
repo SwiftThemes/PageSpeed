@@ -48,10 +48,10 @@ gulp.task('deploy', function () {
         recursive: true,
         clean: true,
         exclude: [],
-        port: 1122
+        port: 2135
     };
     rsyncConf.root = '/Users/satish/Work/Development/can-delete/buildtheme/page-speed/';
-    rsyncConf.hostname = '172.93.98.50'; // hostname
+    rsyncConf.hostname = 'server.w3mixx.com'; // hostname
 
 
     // Staging
@@ -92,10 +92,10 @@ rsyncConfGlobal = {
     emptyDirectories: true,
     recursive: true,
     clean: true,
-    port: 1122,
+    port: 2135,
     exclude: [],
 };
-rsyncConfGlobal.hostname = '172.93.98.50'; // hostname
+rsyncConfGlobal.hostname = 'server.w3mixx.com'; // hostname
 rsyncConfGlobal.username = 'swiftswift'; // ssh username
 
 
@@ -134,23 +134,23 @@ gulp.task('uploadChangeLog', function () {
 
 // Package Distributable Theme
 gulp.task('share', function (cb) {
-    runSequence('uploadToUpdateServer','uploadChangeLog', cb);
+    runSequence('uploadToUpdateServer', 'uploadChangeLog', cb);
 });
 
 
 
 
 gulp.task('markdown', function () {
-        gulp.src([
-            '**/*.md',
-            '!node_modules/**/*',
-            '!buildtheme/**/*',
-            '!assets/bower_components/**/*'])
-            .pipe(markdown())
-            .pipe(dest('./', {ext: '.html'}))
+    gulp.src([
+        '**/*.md',
+        '!node_modules/**/*',
+        '!buildtheme/**/*',
+        '!assets/bower_components/**/*'])
+        .pipe(markdown())
+        .pipe(dest('./', { ext: '.html' }))
 
-            .pipe(gulp.dest('./'))
-    }
+        .pipe(gulp.dest('./'))
+}
 )
 
 function throwError(taskName, msg) {

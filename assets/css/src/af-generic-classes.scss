@@ -97,6 +97,8 @@ article {
 }
 
 
+.imageNotLoaded{min-width:120px}
+
 @media only screen and (max-width: $mobile_width) {
   .inner{padding:0 20px}
   .m-block{display: block;width:100%}

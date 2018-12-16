@@ -2,6 +2,8 @@
 var gulp = require('gulp'),
     scss = require('gulp-ruby-sass'),
     concatCss = require('gulp-concat-css');
+debug = require('gulp-debug');
+
 wpPot = require('gulp-wp-pot');
 
 
@@ -16,7 +18,7 @@ gulp.task('sass', function () {
         './assets/css/src/main.scss',
 
     ])
-    //.pipe(sass())
+        //.pipe(sass())
         .pipe(concatCss('style.prod.css'))
         .pipe(gulp.dest('./assets/css'))
 })
@@ -147,7 +149,7 @@ var gulp = require('gulp'),
     cmq = require('gulp-combine-media-queries'),
     runSequence = require('gulp-run-sequence'),
     sass = require('gulp-sass'),
-    plugins = require('gulp-load-plugins')({camelize: true}),
+    plugins = require('gulp-load-plugins')({ camelize: true }),
     ignore = require('gulp-ignore'), // Helps with ignoring files and directories in our run tasks
     rimraf = require('gulp-rimraf'), // Helps with removing files and directories in our run tasks
     zip = require('gulp-zip'), // Using to zip up our packaged theme into a tasty zip file that can be installed in WordPress!
@@ -232,22 +234,22 @@ gulp.task('styles', function () {
             // outputStyle: 'expanded',
             precision: 10
         }))
-        .pipe(sourcemaps.write({includeContent: false}))
-        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(sourcemaps.write({ includeContent: false }))
+        .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(autoprefixer('last 2 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(sourcemaps.write('.'))
         .pipe(plumber.stop())
         .pipe(gulp.dest('./'))
         .pipe(filter('**/*.css')) // Filtering stream to only css files
         .pipe(cmq()) // Combines Media Queries
-        .pipe(reload({stream: true})) // Inject Styles when style file is created
-        .pipe(rename({suffix: '.min'}))
+        .pipe(reload({ stream: true })) // Inject Styles when style file is created
+        .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss({
             maxLineLen: 80
         }))
         .pipe(gulp.dest('./'))
-        .pipe(reload({stream: true})) // Inject Styles when min style file is created
-        .pipe(notify({message: 'Styles task complete', onLast: true}))
+        .pipe(reload({ stream: true })) // Inject Styles when min style file is created
+        .pipe(notify({ message: 'Styles task complete', onLast: true }))
 });
 
 
@@ -257,16 +259,16 @@ gulp.task('styles', function () {
  * Look at src/js and concatenate those files, send them to assets/js where we then minimize the concatenated file.
  */
 gulp.task('vendorsJs', function () {
-    return gulp.src(['./assets/js/vendor/*.js', bower + '**/*.js'])
-        .pipe(concat('vendors.js'))
+    return gulp.src(['./assets/js/vendor/*.js', bower + '**/*.js', '!./assets/js/vendor/*min.js'])
+        // .pipe(concat('vendors.js'))
         // .pipe(gulp.dest('./assets/js'))
         .pipe(rename({
-            basename: "vendors",
+            // basename: "vendors",
             suffix: '.min'
         }))
         .pipe(uglify())
-        .pipe(gulp.dest('./assets/js/'))
-        .pipe(notify({message: 'Vendor scripts task complete', onLast: true}));
+        .pipe(gulp.dest('./assets/js/vendor'))
+        .pipe(notify({ message: 'Vendor scripts task complete', onLast: true }));
 });
 
 
@@ -277,16 +279,35 @@ gulp.task('vendorsJs', function () {
  */
 
 gulp.task('scriptsJs', function () {
-    return gulp.src('./assets/js/custom/*.js')
-        .pipe(concat('custom.js'))
+    return gulp.src(['./assets/js/custom/*.js', '!./assets/js/custom/*min.js'])
+        .pipe(debug())
+        // .pipe(concat('custom.js'))
         // .pipe(gulp.dest('./assets/js'))
         .pipe(rename({
-            basename: "custom",
+            // basename: "custom",
+            suffix: '.min'
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./assets/js/custom/'))
+        .pipe(notify({ message: 'Custom scripts task complete', onLast: true }));
+});
+
+/**
+ * Scripts: Optional
+ *
+ * Look at src/js and concatenate those files, send them to assets/js where we then minimize the concatenated file.
+ */
+
+gulp.task('optionalScriptsJs', function () {
+    return gulp.src(['./assets/js/custom/optional-*.js'])
+        // .pipe(concat('custom.js'))
+        // .pipe(gulp.dest('./assets/js'))
+        .pipe(rename({
             suffix: '.min'
         }))
         .pipe(uglify())
         .pipe(gulp.dest('./assets/js/'))
-        .pipe(notify({message: 'Custom scripts task complete', onLast: true}));
+        .pipe(notify({ message: 'Custom scripts task complete', onLast: true }));
 });
 
 
@@ -297,13 +318,13 @@ gulp.task('scriptsJs', function () {
  */
 gulp.task('images', function () {
 
-// Add the newer pipe to pass through newer images only
+    // Add the newer pipe to pass through newer images only
     return gulp.src(['./assets/images/raw/**/*.{png,jpg,gif}'])
         .pipe(newer('./assets/images/'))
-        .pipe(rimraf({force: true}))
-        .pipe(imagemin({optimizationLevel: 7, progressive: true, interlaced: true}))
+        .pipe(rimraf({ force: true }))
+        .pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
         .pipe(gulp.dest('./assets/images/'))
-        .pipe(notify({message: 'Images task complete', onLast: true}));
+        .pipe(notify({ message: 'Images task complete', onLast: true }));
 });
 
 
@@ -323,15 +344,15 @@ gulp.task('clear', function () {
  */
 
 gulp.task('cleanup', function () {
-    return gulp.src(['./assets/bower_components', '**/.sass-cache', '**/.DS_Store'], {read: false}) // much faster
+    return gulp.src(['./assets/bower_components', '**/.sass-cache', '**/.DS_Store'], { read: false }) // much faster
         .pipe(ignore('node_modules/**')) //Example of a directory to ignore
-        .pipe(rimraf({force: true}))
+        .pipe(rimraf({ force: true }))
     // .pipe(notify({ message: 'Clean task complete', onLast: true }));
 });
 gulp.task('cleanupFinal', function () {
-    return gulp.src(['./assets/bower_components', '**/.sass-cache', '**/.DS_Store'], {read: false}) // much faster
+    return gulp.src(['./assets/bower_components', '**/.sass-cache', '**/.DS_Store'], { read: false }) // much faster
         .pipe(ignore('node_modules/**')) //Example of a directory to ignore
-        .pipe(rimraf({force: true}))
+        .pipe(rimraf({ force: true }))
     // .pipe(notify({ message: 'Clean task complete', onLast: true }));
 });
 
@@ -345,14 +366,14 @@ gulp.task('cleanupFinal', function () {
 gulp.task('buildFiles', function () {
     return gulp.src(buildInclude)
         .pipe(gulp.dest(build))
-        .pipe(notify({message: 'Copy from buildFiles complete', onLast: true}));
+        .pipe(notify({ message: 'Copy from buildFiles complete', onLast: true }));
 });
 
 
 gulp.task('buildFilesOrg', function () {
     return gulp.src(buildIncludeOrg)
         .pipe(gulp.dest(build))
-        .pipe(notify({message: 'Copy from buildFiles complete', onLast: true}));
+        .pipe(notify({ message: 'Copy from buildFiles complete', onLast: true }));
 });
 
 
@@ -364,7 +385,7 @@ gulp.task('buildFilesOrg', function () {
 gulp.task('buildImages', function () {
     return gulp.src(['assets/images/**/*', '!assets/images/raw/**'])
         .pipe(gulp.dest(build + 'assets/images/'))
-        .pipe(plugins.notify({message: 'Images copied to buildTheme folder', onLast: true}));
+        .pipe(plugins.notify({ message: 'Images copied to buildTheme folder', onLast: true }));
 });
 
 /**
@@ -374,11 +395,11 @@ gulp.task('buildImages', function () {
  */
 gulp.task('buildZip', function () {
     // return 	gulp.src([build+'/**/', './.jshintrc','./.bowerrc','./.gitignore' ])
-    return gulp.src(build + '/**/', {base: '/Users/satish/Work/Development/can-delete/buildtheme/'})
+    return gulp.src(build + '/**/', { base: '/Users/satish/Work/Development/can-delete/buildtheme/' })
         .pipe(zip(project + '.zip'))
         .pipe(gulp.dest('/Users/satish/Desktop'))
         // .pipe(gulp.dest('/Users/satish/Dropbox/Public/'))
-        .pipe(notify({message: 'Zip task complete', onLast: true}));
+        .pipe(notify({ message: 'Zip task complete', onLast: true }));
 });
 
 //require('./gulp-bump.js')
