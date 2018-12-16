@@ -16,13 +16,14 @@ jQuery(function ($) {
                     var loader = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
                     $(this).addClass('imageNotLoaded')
                     var src = $(this).attr('src')
-                    var srcset = $(this).attr('srcset')
                     $(this).attr('src', loader)
+                    $(this).data('src', src)
+                    var srcset = $(this).attr('srcset')
                     if (srcset) {
                         $(this).attr('srcset', loader)
+                        $(this).data('srcset', srcset)
                     }
-                    $(this).data('src', src)
-                    $(this).data('srcset', srcset)
+                    console.log('skipped')
                 }
             }
         )
