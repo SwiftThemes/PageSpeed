@@ -10,7 +10,7 @@ jQuery(function ($) {
                 if (!$(this).visible(true)) {
 
                     // Skip if lazyloading is disabled
-                    if ($(this).hasClass('disable-lazy-load')) {
+                    if ($(this).hasClass('no-lazy-load')) {
                         return;
                     }
                     var loader = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
