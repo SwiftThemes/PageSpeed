@@ -1,3 +1,8 @@
+## [2.14] - 15-12-2018
+
+### Added 
+- Lazy loading of images. https://swiftthemes.com/lazy-loading-images-1kb-overhead/
+
 ## [2.13] - 23-11-2018
 
 ### Changed 
