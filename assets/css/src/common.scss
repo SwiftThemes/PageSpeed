@@ -33,7 +33,8 @@ code, pre {
 
 img,
 figure,
-pre{max-width: 100%;} // Removing height auto to fix lazyloading.
+pre{max-width: 100%;} 
+img:not(.imageNotLoaded){height: auto;}// Removing height auto to fix lazyloading.
 pre{overflow: scroll}
 
 article{margin-bottom: $vr;}

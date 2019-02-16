@@ -68,6 +68,7 @@
       float: none !important;
       width: 100vw;
       max-width: 140%;
+      height: auto;
       @if ($separate_containers == 1) {
 
         margin: auto -40px;

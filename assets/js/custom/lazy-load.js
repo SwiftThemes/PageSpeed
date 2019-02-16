@@ -23,7 +23,6 @@ jQuery(function ($) {
                         $(this).attr('srcset', loader)
                         $(this).data('srcset', srcset)
                     }
-                    console.log('skipped')
                 }
             }
         )

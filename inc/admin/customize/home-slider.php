@@ -111,24 +111,41 @@ function pagespeed_customize_home( $wp_customize ) {
 		) );
 
 
-		$wp_customize->add_setting( 'home_slider_height', array(
-			'sanitize_callback' => 'absint',
-			'default'           => (int) helium_get_site_width() / 2,
-			'transport'         => 'postMessage',
+        $wp_customize->add_setting('home_slider_height', array(
+            'sanitize_callback' => 'absint',
+            'default'           => (int) helium_get_site_width() / 2,
+            'transport'         => 'postMessage',
 
-		) );
+        ));
 
 
-		$wp_customize->add_control( 'home_slider_height', array(
-			'label'       => __( 'Slider height', 'page-speed' ),
-			'description' => __( 'Slider height in pixels without the units.', 'page-speed' ) . ' ' . __( 'Default', 'page-speed' ) . ': site_width/2',
-			'section'     => 'home_slider',
-			'type'        => 'number',
-			'priority'    => 10,
+        $wp_customize->add_control('home_slider_height', array(
+            'label'       => __('Slider height', 'page-speed'),
+            'description' => __('Slider height in pixels without the units.', 'page-speed') . ' ' . __('Default', 'page-speed') . ': site_width/2',
+            'section'     => 'home_slider',
+            'type'        => 'number',
+            'priority'    => 10,
 //			'active_callback' => 'pagespeed_is_slider_enabled',
-			'input_attrs' => array( 'min' => 300, 'max' => 1000 )
-		) );
+            'input_attrs' => array( 'min' => 300, 'max' => 1000 )
+				));
+				
+        $wp_customize->add_setting('home_slider_speed', array(
+            'sanitize_callback' => 'absint',
+            'default'           => 6000,
+            'transport'         => 'postMessage',
 
+        ));
+
+
+        $wp_customize->add_control('home_slider_speed', array(
+            'label'       => __('Slider speed', 'page-speed'),
+            'description' => __('Duration between each slide in ms.', 'page-speed') . ' <br>' . __('Default', 'page-speed') . ': 6000',
+            'section'     => 'home_slider',
+            'type'        => 'number',
+            'priority'    => 10,
+//			'active_callback' => 'pagespeed_is_slider_enabled',
+            'input_attrs' => array( 'min' => 2000, 'max' => 990000 )
+        ));
 
 	} else {
 		$wp_customize->add_setting( 'home-slider-help', array( 'sanitize_callback' => 'sanitize_text_field', ) );

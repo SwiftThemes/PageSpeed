@@ -39,6 +39,8 @@ languages/*
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 
+package-lock.json
+
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
@@ -75,3 +77,4 @@ fabric.properties
 # *.ipr
 
 # End of https://www.gitignore.io/api/phpstorm
+

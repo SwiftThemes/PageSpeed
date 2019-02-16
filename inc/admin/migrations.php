@@ -61,4 +61,9 @@ function pagespeed_migrations() {
 	if ( 'not_set' == get_theme_mod( 'archives_thumb_alignment_mobile', 'not_set' ) && get_theme_mod( 'archives_thumb_position_mobile', false ) ) {
 		set_theme_mod('archives_thumb_alignment_mobile', get_theme_mod( 'archives_thumb_position_mobile'));
 	}
+
+	if ('not_set' == get_theme_mod('archives_title', 'not_set') ) {
+		set_theme_mod('archives_title', __('Archives for', 'page-speed').' %s');
+	}
+
 }

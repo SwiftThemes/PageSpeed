@@ -160,4 +160,6 @@
 .he-minus-square-o:before {
   content: "\4e";
 }
-
+.he-download:before {
+  content: "\4f";
+}

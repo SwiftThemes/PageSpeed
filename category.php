@@ -23,10 +23,8 @@ get_header();
 ?>
 <div id="archive-info" class="cf">
     <div class="archive-title">
-		<?php _e( 'Archives for', 'page-speed' ) ?>
-        <h1>
-			<?php single_cat_title(); ?>
-        </h1>
+		<?php echo sprintf(get_theme_mod('archives_title', __('Archives for', 'page-speed').' %s'),
+		'<h1>'.get_the_archive_title().'</h1>')?>
     </div>
 	<?php echo category_description() ?>
     <div class="separator"></div>

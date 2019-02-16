@@ -45,6 +45,7 @@ function pagespeed_srs_home_slider() {
 
 	$site_width = helium_get_site_width();
 	$excerpts   = true;
+	$speed = get_theme_mod('home_slider_speed',6000);
 	if ( $helium->is_mobile() ) {
 		$thumb_size = array(
 			600,
@@ -54,7 +55,7 @@ function pagespeed_srs_home_slider() {
 	} else {
 		$thumb_size = array( $site_width, get_theme_mod( 'home_slider_height', (int) ( $site_width / 2 ) ) );
 	}
-	srs_query_slider( $query_args, $template, $thumb_size, $excerpts );
+	srs_query_slider( $query_args, $template, $thumb_size, $excerpts,'',$speed );
 }
 
 function pagespeed_srs_home_slider_placeholder() {
@@ -64,7 +65,7 @@ function pagespeed_srs_home_slider_placeholder() {
 }
 
 function pagespeed_srs_custom_home_slider() {
-
+	// @todo, why slider is handled here?
 	// For customizer
 	if ( ! get_theme_mod( 'show_slider_on_homepage', false ) ) {
 		return " ";
@@ -110,8 +111,9 @@ function pagespeed_srs_custom_home_slider() {
 
 	$slider_width = isset( $props['stretch'] ) && $props['stretch'] ? '100%' : $props['width'] . 'px';
 
+	$speed = isset($props['speed']) && $props['speed'] && $props['speed']>3000?$props['speed']:3000;
 
-	$out = "<div class='simple-slider-wrap' style='width:{$slider_width};margin: auto'><div class='srs-slider' style='height:{$height};'><ul>";
+	$out = "<div class='simple-slider-wrap' style='width:{$slider_width};margin: auto'><div class='srs-slider' data-speed ='{$speed}' style='height:{$height};'><ul>";
 	foreach ( $slider['slides'] as $slide ) {
 		$out .= srs_get_slide( $slide, $size, $props['slider_type'] );;
 	}

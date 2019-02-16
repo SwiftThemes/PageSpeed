@@ -186,7 +186,28 @@ function pagespeed_customize_thumbnails_excerpts( $wp_customize ) {
 
 
 	// Show excerpts or full post
-	$wp_customize->add_setting( 'archives_show_excerpts', array(
+  // $wp_customize->add_setting('archives_title_show', array(
+  //       'sanitize_callback' => 'helium_boolean',
+  //       'default'           => true,
+  //   ));
+	// $wp_customize->add_control( 'archives_title_show', array(
+	// 	'label'   => __( 'Show title on archives', 'page-speed' ),
+	// 	'section' => 'archives_design',
+	// 	'type'    => 'checkbox',
+	// ) );
+  $wp_customize->add_setting('archives_title', array(
+        'sanitize_callback' => 'sanitize_text_field',
+        'default'           => __('Archives for', 'page-speed').' %s',
+    ));
+    $wp_customize->add_control('archives_title', array(
+        'label'   => __('Archives title', 'page-speed'),
+        'section' => 'archives_design',
+				'type'    => 'text',
+				'description' => 'Applicable for tags and categories. Use %s as placeholder for category/tag name.'
+    ));
+
+
+		$wp_customize->add_setting( 'archives_show_excerpts', array(
 		'sanitize_callback' => 'helium_boolean',
 		'default'           => true,
 	) );

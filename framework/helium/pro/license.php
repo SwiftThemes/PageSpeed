@@ -115,6 +115,9 @@ function helium_license_nag() {
 		$days_left = ( $expires - $now ) / 86400;
 		$candy     = __( 'License expiring', 'page-speed' );
 
+		if($days_left>30){
+			return;
+		}
 		if ( $days_left < 30 ) {
 			$message = sprintf( __( 'Your PageSpeed license is about to expire in %d Days. Please renew your subscription for uninterrupted theme updates.', 'page-speed' ), $days_left );
 			$message .= '<br /><a href="https://members.swiftthemes.com/login/" target="_blank" class="he-btn">' . __( 'Renew now', 'page-speed' ) . '</a><br />';

@@ -15,8 +15,9 @@ body {
   .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
     color: rgba($button-color, .9);
   }
+  
 }
-
+.he-btn.he-icon:before{float: left;line-height: unset;margin-right: .3em}
 .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
   @include sharp-shadow();
   @include gradient(top, lighten($primary, .1), darken($primary, .2));
