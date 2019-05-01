@@ -1,0 +1,18 @@
+body {
+  .he-btn, .button, .btn, a.btn {
+    padding: 6px 8px;
+    color: rgba($button-color, 1);
+    background: $button-bg;
+    @include gradient(top, lighten($button-bg, .1), darken($button-bg, .1));
+    @include border-radius(.3em);
+    text-decoration: none !important;
+    //margin-left: 10px;
+    //margin-right: 10px;
+    display: inline-block;
+    border-width: 0;
+  }
+
+  .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
+    color: rgba($button-color, .9);
+  }
+}

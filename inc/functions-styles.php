@@ -33,7 +33,7 @@ function pagespeed_enqueue_styles() {
     }
 
 	if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV || ! get_theme_mod( 'can_read_write', false ) ) {
-		wp_enqueue_style( 'pagespeed' );
+		 wp_enqueue_style( 'pagespeed' );
 	} else {
 		wp_enqueue_style( 'pagespeed-generated', '', null, 'screen' );
 	}

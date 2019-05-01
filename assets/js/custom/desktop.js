@@ -56,7 +56,8 @@
 
     })
     $(window).load(function () {
-        setSidebarHeights()
+      setSidebarHeights()
+      triggerMasonry()
     })
 
     $(window).resize(function () {

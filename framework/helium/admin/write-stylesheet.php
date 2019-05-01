@@ -108,40 +108,37 @@ class Helium_Styles {
 				if ( preg_match( '/".+"/', $file, $matches ) ) {
 					$file_name = $file = str_replace( '"', '', $matches[0] );
 					$file      = HELIUM_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
-					if ( 1 || in_array( $file_name, $this->scss_variable_files ) ) {
-						if ( $wp_filesystem->is_file( HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss' ) ) {
-							$file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
-						}
-					}
-					// Short this to disable separation.
-					if ( $this->is_above_fold( $file_name ) ) {
-						array_push( $this->af_files, $file );
-					} elseif ( 'main' !== $file ) {
-						array_push( $this->bf_files, $file );
-					}
 
 					if ( in_array( $file_name, $this->scss_variable_files ) ) {
-						array_push( $this->af_files, $file );
-
+						array_push($this->af_files, $file);
+						array_push($this->bf_files, $file);
+						if ($wp_filesystem->is_file(HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss')) {
+								$file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
+							}
 						// Check if there is a file to override the variables.
 						// If yes, add them after our regular variable files.
 						$override_file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/override-' . $file_name . '.scss';
-
-						if ( $wp_filesystem->is_file( $override_file ) ) {
-							array_push( $this->af_files, $override_file );
-							array_push( $this->bf_files, $override_file );
+						if ($wp_filesystem->is_file($override_file)) {
+								array_push($this->af_files, $override_file);
+								array_push($this->bf_files, $override_file);
 						}
+					}else{
+							// Short this to disable separation.
+							if ($this->is_above_fold($file_name)) {
+									array_push($this->af_files, $file);
+							} elseif ('main' !== $file) {
+									array_push($this->bf_files, $file);
+							}
 					}
 				}
 			}
 
-			if ( 'NOT_SET' !== get_theme_mod( 'can_read_write', 'NOT_SET' ) ) {
-				delete_transient( $this->prefix . 'sass_file_list' );
-				set_transient( $this->prefix . 'sass_file_list', array(
-					'above_fold' => $this->af_files,
-					'below_fold' => $this->bf_files,
-				), 1800 );
-			}
+			delete_transient( $this->prefix . 'sass_file_list' );
+			set_transient( $this->prefix . 'sass_file_list', array(
+				'above_fold' => $this->af_files,
+				'below_fold' => $this->bf_files,
+			), 1800 );
+			
 		}
 	}
 

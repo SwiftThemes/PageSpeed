@@ -1,3 +1,11 @@
+## [2.21] - 01-05-2019
+
+### Changed
+
+- Trigger the masonty after the window is laoded to fix
+  https://forums.swiftthemes.com/t/overlapping-text-and-thumbnails-in-blog-archive/367/2
+- Fix pad-all class.
+
 ## [2.18] - 15-02-2019
 
 ### Changed
