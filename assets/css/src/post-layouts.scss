@@ -1,7 +1,8 @@
-.singular-post.single-1c.has-thumb,
-.page-template-tpl-airy-img{
-  #main,
-  #left {
+.page-template-tpl-airy-img,
+.single-column-post,
+.singular-post.single-1c.has-thumb {
+  #left,
+  #main {
     margin: auto !important;
     display: block;
     float: none !important;
@@ -14,48 +15,59 @@
     background-attachment: fixed;
     background-position: 50% 0;
   }
-  #left, #sticky-sb1-sticky-wrapper, #sticky-sb1 {
-    background: none
+
+  #left,
+  #sticky-sb1,
+  #sticky-sb1-sticky-wrapper {
+    background: none;
   }
+
   .breadcrumb-trail {
-    display: none
+    display: none;
   }
 
   #content,
   #main {
     background: transparent !important;
   }
+
   .entry {
     width: 60%;
     max-width: 680px;
-    margin: auto;
-    margin-top: 300px;
+    margin: 300px auto auto;
     background: rgba($light-1, 1) !important;
     @include border-radius(1em);
     padding: $padding;
     margin-bottom: $vr;
   }
 
-  #comments{    background: rgba($light-1, 1) !important;
-    margin-left:-$padding;
-    margin-right:-$padding;
-    padding: $padding;
+  #comments {
+    background: rgba($light-1, 1) !important;
+    // margin-left: -$padding;
+    // margin-right: -$padding;
+    // padding: $padding;
   }
 }
 
-@media only screen and (max-width: $mobile_width) {
-  .singular-post.single-1c.has-thumb,
-  .page-template-tpl-airy-img{
+.single-column-post .entry {
+  margin-top: 0;
+}
+@media only screen and (max-width:$mobile_width) {
+  .page-template-tpl-airy-img,
+  .singular-post.single-1c.has-thumb {
     #content-wrapper {
       background-size: auto 60vh;
     }
+
     .entry {
       width: auto;
-      padding:10px;    margin-top: 15vh;
+      padding: 10px;
+      margin-top: 15vh;
     }
-    #comments{
-      margin-left:-($padding/2);
-      margin-right:-($padding/2);
+
+    #comments {
+      margin-left: -($padding/2);
+      margin-right: -($padding/2);
       padding: -($padding/2);
     }
   }

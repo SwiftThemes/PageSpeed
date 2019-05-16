@@ -17,6 +17,11 @@ function pagespeed_body_classes( $classes ) {
 		$classes[] = 'sticky-nav';
 	}
 
+	if(is_single() && 'single_column'===get_post_meta( get_the_ID(), 'single_post_layout', true)){
+				$classes[] = 'single-column-post';
+
+	}
+
 	return $classes;
 }
 

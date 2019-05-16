@@ -1,3 +1,13 @@
+## [2.24] - 17-05-2019
+
+### Changed
+
+- Fix the missing single post layout option in customizer.
+
+### Added
+
+- Add option to set post layout at individual post level.
+
 ## [2.21] - 01-05-2019
 
 ### Changed

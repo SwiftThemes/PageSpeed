@@ -41,7 +41,7 @@ else :
 endif;
 ?>
 <?php
-if ( has_post_thumbnail() && '1c' === get_theme_mod( 'single_post_layout' ) ) {
+if ( (has_post_thumbnail() && '1c' === get_theme_mod( 'single_post_layout' )) || get_post_meta( get_the_ID(), 'full_width', true) ) {
 	get_sidebar( 'single-column' );
 } else {
 	get_sidebar();

@@ -55,6 +55,14 @@ function helium_butter_bean_register_sections( $butterbean, $post_type ) {
 	);
 
 	$manager->register_section(
+		'single_post',
+		array(
+			'label' => esc_html__( 'Single Post', 'page-speed' ),
+			'icon'  => 'dashicons-editor-code'
+		)
+	);
+
+	$manager->register_section(
 		'misc',
 		array(
 			'label' => esc_html__( 'Misc', 'page-speed' ),
@@ -101,6 +109,13 @@ function helium_butter_bean_register_settings( $butterbean, $post_type ) {
 		)
 	);
 
+
+	$manager->register_setting(
+		'single_post_layout', // Same as control name.
+		array(
+			'sanitize_callback' => 'sanitize_text_field'
+		)
+	);
 	$manager->register_setting(
 		'hide_breadcrumbs',
 		array( 'sanitize_callback' => 'butterbean_validate_boolean' )
@@ -138,7 +153,7 @@ function helium_butter_bean_register_controls( $butterbean, $post_type ) {
 			'section'     => 'css',
 			'attr'        => array( 'class' => 'widefat code' ),
 			'label'       => 'All devices',
-			'description' => 'Rules added here will be applied to all screen sizes.'
+			'description' => 'Rules added here will be applied to all screen sizes.',
 		)
 	);
 	$manager->register_control(
@@ -148,7 +163,7 @@ function helium_butter_bean_register_controls( $butterbean, $post_type ) {
 			'section'     => 'css',
 			'attr'        => array( 'class' => 'widefat code' ),
 			'label'       => 'Desktops',
-			'description' => 'Rules added here will be applied only to desktops.'
+			'description' => 'Rules added here will be applied only to desktops.',
 		)
 	);
 	$manager->register_control(
@@ -169,6 +184,19 @@ function helium_butter_bean_register_controls( $butterbean, $post_type ) {
 			'attr'        => array( 'class' => 'widefat code' ),
 			'label'       => 'Tablets',
 			'description' => 'Rules added here will be applied only to tablets. Screen size less than 768px'
+		)
+	);
+
+	$manager->register_control(
+		'single_post_layout',
+		array(
+			'type'        => 'select-group',
+			'section'     => 'single_post',
+			'label'       => 'Select the single post layout',
+			'choices' => array(
+				'' => '',
+				'single_column' => __( 'Single Column','page-speed' ),
+			 ),
 		)
 	);
 

@@ -249,7 +249,32 @@ function pagespeed_customize( $wp_customize ) {
 
 	// Home Page separate_containers
 
-
+$wp_customize->add_setting( 'single_post_layout', array(
+		'sanitize_callback' => 'helium_sanitize_choice_field',
+		'default'           => 'regular',
+	) );
+	$wp_customize->add_control(
+		new Hybrid_Customize_Control_Radio_Image(
+			$wp_customize,
+			'single_post_layout',
+			array(
+				'label'    => esc_html__( 'Single Post Layout', 'page-speed' ),
+				'section'  => 'layout_settings',
+				'priority' => 10,
+				'choices'  => array(
+					'regular' => array(
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/layout-' . sanitize_text_field( get_theme_mod( 'theme_layout', 'r-sb' ) ) . '.png',
+						'label' => __( 'Regular', 'page-speed' )
+					),
+					'1c'      => array(
+						'url'   => HELIUM_ADMIN_IMAGES_URI . '/single-post-1c.png',
+						'label' => __( 'Boxed', 'page-speed' ),
+					)
+				)
+			)
+		)
+	);
+	
 
 	$wp_customize->add_setting( 'woocommerce_layout', array(
 		'sanitize_callback' => 'helium_sanitize_choice_field',
