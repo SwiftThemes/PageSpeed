@@ -1,3 +1,17 @@
+## [2.27] - 04-08-2019
+
+### Changed
+
+- Add new loader for the image lazy loading.
+- Improvise the slider performance.
+
+## [2.25] - 25-06-2019
+
+### Changed
+
+- Improve perceived performance and page speed score by improving the slider.
+- Change the mobile menu colour to either black or white, based on the background color.
+
 ## [2.24] - 17-05-2019
 
 ### Changed
@@ -12,7 +26,7 @@
 
 ### Changed
 
-- Trigger the masonty after the window is laoded to fix
+- Trigger the masonry after the window is laoded to fix
   https://forums.swiftthemes.com/t/overlapping-text-and-thumbnails-in-blog-archive/367/2
 - Fix pad-all class.
 

@@ -6,10 +6,11 @@
   background: rgba($light-1, .9);
 
   .mobile-nav-search-form {
-    margin: 0 30px
+    margin: 0 30px;
   }
+
   .sticky-logo img {
-    left: 10px
+    left: 10px;
   }
 }
 
@@ -18,11 +19,11 @@
 }
 
 .is-sticky #sticky-search > .inner {
-  display: block
+  display: block;
 }
 
 .open-drawer {
-  color: invert($header-bg);
+  color: set-color($header-bg);
   float: right;
   border: none;
   font-size: 24px;
@@ -44,19 +45,20 @@
 #side-pane {
   height: 0;
   overflow: hidden;
-  -webkit-transition: height 0.2s ease-in;
-  -moz-transition: height 0.2s ease-in;
-  -o-transition: height 0.2s ease-in;
-  -ms-transition: height 0.2s ease-in;
-  transition: height 0.2s ease-in;
+  -webkit-transition: height .2s ease-in;
+  -moz-transition: height .2s ease-in;
+  -o-transition: height .2s ease-in;
+  -ms-transition: height .2s ease-in;
+  transition: height .2s ease-in;
 }
 
 body {
-  left: 0
+  left: 0;
 }
 
 .menu-open {
   position: relative;
+
   #side-pane {
     display: block;
     width: 100vw;
@@ -79,6 +81,7 @@ body {
     overflow: auto;
 
   }
+
   #menu-close {
     font-weight: lighter;
     position: fixed;
@@ -95,17 +98,17 @@ body {
     text-transform: uppercase;
     font-size: 12px;
   }
+
   #menu-close span {
     font-size: 20px;
     display: block;
   }
 }
 
-#side-pane-inner
-  #mobile-search-form {
-    padding: 20px;
+#side-pane-inner #mobile-search-form {
+  padding: 20px;
   background: rgba($primary,.8);
-  }
+}
 
 #site-header-container {
   position: relative;

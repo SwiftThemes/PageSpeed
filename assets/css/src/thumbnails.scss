@@ -1,10 +1,16 @@
-.post-thumbnail img:hover{
-  -webkit-transition: 0.6s ease;
-  transition: 0.6s ease;
-  -webkit-transform: scale(1.05) rotate(-2deg);
-  transform: scale(1.05) rotate(-2deg);
+.post-thumbnail img {
+  -webkit-transition: .6s ease;
+  transition: .6s ease;
+  margin-bottom: $vr;
+}
+
+.post-thumbnail img:hover {
+
+  // -webkit-transform: scale(1.05);
+  // transform: scale(1.05);
 
 }
+
 .post-thumbnail img.alignleft {
   margin-right: 10px;
 }
@@ -27,6 +33,7 @@ article:nth-child(odd) .alternate {
   margin-left: 10px;
 }
 
-.singular-post article .post-thumbnail img{margin-bottom: $vr}
+.singular-post article .post-thumbnail img {
+  margin-bottom: $vr;
+}
 // Mobile specific thumbnail code moved to af-layout-responsive.
-

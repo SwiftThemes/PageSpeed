@@ -1,12 +1,26 @@
-h1, h2, h3, h4, h5, h6,p,address,pre,hr {
-  margin: 0;
-  margin-bottom:  $vr/2;
-}
-p,address,pre,hr,table {
-  margin-bottom:  $vr;
+address,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+pre {
+  margin: 0 0 $vr/2;
 }
 
-ul, ol {
+address,
+hr,
+p,
+pre,
+table {
+  margin-bottom: $vr;
+}
+
+ol,
+ul {
   padding: 0;
   list-style: none;
 }
@@ -25,16 +39,26 @@ ol li {
   margin-left: 1.25em;
 }
 
-code, pre {
+code,
+pre {
   overflow: auto;
 }
 
-
-
-img,
 figure,
-pre{max-width: 100%;} 
-img:not(.imageNotLoaded){height: auto;}// Removing height auto to fix lazyloading.
-pre{overflow: scroll}
+img,
+pre {
+  max-width: 100%;
+}
 
-article{margin-bottom: $vr;}
+img:not(.imageNotLoaded):not(.srsImgNotLoaded) {
+  height: auto;
+}
+// Removing height auto to fix lazyloading.
+
+pre {
+  overflow: scroll;
+}
+
+article {
+  margin-bottom: $vr;
+}

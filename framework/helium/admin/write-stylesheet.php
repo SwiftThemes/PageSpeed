@@ -11,6 +11,7 @@
 
 if ( defined( 'HELIUM_DEV_ENV' ) && HELIUM_DEV_ENV ) {
 	add_action( 'admin_head', 'helium_write_stylesheet', 20 );
+	add_action( 'wp_head', 'helium_write_stylesheet', 20 );
 }
 
 
