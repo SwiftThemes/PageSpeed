@@ -1,0 +1,14 @@
+img {
+  max-width: 100%;
+  // height: auto;
+}
+
+input,
+textarea,
+button {
+  font: $base-font-size $body-font-stack;
+}
+
+.post-thumbnail img {
+  margin-right: 10px;
+}

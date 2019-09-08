@@ -31,20 +31,22 @@
   box-shadow: 0px 1px 2px rgba($dark-1, 0.5);
 }
 
-@mixin gradient($direction,$from, $to) {
+@mixin gradient($direction, $from, $to) {
   ///* fallback/image non-cover color */
   background-color: $from;
 
-  background: -webkit-linear-gradient($direction, $from, $to); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient($direction, $from, $to); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient($direction, $from, $to);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient($direction, $from, $to);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-color: $from; //@todo why border color?
 }
 
-@function shift-color($color,$delta:.15) {
+@function shift-color($color, $delta: 0.15) {
   @if (lightness($color) > 50) {
-    @return darken($color, $delta * .4);
+    @return darken($color, $delta * 0.4);
   } @else {
-    @return lighten($color, $delta * 1.2)
+    @return lighten($color, $delta * 1.2);
   }
 }
 
@@ -66,26 +68,38 @@
     $rgb: nth($rgba, $i);
     $rgb: $rgb / 255;
 
-    $rgb: if($rgb < .03928, $rgb / 12.92, pow(($rgb + .055) / 1.055, 2.4));
+    $rgb: if($rgb < 0.03928, $rgb / 12.92, pow(($rgb + 0.055) / 1.055, 2.4));
 
     $rgba2: append($rgba2, $rgb);
   }
 
-  @return .2126 * nth($rgba2, 1) + .7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3);
+  @return 0.2126 * nth($rgba2, 1) + 0.7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3);
 }
 
 @function color_contrast($color1, $color2) {
   // Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
   // Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
-  $luminance1: color_luminance($color1) + .05;
-  $luminance2: color_luminance($color2) + .05;
+  $luminance1: color_luminance($color1) + 0.05;
+  $luminance2: color_luminance($color2) + 0.05;
   $ratio: $luminance1 / $luminance2;
 
-  @if $luminance2 > $luminance1 {
+  @if $luminance2>$luminance1 {
     $ratio: 1 / $ratio;
   }
 
   $ratio: round($ratio * 10) / 10;
 
   @return $ratio;
+}
+
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns black for dark text and white for light text.
+ */
+@function choose-contrast-color($color) {
+  @if (lightness($color) > 70) {
+    @return black;
+  } @else {
+    @return white;
+  }
 }

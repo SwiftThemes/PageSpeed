@@ -1,14 +1,14 @@
 //* Smaller desktops */
 @media only screen and (max-width: 1200px) {
   #wrapper {
-    width: 100%
+    width: 100%;
   }
 }
 
 //Tablets
 @media only screen and (max-width: $mobile_width) {
   .hybrid {
-    width: 100%
+    width: 100%;
   }
 
   .site-title {
@@ -17,32 +17,35 @@
   }
 
   #wrapper {
-    #sb1,
-    #sb2,
     #left,
     #main,
     #sb-woo,
-    .hybrid,
-    #site-footer-container .fc {
+    #sb1,
+    #sb2,
+    #site-footer-container .fc,
+    .hybrid {
       width: 100%;
       box-sizing: border-box;
       float: none;
     }
+
     #sb1 {
-      background: $light-2
+      background: $light-2;
     }
+
     #sb2 {
-      background: $light-3
+      background: $light-3;
     }
     @if ($separate_containers == 1) {
-
-      #sb1 > .inner, #sb1 > .inner {
+      #sb1 > .inner,
+      #sb1 > .inner {
         padding: 0;
       }
     }
+
     .widget {
       //width: 300px;
-      margin: 0 auto $vr
+      margin: 0 auto $vr;
     }
 
     #site-header {
@@ -59,31 +62,22 @@
   }
 
   //Hide menus
-  #primary-nav-container, #secondary-nav-container, #header-nav-container {
-    display: none
+  #header-nav-container,
+  #mobile-search-form,
+  #primary-nav-container,
+  #secondary-nav-container {
+    display: none;
   }
 
   .post-thumbnail {
     .stretched {
       float: none !important;
-      width: 100vw;
-      max-width: 140%;
-      height: auto;
-      @if ($separate_containers == 1) {
-
-        margin: auto -40px;
-      }@else{
-        margin: auto -20px;
-
-      }
-      margin-bottom: 12px;
     }
   }
 }
-
 @media only screen and (min-width: $mobile_portrait_width) and (max-width: $mobile_width) {
   body .sb-container {
     width: 100% !important;
-    margin: auto
+    margin: auto;
   }
 }

@@ -25,6 +25,9 @@ jQuery(function($) {
       "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
     $(img).addClass(className);
     var src = $(img).attr("src");
+    if (src == loader) {
+      return;
+    }
     $(img).attr("src", loader);
     $(img).data("src", src);
     var srcset = $(img).attr("srcset");

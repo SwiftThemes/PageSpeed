@@ -6,33 +6,47 @@
 
 .he-search-wrapper {
   label {
-    display: none
+    display: none;
   }
+
   button {
     float: right;
     display: block;
     position: relative;
     left: -6px;
     padding: 5px 8px 4px;
-
   }
 
   .input {
     overflow: hidden;
     display: block;
-    float: none
+    float: none;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 2.25em;
+    -webkit-appearance: none;
+    font-size: 1.1em;
+  }
+
+  button {
+    height: 2.475em;
+    line-height: 1.75em;
+    -webkit-appearance: none;
   }
 }
 
 .ltr {
   .he-search-wrapper {
     button {
-      -webkit-border-top-right-radius: 3px;
-      -webkit-border-bottom-right-radius: 3px;
-      -moz-border-radius-topright: 3px;
-      -moz-border-radius-bottomright: 3px;
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
+      -webkit-border-top-left-radius: 0;
+      -webkit-border-bottom-left-radius: 0;
+      -moz-border-radius-topleft: 0;
+      -moz-border-radius-bottomleft: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 }

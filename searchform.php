@@ -14,7 +14,7 @@
 		<?php echo _x( 'Search for:', 'label', 'page-speed' ); ?></span>
 		</label>
 
-		<button type="submit" class="search-submit"><span
+		<button type="submit" class="search-submit he-btn"><span
 				class=""><?php echo _x( 'Search', 'submit button', 'page-speed' ); ?></span></button>
 		<div class="input">
 		<input type="search" class="search-field"

@@ -51,7 +51,7 @@ pre {
 }
 
 img:not(.imageNotLoaded):not(.srsImgNotLoaded) {
-  height: auto;
+  // height: auto;
 }
 // Removing height auto to fix lazyloading.
 
@@ -60,5 +60,5 @@ pre {
 }
 
 article {
-  margin-bottom: $vr;
+  margin-bottom: $vr/2;
 }

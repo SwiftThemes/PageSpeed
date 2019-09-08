@@ -1,10 +1,10 @@
 .meta {
-  font-size: .9em;
+  font-size: 0.9em;
   color: $meta-color;
 }
 
 .inner {
-  padding: 0 $padding
+  padding: 0 $padding;
 }
 
 .alpha,
@@ -20,7 +20,7 @@
 }
 
 .clear {
-  clear: both
+  clear: both;
 }
 
 // WordPress classes
@@ -38,8 +38,7 @@ article {
   img.alignleft {
     margin-right: 10px;
   }
-  .alignright.wp-caption
-  img.alignright {
+  .alignright.wp-caption img.alignright {
     margin-left: 10px;
   }
 }
@@ -54,8 +53,8 @@ article {
   color: $wp-caption-text-color;
 }
 
-.card{
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+.card {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 //.embed-wrap,
@@ -69,15 +68,15 @@ article {
 //}
 
 ///* end */
-.circle, .round {
-  @include border-radius(50%)
+.circle,
+.round {
+  @include border-radius(50%);
 }
-.sharp{
-  @include border-radius(0)
-
+.sharp {
+  @include border-radius(0);
 }
 
-.emoji{
+.emoji {
   width: 1em;
 }
 .cf:before,
@@ -93,14 +92,22 @@ article {
 }
 
 .screen-reader-text {
-  display: none
+  display: none;
 }
 
-
-.imageNotLoaded{min-width:120px}
+.imageNotLoaded {
+  min-width: 120px;
+}
 
 @media only screen and (max-width: $mobile_width) {
-  .inner{padding:0 20px}
-  .m-block{display: block;width:100%}
-  .m-center{text-align: center}
+  .inner {
+    padding: 0 20px;
+  }
+  .m-block {
+    display: block;
+    width: 100%;
+  }
+  .m-center {
+    text-align: center;
+  }
 }

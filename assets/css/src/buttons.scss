@@ -1,5 +1,9 @@
 body {
-  .he-btn, .button, .btn, a.btn {
+
+  .he-btn,
+  .button,
+  .btn,
+  a.btn {
     padding: 6px 8px;
     color: rgba($button-color, 1);
     background: $button-bg;
@@ -12,19 +16,32 @@ body {
     border-width: 0;
   }
 
-  .he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
+  .he-btn:hover,
+  .button:hover,
+  .btn:hover,
+  a.btn:hover {
     color: rgba($button-color, .9);
   }
-  
+
 }
-.he-btn.he-icon:before{float: left;line-height: unset;margin-right: .3em}
-.he-btn:hover, .button:hover, .btn:hover, a.btn:hover {
+
+.he-btn.he-icon:before {
+  float: left;
+  line-height: unset;
+  margin-right: .3em
+}
+
+.he-btn:hover,
+.button:hover,
+.btn:hover,
+a.btn:hover {
   @include sharp-shadow();
   @include gradient(top, lighten($primary, .1), darken($primary, .2));
 
 }
-.strong{
-  font-weight:bold;
+
+.strong {
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: .025em;
 }
@@ -106,9 +123,9 @@ body {
 }
 
 .he-btn.fully-round {
-  @include border-radius(1em);
-  padding-left: 1em;
-  padding-right: 1em;
+  @include border-radius(2em);
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 body .he-btn.outline {
@@ -123,8 +140,7 @@ body .he-btn.outline:hover {
 /* Colors */
 .he-btn.red,
 .he-btn.red.outline:hover {
-  @include gradient(top, #EF473A, #CB2D3E)
-  //@include gradient(top,#f00000, #cb2d3e)
+  @include gradient(top, #EF473A, #CB2D3E) //@include gradient(top,#f00000, #cb2d3e)
 }
 
 .he-btn.orange,

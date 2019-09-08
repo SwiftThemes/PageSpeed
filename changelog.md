@@ -1,3 +1,7 @@
+## [2.28] - 08-09-2019
+
+- Minor CSS improvements
+
 ## [2.27] - 04-08-2019
 
 ### Changed
@@ -26,7 +30,7 @@
 
 ### Changed
 
-- Trigger the masonry after the window is laoded to fix
+- Trigger the masonry after the window is loaded to fix
   https://forums.swiftthemes.com/t/overlapping-text-and-thumbnails-in-blog-archive/367/2
 - Fix pad-all class.
 

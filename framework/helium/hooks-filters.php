@@ -28,6 +28,6 @@ function helium_header_background() {
 	$css .= '@media only screen and (min-width:480px) and (max-width:768px) {' . $css_tablets . '}';
 
 	if ( $css ) {
-		echo '<style>' . $css . '</style>';
+		echo '<style type="text/css">' . $css . '</style>';
 	}
 }

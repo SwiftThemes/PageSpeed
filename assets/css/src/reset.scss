@@ -5,7 +5,6 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-
 article,
 aside,
 details,
@@ -20,7 +19,6 @@ section,
 summary {
   display: block;
 }
-
 
 audio,
 canvas,
@@ -75,6 +73,7 @@ sub {
 
 img {
   border: 0;
+  height: auto;
 }
 
 svg:not(:root) {
@@ -134,7 +133,7 @@ input[type="submit"] {
 button[disabled],
 html input[disabled] {
   cursor: default;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 button::-moz-focus-inner,
@@ -201,6 +200,12 @@ optgroup {
   font-weight: bold;
 }
 
-input,textarea, button{border-radius: 0}
+input,
+textarea,
+button {
+  border-radius: 0;
+}
 
-iframe{max-width: 100%;}
+iframe {
+  max-width: 100%;
+}

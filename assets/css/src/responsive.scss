@@ -1,0 +1,19 @@
+//Tablets
+@media only screen and (max-width: $mobile_width) {
+  .post-thumbnail {
+    .stretched {
+      width: 100vw;
+      max-width: 140%;
+
+      @if ($separate_containers==1) {
+        margin: auto -40px;
+      }
+
+      @else {
+        margin: auto -20px;
+      }
+
+      margin-bottom: 12px;
+    }
+  }
+}

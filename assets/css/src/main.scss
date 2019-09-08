@@ -3,17 +3,19 @@
 @import "variables";
 @import "colors";
 
-
 @import "reset";
 @import "forms";
 
-
+@import "af-reset";
 @import "af-typography";
 @import "af-layout";
 @import "af-header";
 @import "af-navigation";
 @import "af-layout-responsive";
+@import "responsive";
 @import "af-breadcrumb-trial";
+@import "af-buttons";
+@import "af-meta";
 
 @import "navigation";
 @import "af-generic-classes";
@@ -42,13 +44,9 @@
 @import "side-menu";
 @import "gallery";
 
-
-
 @import "table";
 
-
 @import "widget-styles";
-
 
 @import "post-layouts";
 @import "buttons";
