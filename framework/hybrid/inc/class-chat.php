@@ -78,7 +78,7 @@ class Hybrid_Chat {
 
 		// Filters for the chat message.
 		add_filter( 'hybrid_chat_text', array( $this, 'format_chat_text' ), 5 );
-		add_filter( 'hybrid_chat_text',               'wpautop',            5 );
+		add_filter( 'hybrid_chat_text', 'wpautop', 5 );
 
 		// Set the stanzas.
 		$this->set_stanzas();
@@ -102,8 +102,9 @@ class Hybrid_Chat {
 			$author = ! empty( $stanza['author'] ) ? $stanza['author'] : '';
 
 			// If we have an author, set the current author.
-			if ( $author )
+			if ( $author ) {
 				$current_author = $author;
+			}
 
 			// Get the speaker/row ID.
 			$speaker_id = $this->get_author_id( $current_author );
@@ -112,8 +113,9 @@ class Hybrid_Chat {
 			$time = ! empty( $stanza['time'] ) ? sprintf( '<time class="chat-timestamp">%s</time> ', esc_html( $stanza['time'] ) ) : '';
 
 			// Add the chat row author.
-			if ( $author )
+			if ( $author ) {
 				$author = sprintf( '<div class="chat-author %s vcard">%s<cite class="fn">%s</cite></div>', sanitize_html_class( strtolower( "chat-author-{$author}" ) ), $time, apply_filters( 'hybrid_chat_author', $author ) );
+			}
 
 			// Add the chat row text.
 			$message = sprintf( '<div class="chat-text">%s</div>', apply_filters( 'hybrid_chat_text', $stanza['message'] ) );
@@ -139,8 +141,9 @@ class Hybrid_Chat {
 		$stanzas = preg_split( "/(\r?\n)+|(<br\s*\/?>\s*)+/", $this->content );
 
 		// Loops through the stanzas and gets individual stanza arrays.
-		foreach ( $stanzas as $stanza_content )
+		foreach ( $stanzas as $stanza_content ) {
 			$this->stanzas[] = $this->get_stanza( $stanza_content );
+		}
 	}
 
 	/**
@@ -155,15 +158,21 @@ class Hybrid_Chat {
 	protected function get_stanza( $content ) {
 
 		// If a speaker is found, split into array with author/message.
-		if ( preg_match( '/(?<!http|https)' . $this->separator . '/', $content  ) ) {
+		if ( preg_match( '/(?<!http|https)' . $this->separator . '/', $content ) ) {
 
 			list( $author, $message ) = explode( $this->separator, trim( $content ), 2 );
 
-			return array( 'author' => $author, 'message' => $message );
+			return array(
+				'author'  => $author,
+				'message' => $message,
+			);
 		}
 
 		// Return just the message.
-		return array( 'author' => '', 'message' => $content ? $content : '' );
+		return array(
+			'author'  => '',
+			'message' => $content ? $content : '',
+		);
 	}
 
 	/**
@@ -181,8 +190,9 @@ class Hybrid_Chat {
 		$author = strtolower( strip_tags( $author ) );
 
 		// Add the chat author to the array.
-		if ( ! in_array( $author, $this->authors ) )
+		if ( ! in_array( $author, $this->authors ) ) {
 			$this->authors[] = $author;
+		}
 
 		// Return the array key for the chat author and add "1" to avoid an ID of "0".
 		return absint( array_search( $author, $this->authors ) ) + 1;

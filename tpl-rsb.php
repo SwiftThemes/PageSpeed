@@ -8,7 +8,8 @@ get_header();
 
 
 // Start the loop.
-while ( have_posts() ) : the_post();
+while ( have_posts() ) :
+	the_post();
 
 	/*
 	 * Include the Post-Format-specific template for the content.
@@ -27,7 +28,7 @@ endwhile;
 // If comments are open or we have at least one comment, load up the comment template.
 
 
-get_sidebar('page-right');
+get_sidebar( 'page-right' );
 ?>
 
 </div></div><!-- #content -->

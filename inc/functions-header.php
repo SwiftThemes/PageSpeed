@@ -14,44 +14,52 @@ if ( ! function_exists( 'pagespeed_site_branding' ) ) {
 		global $helium;
 		if ( get_theme_mod( 'social_media_personal_or_business', 'Person' ) === 'Organization' ) {
 			$schema = 'itemscope itemtype="http://schema.org/Organization"';
-		}else{
-			$schema='';
-        }
+		} else {
+			$schema = '';
+		}
 
 		?>
-        <header id="site-header" role="banner" class="cf">
-            <div id="site-branding" <?php echo $schema ?>>
+		<header id="site-header" role="banner" class="cf">
+			<div id="site-branding" <?php echo $schema; ?>>
 				<?php
 				// If
-				if ( $helium->is_mobile() && get_theme_mod( 'mobile_logo' ) ):
-					echo sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+				if ( $helium->is_mobile() && get_theme_mod( 'mobile_logo' ) ) :
+					echo sprintf(
+						'<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
 						esc_url( home_url( '/' ) ),
-						wp_get_attachment_image( intval( get_theme_mod( 'mobile_logo' ) ), 'full', false, array(
-							'class'    => 'custom-logo-mobile no-lazy-load',
-							'itemprop' => 'logo',
-						) )
+						wp_get_attachment_image(
+							intval( get_theme_mod( 'mobile_logo' ) ),
+							'full',
+							false,
+							array(
+								'class'    => 'custom-logo-mobile no-lazy-load',
+								'itemprop' => 'logo',
+							)
+						)
 					);
 
-                elseif ( get_theme_mod( 'custom_logo' ) ):
+				elseif ( get_theme_mod( 'custom_logo' ) ) :
 					echo helium_custom_logo();
-				else:
+				else :
 					?>
 					<?php if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                                              rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+											  rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
-                    <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-                                              rel="home"><?php bloginfo( 'name' ); ?></a></h3>
-				<?php endif;
+					<h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+											  rel="home"><?php bloginfo( 'name' ); ?></a></h3>
+					<?php
+				endif;
 
 					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-                        <p class="site-description"><?php echo $description; ?></p>
+				if ( $description || is_customize_preview() ) :
+					?>
+						<p class="site-description"><?php echo $description; ?></p>
 					<?php endif; ?>
 				<?php endif; ?>
-            </div><!-- .site-branding -->
+			</div><!-- .site-branding -->
 
-        </header><!-- #site-header -->
+		</header><!-- #site-header -->
 		<?php
 
 	}
@@ -60,9 +68,9 @@ if ( ! function_exists( 'pagespeed_site_branding' ) ) {
 
 function pagespeed_add_menu_icon() {
 	?>
-    <div id="menu" class="open-drawer">
-        &#9776;
-    </div>
+	<div id="menu" class="open-drawer">
+		&#9776;
+	</div>
 	<?php
 }
 
@@ -86,7 +94,6 @@ function helium_custom_logo( $blog_id = 0 ) {
 			'itemprop' => 'logo',
 		);
 
-
 		/*
 		 * If the logo alt attribute is empty, get the site title and explicitly
 		 * pass it to the attributes used by wp_get_attachment_image().
@@ -100,14 +107,16 @@ function helium_custom_logo( $blog_id = 0 ) {
 		 * If the alt attribute is not empty, there's no need to explicitly pass
 		 * it because wp_get_attachment_image() already adds the alt attribute.
 		 */
-		$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" title="%2$s" itemprop="url">%3$s</a>',
+		$html = sprintf(
+			'<a href="%1$s" class="custom-logo-link" rel="home" title="%2$s" itemprop="url">%3$s</a>',
 			$home_link,
 			get_bloginfo( 'description', 'display' ),
 			wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
 		);
 	} // If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
-    elseif ( is_customize_preview() ) {
-		$html = sprintf( '<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
+	elseif ( is_customize_preview() ) {
+		$html = sprintf(
+			'<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo"/></a>',
 			$home_link
 		);
 	}

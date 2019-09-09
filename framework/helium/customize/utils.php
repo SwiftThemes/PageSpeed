@@ -1,20 +1,20 @@
 <?php
 /*
-    Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
+	Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2,
-    as published by the Free Software Foundation.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License version 2,
+	as published by the Free Software Foundation.
 
-    You may NOT assume that you can use any other version of the GPL.
+	You may NOT assume that you can use any other version of the GPL.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-    The license for this software can likely be found here:
-    http://www.gnu.org/licenses/gpl-2.0.html
+	The license for this software can likely be found here:
+	http://www.gnu.org/licenses/gpl-2.0.html
  */
 /**
  * Created by Satish Gandham.
@@ -47,7 +47,7 @@ function helium_get_font_stacks() {
 		'Verdana, Geneva, sans-serif',
 		'Tahoma, Arial, Helvetica, sans-serif',
 		'\'Times New Roman\', Times, serif',
-		'\'Courier New\', Courier, monospace'
+		'\'Courier New\', Courier, monospace',
 	);
 
 	array_push( $web_safe_stacks, sanitize_text_field( get_theme_mod( 'custom_font_stack' ) ) );
@@ -80,7 +80,7 @@ function helium_generate_gfont_link() {
 			$base .= ':' . implode( ',', $g2['weights'] );
 		}
 	}
-	return esc_url($base);
+	return esc_url( $base );
 }
 
 
@@ -101,7 +101,6 @@ function helium_plugin_install_url( $plugin ) {
 		}
 	}
 
-
 	if ( $installed && ! is_plugin_active( $plugin ) ) {
 		$url = add_query_arg(
 			array(
@@ -110,10 +109,11 @@ function helium_plugin_install_url( $plugin ) {
 				'tgmpa-activate' => 'activate-plugin',
 				'plugin_source'  => ! empty( $source ) ? urlencode( $source ) : false,
 			),
-			admin_url( 'themes.php' ) );
+			admin_url( 'themes.php' )
+		);
 
-
-		return wp_nonce_url( $url,
+		return wp_nonce_url(
+			$url,
 			'tgmpa-activate',
 			'tgmpa-nonce'
 		);
@@ -127,9 +127,11 @@ function helium_plugin_install_url( $plugin ) {
 				'tgmpa-install' => 'install-plugin',
 				'plugin_source' => ! empty( $source ) ? urlencode( $source ) : false,
 			),
-			admin_url( 'themes.php' ) );
+			admin_url( 'themes.php' )
+		);
 
-		return wp_nonce_url( $url,
+		return wp_nonce_url(
+			$url,
 			'tgmpa-install-plugin',
 			'tgmpa-nonce'
 		);

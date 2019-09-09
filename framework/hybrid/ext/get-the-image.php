@@ -27,10 +27,10 @@
 add_theme_support( 'post-thumbnails' );
 
 # Delete the cache when a post or post metadata is updated.
-add_action( 'save_post',         'get_the_image_delete_cache_by_post'        );
+add_action( 'save_post', 'get_the_image_delete_cache_by_post' );
 add_action( 'deleted_post_meta', 'get_the_image_delete_cache_by_meta', 10, 2 );
 add_action( 'updated_post_meta', 'get_the_image_delete_cache_by_meta', 10, 2 );
-add_action( 'added_post_meta',   'get_the_image_delete_cache_by_meta', 10, 2 );
+add_action( 'added_post_meta', 'get_the_image_delete_cache_by_meta', 10, 2 );
 
 /**
  * The main image function for displaying an image.  This is a wrapper for the Get_The_Image class. Use this
@@ -69,7 +69,7 @@ final class Get_The_Image {
 	 * @access public
 	 * @var    array
 	 */
-	public $args  = array();
+	public $args = array();
 
 	/**
 	 * Image arguments array filled by the class.  This is used to store data about the image (src,
@@ -80,7 +80,7 @@ final class Get_The_Image {
 	 * @access public
 	 * @var    array
 	 */
-	public $image_args  = array();
+	public $image_args = array();
 
 	/**
 	 * The image HTML to output.
@@ -123,7 +123,7 @@ final class Get_The_Image {
 
 		// Use WP's embed functionality to handle the [embed] shortcode and autoembeds. */
 		add_filter( 'get_the_image_post_content', array( $wp_embed, 'run_shortcode' ) );
-		add_filter( 'get_the_image_post_content', array( $wp_embed, 'autoembed'     ) );
+		add_filter( 'get_the_image_post_content', array( $wp_embed, 'autoembed' ) );
 
 		// Set the default arguments.
 		$defaults = array(
@@ -194,47 +194,56 @@ final class Get_The_Image {
 		);
 
 		// If no post ID, return.
-		if ( empty( $this->args['post_id'] ) )
+		if ( empty( $this->args['post_id'] ) ) {
 			return false;
+		}
 
 		/* === Handle deprecated arguments. === */
 
 		// If $default_size is given, overwrite $size.
-		if ( !is_null( $this->args['default_size'] ) )
+		if ( ! is_null( $this->args['default_size'] ) ) {
 			$this->args['size'] = $this->args['default_size'];
+		}
 
 		// If $custom_key is set, overwrite $meta_key.
-		if ( !is_null( $this->args['custom_key'] ) )
+		if ( ! is_null( $this->args['custom_key'] ) ) {
 			$this->args['meta_key'] = $this->args['custom_key'];
+		}
 
 		// If 'the_post_thumbnail' is set, overwrite 'featured'.
-		if ( !is_null( $this->args['the_post_thumbnail'] ) )
+		if ( ! is_null( $this->args['the_post_thumbnail'] ) ) {
 			$this->args['featured'] = $this->args['the_post_thumbnail'];
+		}
 
 		// If 'image_scan' is set, overwrite 'scan'.
-		if ( !is_null( $this->args['image_scan'] ) )
+		if ( ! is_null( $this->args['image_scan'] ) ) {
 			$this->args['scan'] = $this->args['image_scan'];
+		}
 
 		// If 'default_image' is set, overwrite 'default'.
-		if ( !is_null( $this->args['default_image'] ) )
+		if ( ! is_null( $this->args['default_image'] ) ) {
 			$this->args['default'] = $this->args['default_image'];
+		}
 
 		// If 'link_to_post' is set, overwrite 'link'.
-		if ( !is_null( $this->args['link_to_post'] ) )
+		if ( ! is_null( $this->args['link_to_post'] ) ) {
 			$this->args['link'] = true === $this->args['link_to_post'] ? 'post' : false;
+		}
 
 		/* === End deprecated arguments. === */
 
 		// If $format is set to 'array', don't link to the post.
-		if ( 'array' == $this->args['format'] )
+		if ( 'array' == $this->args['format'] ) {
 			$this->args['link'] = false;
+		}
 
 		// Find images.
 		$this->find();
 
 		// Only used if $original_image is set.
-		if ( true === $this->args['split_content'] && !empty( $this->original_image ) )
+		if ( true === $this->args['split_content'] && ! empty( $this->original_image ) ) {
 			add_filter( 'the_content', array( $this, 'split_content' ), 9 );
+		}
 	}
 
 	/**
@@ -259,8 +268,9 @@ final class Get_The_Image {
 			$atts = wp_kses_hair( $image_html, array( 'http', 'https' ) );
 
 			// Loop through the image attributes and add them in key/value pairs for the return array.
-			foreach ( $atts as $att )
+			foreach ( $atts as $att ) {
 				$out[ $att['name'] ] = $att['value'];
+			}
 
 			// Return the array of attributes.
 			return $out;
@@ -268,19 +278,21 @@ final class Get_The_Image {
 
 		// Or, if $echo is set to false, return the formatted image.
 		elseif ( false === $this->args['echo'] ) {
-			return !empty( $image_html ) ? $this->args['before'] . $image_html . $this->args['after'] : $image_html;
+			return ! empty( $image_html ) ? $this->args['before'] . $image_html . $this->args['after'] : $image_html;
 		}
 
 		// If there is a $post_thumbnail_id, do the actions associated with get_the_post_thumbnail().
-		if ( isset( $this->image_args['post_thumbnail_id'] ) )
+		if ( isset( $this->image_args['post_thumbnail_id'] ) ) {
 			do_action( 'begin_fetch_post_thumbnail_html', $this->args['post_id'], $this->image_args['post_thumbnail_id'], $this->args['size'] );
+		}
 
 		// Display the image if we get to this point.
-		echo !empty( $image_html ) ? $this->args['before'] . $image_html . $this->args['after'] : $image_html;
+		echo ! empty( $image_html ) ? $this->args['before'] . $image_html . $this->args['after'] : $image_html;
 
 		// If there is a $post_thumbnail_id, do the actions associated with get_the_post_thumbnail().
-		if ( isset( $this->image_args['post_thumbnail_id'] ) )
+		if ( isset( $this->image_args['post_thumbnail_id'] ) ) {
 			do_action( 'end_fetch_post_thumbnail_html', $this->args['post_id'], $this->image_args['post_thumbnail_id'], $this->args['size'] );
+		}
 	}
 
 	/**
@@ -299,49 +311,54 @@ final class Get_The_Image {
 		// Check for a cached image.
 		$image_cache = wp_cache_get( $this->args['post_id'], 'get_the_image' );
 
-		if ( !is_array( $image_cache ) )
+		if ( ! is_array( $image_cache ) ) {
 			$image_cache = array();
+		}
 
 		// If there is no cached image, let's see if one exists.
-		if ( !isset( $image_cache[ $key ] ) || empty( $cache ) ) {
+		if ( ! isset( $image_cache[ $key ] ) || empty( $cache ) ) {
 
 			foreach ( $this->args['order'] as $method ) {
 
-				if ( !empty( $this->image ) || !empty( $this->image_args ) )
+				if ( ! empty( $this->image ) || ! empty( $this->image_args ) ) {
 					break;
+				}
 
-				if ( 'meta_key' === $method && !empty( $this->args['meta_key'] ) )
+				if ( 'meta_key' === $method && ! empty( $this->args['meta_key'] ) ) {
 					$this->get_meta_key_image();
 
-				elseif ( 'featured' === $method && true === $this->args['featured'] )
+				} elseif ( 'featured' === $method && true === $this->args['featured'] ) {
 					$this->get_featured_image();
 
-				elseif ( 'attachment' === $method && true === $this->args['attachment'] )
+				} elseif ( 'attachment' === $method && true === $this->args['attachment'] ) {
 					$this->get_attachment_image();
 
-				elseif ( 'scan' === $method && true === $this->args['scan'] )
+				} elseif ( 'scan' === $method && true === $this->args['scan'] ) {
 					$this->get_scan_image();
 
-				elseif ( 'scan_raw' === $method && true === $this->args['scan_raw'])
+				} elseif ( 'scan_raw' === $method && true === $this->args['scan_raw'] ) {
 					$this->get_scan_raw_image();
 
-				elseif ( 'callback' === $method && !is_null( $this->args['callback'] ) )
+				} elseif ( 'callback' === $method && ! is_null( $this->args['callback'] ) ) {
 					$this->get_callback_image();
 
-				elseif ( 'default' === $method && !empty( $this->args['default'] ) )
+				} elseif ( 'default' === $method && ! empty( $this->args['default'] ) ) {
 					$this->get_default_image();
+				}
 			}
 
 			// Format the image HTML.
-			if ( empty( $this->image ) && !empty( $this->image_args ) )
+			if ( empty( $this->image ) && ! empty( $this->image_args ) ) {
 				$this->format_image();
+			}
 
 			// If we have image HTML.
-			if ( !empty( $this->image ) ) {
+			if ( ! empty( $this->image ) ) {
 
 				// Save the image as metadata.
-				if ( !empty( $this->args['meta_key_save'] ) )
+				if ( ! empty( $this->args['meta_key_save'] ) ) {
 					$this->meta_key_save();
+				}
 
 				// Set the image cache for the specific post.
 				$image_cache[ $key ] = $this->image;
@@ -365,8 +382,9 @@ final class Get_The_Image {
 	public function get_meta_key_image() {
 
 		// If $meta_key is not an array.
-		if ( !is_array( $this->args['meta_key'] ) )
+		if ( ! is_array( $this->args['meta_key'] ) ) {
 			$this->args['meta_key'] = array( $this->args['meta_key'] );
+		}
 
 		// Loop through each of the given meta keys.
 		foreach ( $this->args['meta_key'] as $meta_key ) {
@@ -375,17 +393,20 @@ final class Get_The_Image {
 			$image = get_post_meta( $this->args['post_id'], $meta_key, true );
 
 			// If an image was found, break out of the loop.
-			if ( !empty( $image ) )
+			if ( ! empty( $image ) ) {
 				break;
+			}
 		}
 
 		// If there's an image and it is numeric, assume it is an attachment ID.
-		if ( !empty( $image ) && is_numeric( $image ) )
+		if ( ! empty( $image ) && is_numeric( $image ) ) {
 			$this->_get_image_attachment( absint( $image ) );
+		}
 
 		// Else, assume the image is a file URL.
-		elseif ( !empty( $image ) )
+		elseif ( ! empty( $image ) ) {
 			$this->image_args = array( 'src' => $image );
+		}
 	}
 
 	/**
@@ -401,8 +422,9 @@ final class Get_The_Image {
 		$post_thumbnail_id = get_post_thumbnail_id( $this->args['post_id'] );
 
 		// If no post image ID is found, return.
-		if ( empty( $post_thumbnail_id ) )
+		if ( empty( $post_thumbnail_id ) ) {
 			return;
+		}
 
 		// Apply filters on post_thumbnail_size because this is a default WP filter used with its image feature.
 		$this->args['size'] = apply_filters( 'post_thumbnail_size', $this->args['size'] );
@@ -436,24 +458,26 @@ final class Get_The_Image {
 			// Get attachments for the inputted $post_id.
 			$attachments = get_children(
 				array(
-					'numberposts'      => 1,
-					'post_parent'      => $this->args['post_id'],
-					'post_status'      => 'inherit',
-					'post_type'        => 'attachment',
-					'post_mime_type'   => 'image',
-					'order'            => 'ASC',
-					'orderby'          => 'menu_order ID',
-					'fields'           => 'ids'
+					'numberposts'    => 1,
+					'post_parent'    => $this->args['post_id'],
+					'post_status'    => 'inherit',
+					'post_type'      => 'attachment',
+					'post_mime_type' => 'image',
+					'order'          => 'ASC',
+					'orderby'        => 'menu_order ID',
+					'fields'         => 'ids',
 				)
 			);
 
 			// Check if any attachments were found.
-			if ( !empty( $attachments ) )
+			if ( ! empty( $attachments ) ) {
 				$attachment_id = array_shift( $attachments );
+			}
 		}
 
-		if ( !empty( $attachment_id ) )
+		if ( ! empty( $attachment_id ) ) {
 			$this->_get_image_attachment( $attachment_id );
+		}
 	}
 
 	/**
@@ -482,8 +506,9 @@ final class Get_The_Image {
 			foreach ( $image_ids as $image_id ) {
 				$this->_get_image_attachment( $image_id );
 
-				if ( !empty( $this->image_args ) )
+				if ( ! empty( $this->image_args ) ) {
 					return;
+				}
 			}
 		}
 
@@ -491,8 +516,9 @@ final class Get_The_Image {
 		preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i', $post_content, $matches );
 
 		// If there is a match for the image, set the image args.
-		if ( isset( $matches ) && !empty( $matches[1][0] ) )
+		if ( isset( $matches ) && ! empty( $matches[1][0] ) ) {
 			$this->image_args = array( 'src' => $matches[1][0] );
+		}
 	}
 
 	/**
@@ -524,7 +550,7 @@ final class Get_The_Image {
 		// Finds matches for shortcodes in the content.
 		preg_match_all( '/' . get_shortcode_regex() . '/s', $post_content, $matches, PREG_SET_ORDER );
 
-		if ( !empty( $matches ) ) {
+		if ( ! empty( $matches ) ) {
 
 			foreach ( $matches as $shortcode ) {
 
@@ -532,25 +558,27 @@ final class Get_The_Image {
 
 					preg_match( '#id=[\'"]attachment_([\d]*)[\'"]|class=[\'"].*?wp-image-([\d]*).*?[\'"]#i', $shortcode[0], $matches );
 
-					if ( !empty( $matches ) && isset( $matches[1] ) || isset( $matches[2] ) ) {
+					if ( ! empty( $matches ) && isset( $matches[1] ) || isset( $matches[2] ) ) {
 
-						$attachment_id = !empty( $matches[1] ) ? absint( $matches[1] ) : absint( $matches[2] );
+						$attachment_id = ! empty( $matches[1] ) ? absint( $matches[1] ) : absint( $matches[2] );
 
 						$image_src = wp_get_attachment_image_src( $attachment_id, $this->args['size'] );
 
-						if ( !empty( $image_src ) ) {
+						if ( ! empty( $image_src ) ) {
 
 							// Old-style captions.
-							if ( preg_match( '#.*?[\s]caption=[\'"](.+?)[\'"]#i', $shortcode[0], $caption_matches ) )
+							if ( preg_match( '#.*?[\s]caption=[\'"](.+?)[\'"]#i', $shortcode[0], $caption_matches ) ) {
 								$image_caption = trim( $caption_matches[1] );
+							}
 
 							$caption_args = array(
-								'width'   => $image_src[1],
-								'align'   => 'center'
+								'width' => $image_src[1],
+								'align' => 'center',
 							);
 
-							if ( !empty( $image_caption ) )
+							if ( ! empty( $image_caption ) ) {
 								$caption_args['caption'] = $image_caption;
+							}
 
 							// Set up the patterns for the 'src', 'width', and 'height' attributes.
 							$patterns = array(
@@ -572,8 +600,7 @@ final class Get_The_Image {
 							$this->image          = img_caption_shortcode( $caption_args, $shortcode_content );
 							$this->original_image = $shortcode[0];
 							return;
-						}
-						else {
+						} else {
 							$this->image          = do_shortcode( $shortcode[0] );
 							$this->original_image = $shortcode[0];
 							return;
@@ -584,8 +611,9 @@ final class Get_The_Image {
 		}
 
 		// Pull a raw HTML image + link if it exists.
-		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)#is', $post_content, $matches ) )
+		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)#is', $post_content, $matches ) ) {
 			$this->image = $this->original_image = $matches[0];
+		}
 	}
 
 	/**
@@ -633,8 +661,9 @@ final class Get_The_Image {
 		$caption = get_post_field( 'post_excerpt', $attachment_id );
 
 		// Save the attachment as the 'featured image'.
-		if ( true === $this->args['thumbnail_id_save'] )
+		if ( true === $this->args['thumbnail_id_save'] ) {
 			$this->thumbnail_id_save( $attachment_id );
+		}
 
 		// Set the image args.
 		$this->image_args = array(
@@ -643,7 +672,7 @@ final class Get_The_Image {
 			'width'   => $image[1],
 			'height'  => $image[2],
 			'alt'     => $alt,
-			'caption' => $caption
+			'caption' => $caption,
 		);
 
 		// Get the image srcset sizes.
@@ -662,8 +691,9 @@ final class Get_The_Image {
 	public function get_srcset( $attachment_id ) {
 
 		// Bail if no sizes set.
-		if ( empty( $this->args['srcset_sizes'] ) )
+		if ( empty( $this->args['srcset_sizes'] ) ) {
 			return;
+		}
 
 		foreach ( $this->args['srcset_sizes'] as $size => $descriptor ) {
 
@@ -671,8 +701,9 @@ final class Get_The_Image {
 
 			// Make sure image doesn't match the image used for the `src` attribute.
 			// This will happen often if the particular image size doesn't exist.
-			if ( $this->image_args['src'] !== $image[0] )
-				$this->srcsets[] = sprintf( "%s %s", esc_url( $image[0] ), esc_attr( $descriptor ) );
+			if ( $this->image_args['src'] !== $image[0] ) {
+				$this->srcsets[] = sprintf( '%s %s', esc_url( $image[0] ), esc_attr( $descriptor ) );
+			}
 		}
 	}
 
@@ -687,22 +718,25 @@ final class Get_The_Image {
 	public function format_image() {
 
 		// If there is no image URL, return false.
-		if ( empty( $this->image_args['src'] ) )
+		if ( empty( $this->image_args['src'] ) ) {
 			return;
+		}
 
 		// Check against min. width. If the image width is too small return.
-		if ( 0 < $this->args['min_width'] && isset( $this->image_args['width'] ) && $this->image_args['width'] < $this->args['min_width'] )
+		if ( 0 < $this->args['min_width'] && isset( $this->image_args['width'] ) && $this->image_args['width'] < $this->args['min_width'] ) {
 			return;
+		}
 
 		// Check against min. height. If the image height is too small return.
-		if ( 0 < $this->args['min_height'] && isset( $this->image_args['height'] ) && $this->image_args['height'] < $this->args['min_height'] )
+		if ( 0 < $this->args['min_height'] && isset( $this->image_args['height'] ) && $this->image_args['height'] < $this->args['min_height'] ) {
 			return;
+		}
 
 		// Empty classes array.
 		$classes = array();
 
 		// If there is alt text, set it.  Otherwise, default to the post title.
-		$image_alt = !empty( $this->image_args['alt'] ) ? $this->image_args['alt'] : get_post_field( 'post_title', $this->args['post_id'] );
+		$image_alt = ! empty( $this->image_args['alt'] ) ? $this->image_args['alt'] : get_post_field( 'post_title', $this->args['post_id'] );
 
 		// If there's a width/height for the image.
 		if ( isset( $this->image_args['width'] ) && isset( $this->image_args['height'] ) ) {
@@ -713,14 +747,15 @@ final class Get_The_Image {
 			// Set class based on the content width (defined by theme).
 			if ( 0 < $GLOBALS['content_width'] ) {
 
-				if ( $GLOBALS['content_width'] == $this->image_args['width'] )
+				if ( $GLOBALS['content_width'] == $this->image_args['width'] ) {
 					$classes[] = 'cw-equal';
 
-				elseif ( $GLOBALS['content_width'] <= $this->image_args['width'] )
+				} elseif ( $GLOBALS['content_width'] <= $this->image_args['width'] ) {
 					$classes[] = 'cw-lesser';
 
-				elseif ( $GLOBALS['content_width'] >= $this->image_args['width'] )
+				} elseif ( $GLOBALS['content_width'] >= $this->image_args['width'] ) {
 					$classes[] = 'cw-greater';
+				}
 			}
 
 			// If an explicit width/height is not set, use the info from the image.
@@ -731,24 +766,26 @@ final class Get_The_Image {
 		}
 
 		// If there is a width or height, set them as HMTL-ready attributes.
-		$width  = $this->args['width']  ? ' width="' .  esc_attr( $this->args['width']  ) . '"' : '';
+		$width  = $this->args['width'] ? ' width="' . esc_attr( $this->args['width'] ) . '"' : '';
 		$height = $this->args['height'] ? ' height="' . esc_attr( $this->args['height'] ) . '"' : '';
 
 		// srcset attribute
-		$srcset = !empty( $this->srcsets ) ? sprintf( ' srcset="%s"', esc_attr( join( ', ', $this->srcsets ) ) ) : '';
+		$srcset = ! empty( $this->srcsets ) ? sprintf( ' srcset="%s"', esc_attr( join( ', ', $this->srcsets ) ) ) : '';
 
 		// Add the meta key(s) to the classes array.
-		if ( !empty( $this->args['meta_key'] ) )
-			$classes = array_merge( $classes, (array)$this->args['meta_key'] );
+		if ( ! empty( $this->args['meta_key'] ) ) {
+			$classes = array_merge( $classes, (array) $this->args['meta_key'] );
+		}
 
 		// Add the $size to the class.
 		$classes[] = $this->args['size'];
 
 		// Get the custom image class.
-		if ( !empty( $this->args['image_class'] ) ) {
+		if ( ! empty( $this->args['image_class'] ) ) {
 
-			if ( !is_array( $this->args['image_class'] ) )
+			if ( ! is_array( $this->args['image_class'] ) ) {
 				$this->args['image_class'] = preg_split( '#\s+#', $this->args['image_class'] );
+			}
 
 			$classes = array_merge( $classes, $this->args['image_class'] );
 		}
@@ -765,16 +802,17 @@ final class Get_The_Image {
 		// If $link is set to true, link the image to its post.
 		if ( false !== $this->args['link'] ) {
 
-			if ( 'post' === $this->args['link'] || true === $this->args['link'] )
+			if ( 'post' === $this->args['link'] || true === $this->args['link'] ) {
 				$url = get_permalink( $this->args['post_id'] );
 
-			elseif ( 'file' === $this->args['link'] )
+			} elseif ( 'file' === $this->args['link'] ) {
 				$url = $this->image_args['src'];
 
-			elseif ( 'attachment' === $this->args['link'] && isset( $this->image_args['id'] ) )
+			} elseif ( 'attachment' === $this->args['link'] && isset( $this->image_args['id'] ) ) {
 				$url = get_permalink( $this->image_args['id'] );
+			}
 
-			if ( !empty( $url ) ) {
+			if ( ! empty( $url ) ) {
 
 				$link_class = $this->args['link_class'] ? sprintf( ' class="%s"', esc_attr( $this->args['link_class'] ) ) : '';
 
@@ -783,12 +821,20 @@ final class Get_The_Image {
 		}
 
 		// If there is a $post_thumbnail_id, apply the WP filters normally associated with get_the_post_thumbnail().
-		if ( !empty( $this->image_args['post_thumbnail_id'] ) )
+		if ( ! empty( $this->image_args['post_thumbnail_id'] ) ) {
 			$html = apply_filters( 'post_thumbnail_html', $html, $this->args['post_id'], $this->image_args['post_thumbnail_id'], $this->args['size'], '' );
+		}
 
 		// If we're showing a caption.
-		if ( true === $this->args['caption'] && !empty( $this->image_args['caption'] ) )
-			$html = img_caption_shortcode( array( 'caption' => $this->image_args['caption'], 'width' => $this->args['width'] ), $html );
+		if ( true === $this->args['caption'] && ! empty( $this->image_args['caption'] ) ) {
+			$html = img_caption_shortcode(
+				array(
+					'caption' => $this->image_args['caption'],
+					'width'   => $this->args['width'],
+				),
+				$html
+			);
+		}
 
 		$this->image = $html;
 	}
@@ -807,19 +853,22 @@ final class Get_The_Image {
 	public function meta_key_save() {
 
 		// If the $meta_key_save argument is empty or there is no image $url given, return.
-		if ( empty( $this->args['meta_key_save'] ) || empty( $this->image_args['src'] ) )
+		if ( empty( $this->args['meta_key_save'] ) || empty( $this->image_args['src'] ) ) {
 			return;
+		}
 
 		// Get the current value of the meta key.
 		$meta = get_post_meta( $this->args['post_id'], $this->args['meta_key_save'], true );
 
 		// If there is no value for the meta key, set a new value with the image $url.
-		if ( empty( $meta ) )
+		if ( empty( $meta ) ) {
 			add_post_meta( $this->args['post_id'], $this->args['meta_key_save'], $this->image_args['src'] );
+		}
 
 		// If the current value doesn't match the image $url, update it.
-		elseif ( $meta !== $this->image_args['src'] )
+		elseif ( $meta !== $this->image_args['src'] ) {
 			update_post_meta( $this->args['post_id'], $this->args['meta_key_save'], $this->image_args['src'], $meta );
+		}
 	}
 
 	/**
@@ -835,8 +884,9 @@ final class Get_The_Image {
 	public function thumbnail_id_save( $attachment_id ) {
 
 		// Save the attachment as the 'featured image'.
-		if ( true === $this->args['thumbnail_id_save'] )
+		if ( true === $this->args['thumbnail_id_save'] ) {
 			set_post_thumbnail( $this->args['post_id'], $attachment_id );
+		}
 	}
 
 	/**
@@ -849,7 +899,7 @@ final class Get_The_Image {
 	 */
 	public function sanitize_class( $classes ) {
 
-		$classes = array_map( 'strtolower',          $classes );
+		$classes = array_map( 'strtolower', $classes );
 		$classes = array_map( 'sanitize_html_class', $classes );
 
 		return array_unique( $classes );

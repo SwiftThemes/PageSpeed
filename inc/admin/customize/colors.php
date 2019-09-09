@@ -9,56 +9,73 @@
 add_action( 'customize_register', 'pagespeed_customize_colors', 600 );
 function pagespeed_customize_colors( $wp_customize ) {
 
-	$wp_customize->add_section( 'colors', array(
-		'title'    => __( 'Color Schemes', 'page-speed' ),
-		'priority' => 30,
-		'panel'    => 'theme_options'
-	) );
+	$wp_customize->add_section(
+		'colors',
+		array(
+			'title'    => __( 'Color Schemes', 'page-speed' ),
+			'priority' => 30,
+			'panel'    => 'theme_options',
+		)
+	);
 
+	$wp_customize->add_setting(
+		'color_scheme',
+		array(
+			'sanitize_callback' => 'helium_sanitize_choice_field',
+			'default'           => 'default',
+			'transport'         => 'postMessage',
 
-	$wp_customize->add_setting( 'color_scheme', array(
-		'sanitize_callback' => 'helium_sanitize_choice_field',
-		'default'           => 'default',
-		'transport'         => 'postMessage',
+		)
+	);
 
-	) );
+	$wp_customize->add_setting(
+		'override_color_scheme',
+		array(
+			'sanitize_callback' => 'helium_boolean',
+			'default'           => false,
+			'transport'         => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_setting( 'override_color_scheme', array(
-		'sanitize_callback' => 'helium_boolean',
-		'default'           => false,
-		'transport'         => 'postMessage',
-	) );
+	$wp_customize->add_setting(
+		'primary_color',
+		array(
+			'sanitize_callback' => 'sanitize_hex_color',
+			'default'           => '#007AFF',
+			'transport'         => 'postMessage',
 
+		)
+	);
 
-	$wp_customize->add_setting( 'primary_color', array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default'           => '#007AFF',
-		'transport'         => 'postMessage',
+	$wp_customize->add_setting(
+		'shades_from',
+		array(
+			'sanitize_callback' => 'absint',
+			'default'           => '211',
+			'transport'         => 'postMessage',
 
-	) );
+		)
+	);
 
-	$wp_customize->add_setting( 'shades_from', array(
-		'sanitize_callback' => 'absint',
-		'default'           => '211',
-		'transport'         => 'postMessage',
+	$wp_customize->add_setting(
+		'shade_saturation',
+		array(
+			'sanitize_callback' => 'absint',
+			'default'           => 8,
+			'transport'         => 'postMessage',
 
-	) );
+		)
+	);
 
+	$wp_customize->add_setting(
+		'invert_colors',
+		array(
+			'sanitize_callback' => 'helium_boolean',
+			'default'           => 0,
+			'transport'         => 'postMessage',
 
-	$wp_customize->add_setting( 'shade_saturation', array(
-		'sanitize_callback' => 'absint',
-		'default'           => 8,
-		'transport'         => 'postMessage',
-
-	) );
-
-	$wp_customize->add_setting( 'invert_colors', array(
-		'sanitize_callback' => 'helium_boolean',
-		'default'           => 0,
-		'transport'         => 'postMessage',
-
-	) );
-
+		)
+	);
 
 	include_once( HELIUM_THEME_ADMIN . 'color-schemes.php' );
 
@@ -70,25 +87,31 @@ function pagespeed_customize_colors( $wp_customize ) {
 				'label'    => esc_html__( 'Color Schemes', 'page-speed' ),
 				'section'  => 'colors',
 				'priority' => 8,
-				'choices'  => pagespeed_get_color_scheme_choices()
+				'choices'  => pagespeed_get_color_scheme_choices(),
 			)
 		)
 	);
 
-	$wp_customize->add_control( 'invert_colors', array(
-		'label'   => __( 'Invert light and dark colors', 'page-speed' ),
-		'section' => 'colors',
-		'type'    => 'checkbox',
+	$wp_customize->add_control(
+		'invert_colors',
+		array(
+			'label'   => __( 'Invert light and dark colors', 'page-speed' ),
+			'section' => 'colors',
+			'type'    => 'checkbox',
 
-	) );
+		)
+	);
 
-	$wp_customize->add_control( 'override_color_scheme', array(
-		'label'       => __( 'Override shades generated from the color scheme', 'page-speed' ),
-		'description' => __( 'Check this if you want to use the below three options.', 'page-speed' ),
-		'section'     => 'colors',
-		'type'        => 'checkbox',
+	$wp_customize->add_control(
+		'override_color_scheme',
+		array(
+			'label'       => __( 'Override shades generated from the color scheme', 'page-speed' ),
+			'description' => __( 'Check this if you want to use the below three options.', 'page-speed' ),
+			'section'     => 'colors',
+			'type'        => 'checkbox',
 
-	) );
+		)
+	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
@@ -99,9 +122,9 @@ function pagespeed_customize_colors( $wp_customize ) {
 				'description' => __( 'Used for buttons and links', 'page-speed' ),
 				'section'     => 'colors',
 				'settings'    => 'primary_color',
-			) )
+			)
+		)
 	);
-
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
@@ -113,17 +136,19 @@ function pagespeed_customize_colors( $wp_customize ) {
 				'description' => __( 'Used to generate light and dark colors used in the theme', 'page-speed' ),
 				'section'     => 'colors',
 				'settings'    => 'shades_from',
-			) )
+			)
+		)
 	);
 
+	$wp_customize->add_control(
+		'shade_saturation',
+		array(
+			'label'       => __( 'Amount of base color in the shades', 'page-speed' ),
+			'description' => __( 'Higher the number more color the lights and darks have.', 'page-speed' ),
+			'section'     => 'colors',
+			'type'        => 'number',
 
-	$wp_customize->add_control( 'shade_saturation', array(
-		'label'       => __( 'Amount of base color in the shades', 'page-speed' ),
-		'description' => __( 'Higher the number more color the lights and darks have.', 'page-speed' ),
-		'section'     => 'colors',
-		'type'        => 'number',
-
-	) );
-
+		)
+	);
 
 }

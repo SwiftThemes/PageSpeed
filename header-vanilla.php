@@ -10,23 +10,23 @@
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="profile" href="http://gmpg.org/xfn/11">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
 
 		<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-            <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+			<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php endif; ?>
 		<?php wp_head(); ?>
-    </head>
+	</head>
 <body <?php body_class(); ?>>
 <?php do_action( 'pagespeed_after_body' ); ?>
 
 <div id="wrapper" class="cf">
-    <div id="content-wrapper">
-    <div id="content" class="cf hybrid">
+	<div id="content-wrapper">
+	<div id="content" class="cf hybrid">
 <?php do_action( 'pagespeed_content_start' ); ?>
-    <div id="left">
-        <main id="main" role="main">
-            <div class="inner">
+	<div id="left">
+		<main id="main" role="main">
+			<div class="inner">
 <?php do_action( 'pagespeed_main_start' ); ?>

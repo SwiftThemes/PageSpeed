@@ -10,18 +10,19 @@ get_header();
 ?>
 <?php if ( have_posts() ) : ?>
 <div id="articles">
-    <div class="gutter-sizer"></div>
+	<div class="gutter-sizer"></div>
 
 	<?php
 	// Start the loop.
-	while ( have_posts() ) : the_post();
+	while ( have_posts() ) :
+		the_post();
 
 		/*
 		 * Include the Post-Format-specific template for the content.
 		 * If you want to override this in a child theme, then include a file
 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 		 */
-//		get_template_part( 'template-parts/content', get_post_format() );
+		//      get_template_part( 'template-parts/content', get_post_format() );
 		get_template_part( 'template-parts/content-search' );
 
 		// End the loop.
@@ -29,22 +30,23 @@ get_header();
 	echo '</div><!--#articles-->';
 
 	// Previous/next page navigation.
-	the_posts_pagination( array(
-		'prev_text'          => __( 'Previous page', 'page-speed' ),
-		'mid_size'           => 2,
-		'next_text'          => __( 'Next page', 'page-speed' ),
-		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
-	) );
+	the_posts_pagination(
+		array(
+			'prev_text'          => __( 'Previous page', 'page-speed' ),
+			'mid_size'           => 2,
+			'next_text'          => __( 'Next page', 'page-speed' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
+		)
+	);
 	echo '<div class="clear"></div>';
 
-// If no content, include the "No posts found" template.
-else :
-	get_template_part( 'template-parts/content', 'none' );
+	// If no content, include the "No posts found" template.
+	else :
+		get_template_part( 'template-parts/content', 'none' );
 
 endif;
-?>
+	?>
 <?php get_sidebar(); ?>
 
 </div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>
-

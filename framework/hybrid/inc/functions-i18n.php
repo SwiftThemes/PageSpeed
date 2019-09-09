@@ -41,16 +41,18 @@ function hybrid_load_locale_functions() {
 	$locale = strtolower( str_replace( '_', '-', get_locale() ) );
 
 	// Define locale functions files.
-	$child_func = HYBRID_CHILD  . hybrid_get_child_domain_path()  . "/{$locale}.php";
+	$child_func = HYBRID_CHILD . hybrid_get_child_domain_path() . "/{$locale}.php";
 	$theme_func = HYBRID_PARENT . hybrid_get_parent_domain_path() . "/{$locale}.php";
 
 	// If file exists in child theme.
-	if ( is_child_theme() && file_exists( $child_func ) )
+	if ( is_child_theme() && file_exists( $child_func ) ) {
 		require_once( $child_func );
+	}
 
 	// If file exists in parent theme.
-	if ( file_exists( $theme_func ) )
+	if ( file_exists( $theme_func ) ) {
 		require_once( $theme_func );
+	}
 }
 
 /**
@@ -69,8 +71,9 @@ function hybrid_load_textdomains() {
 	load_theme_textdomain( hybrid_get_parent_textdomain(), HYBRID_PARENT . hybrid_get_parent_domain_path() );
 
 	// Load child theme textdomain.
-	if ( is_child_theme() )
+	if ( is_child_theme() ) {
 		load_child_theme_textdomain( hybrid_get_child_textdomain(), HYBRID_CHILD . hybrid_get_child_domain_path() );
+	}
 
 	// Load the framework textdomain.
 	hybrid_load_framework_textdomain();
@@ -100,8 +103,9 @@ function hybrid_override_load_textdomain( $override, $domain, $mofile ) {
 		$theme_textdomain = hybrid_get_parent_textdomain();
 
 		// If the theme's textdomain is loaded, use its translations instead.
-		if ( $theme_textdomain && isset( $l10n[ $theme_textdomain ] ) )
+		if ( $theme_textdomain && isset( $l10n[ $theme_textdomain ] ) ) {
 			$l10n[ $domain ] = $l10n[ $theme_textdomain ];
+		}
 
 		// Always override.  We only want the theme to handle translations.
 		$override = true;
@@ -168,8 +172,9 @@ function hybrid_get_child_textdomain() {
 	global $hybrid;
 
 	// If a child theme isn't active, return an empty string.
-	if ( ! is_child_theme() )
+	if ( ! is_child_theme() ) {
 		return '';
+	}
 
 	// If the global textdomain isn't set, define it. Plugin/theme authors may also define a custom textdomain.
 	if ( empty( $hybrid->child_textdomain ) ) {
@@ -207,8 +212,9 @@ function hybrid_get_parent_domain_path() {
  */
 function hybrid_get_child_domain_path() {
 
-	if ( ! is_child_theme() )
+	if ( ! is_child_theme() ) {
 		return '';
+	}
 
 	$theme = wp_get_theme();
 
@@ -259,8 +265,9 @@ function hybrid_load_textdomain_mofile( $mofile, $domain ) {
  */
 function hybrid_get_language( $locale = '' ) {
 
-	if ( ! $locale )
+	if ( ! $locale ) {
 		$locale = get_locale();
+	}
 
 	return sanitize_key( preg_replace( '/(.*?)_.*?$/i', '$1', $locale ) );
 }
@@ -276,8 +283,9 @@ function hybrid_get_language( $locale = '' ) {
  */
 function hybrid_get_region( $locale = '' ) {
 
-	if ( ! $locale )
+	if ( ! $locale ) {
 		$locale = get_locale();
+	}
 
 	return sanitize_key( preg_replace( '/.*?_(.*?)$/i', '$1', $locale ) );
 }

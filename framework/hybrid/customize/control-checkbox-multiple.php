@@ -86,5 +86,6 @@ class Hybrid_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
 				</li>
 			<# } ) #>
 		</ul>
-	<?php }
+		<?php
+	}
 }

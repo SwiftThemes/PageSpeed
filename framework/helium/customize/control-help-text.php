@@ -1,20 +1,20 @@
 <?php
 /*
-    Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
+	Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2,
-    as published by the Free Software Foundation.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License version 2,
+	as published by the Free Software Foundation.
 
-    You may NOT assume that you can use any other version of the GPL.
+	You may NOT assume that you can use any other version of the GPL.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-    The license for this software can likely be found here:
-    http://www.gnu.org/licenses/gpl-2.0.html
+	The license for this software can likely be found here:
+	http://www.gnu.org/licenses/gpl-2.0.html
  */
 /**
  * Created by Satish Gandham.
@@ -30,7 +30,7 @@ function helium_help_text_control_register() {
 
 		// Whitelist content parameter
 		public $content = '';
-		public $type = '';
+		public $type    = '';
 
 		/**
 		 * Render the control's content.
@@ -45,7 +45,7 @@ function helium_help_text_control_register() {
 				echo '<span class="customize-control-title">' . esc_html( $this->label ) . '</span>';
 			}
 			if ( isset( $this->content ) ) {
-				echo wp_kses_post("<div class='box {$this->type}'>{$this->content}</div>");
+				echo wp_kses_post( "<div class='box {$this->type}'>{$this->content}</div>" );
 			}
 			if ( isset( $this->description ) ) {
 				echo '<span class="description customize-control-description">' . wp_kses_post( $this->description ) . '</span>';

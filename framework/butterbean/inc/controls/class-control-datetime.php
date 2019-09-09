@@ -78,7 +78,7 @@ class ButterBean_Control_Datetime extends ButterBean_Control {
 			'value' => esc_attr( $year ),
 			'label' => esc_html__( 'Year', 'butterbean' ),
 			'name'  => esc_attr( "{$field_name}_year" ),
-			'attr'  => sprintf( 'placeholder="%s" size="4" maxlength="4" autocomplete="off"', esc_attr( date_i18n( 'Y' ) ) )
+			'attr'  => sprintf( 'placeholder="%s" size="4" maxlength="4" autocomplete="off"', esc_attr( date_i18n( 'Y' ) ) ),
 		);
 
 		// Month
@@ -89,19 +89,19 @@ class ButterBean_Control_Datetime extends ButterBean_Control {
 			'choices' => array(
 				array(
 					'num'   => '',
-					'label' => ''
-				)
-			)
+					'label' => '',
+				),
+			),
 		);
 
-		for ( $i = 1; $i < 13; $i = $i +1 ) {
+		for ( $i = 1; $i < 13; $i = $i + 1 ) {
 
 			$monthnum  = zeroise( $i, 2 );
 			$monthtext = $wp_locale->get_month_abbrev( $wp_locale->get_month( $i ) );
 
 			$this->json['month']['choices'][] = array(
 				'num'   => $monthnum,
-				'label' => $monthtext
+				'label' => $monthtext,
 			);
 		}
 
@@ -110,7 +110,7 @@ class ButterBean_Control_Datetime extends ButterBean_Control {
 			'value' => esc_attr( $day ),
 			'name'  => esc_attr( "{$field_name}_day" ),
 			'label' => esc_html__( 'Day', 'butterbean' ),
-			'attr'  => sprintf( 'placeholder="%s" size="2" maxlength="2" autocomplete="off"', esc_attr( date_i18n( 'd' ) ) )
+			'attr'  => sprintf( 'placeholder="%s" size="2" maxlength="2" autocomplete="off"', esc_attr( date_i18n( 'd' ) ) ),
 		);
 
 		// Hour
@@ -118,7 +118,7 @@ class ButterBean_Control_Datetime extends ButterBean_Control {
 			'value' => esc_attr( $hour ),
 			'name'  => esc_attr( "{$field_name}_hour" ),
 			'label' => esc_html__( 'Hour', 'butterbean' ),
-			'attr'  => 'placeholder="00" size="2" maxlength="2" autocomplete="off"'
+			'attr'  => 'placeholder="00" size="2" maxlength="2" autocomplete="off"',
 		);
 
 		// Minute
@@ -126,7 +126,7 @@ class ButterBean_Control_Datetime extends ButterBean_Control {
 			'value' => esc_attr( $minute ),
 			'name'  => esc_attr( "{$field_name}_minute" ),
 			'label' => esc_html__( 'Minute', 'butterbean' ),
-			'attr'  => 'placeholder="00" size="2" maxlength="2" autocomplete="off"'
+			'attr'  => 'placeholder="00" size="2" maxlength="2" autocomplete="off"',
 		);
 
 		// Second
@@ -134,7 +134,7 @@ class ButterBean_Control_Datetime extends ButterBean_Control {
 			'value' => esc_attr( $second ),
 			'name'  => esc_attr( "{$field_name}_second" ),
 			'label' => esc_html__( 'Second', 'butterbean' ),
-			'attr'  => 'placeholder="00" size="2" maxlength="2" autocomplete="off"'
+			'attr'  => 'placeholder="00" size="2" maxlength="2" autocomplete="off"',
 		);
 	}
 }

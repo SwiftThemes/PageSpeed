@@ -1,5 +1,5 @@
 <?php
-GLOBAL $page_speed_theme_options;
+global $page_speed_theme_options;
 $page_speed_theme_options = array();
 //$page_speed_theme_options[] = array(
 //	'display_id' => 'sidebars',
@@ -36,35 +36,35 @@ $page_speed_theme_options = array();
 $page_speed_theme_options[] = array(
 	'id'       => 'enable_non_render_blocking_css',
 	'name'     => 'Separate above fold CSS',
-	'desc'     => __( 'Enable this option to eliminate render blocking CSS.<br />Please read <a href="https://swiftthemes.com/get-100-page-speed-score-mobile-desktops/"><strong>PageSpeed Optimization Guide</strong></a> for info to take advantage of this option.', 'page-speed'),
+	'desc'     => __( 'Enable this option to eliminate render blocking CSS.<br />Please read <a href="https://swiftthemes.com/get-100-page-speed-score-mobile-desktops/"><strong>PageSpeed Optimization Guide</strong></a> for info to take advantage of this option.', 'page-speed' ),
 	'type'     => 'checkbox',
 	'default'  => false,
-	'sanitize' => 'boolean'
+	'sanitize' => 'boolean',
 );
 
 $page_speed_theme_options[] = array(
 	'id'       => 'different_navigation_for_mobiles',
 	'name'     => 'Different navigation menu for mobiles',
-	'desc'     => __( 'Enable this option if you want to have different menus on mobiles', 'page-speed'),
+	'desc'     => __( 'Enable this option if you want to have different menus on mobiles', 'page-speed' ),
 	'type'     => 'checkbox',
 	'default'  => false,
-	'sanitize' => 'boolean'
+	'sanitize' => 'boolean',
 );
 
 $page_speed_theme_options[] = array(
 	'id'       => 'different_navigation_for_tablets',
 	'name'     => 'Different navigation menu for tablets',
-	'desc'     => __( 'Enable this option if you want to have different menus on tablets', 'page-speed'),
+	'desc'     => __( 'Enable this option if you want to have different menus on tablets', 'page-speed' ),
 	'type'     => 'checkbox',
 	'default'  => false,
-	'sanitize' => 'boolean'
+	'sanitize' => 'boolean',
 );
 
 $page_speed_theme_options[] = array(
 	'id'       => 'lazy_load_images',
 	'name'     => 'Lazy load image',
-	'desc'     => __( 'Defers loading of images that are not visible on screen saving you bandwidth and makes your site appear faster', 'page-speed'),
+	'desc'     => __( 'Defers loading of images that are not visible on screen saving you bandwidth and makes your site appear faster', 'page-speed' ),
 	'type'     => 'checkbox',
 	'default'  => false,
-	'sanitize' => 'boolean'
+	'sanitize' => 'boolean',
 );

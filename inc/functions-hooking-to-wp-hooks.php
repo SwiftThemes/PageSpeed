@@ -12,12 +12,11 @@ function pagespeed_body_classes( $classes ) {
 		$classes[] = 'masonry';
 	}
 
-
 	if ( get_theme_mod( 'is_sticky_nav' ) ) {
 		$classes[] = 'sticky-nav';
 	}
 
-	if(is_single() && 'single_column'===get_post_meta( get_the_ID(), 'single_post_layout', true)){
+	if ( is_single() && 'single_column' === get_post_meta( get_the_ID(), 'single_post_layout', true ) ) {
 				$classes[] = 'single-column-post';
 
 	}
@@ -25,4 +24,4 @@ function pagespeed_body_classes( $classes ) {
 	return $classes;
 }
 
-?>
+

@@ -42,14 +42,16 @@ $second = '<label>
 
 <# if ( data.show_time ) { #>
 
-	<?php // Translators: 1: month, 2: day, 3: year, 4: hour, 5: minute, 6: second.
-	      printf( __( '%1$s %2$s, %3$s @ %4$s:%5$s:%6$s', 'butterbean' ), $month, $day, $year, $hour, $minute, $second );
+	<?php
+	// Translators: 1: month, 2: day, 3: year, 4: hour, 5: minute, 6: second.
+		  printf( __( '%1$s %2$s, %3$s @ %4$s:%5$s:%6$s', 'butterbean' ), $month, $day, $year, $hour, $minute, $second );
 	?>
 
 <# } else { #>
 
-	<?php // Translators: 1: month, 2: day, 3: year.
-              printf( __( '%1$s %2$s, %3$s', 'butterbean' ), $month, $day, $year );
+	<?php
+	// Translators: 1: month, 2: day, 3: year.
+			  printf( __( '%1$s %2$s, %3$s', 'butterbean' ), $month, $day, $year );
 	?>
 
 <# } #>

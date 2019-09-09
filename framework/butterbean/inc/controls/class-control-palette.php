@@ -1,6 +1,6 @@
 <?php
 /**
- * Color palette control class.  The purpose of this class is to give users a choice 
+ * Color palette control class.  The purpose of this class is to give users a choice
  * of color palettes.  The actual data that is stored is a key of your choosing.
  *
  * @package    ButterBean

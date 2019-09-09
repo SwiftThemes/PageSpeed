@@ -15,7 +15,7 @@ add_action( 'wp_enqueue_scripts', 'hybrid_register_styles', 0 );
 
 # Active theme style filters.
 add_filter( 'stylesheet_uri', 'hybrid_min_stylesheet_uri', 5, 2 );
-add_filter( 'stylesheet_uri', 'hybrid_style_filter',       15   );
+add_filter( 'stylesheet_uri', 'hybrid_style_filter', 15 );
 
 # Filters the WP locale stylesheet.
 add_filter( 'locale_stylesheet_uri', 'hybrid_locale_stylesheet_uri', 5 );
@@ -40,16 +40,17 @@ function hybrid_register_styles() {
 
 	// Register styles for use by themes.
 	wp_register_style( 'hybrid-one-five', HYBRID_CSS . "one-five{$suffix}.css" );
-	wp_register_style( 'hybrid-gallery',  HYBRID_CSS . "gallery{$suffix}.css"  );
-	wp_register_style( 'hybrid-parent',   hybrid_get_parent_stylesheet_uri()   );
-	wp_register_style( 'hybrid-style',    get_stylesheet_uri()                 );
+	wp_register_style( 'hybrid-gallery', HYBRID_CSS . "gallery{$suffix}.css" );
+	wp_register_style( 'hybrid-parent', hybrid_get_parent_stylesheet_uri() );
+	wp_register_style( 'hybrid-style', get_stylesheet_uri() );
 
 	// Use the RTL style for the hybrid-one-five style.
 	$wp_styles->add_data( 'hybrid-one-five', 'rtl', 'replace' );
 
 	// Adds the suffix for the hybrid-one-five RTL style.
-	if ( $suffix )
+	if ( $suffix ) {
 		$wp_styles->add_data( 'hybrid-one-five', 'suffix', $suffix );
+	}
 }
 
 /**
@@ -69,8 +70,9 @@ function hybrid_get_parent_stylesheet_uri() {
 	$stylesheet_uri = HYBRID_PARENT_URI . 'style.css';
 
 	// If a '.min' version of the parent theme stylesheet exists, use it.
-	if ( $suffix && file_exists( HYBRID_PARENT . "style{$suffix}.css" ) )
+	if ( $suffix && file_exists( HYBRID_PARENT . "style{$suffix}.css" ) ) {
 		$stylesheet_uri = HYBRID_PARENT_URI . "style{$suffix}.css";
+	}
 
 	return apply_filters( 'hybrid_get_parent_stylesheet_uri', $stylesheet_uri );
 }
@@ -101,8 +103,9 @@ function hybrid_min_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 		$stylesheet = str_replace( '.css', "{$suffix}.css", $stylesheet );
 
 		// If the stylesheet exists in the stylesheet directory, set the stylesheet URI to the dev stylesheet.
-		if ( file_exists( HYBRID_CHILD . $stylesheet ) )
+		if ( file_exists( HYBRID_CHILD . $stylesheet ) ) {
 			$stylesheet_uri = esc_url( trailingslashit( $stylesheet_dir_uri ) . $stylesheet );
+		}
 	}
 
 	// Return the theme stylesheet.
@@ -147,11 +150,13 @@ function hybrid_get_locale_style() {
 
 	$styles[] = "css/{$locale}.css";
 
-	if ( $region !== $locale )
+	if ( $region !== $locale ) {
 		$styles[] = "css/{$region}.css";
+	}
 
-	if ( $lang !== $locale )
+	if ( $lang !== $locale ) {
 		$styles[] = "css/{$lang}.css";
+	}
 
 	$styles[] = is_rtl() ? 'css/rtl.css' : 'css/ltr.css';
 
@@ -173,8 +178,9 @@ function hybrid_style_filter( $stylesheet_uri ) {
 
 		$style = hybrid_get_post_style( get_queried_object_id() );
 
-		if ( $style && $style_uri = hybrid_locate_theme_file( array( $style ) ) )
+		if ( $style && $style_uri = hybrid_locate_theme_file( array( $style ) ) ) {
 			$stylesheet_uri = $style_uri;
+		}
 	}
 
 	return $stylesheet_uri;
@@ -227,8 +233,9 @@ function hybrid_delete_post_style( $post_id ) {
  */
 function hybrid_has_post_style( $style, $post_id = '' ) {
 
-	if ( ! $post_id )
+	if ( ! $post_id ) {
 		$post_id = get_the_ID();
+	}
 
 	return $style === hybrid_get_post_style( $post_id ) ? true : false;
 }

@@ -4,7 +4,8 @@ get_header();
 
 
 // Start the loop.
-while ( have_posts() ) : the_post();
+while ( have_posts() ) :
+	the_post();
 
 	/*
 	 * Include the Post-Format-specific template for the content.
@@ -22,9 +23,9 @@ endwhile;
 
 // If comments are open or we have at least one comment, load up the comment template.
 
-if ( get_theme_mod( 'dedicated_sidebars_on_default_page_template', false ) ):
+if ( get_theme_mod( 'dedicated_sidebars_on_default_page_template', false ) ) :
 	get_sidebar( 'page' );
-else:
+else :
 	get_sidebar();
 endif;
 
@@ -32,4 +33,3 @@ endif;
 
 </div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>
-

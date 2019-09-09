@@ -41,10 +41,11 @@ class ButterBean_Control_Select_Group extends ButterBean_Control {
 
 		foreach ( $this->choices as $choice => $maybe_group ) {
 
-			if ( is_array( $maybe_group ) )
+			if ( is_array( $maybe_group ) ) {
 				$group[ $choice ] = $maybe_group;
-			else
+			} else {
 				$choices[ $choice ] = $maybe_group;
+			}
 		}
 
 		$this->json['choices'] = $choices;

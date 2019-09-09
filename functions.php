@@ -1,20 +1,20 @@
 <?php
 /*
-    Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
+	Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2,
-    as published by the Free Software Foundation.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License version 2,
+	as published by the Free Software Foundation.
 
-    You may NOT assume that you can use any other version of the GPL.
+	You may NOT assume that you can use any other version of the GPL.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-    The license for this software can likely be found here:
-    http://www.gnu.org/licenses/gpl-2.0.html
+	The license for this software can likely be found here:
+	http://www.gnu.org/licenses/gpl-2.0.html
  */
 /**
  * Created by Satish Gandham.
@@ -35,7 +35,7 @@ define( 'HELIUM_ADMIN', trailingslashit( HELIUM_DIR ) . 'admin/' );
 define( 'HELIUM_URI', trailingslashit( HELIUM_THEME_URI . 'framework/helium' ) );
 
 
-add_theme_support('woocommerce');
+add_theme_support( 'woocommerce' );
 
 
 
@@ -56,7 +56,7 @@ new PageSpeed();
 
 function butter_bean_load() {
 
-	require_once( trailingslashit(get_template_directory()).'framework/butterbean/butterbean.php' );
+	require_once( trailingslashit( get_template_directory() ) . 'framework/butterbean/butterbean.php' );
 }
 add_action( 'plugins_loaded', 'butter_bean_load' );
 
@@ -66,7 +66,7 @@ add_theme_support( 'customize-selective-refresh-widgets' );
 
 
 
-function pagespeed_layouts_folder(){
+function pagespeed_layouts_folder() {
 	$layout_folders[] = get_template_directory() . '/so-layouts';
 	return $layout_folders;
 

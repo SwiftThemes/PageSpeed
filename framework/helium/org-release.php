@@ -19,7 +19,7 @@ function helium_the_post_thumbnail( $input ) {
 add_filter( 'post_thumbnail_html', 'helium_the_post_thumbnail' );
 
 function helium_get_prevdem_img_src() {
-	GLOBAL $helium_images;
+	global $helium_images;
 	if ( ! $helium_images ) {
 		$helium_images = range( 1, 12 );
 		shuffle( $helium_images );

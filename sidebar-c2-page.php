@@ -1,22 +1,22 @@
 <aside id="sb2" class="sb-container">
-    <div class="inner">
+	<div class="inner">
 		<?php
 		if ( is_active_sidebar( 'right-page' ) ) :
 			?>
-            <div id="" class="sb">
+			<div id="" class="sb">
 				<?php dynamic_sidebar( 'right-page' ); ?>
-            </div>
+			</div>
 			<?php
 		endif;
 		?>
 		<?php
 		if ( is_active_sidebar( 'right-sticky-page' ) ) :
 			?>
-            <div id="sticky-sb2" class="sb">
+			<div id="sticky-sb2" class="sb">
 				<?php dynamic_sidebar( 'right-sticky-page' ); ?>
-            </div>
+			</div>
 			<?php
 		endif;
 		?>
-    </div>
+	</div>
 </aside>

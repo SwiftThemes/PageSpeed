@@ -49,7 +49,11 @@ class Hybrid_Customize_Control_Dropdown_Terms extends WP_Customize_Control {
 		// Allow devs to pass in custom arguments.
 		$args = wp_parse_args(
 			$this->args,
-			array( 'hierarchical' => true, 'show_option_none'  => ' ', 'option_none_value' => '0' )
+			array(
+				'hierarchical'      => true,
+				'show_option_none'  => ' ',
+				'option_none_value' => '0',
+			)
 		);
 
 		// Overwrite specific arguments.
@@ -70,5 +74,6 @@ class Hybrid_Customize_Control_Dropdown_Terms extends WP_Customize_Control {
 			<?php echo str_replace( '<select', '<select ' . $this->get_link(), wp_dropdown_categories( $args ) ); ?>
 
 		</label>
-	<?php }
+		<?php
+	}
 }

@@ -85,13 +85,22 @@ class ButterBean_Control_Parent extends ButterBean_Control {
 				'post_parent'    => 0,
 				'orderby'        => 'title',
 				'order'          => 'ASC',
-				'fields'         => array( 'ID', 'post_title' )
+				'fields'         => array( 'ID', 'post_title' ),
 			)
 		);
 
-		$this->json['choices'] = array( array( 'value' => 0, 'label' => '' ) );
+		$this->json['choices'] = array(
+			array(
+				'value' => 0,
+				'label' => '',
+			),
+		);
 
-		foreach ( $posts as $post )
-			$this->json['choices'][] = array( 'value' => $post->ID, 'label' => $post->post_title );
+		foreach ( $posts as $post ) {
+			$this->json['choices'][] = array(
+				'value' => $post->ID,
+				'label' => $post->post_title,
+			);
+		}
 	}
 }

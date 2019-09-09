@@ -43,6 +43,7 @@ function hybrid_register_scripts() {
 function hybrid_enqueue_scripts() {
 
 	// Load the comment reply script on singular posts with open comments if threaded comments are supported.
-	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() )
+	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
 }

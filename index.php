@@ -1,21 +1,21 @@
 <?php
 
 /*
-    Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
+	Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2,
-    as published by the Free Software Foundation.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License version 2,
+	as published by the Free Software Foundation.
 
-    You may NOT assume that you can use any other version of the GPL.
+	You may NOT assume that you can use any other version of the GPL.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-    The license for this software can likely be found here:
-    http://www.gnu.org/licenses/gpl-2.0.html
+	The license for this software can likely be found here:
+	http://www.gnu.org/licenses/gpl-2.0.html
  */
 /**
  * The main template file
@@ -35,11 +35,12 @@ get_header();
 ?>
 <?php if ( have_posts() ) : ?>
 <div id="articles">
-    <div class="gutter-sizer"></div>
+	<div class="gutter-sizer"></div>
 
 	<?php
 	// Start the loop.
-	while ( have_posts() ) : the_post();
+	while ( have_posts() ) :
+		the_post();
 
 
 		get_template_part( 'template-parts/content' );
@@ -49,12 +50,14 @@ get_header();
 
 	echo '</div>';
 	// Previous/next page navigation.
-	the_posts_pagination( array(
-		'prev_text'          => __( 'Previous page', 'page-speed' ),
-		'mid_size'           => 2,
-		'next_text'          => __( 'Next page', 'page-speed' ),
-		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
-	) );
+	the_posts_pagination(
+		array(
+			'prev_text'          => __( 'Previous page', 'page-speed' ),
+			'mid_size'           => 2,
+			'next_text'          => __( 'Next page', 'page-speed' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'page-speed' ) . ' </span>',
+		)
+	);
 	echo '<div class="clear"></div>';
 
 	// If no content, include the "No posts found" template.
@@ -74,4 +77,3 @@ get_header();
 
 </div></div><!-- #content -->
 <?php get_footer(); ?>
-

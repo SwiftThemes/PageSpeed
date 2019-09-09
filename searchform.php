@@ -18,8 +18,8 @@
 				class=""><?php echo _x( 'Search', 'submit button', 'page-speed' ); ?></span></button>
 		<div class="input">
 		<input type="search" class="search-field"
-		       placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'page-speed' ); ?>"
-		       value="<?php echo get_search_query(); ?>" name="s"/>
+			   placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'page-speed' ); ?>"
+			   value="<?php echo get_search_query(); ?>" name="s"/>
 		</div>
 	</form>
 </div>

@@ -58,25 +58,28 @@ $pagespeed_selective_refreshables = array(
 
 add_action( 'customize_register', 'helium_refresh_styles', 9000 );
 function helium_refresh_styles( $wp_customize ) {
-	$wp_customize->selective_refresh->add_partial( 'refresh_styles', array(
-		'selector'            => '#page-speed-inline-styles',
-		'type'                => 'refresh_styles',
-		'settings'            => helium_get_values_requiring_css_refresh( $wp_customize ),
-		'container_inclusive' => false,
-		'render_callback'     => 'pagespeed_put_css_in_head',
-		'fallback_refresh'    => false,
-	) );
+	$wp_customize->selective_refresh->add_partial(
+		'refresh_styles',
+		array(
+			'selector'            => '#page-speed-inline-styles',
+			'type'                => 'refresh_styles',
+			'settings'            => helium_get_values_requiring_css_refresh( $wp_customize ),
+			'container_inclusive' => false,
+			'render_callback'     => 'pagespeed_put_css_in_head',
+			'fallback_refresh'    => false,
+		)
+	);
 }
 
 
 function helium_get_values_requiring_css_refresh( $wp_customize ) {
-//	$require_css_refresh = array();
-//	foreach ( $wp_customize->settings() as $setting ) {
-//		if ( 'theme_mod' === $setting->type && 'postMessage' === $setting->transport ) {
-//			array_push( $require_css_refresh, $setting->id );
-//		}
-//	}
-//	var_dump( $require_css_refresh);
+	//  $require_css_refresh = array();
+	//  foreach ( $wp_customize->settings() as $setting ) {
+	//      if ( 'theme_mod' === $setting->type && 'postMessage' === $setting->transport ) {
+	//          array_push( $require_css_refresh, $setting->id );
+	//      }
+	//  }
+	//  var_dump( $require_css_refresh);
 
 	global $pagespeed_gradient_bgs;
 	global $pagespeed_selective_refreshables;
@@ -119,7 +122,6 @@ function pagespeed_show_errors() {
 	$prefix = wp_get_theme()->stylesheet . '_';
 	$error  = get_transient( $prefix . 'sass_error' );
 	if ( $error ) {
-
 
 		echo '<div style="background: #f79ea8;color:#fff;padding:16px;font-size: 14px;font-family: Sans-serif">
 <h3>Oh Snap!!</h3>

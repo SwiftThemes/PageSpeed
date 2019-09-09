@@ -34,7 +34,7 @@ class Hybrid_Media_Meta {
 	 * @access protected
 	 * @var    array
 	 */
-	protected $post_id  = 0;
+	protected $post_id = 0;
 
 	/**
 	 * Metadata from the wp_get_attachment_metadata() function.
@@ -43,7 +43,7 @@ class Hybrid_Media_Meta {
 	 * @access protected
 	 * @var    array
 	 */
-	protected $meta  = array();
+	protected $meta = array();
 
 	/**
 	 * Type of media for the current attachment.
@@ -75,9 +75,9 @@ class Hybrid_Media_Meta {
 	 */
 	public function __construct( $post_id ) {
 
-		$this->post_id  = $post_id;
-		$this->meta     = wp_get_attachment_metadata( $this->post_id );
-		$this->type     = hybrid_get_attachment_type( $this->post_id );
+		$this->post_id = $post_id;
+		$this->meta    = wp_get_attachment_metadata( $this->post_id );
+		$this->type    = hybrid_get_attachment_type( $this->post_id );
 
 		// If we have a type that's in the whitelist, run filters.
 		if ( $this->type && in_array( $this->type, $this->allowed_types ) ) {
@@ -118,8 +118,9 @@ class Hybrid_Media_Meta {
 	 */
 	protected function escape( $value, $property ) {
 
-		if ( has_filter( "hybrid_media_meta_escape_{$property}" ) )
+		if ( has_filter( "hybrid_media_meta_escape_{$property}" ) ) {
 			return apply_filters( "hybrid_media_meta_escape_{$property}", $value, $this->type );
+		}
 
 		return is_numeric( $value ) ? intval( $value ) : esc_html( $value );
 	}
@@ -136,7 +137,7 @@ class Hybrid_Media_Meta {
 	protected function media_filters() {
 
 		add_filter( 'hybrid_media_meta_escape_file_name', array( $this, 'file_name' ), 5 );
-		add_filter( 'hybrid_media_meta_escape_filesize',  array( $this, 'file_size' ), 5 );
+		add_filter( 'hybrid_media_meta_escape_filesize', array( $this, 'file_size' ), 5 );
 		add_filter( 'hybrid_media_meta_escape_file_size', array( $this, 'file_size' ), 5 ); // alias for filesize
 		add_filter( 'hybrid_media_meta_escape_file_type', array( $this, 'file_type' ), 5 );
 		add_filter( 'hybrid_media_meta_escape_mime_type', array( $this, 'mime_type' ), 5 );
@@ -154,12 +155,12 @@ class Hybrid_Media_Meta {
 	 */
 	protected function image_filters() {
 
-		add_filter( 'hybrid_media_meta_escape_dimensions',        array( $this, 'dimensions'        ), 5 );
+		add_filter( 'hybrid_media_meta_escape_dimensions', array( $this, 'dimensions' ), 5 );
 		add_filter( 'hybrid_media_meta_escape_created_timestamp', array( $this, 'created_timestamp' ), 5 );
-		add_filter( 'hybrid_media_meta_escape_aperture',          array( $this, 'aperture'          ), 5 );
-		add_filter( 'hybrid_media_meta_escape_shutter_speed',     array( $this, 'shutter_speed'     ), 5 );
-		add_filter( 'hybrid_media_meta_escape_focal_length',      'absint',                            5 );
-		add_filter( 'hybrid_media_meta_escape_iso',               'absint',                            5 );
+		add_filter( 'hybrid_media_meta_escape_aperture', array( $this, 'aperture' ), 5 );
+		add_filter( 'hybrid_media_meta_escape_shutter_speed', array( $this, 'shutter_speed' ), 5 );
+		add_filter( 'hybrid_media_meta_escape_focal_length', 'absint', 5 );
+		add_filter( 'hybrid_media_meta_escape_iso', 'absint', 5 );
 	}
 
 	/**
@@ -174,13 +175,13 @@ class Hybrid_Media_Meta {
 	protected function audio_filters() {
 
 		add_filter( 'hybrid_media_meta_escape_track_number', 'absint', 5 );
-		add_filter( 'hybrid_media_meta_escape_year',         'absint', 5 );
+		add_filter( 'hybrid_media_meta_escape_year', 'absint', 5 );
 
 		// Filters for the audio transcript.
 		add_filter( 'hybrid_media_meta_escape_lyrics', array( $this, 'lyrics' ), 5 );
-		add_filter( 'hybrid_media_meta_escape_lyrics', 'wptexturize',            10 );
-		add_filter( 'hybrid_media_meta_escape_lyrics', 'convert_chars',          15 );
-		add_filter( 'hybrid_media_meta_escape_lyrics', 'wpautop',                20 );
+		add_filter( 'hybrid_media_meta_escape_lyrics', 'wptexturize', 10 );
+		add_filter( 'hybrid_media_meta_escape_lyrics', 'convert_chars', 15 );
+		add_filter( 'hybrid_media_meta_escape_lyrics', 'wpautop', 20 );
 	}
 
 	/**
@@ -212,16 +213,19 @@ class Hybrid_Media_Meta {
 		$value = null;
 
 		// If the property exists in the meta array.
-		if ( isset( $this->meta[ $property ] ) )
+		if ( isset( $this->meta[ $property ] ) ) {
 			$value = $this->meta[ $property ];
+		}
 
 		// If the property exists in the image meta array.
-		elseif ( 'image' === $this->type && isset( $this->meta['image_meta'][ $property ] ) )
+		elseif ( 'image' === $this->type && isset( $this->meta['image_meta'][ $property ] ) ) {
 			$value = $this->meta['image_meta'][ $property ];
+		}
 
 		// If the property exists in the video's audio meta array.
-		elseif ( 'video' === $this->type && isset( $this->meta['audio'][ $property ] ) )
+		elseif ( 'video' === $this->type && isset( $this->meta['audio'][ $property ] ) ) {
 			$value = $this->meta['audio'][ $property ];
+		}
 
 		// Escape and return.
 		return $this->escape( $value, $property );
@@ -282,8 +286,9 @@ class Hybrid_Media_Meta {
 	 */
 	public function aperture( $aperture ) {
 
-		if ( !empty( $this->meta['image_meta']['aperture'] ) )
+		if ( ! empty( $this->meta['image_meta']['aperture'] ) ) {
 			$aperture = sprintf( '<sup>f</sup>&#8260;<sub>%s</sub>', absint( $this->meta['image_meta']['aperture'] ) );
+		}
 
 		return $aperture;
 	}
@@ -306,11 +311,12 @@ class Hybrid_Media_Meta {
 			if ( ( 1 / $speed ) > 1 ) {
 				$shutter = sprintf( '<sup>%s</sup>&#8260;', number_format_i18n( 1 ) );
 
-				if ( number_format( ( 1 / $speed ), 1 ) ==  number_format( ( 1 / $speed ), 0 ) )
+				if ( number_format( ( 1 / $speed ), 1 ) == number_format( ( 1 / $speed ), 0 ) ) {
 					$shutter .= sprintf( '<sub>%s</sub>', number_format_i18n( ( 1 / $speed ), 0, '.', '' ) );
 
-				else
+				} else {
 					$shutter .= sprintf( '<sub>%s</sub>', number_format_i18n( ( 1 / $speed ), 1, '.', '' ) );
+				}
 			}
 		}
 
@@ -327,12 +333,14 @@ class Hybrid_Media_Meta {
 	public function lyrics( $lyrics ) {
 
 		// Look for the 'unsynchronised_lyric' tag.
-		if ( isset( $this->meta['unsynchronised_lyric'] ) )
+		if ( isset( $this->meta['unsynchronised_lyric'] ) ) {
 			$lyrics = $this->meta['unsynchronised_lyric'];
+		}
 
 		// Seen this misspelling of the id3 tag.
-		elseif ( isset( $this->meta['unsychronised_lyric'] ) )
+		elseif ( isset( $this->meta['unsychronised_lyric'] ) ) {
 			$lyrics = $this->meta['unsychronised_lyric'];
+		}
 
 		return strip_tags( $lyrics );
 	}
@@ -376,8 +384,9 @@ class Hybrid_Media_Meta {
 	 */
 	public function file_type( $file_type ) {
 
-		if ( preg_match( '/^.*?\.(\w+)$/', get_attached_file( $this->post_id ), $matches ) )
+		if ( preg_match( '/^.*?\.(\w+)$/', get_attached_file( $this->post_id ), $matches ) ) {
 			$file_type = esc_html( strtoupper( $matches[1] ) );
+		}
 
 		return $file_type;
 	}
@@ -394,8 +403,9 @@ class Hybrid_Media_Meta {
 
 		$mime_type = get_post_mime_type( $this->post_id );
 
-		if ( empty( $mime_type ) && ! empty( $this->meta['mime_type'] ) )
+		if ( empty( $mime_type ) && ! empty( $this->meta['mime_type'] ) ) {
 			$mime_type = $this->meta['mime_type'];
+		}
 
 		return esc_html( $mime_type );
 	}

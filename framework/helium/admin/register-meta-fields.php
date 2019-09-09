@@ -28,12 +28,11 @@ function helium_butter_bean_register_mangers( $butterbean, $post_type ) {
 		'pagespeed',
 		array(
 			'label'     => esc_html__( 'PageSpeed Settings', 'page-speed' ),
-			'post_type' => array('post','page'),
+			'post_type' => array( 'post', 'page' ),
 			'context'   => 'normal',
-			'priority'  => 'high'
+			'priority'  => 'high',
 		)
 	);
-
 
 }
 
@@ -43,14 +42,14 @@ function helium_butter_bean_register_sections( $butterbean, $post_type ) {
 		'header',
 		array(
 			'label' => esc_html__( 'Header', 'page-speed' ),
-			'icon'  => 'dashicons-welcome-widgets-menus'
+			'icon'  => 'dashicons-welcome-widgets-menus',
 		)
 	);
 	$manager->register_section(
 		'css',
 		array(
 			'label' => esc_html__( 'Custom CSS', 'page-speed' ),
-			'icon'  => 'dashicons-editor-code'
+			'icon'  => 'dashicons-editor-code',
 		)
 	);
 
@@ -58,7 +57,7 @@ function helium_butter_bean_register_sections( $butterbean, $post_type ) {
 		'single_post',
 		array(
 			'label' => esc_html__( 'Single Post', 'page-speed' ),
-			'icon'  => 'dashicons-editor-code'
+			'icon'  => 'dashicons-editor-code',
 		)
 	);
 
@@ -66,7 +65,7 @@ function helium_butter_bean_register_sections( $butterbean, $post_type ) {
 		'misc',
 		array(
 			'label' => esc_html__( 'Misc', 'page-speed' ),
-			'icon'  => 'dashicons-forms'
+			'icon'  => 'dashicons-forms',
 		)
 	);
 }
@@ -74,46 +73,42 @@ function helium_butter_bean_register_sections( $butterbean, $post_type ) {
 function helium_butter_bean_register_settings( $butterbean, $post_type ) {
 	$manager = $butterbean->get_manager( 'pagespeed' );
 
-
 	$manager->register_setting(
 		'header_bg', // Same as control name.
 		array(
-			'sanitize_callback' => 'wp_filter_nohtml_kses'
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
-
-
 
 	$manager->register_setting(
 		'css_all', // Same as control name.
 		array(
-			'sanitize_callback' => 'wp_filter_nohtml_kses'
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
 	$manager->register_setting(
 		'css_desktops', // Same as control name.
 		array(
-			'sanitize_callback' => 'wp_filter_nohtml_kses'
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
 	$manager->register_setting(
 		'css_mobiles', // Same as control name.
 		array(
-			'sanitize_callback' => 'wp_filter_nohtml_kses'
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
 	$manager->register_setting(
 		'css_tablets', // Same as control name.
 		array(
-			'sanitize_callback' => 'wp_filter_nohtml_kses'
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
-
 
 	$manager->register_setting(
 		'single_post_layout', // Same as control name.
 		array(
-			'sanitize_callback' => 'sanitize_text_field'
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$manager->register_setting(
@@ -130,7 +125,6 @@ function helium_butter_bean_register_settings( $butterbean, $post_type ) {
 		array( 'sanitize_callback' => 'butterbean_validate_boolean' )
 	);
 
-
 }
 
 function helium_butter_bean_register_controls( $butterbean, $post_type ) {
@@ -142,7 +136,7 @@ function helium_butter_bean_register_controls( $butterbean, $post_type ) {
 			'section'     => 'header',
 			'attr'        => array( 'class' => '' ),
 			'label'       => 'Header background',
-			'description' => 'A valid CSS color in any format. Sorry, no color picker here since WordPress doesn\'t natively support rgba colors.'
+			'description' => 'A valid CSS color in any format. Sorry, no color picker here since WordPress doesn\'t natively support rgba colors.',
 		)
 	);
 
@@ -173,7 +167,7 @@ function helium_butter_bean_register_controls( $butterbean, $post_type ) {
 			'section'     => 'css',
 			'attr'        => array( 'class' => 'widefat code' ),
 			'label'       => 'Small screen mobile devices',
-			'description' => 'Rules added here will be applied only to mobiles. Screen size less than 768px'
+			'description' => 'Rules added here will be applied only to mobiles. Screen size less than 768px',
 		)
 	);
 	$manager->register_control(
@@ -183,47 +177,47 @@ function helium_butter_bean_register_controls( $butterbean, $post_type ) {
 			'section'     => 'css',
 			'attr'        => array( 'class' => 'widefat code' ),
 			'label'       => 'Tablets',
-			'description' => 'Rules added here will be applied only to tablets. Screen size less than 768px'
+			'description' => 'Rules added here will be applied only to tablets. Screen size less than 768px',
 		)
 	);
 
 	$manager->register_control(
 		'single_post_layout',
 		array(
-			'type'        => 'select-group',
-			'section'     => 'single_post',
-			'label'       => 'Select the single post layout',
+			'type'    => 'select-group',
+			'section' => 'single_post',
+			'label'   => 'Select the single post layout',
 			'choices' => array(
-				'' => '',
-				'single_column' => __( 'Single Column','page-speed' ),
-			 ),
+				''              => '',
+				'single_column' => __( 'Single Column', 'page-speed' ),
+			),
 		)
 	);
 
 	$manager->register_control(
 		'hide_breadcrumbs',
 		array(
-			'type'        => 'checkbox',
-			'section'     => 'misc',
-			'label'       => 'Hide breadcrumbs',
+			'type'    => 'checkbox',
+			'section' => 'misc',
+			'label'   => 'Hide breadcrumbs',
 		)
 	);
 
 	$manager->register_control(
 		'hide_page_title',
 		array(
-			'type'        => 'checkbox',
-			'section'     => 'misc',
-			'label'       => 'Hide post/page title',
+			'type'    => 'checkbox',
+			'section' => 'misc',
+			'label'   => 'Hide post/page title',
 		)
 	);
 
 	$manager->register_control(
 		'hide_footer_widgets',
 		array(
-			'type'        => 'checkbox',
-			'section'     => 'misc',
-			'label'       => 'Hide footer widgets',
+			'type'    => 'checkbox',
+			'section' => 'misc',
+			'label'   => 'Hide footer widgets',
 		)
 	);
 

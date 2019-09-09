@@ -3,8 +3,8 @@
 </main>
 
 <aside id="sb-page-rsb">
-    <div class="inner">
+	<div class="inner">
 		<?php dynamic_sidebar( 'page-template-right' ); ?>
-    </div>
+	</div>
 </aside>
 </div><!--#left -->

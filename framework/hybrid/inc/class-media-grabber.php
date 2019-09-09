@@ -100,7 +100,7 @@ class Hybrid_Media_Grabber {
 
 		// Use WP's embed functionality to handle the [embed] shortcode and autoembeds.
 		add_filter( 'hybrid_media_grabber_embed_shortcode_media', array( $wp_embed, 'run_shortcode' ) );
-		add_filter( 'hybrid_media_grabber_autoembed_media',       array( $wp_embed, 'autoembed'     ) );
+		add_filter( 'hybrid_media_grabber_autoembed_media', array( $wp_embed, 'autoembed' ) );
 
 		// Don't return a link if embeds don't work. Need media or nothing at all.
 		add_filter( 'embed_maybe_make_link', '__return_false' );
@@ -158,31 +158,37 @@ class Hybrid_Media_Grabber {
 	public function set_media() {
 
 		// Get the media if the post type is an attachment.
-		if ( 'attachment' === get_post_type( $this->args['post_id'] ) )
+		if ( 'attachment' === get_post_type( $this->args['post_id'] ) ) {
 			$this->do_attachment_media();
+		}
 
 		// Find media in the post content based on WordPress' media-related shortcodes.
-		if ( ! $this->media )
+		if ( ! $this->media ) {
 			$this->do_shortcode_media();
+		}
 
 		// If no media is found and autoembeds are enabled, check for autoembeds.
-		if ( ! $this->media && get_option( 'embed_autourls' ) )
+		if ( ! $this->media && get_option( 'embed_autourls' ) ) {
 			$this->do_autoembed_media();
+		}
 
 		// If no media is found, check for media HTML within the post content.
-		if ( ! $this->media )
+		if ( ! $this->media ) {
 			$this->do_embedded_media();
+		}
 
 		// If no media is found, check for media attached to the post.
-		if ( ! $this->media )
+		if ( ! $this->media ) {
 			$this->do_attached_media();
+		}
 
 		// If media is found, let's run a few things.
 		if ( $this->media ) {
 
 			// Split the media from the content.
-			if ( true === $this->args['split_media'] && !empty( $this->original_media ) )
+			if ( true === $this->args['split_media'] && ! empty( $this->original_media ) ) {
 				add_filter( 'the_content', array( $this, 'split_media' ), 5 );
+			}
 
 			// Filter the media dimensions and add the before/after HTML.
 			$this->media = $this->args['before'] . $this->filter_dimensions( $this->media ) . $this->args['after'];
@@ -341,8 +347,9 @@ class Hybrid_Media_Grabber {
 					// If we're given a shortcode, roll with it.
 					if ( preg_match( "/\[{$this->type}\s/", $embed ) ) {
 
-						if ( 'video' === $this->type )
+						if ( 'video' === $this->type ) {
 							$embed = $this->filter_dimensions( $embed );
+						}
 
 						$embed = do_shortcode( $embed );
 					}
@@ -367,8 +374,9 @@ class Hybrid_Media_Grabber {
 
 		$embedded_media = get_media_embedded_in_content( $this->content );
 
-		if ( $embedded_media )
+		if ( $embedded_media ) {
 			$this->media = $this->original_media = array_shift( $embedded_media );
+		}
 	}
 
 	/**
@@ -446,12 +454,14 @@ class Hybrid_Media_Grabber {
 		$atts = wp_kses_hair( $_html, array( 'http', 'https' ) );
 
 		// Loop through the media attributes and add them in key/value pairs.
-		foreach ( $atts as $att )
+		foreach ( $atts as $att ) {
 			$media_atts[ $att['name'] ] = $att['value'];
+		}
 
 		// If no dimensions are found, just return the HTML.
-		if ( empty( $media_atts ) || ! isset( $media_atts['width'] ) || ! isset( $media_atts['height'] ) )
+		if ( empty( $media_atts ) || ! isset( $media_atts['width'] ) || ! isset( $media_atts['height'] ) ) {
 			return $html;
+		}
 
 		// Set the max width.
 		$max_width = $this->args['width'];
@@ -460,8 +470,9 @@ class Hybrid_Media_Grabber {
 		$max_height = round( $max_width / ( $media_atts['width'] / $media_atts['height'] ) );
 
 		// Fix for Spotify embeds.
-		if ( ! empty( $media_atts['src'] ) && preg_match( '#https?://(embed)\.spotify\.com/.*#i', $media_atts['src'], $matches ) )
+		if ( ! empty( $media_atts['src'] ) && preg_match( '#https?://(embed)\.spotify\.com/.*#i', $media_atts['src'], $matches ) ) {
 			list( $max_width, $max_height ) = $this->spotify_dimensions( $media_atts );
+		}
 
 		// Calculate new media dimensions.
 		$dimensions = wp_expand_dimensions(
@@ -484,7 +495,7 @@ class Hybrid_Media_Grabber {
 			'/(width=[\'"]).+?([\'"])/i',
 			'/(height=[\'"]).+?([\'"])/i',
 			'/(<div.+?style=[\'"].*?width:.+?).+?(px;.+?[\'"].*?>)/i',
-			'/(<div.+?style=[\'"].*?height:.+?).+?(px;.+?[\'"].*?>)/i'
+			'/(<div.+?style=[\'"].*?height:.+?).+?(px;.+?[\'"].*?>)/i',
 		);
 
 		// Set up the replacements for the 'width' and 'height' attributes.
@@ -514,8 +525,9 @@ class Hybrid_Media_Grabber {
 		$max_width  = $media_atts['width'];
 		$max_height = $media_atts['height'];
 
-		if ( 80 == $media_atts['height'] )
-			$max_width  = $this->args['width'];
+		if ( 80 == $media_atts['height'] ) {
+			$max_width = $this->args['width'];
+		}
 
 		return array( $max_width, $max_height );
 	}

@@ -18,7 +18,7 @@ add_action( 'init', 'hybrid_add_post_type_support', 15 );
 add_filter( 'the_title', 'hybrid_untitled_post' );
 
 # Filters the archive title and description.
-add_filter( 'get_the_archive_title',       'hybrid_archive_title_filter',       5 );
+add_filter( 'get_the_archive_title', 'hybrid_archive_title_filter', 5 );
 add_filter( 'get_the_archive_description', 'hybrid_archive_description_filter', 5 );
 
 /**
@@ -41,16 +41,16 @@ function hybrid_add_post_type_support() {
 	add_post_type_support( 'attachment:video', 'thumbnail' );
 
 	// Add theme layouts support to core and custom post types.
-	add_post_type_support( 'post',              'theme-layouts' );
-	add_post_type_support( 'page',              'theme-layouts' );
-	add_post_type_support( 'attachment',        'theme-layouts' );
+	add_post_type_support( 'post', 'theme-layouts' );
+	add_post_type_support( 'page', 'theme-layouts' );
+	add_post_type_support( 'attachment', 'theme-layouts' );
 
-	add_post_type_support( 'forum',             'theme-layouts' );
-	add_post_type_support( 'literature',        'theme-layouts' );
-	add_post_type_support( 'portfolio_item',    'theme-layouts' );
+	add_post_type_support( 'forum', 'theme-layouts' );
+	add_post_type_support( 'literature', 'theme-layouts' );
+	add_post_type_support( 'portfolio_item', 'theme-layouts' );
 	add_post_type_support( 'portfolio_project', 'theme-layouts' );
-	add_post_type_support( 'product',           'theme-layouts' );
-	add_post_type_support( 'restaurant_item',   'theme-layouts' );
+	add_post_type_support( 'product', 'theme-layouts' );
+	add_post_type_support( 'restaurant_item', 'theme-layouts' );
 }
 
 /**
@@ -90,8 +90,9 @@ function hybrid_get_content_width() {
 function hybrid_untitled_post( $title ) {
 
 	// Translators: Used as a placeholder for untitled posts on non-singular views.
-	if ( ! $title && ! is_singular() && in_the_loop() && ! is_admin() )
+	if ( ! $title && ! is_singular() && in_the_loop() && ! is_admin() ) {
 		$title = esc_html__( '(Untitled)', 'page-speed' );
+	}
 
 	return $title;
 }
@@ -144,8 +145,9 @@ function hybrid_hex_to_rgb( $hex ) {
 	$color = trim( $hex, '#' );
 
 	// If the color is three characters, convert it to six.
-        if ( 3 === strlen( $color ) )
+	if ( 3 === strlen( $color ) ) {
 		$color = $color[0] . $color[0] . $color[1] . $color[1] . $color[2] . $color[2];
+	}
 
 	// Get the red, green, and blue values.
 	$red   = hexdec( $color[0] . $color[1] );
@@ -153,7 +155,11 @@ function hybrid_hex_to_rgb( $hex ) {
 	$blue  = hexdec( $color[4] . $color[5] );
 
 	// Return the RGB colors as an array.
-	return array( 'r' => $red, 'g' => $green, 'b' => $blue );
+	return array(
+		'r' => $red,
+		'g' => $green,
+		'b' => $blue,
+	);
 }
 
 /**
@@ -211,8 +217,9 @@ function hybrid_get_min_suffix() {
  */
 function hybrid_require_if_theme_supports( $feature, $file ) {
 
-	if ( current_theme_supports( $feature ) && file_exists( $file ) )
+	if ( current_theme_supports( $feature ) && file_exists( $file ) ) {
 		require_once( $file );
+	}
 }
 
 /**
@@ -225,50 +232,51 @@ function hybrid_require_if_theme_supports( $feature, $file ) {
  */
 function hybrid_archive_title_filter( $title ) {
 
-	if ( is_home() && ! is_front_page() )
+	if ( is_home() && ! is_front_page() ) {
 		$title = get_post_field( 'post_title', get_queried_object_id() );
 
-	elseif ( is_category() )
+	} elseif ( is_category() ) {
 		$title = single_cat_title( '', false );
 
-	elseif ( is_tag() )
+	} elseif ( is_tag() ) {
 		$title = single_tag_title( '', false );
 
-	elseif ( is_tax() )
+	} elseif ( is_tax() ) {
 		$title = single_term_title( '', false );
 
-	elseif ( is_author() )
+	} elseif ( is_author() ) {
 		$title = hybrid_get_single_author_title();
 
-	elseif ( is_search() )
+	} elseif ( is_search() ) {
 		$title = hybrid_get_search_title();
 
-	elseif ( is_post_type_archive() )
+	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', false );
 
-	elseif ( get_query_var( 'minute' ) && get_query_var( 'hour' ) )
+	} elseif ( get_query_var( 'minute' ) && get_query_var( 'hour' ) ) {
 		$title = hybrid_get_single_minute_hour_title();
 
-	elseif ( get_query_var( 'minute' ) )
+	} elseif ( get_query_var( 'minute' ) ) {
 		$title = hybrid_get_single_minute_title();
 
-	elseif ( get_query_var( 'hour' ) )
+	} elseif ( get_query_var( 'hour' ) ) {
 		$title = hybrid_get_single_hour_title();
 
-	elseif ( is_day() )
+	} elseif ( is_day() ) {
 		$title = hybrid_get_single_day_title();
 
-	elseif ( get_query_var( 'w' ) )
+	} elseif ( get_query_var( 'w' ) ) {
 		$title = hybrid_get_single_week_title();
 
-	elseif ( is_month() )
+	} elseif ( is_month() ) {
 		$title = single_month_title( ' ', false );
 
-	elseif ( is_year() )
+	} elseif ( is_year() ) {
 		$title = hybrid_get_single_year_title();
 
-	elseif ( is_archive() )
+	} elseif ( is_archive() ) {
 		$title = hybrid_get_single_archive_title();
+	}
 
 	return apply_filters( 'hybrid_archive_title', $title );
 }
@@ -283,23 +291,24 @@ function hybrid_archive_title_filter( $title ) {
  */
 function hybrid_archive_description_filter( $desc ) {
 
-	if ( is_home() && ! is_front_page() )
+	if ( is_home() && ! is_front_page() ) {
 		$desc = get_post_field( 'post_content', get_queried_object_id(), 'raw' );
 
-	elseif ( is_category() )
+	} elseif ( is_category() ) {
 		$desc = get_term_field( 'description', get_queried_object_id(), 'category', 'raw' );
 
-	elseif ( is_tag() )
+	} elseif ( is_tag() ) {
 		$desc = get_term_field( 'description', get_queried_object_id(), 'post_tag', 'raw' );
 
-	elseif ( is_tax() )
+	} elseif ( is_tax() ) {
 		$desc = get_term_field( 'description', get_queried_object_id(), get_query_var( 'taxonomy' ), 'raw' );
 
-	elseif ( is_author() )
+	} elseif ( is_author() ) {
 		$desc = get_the_author_meta( 'description', get_query_var( 'author' ) );
 
-	elseif ( is_post_type_archive() )
+	} elseif ( is_post_type_archive() ) {
 		$desc = get_post_type_object( get_query_var( 'post_type' ) )->description;
+	}
 
 	return apply_filters( 'hybrid_archive_description', $desc );
 }

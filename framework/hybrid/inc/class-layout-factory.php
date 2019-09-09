@@ -69,8 +69,9 @@ class Hybrid_Layout_Factory {
 	 */
 	public function unregister_layout( $name ) {
 
-		if ( $this->layout_exists( $name ) && false === $this->get( $name )->_internal )
+		if ( $this->layout_exists( $name ) && false === $this->get( $name )->_internal ) {
 			unset( $this->layouts[ $name ] );
+		}
 	}
 
 	/**
@@ -110,8 +111,9 @@ class Hybrid_Layout_Factory {
 
 		static $instance = null;
 
-		if ( is_null( $instance ) )
+		if ( is_null( $instance ) ) {
 			$instance = new Hybrid_Layout_Factory;
+		}
 
 		return $instance;
 	}

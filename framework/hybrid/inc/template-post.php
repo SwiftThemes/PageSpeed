@@ -60,18 +60,20 @@ function hybrid_delete_post_template( $post_id ) {
  */
 function hybrid_has_post_template( $template = '', $post_id = '' ) {
 
-	if ( ! $post_id )
+	if ( ! $post_id ) {
 		$post_id = get_the_ID();
+	}
 
 	// Get the post template, which is saved as metadata.
 	$post_template = hybrid_get_post_template( $post_id );
 
 	// If a specific template was input, check that the post template matches.
-	if ( $template && $template === $post_template )
+	if ( $template && $template === $post_template ) {
 		return true;
+	}
 
 	// Return whether we have a post template.
-	return !empty( $post_template );
+	return ! empty( $post_template );
 }
 
 /**
@@ -209,14 +211,14 @@ function hybrid_get_post_terms( $args = array() ) {
 	$html = '';
 
 	$defaults = array(
-		'post_id'    => get_the_ID(),
-		'taxonomy'   => 'category',
-		'text'       => '%s',
-		'before'     => '',
-		'after'      => '',
-		'wrap'       => '<span %s>%s</span>',
+		'post_id'  => get_the_ID(),
+		'taxonomy' => 'category',
+		'text'     => '%s',
+		'before'   => '',
+		'after'    => '',
+		'wrap'     => '<span %s>%s</span>',
 		// Translators: Separates tags, categories, etc. when displaying a post.
-		'sep'        => _x( ', ', 'taxonomy terms separator', 'page-speed' )
+		'sep'      => _x( ', ', 'taxonomy terms separator', 'page-speed' ),
 	);
 
 	$args = wp_parse_args( $args, $defaults );
@@ -255,22 +257,24 @@ function hybrid_get_gallery_item_count() {
 	if ( ! empty( $galleries ) ) {
 		$items = '';
 
-		foreach ( $galleries as $gallery => $gallery_items )
+		foreach ( $galleries as $gallery => $gallery_items ) {
 			$items .= $gallery_items;
+		}
 
 		preg_match_all( '#src=([\'"])(.+?)\1#is', $items, $sources, PREG_SET_ORDER );
 
-		if ( ! empty( $sources ) )
+		if ( ! empty( $sources ) ) {
 			return count( $sources );
+		}
 	}
 
 	// If an item count wasn't returned, get the post attachments.
 	$attachments = get_posts(
 		array(
-			'fields'         => 'ids',
-			'post_parent'    => get_the_ID(),
-			'post_type'      => 'attachment',
-			'numberposts'    => -1
+			'fields'      => 'ids',
+			'post_parent' => get_the_ID(),
+			'post_type'   => 'attachment',
+			'numberposts' => -1,
 		)
 	);
 
@@ -294,8 +298,9 @@ function hybrid_get_gallery_image_count() {
 	$galleries = get_post_galleries_images();
 
 	// Merge each gallery image into a single array.
-	foreach ( $galleries as $gallery_images )
+	foreach ( $galleries as $gallery_images ) {
 		$images = array_merge( $images, $gallery_images );
+	}
 
 	// If there are no images in the array, just grab the attached images.
 	if ( empty( $images ) ) {
@@ -305,7 +310,7 @@ function hybrid_get_gallery_image_count() {
 				'post_parent'    => get_the_ID(),
 				'post_type'      => 'attachment',
 				'post_mime_type' => 'image',
-				'numberposts'    => -1
+				'numberposts'    => -1,
 			)
 		);
 	}

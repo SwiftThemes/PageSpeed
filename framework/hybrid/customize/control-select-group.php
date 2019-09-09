@@ -54,10 +54,11 @@ class Hybrid_Customize_Control_Select_Group extends WP_Customize_Control {
 
 		foreach ( $this->choices as $choice => $maybe_group ) {
 
-			if ( is_array( $maybe_group ) )
+			if ( is_array( $maybe_group ) ) {
 				$group[ $choice ] = $maybe_group;
-			else
+			} else {
 				$choices[ $choice ] = $maybe_group;
+			}
 		}
 
 		$this->json['choices'] = $choices;
@@ -112,5 +113,6 @@ class Hybrid_Customize_Control_Select_Group extends WP_Customize_Control {
 				<# } ) #>
 			</select>
 		</label>
-	<?php }
+		<?php
+	}
 }

@@ -196,23 +196,26 @@ class ButterBean_Control {
 
 		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
 
-			if ( isset( $args[ $key ] ) )
+			if ( isset( $args[ $key ] ) ) {
 				$this->$key = $args[ $key ];
+			}
 		}
 
 		$this->manager = $manager;
 		$this->name    = $name;
 
-		if ( empty( $args['settings'] ) || ! is_array( $args['settings'] ) )
+		if ( empty( $args['settings'] ) || ! is_array( $args['settings'] ) ) {
 			$this->settings['default'] = $name;
+		}
 
 		// Increment the instance count and set the instance number.
 		self::$instance_count += 1;
 		$this->instance_number = self::$instance_count;
 
 		// Set the active callback function if not set.
-		if ( ! $this->active_callback )
+		if ( ! $this->active_callback ) {
 			$this->active_callback = array( $this, 'active_callback' );
+		}
 	}
 
 	/**
@@ -264,8 +267,9 @@ class ButterBean_Control {
 
 		$defaults = array();
 
-		if ( isset( $this->settings[ $this->setting ] ) )
+		if ( isset( $this->settings[ $this->setting ] ) ) {
 			$defaults['name'] = $this->get_field_name( $this->setting );
+		}
 
 		return wp_parse_args( $this->attr, $defaults );
 	}
@@ -316,8 +320,8 @@ class ButterBean_Control {
 		$this->json['choices']     = $this->choices;
 		$this->json['active']      = $this->is_active();
 
-		$this->json['value']       = isset( $this->settings[ $this->setting ] ) ? $this->get_value( $this->setting )      : '';
-		$this->json['field_name']  = isset( $this->settings[ $this->setting ] ) ? $this->get_field_name( $this->setting ) : '';
+		$this->json['value']      = isset( $this->settings[ $this->setting ] ) ? $this->get_value( $this->setting ) : '';
+		$this->json['field_name'] = isset( $this->settings[ $this->setting ] ) ? $this->get_field_name( $this->setting ) : '';
 
 		$this->json['attr'] = '';
 
@@ -360,14 +364,17 @@ class ButterBean_Control {
 	 */
 	public function check_capabilities() {
 
-		if ( $this->capability && ! call_user_func_array( 'current_user_can', (array) $this->capability ) )
+		if ( $this->capability && ! call_user_func_array( 'current_user_can', (array) $this->capability ) ) {
 			return false;
+		}
 
-		if ( $this->post_type_supports && ! call_user_func_array( 'post_type_supports', array( get_post_type( $this->manager->post_id ), $this->post_type_supports ) ) )
+		if ( $this->post_type_supports && ! call_user_func_array( 'post_type_supports', array( get_post_type( $this->manager->post_id ), $this->post_type_supports ) ) ) {
 			return false;
+		}
 
-		if ( $this->theme_supports && ! call_user_func_array( 'theme_supports', (array) $this->theme_supports ) )
+		if ( $this->theme_supports && ! call_user_func_array( 'theme_supports', (array) $this->theme_supports ) ) {
 			return false;
+		}
 
 		return true;
 	}
@@ -384,7 +391,8 @@ class ButterBean_Control {
 		<script type="text/html" id="tmpl-butterbean-control-<?php echo esc_attr( $this->type ); ?>">
 			<?php $this->get_template(); ?>
 		</script>
-	<?php }
+		<?php
+	}
 
 	/**
 	 * Gets the Underscore.js template.

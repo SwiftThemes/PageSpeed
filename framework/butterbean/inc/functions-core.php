@@ -34,10 +34,11 @@ function butterbean_validate_boolean( $value ) {
  */
 function butterbean_sanitize_hex_color( $color ) {
 
-	if ( function_exists( 'sanitize_hex_color' ) )
+	if ( function_exists( 'sanitize_hex_color' ) ) {
 		return sanitize_hex_color( $color );
+	}
 
-	return $color && preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ? $color : '';
+	return $color && preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ? $color : '';
 }
 
 /**
@@ -50,13 +51,15 @@ function butterbean_sanitize_hex_color( $color ) {
  */
 function butterbean_sanitize_hex_color_no_hash( $color ) {
 
-	if ( function_exists( 'sanitize_hex_color_no_hash' ) )
+	if ( function_exists( 'sanitize_hex_color_no_hash' ) ) {
 		return sanitize_hex_color_no_hash( $color );
+	}
 
 	$color = ltrim( $color, '#' );
 
-	if ( '' === $color )
+	if ( '' === $color ) {
 		return '';
+	}
 
 	return butterbean_sanitize_hex_color( '#' . $color ) ? $color : null;
 }
@@ -71,11 +74,13 @@ function butterbean_sanitize_hex_color_no_hash( $color ) {
  */
 function butterbean_maybe_hash_hex_color( $color ) {
 
-	if ( function_exists( 'maybe_hash_hex_color' ) )
+	if ( function_exists( 'maybe_hash_hex_color' ) ) {
 		return maybe_hash_hex_color( $color );
+	}
 
-	if ( $unhashed = butterbean_sanitize_hex_color_no_hash( $color ) )
+	if ( $unhashed = butterbean_sanitize_hex_color_no_hash( $color ) ) {
 		return '#' . $unhashed;
+	}
 
 	return $color;
 }
@@ -142,8 +147,9 @@ function butterbean_get_template( $name, $slug = '' ) {
 
 		$templates = array();
 
-		if ( $slug )
+		if ( $slug ) {
 			$templates[] = "{$name}-{$slug}.php";
+		}
 
 		$templates[] = "{$name}.php";
 
@@ -164,6 +170,7 @@ function butterbean_get_template( $name, $slug = '' ) {
 	$located = apply_filters( "butterbean_{$name}_template", $located, $slug );
 
 	// Load the template.
-	if ( $located )
+	if ( $located ) {
 		require( $located );
+	}
 }

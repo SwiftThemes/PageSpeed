@@ -16,40 +16,40 @@
  */
 
 # Attributes for major structural elements.
-add_filter( 'hybrid_attr_body',    'hybrid_attr_body',    5    );
-add_filter( 'hybrid_attr_header',  'hybrid_attr_header',  5    );
-add_filter( 'hybrid_attr_footer',  'hybrid_attr_footer',  5    );
-add_filter( 'hybrid_attr_content', 'hybrid_attr_content', 5    );
+add_filter( 'hybrid_attr_body', 'hybrid_attr_body', 5 );
+add_filter( 'hybrid_attr_header', 'hybrid_attr_header', 5 );
+add_filter( 'hybrid_attr_footer', 'hybrid_attr_footer', 5 );
+add_filter( 'hybrid_attr_content', 'hybrid_attr_content', 5 );
 add_filter( 'hybrid_attr_sidebar', 'hybrid_attr_sidebar', 5, 2 );
-add_filter( 'hybrid_attr_menu',    'hybrid_attr_menu',    5, 2 );
+add_filter( 'hybrid_attr_menu', 'hybrid_attr_menu', 5, 2 );
 
 # Header attributes.
-add_filter( 'hybrid_attr_head',             'hybrid_attr_head',             5 );
-add_filter( 'hybrid_attr_branding',         'hybrid_attr_branding',         5 );
-add_filter( 'hybrid_attr_site-title',       'hybrid_attr_site_title',       5 );
+add_filter( 'hybrid_attr_head', 'hybrid_attr_head', 5 );
+add_filter( 'hybrid_attr_branding', 'hybrid_attr_branding', 5 );
+add_filter( 'hybrid_attr_site-title', 'hybrid_attr_site_title', 5 );
 add_filter( 'hybrid_attr_site-description', 'hybrid_attr_site_description', 5 );
 
 # Archive page header attributes.
-add_filter( 'hybrid_attr_archive-header',      'hybrid_attr_archive_header',      5 );
-add_filter( 'hybrid_attr_archive-title',       'hybrid_attr_archive_title',       5 );
+add_filter( 'hybrid_attr_archive-header', 'hybrid_attr_archive_header', 5 );
+add_filter( 'hybrid_attr_archive-title', 'hybrid_attr_archive_title', 5 );
 add_filter( 'hybrid_attr_archive-description', 'hybrid_attr_archive_description', 5 );
 
 # Post-specific attributes.
-add_filter( 'hybrid_attr_post',            'hybrid_attr_post',            5    );
-add_filter( 'hybrid_attr_entry',           'hybrid_attr_post',            5    ); // Alternate for "post".
-add_filter( 'hybrid_attr_entry-title',     'hybrid_attr_entry_title',     5    );
-add_filter( 'hybrid_attr_entry-author',    'hybrid_attr_entry_author',    5    );
-add_filter( 'hybrid_attr_entry-published', 'hybrid_attr_entry_published', 5    );
-add_filter( 'hybrid_attr_entry-content',   'hybrid_attr_entry_content',   5    );
-add_filter( 'hybrid_attr_entry-summary',   'hybrid_attr_entry_summary',   5    );
-add_filter( 'hybrid_attr_entry-terms',     'hybrid_attr_entry_terms',     5, 2 );
+add_filter( 'hybrid_attr_post', 'hybrid_attr_post', 5 );
+add_filter( 'hybrid_attr_entry', 'hybrid_attr_post', 5 ); // Alternate for "post".
+add_filter( 'hybrid_attr_entry-title', 'hybrid_attr_entry_title', 5 );
+add_filter( 'hybrid_attr_entry-author', 'hybrid_attr_entry_author', 5 );
+add_filter( 'hybrid_attr_entry-published', 'hybrid_attr_entry_published', 5 );
+add_filter( 'hybrid_attr_entry-content', 'hybrid_attr_entry_content', 5 );
+add_filter( 'hybrid_attr_entry-summary', 'hybrid_attr_entry_summary', 5 );
+add_filter( 'hybrid_attr_entry-terms', 'hybrid_attr_entry_terms', 5, 2 );
 
 # Comment specific attributes.
-add_filter( 'hybrid_attr_comment',           'hybrid_attr_comment',           5 );
-add_filter( 'hybrid_attr_comment-author',    'hybrid_attr_comment_author',    5 );
+add_filter( 'hybrid_attr_comment', 'hybrid_attr_comment', 5 );
+add_filter( 'hybrid_attr_comment-author', 'hybrid_attr_comment_author', 5 );
 add_filter( 'hybrid_attr_comment-published', 'hybrid_attr_comment_published', 5 );
 add_filter( 'hybrid_attr_comment-permalink', 'hybrid_attr_comment_permalink', 5 );
-add_filter( 'hybrid_attr_comment-content',   'hybrid_attr_comment_content',   5 );
+add_filter( 'hybrid_attr_comment-content', 'hybrid_attr_comment_content', 5 );
 
 /**
  * Outputs an HTML element's attributes.
@@ -61,7 +61,7 @@ add_filter( 'hybrid_attr_comment-content',   'hybrid_attr_comment_content',   5 
  * @param  array   $attr     Array of attributes to pass in (overwrites filters).
  * @return void
  */
-function hybrid_attr( $slug, $context = '', $attr = array()  ) {
+function hybrid_attr( $slug, $context = '', $attr = array() ) {
 	echo hybrid_get_attr( $slug, $context, $attr );
 }
 
@@ -80,14 +80,16 @@ function hybrid_attr( $slug, $context = '', $attr = array()  ) {
  */
 function hybrid_get_attr( $slug, $context = '', $attr = array() ) {
 
-	$out    = '';
-	$attr   = wp_parse_args( $attr, apply_filters( "hybrid_attr_{$slug}", array(), $context ) );
+	$out  = '';
+	$attr = wp_parse_args( $attr, apply_filters( "hybrid_attr_{$slug}", array(), $context ) );
 
-	if ( empty( $attr ) )
+	if ( empty( $attr ) ) {
 		$attr['class'] = $slug;
+	}
 
-	foreach ( $attr as $name => $value )
+	foreach ( $attr as $name => $value ) {
 		$out .= $value ? sprintf( ' %s="%s"', esc_html( $name ), esc_attr( $value ) ) : esc_html( " {$name}" );
+	}
 
 	return trim( $out );
 }
@@ -109,11 +111,12 @@ function hybrid_attr_body( $attr ) {
 	$attr['itemscope'] = 'itemscope';
 	$attr['itemtype']  = 'http://schema.org/WebPage';
 
-	if ( is_singular( 'post' ) || is_home() || is_archive() )
+	if ( is_singular( 'post' ) || is_home() || is_archive() ) {
 		$attr['itemtype'] = 'http://schema.org/Blog';
 
-	elseif ( is_search() )
+	} elseif ( is_search() ) {
 		$attr['itemtype'] = 'http://schema.org/SearchResultsPage';
+	}
 
 	return $attr;
 }
@@ -166,12 +169,13 @@ function hybrid_attr_footer( $attr ) {
  */
 function hybrid_attr_content( $attr ) {
 
-	$attr['id']       = 'content';
-	$attr['class']    = 'content';
-	$attr['role']     = 'main';
+	$attr['id']    = 'content';
+	$attr['class'] = 'content';
+	$attr['role']  = 'main';
 
-	if ( ! is_singular( 'post' ) && ! is_home() && ! is_archive() )
+	if ( ! is_singular( 'post' ) && ! is_home() && ! is_archive() ) {
 		$attr['itemprop'] = 'mainContentOfPage';
+	}
 
 	return $attr;
 }
@@ -236,8 +240,8 @@ function hybrid_attr_menu( $attr, $context ) {
 		}
 	}
 
-	$attr['itemscope']  = 'itemscope';
-	$attr['itemtype']   = 'http://schema.org/SiteNavigationElement';
+	$attr['itemscope'] = 'itemscope';
+	$attr['itemtype']  = 'http://schema.org/SiteNavigationElement';
 
 	return $attr;
 }
@@ -343,8 +347,8 @@ function hybrid_attr_archive_header( $attr ) {
  */
 function hybrid_attr_archive_title( $attr ) {
 
-	$attr['class']     = 'archive-title';
-	$attr['itemprop']  = 'headline';
+	$attr['class']    = 'archive-title';
+	$attr['itemprop'] = 'headline';
 
 	return $attr;
 }
@@ -360,8 +364,8 @@ function hybrid_attr_archive_title( $attr ) {
  */
 function hybrid_attr_archive_description( $attr ) {
 
-	$attr['class']     = 'archive-description';
-	$attr['itemprop']  = 'text';
+	$attr['class']    = 'archive-description';
+	$attr['itemprop'] = 'text';
 
 	return $attr;
 }
@@ -389,32 +393,24 @@ function hybrid_attr_post( $attr ) {
 
 		if ( 'post' === get_post_type() ) {
 
-			$attr['itemtype']  = 'http://schema.org/BlogPosting';
+			$attr['itemtype'] = 'http://schema.org/BlogPosting';
 
 			/* Add itemprop if within the main query. */
-			if ( is_main_query() && ! is_search() )
+			if ( is_main_query() && ! is_search() ) {
 				$attr['itemprop'] = 'blogPost';
-		}
-
-		elseif ( 'attachment' === get_post_type() && wp_attachment_is_image() ) {
+			}
+		} elseif ( 'attachment' === get_post_type() && wp_attachment_is_image() ) {
 
 			$attr['itemtype'] = 'http://schema.org/ImageObject';
-		}
-
-		elseif ( 'attachment' === get_post_type() && hybrid_attachment_is_audio() ) {
+		} elseif ( 'attachment' === get_post_type() && hybrid_attachment_is_audio() ) {
 
 			$attr['itemtype'] = 'http://schema.org/AudioObject';
-		}
-
-		elseif ( 'attachment' === get_post_type() && hybrid_attachment_is_video() ) {
+		} elseif ( 'attachment' === get_post_type() && hybrid_attachment_is_video() ) {
 
 			$attr['itemtype'] = 'http://schema.org/VideoObject';
+		} else {
+			$attr['itemtype'] = 'http://schema.org/CreativeWork';
 		}
-
-		else {
-			$attr['itemtype']  = 'http://schema.org/CreativeWork';
-		}
-
 	} else {
 
 		$attr['id']    = 'post-0';
@@ -473,7 +469,7 @@ function hybrid_attr_entry_published( $attr ) {
 	$attr['itemprop'] = 'datePublished';
 
 	// Translators: Post date/time "title" attribute.
-	$attr['title']    = get_the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'page-speed' ) );
+	$attr['title'] = get_the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'page-speed' ) );
 
 	return $attr;
 }
@@ -490,10 +486,11 @@ function hybrid_attr_entry_content( $attr ) {
 
 	$attr['class'] = 'entry-content';
 
-	if ( 'post' === get_post_type() )
+	if ( 'post' === get_post_type() ) {
 		$attr['itemprop'] = 'articleBody';
-	else
+	} else {
 		$attr['itemprop'] = 'text';
+	}
 
 	return $attr;
 }
@@ -525,15 +522,16 @@ function hybrid_attr_entry_summary( $attr ) {
  */
 function hybrid_attr_entry_terms( $attr, $context ) {
 
-	if ( !empty( $context ) ) {
+	if ( ! empty( $context ) ) {
 
 		$attr['class'] = 'entry-terms ' . sanitize_html_class( $context );
 
-		if ( 'category' === $context )
+		if ( 'category' === $context ) {
 			$attr['itemprop'] = 'articleSection';
 
-		else if ( 'post_tag' === $context )
+		} elseif ( 'post_tag' === $context ) {
 			$attr['itemprop'] = 'keywords';
+		}
 	}
 
 	return $attr;

@@ -33,7 +33,7 @@ function hybrid_register_sidebar( $args ) {
 		'before_widget' => '<section id="%1$s" class="widget cf %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>'
+		'after_title'   => '</h3>',
 	);
 
 	// Parse the arguments.

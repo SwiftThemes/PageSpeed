@@ -27,14 +27,13 @@ function pagespeed_register_sidebars() {
 		$append = __( 'Appears on rest of the site like posts, archives etc...', 'page-speed' );
 	}
 
-
 	if ( 'll-sb' == get_theme_mod( 'theme_layout', 'r-sb' ) ) {
-		$left = __('Right','page-speed').' ';
-		$right = __('Left','page-speed').' ';
+		$left  = __( 'Right', 'page-speed' ) . ' ';
+		$right = __( 'Left', 'page-speed' ) . ' ';
 
-	}else{
-		$left = __('Left','page-speed').' ';
-		$right = __('Right','page-speed').' ';
+	} else {
+		$left  = __( 'Left', 'page-speed' ) . ' ';
+		$right = __( 'Right', 'page-speed' ) . ' ';
 	}
 	if ( in_array( get_theme_mod( 'theme_layout', 'r-sb' ), array( 'rr-sb', 'll-sb', 'centered' ) ) ) {
 
@@ -42,20 +41,19 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'left-home',
-					'name'         => $left.esc_html_x( 'Sidebar #HomePage', 'sidebar', 'page-speed' ),
+					'name'         => $left . esc_html_x( 'Sidebar #HomePage', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Appears on the left of main content, above the sticky widgets.', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
 				)
 			);
 
-
 			if ( get_theme_mod( 'enable_sticky_sidebars', true ) ) {
 
 				hybrid_register_sidebar(
 					array(
 						'id'           => 'left-sticky-home',
-						'name'         => $left.esc_html_x( 'Sidebar Sticky #HomePage', 'sidebar', 'page-speed' ),
+						'name'         => $left . esc_html_x( 'Sidebar Sticky #HomePage', 'sidebar', 'page-speed' ),
 						'description'  => esc_html__( 'Appears on the left of main content. Widgets added to this sidebar stick to the top of the page when you scroll', 'page-speed' ),
 						'before_title' => '<div class="widget-title heading">',
 						'after_title'  => '</div>',
@@ -65,7 +63,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'right-home',
-					'name'         => $right.esc_html_x( 'Sidebar #HomePage', 'sidebar', 'page-speed' ),
+					'name'         => $right . esc_html_x( 'Sidebar #HomePage', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Appears on the right of main content, below the sticky widgets.', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -76,7 +74,7 @@ function pagespeed_register_sidebars() {
 				hybrid_register_sidebar(
 					array(
 						'id'           => 'right-sticky-home',
-						'name'         => $right.esc_html_x( 'Sidebar Sticky #HomePage', 'sidebar', 'page-speed' ),
+						'name'         => $right . esc_html_x( 'Sidebar Sticky #HomePage', 'sidebar', 'page-speed' ),
 						'description'  => esc_html__( 'Appears on the right of main content. Widgets added to this sidebar stick to the top of the page when you scroll', 'page-speed' ),
 						'before_title' => '<div class="widget-title heading">',
 						'after_title'  => '</div>',
@@ -89,7 +87,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'left-page',
-					'name'         => $left.esc_html_x( 'Sidebar #Page', 'sidebar', 'page-speed' ),
+					'name'         => $left . esc_html_x( 'Sidebar #Page', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Appears on the left of main content, above the sticky widgets on pages using default page template.', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -111,7 +109,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'right-page',
-					'name'         => $right.esc_html_x( 'Sidebar #Page', 'sidebar', 'page-speed' ),
+					'name'         => $right . esc_html_x( 'Sidebar #Page', 'sidebar', 'page-speed' ),
 					'description'  => esc_html__( 'Appears on the right of main content, above the sticky widgets on pages using default page template.', 'page-speed' ),
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -131,11 +129,10 @@ function pagespeed_register_sidebars() {
 			}
 		}
 
-
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'left',
-				'name'         => $left.esc_html_x( 'Sidebar', 'sidebar', 'page-speed' ) . $single_suffix,
+				'name'         => $left . esc_html_x( 'Sidebar', 'sidebar', 'page-speed' ) . $single_suffix,
 				'description'  => esc_html__( 'Appears on the left of main content, below the sticky widgets.', 'page-speed' ) . $append,
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
@@ -147,7 +144,7 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'left-sticky',
-					'name'         => $left.esc_html_x( 'Sidebar Sticky', 'sidebar', 'page-speed' ) . $single_suffix,
+					'name'         => $left . esc_html_x( 'Sidebar Sticky', 'sidebar', 'page-speed' ) . $single_suffix,
 					'description'  => esc_html__( 'Appears on the left of main content. Widgets added to this sidebar stick to the top of the page when you scroll', 'page-speed' ) . $append,
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
@@ -157,7 +154,7 @@ function pagespeed_register_sidebars() {
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'right',
-				'name'         => $right.esc_html_x( 'Sidebar', 'sidebar', 'page-speed' ) . $single_suffix,
+				'name'         => $right . esc_html_x( 'Sidebar', 'sidebar', 'page-speed' ) . $single_suffix,
 				'description'  => esc_html__( 'Appears on the right of main content, below the sticky widgets.', 'page-speed' ) . $append,
 				'before_title' => '<div class="widget-title heading">',
 				'after_title'  => '</div>',
@@ -169,14 +166,13 @@ function pagespeed_register_sidebars() {
 			hybrid_register_sidebar(
 				array(
 					'id'           => 'right-sticky',
-					'name'         => $right.esc_html_x( 'Sidebar Sticky', 'sidebar', 'page-speed' ) . $single_suffix,
+					'name'         => $right . esc_html_x( 'Sidebar Sticky', 'sidebar', 'page-speed' ) . $single_suffix,
 					'description'  => esc_html__( 'Appears on the right of main content. Widgets added to this sidebar stick to the top of the page when you scroll', 'page-speed' ) . $append,
 					'before_title' => '<div class="widget-title heading">',
 					'after_title'  => '</div>',
 				)
 			);
 		}
-
 	} else {
 
 		if ( get_theme_mod( 'dedicated_sidebars_on_home', false ) ) {
@@ -227,7 +223,6 @@ function pagespeed_register_sidebars() {
 			}
 		}
 
-
 		hybrid_register_sidebar(
 			array(
 				'id'           => 'left',
@@ -249,14 +244,12 @@ function pagespeed_register_sidebars() {
 				)
 			);
 		}
-
 	}
-
 
 	hybrid_register_sidebar(
 		array(
 			'id'           => 'page-template-right',
-			'name'         => $right.esc_html_x( 'Sidebar Page Template', 'sidebar', 'page-speed' ),
+			'name'         => $right . esc_html_x( 'Sidebar Page Template', 'sidebar', 'page-speed' ),
 			'description'  => esc_html__( 'Add widgets to right sidebar page template here', 'page-speed' ),
 			'before_title' => '<div class="widget-title heading">',
 			'after_title'  => '</div>',
@@ -266,13 +259,12 @@ function pagespeed_register_sidebars() {
 	hybrid_register_sidebar(
 		array(
 			'id'           => 'page-template-left',
-			'name'         => $left.esc_html_x( 'Sidebar Page Template', 'sidebar', 'page-speed' ),
+			'name'         => $left . esc_html_x( 'Sidebar Page Template', 'sidebar', 'page-speed' ),
 			'description'  => esc_html__( 'Add widgets to left sidebar page template here', 'page-speed' ),
 			'before_title' => '<div class="widget-title heading">',
 			'after_title'  => '</div>',
 		)
 	);
-
 
 	if ( class_exists( 'WooCommerce' ) ) {
 
@@ -289,15 +281,18 @@ function pagespeed_register_sidebars() {
 
 	$columns = get_theme_mod( 'footer_column_count', 4 );
 	for ( $i = 1; $i < $columns + 1; $i ++ ) {
-		register_sidebars( 1, array(
-			'id'            => 'footer-' . $i,
-			'name'          => __( 'Footer Column ', 'page-speed' ) . '#' . $i,
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'description'   => esc_html__( 'Add widgets to footer here.', 'page-speed' ),
-			'before_title'  => '<div class="widget-title heading">',
-			'after_title'   => '</div>',
-		) );
+		register_sidebars(
+			1,
+			array(
+				'id'            => 'footer-' . $i,
+				'name'          => __( 'Footer Column ', 'page-speed' ) . '#' . $i,
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'description'   => esc_html__( 'Add widgets to footer here.', 'page-speed' ),
+				'before_title'  => '<div class="widget-title heading">',
+				'after_title'   => '</div>',
+			)
+		);
 	}
 }
 

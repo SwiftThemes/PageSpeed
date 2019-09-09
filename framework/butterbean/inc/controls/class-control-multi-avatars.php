@@ -48,7 +48,7 @@ class ButterBean_Control_Multi_Avatars extends ButterBean_Control {
 			$this->json['choices'][] = array(
 				'id'     => $user->ID,
 				'name'   => $user->display_name,
-				'avatar' => get_avatar( $user->ID, 70 )
+				'avatar' => get_avatar( $user->ID, 70 ),
 			);
 		}
 	}

@@ -10,4 +10,3 @@ if ( 'single' != get_theme_mod( 'theme_layout', 'r-sb' ) ) {
 
 </div></div><!-- #content-wrapper,#content -->
 <?php get_footer(); ?>
-

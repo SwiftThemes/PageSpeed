@@ -31,8 +31,9 @@ if ( ! function_exists( 'butterbean_loader_100' ) ) {
 	function butterbean_loader_100() {
 
 		// If not in the admin, bail.
-		if ( ! is_admin() )
+		if ( ! is_admin() ) {
 			return;
+		}
 
 		// If ButterBean hasn't been loaded, let's load it.
 		if ( ! defined( 'BUTTERBEAN_LOADED' ) ) {

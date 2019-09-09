@@ -1,14 +1,14 @@
 <?php
 $page_speed_color_schemes = array();
-GLOBAL $page_speed_color_schemes;
+global $page_speed_color_schemes;
 
 
-$page_speed_color_schemes['default']   = array(
+$page_speed_color_schemes['default'] = array(
 	//Generic colors
-	'body-color'       => '',
-	'link-color'       => '',
-	'meta-color'       => '',
-	'sticky-header-bg' => '',
+	'body-color'             => '',
+	'link-color'             => '',
+	'meta-color'             => '',
+	'sticky-header-bg'       => '',
 
 	'button-bg'              => '',
 	'button-color'           => '',
@@ -42,12 +42,12 @@ $page_speed_color_schemes['default']   = array(
 	'sb-widget-bg'           => '',
 
 );
-$page_speed_color_schemes['Denim']     = array(
+$page_speed_color_schemes['Denim'] = array(
 	//Generic colors
-	'body-color'       => '',
-	'link-color'       => '',
-	'meta-color'       => '',
-	'sticky-header-bg' => '',
+	'body-color'             => '',
+	'link-color'             => '',
+	'meta-color'             => '',
+	'sticky-header-bg'       => '',
 
 	'button-bg'              => '',
 	'button-color'           => '',
@@ -86,15 +86,15 @@ $page_speed_color_schemes['Denim']     = array(
 	//Important vars
 	'primary'                => '#2078f9',
 	'hue'                    => 'hue($primary)',
-	'saturation'             => 22
+	'saturation'             => 22,
 
 );
 $page_speed_color_schemes['Goldfinch'] = array(
 	//Generic colors
-	'body-color'       => '',
-	'link-color'       => '',
-	'meta-color'       => '',
-	'sticky-header-bg' => '',
+	'body-color'             => '',
+	'link-color'             => '',
+	'meta-color'             => '',
+	'sticky-header-bg'       => '',
 
 	'button-bg'              => '',
 	'button-color'           => '',
@@ -135,15 +135,15 @@ $page_speed_color_schemes['Goldfinch'] = array(
 	//Important vars
 	'primary'                => '#eeb304',
 	'hue'                    => 'hue(#101820)',
-	'saturation'             => 12
+	'saturation'             => 12,
 
 );
-$page_speed_color_schemes['Fuchsia']   = array(
+$page_speed_color_schemes['Fuchsia'] = array(
 	//Generic colors
-	'body-color'       => '',
-	'link-color'       => '',
-	'meta-color'       => '',
-	'sticky-header-bg' => '',
+	'body-color'             => '',
+	'link-color'             => '',
+	'meta-color'             => '',
+	'sticky-header-bg'       => '',
 
 	'button-bg'              => '',
 	'button-color'           => '',
@@ -180,7 +180,7 @@ $page_speed_color_schemes['Fuchsia']   = array(
 	//Important vars
 	'primary'                => '#5a95ca',
 	'hue'                    => 'hue($primary)',
-	'saturation'             => 22
+	'saturation'             => 22,
 
 
 );
@@ -193,41 +193,41 @@ $page_speed_color_schemes['Fuchsia']   = array(
  */
 $page_speed_color_schemes['Amaranth'] = array(
 	//Generic colors
-	'body-color' => '$dark-3',
-	'link-color' => '',
-	'meta-color' => '',
+	'body-color'                => '$dark-3',
+	'link-color'                => '',
+	'meta-color'                => '',
 
-	'button-bg'              => '#353a4a',
-	'button-color'           => '#FFF',
-	'wp-caption-text-color'  => '',
+	'button-bg'                 => '#353a4a',
+	'button-color'              => '#FFF',
+	'wp-caption-text-color'     => '',
 
 	// Layout colors
-	'body-bg'                => '$dark-2',
-	'wrapper-bg'             => '',
-	'content-bg'             => '',
-	'main-bg'                => '',
-	'sb1-bg'                 => '',
-	'sb2-bg'                 => '',
-	'footer-bg'              => '',
-	'footer-color'           => '',
+	'body-bg'                   => '$dark-2',
+	'wrapper-bg'                => '',
+	'content-bg'                => '',
+	'main-bg'                   => '',
+	'sb1-bg'                    => '',
+	'sb2-bg'                    => '',
+	'footer-bg'                 => '',
+	'footer-color'              => '',
 
 	// Header Colors
-	'header-bg'              => '$dark-2',
-	'sticky-header-bg'       => '',
-	'site-title-color'       => '#b8c3e9',
-	'site-description-color' => '$light-3',
+	'header-bg'                 => '$dark-2',
+	'sticky-header-bg'          => '',
+	'site-title-color'          => '#b8c3e9',
+	'site-description-color'    => '$light-3',
 
 	// Navigation Colors
-	'primary-nav-bg'         => 'rgba(#eb5055,.95)',
-	'primary-nav-color'      => '#FFF',
-	'secondary-nav-bg'       => '',
-	'secondary-nav-color'    => '',
+	'primary-nav-bg'            => 'rgba(#eb5055,.95)',
+	'primary-nav-color'         => '#FFF',
+	'secondary-nav-bg'          => '',
+	'secondary-nav-color'       => '',
 
 	// Sidebar Widgets
-	'sb-widget-title-color'  => '#eb5055',
-	'sb-widget-title-bg'     => '',
-	'sb-widget-border-color' => '',
-	'sb-widget-bg'           => '',
+	'sb-widget-title-color'     => '#eb5055',
+	'sb-widget-title-bg'        => '',
+	'sb-widget-border-color'    => '',
+	'sb-widget-bg'              => '',
 
 	'footer-widget-title-color' => '$light-3',
 
@@ -235,57 +235,57 @@ $page_speed_color_schemes['Amaranth'] = array(
 	//Important vars
 	'primary'                   => '#eb5055',
 	'hue'                       => 'hue(#353a4a)',
-	'saturation'                => 33
+	'saturation'                => 33,
 
 
 );
-$page_speed_color_schemes['Vanilla']  = array(
+$page_speed_color_schemes['Vanilla'] = array(
 
 
 	//Generic colors
-	'body-color' => '$dark-2',
-	'link-color' => '',
-	'meta-color' => '',
+	'body-color'                => '$dark-2',
+	'link-color'                => '',
+	'meta-color'                => '',
 
-	'button-bg'              => '',
-	'button-color'           => '',
-	'wp-caption-text-color'  => '',
+	'button-bg'                 => '',
+	'button-color'              => '',
+	'wp-caption-text-color'     => '',
 
 	// Layout colors
-	'body-bg'                => '$light-2',
-	'wrapper-bg'             => '$light-1',
-	'content-bg'             => '$light-1',
-	'main-bg'                => '$light-1',
-	'sb1-bg'                 => '$light-1',
-	'sb2-bg'                 => '$light-1',
-	'footer-bg'              => '',
-	'footer-color'           => '',
+	'body-bg'                   => '$light-2',
+	'wrapper-bg'                => '$light-1',
+	'content-bg'                => '$light-1',
+	'main-bg'                   => '$light-1',
+	'sb1-bg'                    => '$light-1',
+	'sb2-bg'                    => '$light-1',
+	'footer-bg'                 => '',
+	'footer-color'              => '',
 
 	// Header Colors
-	'header-bg'              => '$light-1',
-	'sticky-header-bg'       => '',
-	'site-title-color'       => '',
-	'site-description-color' => '',
+	'header-bg'                 => '$light-1',
+	'sticky-header-bg'          => '',
+	'site-title-color'          => '',
+	'site-description-color'    => '',
 
 	// Navigation Colors
-	'primary-nav-bg'         => '$primary',
-	'primary-nav-color'      => '$light-1',
-	'secondary-nav-bg'       => '',
-	'secondary-nav-color'    => '',
+	'primary-nav-bg'            => '$primary',
+	'primary-nav-color'         => '$light-1',
+	'secondary-nav-bg'          => '',
+	'secondary-nav-color'       => '',
 
 	// Sidebar Widgets
-	'sb-widget-title-color'  => '',
-	'sb-widget-title-bg'     => '',
-	'sb-widget-border-color' => '',
-	'sb-widget-bg'           => '$light-1',
+	'sb-widget-title-color'     => '',
+	'sb-widget-title-bg'        => '',
+	'sb-widget-border-color'    => '',
+	'sb-widget-bg'              => '$light-1',
 
 	'footer-widget-title-color' => '',
 
 
-//Important vars
-	'primary'                   => '#ED0E11',
-//	'primary'                => '#025FFF',
-	'hue'                       => '30',
+	//Important vars
+		'primary'               => '#ED0E11',
+	//	'primary'                => '#025FFF',
+		'hue'                   => '30',
 	'saturation'                => 66,
 
 );
@@ -294,50 +294,50 @@ $page_speed_color_schemes['Canvas'] = array(
 
 
 	//Generic colors
-	'body-color' => '$dark-2',
-	'link-color' => '',
-	'meta-color' => '',
+	'body-color'                => '$dark-2',
+	'link-color'                => '',
+	'meta-color'                => '',
 
-	'button-bg'              => '',
-	'button-color'           => '',
-	'wp-caption-text-color'  => '',
+	'button-bg'                 => '',
+	'button-color'              => '',
+	'wp-caption-text-color'     => '',
 
 	// Layout colors
-	'body-bg'                => '#FFF',
-	'wrapper-bg'             => 'transparent',
-	'content-bg'             => 'transparent',
-	'main-bg'                => 'transparent',
-	'sb1-bg'                 => 'transparent',
-	'sb2-bg'                 => 'transparent',
-	'footer-bg'              => '',
-	'footer-color'           => '',
+	'body-bg'                   => '#FFF',
+	'wrapper-bg'                => 'transparent',
+	'content-bg'                => 'transparent',
+	'main-bg'                   => 'transparent',
+	'sb1-bg'                    => 'transparent',
+	'sb2-bg'                    => 'transparent',
+	'footer-bg'                 => '',
+	'footer-color'              => '',
 
 	// Header Colors
-	'header-bg'              => 'transparent',
-	'sticky-header-bg'       => '',
-	'site-title-color'       => '',
-	'site-description-color' => '',
+	'header-bg'                 => 'transparent',
+	'sticky-header-bg'          => '',
+	'site-title-color'          => '',
+	'site-description-color'    => '',
 
 	// Navigation Colors
-	'primary-nav-bg'         => '$primary',
-	'primary-nav-color'      => '$light-1',
-	'secondary-nav-bg'       => '',
-	'secondary-nav-color'    => '',
+	'primary-nav-bg'            => '$primary',
+	'primary-nav-color'         => '$light-1',
+	'secondary-nav-bg'          => '',
+	'secondary-nav-color'       => '',
 
 	// Sidebar Widgets
-	'sb-widget-title-color'  => '',
-	'sb-widget-title-bg'     => 'transparent',
-	'sb-widget-border-color' => 'transparent',
-	'sb-widget-bg'           => 'transparent',
+	'sb-widget-title-color'     => '',
+	'sb-widget-title-bg'        => 'transparent',
+	'sb-widget-border-color'    => 'transparent',
+	'sb-widget-bg'              => 'transparent',
 
 	'footer-widget-title-color' => '',
 
 
-//Important vars
-//	'primary'                => '#08b83a',
-	'primary'                   => '#11b836',
-//	'primary'                => '#025FFF',
-	'hue'                       => '0',
+	//Important vars
+	//  'primary'                => '#08b83a',
+		'primary'               => '#11b836',
+	//	'primary'                => '#025FFF',
+		'hue'                   => '0',
 	'saturation'                => 0,
 
 );
@@ -347,12 +347,12 @@ if ( ! defined( 'HELIUM_PRO' ) || ! HELIUM_PRO ) {
 }
 
 function pagespeed_get_color_scheme_choices() {
-	GLOBAL $page_speed_color_schemes;
+	global $page_speed_color_schemes;
 	$choices = array();
 	foreach ( $page_speed_color_schemes as $key => $value ) {
 		$choices[ $key ] = array(
 			'url'   => HELIUM_ADMIN_IMAGES_URI . '/color-schemes/' . $key . '.png',
-			'label' => $key
+			'label' => $key,
 		);
 	}
 

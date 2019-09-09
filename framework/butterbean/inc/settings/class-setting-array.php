@@ -63,18 +63,21 @@ class ButterBean_Setting_Array extends ButterBean_Setting {
 	 */
 	public function save() {
 
-		if ( ! $this->check_capabilities() )
+		if ( ! $this->check_capabilities() ) {
 			return;
+		}
 
 		$old_values = $this->get_value();
 		$new_values = $this->get_posted_value();
 
 		// If there's an array of posted values, set them.
-		if ( $new_values && is_array( $new_values ) && $new_values !== $old_values )
+		if ( $new_values && is_array( $new_values ) && $new_values !== $old_values ) {
 			return update_post_meta( $this->manager->post_id, $this->name, $new_values );
+		}
 
 		// If no array of posted values but we have old values, delete them.
-		else if ( $old_values && ! $new_values )
+		elseif ( $old_values && ! $new_values ) {
 			return delete_post_meta( $this->manager->post_id, $this->name );
+		}
 	}
 }

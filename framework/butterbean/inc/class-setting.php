@@ -113,15 +113,17 @@ class ButterBean_Setting {
 
 		foreach ( array_keys( get_object_vars( $this ) ) as $key ) {
 
-			if ( isset( $args[ $key ] ) )
+			if ( isset( $args[ $key ] ) ) {
 				$this->$key = $args[ $key ];
+			}
 		}
 
 		$this->manager = $manager;
 		$this->name    = $name;
 
-		if ( $this->sanitize_callback )
+		if ( $this->sanitize_callback ) {
 			add_filter( "butterbean_{$this->manager->name}_sanitize_{$this->name}", $this->sanitize_callback, 10, 2 );
+		}
 	}
 
 	/**
@@ -149,8 +151,9 @@ class ButterBean_Setting {
 
 		$value = '';
 
-		if ( isset( $_POST[ $this->get_field_name() ] ) )
+		if ( isset( $_POST[ $this->get_field_name() ] ) ) {
 			$value = $_POST[ $this->get_field_name() ];
+		}
 
 		return $this->sanitize( $value );
 	}
@@ -188,19 +191,22 @@ class ButterBean_Setting {
 	 */
 	public function save() {
 
-		if ( ! $this->check_capabilities() )
+		if ( ! $this->check_capabilities() ) {
 			return;
+		}
 
 		$old_value = $this->get_value();
 		$new_value = $this->get_posted_value();
 
 		// If we have don't have a new value but do have an old one, delete it.
-		if ( ! $new_value && $old_value )
+		if ( ! $new_value && $old_value ) {
 			delete_post_meta( $this->manager->post_id, $this->name );
+		}
 
 		// If the new value doesn't match the old value, set it.
-		else if ( $new_value !== $old_value )
+		elseif ( $new_value !== $old_value ) {
 			update_post_meta( $this->manager->post_id, $this->name, $new_value );
+		}
 	}
 
 	/**
@@ -212,14 +218,17 @@ class ButterBean_Setting {
 	 */
 	public function check_capabilities() {
 
-		if ( $this->capability && ! call_user_func_array( 'current_user_can', (array) $this->capability ) )
+		if ( $this->capability && ! call_user_func_array( 'current_user_can', (array) $this->capability ) ) {
 			return false;
+		}
 
-		if ( $this->post_type_supports && ! call_user_func_array( 'post_type_supports', array( get_post_type( $this->manager->post_id ), $this->post_type_supports ) ) )
+		if ( $this->post_type_supports && ! call_user_func_array( 'post_type_supports', array( get_post_type( $this->manager->post_id ), $this->post_type_supports ) ) ) {
 			return false;
+		}
 
-		if ( $this->theme_supports && ! call_user_func_array( 'theme_supports', (array) $this->theme_supports ) )
+		if ( $this->theme_supports && ! call_user_func_array( 'theme_supports', (array) $this->theme_supports ) ) {
 			return false;
+		}
 
 		return true;
 	}

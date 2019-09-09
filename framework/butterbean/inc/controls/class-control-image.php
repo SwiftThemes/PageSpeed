@@ -63,12 +63,12 @@ class ButterBean_Control_Image extends ButterBean_Control {
 		$this->l10n = wp_parse_args(
 			$this->l10n,
 			array(
-				'upload'      => esc_html__( 'Add image',         'butterbean' ),
-				'set'         => esc_html__( 'Set as image',      'butterbean' ),
-				'choose'      => esc_html__( 'Choose image',      'butterbean' ),
-				'change'      => esc_html__( 'Change image',      'butterbean' ),
-				'remove'      => esc_html__( 'Remove image',      'butterbean' ),
-				'placeholder' => esc_html__( 'No image selected', 'butterbean' )
+				'upload'      => esc_html__( 'Add image', 'butterbean' ),
+				'set'         => esc_html__( 'Set as image', 'butterbean' ),
+				'choose'      => esc_html__( 'Choose image', 'butterbean' ),
+				'change'      => esc_html__( 'Change image', 'butterbean' ),
+				'remove'      => esc_html__( 'Remove image', 'butterbean' ),
+				'placeholder' => esc_html__( 'No image selected', 'butterbean' ),
 			)
 		);
 	}
@@ -107,6 +107,6 @@ class ButterBean_Control_Image extends ButterBean_Control {
 		}
 
 		$this->json['src'] = $image ? esc_url( $image[0] ) : '';
-		$this->json['alt'] = $alt   ? esc_attr( $alt )     : '';
+		$this->json['alt'] = $alt ? esc_attr( $alt ) : '';
 	}
 }

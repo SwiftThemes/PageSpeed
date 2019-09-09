@@ -47,7 +47,6 @@ function helium_write_to_uploads( $content, $destination ) {
 		return;
 	}
 
-
 }
 
 function helium_all_theme_mods_scss() {
@@ -66,8 +65,8 @@ class Helium_Styles {
 
 	private $main;
 	private $source;
-	private $af_files = array();    // List above fold css files
-	private $bf_files = array();  // Below fold css files
+	private $af_files            = array();    // List above fold css files
+	private $bf_files            = array();  // Below fold css files
 	private $scss_variable_files = array( 'variables', 'colors', 'mixins' );
 	private $prefix;
 
@@ -92,7 +91,6 @@ class Helium_Styles {
 		$this->source = trailingslashit( $src );
 		$this->set_file_list();
 
-
 	}
 
 	private function set_file_list() {
@@ -111,35 +109,39 @@ class Helium_Styles {
 					$file      = HELIUM_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
 
 					if ( in_array( $file_name, $this->scss_variable_files ) ) {
-						array_push($this->af_files, $file);
-						array_push($this->bf_files, $file);
-						if ($wp_filesystem->is_file(HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss')) {
+						array_push( $this->af_files, $file );
+						array_push( $this->bf_files, $file );
+						if ( $wp_filesystem->is_file( HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss' ) ) {
 								$file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/' . $file_name . '.scss';
-							}
+						}
 						// Check if there is a file to override the variables.
 						// If yes, add them after our regular variable files.
 						$override_file = HELIUM_CHILD_THEME_DIR . 'assets/css/src/override-' . $file_name . '.scss';
-						if ($wp_filesystem->is_file($override_file)) {
-								array_push($this->af_files, $override_file);
-								array_push($this->bf_files, $override_file);
+						if ( $wp_filesystem->is_file( $override_file ) ) {
+								array_push( $this->af_files, $override_file );
+								array_push( $this->bf_files, $override_file );
 						}
-					}else{
+					} else {
 							// Short this to disable separation.
-							if ($this->is_above_fold($file_name)) {
-									array_push($this->af_files, $file);
-							} elseif ('main' !== $file) {
-									array_push($this->bf_files, $file);
-							}
+						if ( $this->is_above_fold( $file_name ) ) {
+								array_push( $this->af_files, $file );
+						} elseif ( 'main' !== $file ) {
+								array_push( $this->bf_files, $file );
+						}
 					}
 				}
 			}
 
 			delete_transient( $this->prefix . 'sass_file_list' );
-			set_transient( $this->prefix . 'sass_file_list', array(
-				'above_fold' => $this->af_files,
-				'below_fold' => $this->bf_files,
-			), 1800 );
-			
+			set_transient(
+				$this->prefix . 'sass_file_list',
+				array(
+					'above_fold' => $this->af_files,
+					'below_fold' => $this->bf_files,
+				),
+				1800
+			);
+
 		}
 	}
 
@@ -211,13 +213,11 @@ class Helium_Styles {
 			}
 		}
 
-
 		$color_scheme = sanitize_text_field( get_theme_mod( 'color_scheme', 'default' ) );
 		$color_scheme = $page_speed_color_schemes[ $color_scheme ];
 
-
 		$override = '';
-//		$override = helium_all_theme_mods_scss();
+		//      $override = helium_all_theme_mods_scss();
 		$override .= $this->set_bg_image_variables();
 		$override .= "///** Overridden by settings from customizer */\n\n";
 		$override .= '$site_width:' . sanitize_text_field( get_theme_mod( 'site_width', '1260px' ) ) . ";\n";
@@ -230,7 +230,6 @@ class Helium_Styles {
 		} else {
 			$override .= '$is_sleek_header:0' . ";\n";
 		}
-
 
 		if ( get_theme_mod( 'primary_font_stack' ) && get_theme_mod( 'primary_font_stack' ) != '' ) {
 			$override .= '$body-font-stack:' . sanitize_text_field( get_theme_mod( 'primary_font_stack', '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"' ) ) . ";\n";
@@ -282,7 +281,6 @@ class Helium_Styles {
 
 		$override .= '$masonry_column_count:' . get_theme_mod( 'masonry_column_count', 3 ) . ';';
 
-
 		$footer_widths = get_theme_mod( 'footer_widths' );
 
 		for ( $i = 0; $i <= get_theme_mod( 'footer_column_count', 4 ); $i ++ ) {
@@ -292,7 +290,6 @@ class Helium_Styles {
 		}
 
 		$content = str_replace( '/**variables**/', $override, $content );
-
 
 		$content = str_replace( '/**colors_from_color_scheme**/', helium_get_hue_and_primary_color( $color_scheme ), $content );
 
@@ -312,9 +309,7 @@ class Helium_Styles {
 
 		$content = str_replace( '/**color_scheme**/', helium_generate_scss( $color_scheme ), $content );
 
-
 		// End
-
 
 		$temp = '';
 		global $pagespeed_gradient_bgs;
@@ -347,7 +342,6 @@ class Helium_Styles {
 		}
 
 		$content = str_replace( '/**handpicked_colors_raw**/', $temp, $content );
-
 
 		// Overriding the individual colors
 		$hand_picked_colors = '';
@@ -438,9 +432,7 @@ class Helium_Styles {
 			$hand_picked_colors .= '$copyright-link-color:' . $temp['link_color'] . ';';
 		}
 
-
 		$content = str_replace( '/**handpicked_colors**/', $hand_picked_colors, $content );
-
 
 		if ( get_theme_mod( 'enable_scss_override' ) ) {
 
@@ -465,7 +457,6 @@ class Helium_Styles {
 		} catch ( Exception $e ) {
 			set_transient( $this->prefix . 'sass_error', $e->getMessage(), 600 );
 			helium_write_to_uploads( $content, 'combined.scss' );
-
 
 			delete_transient( $this->prefix . 'sass_file_list' );
 			delete_transient( $this->prefix . 'sass_combined_bf' );

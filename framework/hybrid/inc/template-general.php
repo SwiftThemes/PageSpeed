@@ -75,7 +75,13 @@ function hybrid_theme_link() {
  */
 function hybrid_get_theme_link() {
 	$theme   = wp_get_theme( get_template() );
-	$allowed = array( 'abbr' => array( 'title' => true ), 'acronym' => array( 'title' => true ), 'code' => true, 'em' => true, 'strong' => true );
+	$allowed = array(
+		'abbr'    => array( 'title' => true ),
+		'acronym' => array( 'title' => true ),
+		'code'    => true,
+		'em'      => true,
+		'strong'  => true,
+	);
 
 	// Note: URI is escaped via `WP_Theme::markup_header()`.
 	return sprintf( '<a class="theme-link" href="%s">%s</a>', $theme->display( 'ThemeURI' ), wp_kses( $theme->display( 'Name' ), $allowed ) );
@@ -101,11 +107,18 @@ function hybrid_child_theme_link() {
  */
 function hybrid_get_child_theme_link() {
 
-	if ( ! is_child_theme() )
+	if ( ! is_child_theme() ) {
 		return '';
+	}
 
 	$theme   = wp_get_theme();
-	$allowed = array( 'abbr' => array( 'title' => true ), 'acronym' => array( 'title' => true ), 'code' => true, 'em' => true, 'strong' => true );
+	$allowed = array(
+		'abbr'    => array( 'title' => true ),
+		'acronym' => array( 'title' => true ),
+		'code'    => true,
+		'em'      => true,
+		'strong'  => true,
+	);
 
 	// Note: URI is escaped via `WP_Theme::markup_header()`.
 	return sprintf( '<a class="child-link" href="%s">%s</a>', $theme->display( 'ThemeURI' ), wp_kses( $theme->display( 'Name' ), $allowed ) );
@@ -122,11 +135,12 @@ function hybrid_get_child_theme_link() {
  */
 function hybrid_get_blog_url() {
 
-	if ( 'posts' === get_option( 'show_on_front' ) )
+	if ( 'posts' === get_option( 'show_on_front' ) ) {
 		$blog_url = home_url();
 
-	elseif ( 0 < ( $page_for_posts = get_option( 'page_for_posts' ) ) )
+	} elseif ( 0 < ( $page_for_posts = get_option( 'page_for_posts' ) ) ) {
 		$blog_url = get_permalink( $page_for_posts );
+	}
 
 	return ! empty( $blog_url ) ? esc_url( $blog_url ) : '';
 }
@@ -151,8 +165,9 @@ function hybrid_site_title() {
  */
 function hybrid_get_site_title() {
 
-	if ( $title = get_bloginfo( 'name' ) )
+	if ( $title = get_bloginfo( 'name' ) ) {
 		$title = sprintf( '<h1 %s><a href="%s" rel="home">%s</a></h1>', hybrid_get_attr( 'site-title' ), esc_url( home_url() ), $title );
+	}
 
 	return apply_filters( 'hybrid_site_title', $title );
 }
@@ -177,8 +192,9 @@ function hybrid_site_description() {
  */
 function hybrid_get_site_description() {
 
-	if ( $desc = get_bloginfo( 'description' ) )
+	if ( $desc = get_bloginfo( 'description' ) ) {
 		$desc = sprintf( '<h2 %s>%s</h2>', hybrid_get_attr( 'site-description' ), $desc );
+	}
 
 	return apply_filters( 'hybrid_site_description', $desc );
 }

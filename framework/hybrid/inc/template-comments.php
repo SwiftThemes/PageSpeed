@@ -24,7 +24,7 @@ function hybrid_comment_reply_link( $args = array() ) {
 
 /**
  * Outputs the comment reply link.  Note that WP's `comment_reply_link()` doesn't work outside of
- * `wp_list_comments()` without passing in the proper arguments (it isn't meant to).  This function 
+ * `wp_list_comments()` without passing in the proper arguments (it isn't meant to).  This function
  * is just a wrapper for `get_comment_reply_link()`, which adds in the arguments automatically.
  *
  * @since  2.0.0
@@ -34,8 +34,9 @@ function hybrid_comment_reply_link( $args = array() ) {
  */
 function hybrid_get_comment_reply_link( $args = array() ) {
 
-	if ( ! get_option( 'thread_comments' ) || in_array( get_comment_type(), array( 'pingback', 'trackback' ) ) )
+	if ( ! get_option( 'thread_comments' ) || in_array( get_comment_type(), array( 'pingback', 'trackback' ) ) ) {
 		return '';
+	}
 
 	$args = wp_parse_args(
 		$args,
@@ -70,8 +71,9 @@ function hybrid_comments_callback( $comment ) {
 	$comment_type = get_comment_type( $comment->comment_ID );
 
 	// Create an empty array if the comment template array is not set.
-	if ( ! isset( $hybrid->comment_template ) || ! is_array( $hybrid->comment_template ) )
+	if ( ! isset( $hybrid->comment_template ) || ! is_array( $hybrid->comment_template ) ) {
 		$hybrid->comment_template = array();
+	}
 
 	// Check if a template has been provided for the specific comment type.  If not, get the template.
 	if ( ! isset( $hybrid->comment_template[ $comment_type ] ) ) {
@@ -100,8 +102,9 @@ function hybrid_comments_callback( $comment ) {
 	}
 
 	// If a template was found, load the template.
-	if ( ! empty( $hybrid->comment_template[ $comment_type ] ) )
+	if ( ! empty( $hybrid->comment_template[ $comment_type ] ) ) {
 		require( $hybrid->comment_template[ $comment_type ] );
+	}
 }
 
 /**

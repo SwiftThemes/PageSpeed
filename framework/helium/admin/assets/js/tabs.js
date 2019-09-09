@@ -1,6 +1,9 @@
 (function($) {
-    setTimeout(function () {
-        jQuery("#tabs").tabs();
+	setTimeout(
+		function () {
+			jQuery( "#tabs" ).tabs();
 
-    },0)
-})(jQuery);
+		},
+		0
+	)
+})( jQuery );

@@ -16,14 +16,14 @@
 //remove_filter( 'single_post_title', 'strip_tags' );
 
 # Use same default filters as 'the_content' with a little more flexibility.
-add_filter( 'hybrid_archive_description', array( $GLOBALS['wp_embed'], 'run_shortcode' ),   5  );
-add_filter( 'hybrid_archive_description', array( $GLOBALS['wp_embed'], 'autoembed'     ),   5  );
-add_filter( 'hybrid_archive_description',                              'wptexturize',       10 );
-add_filter( 'hybrid_archive_description',                              'convert_smilies',   15 );
-add_filter( 'hybrid_archive_description',                              'convert_chars',     20 );
-add_filter( 'hybrid_archive_description',                              'wpautop',           25 );
-add_filter( 'hybrid_archive_description',                              'do_shortcode',      30 );
-add_filter( 'hybrid_archive_description',                              'shortcode_unautop', 35 );
+add_filter( 'hybrid_archive_description', array( $GLOBALS['wp_embed'], 'run_shortcode' ), 5 );
+add_filter( 'hybrid_archive_description', array( $GLOBALS['wp_embed'], 'autoembed' ), 5 );
+add_filter( 'hybrid_archive_description', 'wptexturize', 10 );
+add_filter( 'hybrid_archive_description', 'convert_smilies', 15 );
+add_filter( 'hybrid_archive_description', 'convert_chars', 20 );
+add_filter( 'hybrid_archive_description', 'wpautop', 25 );
+add_filter( 'hybrid_archive_description', 'do_shortcode', 30 );
+add_filter( 'hybrid_archive_description', 'shortcode_unautop', 35 );
 
 # Default excerpt more.
 add_filter( 'excerpt_more', 'hybrid_excerpt_more', 5 );
@@ -33,12 +33,12 @@ add_filter( 'wp_link_pages_args', 'hybrid_link_pages_args', 5 );
 add_filter( 'wp_link_pages_link', 'hybrid_link_pages_link', 5 );
 
 # Filters to add microdata support to common template tags.
-add_filter( 'the_author_posts_link',          'hybrid_the_author_posts_link',          5 );
-add_filter( 'get_comment_author_link',        'hybrid_get_comment_author_link',        5 );
-add_filter( 'get_comment_author_url_link',    'hybrid_get_comment_author_url_link',    5 );
-add_filter( 'comment_reply_link',             'hybrid_comment_reply_link_filter',      5 );
-add_filter( 'get_avatar',                     'hybrid_get_avatar',                     5 );
-add_filter( 'post_thumbnail_html',            'hybrid_post_thumbnail_html',            5 );
+add_filter( 'the_author_posts_link', 'hybrid_the_author_posts_link', 5 );
+add_filter( 'get_comment_author_link', 'hybrid_get_comment_author_link', 5 );
+add_filter( 'get_comment_author_url_link', 'hybrid_get_comment_author_url_link', 5 );
+add_filter( 'comment_reply_link', 'hybrid_comment_reply_link_filter', 5 );
+add_filter( 'get_avatar', 'hybrid_get_avatar', 5 );
+add_filter( 'post_thumbnail_html', 'hybrid_post_thumbnail_html', 5 );
 add_filter( 'comments_popup_link_attributes', 'hybrid_comments_popup_link_attributes', 5 );
 
 /**
@@ -51,8 +51,9 @@ add_filter( 'comments_popup_link_attributes', 'hybrid_comments_popup_link_attrib
  */
 function hybrid_excerpt_more( $text ) {
 
-	if ( 0 !== strpos( $text, '<a' ) )
+	if ( 0 !== strpos( $text, '<a' ) ) {
 		$text = sprintf( ' <a href="%s" class="more-link">%s</a>', esc_url( get_permalink() ), trim( $text ) );
+	}
 
 	return $text;
 }
@@ -95,13 +96,13 @@ function hybrid_link_pages_link( $link ) {
 function hybrid_the_author_posts_link( $link ) {
 
 	$pattern = array(
-		"/(<a.*?)(>)/i",
-		'/(<a.*?>)(.*?)(<\/a>)/i'
+		'/(<a.*?)(>)/i',
+		'/(<a.*?>)(.*?)(<\/a>)/i',
 	);
 
 	$replace = array(
 		'$1 class="url fn n" itemprop="url"$2',
-		'$1<span itemprop="name">$2</span>$3'
+		'$1<span itemprop="name">$2</span>$3',
 	);
 
 	return preg_replace( $pattern, $replace, $link );
@@ -119,14 +120,14 @@ function hybrid_get_comment_author_link( $link ) {
 
 	$pattern = array(
 		'/(class=[\'"])(.+?)([\'"])/i',
-		"/(<a.*?)(>)/i",
-		'/(<a.*?>)(.*?)(<\/a>)/i'
+		'/(<a.*?)(>)/i',
+		'/(<a.*?>)(.*?)(<\/a>)/i',
 	);
 
 	$replace = array(
 		'$1$2 fn n$3',
 		'$1 itemprop="url"$2',
-		'$1<span itemprop="name">$2</span>$3'
+		'$1<span itemprop="name">$2</span>$3',
 	);
 
 	return preg_replace( $pattern, $replace, $link );
@@ -144,11 +145,11 @@ function hybrid_get_comment_author_url_link( $link ) {
 
 	$pattern = array(
 		'/(class=[\'"])(.+?)([\'"])/i',
-		"/(<a.*?)(>)/i"
+		'/(<a.*?)(>)/i',
 	);
 	$replace = array(
 		'$1$2 fn n$3',
-		'$1 itemprop="url"$2'
+		'$1 itemprop="url"$2',
 	);
 
 	return preg_replace( $pattern, $replace, $link );

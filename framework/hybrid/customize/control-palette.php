@@ -4,8 +4,8 @@
  *
  * Note, the `$choices` array is slightly different than normal and should be in the form of
  * `array(
- *	$value => array( 'label' => $text_label, 'colors' => $array_of_hex_colors ),
- *	$value => array( 'label' => $text_label, 'colors' => $array_of_hex_colors ),
+ *  $value => array( 'label' => $text_label, 'colors' => $array_of_hex_colors ),
+ *  $value => array( 'label' => $text_label, 'colors' => $array_of_hex_colors ),
  * )`
  *
  * @package    Hybrid
@@ -51,7 +51,7 @@ class Hybrid_Customize_Control_Palette extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		wp_enqueue_script( 'hybrid-customize-controls' );
-		wp_enqueue_style(  'hybrid-customize-controls' );
+		wp_enqueue_style( 'hybrid-customize-controls' );
 	}
 
 	/**
@@ -65,8 +65,9 @@ class Hybrid_Customize_Control_Palette extends WP_Customize_Control {
 		parent::to_json();
 
 		// Make sure the colors have a hash.
-		foreach ( $this->choices as $choice => $value )
+		foreach ( $this->choices as $choice => $value ) {
 			$this->choices[ $choice ]['colors'] = array_map( 'maybe_hash_hex_color', $value['colors'] );
+		}
 
 		$this->json['choices'] = $this->choices;
 		$this->json['link']    = $this->get_link();
@@ -110,5 +111,6 @@ class Hybrid_Customize_Control_Palette extends WP_Customize_Control {
 				</div>
 			</label>
 		<# } ) #>
-	<?php }
+		<?php
+	}
 }

@@ -62,12 +62,12 @@ if ( ! class_exists( 'Hybrid' ) ) {
 			$GLOBALS['hybrid'] = new stdClass;
 
 			// Set up the load order.
-			add_action( 'after_setup_theme', array( $this, 'constants'     ), -95 );
-			add_action( 'after_setup_theme', array( $this, 'core'          ), -95 );
-			add_action( 'after_setup_theme', array( $this, 'theme_support' ),  12 );
-			add_action( 'after_setup_theme', array( $this, 'includes'      ),  13 );
-			add_action( 'after_setup_theme', array( $this, 'extensions'    ),  14 );
-			add_action( 'after_setup_theme', array( $this, 'admin'         ),  95 );
+			add_action( 'after_setup_theme', array( $this, 'constants' ), -95 );
+			add_action( 'after_setup_theme', array( $this, 'core' ), -95 );
+			add_action( 'after_setup_theme', array( $this, 'theme_support' ), 12 );
+			add_action( 'after_setup_theme', array( $this, 'includes' ), 13 );
+			add_action( 'after_setup_theme', array( $this, 'extensions' ), 14 );
+			add_action( 'after_setup_theme', array( $this, 'admin' ), 95 );
 		}
 
 		/**
@@ -84,30 +84,32 @@ if ( ! class_exists( 'Hybrid' ) ) {
 			define( 'HYBRID_VERSION', '3.0.0' );
 
 			// Theme directory paths.
-			define( 'HYBRID_PARENT', trailingslashit( get_template_directory()   ) );
-			define( 'HYBRID_CHILD',  trailingslashit( get_stylesheet_directory() ) );
+			define( 'HYBRID_PARENT', trailingslashit( get_template_directory() ) );
+			define( 'HYBRID_CHILD', trailingslashit( get_stylesheet_directory() ) );
 
 			// Theme directory URIs.
-			define( 'HYBRID_PARENT_URI', trailingslashit( get_template_directory_uri()   ) );
-			define( 'HYBRID_CHILD_URI',  trailingslashit( get_stylesheet_directory_uri() ) );
+			define( 'HYBRID_PARENT_URI', trailingslashit( get_template_directory_uri() ) );
+			define( 'HYBRID_CHILD_URI', trailingslashit( get_stylesheet_directory_uri() ) );
 
 			// Sets the path to the core framework directory.
-			if ( ! defined( 'HYBRID_DIR' ) )
+			if ( ! defined( 'HYBRID_DIR' ) ) {
 				define( 'HYBRID_DIR', trailingslashit( HYBRID_PARENT . basename( dirname( __FILE__ ) ) ) );
+			}
 
 			// Sets the path to the core framework directory URI.
-			if ( ! defined( 'HYBRID_URI' ) )
+			if ( ! defined( 'HYBRID_URI' ) ) {
 				define( 'HYBRID_URI', trailingslashit( HYBRID_PARENT_URI . basename( dirname( __FILE__ ) ) ) );
+			}
 
 			// Core framework directory paths.
-			define( 'HYBRID_ADMIN',     trailingslashit( HYBRID_DIR . 'admin'     ) );
-			define( 'HYBRID_INC',       trailingslashit( HYBRID_DIR . 'inc'       ) );
-			define( 'HYBRID_EXT',       trailingslashit( HYBRID_DIR . 'ext'       ) );
+			define( 'HYBRID_ADMIN', trailingslashit( HYBRID_DIR . 'admin' ) );
+			define( 'HYBRID_INC', trailingslashit( HYBRID_DIR . 'inc' ) );
+			define( 'HYBRID_EXT', trailingslashit( HYBRID_DIR . 'ext' ) );
 			define( 'HYBRID_CUSTOMIZE', trailingslashit( HYBRID_DIR . 'customize' ) );
 
 			// Core framework directory URIs.
 			define( 'HYBRID_CSS', trailingslashit( HYBRID_URI . 'css' ) );
-			define( 'HYBRID_JS',  trailingslashit( HYBRID_URI . 'js'  ) );
+			define( 'HYBRID_JS', trailingslashit( HYBRID_URI . 'js' ) );
 		}
 
 		/**
@@ -120,29 +122,29 @@ if ( ! class_exists( 'Hybrid' ) ) {
 		public function core() {
 
 			// Load the class files.
-			require_once( HYBRID_INC . 'class-media-meta.php'         );
+			require_once( HYBRID_INC . 'class-media-meta.php' );
 			require_once( HYBRID_INC . 'class-media-meta-factory.php' );
-			require_once( HYBRID_INC . 'class-media-grabber.php'      );
+			require_once( HYBRID_INC . 'class-media-grabber.php' );
 
 			// Load the functions files.
-			require_once( HYBRID_INC . 'functions-attr.php'      );
-			require_once( HYBRID_INC . 'functions-context.php'   );
-			require_once( HYBRID_INC . 'functions-i18n.php'      );
+			require_once( HYBRID_INC . 'functions-attr.php' );
+			require_once( HYBRID_INC . 'functions-context.php' );
+			require_once( HYBRID_INC . 'functions-i18n.php' );
 			require_once( HYBRID_INC . 'functions-customize.php' );
-			require_once( HYBRID_INC . 'functions-filters.php'   );
-			require_once( HYBRID_INC . 'functions-head.php'      );
-			require_once( HYBRID_INC . 'functions-meta.php'      );
-			require_once( HYBRID_INC . 'functions-sidebars.php'  );
-			require_once( HYBRID_INC . 'functions-scripts.php'   );
-			require_once( HYBRID_INC . 'functions-styles.php'    );
-			require_once( HYBRID_INC . 'functions-utility.php'   );
+			require_once( HYBRID_INC . 'functions-filters.php' );
+			require_once( HYBRID_INC . 'functions-head.php' );
+			require_once( HYBRID_INC . 'functions-meta.php' );
+			require_once( HYBRID_INC . 'functions-sidebars.php' );
+			require_once( HYBRID_INC . 'functions-scripts.php' );
+			require_once( HYBRID_INC . 'functions-styles.php' );
+			require_once( HYBRID_INC . 'functions-utility.php' );
 
 			// Load the template files.
-			require_once( HYBRID_INC . 'template.php'          );
+			require_once( HYBRID_INC . 'template.php' );
 			require_once( HYBRID_INC . 'template-comments.php' );
-			require_once( HYBRID_INC . 'template-general.php'  );
-			require_once( HYBRID_INC . 'template-media.php'    );
-			require_once( HYBRID_INC . 'template-post.php'     );
+			require_once( HYBRID_INC . 'template-general.php' );
+			require_once( HYBRID_INC . 'template-media.php' );
+			require_once( HYBRID_INC . 'template-post.php' );
 		}
 
 		/**
@@ -163,16 +165,19 @@ if ( ! class_exists( 'Hybrid' ) ) {
 			add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
 
 			// Remove support for the the Breadcrumb Trail extension if the plugin is installed.
-			if ( function_exists( 'breadcrumb_trail' ) || class_exists( 'Breadcrumb_Trail' ) )
+			if ( function_exists( 'breadcrumb_trail' ) || class_exists( 'Breadcrumb_Trail' ) ) {
 				remove_theme_support( 'breadcrumb-trail' );
+			}
 
 			// Remove support for the the Cleaner Gallery extension if the plugin is installed.
-			if ( function_exists( 'cleaner_gallery' ) || class_exists( 'Cleaner_Gallery' ) )
+			if ( function_exists( 'cleaner_gallery' ) || class_exists( 'Cleaner_Gallery' ) ) {
 				remove_theme_support( 'cleaner-gallery' );
+			}
 
 			// Remove support for the the Get the Image extension if the plugin is installed.
-			if ( function_exists( 'get_the_image' ) || class_exists( 'Get_The_Image' ) )
+			if ( function_exists( 'get_the_image' ) || class_exists( 'Get_The_Image' ) ) {
 				remove_theme_support( 'get-the-image' );
+			}
 		}
 
 		/**
@@ -190,12 +195,12 @@ if ( ! class_exists( 'Hybrid' ) ) {
 
 			// Load the post format functionality if post formats are supported.
 			require_if_theme_supports( 'post-formats', HYBRID_INC . 'functions-formats.php' );
-			require_if_theme_supports( 'post-formats', HYBRID_INC . 'class-chat.php'        );
+			require_if_theme_supports( 'post-formats', HYBRID_INC . 'class-chat.php' );
 
 			// Load the Theme Layouts extension if supported.
-			require_if_theme_supports( 'theme-layouts', HYBRID_INC . 'class-layout.php'         );
+			require_if_theme_supports( 'theme-layouts', HYBRID_INC . 'class-layout.php' );
 			require_if_theme_supports( 'theme-layouts', HYBRID_INC . 'class-layout-factory.php' );
-			require_if_theme_supports( 'theme-layouts', HYBRID_INC . 'functions-layouts.php'    );
+			require_if_theme_supports( 'theme-layouts', HYBRID_INC . 'functions-layouts.php' );
 
 			// Load the deprecated functions if supported.
 			require_if_theme_supports( 'hybrid-core-deprecated', HYBRID_INC . 'functions-deprecated.php' );
@@ -215,8 +220,8 @@ if ( ! class_exists( 'Hybrid' ) ) {
 		public function extensions() {
 
 			hybrid_require_if_theme_supports( 'breadcrumb-trail', HYBRID_EXT . 'breadcrumb-trail.php' );
-			hybrid_require_if_theme_supports( 'cleaner-gallery',  HYBRID_EXT . 'cleaner-gallery.php'  );
-			hybrid_require_if_theme_supports( 'get-the-image',    HYBRID_EXT . 'get-the-image.php'    );
+			hybrid_require_if_theme_supports( 'cleaner-gallery', HYBRID_EXT . 'cleaner-gallery.php' );
+			hybrid_require_if_theme_supports( 'get-the-image', HYBRID_EXT . 'get-the-image.php' );
 		}
 
 		/**
@@ -228,8 +233,9 @@ if ( ! class_exists( 'Hybrid' ) ) {
 		 */
 		public function admin() {
 
-			if ( is_admin() )
+			if ( is_admin() ) {
 				require_once( HELIUM_ADMIN . 'admin.php' );
+			}
 		}
 	}
 }

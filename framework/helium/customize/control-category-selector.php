@@ -6,7 +6,7 @@
  * Time: 10:38 AM
  */
 /**
- * A class to create a dropdown for all categories in your wordpress site
+ * A class to create a dropdown for all categories in your WordPress site
  */
 
 
@@ -20,7 +20,6 @@ function helium_category_dropdown_control( $wp_customize ) {
 		public $type = 'he_category_selector';
 
 		private $cats = false;
-
 
 		public function to_json() {
 			parent::to_json();
@@ -36,30 +35,28 @@ function helium_category_dropdown_control( $wp_customize ) {
 			parent::__construct( $manager, $id, $args );
 		}
 
-
 		public function content_template() {
 
 			?>
-            <label class="customize-control-title">{{{ data.label }}}
-                <select multiple {{{ data.link }}}>
-                    <option><?php _e( 'Recent posts', 'page-speed' ) ?></option>
-                    <# for ( key in data.cats ) { #>
-                        <option
+			<label class="customize-control-title">{{{ data.label }}}
+				<select multiple {{{ data.link }}}>
+					<option><?php _e( 'Recent posts', 'page-speed' ); ?></option>
+					<# for ( key in data.cats ) { #>
+						<option
 
-                                value={{data.cats[key]['term_id']}}
-                        <# if ( data.value.indexOf(data.cats[key]['term_id']) !== -1 ) { #>
-                            selected="selected"
-                            <# } #>
+								value={{data.cats[key]['term_id']}}
+						<# if ( data.value.indexOf(data.cats[key]['term_id']) !== -1 ) { #>
+							selected="selected"
+							<# } #>
 
-                                >{{data.cats[key]['cat_name']}}</option>
-                                <# } #>
+								>{{data.cats[key]['cat_name']}}</option>
+								<# } #>
 
-                </select>
-            </label>
+				</select>
+			</label>
 
 			<?php
 		}
-
 
 		/**
 		 * Render the content of the category dropdown

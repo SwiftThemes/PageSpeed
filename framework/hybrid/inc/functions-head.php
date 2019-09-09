@@ -11,10 +11,10 @@
  */
 
 # Adds common theme items to <head>.
-add_action( 'wp_head', 'hybrid_meta_charset',   0 );
-add_action( 'wp_head', 'hybrid_meta_viewport',  1 );
+add_action( 'wp_head', 'hybrid_meta_charset', 0 );
+add_action( 'wp_head', 'hybrid_meta_viewport', 1 );
 add_action( 'wp_head', 'hybrid_meta_generator', 1 );
-add_action( 'wp_head', 'hybrid_link_pingback',  3 );
+add_action( 'wp_head', 'hybrid_link_pingback', 3 );
 
 # Filter the WordPress title.
 add_filter( 'wp_title', 'hybrid_wp_title', 0 );
@@ -63,8 +63,9 @@ function hybrid_meta_generator() {
  * @return void
  */
 function hybrid_link_pingback() {
-	if ( 'open' === get_option( 'default_ping_status' ) )
+	if ( 'open' === get_option( 'default_ping_status' ) ) {
 		printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
+	}
 }
 
 /**
@@ -83,61 +84,63 @@ function hybrid_wp_title( $doctitle ) {
 	// Custom separator for backwards compatibility.
 	$separator = ':';
 
-	if ( is_front_page() )
+	if ( is_front_page() ) {
 		$doctitle = get_bloginfo( 'name' ) . $separator . ' ' . get_bloginfo( 'description' );
 
-	elseif ( is_home() || is_singular() )
+	} elseif ( is_home() || is_singular() ) {
 		$doctitle = single_post_title( '', false );
 
-	elseif ( is_category() )
+	} elseif ( is_category() ) {
 		$doctitle = single_cat_title( '', false );
 
-	elseif ( is_tag() )
+	} elseif ( is_tag() ) {
 		$doctitle = single_tag_title( '', false );
 
-	elseif ( is_tax() )
+	} elseif ( is_tax() ) {
 		$doctitle = single_term_title( '', false );
 
-	elseif ( is_post_type_archive() )
+	} elseif ( is_post_type_archive() ) {
 		$doctitle = post_type_archive_title( '', false );
 
-	elseif ( is_author() )
+	} elseif ( is_author() ) {
 		$doctitle = hybrid_get_single_author_title();
 
-	elseif ( get_query_var( 'minute' ) && get_query_var( 'hour' ) )
+	} elseif ( get_query_var( 'minute' ) && get_query_var( 'hour' ) ) {
 		$doctitle = hybrid_get_single_minute_hour_title();
 
-	elseif ( get_query_var( 'minute' ) )
+	} elseif ( get_query_var( 'minute' ) ) {
 		$doctitle = hybrid_get_single_minute_title();
 
-	elseif ( get_query_var( 'hour' ) )
+	} elseif ( get_query_var( 'hour' ) ) {
 		$doctitle = hybrid_get_single_hour_title();
 
-	elseif ( is_day() )
+	} elseif ( is_day() ) {
 		$doctitle = hybrid_get_single_day_title();
 
-	elseif ( get_query_var( 'w' ) )
+	} elseif ( get_query_var( 'w' ) ) {
 		$doctitle = hybrid_get_single_week_title();
 
-	elseif ( is_month() )
+	} elseif ( is_month() ) {
 		$doctitle = single_month_title( ' ', false );
 
-	elseif ( is_year() )
+	} elseif ( is_year() ) {
 		$doctitle = hybrid_get_single_year_title();
 
-	elseif ( is_archive() )
+	} elseif ( is_archive() ) {
 		$doctitle = hybrid_get_single_archive_title();
 
-	elseif ( is_search() )
+	} elseif ( is_search() ) {
 		$doctitle = hybrid_get_search_title();
 
-	elseif ( is_404() )
+	} elseif ( is_404() ) {
 		$doctitle = hybrid_get_404_title();
+	}
 
 	// If the current page is a paged page.
-	if ( ( ( $page = get_query_var( 'paged' ) ) || ( $page = get_query_var( 'page' ) ) ) && $page > 1 )
+	if ( ( ( $page = get_query_var( 'paged' ) ) || ( $page = get_query_var( 'page' ) ) ) && $page > 1 ) {
 		// Translators: 1 is the page title. 2 is the page number.
 		$doctitle = sprintf( __( '%1$s Page %2$s', 'page-speed' ), $doctitle . $separator, number_format_i18n( absint( $page ) ) );
+	}
 
 	// Trim separator + space from beginning and end.
 	return trim( strip_tags( $doctitle ), "{$separator} " );

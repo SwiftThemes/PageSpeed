@@ -36,7 +36,7 @@ function helium_sanitize_thumbnail_alignment( $val ) {
 		'aligncenter',
 		'alignright',
 		'alternate',
-		'stretched'
+		'stretched',
 	);
 	if ( array_search( $val, $choices ) !== false ) {
 		return $val;
@@ -100,12 +100,10 @@ function helium_sanitize_column_widths( $vals ) {
 			array_push( $sanitized, $val - $prev );
 			$prev = $val;
 		}
-//		array_push( $sanitized, 100 - $prev );
-
+		//      array_push( $sanitized, 100 - $prev );
 
 		return $sanitized;
 	}
-
 
 }
 

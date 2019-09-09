@@ -29,7 +29,6 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 			$theme_location = 'secondary_mobile';
 		}
 
-
 		$after = '';
 		if ( $helium->is_mobile() ) {
 			$after = '<span class="status" onclick = "void(0)"></span>';
@@ -53,18 +52,17 @@ if ( ! function_exists( 'pagespeed_above_header' ) ) {
 
 		);
 
-
 		if ( has_nav_menu( $theme_location ) ) :
 			?>
-            <div id="secondary-nav-container" class="nav-container cf">
-                <div id="secondary" class="">
-                    <div class="hybrid"> <!-- adding inner -->
-                        <div class="inner">
+			<div id="secondary-nav-container" class="nav-container cf">
+				<div id="secondary" class="">
+					<div class="hybrid"> <!-- adding inner -->
+						<div class="inner">
 							<?php wp_nav_menu( $args ); ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<?php
 		endif;
 	}
@@ -108,9 +106,8 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 			'item_spacing'    => 'preserve',
 			'depth'           => 0,
 			'walker'          => '',
-			'fallback_cb'     => 'page_speed_dummy_menu'
+			'fallback_cb'     => 'page_speed_dummy_menu',
 		);
-
 
 		if ( get_theme_mod( 'is_sticky_nav' ) ) {
 			$container_class = ' stick-it';
@@ -122,19 +119,19 @@ if ( ! function_exists( 'pagespeed_below_header' ) ) {
 		}
 
 		?>
-        <div id="primary-nav-container" class="nav-container cf <?php echo $container_class ?>">
-            <div id="primary" class="">
-                <div class="hybrid"> <!-- adding inner -->
-                    <div class="inner">
+		<div id="primary-nav-container" class="nav-container cf <?php echo $container_class; ?>">
+			<div id="primary" class="">
+				<div class="hybrid"> <!-- adding inner -->
+					<div class="inner">
 
 						<?php do_action( 'pagespeed_primary_nav_start' ); ?>
 						<?php wp_nav_menu( $args ); ?>
 						<?php do_action( 'pagespeed_primary_nav_end' ); ?>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<?php
 	}
 }
@@ -175,9 +172,8 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 			'item_spacing'    => 'preserve',
 			'depth'           => 0,
 			'walker'          => '',
-			'fallback_cb'     => 'page_speed_dummy_menu'
+			'fallback_cb'     => 'page_speed_dummy_menu',
 		);
-
 
 		if ( get_theme_mod( 'is_sticky_nav' ) ) {
 			$container_class = ' stick-it';
@@ -189,13 +185,13 @@ if ( ! function_exists( 'pagespeed_header_navigation' ) ) {
 		}
 
 		?>
-        <div id="header-nav-container" class="cf <?php echo sanitize_html_class( $container_class ) ?>">
-            <div id="primary" class="">
+		<div id="header-nav-container" class="cf <?php echo sanitize_html_class( $container_class ); ?>">
+			<div id="primary" class="">
 				<?php do_action( 'pagespeed_header_nav_start' ); ?>
 				<?php wp_nav_menu( $args ); ?>
 				<?php do_action( 'pagespeed_header_nav_end' ); ?>
-            </div>
-        </div>
+			</div>
+		</div>
 		<?php
 	}
 }
@@ -205,12 +201,18 @@ function pagespeed_sticky_logo() {
 		return;
 	}
 	//@todo Anchor the icon
-	echo sprintf( '<a href="%1$s" class="sticky-show sticky-logo" rel="home" itemprop="url">%2$s</a>',
+	echo sprintf(
+		'<a href="%1$s" class="sticky-show sticky-logo" rel="home" itemprop="url">%2$s</a>',
 		esc_url( home_url( '/' ) ),
-		wp_get_attachment_image( get_option( 'site_icon' ), array( 32, 32 ), false, array(
-			'class'    => 'sticky-icon',
-			'itemprop' => 'logo',
-		) )
+		wp_get_attachment_image(
+			get_option( 'site_icon' ),
+			array( 32, 32 ),
+			false,
+			array(
+				'class'    => 'sticky-icon',
+				'itemprop' => 'logo',
+			)
+		)
 	);
 }
 
@@ -241,7 +243,7 @@ function pagespeed_breadcrumbs() {
 		'show_on_front' => false,
 		'show_home'     => __( 'Home', 'page-speed' ),
 		'show_browse'   => false,
-		'echo'          => true
+		'echo'          => true,
 	);
 	if ( current_theme_supports( 'breadcrumb-trail' ) ) {
 		breadcrumb_trail( $defaults );

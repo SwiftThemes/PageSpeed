@@ -55,8 +55,9 @@ class Hybrid_Layout {
 	 */
 	public function __set( $property, $value ) {
 
-		if ( isset( $this->$property ) )
+		if ( isset( $this->$property ) ) {
 			$this->args[ $property ] = $value;
+		}
 	}
 
 	/**
@@ -149,8 +150,9 @@ class Hybrid_Layout {
 
 			foreach ( $this->post_types as $post_type ) {
 
-				if ( ! post_type_supports( $post_type, 'theme-layouts' ) )
+				if ( ! post_type_supports( $post_type, 'theme-layouts' ) ) {
 					add_post_type_support( $post_type, 'theme-layouts' );
+				}
 			}
 		}
 	}

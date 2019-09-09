@@ -32,7 +32,7 @@ if ( is_admin() ) {
 }
 
 function helium_filter_update_checks( $query_args ) {
-	$license     = get_site_option( "helium_license", array() );
+	$license     = get_site_option( 'helium_license', array() );
 	$license_key = isset( $license['license_key'] ) ? $license['license_key'] : '';
 
 	if ( $license_key ) {
@@ -46,13 +46,16 @@ function helium_filter_update_checks( $query_args ) {
 
 function helium_filter_download_link( $query_args ) {
 	$download_url = $query_args->download_url;
-	$license      = get_site_option( "helium_license", array() );
+	$license      = get_site_option( 'helium_license', array() );
 	$license_key  = isset( $license['license_key'] ) ? $license['license_key'] : '';
 
-	add_query_arg( array(
-		'license_key' => $license_key,
-		'url'         => urlencode( get_site_url() )
-	), $download_url );
+	add_query_arg(
+		array(
+			'license_key' => $license_key,
+			'url'         => urlencode( get_site_url() ),
+		),
+		$download_url
+	);
 
 	$query_args->download_url = $download_url;
 

@@ -1,9 +1,9 @@
 <?php
 
-if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
+if ( ! class_exists( 'Puc_v4p4_Theme_UpdateChecker', false ) ) :
 
 	class Puc_v4p4_Theme_UpdateChecker extends Puc_v4p4_UpdateChecker {
-		protected $filterSuffix = 'theme';
+		protected $filterSuffix    = 'theme';
 		protected $updateTransient = 'update_themes';
 		protected $translationType = 'theme';
 
@@ -17,12 +17,12 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 */
 		protected $theme;
 
-		public function __construct($metadataUrl, $stylesheet = null, $customSlug = null, $checkPeriod = 12, $optionName = '') {
+		public function __construct( $metadataUrl, $stylesheet = null, $customSlug = null, $checkPeriod = 12, $optionName = '' ) {
 			if ( $stylesheet === null ) {
 				$stylesheet = get_stylesheet();
 			}
 			$this->stylesheet = $stylesheet;
-			$this->theme = wp_get_theme($this->stylesheet);
+			$this->theme      = wp_get_theme( $this->stylesheet );
 
 			parent::__construct(
 				$metadataUrl,
@@ -48,19 +48,19 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 * @return Puc_v4p4_Update|null An instance of Update, or NULL when no updates are available.
 		 */
 		public function requestUpdate() {
-			list($themeUpdate, $result) = $this->requestMetadata('Puc_v4p4_Theme_Update', 'request_update');
+			list($themeUpdate, $result) = $this->requestMetadata( 'Puc_v4p4_Theme_Update', 'request_update' );
 
 			if ( $themeUpdate !== null ) {
 				/** @var Puc_v4p4_Theme_Update $themeUpdate */
 				$themeUpdate->slug = $this->slug;
 			}
 
-			$themeUpdate = $this->filterUpdateResult($themeUpdate, $result);
+			$themeUpdate = $this->filterUpdateResult( $themeUpdate, $result );
 			return $themeUpdate;
 		}
 
 		public function userCanInstallUpdates() {
-			return current_user_can('update_themes');
+			return current_user_can( 'update_themes' );
 		}
 
 		/**
@@ -69,17 +69,17 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 * @return string Version number.
 		 */
 		public function getInstalledVersion() {
-			return $this->theme->get('Version');
+			return $this->theme->get( 'Version' );
 		}
 
 		/**
 		 * @return string
 		 */
 		public function getAbsoluteDirectoryPath() {
-			if ( method_exists($this->theme, 'get_stylesheet_directory') ) {
+			if ( method_exists( $this->theme, 'get_stylesheet_directory' ) ) {
 				return $this->theme->get_stylesheet_directory(); //Available since WP 3.4.
 			}
-			return get_theme_root($this->stylesheet) . '/' . $this->stylesheet;
+			return get_theme_root( $this->stylesheet ) . '/' . $this->stylesheet;
 		}
 
 		/**
@@ -88,8 +88,8 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 * @param int $checkPeriod
 		 * @return Puc_v4p4_Scheduler
 		 */
-		protected function createScheduler($checkPeriod) {
-			return new Puc_v4p4_Scheduler($this, $checkPeriod, array('load-themes.php'));
+		protected function createScheduler( $checkPeriod ) {
+			return new Puc_v4p4_Scheduler( $this, $checkPeriod, array( 'load-themes.php' ) );
 		}
 
 		/**
@@ -98,12 +98,12 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 * @param WP_Upgrader|null $upgrader The upgrader that's performing the current update.
 		 * @return bool
 		 */
-		public function isBeingUpgraded($upgrader = null) {
-			return $this->upgraderStatus->isThemeBeingUpgraded($this->stylesheet, $upgrader);
+		public function isBeingUpgraded( $upgrader = null ) {
+			return $this->upgraderStatus->isThemeBeingUpgraded( $this->stylesheet, $upgrader );
 		}
 
 		protected function createDebugBarExtension() {
-			return new Puc_v4p4_DebugBar_Extension($this, 'Puc_v4p4_DebugBar_ThemePanel');
+			return new Puc_v4p4_DebugBar_Extension( $this, 'Puc_v4p4_DebugBar_ThemePanel' );
 		}
 
 		/**
@@ -115,8 +115,8 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 * @param callable $callback
 		 * @return void
 		 */
-		public function addQueryArgFilter($callback){
-			$this->addFilter('request_update_query_args', $callback);
+		public function addQueryArgFilter( $callback ) {
+			$this->addFilter( 'request_update_query_args', $callback );
 		}
 
 		/**
@@ -131,8 +131,8 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 * @param callable $callback
 		 * @return void
 		 */
-		public function addHttpRequestArgFilter($callback) {
-			$this->addFilter('request_update_options', $callback);
+		public function addHttpRequestArgFilter( $callback ) {
+			$this->addFilter( 'request_update_options', $callback );
 		}
 
 		/**
@@ -150,8 +150,8 @@ if ( !class_exists('Puc_v4p4_Theme_UpdateChecker', false) ):
 		 * @param callable $callback
 		 * @return void
 		 */
-		public function addResultFilter($callback) {
-			$this->addFilter('request_update_result', $callback, 10, 2);
+		public function addResultFilter( $callback ) {
+			$this->addFilter( 'request_update_result', $callback, 10, 2 );
 		}
 
 		/**

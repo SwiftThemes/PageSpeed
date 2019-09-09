@@ -63,7 +63,6 @@ function helium_register_required_plugins() {
 			'required' => false,
 		),
 
-
 	);
 
 	/*

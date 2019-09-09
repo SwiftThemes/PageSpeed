@@ -78,7 +78,7 @@
 
 	.gallery-item:nth-of-type( 2n + 1 ) { clear: both; }
 
-	     .gallery-item:nth-child( 2n )  { margin-right: 0; float: right; }
+		 .gallery-item:nth-child( 2n )  { margin-right: 0; float: right; }
 	.rtl .gallery-item:nth-child( 2n )  { margin-left:  0; float: left;  }
 }
 

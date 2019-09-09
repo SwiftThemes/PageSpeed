@@ -1,20 +1,20 @@
 <?php
 /*
-    Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
+	Copyright 2009-2018  Satish Gandham  (email : hello@satishgandham.com)
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License version 2,
-    as published by the Free Software Foundation.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License version 2,
+	as published by the Free Software Foundation.
 
-    You may NOT assume that you can use any other version of the GPL.
+	You may NOT assume that you can use any other version of the GPL.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-    The license for this software can likely be found here:
-    http://www.gnu.org/licenses/gpl-2.0.html
+	The license for this software can likely be found here:
+	http://www.gnu.org/licenses/gpl-2.0.html
  */
 /**
  * The image size customize control extends the WP_Customize_Control class.
@@ -35,7 +35,6 @@ function helium_he_column_widths( $wp_customize ) {
 
 	$wp_customize->register_control_type( 'Helium_Customize_Column_Widths' );
 
-
 	class Helium_Customize_Column_Widths extends WP_Customize_Control {
 		public $type = 'he_columns';
 
@@ -46,10 +45,10 @@ function helium_he_column_widths( $wp_customize ) {
 		public function content_template() {
 
 			?>
-            <label class="customize-control-title">{{{ data.label }}}</label>
-            <em>Drag the vertical lines to adjust the widths.</em><br /><br />
+			<label class="customize-control-title">{{{ data.label }}}</label>
+			<em>Drag the vertical lines to adjust the widths.</em><br /><br />
 			<div class="column-slider"></div>
-            <div class="values"></div>
+			<div class="values"></div>
 
 			<?php
 		}

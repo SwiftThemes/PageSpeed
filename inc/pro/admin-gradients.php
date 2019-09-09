@@ -18,5 +18,5 @@ $pagespeed_gradient_bgs = array(
 	'sb1_colors',
 	'sb2_colors',
 	'footer_colors',
-	'copyright_colors'
+	'copyright_colors',
 );

@@ -5,7 +5,7 @@
  * Author:      Devin Price
  * Author URI:  http://wptheming.com
  * Description: Registers a new custom customizer control for backgrounds
- * Version:		1.0.0
+ * Version:     1.0.0
  * License:     GNU General Public License v2.0 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -19,11 +19,10 @@
  */
 function customize_background_controls_register_scripts() {
 
-
-	$uri = HELIUM_URI.'customize/customizer-background-control/';
+	$uri = HELIUM_URI . 'customize/customizer-background-control/';
 	wp_register_script(
 		'customizer-background-image-controls',
-		esc_url( HELIUM_URI.'customize/customizer-background-control/js/customize-controls.js' ),
+		esc_url( HELIUM_URI . 'customize/customizer-background-control/js/customize-controls.js' ),
 		array( 'customize-controls' )
 	);
 

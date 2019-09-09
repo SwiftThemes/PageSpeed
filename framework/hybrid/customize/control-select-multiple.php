@@ -89,5 +89,6 @@ class Hybrid_Customize_Control_Select_Multiple extends WP_Customize_Control {
 
 			</select>
 		</label>
-	<?php }
+		<?php
+	}
 }

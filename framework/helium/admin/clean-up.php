@@ -10,7 +10,7 @@ add_action( 'switch_theme', 'helium_theme_cleanup' );
 
 
 function helium_theme_cleanup() {
-	$prefix = get_option('theme_switched') . '_';
+	$prefix = get_option( 'theme_switched' ) . '_';
 	//Clear transients
 	delete_transient( $prefix . 'sass_file_list' );
 	delete_transient( $prefix . 'sass_combined_bf' );
@@ -23,7 +23,7 @@ function helium_theme_cleanup() {
 	WP_Filesystem();
 
 	$upload_dir = wp_upload_dir();
-	$file       = trailingslashit( $upload_dir['basedir'] ) . get_option('theme_switched').'.css';
+	$file       = trailingslashit( $upload_dir['basedir'] ) . get_option( 'theme_switched' ) . '.css';
 	global $wp_filesystem;
 	$wp_filesystem->delete( $file );
 }

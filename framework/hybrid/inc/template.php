@@ -70,8 +70,9 @@ function hybrid_get_content_template() {
 	$template = locate_template( $templates );
 
 	// If template is found, include it.
-	if ( apply_filters( 'hybrid_content_template', $template, $templates ) )
+	if ( apply_filters( 'hybrid_content_template', $template, $templates ) ) {
 		include( $template );
+	}
 }
 
 /**

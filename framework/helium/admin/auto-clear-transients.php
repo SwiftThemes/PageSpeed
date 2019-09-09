@@ -31,7 +31,6 @@ function helium_auto_clear_transients() {
 		set_theme_mod( 'stylesheet_version', $theme->get( 'Version' ) );
 	}
 
-
 	if ( $theme->parent() && $theme->parent()->get( 'Version' ) !== get_theme_mod( 'theme_version' ) ) {
 
 		$prefix = wp_get_theme()->stylesheet . '_';
@@ -41,6 +40,5 @@ function helium_auto_clear_transients() {
 
 		set_theme_mod( 'theme_version', $theme->parent()->get( 'Version' ) );
 	}
-
 
 }

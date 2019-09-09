@@ -40,7 +40,6 @@ if ( ! class_exists( 'Helium' ) ) {
 			add_action( 'after_setup_theme', array( $this, 'load_mobile_detect' ), 95 );
 			add_action( 'after_setup_theme', array( $this, 'butter_bean_load' ), 95 );
 
-
 		}
 
 
@@ -62,7 +61,6 @@ if ( ! class_exists( 'Helium' ) ) {
 			define( 'HELIUM_THEME_DIR', trailingslashit( get_template_directory() ) );
 			define( 'HELIUM_THEME_CORE', trailingslashit( HELIUM_THEME_DIR . 'core' ) );
 			define( 'HELIUM_THEME_INC', trailingslashit( HELIUM_THEME_DIR . 'inc' ) );
-
 
 			define( 'HELIUM_VENDOR', trailingslashit( HELIUM_DIR . 'vendor' ) );
 			define( 'HELIUM_CUSTOMIZE', trailingslashit( HELIUM_DIR . 'customize' ) );
@@ -90,7 +88,6 @@ if ( ! class_exists( 'Helium' ) ) {
 		public function core() {
 			require_once( HELIUM_DIR . 'pro/bootstrap.php' );
 
-
 			require_once( HELIUM_DIR . 'change-wp-defaults.php' );
 			require_once( HELIUM_DIR . 'utility-functions.php' );
 			require_once( HELIUM_DIR . 'filters-css-classes.php' );
@@ -113,21 +110,18 @@ if ( ! class_exists( 'Helium' ) ) {
 			require_once( HELIUM_CUSTOMIZE . 'control-slider-selector.php' );
 			require_once( HELIUM_CUSTOMIZE . 'control-drag-sort.php' );
 			require_once( HELIUM_CUSTOMIZE . 'utils.php' );
-//			require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
+			//          require_once( HELIUM_CUSTOMIZE . 'remove-default-panels.php' );
 			require_once( HELIUM_CUSTOMIZE . 'sass-override.php' );
 			require_once( HELIUM_CUSTOMIZE . 'load-scripts.php' );
-//			require_once( HELIUM_CUSTOMIZE . 'upsell.php' );
+			//          require_once( HELIUM_CUSTOMIZE . 'upsell.php' );
 			require_once( HELIUM_CUSTOMIZE . 'refresh-styles.php' );
 			require_once( HELIUM_CUSTOMIZE . 'load-customizer-styles.php' );
 
 			require_once( HELIUM_ADMIN . 'write-stylesheet.php' );
 
-
 			require_once( HELIUM_ADMIN . 'register-meta-fields.php' );
 
-
-
-			require_once(  HELIUM_DIR . 'customize/customizer-background-control/customizer-background-control.php');
+			require_once( HELIUM_DIR . 'customize/customizer-background-control/customizer-background-control.php' );
 
 		}
 
@@ -192,7 +186,7 @@ if ( ! class_exists( 'Helium' ) ) {
 
 			if ( is_admin() && isset( $_GET['post'] ) && $_GET['post'] ) {
 				$post_id = intval( $_GET['post'] );
-			} else if ( is_singular() ) {
+			} elseif ( is_singular() ) {
 				global $post;
 				$post_id = intval( $post->ID ); //@todo is casting required?
 			} else {

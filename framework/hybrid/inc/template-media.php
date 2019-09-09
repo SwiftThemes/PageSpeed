@@ -44,7 +44,7 @@ function hybrid_get_media_meta( $property, $args = array() ) {
 		'text'    => '%s',
 		'before'  => '',
 		'after'   => '',
-		'wrap'    => '<span %s>%s</span>'
+		'wrap'    => '<span %s>%s</span>',
 	);
 
 	$args = wp_parse_args( $args, $defaults );
@@ -86,7 +86,10 @@ function hybrid_get_attachment_types( $post_id = 0 ) {
 
 	list( $type, $subtype ) = false !== strpos( $mime_type, '/' ) ? explode( '/', $mime_type ) : array( $mime_type, '' );
 
-	return (object) array( 'type' => $type, 'subtype' => $subtype );
+	return (object) array(
+		'type'    => $type,
+		'subtype' => $subtype,
+	);
 }
 
 /**
@@ -149,8 +152,9 @@ function hybrid_attachment_is_video( $post_id = 0 ) {
 function hybrid_get_image_size_links() {
 
 	// If not viewing an image attachment page, return.
-	if ( ! wp_attachment_is_image( get_the_ID() ) )
+	if ( ! wp_attachment_is_image( get_the_ID() ) ) {
 		return;
+	}
 
 	// Set up an empty array for the links.
 	$links = array();
@@ -189,7 +193,13 @@ function hybrid_get_image_size_links() {
  * @return string
  */
 function hybrid_get_audio_transcript( $post_id = 0 ) {
-	return hybrid_get_media_meta( 'lyrics', array( 'wrap' => '', 'post_id' => $post_id ? $post_id : get_the_ID() ) );
+	return hybrid_get_media_meta(
+		'lyrics',
+		array(
+			'wrap'    => '',
+			'post_id' => $post_id ? $post_id : get_the_ID(),
+		)
+	);
 }
 
 /**

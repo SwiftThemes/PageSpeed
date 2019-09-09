@@ -26,8 +26,9 @@ function hybrid_register_meta() {
 	// Register meta if the theme supports the 'hybrid-core-template-hierarchy' feature.
 	if ( current_theme_supports( 'hybrid-core-template-hierarchy' ) ) {
 		foreach ( get_post_types( array( 'public' => true ) ) as $post_type ) {
-			if ( 'page' !== $post_type )
+			if ( 'page' !== $post_type ) {
 				register_meta( 'post', "_wp_{$post_type}_template", 'sanitize_text_field', '__return_false' );
+			}
 		}
 	}
 

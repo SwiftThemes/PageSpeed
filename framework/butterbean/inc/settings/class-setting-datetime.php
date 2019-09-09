@@ -40,20 +40,21 @@ class ButterBean_Setting_Datetime extends ButterBean_Setting {
 		$field_name = $this->get_field_name();
 
 		// Get the posted date.
-		$year  = ! empty( $_POST[ "{$field_name}_year" ] )  ? zeroise( absint( $_POST[ "{$field_name}_year" ] ),  4 ) : '';
+		$year  = ! empty( $_POST[ "{$field_name}_year" ] ) ? zeroise( absint( $_POST[ "{$field_name}_year" ] ), 4 ) : '';
 		$month = ! empty( $_POST[ "{$field_name}_month" ] ) ? zeroise( absint( $_POST[ "{$field_name}_month" ] ), 2 ) : '';
-		$day   = ! empty( $_POST[ "{$field_name}_day" ] )   ? zeroise( absint( $_POST[ "{$field_name}_day" ] ),   2 ) : '';
+		$day   = ! empty( $_POST[ "{$field_name}_day" ] ) ? zeroise( absint( $_POST[ "{$field_name}_day" ] ), 2 ) : '';
 
 		// Get the posted time.
-		$hour   = ! empty( $_POST[ "{$field_name}_hour" ] )    ? $this->validate_hour(   $_POST[ "{$field_name}_hour" ] )   : '00';
-		$minute = ! empty( $_POST[ "{$field_name}_minute" ] )  ? $this->validate_minute( $_POST[ "{$field_name}_minute" ] ) : '00';
-		$second = ! empty( $_POST[ "{$field_name}_second" ] )  ? $this->validate_second( $_POST[ "{$field_name}_second" ] ) : '00';
+		$hour   = ! empty( $_POST[ "{$field_name}_hour" ] ) ? $this->validate_hour( $_POST[ "{$field_name}_hour" ] ) : '00';
+		$minute = ! empty( $_POST[ "{$field_name}_minute" ] ) ? $this->validate_minute( $_POST[ "{$field_name}_minute" ] ) : '00';
+		$second = ! empty( $_POST[ "{$field_name}_second" ] ) ? $this->validate_second( $_POST[ "{$field_name}_second" ] ) : '00';
 
 		$date = "{$year}-{$month}-{$day}";
 		$time = "{$hour}:{$minute}:{$second}";
 
-		if ( $year && $month && $day && wp_checkdate( absint( $month ), absint( $day ), absint( $year ), $date ) )
+		if ( $year && $month && $day && wp_checkdate( absint( $month ), absint( $day ), absint( $year ), $date ) ) {
 			return "{$date} {$time}";
+		}
 
 		return '';
 	}

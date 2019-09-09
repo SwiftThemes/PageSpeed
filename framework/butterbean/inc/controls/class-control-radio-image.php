@@ -1,6 +1,6 @@
 <?php
 /**
- * Radio image control class extends the built-in radio control.  This control is 
+ * Radio image control class extends the built-in radio control.  This control is
  * meant for displaying an image instead of the radio fields.
  *
  * @package    ButterBean
@@ -38,8 +38,9 @@ class ButterBean_Control_Radio_Image extends ButterBean_Control_Radio {
 	public function to_json() {
 		parent::to_json();
 
-		foreach ( $this->choices as $value => $args )
+		foreach ( $this->choices as $value => $args ) {
 			$this->choices[ $value ]['url'] = esc_url( sprintf( $args['url'], get_template_directory_uri(), get_stylesheet_directory_uri() ) );
+		}
 
 		$this->json['choices'] = $this->choices;
 	}

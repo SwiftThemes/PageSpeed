@@ -73,7 +73,6 @@ if ( ! function_exists( 'pagespeed_before_main_ad' ) ) {
 		}
 		echo $ad;
 	}
-
 }
 
 if ( ! function_exists( 'pagespeed_after_main_ad' ) ) {
