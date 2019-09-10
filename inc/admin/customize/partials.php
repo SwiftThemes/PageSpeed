@@ -31,10 +31,10 @@ function pagespeed_customize_register( WP_Customize_Manager $wp_customize ) {
 				'home_slider_height',
 			),
 			'type'                => 'home_slider',
-			'selector'            => '.srs_-slider',
+			'selector'            => '.srs-slider',
 			'container_inclusive' => true,
 			'render_callback'     => function () {
-				pagespeed_srs__home_slider();
+				pagespeed_srs_home_slider();
 			},
 			'fallback_refresh'    => false,
 		)

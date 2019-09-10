@@ -13,6 +13,7 @@ assets/js/custom.js
 assets/js/custom.min.js
 assets/js/vendors.js
 assets/js/vendors.min.js
+assets/js/custom/desktop.min.js
 assets/css/style.prod.css
 assets/css/src/*.css
 assets/css/src/*.map

@@ -21,6 +21,7 @@ $pagespeed_selective_refreshables = array(
 	'secondary_font_lh',
 	'secondary_font_weight',
 	'separate_containers',
+	'container_type',
 
 	'theme_layout',
 

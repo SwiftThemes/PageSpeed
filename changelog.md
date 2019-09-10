@@ -1,6 +1,8 @@
 ## [2.28] - 08-09-2019
 
 - Minor CSS improvements
+- Add option to disable search form on side pane on mobile.
+- Fix the live reload for layout container.
 
 ## [2.27] - 04-08-2019
 
