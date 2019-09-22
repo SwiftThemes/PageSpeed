@@ -423,7 +423,7 @@ class Breadcrumb_Trail {
 	protected function add_network_home_link() {
 
 		if ( is_multisite() && ! is_main_site() && true === $this->args['network'] ) {
-			$this->items[] = sprintf( '<a href="%s" rel="home">%s</a>', esc_url( network_home_url() ), $this->labels['home'] );
+			$this->items[] = sprintf( '<a href="%s" property="item" rel="home">%s</a>', esc_url( network_home_url() ), $this->labels['home'] );
 		}
 	}
 
@@ -440,7 +440,7 @@ class Breadcrumb_Trail {
 		$label   = $network ? get_bloginfo( 'name' ) : $this->labels['home'];
 		$rel     = $network ? '' : ' rel="home"';
 
-		$this->items[] = sprintf( '<a href="%s"%s>%s</a>', esc_url( home_url() ), $rel, $label );
+		$this->items[] = sprintf( '<a href="%s" property="item"%s>%s</a>', esc_url( home_url() ), $rel, $label );
 	}
 
 	/**
@@ -493,7 +493,7 @@ class Breadcrumb_Trail {
 
 		// Add the posts page item.
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), $title );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_permalink( $post_id ) ), $title );
 
 		} elseif ( $title && true === $this->args['show_title'] ) {
 			$this->items[] = $title;
@@ -532,7 +532,7 @@ class Breadcrumb_Trail {
 		if ( $post_title = single_post_title( '', false ) ) {
 
 			if ( 1 < get_query_var( 'page' ) || is_paged() ) {
-				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), $post_title );
+				$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_permalink( $post_id ) ), $post_title );
 
 			} elseif ( true === $this->args['show_title'] ) {
 				$this->items[] = $post_title;
@@ -603,7 +603,7 @@ class Breadcrumb_Trail {
 							$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
 
 							// Add the post type archive link to the trail.
-							$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), $label );
+							$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), $label );
 
 							$done_post_type = true;
 
@@ -623,7 +623,7 @@ class Breadcrumb_Trail {
 				$post_id = get_option( 'page_for_posts' );
 
 				if ( 'posts' !== get_option( 'show_on_front' ) && 0 < $post_id ) {
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
+					$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
 				}
 
 				// If the post type is not 'post'.
@@ -635,7 +635,7 @@ class Breadcrumb_Trail {
 				// Core filter hook.
 				$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
 
-				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), $label );
+				$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), $label );
 			}
 		}
 
@@ -646,7 +646,7 @@ class Breadcrumb_Trail {
 
 		// Add the term name to the trail end.
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $term->taxonomy ) ), single_term_title( '', false ) );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_term_link( $term, $term->taxonomy ) ), single_term_title( '', false ) );
 
 		} elseif ( true === $this->args['show_title'] ) {
 			$this->items[] = single_term_title( '', false );
@@ -680,7 +680,7 @@ class Breadcrumb_Trail {
 
 		// Add the post type [plural] name to the trail end.
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), post_type_archive_title( '', false ) );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), post_type_archive_title( '', false ) );
 
 		} elseif ( true === $this->args['show_title'] ) {
 			$this->items[] = post_type_archive_title( '', false );
@@ -711,7 +711,7 @@ class Breadcrumb_Trail {
 
 		// Add the author's display name to the trail end.
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $user_id ) ), get_the_author_meta( 'display_name', $user_id ) );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_author_posts_url( $user_id ) ), get_the_author_meta( 'display_name', $user_id ) );
 
 		} elseif ( true === $this->args['show_title'] ) {
 			$this->items[] = get_the_author_meta( 'display_name', $user_id );
@@ -790,12 +790,12 @@ class Breadcrumb_Trail {
 		$day   = sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'page-speed' ) ) );
 
 		// Add the year and month items.
-		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
-		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
+		$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
+		$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
 
 		// Add the day item.
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y' ) ), get_the_time( 'm' ), get_the_time( 'd' ) ), $day );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_day_link( get_the_time( 'Y' ) ), get_the_time( 'm' ), get_the_time( 'd' ) ), $day );
 
 		} elseif ( true === $this->args['show_title'] ) {
 			$this->items[] = $day;
@@ -819,7 +819,7 @@ class Breadcrumb_Trail {
 		$week = sprintf( $this->labels['archive_week'], get_the_time( esc_html_x( 'W', 'weekly archives date format', 'page-speed' ) ) );
 
 		// Add the year item.
-		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
+		$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		// Add the week item.
 		if ( is_paged() ) {
@@ -859,11 +859,11 @@ class Breadcrumb_Trail {
 		$month = sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'page-speed' ) ) );
 
 		// Add the year item.
-		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
+		$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		// Add the month item.
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
 
 		} elseif ( true === $this->args['show_title'] ) {
 			$this->items[] = $month;
@@ -887,7 +887,7 @@ class Breadcrumb_Trail {
 
 		// Add the year item.
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		} elseif ( true === $this->args['show_title'] ) {
 			$this->items[] = $year;
@@ -924,7 +924,7 @@ class Breadcrumb_Trail {
 	protected function add_search_items() {
 
 		if ( is_paged() ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_search_link() ), sprintf( $this->labels['search'], get_search_query() ) );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_search_link() ), sprintf( $this->labels['search'], get_search_query() ) );
 
 		} elseif ( true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( $this->labels['search'], get_search_query() );
@@ -967,7 +967,7 @@ class Breadcrumb_Trail {
 			}
 
 			// Add the formatted post link to the array of parents.
-			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
+			$parents[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
 
 			// If there's no longer a post parent, break out of the loop.
 			if ( 0 >= $post->post_parent ) {
@@ -1038,7 +1038,7 @@ class Breadcrumb_Trail {
 			// Core filter hook.
 			$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
 
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type ) ), $label );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_post_type_archive_link( $post_type ) ), $label );
 		}
 	}
 
@@ -1097,7 +1097,7 @@ class Breadcrumb_Trail {
 			}
 
 			// Add the category archive link to the trail.
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
+			$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
 		}
 	}
 
@@ -1180,7 +1180,7 @@ class Breadcrumb_Trail {
 			$term = get_term( $term_id, $taxonomy );
 
 			// Add the formatted term link to the array of parent terms.
-			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
+			$parents[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
 
 			// Set the parent term's parent as the parent ID.
 			$term_id = $term->parent;
@@ -1231,22 +1231,22 @@ class Breadcrumb_Trail {
 
 				// If using the %year% tag, add a link to the yearly archive.
 				if ( '%year%' == $tag ) {
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'page-speed' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format', 'page-speed' ) ) ) );
 				}
 
 				// If using the %monthnum% tag, add a link to the monthly archive.
 				elseif ( '%monthnum%' == $tag ) {
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'page-speed' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'page-speed' ) ) ) );
 				}
 
 				// If using the %day% tag, add a link to the daily archive.
 				elseif ( '%day%' == $tag ) {
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'page-speed' ) ) ) );
+					$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'page-speed' ) ) ) );
 				}
 
 				// If using the %author% tag, add a link to the post author archive.
 				elseif ( '%author%' == $tag ) {
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $post->post_author ) ), get_the_author_meta( 'display_name', $post->post_author ) );
+					$this->items[] = sprintf( '<a href="%s" property="item">%s</a>', esc_url( get_author_posts_url( $post->post_author ) ), get_the_author_meta( 'display_name', $post->post_author ) );
 				}
 
 				// If using the %category% tag, add a link to the first category archive to match permalinks.
