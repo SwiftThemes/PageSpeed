@@ -1,3 +1,11 @@
+## [2.30] - 08-09-2019
+
+- Fix a minor issue with mobile sidepane alignment.
+
+## [2.29] - 22-09-2019
+
+- Fixed an issue with breadcrumbs markup. If you got warnings from Google search console, you should update.
+
 ## [2.28] - 08-09-2019
 
 - Minor CSS improvements
