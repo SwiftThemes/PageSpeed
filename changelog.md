@@ -1,6 +1,11 @@
-## [2.30] - 08-09-2019
+## [2.30] - 24-09-2019
 
-- Fix a minor issue with mobile sidepane alignment.
+- Fix an issue with preloading swift icon font.
+- Fix the breadcrumb markup issue.
+
+## [2.30] - 23-09-2019
+
+- Fix a minor issue with mobile side pane alignment.
 
 ## [2.29] - 22-09-2019
 
