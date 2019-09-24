@@ -90,6 +90,6 @@ function pagespeed_add_image_bg_for_single_post() {
 }
 
 function pagespeed_preload_icons() {
-	echo '<link rel="preload" href="' . HELIUM_THEME_ASSETS_URI . 'fonts/swift-icons.woff" as="font" type="font/woff">';
+	echo '<link rel="preload" href="' . HELIUM_THEME_ASSETS_URI . 'fonts/swift-icons.woff" as="font" type="font/woff" crossorigin="anonymous">';
 
 }
