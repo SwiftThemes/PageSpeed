@@ -1,4 +1,4 @@
-## [2.30] - 24-09-2019
+## [2.31] - 24-09-2019
 
 - Fix an issue with preloading swift icon font.
 - Fix the breadcrumb markup issue.
