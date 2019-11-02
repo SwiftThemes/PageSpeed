@@ -1,4 +1,8 @@
-## [2.30] - 24-09-2019
+## [2.32] - 02-11-2019
+
+- Fix an issue with responsiveness on right sidebar page template.
+
+## [2.31] - 24-09-2019
 
 - Fix an issue with preloading swift icon font.
 - Fix the breadcrumb markup issue.

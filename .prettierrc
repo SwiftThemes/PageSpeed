@@ -3,5 +3,9 @@
   "[php]": {
   "editor.formatOnSave": true,
   "editor.tabSize": 4,
-}
+ },
+"[html]": {
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+} 
 }

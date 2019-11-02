@@ -2,7 +2,7 @@
 </div><!-- main inner-->
 </main>
 
-<aside id="sb-page-rsb">
+<aside id="sb-page-rsb" class="sb-container">
 	<div class="inner">
 		<?php dynamic_sidebar( 'page-template-right' ); ?>
 	</div>
