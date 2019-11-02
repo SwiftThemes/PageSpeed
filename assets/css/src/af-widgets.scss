@@ -1,7 +1,7 @@
 .widget-title {
   font-size: 1.25em;
   font-weight: bold;
-  padding: $padding*.25 0;
+  padding: $padding * 0.25 0;
 }
 
 #content .widget-title {
@@ -19,29 +19,32 @@
 
 .widget a:hover {
   color: $primary;
-  text-decoration: none
+  text-decoration: none;
 }
 
 #sb2 .widget {
   color: $sb2-widget-color;
+
   a {
     color: $sb2-widget-link-color;
   }
 }
 
 .sb > .widget:first-child .widget-title {
-  padding-top: 0
+  padding-top: 0;
 }
 
 .widget {
-  ul, ol {
-    margin: $vr*.5 0;
+  ol,
+  ul {
+    margin: $vr * 0.5 0;
     list-style: disc;
   }
 }
 
 .rtl .widget {
-  ul, ol {
+  ol,
+  ul {
     padding-left: 0;
   }
 }
@@ -51,20 +54,21 @@
     color: $footer-widget-title-color;
     background: $footer-widget-title-bg;
   }
+
   .widget {
     color: $footer-widget-color;
   }
+
   .widget a {
     color: $footer-widget-link-color;
   }
+
   .widget a:hover {
     color: $primary;
   }
 }
-
 @if ($sb_widget_cards == 1 and $separate_containers ==0) {
   #content .sb {
-
     .widget {
       border: solid 1px $sb-widget-border-color;
       padding: $padding/2;
@@ -72,6 +76,7 @@
       background: $sb-widget-bg;
       margin-bottom: $padding/2;
     }
+
     .widget-title {
       border-bottom: solid 1px $sb-widget-border-color;
       margin: -($padding/2) -($padding/2) 10px;
@@ -82,8 +87,9 @@
     }
 
     .widget {
-      ol, ul {
-        margin-bottom: 0
+      ol,
+      ul {
+        margin-bottom: 0;
       }
     }
 
@@ -92,12 +98,9 @@
       margin-top: -($padding/2) + 4px;
     }
   }
-
   @media only screen and (max-width: $mobile_width) {
     #content .sb .widget {
-      margin: 0 0 20px;
       margin: 0 -10px;
-
     }
   }
 }
