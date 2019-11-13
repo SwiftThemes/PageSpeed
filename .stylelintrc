@@ -1,4 +1,5 @@
 {
-  "extends":     "/Users/satish/Work/Development/htdocs/helium/wp-content/themes/page-speed/node_modules/stylelint-config-standard"
-  
+  "extends": [
+    "/Users/satish/Work/Development/htdocs/helium/wp-content/themes/page-speed/node_modules/stylelint-config-wordpress/scss"
+  ]
 }
