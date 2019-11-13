@@ -91,6 +91,12 @@
   #nav-social-media .telephone {
     background: #02B21F
   }
+    #nav-social-media .vimeo {
+    background: #1ab7ea
+  }
+    #nav-social-media .tumblr {
+    background: #35465c
+  }
 
 } @else {
   #nav-social-media a {
@@ -147,6 +153,12 @@
   }
   #nav-social-media .telephone:hover {
     background: #02B21F
+  }
+  #nav-social-media .vimeo:hover {
+    background: #1ab7ea
+  }
+  #nav-social-media .tumblr:hover {
+    background: #35465c
   }
 }
 

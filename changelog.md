@@ -1,3 +1,9 @@
+## [2.33] - 13-11-2019
+
+### Added
+
+- Tumblr & Vimeo option in social media icons.
+
 ## [2.32] - 02-11-2019
 
 - Fix an issue with responsiveness on right sidebar page template.

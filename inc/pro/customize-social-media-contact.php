@@ -122,6 +122,14 @@ function pagespeed_customize_social_media( $wp_customize ) {
 						'value' => 'Quora',
 					),
 					array(
+						'key'   => 'tumblr',
+						'value' => 'Tumblr',
+					),
+					array(
+						'key'   => 'vimeo',
+						'value' => 'Vimeo',
+					),
+					array(
 						'key'   => 'telephone',
 						'value' => 'Telephone',
 					),
@@ -508,6 +516,50 @@ function pagespeed_customize_social_media( $wp_customize ) {
 			'type'            => 'url',
 			'active_callback' => function () {
 				return ( array_search( 'telephone', get_theme_mod( 'social_media_order_nav', array() ) ) !== false );
+			},
+		)
+	);
+
+	$wp_customize->add_setting(
+		'tumblr',
+		array(
+			'sanitize_callback' => 'esc_url',
+			'default'           => '#',
+			'transport'         => 'postMessage',
+		)
+	);
+
+	$wp_customize->add_control(
+		'tumblr',
+		array(
+			'label'           => 'Tumblr',
+			'description'     => __( 'Enter your Tumblr URL', 'page-speed' ),
+			'section'         => 'social_media',
+			'type'            => 'url',
+			'active_callback' => function () {
+				return ( array_search( 'tumblr', get_theme_mod( 'social_media_order_nav', array() ) ) !== false );
+			},
+		)
+	);
+
+	$wp_customize->add_setting(
+		'vimeo',
+		array(
+			'sanitize_callback' => 'esc_url',
+			'default'           => '#',
+			'transport'         => 'postMessage',
+		)
+	);
+
+	$wp_customize->add_control(
+		'vimeo',
+		array(
+			'label'           => 'Vimeo',
+			'description'     => __( 'Enter your Vimeoo URL', 'page-speed' ),
+			'section'         => 'social_media',
+			'type'            => 'url',
+			'active_callback' => function () {
+				return ( array_search( 'vimeo', get_theme_mod( 'social_media_order_nav', array() ) ) !== false );
 			},
 		)
 	);

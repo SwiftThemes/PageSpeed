@@ -5,7 +5,8 @@
   "main": "gulp.js",
   "dependencies": {
     "assign-deep": "^1.0.1",
-    "set-value": "^3.0.1"
+    "set-value": "^3.0.1",
+    "stylelint-config-wordpress": "^15.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
