@@ -187,6 +187,7 @@
   content: "\4b";
 }
 
+.he-email::before,
 .he-envelope::before {
   content: "\4c";
 }
