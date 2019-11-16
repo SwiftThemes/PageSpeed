@@ -1,3 +1,9 @@
+## [2.34] - 16-11-2019
+
+### Added
+
+- Location icon to iconfont.
+
 ## [2.33] - 13-11-2019
 
 ### Added

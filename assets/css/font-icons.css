@@ -206,3 +206,7 @@
 .he-tumblr::before {
   content: "\50";
 }
+
+.he-location::before {
+  content: "\51";
+}
