@@ -10,11 +10,11 @@ var requireDir = require("require-dir");
 requireDir("./gulp");
 
 //CSS
-gulp.task("sass", function() {
+gulp.task("sass", function () {
   scss([
     //'./assets/css/src/typography.scss',
     //'./assets/css/src/layout.scss',
-    "./assets/css/src/main.scss"
+    "./assets/css/src/main.scss",
   ])
     //.pipe(sass())
     .pipe(concatCss("style.prod.css"))
@@ -23,11 +23,11 @@ gulp.task("sass", function() {
 
 //gulp.task('default', ['sass']);
 
-gulp.task("watch", function() {
-  gulp.watch("./assets/css/src/*.scss", ["sass"]);
-  gulp.watch("./assets/js/vendor/*.js", ["vendorsJs"]);
-  gulp.watch("./assets/js/custom/*.js", ["scriptsJs"]);
-  //gulp.watch('./development/scripts/*.js', ['scripts'] );
+gulp.task("watch", function () {
+  gulp.watch("./assets/css/src/*.scss", gulp.series("sass"));
+  gulp.watch("./assets/js/vendor/*.js", gulp.series("vendorsJs"));
+  gulp.watch("./assets/js/custom/*.js", gulp.series("scriptsJs"));
+  //gulp.watch('./development/scripts/*.js', gulp.series('scripts') );
 });
 
 /**
@@ -76,7 +76,7 @@ buildInclude = [
   // '!assets/js/custom/*',
   "!gulp/*",
   "!*.psd",
-  "!gulpfile.js"
+  "!gulpfile.js",
 ];
 buildIncludeOrg = [
   // include common file types
@@ -122,7 +122,7 @@ buildIncludeOrg = [
   // '!assets/js/custom/*',
   "!gulp/*",
   "!*.psd",
-  "!gulpfile.js"
+  "!gulpfile.js",
 ];
 
 // Load plugins
@@ -158,25 +158,25 @@ var gulp = require("gulp"),
 //   }
 // );
 
-gulp.task("page-speed-translations", function() {
+gulp.task("page-speed-translations", function () {
   return gulp
     .src("**/*.php")
     .pipe(
       wpPot({
         domain: "page-speed",
-        package: "page-speed"
+        package: "page-speed",
       })
     )
     .pipe(gulp.dest("./languages/page-speed.pot"));
 });
 
-gulp.task("helium-translations", function() {
+gulp.task("helium-translations", function () {
   return gulp
     .src("**/*.php")
     .pipe(
       wpPot({
         domain: "helium",
-        package: "helium"
+        package: "helium",
       })
     )
     .pipe(gulp.dest("./languages/helium.pot"));
@@ -193,7 +193,7 @@ gulp.task(
  * Asynchronous browser syncing of assets across multiple devices!! Watches for changes to js, image and php files
  * Although, I think this is redundant, since we have a watch task that does this already.
  */
-gulp.task("browser-sync", function() {
+gulp.task("browser-sync", function () {
   var files = ["**/*.php", "**/*.{png,jpg,gif}"];
   browserSync.init(files, {
     // Read here http://www.browsersync.io/docs/options/
@@ -208,7 +208,7 @@ gulp.task("browser-sync", function() {
     // tunnel: "ppress",
 
     // Inject CSS changes
-    injectChanges: true
+    injectChanges: true,
   });
 });
 
@@ -219,7 +219,7 @@ gulp.task("browser-sync", function() {
  *
  * Sass output styles: https://web-design-weekly.com/2014/06/15/different-sass-output-styles/
  */
-gulp.task("styles", function(cb) {
+gulp.task("styles", function (cb) {
   gulp
     .src("./assets/css/*.scss")
     .pipe(plumber())
@@ -232,7 +232,7 @@ gulp.task("styles", function(cb) {
         outputStyle: "compact",
         // outputStyle: 'nested',
         // outputStyle: 'expanded',
-        precision: 10
+        precision: 10,
       })
     )
     .pipe(sourcemaps.write({ includeContent: false }))
@@ -258,7 +258,7 @@ gulp.task("styles", function(cb) {
     .pipe(rename({ suffix: ".min" }))
     .pipe(
       minifycss({
-        maxLineLen: 80
+        maxLineLen: 80,
       })
     )
     .pipe(gulp.dest("./"))
@@ -273,20 +273,20 @@ gulp.task("styles", function(cb) {
  *
  * Look at src/js and concatenate those files, send them to assets/js where we then minimize the concatenated file.
  */
-gulp.task("vendorsJs", function() {
+gulp.task("vendorsJs", function () {
   return (
     gulp
       .src([
         "./assets/js/vendor/*.js",
         bower + "**/*.js",
-        "!./assets/js/vendor/*min.js"
+        "!./assets/js/vendor/*min.js",
       ])
       // .pipe(concat('vendors.js'))
       // .pipe(gulp.dest('./assets/js'))
       .pipe(
         rename({
           // basename: "vendors",
-          suffix: ".min"
+          suffix: ".min",
         })
       )
       .pipe(uglify())
@@ -301,7 +301,7 @@ gulp.task("vendorsJs", function() {
  * Look at src/js and concatenate those files, send them to assets/js where we then minimize the concatenated file.
  */
 
-gulp.task("scriptsJs", function() {
+gulp.task("scriptsJs", function () {
   return (
     gulp
       .src(["./assets/js/custom/*.js", "!./assets/js/custom/*min.js"])
@@ -311,7 +311,7 @@ gulp.task("scriptsJs", function() {
       .pipe(
         rename({
           // basename: "custom",
-          suffix: ".min"
+          suffix: ".min",
         })
       )
       .pipe(uglify())
@@ -326,7 +326,7 @@ gulp.task("scriptsJs", function() {
  * Look at src/js and concatenate those files, send them to assets/js where we then minimize the concatenated file.
  */
 
-gulp.task("optionalScriptsJs", function() {
+gulp.task("optionalScriptsJs", function () {
   return (
     gulp
       .src(["./assets/js/custom/optional-*.js"])
@@ -334,7 +334,7 @@ gulp.task("optionalScriptsJs", function() {
       // .pipe(gulp.dest('./assets/js'))
       .pipe(
         rename({
-          suffix: ".min"
+          suffix: ".min",
         })
       )
       .pipe(uglify())
@@ -348,7 +348,7 @@ gulp.task("optionalScriptsJs", function() {
  *
  * Look at src/images, optimize the images and send them to the appropriate place
  */
-gulp.task("images", function() {
+gulp.task("images", function () {
   // Add the newer pipe to pass through newer images only
   return gulp
     .src(["./assets/images/raw/**/*.{png,jpg,gif}"])
@@ -364,7 +364,7 @@ gulp.task("images", function() {
 /**
  * Clean gulp cache
  */
-gulp.task("clear", function() {
+gulp.task("clear", function () {
   cache.clearAll();
 });
 
@@ -375,21 +375,21 @@ gulp.task("clear", function() {
  * clearing out unoptimized image files in zip as those will have been moved and optimized
  */
 
-gulp.task("cleanup", function() {
+gulp.task("cleanup", function () {
   return gulp
     .src(["./assets/bower_components", "**/.sass-cache", "**/.DS_Store"], {
       read: false,
-      allowEmpty: true
+      allowEmpty: true,
     }) // much faster
     .pipe(ignore("node_modules/**")) //Example of a directory to ignore
     .pipe(rimraf({ force: true }));
   // .pipe(notify({ message: 'Clean task complete', onLast: true }));
 });
-gulp.task("cleanupFinal", function(cb) {
+gulp.task("cleanupFinal", function (cb) {
   return gulp
     .src(["./assets/bower_components", "**/.sass-cache", "**/.DS_Store"], {
       read: false,
-      allowEmpty: true
+      allowEmpty: true,
     }) // much faster
     .pipe(ignore("node_modules/**")) //Example of a directory to ignore
     .pipe(rimraf({ force: true }));
@@ -405,14 +405,14 @@ gulp.task("cleanupFinal", function(cb) {
  * buildImages copies all the images from img folder in assets while ignoring images inside raw folder if any
  */
 
-gulp.task("buildFiles", function() {
+gulp.task("buildFiles", function () {
   return gulp
     .src(buildInclude)
     .pipe(gulp.dest(build))
     .pipe(notify({ message: "Copy from buildFiles complete", onLast: true }));
 });
 
-gulp.task("buildFilesOrg", function() {
+gulp.task("buildFilesOrg", function () {
   return gulp
     .src(buildIncludeOrg)
     .pipe(gulp.dest(build))
@@ -424,14 +424,14 @@ gulp.task("buildFilesOrg", function() {
  *
  * Look at src/images, optimize the images and send them to the appropriate place
  */
-gulp.task("buildImages", function() {
+gulp.task("buildImages", function () {
   return gulp
     .src(["assets/images/**/*", "!assets/images/raw/**"])
     .pipe(gulp.dest(build + "assets/images/"))
     .pipe(
       plugins.notify({
         message: "Images copied to buildTheme folder",
-        onLast: true
+        onLast: true,
       })
     );
 });
@@ -441,12 +441,12 @@ gulp.task("buildImages", function() {
  *
  * Taking the build folder, which has been cleaned, containing optimized files and zipping it up to send out as an installable theme
  */
-gulp.task("buildZip", function() {
+gulp.task("buildZip", function () {
   // return 	gulp.src([build+'/**/', './.jshintrc','./.bowerrc','./.gitignore' ])
   return (
     gulp
       .src(build + "/**/*", {
-        base: "/Users/satish/Work/Development/can-delete/buildtheme/"
+        base: "/Users/satish/Work/Development/can-delete/buildtheme/",
       })
       .pipe(zip(project + ".zip"))
       .pipe(gulp.dest("/Users/satish/Desktop"))
@@ -482,7 +482,7 @@ gulp.task(
 );
 
 // Package Distributable Theme
-gulp.task("buildOrg", function(cb) {
+gulp.task("buildOrg", function (cb) {
   gulp.series(
     "pot",
     "styles",
@@ -506,7 +506,7 @@ gulp.task(
     "scriptsJs",
     "images",
     "browser-sync",
-    function() {
+    function () {
       gulp.watch("./assets/images/raw/**/*", ["images"]);
       gulp.watch("./assets/css/**/*.scss", ["styles"]);
       gulp.watch("./assets/js/**/*.js", ["scriptsJs", browserSync.reload]);
