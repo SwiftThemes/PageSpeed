@@ -11,14 +11,16 @@ requireDir("./gulp");
 
 //CSS
 gulp.task("sass", function () {
-  scss([
-    //'./assets/css/src/typography.scss',
-    //'./assets/css/src/layout.scss',
-    "./assets/css/src/main.scss",
-  ])
-    //.pipe(sass())
-    .pipe(concatCss("style.prod.css"))
-    .pipe(gulp.dest("./assets/css"));
+  return (
+    scss([
+      //'./assets/css/src/typography.scss',
+      //'./assets/css/src/layout.scss',
+      "./assets/css/src/main.scss",
+    ])
+      //.pipe(sass())
+      .pipe(concatCss("style.prod.css"))
+      .pipe(gulp.dest("./assets/css"))
+  );
 });
 
 //gulp.task('default', ['sass']);
